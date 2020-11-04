@@ -869,7 +869,7 @@ th {
   visibility: hidden;
 }
 .l_header.auto.show {
-  opacity: 1 !important;
+  opacity: 0.6 !important;
   visibility: visible;
 }
 .l_header .container {
