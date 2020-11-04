@@ -869,7 +869,7 @@ th {
   visibility: hidden;
 }
 .l_header.auto.show {
-  opacity: 0.6 !important;
+  opacity: 0.4 !important;
   visibility: visible;
 }
 .l_header .container {
@@ -916,7 +916,7 @@ th {
   }
 }
 .l_header #wrapper.sub .nav-sub {
-  opacity: 1;
+  opacity: 0.5;
 }
 .l_header #wrapper .title {
   position: relative;
