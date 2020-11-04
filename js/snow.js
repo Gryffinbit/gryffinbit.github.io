@@ -1,5 +1,5 @@
 
-$(
+$(function (){
 	var $flake = $('<div id="snowbox" />').css({'position': 'absolute','z-index':'9999', 'top': '-50px'}).html('&#10052;'),
 	documentHeight 	= $(document).height(),
 	documentWidth	= $(document).width(),
@@ -29,5 +29,5 @@ $(
 		$(this).remove()
 	});
 	}, options.newOn);
-;
+});
 
