@@ -5,7 +5,7 @@ $(function (){
 	options = {
 		minSize		: 25,
 		maxSize		: 50,
-		newOn		: 400,
+		newOn		: 1000,
 		flakeColor	: "#AFDAEF" /* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */
 	};
 	var interval= setInterval( function(){
