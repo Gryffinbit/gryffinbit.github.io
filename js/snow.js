@@ -23,7 +23,7 @@ $(function (){
 	}).animate({
 		top: endPositionTop,
 		left: endPositionLeft,
-		opacity: 0.3
+		opacity: 0.25
 	},durationFall,'linear',function(){
 		$(this).remove()
 	});
