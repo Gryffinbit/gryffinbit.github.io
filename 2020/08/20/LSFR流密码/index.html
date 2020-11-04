@@ -493,7 +493,7 @@
 <h1 id="二、实验目的和要求"><a href="#二、实验目的和要求" class="headerlink" title="二、实验目的和要求"></a>二、实验目的和要求</h1><p>编程实现简单地线性反馈移位寄存器，理解其工作原理，掌握流密码的算法结构和加解密过程。利用C++语言实现LFSR。通过不同初始状态生成相应序列，观察其周期特点。利用生成的序列对文本进行加密和解密运算。</p>
 <h1 id="三、实验环境"><a href="#三、实验环境" class="headerlink" title="三、实验环境"></a>三、实验环境</h1><p>clion</p>
 <h1 id="四、实验内容"><a href="#四、实验内容" class="headerlink" title="四、实验内容"></a>四、实验内容</h1><p>给定的 LFSR 结构如图，程序完成功能：</p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/1.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/1.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/1.png"></p>
 <p>（1）由给定的初始状态序列生成密钥序列<br>（2）选择进行文件加密还是解密<br>（3）如果选择文件加密，则从 in.txt 中读取明文，用密钥流序列进行加密，密<br>文保存于 out.txt 中；如果选择文件解密，则从 out.txt 中读取密文，用密钥流序列进<br>行解密，密文保存于 in.txt 中。</p>
 <h1 id="五、算法描述及实验步骤"><a href="#五、算法描述及实验步骤" class="headerlink" title="五、算法描述及实验步骤"></a>五、算法描述及实验步骤</h1><p>$$a_{n+t}=c_na_t\oplus c_{n-1}a_{t+1}\oplus….\oplus c_1a_{n+t-1},\ t=1,2,3..$$</p>
 <p>该实验以五级为例，n=5，代入公式，根据图中的异或关系得到</p>
@@ -501,16 +501,16 @@
 <p>根据该公式，生成密钥序列</p>
 <p>$$a_6,a_7,a_8……….$$</p>
 <p>流密码的操作原理，将明文划分为字符或编码的基本单元。每个字符八字节，每个字符分别与密钥流进行加密。例如把字符转换为ascii码的二进制形式然后与随机密钥流进行异或运算，并输出结果</p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/2.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/2.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/2.png"></p>
 <p>消息流: </p>
 <p>$$m=m_1m_2m_3……m_i\in M$$</p>
 <p>加密过后：</p>
 <p>$$c_i=E_k(m_i)$$</p>
-<h1 id="六、调试过程及结果（附截图）"><a href="#六、调试过程及结果（附截图）" class="headerlink" title="六、调试过程及结果（附截图）"></a>六、调试过程及结果（附截图）</h1><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/3.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/3.png" srcset="data:image/png;base64,666"></p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/4.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/4.png" srcset="data:image/png;base64,666"></p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/5.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/5.png" srcset="data:image/png;base64,666"></p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/6.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/6.png" srcset="data:image/png;base64,666"></p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/7.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/7.png" srcset="data:image/png;base64,666"></p>
+<h1 id="六、调试过程及结果（附截图）"><a href="#六、调试过程及结果（附截图）" class="headerlink" title="六、调试过程及结果（附截图）"></a>六、调试过程及结果（附截图）</h1><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/3.png"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/4.png"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/5.png"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/6.png"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/7.png"></p>
 <h1 id="七、总结体会"><a href="#七、总结体会" class="headerlink" title="七、总结体会"></a>七、总结体会</h1><p>❓代码如何将数字化的明文与流密钥异或成密文？</p>
 <p>‼️将明文划分为字符或编码的基本单元。每个字符八字节，每个字符分别与密钥流进行加密。例如把字符转换为ascii码的二进制形式然后与随机密钥流进行异或运算，并输出结果</p>
 <h1 id="八、源代码"><a href="#八、源代码" class="headerlink" title="八、源代码"></a>八、源代码</h1><pre><code class="C++">#include&lt;iostream&gt;
@@ -651,7 +651,7 @@ int main()
           
           >
           
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png">
           
         </a>
       
@@ -663,7 +663,7 @@ int main()
           
           >
           
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png">
           
         </a>
       
@@ -675,7 +675,7 @@ int main()
           
           >
           
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png">
           
         </a>
       
@@ -1108,33 +1108,6 @@ var loadCSS = function( href, before, media, attributes ){
 </script>
 
 
-
-
-  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
-<script>
-  // https://www.npmjs.com/package/vanilla-lazyload
-  // Set the options globally
-  // to make LazyLoad self-initialize
-  window.lazyLoadOptions = {
-    elements_selector: ".lazyload",
-    threshold: 0
-  };
-  // Listen to the initialization event
-  // and get the instance of LazyLoad
-  window.addEventListener(
-    "LazyLoad::Initialized",
-    function (event) {
-      window.lazyLoadInstance = event.detail.instance;
-    },
-    false
-  );
-  document.addEventListener('DOMContentLoaded', function () {
-    lazyLoadInstance.update();
-  });
-  document.addEventListener('pjax:complete', function () {
-    lazyLoadInstance.update();
-  });
-</script>
 
 
 
