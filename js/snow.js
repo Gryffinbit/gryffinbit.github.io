@@ -3,17 +3,17 @@ $(function (){
 	documentHeight 	= $(document).height(),
 	documentWidth	= $(document).width(),
 	options = {
-		minSize		: 20,
-		maxSize		: 40,
-		newOn		: 1000,
+		minSize		: 30,
+		maxSize		: 50,   
+		newOn		: 700,   /*雪花密集程度*/
 		flakeColor	: "#AFDAEF" /* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */
 	};
 	var interval= setInterval( function(){
-	var startPositionLeft = Math.random() * documentWidth+200,
+	var startPositionLeft = Math.random() * documentWidth - 100,
 	startOpacity = 0.5 + Math.random(),
 	sizeFlake = options.minSize + Math.random() * options.maxSize,
-	endPositionTop = documentHeight + 200 ,
-	endPositionLeft = startPositionLeft  + Math.random() * 500,
+	endPositionTop = documentHeight + 2000 ,
+	endPositionLeft = startPositionLeft - 500 + Math.random() * 500,
 	durationFall = documentHeight * 10 + Math.random() * 5000;
 	$flake.clone().appendTo('body').css({
 		left: startPositionLeft,
