@@ -3,9 +3,9 @@ $(function (){
 	documentHeight 	= $(document).height(),
 	documentWidth	= $(document).width(),
 	options = {
-		minSize		: 30,
-		maxSize		: 60,
-		newOn		: 200,
+		minSize		: 25,
+		maxSize		: 50,
+		newOn		: 400,
 		flakeColor	: "#AFDAEF" /* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */
 	};
 	var interval= setInterval( function(){
