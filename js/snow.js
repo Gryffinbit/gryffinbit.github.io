@@ -4,8 +4,8 @@ $(function (){
 	documentHeight 	= $(document).height(),
 	documentWidth	= $(document).width(),
 	options = {
-		minSize		: 10,
-		maxSize		: 20,
+		minSize		: 20,
+		maxSize		: 40,
 		newOn		: 1000,
 		flakeColor	: "#AFDAEF" /* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */
 	};
@@ -24,7 +24,7 @@ $(function (){
 	}).animate({
 		top: endPositionTop,
 		left: endPositionLeft,
-		opacity: 0.2
+		opacity: 0.3
 	},durationFall,'linear',function(){
 		$(this).remove()
 	});
