@@ -517,8 +517,8 @@
 <p>如果矩阵可逆，那么它的逆矩阵和它的伴随矩阵之间只差一个系数。</p>
 <p><em>定义5</em>5的矩阵。用d来表示a、b的最大公约数。其中a代表的是|A|,b代表的是N。 为保证A是可逆矩阵。class Hill_Cipher 的目的，生成满足可逆条件的矩阵。根据加密算法对明文进行加密。*</p>
 <hr>
-<h2 id="六、调试过程及结果（附截图）"><a href="#六、调试过程及结果（附截图）" class="headerlink" title="六、调试过程及结果（附截图）"></a>六、调试过程及结果（附截图）</h2><h3 id="6-1单表代换"><a href="#6-1单表代换" class="headerlink" title="6.1单表代换"></a>6.1单表代换</h3><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/1.png"></p>
-<h3 id="6-2多表代换"><a href="#6-2多表代换" class="headerlink" title="6.2多表代换"></a>6.2多表代换</h3><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled.png"></p>
+<h2 id="六、调试过程及结果（附截图）"><a href="#六、调试过程及结果（附截图）" class="headerlink" title="六、调试过程及结果（附截图）"></a>六、调试过程及结果（附截图）</h2><h3 id="6-1单表代换"><a href="#6-1单表代换" class="headerlink" title="6.1单表代换"></a>6.1单表代换</h3><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/1.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/1.png" srcset="data:image/png;base64,666"></p>
+<h3 id="6-2多表代换"><a href="#6-2多表代换" class="headerlink" title="6.2多表代换"></a>6.2多表代换</h3><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled.png" srcset="data:image/png;base64,666"></p>
 <hr>
 <h2 id="七、总结体会"><a href="#七、总结体会" class="headerlink" title="七、总结体会"></a>七、总结体会</h2><h3 id="7-1单表代换"><a href="#7-1单表代换" class="headerlink" title="7.1单表代换"></a>7.1单表代换</h3><p><strong>❓❓代码如何从输入的字符转换为可处理的数字？</strong></p>
 <p>‼️通过ascii码的转换：如char A = ‘65’  加密时，进行逐位的循环操作。字母控制在A～Z</p>
@@ -1058,7 +1058,7 @@ int main()
           
           >
           
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png">
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
           
         </a>
       
@@ -1070,7 +1070,7 @@ int main()
           
           >
           
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png">
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
           
         </a>
       
@@ -1082,7 +1082,7 @@ int main()
           
           >
           
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png">
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
           
         </a>
       
@@ -1513,6 +1513,33 @@ var loadCSS = function( href, before, media, attributes ){
 </script>
 
 
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
 
 
 
