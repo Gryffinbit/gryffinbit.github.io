@@ -12,9 +12,9 @@ $(function (){
 	var startPositionLeft = Math.random() * documentWidth - 100,
 	startOpacity = 0.5 + Math.random(),
 	sizeFlake = options.minSize + Math.random() * options.maxSize,
-	endPositionTop = documentHeight - 200,
-	endPositionLeft = startPositionLeft - 500 + Math.random() * 500,
-	durationFall = documentHeight * 10 + Math.random() * 5000;
+	endPositionTop = documentHeight ,
+	endPositionLeft = startPositionLeft  + Math.random() * 5000,
+	durationFall = documentHeight * 100 + Math.random() * 5000;
 	$flake.clone().appendTo('body').css({
 		left: startPositionLeft,
 		opacity: startOpacity,
