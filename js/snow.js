@@ -10,11 +10,11 @@ $(function (){
 		flakeColor	: "#AFDAEF" /* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */
 	};
 	var interval= setInterval( function(){
-	var startPositionLeft = Math.random() * documentWidth - 100,
+	var startPositionLeft = Math.random() * documentWidth ,
 	startOpacity = 0.5 + Math.random(),
 	sizeFlake = options.minSize + Math.random() * options.maxSize,
-	endPositionTop = documentHeight - 200,
-	endPositionLeft = startPositionLeft - 500 + Math.random() * 500,
+	endPositionTop = documentHeight ,
+	endPositionLeft = startPositionLeft  + Math.random() * 500,
 	durationFall = documentHeight * 10 + Math.random() * 5000;
 	$flake.clone().appendTo('body').css({
 		left: startPositionLeft,
