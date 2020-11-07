@@ -2,14 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://gryffinbit.top/category/index.html</loc>
+    <loc>https://gryffinbit.top/tags/index.html</loc>
     
     <lastmod>2020-11-07</lastmod>
     
   </url>
   
   <url>
-    <loc>https://gryffinbit.top/tag/index.html</loc>
+    <loc>https://gryffinbit.top/categories/index.html</loc>
+    
+    <lastmod>2020-11-07</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://gryffinbit.top/2020/11/07/hello/</loc>
     
     <lastmod>2020-11-07</lastmod>
     

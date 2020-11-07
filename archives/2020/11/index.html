@@ -5,6 +5,8 @@
   <!-- SEO相关 -->
   
     
+      <meta name="robots" content="noindex,follow">
+    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -19,9 +21,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>单表代换/多表代换实验 - Gryffinbit</title>
-  
-    <meta name="keywords" content="古典密码">
+  <title>归档：2020/11 - Gryffinbit</title>
   
 
   
@@ -90,7 +90,7 @@
   
   
 
-<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -341,7 +341,7 @@
     <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper post dock' style="display: none;">
+        <div id="half" class='cover-wrapper  dock' style="display: ;">
           
             <div id='cover-backstretch'></div>
           
@@ -434,780 +434,65 @@
         
 
 <div class='l_main'>
-  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
-  
-
-
-  
-  <div class="article-meta" id="top">
+	
+		
+  <section class="post-list">
     
-    
-    
-      <h1 class="title">
-        单表代换/多表代换实验
-      </h1>
-      <div class='new-meta-box'>
-        
-          
-            
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Gryffinbit</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  <div class='new-meta-item category'>
-    <a class='notlink'>
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="/categories/%E5%BA%94%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6/">应用密码学</a>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年8月19日</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  <div class="new-meta-item browse leancloud">
-    <a class='notlink'>
       
-      <div id="lc-pv" data-title="单表代换/多表代换实验" data-path="/2020/08/19/%E5%8D%95%E8%A1%A8%E5%A4%9A%E8%A1%A8%E4%BB%A3%E6%8D%A2%E5%AE%9E%E9%AA%8C/">
-        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
-        次浏览
-      </div>
-    </a>
-  </div>
-
-
+        
           
+        
+      
+    
+    
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2020/11/07/hello/">
+        hello
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2020-11-07</time>
         
       </div>
-    
-  </div>
-
-
-  
-  <p>#单表代换、多表代换 实验</p>
-<h2 id="一、实验题目"><a href="#一、实验题目" class="headerlink" title="一、实验题目"></a>一、实验题目</h2><p>单表代换和多表代换</p>
-<hr>
-<h2 id="二、实验目的和要求"><a href="#二、实验目的和要求" class="headerlink" title="二、实验目的和要求"></a>二、实验目的和要求</h2><p>通过实验熟练掌握凯撒密码和Hill密码算法原理，编程实现加密算法，熟悉模运算和扩展欧几里德算法，提高C++程序设计和密码运算基本能力。</p>
-<p><strong>单表代换</strong><br>编程实现凯撒密码，输入任意一段明文，对其加密并输出密文。<br><strong>多表代换</strong><br>编程实现 Hill 加密算法，输入一段无空格的五个小写字母明文，对其加密并输<br>出密文。</p>
-<hr>
-<h2 id="三、实验环境"><a href="#三、实验环境" class="headerlink" title="三、实验环境"></a>三、实验环境</h2><p>Clion、macOS Catalina 10.15.6</p>
-<hr>
-<h2 id="四、实验内容"><a href="#四、实验内容" class="headerlink" title="四、实验内容"></a>四、实验内容</h2><h3 id="4-1单表代换"><a href="#4-1单表代换" class="headerlink" title="4.1单表代换:"></a>4.1单表代换:</h3><p>凯撒密码密钥为 3，从文本文件中读取明文，用密钥加密，密文保存于对应密<br>文数组。</p>
-<h3 id="4-2多表代换"><a href="#4-2多表代换" class="headerlink" title="4.2多表代换:"></a>4.2多表代换:</h3><p>1.密钥生成：Hill 加密的密钥矩阵 K 随机生成，需要进行在模 26 的意义下进行<br>可逆性检测，这里可以用求行列式模 26 的逆元。<br>2.读取明文并预处理：输入的明文是 5 个小写字母，彼此之间没有空格，而后<br>放入 5 个元素的明文数组。<br>3.加密：将密钥矩阵与明文数组左乘，在模 26 的意义下，生成密文数组。</p>
-<p>4.解密：将密钥矩阵的伴随阵 D 求出，左乘密文数组，再乘密钥矩阵行列式的<br>逆，从而完成逆矩阵左乘，都在模 26 的意义下。</p>
-<h2 id="五、算法描述及实验步骤"><a href="#五、算法描述及实验步骤" class="headerlink" title="五、算法描述及实验步骤"></a>五、算法描述及实验步骤</h2><h3 id="5-1单表代换"><a href="#5-1单表代换" class="headerlink" title="5.1单表代换"></a>5.1单表代换</h3><p><em>以<strong>凯撒密码</strong>为例：</em></p>
-<p><em>加解密原理</em></p>
-<p>$$c=E_{key}(m)\equiv m+key(mod\ 26) , 0\leq m \leq25\ \ \ 加密时，每个字母后移key位$$</p>
-<p>$$m=D_{key}(c)\equiv c-key(mod\ 26) , 0\leq c \leq25\ \ \ \ 解密时，每个字母前移key位$$</p>
-<p><em>建立一个plaintext.txt文件，用来存放需要加密的明文m。 利用fgets函数，来将文件中的字符读取到message中。逐字读取明文长短，并且复制出明文内容，将其打印出来。输入key。进行逐位循环。加密：c=m+key(mod 26)。 将加密结果存储在ciphertext中。 并且打印出来。</em></p>
-<h3 id="5-2多表代换"><a href="#5-2多表代换" class="headerlink" title="5.2多表代换"></a>5.2多表代换</h3><p><strong><em>以Hillcipher为例：</em></strong></p>
-<p><em>加密原理：</em></p>
-<p>将明文M，分成由n个字母构成的分组，对各个分组M加密：</p>
-<p>$$C_i \equiv AM_i+B(mod\ N),i=1,2,3..j$$</p>
-<p>(A,B)是密钥。A是 n*n的可逆矩阵。</p>
-<p>解密：</p>
-<p>$$M_i\equiv A^{-1}(C_i-B)(mod\ N),i=1,2,3..j$$</p>
-<p>为了满足可逆矩阵的条件：</p>
-<p>$$gcd(|A|,N)=1 \ \ \ \ \ \ \ |A|为行列式$$</p>
-<p>如果矩阵可逆，那么它的逆矩阵和它的伴随矩阵之间只差一个系数。</p>
-<p><em>定义5</em>5的矩阵。用d来表示a、b的最大公约数。其中a代表的是|A|,b代表的是N。 为保证A是可逆矩阵。class Hill_Cipher 的目的，生成满足可逆条件的矩阵。根据加密算法对明文进行加密。*</p>
-<hr>
-<h2 id="六、调试过程及结果（附截图）"><a href="#六、调试过程及结果（附截图）" class="headerlink" title="六、调试过程及结果（附截图）"></a>六、调试过程及结果（附截图）</h2><h3 id="6-1单表代换"><a href="#6-1单表代换" class="headerlink" title="6.1单表代换"></a>6.1单表代换</h3><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/1.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/1.png" srcset="data:image/png;base64,666"></p>
-<h3 id="6-2多表代换"><a href="#6-2多表代换" class="headerlink" title="6.2多表代换"></a>6.2多表代换</h3><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled.png" srcset="data:image/png;base64,666"></p>
-<hr>
-<h2 id="七、总结体会"><a href="#七、总结体会" class="headerlink" title="七、总结体会"></a>七、总结体会</h2><h3 id="7-1单表代换"><a href="#7-1单表代换" class="headerlink" title="7.1单表代换"></a>7.1单表代换</h3><p><strong>❓❓代码如何从输入的字符转换为可处理的数字？</strong></p>
-<p>‼️通过ascii码的转换：如char A = ‘65’  加密时，进行逐位的循环操作。字母控制在A～Z</p>
-<pre><code class="cpp">/* 测试代码 */
-#include &lt;iostream&gt;
-#include &lt;stdio.h&gt;
-#include &lt;string.h&gt;
-using namespace std;
-int main()
-&#123;
-    char message[3]=&#123;&#39;A&#39;,&#39;B&#39;,&#39;C&#39;&#125;;
-    if (message[1]&gt;65)
-    cout&lt;&lt;message[1]&lt;&lt;endl;
-    return 0;
-&#125;
-</code></pre>
-<p><em>测试目的。可以根据char类型ascii来进行大小的比较。 若ascii码对应的数值大于int的数字，则输出该字母。 B对应66，所以大于65，会输出B</em></p>
-<h3 id="7-2多表代换"><a href="#7-2多表代换" class="headerlink" title="7.2多表代换"></a>7.2多表代换</h3><p>❓❓代码如何进行扩展欧几里德算法求逆元？</p>
-<p>‼️给定 a 和b。a 要有逆元 ， 那么gcd（ a ， b ) = 1假设a的逆元 为x ， 那么就有 a * x mod b = 1也就是 a * x + b * y = 1。其中 x 就是 a的逆元。</p>
-<pre><code class="cpp">#include &lt;iostream&gt;
-#include&lt;algorithm&gt;
-#include&lt;cstdio&gt;
-using namespace std;
-int x,y,q;
-void ex_Eulid(int a,int  b)&#123;
-    if(b==0)&#123;
-        x=1;y=0;q=a;
-    &#125;
-    else&#123;
-        ex_Eulid(b,a%b);
-        double temp=x;
-        x=y;y=temp-a/b*y;
-    &#125;
-&#125;
-int main() &#123;
-    int a,b;
-    cin&gt;&gt;a&gt;&gt;b;
-    if(a&lt;b)swap(a,b);
-    ex_Eulid(a,b);
-    printf(&quot;%d=(%d)*%d+(%d)*%d\n&quot;,q,x,a,y,b);
-    return 0;
-&#125;</code></pre>
-<hr>
-<h2 id="八、源程序附录"><a href="#八、源程序附录" class="headerlink" title="八、源程序附录"></a>八、源程序附录</h2><h3 id="8-1单表代换"><a href="#8-1单表代换" class="headerlink" title="8.1单表代换"></a>8.1单表代换</h3><pre><code class="cpp">#include &lt;iostream&gt;
-#include &lt;stdio.h&gt;
-#include &lt;string.h&gt;
-using namespace std;
-
-int main(int argc, char *argv[])
-&#123;
-    FILE *file1; //FILE* 指针作为文件句柄，是文件访问的唯一标识，它由fopen函数创建
-    char message[50],plaintext[50],ciphertext[50];  //定义字符数组，fgets读入数据。message明文
-    int i,lenthofmessage,key;
-
-    file1=fopen(&quot;plaintext.txt&quot;,&quot;r&quot;); //fopen打开文件成功，则返回一个有效的FILE*指针，否则返回空指针NULL
-    //FILE *fopen（文件名字符串，打开方式串）&quot;r&quot;或&quot;rt&quot;:正文文件只读方式打开
-    fgets(message,50,file1); //读入数据到message，指针指到file1，以执行打开file1的动作
-
-    printf(&quot;length of plaintext: %lu&quot;, strlen(message));   //定义为long unsigned类型，显示字符串的长度
-    lenthofmessage=strlen(message);  //将上一步得到的message的长度赋值给int型的lenthofmessage
-
-    strcpy(plaintext,message);  //strcpy的用法，将str2的字符串复制到str1中。 将message复制到plaintext中
-    printf(&quot;\nplaintext is:&quot;);
-    for (i=0;i&lt;lenthofmessage;i++)   printf(&quot;%c&quot;,plaintext[i]);  //按message的长度，逐字输出
-
-    printf(&quot;\nPlease input the key:&quot;);   //输入凯撒密码的密钥
-
-    scanf(&quot;%d&quot;,&amp;key);
-
-    i=0;
-    while (i&lt;lenthofmessage)     //逐位循环
-    &#123;
-        if (plaintext[i]&gt;=&#39;A&#39;&amp;&amp;plaintext[i]&lt;=&#39;Z&#39;)       //字母控制在A～Z
-            ciphertext[i]=&#39;A&#39;+(plaintext[i]-&#39;A&#39;+key)%26;   //加密：c=m+key(mod 26)
-
-        else if (plaintext[i]&gt;=&#39;a&#39;&amp;&amp;plaintext[i]&lt;=&#39;z&#39;)
-            ciphertext[i]=&#39;a&#39;+(plaintext[i]-&#39;a&#39;+key)%26;
-
-//            else if (plaintext[i]==&#39; &#39;)    ciphertext[i]=&#39; &#39;;
-        else ciphertext[i]=plaintext[i];
-        i++;
-    &#125;
-    ciphertext[i]=&#39;\0&#39;;
-
-    printf(&quot;\n&quot;);
-    printf(&quot;ciphertext:&quot;);
-    i=0;
-    for (i=0;i&lt;=lenthofmessage;i++)   printf(&quot;%c&quot;,ciphertext[i]);
-    fclose(file1);
-    getchar();
-    return 0;
-&#125;</code></pre>
-<h3 id="8-2多表代换"><a href="#8-2多表代换" class="headerlink" title="8.2多表代换"></a>8.2多表代换</h3><pre><code class="cpp">#include &lt;iostream&gt;
-#include &lt;string&gt;
-#include &lt;memory.h&gt;
-#include &lt;cstdlib&gt;
-#include &lt;ctime&gt;
-#include &lt;cstdio&gt;
-#include &lt;cmath&gt;
-using namespace std;
-
-//定义一些常变量
-const int M = 26;   //定义集合&#123;a,b,...,z&#125;的26个英文字母
-
-//行和列均为5
-const int ROW = 5;
-const int COL = 5;
-
-//定义5*5的加密矩阵
-int K[ROW][COL];
-
-//定义5*5的解密矩阵
-int D[ROW][COL];
-
-int P[ROW];  //明文单元
-int C[ROW];  //密文单元
-int F[ROW];  //密文解密后的单元
-
-//三元组gcd(a,b) = ax + by = d
-struct GCD
-&#123;
-    int x;
-    int y;
-    int d;
-&#125;;
-
-class Hill_Cipher
-&#123;
-public:
-    //产生随机矩阵
-    void random_Matrix();
-    //求矩阵的行列式
-    int Det(int matrix[ROW][ROW],int row);
-
-    //求两个数的最大公约数
-    int gcd(int a,int b);
-
-    /*
-     *判断矩阵K是否在模26的情况下可逆
-     *因为矩阵在模26的情形下存在可逆矩阵的充分必要条件是
-     *gcd(det K,26) = 1
-     */
-    bool Inverse(int matrix[ROW][ROW]);
-
-    //矩阵相乘
-    void multiphy(int matrix[ROW][ROW],int p[ROW],int row);
-
-    //求出伴随矩阵
-    void adjoint_matrix(int matrix[ROW][ROW],int row);
-
-    //将明文加密为密文
-    string encryption(string plaintext);
-
-    //将密文解密为明文(为了辨识清楚,我们统一以小写字母作为明文,大写字母作为密文)
-    string deciphering(string ciphertext);
-
-    //欧几里得算法求模的逆
-    GCD extended_Euclid(int a,int b);
-
-    //模逆运算
-    int inverse(int a,int m);
-
-    //由于C++不存在负数取模的内置函数,现在自己设定一个
-    //定义一个模M的值
-    int Mod(int a);
-&#125;;
-
-void Hill_Cipher::random_Matrix()
-&#123;
-    int i,j;
-    for(i = 0;i &lt; ROW;i++)
-    &#123;
-        for(j = 0;j &lt; COL;j++)
-        &#123;
-            K[i][j] = rand() % 26;  //产生一个5*5模26的矩阵
-        &#125;
-    &#125;
-    cout &lt;&lt; &quot;随机产生5*5的矩阵:&quot; &lt;&lt; endl;
-    for(i = 0;i &lt; ROW;i++)
-    &#123;
-        for(j = 0;j &lt; COL;j++)
-        &#123;
-            printf(&quot;%2d  &quot;,K[i][j]);
-        &#125;
-        cout &lt;&lt; endl;
-    &#125;
-&#125;
-
-//求矩阵的行列式
-int Hill_Cipher::Det(int matrix[ROW][ROW],int row)
-&#123;
-    int i,j;
-    int cofa[ROW][ROW];            //用于存放余子阵
-    int l;   //l为所递归的余子阵的行
-    int p = 0,q = 0;
-    int sum=0;
-
-    //由于行和列相同(方阵),所以行列式的值一定存在,故不需要判断是否为方阵
-
-    //递归基
-    if(row == 1)
-        return matrix[0][0];
-    for(i = 0;i &lt; row; i++)
-    &#123;
-        for(l = 0;l &lt; row - 1;l++)
-        &#123;
-            if(l &lt; i)
-                p=0;
-            else
-                p=1;
-            for(j = 0;j&lt; row - 1;j++)
-            &#123;
-                cofa[l][j] = matrix[l + p][j + 1];
-            &#125;
-        &#125;
-        //相当于(-1)^i
-        if(i % 2 == 0)
-            q=1;
-        else
-            q=(-1);
-        sum = sum + matrix[i][0] * q * Det(cofa,row - 1);
-    &#125;
-    return sum;
-&#125;
-
-//求两个数的最大公约数
-int Hill_Cipher::gcd(int a,int b)
-&#123;
-    int temp;
-    //交换两个数的大小,使得a为较大数
-    if(a &lt; b)
-    &#123;
-        temp = a;
-        a = b;
-        b = temp;
-    &#125;
-    while(a % b)
-    &#123;
-        temp = b;
-        b = a % b;
-        a = temp;
-    &#125;
-    return b;
-&#125;
-
-/*
- *判断矩阵K是否在模26的情况下可逆
- *因为矩阵在模26的情形下存在可逆矩阵的充分必要条件是
- *gcd(det K,26) = 1
- */
-bool Hill_Cipher::Inverse(int matrix[ROW][ROW])
-&#123;
-    if(gcd(Det(matrix,ROW),M) == 1)
-        return true;
-    else
-        return false;
-&#125;
-
-void Hill_Cipher::multiphy(int matrix[ROW][ROW],int p[ROW],int row)
-&#123;
-    int i,j;
-    //先将密文单元清零
-    memset(C,0,sizeof(C));
-    for(i = 0;i &lt; ROW;i++)
-    &#123;
-        for(j = 0;j &lt; ROW;j++)
-        &#123;
-            C[i] += P[j] * K[j][i];
-        &#125;
-    &#125;
-&#125;
-
-//将明文加密为密文
-string Hill_Cipher::encryption(string plaintext)
-&#123;
-    int i;
-    string ciphertext;
-    //将字符串转化为明文数组
-    for(i = 0;i &lt; ROW;i++)
-    &#123;
-        P[i] = plaintext[i] - &#39;a&#39;;
-    &#125;
-    multiphy(K,P,ROW);
-    //将密文数组转化为密文
-    for(i = 0;i &lt; ROW;i++)
-        //这里先将其模26,再翻译为对应的字母
-    &#123;
-        C[i] =Mod(C[i]);
-        ciphertext += C[i] + &#39;A&#39;;
-    &#125;
-    return ciphertext;
-&#125;
-
-//求出伴随矩阵
-void Hill_Cipher::adjoint_matrix(int matrix[ROW][ROW],int row)
-&#123;
-    int i,j,k,l;
-    int p,q;
-    p = q = 0;
-    int temp[ROW][ROW];
-    for(i = 0;i &lt; ROW;i++)
-    &#123;
-        for(j = 0;j &lt; ROW;j++)
-        &#123;
-            for(k = 0;k &lt; ROW - 1;k++)
-            &#123;
-                if(k &lt; i)
-                    p = 0;
-                else
-                    p = 1;
-                for(l = 0;l &lt; ROW - 1;l++)
-                &#123;
-                    if(l &lt; j)
-                        q = 0;
-                    else
-                        q = 1;
-                    temp[k][l] = matrix[k+p][l+q];
-                &#125;
-            &#125;
-            D[j][i] = (int)pow(-1,(double)i+j)*Det(temp,ROW-1);
-            D[j][i] = Mod(D[j][i]);
-        &#125;
-    &#125;
-&#125;
-
-//将密文解密为明文(为了辨识清楚,我们统一以小写字母作为明文,大写字母作为密文)
-string Hill_Cipher::deciphering(string ciphertext)
-&#123;
-    //求出矩阵的逆
-    string text;
-    int determinant = Det(K,ROW);
-    int inver = inverse(determinant,26);
-    adjoint_matrix(K,ROW);   //伴随矩阵
-    cout &lt;&lt; &quot;行列式的值: &quot; &lt;&lt; determinant &lt;&lt; endl;
-    int i,j;
-    memset(F,0,sizeof(F));
-    for(i = 0;i &lt; ROW;i++)
-    &#123;
-        for(j = 0;j &lt; ROW;j++)
-        &#123;
-            F[i] += C[j] * D[j][i];
-        &#125;
-        F[i] *= inver;
-        F[i] = Mod(F[i]);   //算到的结果要模去26
-    &#125;
-    for(i = 0;i &lt; ROW;i++)
-        text += F[i] + &#39;a&#39;;
-    return text;
-&#125;
-
-GCD Hill_Cipher::extended_Euclid(int a,int b)
-&#123;
-    GCD aa,bb;
-    if(b == 0)
-    &#123;
-        aa.x = 1;
-        aa.y = 0;
-        aa.d = a;
-        return aa;
-    &#125;
-    else
-    &#123;
-        bb = extended_Euclid(b,a%b);
-        aa.x = bb.y;
-        aa.y = bb.x - (a / b) * bb.y;
-        aa.d = bb.d;
-    &#125;
-    return aa;
-&#125;
-
-int Hill_Cipher::inverse(int a,int m)
-&#123;
-    GCD aa;
-    aa = extended_Euclid(a,m);
-    return aa.x;
-&#125;
-
-int Hill_Cipher::Mod(int a)
-&#123;
-    return a &gt;= 0 ? a % M : (M + a % M);
-&#125;
-
-int main()
-&#123;
-    int i,j;
-    Hill_Cipher hh;
-    cout &lt;&lt; &quot;使用希尔密码进行消息的加解密:&quot; &lt;&lt; endl;
-
-    //srand()函数产生一个以当前时间开始的随机种子.以保证每次产生的随机数矩阵都不相同
-    srand((unsigned)time(0));
-    hh.random_Matrix();
-    while(!hh.Inverse(K))
-    &#123;
-        cout &lt;&lt; &quot;该矩阵模26不可逆,不可以作为密钥!&quot; &lt;&lt; endl;
-        cout &lt;&lt; endl;
-        hh.random_Matrix();
-    &#125;
-    cout &lt;&lt; &quot;该矩阵模26可逆,因此可以作为密钥.&quot; &lt;&lt; endl;
-    cout &lt;&lt; endl;
-
-    //利用所选密钥，对给定的5元明文信息进行加解密
-    string plaintext,ciphertext;
-    cout &lt;&lt; &quot;请输入5元明文信息，仅支持小写字母，无空格:&quot; &lt;&lt; endl;
-    cin &gt;&gt; plaintext;
-    ciphertext = hh.encryption(plaintext);
-    cout &lt;&lt; endl;
-    cout &lt;&lt; &quot;该明文通过希尔密码法加密过后,输出的密文消息以大写方式输出为:&quot; &lt;&lt; endl;
-    cout &lt;&lt; ciphertext &lt;&lt; endl;
-    cout &lt;&lt; endl;
-
-    cout &lt;&lt; &quot;***输入0:退出          ***&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;***输入1:查看明文空间对***&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;***输入2:查看密文空间对***&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;***输入3:查看密钥      ***&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;***输入4:将消息解密    ***&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;***输入5:查看菜单      ***&quot; &lt;&lt; endl;
-
-    char c;
-    while(cin &gt;&gt; c)
-    &#123;
-        if(c == &#39;0&#39;)
-        &#123;
-            cout &lt;&lt; endl;
-            cout &lt;&lt; &quot;退出&quot; &lt;&lt; endl;
-            break;
-        &#125;
-        else if(c == &#39;1&#39;)
-        &#123;
-            cout &lt;&lt; &quot;明文空间:&quot; &lt;&lt; endl;
-            for(i = 0;i &lt; ROW;i++)
-                cout &lt;&lt; P[i] &lt;&lt; &quot;  &quot;;
-            cout &lt;&lt; endl;
-            cout &lt;&lt; endl;
-        &#125;
-        else if(c == &#39;2&#39;)
-        &#123;
-            cout &lt;&lt; &quot;密文空间:&quot; &lt;&lt; endl;
-            for(i = 0;i &lt; ROW;i++)
-                cout &lt;&lt; C[i] &lt;&lt; &quot;  &quot;;
-            cout &lt;&lt; endl;
-            cout &lt;&lt; endl;
-        &#125;
-        else if(c == &#39;3&#39;)
-        &#123;
-            cout &lt;&lt; &quot;密钥:&quot; &lt;&lt; endl;
-            for(i = 0;i &lt; ROW;i++)
-            &#123;
-                for(j = 0;j &lt; ROW;j++)
-                &#123;
-                    printf(&quot;%2d  &quot;,K[i][j]);
-                &#125;
-                cout &lt;&lt; endl;
-            &#125;
-            cout &lt;&lt; endl;
-        &#125;
-        else if(c == &#39;4&#39;)
-        &#123;
-            hh.adjoint_matrix(K,ROW);
-            string ss;
-            ss = hh.deciphering(ciphertext);
-            cout &lt;&lt; &quot;该密文解密过后,显示的原来的明文消息:&quot; &lt;&lt; endl;
-            cout &lt;&lt; ss &lt;&lt; endl;
-            cout &lt;&lt; endl;
-        &#125;
-        else
-        &#123;
-            cout &lt;&lt; &quot;***输入0:退出          ***&quot; &lt;&lt; endl;
-            cout &lt;&lt; &quot;***输入1:查看明文空间对***&quot; &lt;&lt; endl;
-            cout &lt;&lt; &quot;***输入2:查看密文空间对***&quot; &lt;&lt; endl;
-            cout &lt;&lt; &quot;***输入3:查看密钥      ***&quot; &lt;&lt; endl;
-            cout &lt;&lt; &quot;***输入4:将消息解密    ***&quot; &lt;&lt; endl;
-            cout &lt;&lt; &quot;***输入5:查看菜单      ***&quot; &lt;&lt; endl;
-        &#125;
-    &#125;
-    return 0;
-&#125;</code></pre>
-
-  
-  
-    
-    <div class='footer'>
       
-      
-      
-        <div class='copyright'>
-          <blockquote>
-            
-              
-                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
-
-              
-            
-              
-                <p>本文永久链接是：<a href=https://gryffinbit.top/2020/08/19/%E5%8D%95%E8%A1%A8%E5%A4%9A%E8%A1%A8%E4%BB%A3%E6%8D%A2%E5%AE%9E%E9%AA%8C/>https://gryffinbit.top/2020/08/19/%E5%8D%95%E8%A1%A8%E5%A4%9A%E8%A1%A8%E4%BB%A3%E6%8D%A2%E5%AE%9E%E9%AA%8C/</a></p>
-              
-            
-          </blockquote>
+        <div>
+          <a class='readmore' href='/2020/11/07/hello/'>
+            阅读全文
+          </a>
         </div>
       
-      
     </div>
   
-  
-    
 
-
-  <div class='article-meta' id="bottom">
-    <div class='new-meta-box'>
-      
-        
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-07T10:21:26+08:00">
-  <a class='notlink'>
-    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年11月7日</p>
-  </a>
 </div>
 
+          </div>
         
       
-        
-          
+    
+  </section>
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>古典密码</p></a></div>
-
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
     
-      
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gryffinbit.top/2020/08/19/%E5%8D%95%E8%A1%A8%E5%A4%9A%E8%A1%A8%E4%BB%A3%E6%8D%A2%E5%AE%9E%E9%AA%8C/&title=单表代换/多表代换实验 - Gryffinbit&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://gryffinbit.top/2020/08/19/%E5%8D%95%E8%A1%A8%E5%A4%9A%E8%A1%A8%E4%BB%A3%E6%8D%A2%E5%AE%9E%E9%AA%8C/&title=单表代换/多表代换实验 - Gryffinbit&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://gryffinbit.top/2020/08/19/%E5%8D%95%E8%A1%A8%E5%A4%9A%E8%A1%A8%E4%BB%A3%E6%8D%A2%E5%AE%9E%E9%AA%8C/&title=单表代换/多表代换实验 - Gryffinbit&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-    
-      
-    
-  </div>
-</div>
-
-
-
-        
-      
-    </div>
-  </div>
-
-
-  
   
 
-  
-    <div class="prev-next">
-      
-        <a class='prev' href='/2020/08/20/LSFR%E6%B5%81%E5%AF%86%E7%A0%81/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>LSFR流密码实验</p>
-          <p class='content'>LFSR流密码 实验一、实验题目LFSR流密码
-二、实验目的和要求编程实现简单地线性反馈移位寄存器，理解其工作原理，掌握流密码的算法结构和加解密过程。利用C++语言实现LFSR。通过不同初始状态...</p>
-        </a>
-      
-      
-    </div>
-  
-</article>
 
-
-  
-
-  <article class="post white-box reveal shadow" id="comments">
-    <p ct><i class='fas fa-comments'></i> 评论</p>
-    
-    <div id="valine_container" class="valine_thread">
-  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
-</div>
-
-  </article>
-
-
-
-
-
-  <script>
-  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    // 文章章节标题不能为 “MathJax” ，否则会报错。
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-
-
-
-
-
-
-
+	
 </div>
 <aside class='l_side'>
   
@@ -1215,28 +500,131 @@ int main()
     
     
 
+<section class="widget blogger shadow desktop mobile">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='/about/'>
+          <img no-lazy src='https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/photo.jpg'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+          <h2>Gryffinbit</h2>
+        
+        
+          <p>兔子</p>
 
+        
+        
+          <p>凡殺不死我的，必使我更強大。</p>
 
-  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/img/QQ.jpg"
+              class="social fab fa-qq flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;tf=1&amp;source=mailto&amp;to=Gryffinbit@Gmail.com"
+              class="social fas fa-envelope-open flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/Gryffinbit/"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://blog.csdn.net/Gryffinbit"
+              class="social fab fa-cuttlefish flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget category shadow desktop">
     
   <header>
     
-      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
     
   </header>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%AE%9E%E9%AA%8C%E9%A2%98%E7%9B%AE"><span class="toc-text">一、实验题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84%E5%92%8C%E8%A6%81%E6%B1%82"><span class="toc-text">二、实验目的和要求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83"><span class="toc-text">三、实验环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-text">四、实验内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1%E5%8D%95%E8%A1%A8%E4%BB%A3%E6%8D%A2"><span class="toc-text">4.1单表代换:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2%E5%A4%9A%E8%A1%A8%E4%BB%A3%E6%8D%A2"><span class="toc-text">4.2多表代换:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E7%AE%97%E6%B3%95%E6%8F%8F%E8%BF%B0%E5%8F%8A%E5%AE%9E%E9%AA%8C%E6%AD%A5%E9%AA%A4"><span class="toc-text">五、算法描述及实验步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1%E5%8D%95%E8%A1%A8%E4%BB%A3%E6%8D%A2"><span class="toc-text">5.1单表代换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2%E5%A4%9A%E8%A1%A8%E4%BB%A3%E6%8D%A2"><span class="toc-text">5.2多表代换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E8%B0%83%E8%AF%95%E8%BF%87%E7%A8%8B%E5%8F%8A%E7%BB%93%E6%9E%9C%EF%BC%88%E9%99%84%E6%88%AA%E5%9B%BE%EF%BC%89"><span class="toc-text">六、调试过程及结果（附截图）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1%E5%8D%95%E8%A1%A8%E4%BB%A3%E6%8D%A2"><span class="toc-text">6.1单表代换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2%E5%A4%9A%E8%A1%A8%E4%BB%A3%E6%8D%A2"><span class="toc-text">6.2多表代换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E6%80%BB%E7%BB%93%E4%BD%93%E4%BC%9A"><span class="toc-text">七、总结体会</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1%E5%8D%95%E8%A1%A8%E4%BB%A3%E6%8D%A2"><span class="toc-text">7.1单表代换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2%E5%A4%9A%E8%A1%A8%E4%BB%A3%E6%8D%A2"><span class="toc-text">7.2多表代换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB%E3%80%81%E6%BA%90%E7%A8%8B%E5%BA%8F%E9%99%84%E5%BD%95"><span class="toc-text">八、源程序附录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1%E5%8D%95%E8%A1%A8%E4%BB%A3%E6%8D%A2"><span class="toc-text">8.1单表代换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2%E5%A4%9A%E8%A1%A8%E4%BB%A3%E6%8D%A2"><span class="toc-text">8.2多表代换</span></a></li></ol></li></ol>
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%BA%94%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6/" href="/categories/%E5%BA%94%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6/"
+            id="categoriesE5BA94E794A8E5AF86E7A081E5ADA6"
+            ><div class='name'>应用密码学</div><div class='badge'>(2)</div></a></li>
+        
+      </ul>
     </div>
   </section>
 
 
   
 
+  
+    
+    
+  
+
+  <section class="widget tagcloud shadow desktop mobile">
+    
+  <header>
+    
+      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <a href="/tags/%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81/" style="font-size: 14px; color: #999">古典密码</a> <a href="/tags/%E6%B5%81%E5%AF%86%E7%A0%81/" style="font-size: 14px; color: #999">流密码</a>
+    </div>
+  </section>
+
+
+  
+
+  
+
 
 </aside>
-
 
 
         
@@ -1246,14 +634,14 @@ int main()
 
 <script>
   window.pdata={}
-  pdata.ispage=true;
-  pdata.postTitle="单表代换/多表代换实验";
+  pdata.ispage=false;
+  pdata.postTitle="";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.add("show");
+  l_header.classList.remove("show");
   
 </script>
 
