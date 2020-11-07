@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-    
+    <meta name="robots" content="noindex,nofollow">
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -19,7 +19,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>Gryffinbit</title>
+  <title>404 Not Found - Gryffinbit</title>
   
 
   
@@ -88,15 +88,13 @@
   
   
 
-<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
       <p class="title"></p>
       <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
         <li><a id="s-comment" class="fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
-        
-          <li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
       </ul>
     </div>
@@ -339,7 +337,7 @@
     <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper page dock' style="display: none;">
+        <div id="half" class='cover-wrapper page dock' style="display: ;">
           
             <div id='cover-backstretch'></div>
           
@@ -431,7 +429,7 @@
       <div class='body-wrapper' id="pjax-container">
         
 
-<div class='l_main'>
+<div class='l_main no_sidebar'>
   <article class="article post white-box reveal md shadow article-type-page" id="page" itemscope itemprop="blogPost">
   
 
@@ -445,16 +443,7 @@
 
 
   
-  <pre><code>cover: true
-robots: noindex,nofollow
-sitemap: false
-seo_title: 404 Not Found
-bottom_meta: false
-sidebar: []
-valine:
-  path: /404.html
-  placeholder: 请留言告诉我您要访问哪个页面找不到了</code></pre>
-<p class='p center huge'>404</p>
+  <p class='p center huge'>404</p>
 <p class='p center bold'>很抱歉，您访问的页面不存在</p>
 <p class='p center small'>可能是输入地址有误或该地址已被删除</p>
   
@@ -465,73 +454,6 @@ valine:
 
   <div class='article-meta' id="bottom">
     <div class='new-meta-box'>
-      
-        
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-07T12:56:36+08:00">
-  <a class='notlink'>
-    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年11月7日</p>
-  </a>
-</div>
-
-        
-      
-        
-          
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gryffinbit.top/404.html&title= - Gryffinbit&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://gryffinbit.top/404.html&title= - Gryffinbit&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://gryffinbit.top/404.html&title= - Gryffinbit&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-    
-      
-    
-  </div>
-</div>
-
-
-
-        
       
     </div>
   </div>
@@ -568,15 +490,6 @@ valine:
 </div>
 <aside class='l_side'>
   
-  
-    
-    
-
-
-
-
-  
-
 
 </aside>
 
@@ -592,11 +505,11 @@ valine:
   pdata.ispage=false;
   pdata.postTitle="";
   pdata.commentPath="";
-  pdata.commentPlaceholder="";
+  pdata.commentPlaceholder="请留言告诉我您要访问哪个页面找不到了";
 
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.add("show");
+  l_header.classList.remove("show");
   
 </script>
 
