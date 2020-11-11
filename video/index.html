@@ -429,8 +429,7 @@
 
     <div id='safearea'>
       <div class='body-wrapper' id="pjax-container">
-         <!-- vlog模块 -->
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <html lang="zh-CN,en,zh-HK,zh-TW,default">
 <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.5'>
   <meta charset="utf-8">
@@ -487,11 +486,15 @@
 
 <body>
 
+<!-- 导入jquery库 -->
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+ <!--  打字机特效 -->
 <script src="https://cdn.bootcss.com/typed.js/2.0.9/typed.min.js"></script>
   <script type="text/javascript">
       var options = {
-          strings: 
-              🐰这里是Gryffinbit兔子的vlog专区🥕
+          strings: [
+             "🐰Gryffinbit兔子的vlog专区🥕"
           ],
           typeSpeed: 90,   //打印速度
           startDelay: 300, //开始之前的延迟300毫秒
@@ -499,8 +502,11 @@
       };
       var typed = new Typed('#typed', options);
   </script>
-  </body>
+  <!--  打字机特效 -->
+
+</body>
 </html>
+
         
         
           <!--此文件用来存放一些不方便取值的变量-->
