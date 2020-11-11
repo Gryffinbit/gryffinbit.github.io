@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://gryffinbit.top/2020/11/11/%E7%AC%AC%E4%B8%80%E5%B1%8A%E4%BF%A1%E5%AE%89%E5%A4%A7%E6%8C%91%E6%88%98WP/</loc>
+    
+    <lastmod>2020-11-11</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://gryffinbit.top/video/index.html</loc>
     
     <lastmod>2020-11-10</lastmod>
@@ -74,6 +81,13 @@
 
   
   <url>
+    <loc>https://gryffinbit.top/tags/%E6%B5%81%E5%AF%86%E7%A0%81/</loc>
+    <lastmod>2020-11-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://gryffinbit.top/tags/%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81/</loc>
     <lastmod>2020-11-11</lastmod>
     <changefreq>daily</changefreq>
@@ -81,7 +95,7 @@
   </url>
   
   <url>
-    <loc>https://gryffinbit.top/tags/%E6%B5%81%E5%AF%86%E7%A0%81/</loc>
+    <loc>https://gryffinbit.top/tags/%E7%AC%AC%E4%B8%80%E5%B1%8A%E4%BF%A1%E5%AE%89%E5%A4%A7%E6%8C%91%E6%88%98/</loc>
     <lastmod>2020-11-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -91,6 +105,13 @@
   
   <url>
     <loc>https://gryffinbit.top/categories/%E5%BA%94%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6/</loc>
+    <lastmod>2020-11-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://gryffinbit.top/categories/write-up/</loc>
     <lastmod>2020-11-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
