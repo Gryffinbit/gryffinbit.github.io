@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -21,7 +19,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>归档：2020 - Gryffinbit</title>
+  <title>AES实验报告 - Gryffinbit</title>
+  
+    <meta name="keywords" content="AES">
   
 
   
@@ -90,7 +90,7 @@
   
   
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -341,7 +341,7 @@
     <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper  dock' style="display: ;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div id='cover-backstretch'></div>
           
@@ -427,583 +427,402 @@
         
 
 <div class='l_main'>
-	
-		
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
+
+
   
-  
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title" >
-      <a href="/2020/11/14/kali%E5%AE%89%E8%A3%85gmpy2/">
-        kali安装gmpy2
-      </a>
-    </h2>
-  
-  <div class='md'>
     
-      
-        kali-安装gmpy2注释打开Port 22 #可以自己指定一个端口号来用。只要连接的时候客户端加入-p 参数即可
-PasswordAuthentication yes
-PermitRootLogin yes #当然担心安全的朋友可以用其他用户登录，我比较习惯就用root登录
-/etc/init.d/ssh restart # 重启ssh
-ifconfig 记录kali的ip
-macOS：...
-      
     
+      <h1 class="title">
+        AES实验报告
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>Gryffinbit</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
+    </a>
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+
+
+          
         
-        <time>2020-11-14</time>
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年11月14日</p>
+  </a>
+</div>
+
+          
         
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="AES实验报告" data-path="/2020/11/14/AES%E5%AE%9E%E9%AA%8C/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  <h1 id="AES实验报告"><a href="#AES实验报告" class="headerlink" title="AES实验报告"></a>AES实验报告</h1><h2 id="一、实验题目"><a href="#一、实验题目" class="headerlink" title="一、实验题目"></a>一、实验题目</h2><p>AES加密算法</p>
+<hr>
+<h2 id="二、实验目的和要求"><a href="#二、实验目的和要求" class="headerlink" title="二、实验目的和要求"></a>二、实验目的和要求</h2><p>通过实验，掌握AES密码的程序实现，熟悉比特串的操作，矩阵变换，有限域上的乘法，提高C++程序设计能力.</p>
+<p>编写 AES 密码的加密解密程序，运行并验证。 (1) 输入 128 比特明文和密文，利用 AES 密码对其加密并输出密文。 (2) 输入 AES 加密的 128 比特密文和密钥，对其进行解密。 (3) 记录调试和验证过程，完成实验报告。</p>
+<hr>
+<h2 id="三、实验环境"><a href="#三、实验环境" class="headerlink" title="三、实验环境"></a>三、实验环境</h2><p>clion</p>
+<hr>
+<h2 id="四、实验内容"><a href="#四、实验内容" class="headerlink" title="四、实验内容"></a>四、实验内容</h2><p><strong>1. AES 算法：</strong></p>
+<p>包括：字节代换，行移位，列混合，密钥加。 128 比特的种子密钥𝑁𝑘 = 4，即 4 个 32 比特的密钥字，每个密钥字是由 4 个字 节构成，形成 4×4 的矩阵。一个字 4 行，4 个字 4 列。 128 比特的分组长度𝑁𝑏 = 4，即 4 个 32 比特的字，每个字是由 4 个字节构成， 形成 4×4 的矩阵。一个字 4 行，4 个字 4 列。 矩阵按照列为主索引，第一行，0，4，8，12。 <strong>2. 每一个元素的运算具体涉及有限域的乘法，幂运算，求逆元</strong>。</p>
+<p>表示一个元素：两个 16 进制，8 位，一个字节。</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/AES-1.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/AES-1.png" srcset="data:image/png;base64,666"></p>
+<hr>
+<h2 id="五、算法描述及实验步骤"><a href="#五、算法描述及实验步骤" class="headerlink" title="五、算法描述及实验步骤"></a>五、算法描述及实验步骤</h2><pre><code class="cpp">1.KeyExpansions—-轮密钥使用Rijndael算法的密钥编排密码密钥导出。
+  AES需要为每个回合加一个单独的128位的循环密钥块
+2.AddRoundKey—密钥加：将轮密钥与状态进行逐比特异或
+3.轮函数部分：
+        SubBytes—-S盒：非线性替代步骤，其中根据查找表将每个字节替换为另一个。
+        ShiftRows—-行移位：一种转置步骤，其中状态的最后三行循环地移动一定数量的步骤。
+        MixColumns—列混淆：其操作在状态的列上，组合每列中的四个字节。
+        AddRoundKey--密钥加
+    最后一轮：
+        SubBytes
+        ShiftRows
+        AddRoundKey</code></pre>
+<h3 id="AES轮函数过程："><a href="#AES轮函数过程：" class="headerlink" title="AES轮函数过程："></a>AES轮函数过程：</h3><p>字节替换（SubBytes）：S盒把字节映射到自己的乘法逆元，再对字节做仿射变换</p>
+<p>行移位（ShiftRows）：将状态阵列的各行，进行循环移位。不同行位移量不同。位移量的取值与Nb有关</p>
+<p>列混淆（MixColumns）：将状态阵列视为多项式，与固定多项式进行模的乘法。且要求可逆</p>
+<p>密钥加（AddRoundKey）：将轮密钥与状态进行逐比特异或。长度=分组长度Nb。密钥加的逆运算是自己。</p>
+<p>算法中间结果的分组为状态</p>
+<h3 id="密钥编排："><a href="#密钥编排：" class="headerlink" title="密钥编排："></a>密钥编排：</h3><p><strong>密钥扩展</strong>：</p>
+<p>由种子密钥扩展，以四字节为元素的一维阵列。轮密钥的总比特数=Nb✖️（轮数 +1）。Nk为列数，前Nk个字为种子密钥。</p>
+<p>$$W[N_b*(N_r+1)]$$</p>
+<p><strong>Nk≤6:</strong></p>
+<p>W[i]=Nk个字长的一段首尾两个字异或；</p>
+<p>为Nk整倍时，先将前一个字w[i-1]进行变换：一字节循环移位RotByte → S盒SubByte → 异或常数Rcon[i/Nk]</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/AES-2.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/AES-2.png" srcset="data:image/png;base64,666"></p>
+<p><strong>Nk&gt;6:</strong></p>
+<p>Nk整倍数保持一致。 除Nk余4时，w[i-1]执行SubByte</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/AES-3.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/AES-3.png" srcset="data:image/png;base64,666"></p>
+<p><strong>轮密钥选取：</strong></p>
+<p>轮函数的选取，从扩展密钥中选每轮选Nb长度的，如此往复。</p>
+<h2 id="六、调试过程及结果（附截图）"><a href="#六、调试过程及结果（附截图）" class="headerlink" title="六、调试过程及结果（附截图）"></a>六、调试过程及结果（附截图）</h2><p>⭐️运行时遇到：This file does not belong to any project target code insight  在cmake文件中，add_executable把fields.cpp添加进去</p>
+<pre><code>                                                             ✨✨ **调试成功✨✨**</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/AES-4.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/AES-4.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/AES-5.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/AES-5.png" srcset="data:image/png;base64,666"></p>
+<pre><code>                                                              ✨✨**运行结果**✨✨</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/AES-6.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/AES-6.png" srcset="data:image/png;base64,666"></p>
+<p>☀️☀️<strong>修改了main部分，以字符形式输出</strong></p>
+<pre><code class="cpp">int main()
+&#123;
+    unsigned char p[16] = &quot;HHelloWorldFine&quot;;
+    unsigned char k[16] = &#123;0x1d,0x25,0xc9,0xf2,0xf4,0x17,0xc4,0x1b,0xcf,0x19,0x02,0x02,0x1f,0x1c,0xf0,0x11&#125; ;
+    unsigned char c[16] ;
+    unsigned char rk[11][16] ;
+    unsigned char pp[16] ;
+    KeyExpansion(k,rk) ;
+
+    printf(&quot;需加密的明文是:\\t&quot;) ;
+//    for( int i = 0 ; i &lt; 16 ; i ++ )
+//        printf(&quot;%02x,&quot;,p[i]);
+        printf(&quot;%s&quot;,&amp;p) ;
+    printf(&quot;\\n&quot;) ;
+
+    AES(p,c,rk,10) ;
+
+    printf(&quot;加密后的密文是:\\t&quot;) ;
+//    for( int j = 0 ; j &lt; 16 ; j ++ )
+//     printf(&quot;%02x,&quot;,c[j]) ;
+    printf(&quot;%s&quot;,&amp;c);
+    printf(&quot;\\n&quot;) ;
+
+    InvAES(c,pp,rk,10) ;
+    printf(&quot;解密后的明文是:\\t&quot;) ;
+//    for( int m = 0 ; m &lt; 16 ; m ++ )
+//        printf(&quot;%02x,&quot;,pp[m]) ;
+    printf(&quot;%s&quot;,&amp;pp);
+    printf(&quot;\\n&quot;) ;
+    return 0 ;
+
+&#125;</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/AES-7.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/AES-7.png" srcset="data:image/png;base64,666"></p>
+<h2 id="七、总结体会"><a href="#七、总结体会" class="headerlink" title="七、总结体会"></a>七、总结体会</h2><p>❓代码如何进行有限域的乘法？</p>
+<p>第1步将数字转换成多项式表达式；第2步是常规的乘法运算，即将多项式乘法展开；                                                                            第3步与既约多项式；</p>
+<p>xtime(·)算法：</p>
+<p>求一个数x与0x02的乘积，一般求一个数的2倍，都是左移一位，在有限域内，要计算有限域的乘法，必须先确定一个GF上的8次不可约多项式，Rijndael密码中，这个多项式确定为x^8+x^4+x^3+x+1</p>
+<p>在二进制中，所有的数都能用0x01,0x02,0x04,0x08,0x10,0x20,0x40,0x80异或得到，0x01,0x02,0x04,0x08,0x10,0x20,0x40,0x80的二进制表示如下：</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/AES-8.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/AES-8.png" srcset="data:image/png;base64,666"></p>
+<p>而任何一个数x和a相乘都可以表示为</p>
+<p>$$x *a=x(08\oplus02\oplus04\oplus01\oplus80）$$</p>
+<p>计算出：则所有乘法结果都可以得到</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/AES-9.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/AES-9.png" srcset="data:image/png;base64,666"></p>
+<p>这种方式，可以用矩阵表示出来</p>
+<pre><code class="cpp">////*****************************列混合*********************************////
+void MixColumns( unsigned char *a )
+&#123;
+    unsigned char b[16] ;
+    b[ 0] = S2[a[ 0]] ^ S3[a[ 1]] ^ a[ 2] ^ a[ 3] ;
+    b[ 1] = S2[a[ 1]] ^ S3[a[ 2]] ^ a[ 3] ^ a[ 0] ;
+    b[ 2] = S2[a[ 2]] ^ S3[a[ 3]] ^ a[ 0] ^ a[ 1] ;
+    b[ 3] = S2[a[ 3]] ^ S3[a[ 0]] ^ a[ 1] ^ a[ 2] ;
+    b[ 4] = S2[a[ 4]] ^ S3[a[ 5]] ^ a[ 6] ^ a[ 7] ;
+    b[ 5] = S2[a[ 5]] ^ S3[a[ 6]] ^ a[ 7] ^ a[ 4] ;
+    b[ 6] = S2[a[ 6]] ^ S3[a[ 7]] ^ a[ 4] ^ a[ 5] ;
+    b[ 7] = S2[a[ 7]] ^ S3[a[ 4]] ^ a[ 5] ^ a[ 6] ;
+    b[ 8] = S2[a[ 8]] ^ S3[a[ 9]] ^ a[10] ^ a[11] ;
+    b[ 9] = S2[a[ 9]] ^ S3[a[10]] ^ a[11] ^ a[ 8] ;
+    b[10] = S2[a[10]] ^ S3[a[11]] ^ a[ 8] ^ a[ 9] ;
+    b[11] = S2[a[11]] ^ S3[a[ 8]] ^ a[ 9] ^ a[10] ;
+    b[12] = S2[a[12]] ^ S3[a[13]] ^ a[14] ^ a[15] ;
+    b[13] = S2[a[13]] ^ S3[a[14]] ^ a[15] ^ a[12] ;
+    b[14] = S2[a[14]] ^ S3[a[15]] ^ a[12] ^ a[13] ;
+    b[15] = S2[a[15]] ^ S3[a[12]] ^ a[13] ^ a[14] ;
+    for( int i = 0 ; i &lt; 16 ; i ++ )
+        a[i] = b[i] ;
+&#125;</code></pre>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2020/11/14/kali%E5%AE%89%E8%A3%85gmpy2/'>
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://gryffinbit.top/2020/11/14/AES%E5%AE%9E%E9%AA%8C/>https://gryffinbit.top/2020/11/14/AES%E5%AE%9E%E9%AA%8C/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-14T19:29:40+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年11月14日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
+          
   
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/xtime%E7%AE%97%E6%B3%95/">
-        xtime算法
-      </a>
-    </h2>
-  
-  <div class='md'>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/AES/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>AES</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        xtime算法理论基础：
-C(x)=A(x)B(x) mod P(x)二进制数转换为多项式:A(a7,a6,a5,a4,a3,a2,a1,a0)==&gt;A(X)=a7x7+a6x6+a5x5+a4x4+a3x3+a2x2+a1x+a0，GF(28)内的最大值为(11111111)2==&gt; x7+x6+x5+x4+x3+x2+x+1，P(x)=x8+x4+x3+x2+x+1==&gt...
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gryffinbit.top/2020/11/14/AES%E5%AE%9E%E9%AA%8C/&title=AES实验报告 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://gryffinbit.top/2020/11/14/AES%E5%AE%9E%E9%AA%8C/&title=AES实验报告 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://gryffinbit.top/2020/11/14/AES%E5%AE%9E%E9%AA%8C/&title=AES实验报告 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
       
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/xtime%E7%AE%97%E6%B3%95/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
 </div>
 
-          </div>
+
+
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/SHA-1/">
-        SHA-1
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        SHA-1实验报告一、实验题目SHA-加密算法
-
-二、实验目的和要求熟悉SHA-1算法的运行过程，使用C++语言编写实现SHA-1算法程序，增加对摘要函数的理解。
-理解 SHA-1 轮函数的定义和工作过程。实现 SHA-1 哈希算法。分析 SHA-1 算法运行性能。
-
-三、实验环境clion
-
-四、实验内容给定的 SHA-1 对单个 512 分组处理结构如图，程序完成功能：
-
-
-五、算法描述...
-      
-    
+    </div>
   </div>
+
+
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/SHA-1/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
   
 
-</div>
-
-          </div>
-        
+  
+    <div class="prev-next">
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/RSA%E5%AE%9E%E9%AA%8C/">
-        RSA实验
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        一、实验题目RSA加密算法
+        <a class='prev' href='/2020/11/14/RSA%E5%AE%9E%E9%AA%8C/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>RSA实验</p>
+          <p class='content'>一、实验题目RSA加密算法
 
 二、实验目的和要求熟悉RSA加解密算法的运行过程，使用C++语言编写实现RSA算法程序，加深对素数筛选和使用的理解。
 
 三、实验环境clion
 
-四、实验内容给定 RSA 算法结构 一、参数和密钥生成：
-1.随机两个大素数𝑝和𝑞，保密；
-
-计算𝑛 = 𝑝 × 𝑞，公开。计算欧拉函数𝜑(𝑛) = (𝑝 − 1)(𝑞 − 1)。
-
-3.随机选取整数...
+四、实验内容给定 ...</p>
+        </a>
       
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
-        
-      </div>
       
-        <div>
-          <a class='readmore' href='/2020/11/14/RSA%E5%AE%9E%E9%AA%8C/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/AES%E5%AE%9E%E9%AA%8C/">
-        AES实验报告
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        AES实验报告一、实验题目AES加密算法
-
-二、实验目的和要求通过实验，掌握AES密码的程序实现，熟悉比特串的操作，矩阵变换，有限域上的乘法，提高C++程序设计能力.
-编写 AES 密码的加密解密程序，运行并验证。 (1) 输入 128 比特明文和密文，利用 AES 密码对其加密并输出密文。 (2) 输入 AES 加密的 128 比特密文和密钥，对其进行解密。 (3) 记录调试和验证过程，完...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/AES%E5%AE%9E%E9%AA%8C/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/DES%E5%AE%9E%E9%AA%8C/">
-        DES实验报告
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        DES实验报告一、实验题目DES加密算法
+        <a class='next' href='/2020/11/14/DES%E5%AE%9E%E9%AA%8C/'>
+          <p class='title'>DES实验报告<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>DES实验报告一、实验题目DES加密算法
 
 二、实验目的和要求通过实验，掌握DES密码的程序实现，熟悉比特串的操作，矩阵变换，提高C++程序设计能力。
-编写 DES 密码的加密解密程序，运行并验证。 (1) 输入 64 比特明文和密文，利用 DES 密码对其加密并输出密文。 (2) 输入 DES 加密的 64 比特密文和密钥，对其进行解密。 (3) 记录调试和验证过程，完成实验报告。
-
-三、...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/DES%E5%AE%9E%E9%AA%8C/'>
-            阅读全文
-          </a>
-        </div>
+编写 DES 密码的加密解密程序，运行并验...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/OpenCv/">
-        OpenCv
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        macOS下opencv的安装。在CLion上配置使用OpenCV （C++）安装opencv
-brew的安装
-/usr/bin/ruby -e &quot;$(curl -fsSL &lt;https://raw.githubusercontent.com/Homebrew/install/master/install&gt;)&quot;
-
-brew安装opencv
-brew insta...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Misc/">Misc</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/OpenCv/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/CRC%E6%A0%A1%E9%AA%8C/">
-        CRC校验
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        CRC检验错误pngcheck -v 分析png格式，报错CRC ERROR
-对一张正常的图片，通过修改其宽度或者高度隐藏信息，使计算出的CRC校验码与原图的CRC校验码不一致；windows的图片查看器会忽略错误的CRC校验码，因此会显示图片，但此时的图片已经是修改过的，所以会有显示不全或扭曲等情况，借此可以隐藏信息。
-而Linux、macOS下的图片查看器不会忽略错误的CRC校验码，因此...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Misc/">Misc</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/CRC%E6%A0%A1%E9%AA%8C/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/Jpegsnoop/">
-        Jpegsnoop
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        
-github 项目链接
-https://github.com/ImpulseAdventure/JPEGsnoop
+  </article>
 
 
-可参考jpeg的格式详解
-
-JPEG原理简介文件格式
-JPEG文件大体上可以分成两个部分：标记码和压缩数据
-标记码：
-由两个字节构成，第一个字节是固定值0xFF，后一个字节则根据不同意义有不同数值
-在每个标记码之前可以添加数目不限的无意义的0xFF填充，连续的多个0xFF...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Misc/">Misc</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/Jpegsnoop/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/stegdetect/">
-        stegdetect
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        
-在kali下
 
 
-github项目
-https://github.com/abeluck/stegdetect
 
-原理简介文件格式
-JPEG文件大体上可以分成两个部分：标记码和压缩数据
-标记码：
-由两个字节构成，第一个字节是固定值0xFF，后一个字节则根据不同意义有不同数值
-在每个标记码之前可以添加数目不限的无意义的0xFF填充，连续的多个0xFF可以被理解为一个0xFF，并表示一个标记码...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Misc/">Misc</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/stegdetect/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-        <p class="current">
-          1 / 2
-        </p>
-        
-          <a class="next" rel="next" href="/archives/2020/page/2/">
-            <section class="post next white-box shadow">
-              &nbsp;下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
-    
-  
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
 
 
-	
+
+
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -1011,141 +830,28 @@ JPEG文件大体上可以分成两个部分：标记码和压缩数据
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/photo.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Gryffinbit</h2>
-        
-        
-          <p>兔子</p>
 
-        
-        
-          <p>凡殺不死我的，必使我更強大。</p>
 
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/img/QQ.jpg"
-              class="social fab fa-qq flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;tf=1&amp;source=mailto&amp;to=Gryffinbit@Gmail.com"
-              class="social fas fa-envelope-open flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/Gryffinbit/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://blog.csdn.net/Gryffinbit"
-              class="social fab fa-cuttlefish flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Misc/" href="/categories/Misc/"
-            id="categoriesMisc"
-            ><div class='name'>Misc</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/write-up/" href="/categories/write-up/"
-            id="categorieswrite-up"
-            ><div class='name'>write up</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"
-            id="categoriesE5AF86E7A081E5ADA6"
-            ><div class='name'>密码学</div><div class='badge'>(13)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%AE%9E%E9%AA%8C%E9%A2%98%E7%9B%AE"><span class="toc-text">一、实验题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84%E5%92%8C%E8%A6%81%E6%B1%82"><span class="toc-text">二、实验目的和要求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83"><span class="toc-text">三、实验环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-text">四、实验内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E7%AE%97%E6%B3%95%E6%8F%8F%E8%BF%B0%E5%8F%8A%E5%AE%9E%E9%AA%8C%E6%AD%A5%E9%AA%A4"><span class="toc-text">五、算法描述及实验步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#AES%E8%BD%AE%E5%87%BD%E6%95%B0%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="toc-text">AES轮函数过程：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E9%92%A5%E7%BC%96%E6%8E%92%EF%BC%9A"><span class="toc-text">密钥编排：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E8%B0%83%E8%AF%95%E8%BF%87%E7%A8%8B%E5%8F%8A%E7%BB%93%E6%9E%9C%EF%BC%88%E9%99%84%E6%88%AA%E5%9B%BE%EF%BC%89"><span class="toc-text">六、调试过程及结果（附截图）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E6%80%BB%E7%BB%93%E4%BD%93%E4%BC%9A"><span class="toc-text">七、总结体会</span></a></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/AES/" style="font-size: 14px; color: #999">AES</a> <a href="/tags/DES/" style="font-size: 14px; color: #999">DES</a> <a href="/tags/RSA/" style="font-size: 19px; color: #777">RSA</a> <a href="/tags/SHA-1/" style="font-size: 14px; color: #999">SHA-1</a> <a href="/tags/gmpy2/" style="font-size: 14px; color: #999">gmpy2</a> <a href="/tags/%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81/" style="font-size: 19px; color: #777">古典密码</a> <a href="/tags/%E5%9B%BE%E7%89%87/" style="font-size: 24px; color: #555">图片</a> <a href="/tags/%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B0/" style="font-size: 14px; color: #999">散列函数</a> <a href="/tags/%E6%9D%82/" style="font-size: 14px; color: #999">杂</a> <a href="/tags/%E6%B5%81%E5%AF%86%E7%A0%81/" style="font-size: 14px; color: #999">流密码</a> <a href="/tags/%E7%AC%AC%E4%B8%80%E5%B1%8A%E4%BF%A1%E5%AE%89%E5%A4%A7%E6%8C%91%E6%88%98/" style="font-size: 14px; color: #999">第一届信安大挑战</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 </aside>
+
 
 
         
@@ -1155,14 +861,14 @@ JPEG文件大体上可以分成两个部分：标记码和压缩数据
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="AES实验报告";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
 </script>
 

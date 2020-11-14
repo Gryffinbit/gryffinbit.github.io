@@ -503,6 +503,28 @@
 <blockquote>
 <p>可参考jpeg的格式详解</p>
 </blockquote>
+<h1 id="JPEG原理简介"><a href="#JPEG原理简介" class="headerlink" title="JPEG原理简介"></a>JPEG原理简介</h1><p><strong>文件格式</strong></p>
+<p>JPEG文件大体上可以分成两个部分：标记码和压缩数据</p>
+<p><strong>标记码：</strong></p>
+<p>由两个字节构成，第一个字节是固定值<code>0xFF</code>，后一个字节则根据不同意义有不同数值</p>
+<p><strong>在每个标记码之前可以添加数目不限的无意义的0xFF填充，连续的多个0xFF可以被理解为一个0xFF，并表示一个标记码的开始</strong></p>
+<p>常见的标记码：</p>
+<ul>
+<li>SOI 0xD8 图像开始</li>
+<li>APP0 0xE0 应用程序保留标记0</li>
+<li>APPn 0xE1 - 0xEF 应用程序保留标记n(n=1～15)</li>
+<li>DQT 0xDB 量化表(Define Quantization Table)</li>
+<li>SOF0 0xC0 帧开始(Start Of Frame)</li>
+<li>DHT 0xC4 定义Huffman表(Define Huffman Table)</li>
+<li>DRI 0XDD 定义差分编码累计复位的间隔(Define Restart Interval)</li>
+<li>SOS 0xDA 扫描开始(Start Of Scan)</li>
+<li>EOI 0xD9 图像结束</li>
+</ul>
+<p><strong>压缩数据：</strong></p>
+<p>前两个字节保存整个段的长度，包括这两个字节</p>
+<p><strong>注：</strong></p>
+<p>这个长度的表示方法按照高位在前，低位在后，与PNG文件的长度表示方法不同</p>
+<p>例如长度是0x12AB，存储顺序为0x12，0xAB</p>
 <h1 id="Jpegsnoop"><a href="#Jpegsnoop" class="headerlink" title="Jpegsnoop"></a>Jpegsnoop</h1><p>软件jpegsnoop的使用</p>
 <p>看是否有注释，是否有info</p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Jpegsnoop-1.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Jpegsnoop-1.png" srcset="data:image/png;base64,666"></p>
@@ -546,7 +568,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-14T17:28:24+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-14T17:32:28+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2020年11月14日</p>
@@ -624,6 +646,12 @@
 
   
     <div class="prev-next">
+      
+        <a class='prev' href='/2020/11/14/CRC%E6%A0%A1%E9%AA%8C/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>CRC校验</p>
+          <p class='content'>CRC检验错误pngcheck -v 分析png格式，报错CRC ERROR
+对一张正常的图片，通过修改其宽度或者高度隐藏信息，使计算出的CRC校验码与原图的CRC校验码不一致；windows的...</p>
+        </a>
       
       
         <a class='next' href='/2020/11/14/stegdetect/'>
