@@ -21,7 +21,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>标签：第一届信安大挑战 - Gryffinbit</title>
+  <title>分类：密码学 - Gryffinbit</title>
   
 
   
@@ -437,6 +437,10 @@
         
           
         
+          
+        
+          
+        
       
     
     
@@ -450,24 +454,23 @@
   
     
     <h2 class="article-title" >
-      <a href="/2020/11/11/%E7%AC%AC%E4%B8%80%E5%B1%8A%E4%BF%A1%E5%AE%89%E5%A4%A7%E6%8C%91%E6%88%98WP/">
-        第一届信安大挑战WP
+      <a href="/2020/11/13/RSA/">
+        RSA
       </a>
     </h2>
   
   <div class='md'>
     
       
-        CDUT第一届信安大挑战Misc（部分） 和 Crypto 的write up
-密码学
-crypto 1
-
-题目描述
-
-modulus：99742889480132178464693625265991467727088330702125690789109469022100733238623exponent：65537请提交私钥注：私钥为十六进制。Flag格式 dino{0x…….}
-
-
-题解...
+        参数N：大整数N，我们称之为模数（modulus）
+p 和 q ：大整数N的两个因子（factor）
+e 和 d：互为模反数的两个指数（exponent）
+ c 和 m：分别是密文和明文
+&#123;N,e&#125;称为公钥,&#123;N,d&#125;称为私钥
+解题思路
+选取两个较大的互不相等的质数p和q，计算n = p * q 。
+计算phi = (p-1) * (q-1) 。
+选取...
       
     
   </div>
@@ -475,15 +478,118 @@ modulus：9974288948013217846469362526599146772708833070212569078910946902210073
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time>2020-11-11</time>
+        <time>2020-11-13</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/write-up/">write up</a>
+          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2020/11/11/%E7%AC%AC%E4%B8%80%E5%B1%8A%E4%BF%A1%E5%AE%89%E5%A4%A7%E6%8C%91%E6%88%98WP/'>
+          <a class='readmore' href='/2020/11/13/RSA/'>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2020/08/20/LSFR%E6%B5%81%E5%AF%86%E7%A0%81/">
+        LSFR流密码实验
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        LFSR流密码 实验一、实验题目LFSR流密码
+二、实验目的和要求编程实现简单地线性反馈移位寄存器，理解其工作原理，掌握流密码的算法结构和加解密过程。利用C++语言实现LFSR。通过不同初始状态生成相应序列，观察其周期特点。利用生成的序列对文本进行加密和解密运算。
+三、实验环境clion
+四、实验内容给定的 LFSR 结构如图，程序完成功能：
+
+（1）由给定的初始状态序列生成密钥序列（2）选...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2020-08-20</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2020/08/20/LSFR%E6%B5%81%E5%AF%86%E7%A0%81/'>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2020/08/19/%E5%8D%95%E8%A1%A8%E5%A4%9A%E8%A1%A8%E4%BB%A3%E6%8D%A2%E5%AE%9E%E9%AA%8C/">
+        单表代换/多表代换实验
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        #单表代换、多表代换 实验
+一、实验题目单表代换和多表代换
+
+二、实验目的和要求通过实验熟练掌握凯撒密码和Hill密码算法原理，编程实现加密算法，熟悉模运算和扩展欧几里德算法，提高C++程序设计和密码运算基本能力。
+单表代换编程实现凯撒密码，输入任意一段明文，对其加密并输出密文。多表代换编程实现 Hill 加密算法，输入一段无空格的五个小写字母明文，对其加密并输出密文。
+
+三、实验环境Cli...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2020-08-19</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2020/08/19/%E5%8D%95%E8%A1%A8%E5%A4%9A%E8%A1%A8%E4%BB%A3%E6%8D%A2%E5%AE%9E%E9%AA%8C/'>
             阅读全文
           </a>
         </div>
