@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -21,7 +19,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>归档：2020 - Gryffinbit</title>
+  <title>一些杂乱的密码 - Gryffinbit</title>
+  
+    <meta name="keywords" content="杂">
   
 
   
@@ -90,7 +90,7 @@
   
   
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -341,7 +341,7 @@
     <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper  dock' style="display: ;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div id='cover-backstretch'></div>
           
@@ -427,593 +427,614 @@
         
 
 <div class='l_main'>
-	
-		
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  
+  <div class="article-meta" id="top">
     
     
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
     
-    <h2 class="article-title" >
-      <a href="/2020/11/14/Jpegsnoop/">
-        Jpegsnoop
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        
-github 项目链接
-https://github.com/ImpulseAdventure/JPEGsnoop
-
-
-可参考jpeg的格式详解
-
-Jpegsnoop软件jpegsnoop的使用
-看是否有注释，是否有info
-
-最后一行，分析图片得到，在EOF数据块后有多余的内容，并且标注出了范围
-
-根据这个范围，hex打开图片，得到一个base64（右侧）
-
-转换base64，得到fla...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Misc/">Misc</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/Jpegsnoop/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/stegdetect/">
-        stegdetect
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        
-在kali下
-
-
-github项目
-https://github.com/abeluck/stegdetect
-
-原理简介文件格式
-JPEG文件大体上可以分成两个部分：标记码和压缩数据
-标记码：
-由两个字节构成，第一个字节是固定值0xFF，后一个字节则根据不同意义有不同数值
-在每个标记码之前可以添加数目不限的无意义的0xFF填充，连续的多个0xFF可以被理解为一个0xFF，并表示一个标记码...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Misc/">Misc</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/stegdetect/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/%E5%B8%B8%E8%A7%81%E7%BC%96%E7%A0%81/">
-        常见编码
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        常见的编码##base64
-长度是3的倍数，不足时结尾用= 补全
-##xxencode
-与base64相似。 但结尾用+ 补全
-uuencode特殊符号很多
-
-##jjencode
-针对JavaScript的编码方式
-转换成只有符号的字符串
-
-##aaencode
-针对JavaScript的编码方式
-转换成常用的网络表情
-
-###维吉尼亚密码
-由一些偏移量不同的凯撒密码组成。 （多表密码的简...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/%E5%B8%B8%E8%A7%81%E7%BC%96%E7%A0%81/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%AF%86%E7%A0%81%E5%8F%98%E4%BD%93/">
-        维吉尼亚密码变体
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        原题：
-
-It is said that Vigenere cipher does not achieve the perfect secrecy actually :-)Tips:1.The encode pragram is given;2.Do u no index of coincidence ？3.The key is last 6 words of the plain text(...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%AF%86%E7%A0%81%E5%8F%98%E4%BD%93/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B9%B1%E7%9A%84%E5%AF%86%E7%A0%81/">
+      <h1 class="title">
         一些杂乱的密码
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>Gryffinbit</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年11月14日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
       
-        记录遇到的一些奇奇怪怪的密码###变异凯撒
-第一位 偏移5，第二位偏移6 ， 第三位偏移7 ，第四位偏移8……以此类推
-k = 5 
+      <div id="lc-pv" data-title="一些杂乱的密码" data-path="/2020/11/14/%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B9%B1%E7%9A%84%E5%AF%86%E7%A0%81/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
+    
+  </div>
+
+
+  
+  <h1 id="记录遇到的一些奇奇怪怪的密码"><a href="#记录遇到的一些奇奇怪怪的密码" class="headerlink" title="记录遇到的一些奇奇怪怪的密码"></a>记录遇到的一些奇奇怪怪的密码</h1><p>###变异凯撒</p>
+<p>第一位 偏移5，第二位偏移6 ， 第三位偏移7 ，第四位偏移8……以此类推</p>
+<pre><code class="python">k = 5 
 str = &#39;afZ_r9VYfScOeO_UL^RWUc&#39; 
 for i in str:                    
  print(chr(ord(i)+k),end=&quot;&quot;)
- k +=1
-###quoted_...
-      
-    
-  </div>
+ k +=1</code></pre>
+<p>###quoted_printable_decode</p>
+<p>=E9=82=A3=E4=BD=A0=E4=B9=9F=E5=BE=88=E6=A3=92=E5=93=A6</p>
+<p>解密：那你也很棒哦</p>
+<p>###Rabbit</p>
+<p>U2FsdGVkX1/+ydnDPowGbjjJXhZxm2MP2AgI</p>
+<p>解密：Cute_Rabbit</p>
+<p>###栅栏密码</p>
+<p>felhaagv{ewtehtehfilnakgw}</p>
+<p>解密：</p>
+<pre><code>flag&#123;wethinkwehavetheflag&#125;</code></pre>
+<p>###生僻字</p>
+<p><strong>老文盲了</strong>“罼雧締眔擴灝淛匶襫黼瀬鎶軄鶛驕鳓哵眔鞹鰝”萌新初体验，这道题丧心病狂，把前面几个生僻字拼音找了出来，发现刚好首字母是BJD，后三个发现是大括号的谐音，结尾三个也是如此，可得BJD{淛匶襫黼瀬鎶軄鶛驕鳓哵}</p>
+<p>###维吉尼亚密码（偏移密码，key是字母）</p>
+<blockquote>
+<p>题目： 小燕子，穿花衣，年年春天来这里，我问燕子你为啥来，燕子说:79616E7A69205A4A517B78696C7A765F6971737375686F635F73757A6A677D20</p>
+</blockquote>
+<p><em>分析后面的字符串为16进制，转换为字符为yanzi ZJQ{xilzv_iqssuhoc_suzjg} 。分析得到字符串猜测为维吉尼亚密码，yanzi为秘钥。解密后得到BJD{yanzi_jiushige_shabi}。</em></p>
+<p>所以flag为flag{yanzi_jiushige_shabi}。</p>
+<p>###六十甲子顺序表</p>
+<p>辛卯，癸巳，丙戌，辛未，庚辰，癸酉，己卯，癸巳。</p>
+<p>###替换/移位密码的暴力破解  词频分析</p>
+<p>当偏移的位数不确定时，但能明显看出来需要破解的密码是顺序混乱后的样子，可以采用暴力破解</p>
+<p>MTHJ{CUBCGXGUGXWREXIPOYAOEYFIGXWRXCHTKHFCOHCFDUCGTXZOHIXOEOWMEHZO}</p>
+<p>tip：已知MTHJ=flag</p>
+<p>破解的网站：<a target="_blank" rel="noopener" href="https://quipqiup.com/">https://quipqiup.com/</a></p>
+<h2 id="猪圈密码"><a href="#猪圈密码" class="headerlink" title="猪圈密码"></a>猪圈密码</h2><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/pig.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/pig.png" srcset="data:image/png;base64,666"></p>
+<h3 id="变种：圣堂武士密码"><a href="#变种：圣堂武士密码" class="headerlink" title="变种：圣堂武士密码"></a>变种：圣堂武士密码</h3><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/templar.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/templar.png" srcset="data:image/png;base64,666"></p>
+<h2 id="MD5"><a href="#MD5" class="headerlink" title="MD5"></a>MD5</h2><p>Administrator:500:806EDC27AA52E314AAD3B435B51404EE:F4AD50F57683D4260DFD48AA351A17A8:::</p>
+<p>其中的：F4AD50F57683D4260DFD48AA351A17A8</p>
+<p>MD5在线解密为：3617656</p>
+<h2 id="PGP词汇表-（生物识别词汇表）"><a href="#PGP词汇表-（生物识别词汇表）" class="headerlink" title="PGP词汇表  （生物识别词汇表）"></a>PGP词汇表  （生物识别词汇表）</h2><pre><code class="python">aaa=[
+[&quot;00&quot;,&quot;aardvark&quot;,&quot;adroitness&quot;],
+[&quot;01&quot;,&quot;absurd&quot;,&quot;adviser&quot;],
+[&quot;02&quot;,&quot;accrue&quot;,&quot;aftermath&quot;],
+[&quot;03&quot;,&quot;acme&quot;,&quot;aggregate&quot;],
+[&quot;04&quot;,&quot;adrift&quot;,&quot;alkali&quot;],
+[&quot;05&quot;,&quot;adult&quot;,&quot;almighty&quot;],
+[&quot;06&quot;,&quot;afflict&quot;,&quot;amulet&quot;],
+[&quot;07&quot;,&quot;ahead&quot;,&quot;amusement&quot;],
+[&quot;08&quot;,&quot;aimless&quot;,&quot;antenna&quot;],
+[&quot;09&quot;,&quot;Algol&quot;,&quot;applicant&quot;],
+[&quot;0A&quot;,&quot;allow&quot;,&quot;Apollo&quot;],
+[&quot;0B&quot;,&quot;alone&quot;,&quot;armistice&quot;],
+[&quot;0C&quot;,&quot;ammo&quot;,&quot;article&quot;],
+[&quot;0D&quot;,&quot;ancient&quot;,&quot;asteroid&quot;],
+[&quot;0E&quot;,&quot;apple&quot;,&quot;Atlantic&quot;],
+[&quot;0F&quot;,&quot;artist&quot;,&quot;atmosphere&quot;],
+[&quot;10&quot;,&quot;assume&quot;,&quot;autopsy&quot;],
+[&quot;11&quot;,&quot;Athens&quot;,&quot;Babylon&quot;],
+[&quot;12&quot;,&quot;atlas&quot;,&quot;backwater&quot;],
+[&quot;13&quot;,&quot;Aztec&quot;,&quot;barbecue&quot;],
+[&quot;14&quot;,&quot;baboon&quot;,&quot;belowground&quot;],
+[&quot;15&quot;,&quot;backfield&quot;,&quot;bifocals&quot;],
+[&quot;16&quot;,&quot;backward&quot;,&quot;bodyguard&quot;],
+[&quot;17&quot;,&quot;banjo&quot;,&quot;bookseller&quot;],
+[&quot;18&quot;,&quot;beaming&quot;,&quot;borderline&quot;],
+[&quot;19&quot;,&quot;bedlamp&quot;,&quot;bottomless&quot;],
+[&quot;1A&quot;,&quot;beehive&quot;,&quot;Bradbury&quot;],
+[&quot;1B&quot;,&quot;beeswax&quot;,&quot;bravado&quot;],
+[&quot;1C&quot;,&quot;befriend&quot;,&quot;Brazilian&quot;],
+[&quot;1D&quot;,&quot;Belfast&quot;,&quot;breakaway&quot;],
+[&quot;1E&quot;,&quot;berserk&quot;,&quot;Burlington&quot;],
+[&quot;1F&quot;,&quot;billiard&quot;,&quot;businessman&quot;],
+[&quot;20&quot;,&quot;bison&quot;,&quot;butterfat&quot;],
+[&quot;21&quot;,&quot;blackjack&quot;,&quot;Camelot&quot;],
+[&quot;22&quot;,&quot;blockade&quot;,&quot;candidate&quot;],
+[&quot;23&quot;,&quot;blowtorch&quot;,&quot;cannonball&quot;],
+[&quot;24&quot;,&quot;bluebird&quot;,&quot;Capricorn&quot;],
+[&quot;25&quot;,&quot;bombast&quot;,&quot;caravan&quot;],
+[&quot;26&quot;,&quot;bookshelf&quot;,&quot;caretaker&quot;],
+[&quot;27&quot;,&quot;brackish&quot;,&quot;celebrate&quot;],
+[&quot;28&quot;,&quot;breadline&quot;,&quot;cellulose&quot;],
+[&quot;29&quot;,&quot;breakup&quot;,&quot;certify&quot;],
+[&quot;2A&quot;,&quot;brickyard&quot;,&quot;chambermaid&quot;],
+[&quot;2B&quot;,&quot;briefcase&quot;,&quot;Cherokee&quot;],
+[&quot;2C&quot;,&quot;Burbank&quot;,&quot;Chicago&quot;],
+[&quot;2D&quot;,&quot;button&quot;,&quot;clergyman&quot;],
+[&quot;2E&quot;,&quot;buzzard&quot;,&quot;coherence&quot;],
+[&quot;2F&quot;,&quot;cement&quot;,&quot;combustion&quot;],
+[&quot;30&quot;,&quot;chairlift&quot;,&quot;commando&quot;],
+[&quot;31&quot;,&quot;chatter&quot;,&quot;company&quot;],
+[&quot;32&quot;,&quot;checkup&quot;,&quot;component&quot;],
+[&quot;33&quot;,&quot;chisel&quot;,&quot;concurrent&quot;],
+[&quot;34&quot;,&quot;choking&quot;,&quot;confidence&quot;],
+[&quot;35&quot;,&quot;chopper&quot;,&quot;conformist&quot;],
+[&quot;36&quot;,&quot;Christmas&quot;,&quot;congregate&quot;],
+[&quot;37&quot;,&quot;clamshell&quot;,&quot;consensus&quot;],
+[&quot;38&quot;,&quot;classic&quot;,&quot;consulting&quot;],
+[&quot;39&quot;,&quot;classroom&quot;,&quot;corporate&quot;],
+[&quot;3A&quot;,&quot;cleanup&quot;,&quot;corrosion&quot;],
+[&quot;3B&quot;,&quot;clockwork&quot;,&quot;councilman&quot;],
+[&quot;3C&quot;,&quot;cobra&quot;,&quot;crossover&quot;],
+[&quot;3D&quot;,&quot;commence&quot;,&quot;crucifix&quot;],
+[&quot;3E&quot;,&quot;concert&quot;,&quot;cumbersome&quot;],
+[&quot;3F&quot;,&quot;cowbell&quot;,&quot;customer&quot;],
+[&quot;40&quot;,&quot;crackdown&quot;,&quot;Dakota&quot;],
+[&quot;41&quot;,&quot;cranky&quot;,&quot;decadence&quot;],
+[&quot;42&quot;,&quot;crowfoot&quot;,&quot;December&quot;],
+[&quot;43&quot;,&quot;crucial&quot;,&quot;decimal&quot;],
+[&quot;44&quot;,&quot;crumpled&quot;,&quot;designing&quot;],
+[&quot;45&quot;,&quot;crusade&quot;,&quot;detector&quot;],
+[&quot;46&quot;,&quot;cubic&quot;,&quot;detergent&quot;],
+[&quot;47&quot;,&quot;dashboard&quot;,&quot;determine&quot;],
+[&quot;48&quot;,&quot;deadbolt&quot;,&quot;dictator&quot;],
+[&quot;49&quot;,&quot;deckhand&quot;,&quot;dinosaur&quot;],
+[&quot;4A&quot;,&quot;dogsled&quot;,&quot;direction&quot;],
+[&quot;4B&quot;,&quot;dragnet&quot;,&quot;disable&quot;],
+[&quot;4C&quot;,&quot;drainage&quot;,&quot;disbelief&quot;],
+[&quot;4D&quot;,&quot;dreadful&quot;,&quot;disruptive&quot;],
+[&quot;4E&quot;,&quot;drifter&quot;,&quot;distortion&quot;],
+[&quot;4F&quot;,&quot;dropper&quot;,&quot;document&quot;],
+[&quot;50&quot;,&quot;drumbeat&quot;,&quot;embezzle&quot;],
+[&quot;51&quot;,&quot;drunken&quot;,&quot;enchanting&quot;],
+[&quot;52&quot;,&quot;Dupont&quot;,&quot;enrollment&quot;],
+[&quot;53&quot;,&quot;dwelling&quot;,&quot;enterprise&quot;],
+[&quot;54&quot;,&quot;eating&quot;,&quot;equation&quot;],
+[&quot;55&quot;,&quot;edict&quot;,&quot;equipment&quot;],
+[&quot;56&quot;,&quot;egghead&quot;,&quot;escapade&quot;],
+[&quot;57&quot;,&quot;eightball&quot;,&quot;Eskimo&quot;],
+[&quot;58&quot;,&quot;endorse&quot;,&quot;everyday&quot;],
+[&quot;59&quot;,&quot;endow&quot;,&quot;examine&quot;],
+[&quot;5A&quot;,&quot;enlist&quot;,&quot;existence&quot;],
+[&quot;5B&quot;,&quot;erase&quot;,&quot;exodus&quot;],
+[&quot;5C&quot;,&quot;escape&quot;,&quot;fascinate&quot;],
+[&quot;5D&quot;,&quot;exceed&quot;,&quot;filament&quot;],
+[&quot;5E&quot;,&quot;eyeglass&quot;,&quot;finicky&quot;],
+[&quot;5F&quot;,&quot;eyetooth&quot;,&quot;forever&quot;],
+[&quot;60&quot;,&quot;facial&quot;,&quot;fortitude&quot;],
+[&quot;61&quot;,&quot;fallout&quot;,&quot;frequency&quot;],
+[&quot;62&quot;,&quot;flagpole&quot;,&quot;gadgetry&quot;],
+[&quot;63&quot;,&quot;flatfoot&quot;,&quot;Galveston&quot;],
+[&quot;64&quot;,&quot;flytrap&quot;,&quot;getaway&quot;],
+[&quot;65&quot;,&quot;fracture&quot;,&quot;glossary&quot;],
+[&quot;66&quot;,&quot;framework&quot;,&quot;gossamer&quot;],
+[&quot;67&quot;,&quot;freedom&quot;,&quot;graduate&quot;],
+[&quot;68&quot;,&quot;frighten&quot;,&quot;gravity&quot;],
+[&quot;69&quot;,&quot;gazelle&quot;,&quot;guitarist&quot;],
+[&quot;6A&quot;,&quot;Geiger&quot;,&quot;hamburger&quot;],
+[&quot;6B&quot;,&quot;glitter&quot;,&quot;Hamilton&quot;],
+[&quot;6C&quot;,&quot;glucose&quot;,&quot;handiwork&quot;],
+[&quot;6D&quot;,&quot;goggles&quot;,&quot;hazardous&quot;],
+[&quot;6E&quot;,&quot;goldfish&quot;,&quot;headwaters&quot;],
+[&quot;6F&quot;,&quot;gremlin&quot;,&quot;hemisphere&quot;],
+[&quot;70&quot;,&quot;guidance&quot;,&quot;hesitate&quot;],
+[&quot;71&quot;,&quot;hamlet&quot;,&quot;hideaway&quot;],
+[&quot;72&quot;,&quot;highchair&quot;,&quot;holiness&quot;],
+[&quot;73&quot;,&quot;hockey&quot;,&quot;hurricane&quot;],
+[&quot;74&quot;,&quot;indoors&quot;,&quot;hydraulic&quot;],
+[&quot;75&quot;,&quot;indulge&quot;,&quot;impartial&quot;],
+[&quot;76&quot;,&quot;inverse&quot;,&quot;impetus&quot;],
+[&quot;77&quot;,&quot;involve&quot;,&quot;inception&quot;],
+[&quot;78&quot;,&quot;island&quot;,&quot;indigo&quot;],
+[&quot;79&quot;,&quot;jawbone&quot;,&quot;inertia&quot;],
+[&quot;7A&quot;,&quot;keyboard&quot;,&quot;infancy&quot;],
+[&quot;7B&quot;,&quot;kickoff&quot;,&quot;inferno&quot;],
+[&quot;7C&quot;,&quot;kiwi&quot;,&quot;informant&quot;],
+[&quot;7D&quot;,&quot;klaxon&quot;,&quot;insincere&quot;],
+[&quot;7E&quot;,&quot;locale&quot;,&quot;insurgent&quot;],
+[&quot;7F&quot;,&quot;lockup&quot;,&quot;integrate&quot;],
+[&quot;80&quot;,&quot;merit&quot;,&quot;intention&quot;],
+[&quot;81&quot;,&quot;minnow&quot;,&quot;inventive&quot;],
+[&quot;82&quot;,&quot;miser&quot;,&quot;Istanbul&quot;],
+[&quot;83&quot;,&quot;Mohawk&quot;,&quot;Jamaica&quot;],
+[&quot;84&quot;,&quot;mural&quot;,&quot;Jupiter&quot;],
+[&quot;85&quot;,&quot;music&quot;,&quot;leprosy&quot;],
+[&quot;86&quot;,&quot;necklace&quot;,&quot;letterhead&quot;],
+[&quot;87&quot;,&quot;Neptune&quot;,&quot;liberty&quot;],
+[&quot;88&quot;,&quot;newborn&quot;,&quot;maritime&quot;],
+[&quot;89&quot;,&quot;nightbird&quot;,&quot;matchmaker&quot;],
+[&quot;8A&quot;,&quot;Oakland&quot;,&quot;maverick&quot;],
+[&quot;8B&quot;,&quot;obtuse&quot;,&quot;Medusa&quot;],
+[&quot;8C&quot;,&quot;offload&quot;,&quot;megaton&quot;],
+[&quot;8D&quot;,&quot;optic&quot;,&quot;microscope&quot;],
+[&quot;8E&quot;,&quot;orca&quot;,&quot;microwave&quot;],
+[&quot;8F&quot;,&quot;payday&quot;,&quot;midsummer&quot;],
+[&quot;90&quot;,&quot;peachy&quot;,&quot;millionaire&quot;],
+[&quot;91&quot;,&quot;pheasant&quot;,&quot;miracle&quot;],
+[&quot;92&quot;,&quot;physique&quot;,&quot;misnomer&quot;],
+[&quot;93&quot;,&quot;playhouse&quot;,&quot;molasses&quot;],
+[&quot;94&quot;,&quot;Pluto&quot;,&quot;molecule&quot;],
+[&quot;95&quot;,&quot;preclude&quot;,&quot;Montana&quot;],
+[&quot;96&quot;,&quot;prefer&quot;,&quot;monument&quot;],
+[&quot;97&quot;,&quot;preshrunk&quot;,&quot;mosquito&quot;],
+[&quot;98&quot;,&quot;printer&quot;,&quot;narrative&quot;],
+[&quot;99&quot;,&quot;prowler&quot;,&quot;nebula&quot;],
+[&quot;9A&quot;,&quot;pupil&quot;,&quot;newsletter&quot;],
+[&quot;9B&quot;,&quot;puppy&quot;,&quot;Norwegian&quot;],
+[&quot;9C&quot;,&quot;python&quot;,&quot;October&quot;],
+[&quot;9D&quot;,&quot;quadrant&quot;,&quot;Ohio&quot;],
+[&quot;9E&quot;,&quot;quiver&quot;,&quot;onlooker&quot;],
+[&quot;9F&quot;,&quot;quota&quot;,&quot;opulent&quot;],
+[&quot;A0&quot;,&quot;ragtime&quot;,&quot;Orlando&quot;],
+[&quot;A1&quot;,&quot;ratchet&quot;,&quot;outfielder&quot;],
+[&quot;A2&quot;,&quot;rebirth&quot;,&quot;Pacific&quot;],
+[&quot;A3&quot;,&quot;reform&quot;,&quot;pandemic&quot;],
+[&quot;A4&quot;,&quot;regain&quot;,&quot;Pandora&quot;],
+[&quot;A5&quot;,&quot;reindeer&quot;,&quot;paperweight&quot;],
+[&quot;A6&quot;,&quot;rematch&quot;,&quot;paragon&quot;],
+[&quot;A7&quot;,&quot;repay&quot;,&quot;paragraph&quot;],
+[&quot;A8&quot;,&quot;retouch&quot;,&quot;paramount&quot;],
+[&quot;A9&quot;,&quot;revenge&quot;,&quot;passenger&quot;],
+[&quot;AA&quot;,&quot;reward&quot;,&quot;pedigree&quot;],
+[&quot;AB&quot;,&quot;rhythm&quot;,&quot;Pegasus&quot;],
+[&quot;AC&quot;,&quot;ribcage&quot;,&quot;penetrate&quot;],
+[&quot;AD&quot;,&quot;ringbolt&quot;,&quot;perceptive&quot;],
+[&quot;AE&quot;,&quot;robust&quot;,&quot;performance&quot;],
+[&quot;AF&quot;,&quot;rocker&quot;,&quot;pharmacy&quot;],
+[&quot;B0&quot;,&quot;ruffled&quot;,&quot;phonetic&quot;],
+[&quot;B1&quot;,&quot;sailboat&quot;,&quot;photograph&quot;],
+[&quot;B2&quot;,&quot;sawdust&quot;,&quot;pioneer&quot;],
+[&quot;B3&quot;,&quot;scallion&quot;,&quot;pocketful&quot;],
+[&quot;B4&quot;,&quot;scenic&quot;,&quot;politeness&quot;],
+[&quot;B5&quot;,&quot;scorecard&quot;,&quot;positive&quot;],
+[&quot;B6&quot;,&quot;Scotland&quot;,&quot;potato&quot;],
+[&quot;B7&quot;,&quot;seabird&quot;,&quot;processor&quot;],
+[&quot;B8&quot;,&quot;select&quot;,&quot;provincial&quot;],
+[&quot;B9&quot;,&quot;sentence&quot;,&quot;proximate&quot;],
+[&quot;BA&quot;,&quot;shadow&quot;,&quot;puberty&quot;],
+[&quot;BB&quot;,&quot;shamrock&quot;,&quot;publisher&quot;],
+[&quot;BC&quot;,&quot;showgirl&quot;,&quot;pyramid&quot;],
+[&quot;BD&quot;,&quot;skullcap&quot;,&quot;quantity&quot;],
+[&quot;BE&quot;,&quot;skydive&quot;,&quot;racketeer&quot;],
+[&quot;BF&quot;,&quot;slingshot&quot;,&quot;rebellion&quot;],
+[&quot;C0&quot;,&quot;slowdown&quot;,&quot;recipe&quot;],
+[&quot;C1&quot;,&quot;snapline&quot;,&quot;recover&quot;],
+[&quot;C2&quot;,&quot;snapshot&quot;,&quot;repellent&quot;],
+[&quot;C3&quot;,&quot;snowcap&quot;,&quot;replica&quot;],
+[&quot;C4&quot;,&quot;snowslide&quot;,&quot;reproduce&quot;],
+[&quot;C5&quot;,&quot;solo&quot;,&quot;resistor&quot;],
+[&quot;C6&quot;,&quot;southward&quot;,&quot;responsive&quot;],
+[&quot;C7&quot;,&quot;soybean&quot;,&quot;retraction&quot;],
+[&quot;C8&quot;,&quot;spaniel&quot;,&quot;retrieval&quot;],
+[&quot;C9&quot;,&quot;spearhead&quot;,&quot;retrospect&quot;],
+[&quot;CA&quot;,&quot;spellbind&quot;,&quot;revenue&quot;],
+[&quot;CB&quot;,&quot;spheroid&quot;,&quot;revival&quot;],
+[&quot;CC&quot;,&quot;spigot&quot;,&quot;revolver&quot;],
+[&quot;CD&quot;,&quot;spindle&quot;,&quot;sandalwood&quot;],
+[&quot;CE&quot;,&quot;spyglass&quot;,&quot;sardonic&quot;],
+[&quot;CF&quot;,&quot;stagehand&quot;,&quot;Saturday&quot;],
+[&quot;D0&quot;,&quot;stagnate&quot;,&quot;savagery&quot;],
+[&quot;D1&quot;,&quot;stairway&quot;,&quot;scavenger&quot;],
+[&quot;D2&quot;,&quot;standard&quot;,&quot;sensation&quot;],
+[&quot;D3&quot;,&quot;stapler&quot;,&quot;sociable&quot;],
+[&quot;D4&quot;,&quot;steamship&quot;,&quot;souvenir&quot;],
+[&quot;D5&quot;,&quot;sterling&quot;,&quot;specialist&quot;],
+[&quot;D6&quot;,&quot;stockman&quot;,&quot;speculate&quot;],
+[&quot;D7&quot;,&quot;stopwatch&quot;,&quot;stethoscope&quot;],
+[&quot;D8&quot;,&quot;stormy&quot;,&quot;stupendous&quot;],
+[&quot;D9&quot;,&quot;sugar&quot;,&quot;supportive&quot;],
+[&quot;DA&quot;,&quot;surmount&quot;,&quot;surrender&quot;],
+[&quot;DB&quot;,&quot;suspense&quot;,&quot;suspicious&quot;],
+[&quot;DC&quot;,&quot;sweatband&quot;,&quot;sympathy&quot;],
+[&quot;DD&quot;,&quot;swelter&quot;,&quot;tambourine&quot;],
+[&quot;DE&quot;,&quot;tactics&quot;,&quot;telephone&quot;],
+[&quot;DF&quot;,&quot;talon&quot;,&quot;therapist&quot;],
+[&quot;E0&quot;,&quot;tapeworm&quot;,&quot;tobacco&quot;],
+[&quot;E1&quot;,&quot;tempest&quot;,&quot;tolerance&quot;],
+[&quot;E2&quot;,&quot;tiger&quot;,&quot;tomorrow&quot;],
+[&quot;E3&quot;,&quot;tissue&quot;,&quot;torpedo&quot;],
+[&quot;E4&quot;,&quot;tonic&quot;,&quot;tradition&quot;],
+[&quot;E5&quot;,&quot;topmost&quot;,&quot;travesty&quot;],
+[&quot;E6&quot;,&quot;tracker&quot;,&quot;trombonist&quot;],
+[&quot;E7&quot;,&quot;transit&quot;,&quot;truncated&quot;],
+[&quot;E8&quot;,&quot;trauma&quot;,&quot;typewriter&quot;],
+[&quot;E9&quot;,&quot;treadmill&quot;,&quot;ultimate&quot;],
+[&quot;EA&quot;,&quot;Trojan&quot;,&quot;undaunted&quot;],
+[&quot;EB&quot;,&quot;trouble&quot;,&quot;underfoot&quot;],
+[&quot;EC&quot;,&quot;tumor&quot;,&quot;unicorn&quot;],
+[&quot;ED&quot;,&quot;tunnel&quot;,&quot;unify&quot;],
+[&quot;EE&quot;,&quot;tycoon&quot;,&quot;universe&quot;],
+[&quot;EF&quot;,&quot;uncut&quot;,&quot;unravel&quot;],
+[&quot;F0&quot;,&quot;unearth&quot;,&quot;upcoming&quot;],
+[&quot;F1&quot;,&quot;unwind&quot;,&quot;vacancy&quot;],
+[&quot;F2&quot;,&quot;uproot&quot;,&quot;vagabond&quot;],
+[&quot;F3&quot;,&quot;upset&quot;,&quot;vertigo&quot;],
+[&quot;F4&quot;,&quot;upshot&quot;,&quot;Virginia&quot;],
+[&quot;F5&quot;,&quot;vapor&quot;,&quot;visitor&quot;],
+[&quot;F6&quot;,&quot;village&quot;,&quot;vocalist&quot;],
+[&quot;F7&quot;,&quot;virus&quot;,&quot;voyager&quot;],
+[&quot;F8&quot;,&quot;Vulcan&quot;,&quot;warranty&quot;],
+[&quot;F9&quot;,&quot;waffle&quot;,&quot;Waterloo&quot;],
+[&quot;FA&quot;,&quot;wallet&quot;,&quot;whimsical&quot;],
+[&quot;FB&quot;,&quot;watchword&quot;,&quot;Wichita&quot;],
+[&quot;FC&quot;,&quot;wayside&quot;,&quot;Wilmington&quot;],
+[&quot;FD&quot;,&quot;willow&quot;,&quot;Wyoming&quot;],
+[&quot;FE&quot;,&quot;woodlark&quot;,&quot;yesteryear&quot;],
+[&quot;FF&quot;,&quot;Zulu&quot;,&quot;Yucatan&quot;]]
+
+
+_string = &quot;endow gremlin indulge bison flatfoot fallout goldfish bison hockey fracture fracture bison goggles jawbone bison flatfoot gremlin glucose glucose fracture flatfoot indoors gazelle gremlin goldfish bison guidance indulge keyboard keyboard glucose fracture hockey bison gazelle goldfish bison cement frighten gazelle goldfish indoors buzzard highchair fallout highchair bison fallout goldfish flytrap bison fallout goldfish gremlin indoors frighten fracture highchair bison cement fracture goldfish flatfoot gremlin flytrap fracture buzzard guidance goldfish freedom buzzard allow crowfoot jawbone bison indoors frighten fracture bison involve fallout jawbone Burbank indoors frighten fracture bison guidance gazelle flatfoot indoors indulge highchair fracture bison hockey frighten gremlin indulge flytrap bison flagpole fracture bison indulge hockey fracture flytrap bison allow blockade endow indulge hockey fallout blockade bison gazelle hockey bison inverse fracture highchair jawbone bison gazelle goggles guidance gremlin highchair indoors fallout goldfish indoors bison gazelle goldfish bison indoors frighten gazelle hockey bison flatfoot frighten fallout glucose glucose fracture goldfish freedom fracture blackjack blackjack&quot;
+
+
+def tihuan(s):
+    for i in aaa:
+        s = s.replace(i[1],i[0])
+        s = s.replace(i[2],i[0])
+    return s
+
+bbb = tihuan(_string)
+print(bbb)
+ccc = bbb.split(&quot; &quot;)
+ddd = &quot;&quot;
+for i in ccc:
+    ddd+=chr(int(i,16))
+
+print(ddd)
+
+
+
+
+</code></pre>
+<h2 id="隐藏字符加密"><a href="#隐藏字符加密" class="headerlink" title="隐藏字符加密"></a>隐藏字符加密</h2><p><a target="_blank" rel="noopener" href="http://www.atoolbox.net/Tool.php?Id=829">http://www.atoolbox.net/Tool.php?Id=829</a></p>
+<h2 id="playfair"><a href="#playfair" class="headerlink" title="playfair"></a>playfair</h2><p>密文：iuf_xat_hmoz_gocwmx</p>
+<p><a target="_blank" rel="noopener" href="https://www.dcode.fr/playfair-cipher">https://www.dcode.fr/playfair-cipher</a></p>
+<p>###长得像base64的AES</p>
+<p>U2FsdGVkX19QwGkcgD0fTjZxgijRzQOGbCWALh4sRDec2w6xsY/ux53Vuj/AMZBDJ87qyZL5kAf1fmAH4Oe13Iu435bfRBuZgHpnRjTBn5+xsDHONiR3t0+Oa8yG/tOKJMNUauedvMyN4v4QKiFunw==</p>
+<p>输入密钥ISCC</p>
+<p>解密得到：U2FsdGVkX18OvTUlZubDnmvk2lSAkb8Jt4Zv6UWpE7Xb43f8uzeFRUKGMo6QaaNFHZriDDV0EQ/qt38Tw73tbQ==</p>
+<p>再次解密得到：</p>
+<p>flag{DugUpADiamondADeepDarkMine}</p>
+
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
-        
-      </div>
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2020/11/14/%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B9%B1%E7%9A%84%E5%AF%86%E7%A0%81/'>
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://gryffinbit.top/2020/11/14/%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B9%B1%E7%9A%84%E5%AF%86%E7%A0%81/>https://gryffinbit.top/2020/11/14/%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B9%B1%E7%9A%84%E5%AF%86%E7%A0%81/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-14T17:01:16+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年11月14日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
+          
   
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/RSA%E5%8E%9F%E7%90%86%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/">
-        RSA原理基本介绍
-      </a>
-    </h2>
-  
-  <div class='md'>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%9D%82/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>杂</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        RSA的基本介绍
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gryffinbit.top/2020/11/14/%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B9%B1%E7%9A%84%E5%AF%86%E7%A0%81/&title=一些杂乱的密码 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://gryffinbit.top/2020/11/14/%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B9%B1%E7%9A%84%E5%AF%86%E7%A0%81/&title=一些杂乱的密码 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://gryffinbit.top/2020/11/14/%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B9%B1%E7%9A%84%E5%AF%86%E7%A0%81/&title=一些杂乱的密码 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2020/11/14/%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%AF%86%E7%A0%81%E5%8F%98%E4%BD%93/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>维吉尼亚密码变体</p>
+          <p class='content'>原题：
+
+It is said that Vigenere cipher does not achieve the perfect secrecy actually :-)Tips:1.The ...</p>
+        </a>
+      
+      
+        <a class='next' href='/2020/11/14/RSA%E5%8E%9F%E7%90%86%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/'>
+          <p class='title'>RSA原理基本介绍<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>RSA的基本介绍
 
 
 python pow函数的用法：计算x的y次方，如果z在存在，则再对结果进行取模，其结果等效于pow(x,y) %z     
 
 import math
 
-math.pow(x, y[, z])
-求明文m，用该函数求c（密文cipher）的d次方，得到：
-$$d\equiv e^{-1}$$
-$$m=pow(cipher,e^{-1})$$
-
-d是e的乘法逆元 ，e^-...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/RSA%E5%8E%9F%E7%90%86%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/'>
-            阅读全文
-          </a>
-        </div>
+math.pow...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/13/RSA/">
-        RSA
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        参数N：大整数N，我们称之为模数（modulus）
-p 和 q ：大整数N的两个因子（factor）
-e 和 d：互为模反数的两个指数（exponent）
- c 和 m：分别是密文和明文
-&#123;N,e&#125;称为公钥,&#123;N,d&#125;称为私钥
-解题思路
-选取两个较大的互不相等的质数p和q，计算n = p * q 。
-计算phi = (p-1) * (q-1) 。
-选取...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-13</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/13/RSA/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/11/%E7%AC%AC%E4%B8%80%E5%B1%8A%E4%BF%A1%E5%AE%89%E5%A4%A7%E6%8C%91%E6%88%98WP/">
-        第一届信安大挑战WP
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        CDUT第一届信安大挑战Misc（部分） 和 Crypto 的write up
-密码学
-crypto 1
-
-题目描述
-
-modulus：99742889480132178464693625265991467727088330702125690789109469022100733238623exponent：65537请提交私钥注：私钥为十六进制。Flag格式 dino{0x…….}
+  </article>
 
 
-题解...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-11</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/write-up/">write up</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/11/%E7%AC%AC%E4%B8%80%E5%B1%8A%E4%BF%A1%E5%AE%89%E5%A4%A7%E6%8C%91%E6%88%98WP/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/08/20/LSFR%E6%B5%81%E5%AF%86%E7%A0%81/">
-        LSFR流密码实验
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        LFSR流密码 实验一、实验题目LFSR流密码
-二、实验目的和要求编程实现简单地线性反馈移位寄存器，理解其工作原理，掌握流密码的算法结构和加解密过程。利用C++语言实现LFSR。通过不同初始状态生成相应序列，观察其周期特点。利用生成的序列对文本进行加密和解密运算。
-三、实验环境clion
-四、实验内容给定的 LFSR 结构如图，程序完成功能：
-
-（1）由给定的初始状态序列生成密钥序列（2）选...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-08-20</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/08/20/LSFR%E6%B5%81%E5%AF%86%E7%A0%81/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/08/19/%E5%8D%95%E8%A1%A8%E5%A4%9A%E8%A1%A8%E4%BB%A3%E6%8D%A2%E5%AE%9E%E9%AA%8C/">
-        单表代换/多表代换实验
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        #单表代换、多表代换 实验
-一、实验题目单表代换和多表代换
-
-二、实验目的和要求通过实验熟练掌握凯撒密码和Hill密码算法原理，编程实现加密算法，熟悉模运算和扩展欧几里德算法，提高C++程序设计和密码运算基本能力。
-单表代换编程实现凯撒密码，输入任意一段明文，对其加密并输出密文。多表代换编程实现 Hill 加密算法，输入一段无空格的五个小写字母明文，对其加密并输出密文。
-
-三、实验环境Cli...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-08-19</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/08/19/%E5%8D%95%E8%A1%A8%E5%A4%9A%E8%A1%A8%E4%BB%A3%E6%8D%A2%E5%AE%9E%E9%AA%8C/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
 
 
-	
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -1021,141 +1042,28 @@ modulus：9974288948013217846469362526599146772708833070212569078910946902210073
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/photo.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Gryffinbit</h2>
-        
-        
-          <p>兔子</p>
 
-        
-        
-          <p>凡殺不死我的，必使我更強大。</p>
 
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/img/QQ.jpg"
-              class="social fab fa-qq flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;tf=1&amp;source=mailto&amp;to=Gryffinbit@Gmail.com"
-              class="social fas fa-envelope-open flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/Gryffinbit/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://blog.csdn.net/Gryffinbit"
-              class="social fab fa-cuttlefish flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Misc/" href="/categories/Misc/"
-            id="categoriesMisc"
-            ><div class='name'>Misc</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/write-up/" href="/categories/write-up/"
-            id="categorieswrite-up"
-            ><div class='name'>write up</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"
-            id="categoriesE5AF86E7A081E5ADA6"
-            ><div class='name'>密码学</div><div class='badge'>(7)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8C%AA%E5%9C%88%E5%AF%86%E7%A0%81"><span class="toc-text">猪圈密码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E7%A7%8D%EF%BC%9A%E5%9C%A3%E5%A0%82%E6%AD%A6%E5%A3%AB%E5%AF%86%E7%A0%81"><span class="toc-text">变种：圣堂武士密码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MD5"><span class="toc-text">MD5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PGP%E8%AF%8D%E6%B1%87%E8%A1%A8-%EF%BC%88%E7%94%9F%E7%89%A9%E8%AF%86%E5%88%AB%E8%AF%8D%E6%B1%87%E8%A1%A8%EF%BC%89"><span class="toc-text">PGP词汇表  （生物识别词汇表）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%90%E8%97%8F%E5%AD%97%E7%AC%A6%E5%8A%A0%E5%AF%86"><span class="toc-text">隐藏字符加密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#playfair"><span class="toc-text">playfair</span></a></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/RSA/" style="font-size: 19px; color: #777">RSA</a> <a href="/tags/%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81/" style="font-size: 24px; color: #555">古典密码</a> <a href="/tags/%E5%9B%BE%E7%89%87/" style="font-size: 19px; color: #777">图片</a> <a href="/tags/%E6%9D%82/" style="font-size: 14px; color: #999">杂</a> <a href="/tags/%E6%B5%81%E5%AF%86%E7%A0%81/" style="font-size: 14px; color: #999">流密码</a> <a href="/tags/%E7%AC%AC%E4%B8%80%E5%B1%8A%E4%BF%A1%E5%AE%89%E5%A4%A7%E6%8C%91%E6%88%98/" style="font-size: 14px; color: #999">第一届信安大挑战</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 </aside>
+
 
 
         
@@ -1165,14 +1073,14 @@ modulus：9974288948013217846469362526599146772708833070212569078910946902210073
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="一些杂乱的密码";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
 </script>
 
