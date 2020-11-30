@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>kali下snort数据包嗅探</title>
+      <link href="2020/11/30/kali%E4%B8%8Bsnort%E6%95%B0%E6%8D%AE%E5%8C%85%E5%97%85%E6%8E%A2/"/>
+      <url>2020/11/30/kali%E4%B8%8Bsnort%E6%95%B0%E6%8D%AE%E5%8C%85%E5%97%85%E6%8E%A2/</url>
+      
+        <content type="html"><![CDATA[<h1 id="kali下snort数据包嗅探"><a href="#kali下snort数据包嗅探" class="headerlink" title="kali下snort数据包嗅探"></a>kali下snort数据包嗅探</h1><h2 id="常用的命令"><a href="#常用的命令" class="headerlink" title="常用的命令"></a>常用的命令</h2><p> 显示IP和TCP/UDP/ICMP包头信息 </p><p><code>snort -v    </code></p><p> 显示应用层的数据，输出包头信息的同时显示包的数据信息</p><p><code>snort -vd </code></p><p>显示数据链路层的信息</p><p><code>snort -vde</code></p><blockquote><p>更多命令参考snort手册<a href="http://www.kaiyuanba.cn/content/network/snort/Snortman.htm">http://www.kaiyuanba.cn/content/network/snort/Snortman.htm</a></p></blockquote><h2 id="仅捕获同组主机发出的icmp回显请求数据包。"><a href="#仅捕获同组主机发出的icmp回显请求数据包。" class="headerlink" title="仅捕获同组主机发出的icmp回显请求数据包。"></a>仅捕获同组主机发出的icmp回显请求数据包。</h2><p><code>sudo snort -v</code></p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-1.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-1.png" srcset="data:image/png;base64,666"></p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-2.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-2.png" srcset="data:image/png;base64,666"></p><h2 id="采用详细模式在终端显示数据包链路层、应用层信息"><a href="#采用详细模式在终端显示数据包链路层、应用层信息" class="headerlink" title="采用详细模式在终端显示数据包链路层、应用层信息"></a>采用详细模式在终端显示数据包链路层、应用层信息</h2><p><code>sudo snort -vde</code></p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-3.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-3.png" srcset="data:image/png;base64,666"></p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-4.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-4.png" srcset="data:image/png;base64,666"></p><blockquote><p>默认snort日志记录最后一级目录会以触发数据包的源IP命名。可使用组合键Ctrl+C停止snort运行。</p></blockquote><h2 id="查看Snort日志记录"><a href="#查看Snort日志记录" class="headerlink" title="查看Snort日志记录"></a>查看Snort日志记录</h2><p><em>如果要把所有的包记录到硬盘上，你需要指定一个日志目录，snort就会自动记录数据包：</em></p><pre><code class="bash">cd snort-2.9.17   # 定位到snort的文件夹mkdir log         # 新建一个log目录，用于存放日志snort -vde -l log -h xxx.xxx.x.0/24    # 只对本地网络进行日志，告诉snort把进入C类网络&lt;本地IP&gt;的所有包的数据链路、TCP/IP以及应用层的数据记录到目录log中snort -l log -b     #二进制的日志文件格式</code></pre><p> 网络速度很快，或者想使日志更加紧凑以便以后的分析，那么应该使用二进制的日志文件格式。所谓的二进制日志文件格式就是tcpdump程序使用的格式。该命令可以把所有的包记录到一个单一的二进制文件中</p><pre><code>ifconfig #查看本机IPsnort -vde -l log -h 172.16.68.139.0/24 # 只对本地网络进行日志。</code></pre><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-5.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-5.png" srcset="data:image/png;base64,666"></p><p>在log中查看刚刚生成的日志</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-6.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-6.png" srcset="data:image/png;base64,666"></p><p>将log放入wireshark中进行查看</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> kali </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> snort </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>kali安装配置snort</title>
+      <link href="2020/11/30/kali%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEsnort/"/>
+      <url>2020/11/30/kali%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEsnort/</url>
+      
+        <content type="html"><![CDATA[<h1 id="kali-下snort安装软件包，配置环境"><a href="#kali-下snort安装软件包，配置环境" class="headerlink" title="kali 下snort安装软件包，配置环境"></a>kali 下snort安装软件包，配置环境</h1><h2 id="实验环境："><a href="#实验环境：" class="headerlink" title="实验环境："></a>实验环境：</h2><p>kali-linux-2020.1 debian8 </p><h2 id="安装snort及其依赖包"><a href="#安装snort及其依赖包" class="headerlink" title="安装snort及其依赖包"></a>安装snort及其依赖包</h2><p>在官网上下载snort, day</p><p><a href="https://www.snort.org/downloads">https://www.snort.org/downloads</a></p><pre><code class="bash">snort-2.9.17.tar.gzdaq-2.0.7.tar.gz进行安装包解压：tar -zxvf snort-2.9.17.tar.gztar -zxvf daq-2.0.7.tar.gz</code></pre><p>安装daq所依赖的开发包</p><pre><code class="bash">Apt-get install flexApt-get install bisonApt-get install libpcap-dev</code></pre><p>对dag包进行编译</p><pre><code class="bash">cd daq-2.0.7./configure &amp;&amp; make &amp;&amp; make install</code></pre><p>安装snort所依赖的软件包</p><pre><code class="bash">Apt-get isnatll libpcre3-devApt-get install libdumbnet-devApt-get install zlib1g-dev</code></pre><p>对snort包进行编译</p><pre><code class="bash">cd snort-2.9.17./configure --enable-sourcefire --disable-open-appid &amp;&amp; make &amp;&amp; sudo make install</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> kali </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> snort </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>图片拼接</title>
       <link href="2020/11/14/%E5%9B%BE%E7%89%87%E6%8B%BC%E6%8E%A5/"/>
       <url>2020/11/14/%E5%9B%BE%E7%89%87%E6%8B%BC%E6%8E%A5/</url>
