@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -21,7 +19,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>标签：DES - Gryffinbit</title>
+  <title>kali下snort简单的报警规则 - Gryffinbit</title>
+  
+    <meta name="keywords" content="snort">
   
 
   
@@ -341,7 +341,7 @@
     <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper  dock' style="display: none;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div id='cover-backstretch'></div>
           
@@ -426,81 +426,339 @@
       <div class='body-wrapper' id="pjax-container">
         
 
-
 <div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
+
+
+  
+  <div class="article-meta" id="top">
     
-      
-  <section class="post-list">
     
-      
+    
+      <h1 class="title">
+        kali下snort简单的报警规则
+      </h1>
+      <div class='new-meta-box'>
         
           
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/DES%E5%AE%9E%E9%AA%8C/">
-        DES实验报告
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        DES实验报告一、实验题目DES加密算法
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>Gryffinbit</p>
+  </a>
+</div>
 
-二、实验目的和要求通过实验，掌握DES密码的程序实现，熟悉比特串的操作，矩阵变换，提高C++程序设计能力。
-编写 DES 密码的加密解密程序，运行并验证。 (1) 输入 64 比特明文和密文，利用 DES 密码对其加密并输出密文。 (2) 输入 DES 加密的 64 比特密文和密钥，对其进行解密。 (3) 记录调试和验证过程，完成实验报告。
-
-三、...
-      
-    
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/kali/">kali</a>
+    </a>
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+
+
+          
         
-        <time>2020-11-14</time>
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年11月30日</p>
+  </a>
+</div>
+
+          
         
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="kali下snort简单的报警规则" data-path="/2020/11/30/kali%E4%B8%8Bsnort%E7%AE%80%E5%8D%95%E7%9A%84%E6%8A%A5%E8%AD%A6%E8%A7%84%E5%88%99/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  <h1 id="snort简单的报警规则"><a href="#snort简单的报警规则" class="headerlink" title="snort简单的报警规则"></a>snort简单的报警规则</h1><h2 id="在官网下载规则包（需要注册登陆）"><a href="#在官网下载规则包（需要注册登陆）" class="headerlink" title="在官网下载规则包（需要注册登陆）"></a>在官网下载规则包（需要注册登陆）</h2><p><a target="_blank" rel="noopener" href="https://www.snort.org/downloads">https://www.snort.org/downloads</a></p>
+<blockquote>
+<p>我下载的是29151版本的</p>
+</blockquote>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-10.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-10.png" srcset="data:image/png;base64,666"></p>
+<p>将snort安装目录的包用规则包进行替换</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-11.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-11.png" srcset="data:image/png;base64,666"></p>
+<p>替换到snort-2.9.17文件夹内</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-12.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-12.png" srcset="data:image/png;base64,666"></p>
+<h2 id="练习一条规则"><a href="#练习一条规则" class="headerlink" title="练习一条规则"></a>练习一条规则</h2><p><strong><em>👉在rules/local.rules下进行规则配置。实现对内网的ICMP相关流量进行检测，并报警</em></strong></p>
+<blockquote>
+<p>编辑文件的时候都采用vim的方式   vim &lt;文件路径&gt;</p>
+</blockquote>
+<blockquote>
+<p>以下操作都在snort的文件夹内完成。 cd /snort-2.9.17</p>
+</blockquote>
+<blockquote>
+<p>把下面的内容添加到local.rules里</p>
+</blockquote>
+<pre><code class="bash">vim rules/local.rules</code></pre>
+<pre><code>alert icmp any any -&gt; 172.16.68.139 any (msg:&quot;ICMP&quot;;sid:41409)</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-13.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-13.png" srcset="data:image/png;base64,666"></p>
+<p>测试规则，看是否有报错</p>
+<p><em>小猪猪跑出来，成功运行</em></p>
+<pre><code class="bash">snort -c rules/local.rules -T</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-14.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-14.png" srcset="data:image/png;base64,666"></p>
+<h2 id="利用Snort检测ping攻击"><a href="#利用Snort检测ping攻击" class="headerlink" title="利用Snort检测ping攻击"></a>利用Snort检测ping攻击</h2><p>在rules/icmp-info.rules文件中设置如下规则：</p>
+<pre><code class="bash">alert icmp any any -&gt; 172.16.68.139 any (msg:&quot;ICMP Large ICMP Packet&quot;;dsize:&gt;800;reference:arachoids,246; sid:499;rev:4;)</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-15.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-15.png" srcset="data:image/png;base64,666"></p>
+<p><em>tip：官方文档：This configuration file enables active response, to run snort in   test mode -T you are required to supply an interface -i <interface>  or test mode will fail to fully validate the configuration and  exit with a FATAL error</em></p>
+<p>检验规则是否报错：</p>
+<pre><code class="bash">snort -c rules/icmp-info.rules -T</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-16.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-16.png" srcset="data:image/png;base64,666"></p>
+<p><strong>开启检测模式</strong></p>
+<pre><code class="bash">snort -i eth0 -c /snort-2.9.17/etc/snort.conf -A fast -l log/snort-detect/</code></pre>
+<p>⛔️报错：Invalid keyword ‘preprocessor’</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-18.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-18.png" srcset="data:image/png;base64,666"></p>
+<p>官网下载的配置文件，默认把preprocessor reputation注释掉。找到这行。看配置文件，把preprocessor注释打开。</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-19.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-19.png" srcset="data:image/png;base64,666"></p>
+<p>不设置黑白名单，可以把黑白名单注释掉。</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-20.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-20.png" srcset="data:image/png;base64,666"></p>
+<p>❗️<strong>注意！！！！！！！！！逗号问题！！！！在每个配置的最后一行，不能有,\。 不然会出现类似这种的报错。莫名其妙的，天真的我之前还认真的去看了官网配置。。</strong></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort--21.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort--21.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-22.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-22.png" srcset="data:image/png;base64,666"></p>
+<p>再次运行监测模式</p>
+<p>⛔️报错：ERROR: Perfmonitor: Cannot open base stats file “/var/snort/snort.stats”. Fatal Error, Quitting..</p>
+<p>💚打开sonrt.conf这行注释掉 # preprocessor perfmonitor: time 300 file /var/snort/snort.stats pktcnt 10000</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-26.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-26.png" srcset="data:image/png;base64,666"></p>
+<p>没有报错了！小猪猪跑出来，运行如德芙巧克力一般丝滑～尽享愉悦，纵享丝滑～</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-25.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-25.png" srcset="data:image/png;base64,666"></p>
+<p><strong>在另一台主机上ping snort所在主机，log下面会生成警报日志</strong></p>
+<blockquote>
+<p>kali 上开启snort入侵检测</p>
+</blockquote>
+<pre><code class="bash">snort -i eth0 -c /snort-2.9.17/etc/snort.conf -A fast -l log/snort-detect/</code></pre>
+<p>另一台主机去ping</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-27.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-27.png" srcset="data:image/png;base64,666"></p>
+<p>生成了alert警告日志</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-28.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-28.png" srcset="data:image/png;base64,666"></p>
+<p>日志内记录的内容</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-29.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-29.png" srcset="data:image/png;base64,666"></p>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2020/11/14/DES%E5%AE%9E%E9%AA%8C/'>
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://gryffinbit.top/2020/11/30/kali%E4%B8%8Bsnort%E7%AE%80%E5%8D%95%E7%9A%84%E6%8A%A5%E8%AD%A6%E8%A7%84%E5%88%99/>https://gryffinbit.top/2020/11/30/kali%E4%B8%8Bsnort%E7%AE%80%E5%8D%95%E7%9A%84%E6%8A%A5%E8%AD%A6%E8%A7%84%E5%88%99/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-30T22:33:13+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年11月30日</p>
+  </a>
 </div>
 
-          </div>
         
       
-    
-  </section>
+        
+          
   
-    
-  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/snort/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>snort</p></a></div>
 
 
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gryffinbit.top/2020/11/30/kali%E4%B8%8Bsnort%E7%AE%80%E5%8D%95%E7%9A%84%E6%8A%A5%E8%AD%A6%E8%A7%84%E5%88%99/&title=kali下snort简单的报警规则 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://gryffinbit.top/2020/11/30/kali%E4%B8%8Bsnort%E7%AE%80%E5%8D%95%E7%9A%84%E6%8A%A5%E8%AD%A6%E8%A7%84%E5%88%99/&title=kali下snort简单的报警规则 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://gryffinbit.top/2020/11/30/kali%E4%B8%8Bsnort%E7%AE%80%E5%8D%95%E7%9A%84%E6%8A%A5%E8%AD%A6%E8%A7%84%E5%88%99/&title=kali下snort简单的报警规则 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
   
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2020/11/30/kali%E4%B8%8Bsnort%E6%95%B0%E6%8D%AE%E5%8C%85%E5%97%85%E6%8E%A2/'>
+          <p class='title'>kali下snort数据包嗅探<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>kali下snort数据包嗅探常用的命令 显示IP和TCP/UDP/ICMP包头信息 
+snort -v    
+ 显示应用层的数据，输出包头信息的同时显示包的数据信息
+snort -vd 
+显...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -508,151 +766,28 @@
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/photo.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Gryffinbit</h2>
-        
-        
-          <p>兔子</p>
 
-        
-        
-          <p>凡殺不死我的，必使我更強大。</p>
 
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/img/QQ.jpg"
-              class="social fab fa-qq flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;tf=1&amp;source=mailto&amp;to=Gryffinbit@Gmail.com"
-              class="social fas fa-envelope-open flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/Gryffinbit/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://blog.csdn.net/Gryffinbit"
-              class="social fab fa-cuttlefish flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Misc/" href="/categories/Misc/"
-            id="categoriesMisc"
-            ><div class='name'>Misc</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/kali/" href="/categories/kali/"
-            id="categorieskali"
-            ><div class='name'>kali</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/write-up/" href="/categories/write-up/"
-            id="categorieswrite-up"
-            ><div class='name'>write up</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"
-            id="categoriesE5AF86E7A081E5ADA6"
-            ><div class='name'>密码学</div><div class='badge'>(13)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/kali/" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/kali/"
-            id="categoriesE5AF86E7A081E5ADA6kali"
-            ><div class='name'>kali</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8%E5%AE%98%E7%BD%91%E4%B8%8B%E8%BD%BD%E8%A7%84%E5%88%99%E5%8C%85%EF%BC%88%E9%9C%80%E8%A6%81%E6%B3%A8%E5%86%8C%E7%99%BB%E9%99%86%EF%BC%89"><span class="toc-text">在官网下载规则包（需要注册登陆）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%83%E4%B9%A0%E4%B8%80%E6%9D%A1%E8%A7%84%E5%88%99"><span class="toc-text">练习一条规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A9%E7%94%A8Snort%E6%A3%80%E6%B5%8Bping%E6%94%BB%E5%87%BB"><span class="toc-text">利用Snort检测ping攻击</span></a></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/AES/" style="font-size: 14px; color: #999">AES</a> <a href="/tags/DES/" style="font-size: 14px; color: #999">DES</a> <a href="/tags/Python/" style="font-size: 14px; color: #999">Python</a> <a href="/tags/RSA/" style="font-size: 19px; color: #777">RSA</a> <a href="/tags/SHA-1/" style="font-size: 14px; color: #999">SHA-1</a> <a href="/tags/gmpy2/" style="font-size: 14px; color: #999">gmpy2</a> <a href="/tags/snort/" style="font-size: 19px; color: #777">snort</a> <a href="/tags/%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81/" style="font-size: 19px; color: #777">古典密码</a> <a href="/tags/%E5%9B%BE%E7%89%87/" style="font-size: 24px; color: #555">图片</a> <a href="/tags/%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B0/" style="font-size: 14px; color: #999">散列函数</a> <a href="/tags/%E6%9D%82/" style="font-size: 14px; color: #999">杂</a> <a href="/tags/%E6%B5%81%E5%AF%86%E7%A0%81/" style="font-size: 14px; color: #999">流密码</a> <a href="/tags/%E7%AC%AC%E4%B8%80%E5%B1%8A%E4%BF%A1%E5%AE%89%E5%A4%A7%E6%8C%91%E6%88%98/" style="font-size: 14px; color: #999">第一届信安大挑战</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 </aside>
+
 
 
         
@@ -662,8 +797,8 @@
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="kali下snort简单的报警规则";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
