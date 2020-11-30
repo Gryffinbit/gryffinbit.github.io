@@ -8,7 +8,7 @@
       <link href="2020/11/30/kali%E4%B8%8Bsnort%E6%95%B0%E6%8D%AE%E5%8C%85%E5%97%85%E6%8E%A2/"/>
       <url>2020/11/30/kali%E4%B8%8Bsnort%E6%95%B0%E6%8D%AE%E5%8C%85%E5%97%85%E6%8E%A2/</url>
       
-        <content type="html"><![CDATA[<h1 id="kali下snort数据包嗅探"><a href="#kali下snort数据包嗅探" class="headerlink" title="kali下snort数据包嗅探"></a>kali下snort数据包嗅探</h1><h2 id="常用的命令"><a href="#常用的命令" class="headerlink" title="常用的命令"></a>常用的命令</h2><p> 显示IP和TCP/UDP/ICMP包头信息 </p><p><code>snort -v    </code></p><p> 显示应用层的数据，输出包头信息的同时显示包的数据信息</p><p><code>snort -vd </code></p><p>显示数据链路层的信息</p><p><code>snort -vde</code></p><blockquote><p>更多命令参考snort手册<a href="http://www.kaiyuanba.cn/content/network/snort/Snortman.htm">http://www.kaiyuanba.cn/content/network/snort/Snortman.htm</a></p></blockquote><h2 id="仅捕获同组主机发出的icmp回显请求数据包。"><a href="#仅捕获同组主机发出的icmp回显请求数据包。" class="headerlink" title="仅捕获同组主机发出的icmp回显请求数据包。"></a>仅捕获同组主机发出的icmp回显请求数据包。</h2><p><code>sudo snort -v</code></p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-1.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-1.png" srcset="data:image/png;base64,666"></p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-2.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-2.png" srcset="data:image/png;base64,666"></p><h2 id="采用详细模式在终端显示数据包链路层、应用层信息"><a href="#采用详细模式在终端显示数据包链路层、应用层信息" class="headerlink" title="采用详细模式在终端显示数据包链路层、应用层信息"></a>采用详细模式在终端显示数据包链路层、应用层信息</h2><p><code>sudo snort -vde</code></p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-3.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-3.png" srcset="data:image/png;base64,666"></p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-4.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-4.png" srcset="data:image/png;base64,666"></p><blockquote><p>默认snort日志记录最后一级目录会以触发数据包的源IP命名。可使用组合键Ctrl+C停止snort运行。</p></blockquote><h2 id="查看Snort日志记录"><a href="#查看Snort日志记录" class="headerlink" title="查看Snort日志记录"></a>查看Snort日志记录</h2><p><em>如果要把所有的包记录到硬盘上，你需要指定一个日志目录，snort就会自动记录数据包：</em></p><pre><code class="bash">cd snort-2.9.17   # 定位到snort的文件夹mkdir log         # 新建一个log目录，用于存放日志snort -vde -l log -h xxx.xxx.x.0/24    # 只对本地网络进行日志，告诉snort把进入C类网络&lt;本地IP&gt;的所有包的数据链路、TCP/IP以及应用层的数据记录到目录log中snort -l log -b     #二进制的日志文件格式</code></pre><p> 网络速度很快，或者想使日志更加紧凑以便以后的分析，那么应该使用二进制的日志文件格式。所谓的二进制日志文件格式就是tcpdump程序使用的格式。该命令可以把所有的包记录到一个单一的二进制文件中</p><pre><code>ifconfig #查看本机IPsnort -vde -l log -h 172.16.68.139.0/24 # 只对本地网络进行日志。</code></pre><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-5.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-5.png" srcset="data:image/png;base64,666"></p><p>在log中查看刚刚生成的日志</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-6.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-6.png" srcset="data:image/png;base64,666"></p><p>将log放入wireshark中进行查看</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-7.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-7.png" srcset="data:image/png;base64,666"></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="kali下snort数据包嗅探"><a href="#kali下snort数据包嗅探" class="headerlink" title="kali下snort数据包嗅探"></a>kali下snort数据包嗅探</h1><h2 id="常用的命令"><a href="#常用的命令" class="headerlink" title="常用的命令"></a>常用的命令</h2><p> 显示IP和TCP/UDP/ICMP包头信息 </p><p><code>snort -v    </code></p><p> 显示应用层的数据，输出包头信息的同时显示包的数据信息</p><p><code>snort -vd </code></p><p>显示数据链路层的信息</p><p><code>snort -vde</code></p><blockquote><p>更多命令参考snort手册<a href="http://www.kaiyuanba.cn/content/network/snort/Snortman.htm">http://www.kaiyuanba.cn/content/network/snort/Snortman.htm</a></p></blockquote><h2 id="仅捕获同组主机发出的icmp回显请求数据包。"><a href="#仅捕获同组主机发出的icmp回显请求数据包。" class="headerlink" title="仅捕获同组主机发出的icmp回显请求数据包。"></a>仅捕获同组主机发出的icmp回显请求数据包。</h2><p><code>sudo snort -v</code></p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-1.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-1.png" srcset="data:image/png;base64,666"></p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-2.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-2.png" srcset="data:image/png;base64,666"></p><h2 id="采用详细模式在终端显示数据包链路层、应用层信息"><a href="#采用详细模式在终端显示数据包链路层、应用层信息" class="headerlink" title="采用详细模式在终端显示数据包链路层、应用层信息"></a>采用详细模式在终端显示数据包链路层、应用层信息</h2><p><code>sudo snort -vde</code></p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-3.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-3.png" srcset="data:image/png;base64,666"></p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-4.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-4.png" srcset="data:image/png;base64,666"></p><blockquote><p>默认snort日志记录最后一级目录会以触发数据包的源IP命名。可使用组合键Ctrl+C停止snort运行。</p></blockquote><h2 id="查看Snort日志记录"><a href="#查看Snort日志记录" class="headerlink" title="查看Snort日志记录"></a>查看Snort日志记录</h2><p><em>如果要把所有的包记录到硬盘上，你需要指定一个日志目录，snort就会自动记录数据包：</em></p><pre><code class="bash">cd snort-2.9.17   # 定位到snort的文件夹mkdir log         # 新建一个log目录，用于存放日志snort -vde -l log -h xxx.xxx.x.0/24    # 只对本地网络进行日志，告诉snort把进入C类网络&lt;本地IP&gt;的所有包的数据链路、TCP/IP以及应用层的数据记录到目录log中snort -l log -b     #二进制的日志文件格式</code></pre><p> 网络速度很快，或者想使日志更加紧凑以便以后的分析，那么应该使用二进制的日志文件格式。所谓的二进制日志文件格式就是tcpdump程序使用的格式。该命令可以把所有的包记录到一个单一的二进制文件中</p><pre><code>ifconfig #查看本机IPsnort -vde -l log -h 172.16.68.139.0/24 # 只对本地网络进行日志。</code></pre><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-5.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-5.png" srcset="data:image/png;base64,666"></p><p>在log中查看刚刚生成的日志</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-6.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-6.png" srcset="data:image/png;base64,666"></p><p>将log放入wireshark中进行查看</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort--7.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort--7.png" srcset="data:image/png;base64,666"></p>]]></content>
       
       
       <categories>
@@ -33,7 +33,7 @@
       <link href="2020/11/30/kali%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEsnort/"/>
       <url>2020/11/30/kali%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEsnort/</url>
       
-        <content type="html"><![CDATA[<h1 id="kali-下snort安装软件包，配置环境"><a href="#kali-下snort安装软件包，配置环境" class="headerlink" title="kali 下snort安装软件包，配置环境"></a>kali 下snort安装软件包，配置环境</h1><h2 id="实验环境："><a href="#实验环境：" class="headerlink" title="实验环境："></a>实验环境：</h2><p>kali-linux-2020.1 debian8 </p><h2 id="安装snort及其依赖包"><a href="#安装snort及其依赖包" class="headerlink" title="安装snort及其依赖包"></a>安装snort及其依赖包</h2><p>在官网上下载snort, day</p><p><a href="https://www.snort.org/downloads">https://www.snort.org/downloads</a></p><pre><code class="bash">snort-2.9.17.tar.gzdaq-2.0.7.tar.gz进行安装包解压：tar -zxvf snort-2.9.17.tar.gztar -zxvf daq-2.0.7.tar.gz</code></pre><p>安装daq所依赖的开发包</p><pre><code class="bash">Apt-get install flexApt-get install bisonApt-get install libpcap-dev</code></pre><p>对dag包进行编译</p><pre><code class="bash">cd daq-2.0.7./configure &amp;&amp; make &amp;&amp; make install</code></pre><p>安装snort所依赖的软件包</p><pre><code class="bash">Apt-get isnatll libpcre3-devApt-get install libdumbnet-devApt-get install zlib1g-dev</code></pre><p>对snort包进行编译</p><pre><code class="bash">cd snort-2.9.17./configure --enable-sourcefire --disable-open-appid &amp;&amp; make &amp;&amp; sudo make install</code></pre>]]></content>
+        <content type="html"><![CDATA[<h1 id="kali-下snort安装软件包，配置环境"><a href="#kali-下snort安装软件包，配置环境" class="headerlink" title="kali 下snort安装软件包，配置环境"></a>kali 下snort安装软件包，配置环境</h1><h2 id="实验环境："><a href="#实验环境：" class="headerlink" title="实验环境："></a>实验环境：</h2><p>kali-linux-2020.1 debian8 </p><h2 id="安装snort及其依赖包"><a href="#安装snort及其依赖包" class="headerlink" title="安装snort及其依赖包"></a>安装snort及其依赖包</h2><p>在官网上下载snort, daq</p><p><a href="https://www.snort.org/downloads">https://www.snort.org/downloads</a></p><pre><code class="bash">snort-2.9.17.tar.gzdaq-2.0.7.tar.gz进行安装包解压：tar -zxvf snort-2.9.17.tar.gztar -zxvf daq-2.0.7.tar.gz</code></pre><p>安装daq所依赖的开发包</p><pre><code class="bash">Apt-get install flexApt-get install bisonApt-get install libpcap-dev</code></pre><p>对dag包进行编译</p><pre><code class="bash">cd daq-2.0.7./configure &amp;&amp; make &amp;&amp; make install</code></pre><p>安装snort所依赖的软件包</p><pre><code class="bash">Apt-get isnatll libpcre3-devApt-get install libdumbnet-devApt-get install zlib1g-dev</code></pre><p>对snort包进行编译</p><pre><code class="bash">cd snort-2.9.17./configure --enable-sourcefire --disable-open-appid &amp;&amp; make &amp;&amp; sudo make install</code></pre>]]></content>
       
       
       <categories>
@@ -46,6 +46,33 @@
         <tags>
             
             <tag> snort </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>kali安装gmpy2</title>
+      <link href="2020/11/30/kali%E5%AE%89%E8%A3%85gmpy2/"/>
+      <url>2020/11/30/kali%E5%AE%89%E8%A3%85gmpy2/</url>
+      
+        <content type="html"><![CDATA[<h1 id="kali-安装gmpy2"><a href="#kali-安装gmpy2" class="headerlink" title="kali-安装gmpy2"></a>kali-安装gmpy2</h1><h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>gcc 原版本9.2</p><h2 id="安装gmp包："><a href="#安装gmp包：" class="headerlink" title="安装gmp包："></a>安装gmp包：</h2><pre><code class="python">wget [https://gmplib.org/download/gmp/gmp-6.2.0.tar.xz](https://gmplib.org/download/gmp/gmp-6.2.0.tar.xz)tar xvf gmp-6.2.0.tar.xzcd gmp-6.2.0./configure --prefix=/usr/local/gmp</code></pre><blockquote><p>⛔️报错：No usable m4 in $PATH or /usr/5bin (see config.log for reasons)</p></blockquote><pre><code class="python">cdsudo apt-get install m4cd gmp-6.2.0./configure --prefix=/usr/local/gmpmake &amp;&amp; make install</code></pre><h2 id="安装mpfr包："><a href="#安装mpfr包：" class="headerlink" title="安装mpfr包："></a>安装mpfr包：</h2><pre><code>wget https://www.mpfr.org/mpfr-current/mpfr-4.1.0.tar.gztar xvf mpfr-4.1.0.tar.gzcd mpfr-4.1.0./configure --prefix=/usr/local/mpfr --with-gmp=/usr/local/gmpmake &amp;&amp; make install</code></pre><h2 id="安装mpc"><a href="#安装mpc" class="headerlink" title="安装mpc"></a>安装mpc</h2><ul><li><p>apt-get的方式下载</p><pre><code class="python">apt-get install libmpc-dev</code></pre><p>会同时安装libmpfr-dev</p><pre><code class="python">apt-get install libgmp-dev</code></pre><blockquote><p>报错</p></blockquote><pre><code class="python">apt-get update</code></pre><pre><code class="python">apt-get install libgmp-dev</code></pre><p>成功</p><pre><code class="python">wget ftp://ftp.gnu.org/gnu/mpc/mpc-1.0.3.tar.gztar xvf mpc-1.0.3.tar.gzcd mpc-1.0.3./configure --prefix=/usr/local/mpc --with-gmp=/usr/local/gmp --with-mpfr=/usr/local/mpfr</code></pre></li></ul><p><code>make &amp;&amp; make install</code></p><p>error: conflicting types for ‘mpfr_fmma’</p><p>不要管这个报错，是个软连接的问题。很麻烦。</p><h2 id="安装gmpy2"><a href="#安装gmpy2" class="headerlink" title="安装gmpy2"></a>安装gmpy2</h2><p><code>pip install gmpy2</code></p><h2 id="tip：其他下载mpc的方式"><a href="#tip：其他下载mpc的方式" class="headerlink" title="tip：其他下载mpc的方式"></a>tip：其他下载mpc的方式</h2><p>在文件夹内输入地址。mpc下载</p><p>获取GCC基础架构：</p><pre><code class="python">[ftp://gcc.gnu.org/pub/gcc/infrastructure/](ftp://gcc.gnu.org/pub/gcc/infrastructure/)将下载文件放在临时目录中(您可以使用所需的任何目录)。</code></pre><pre><code class="python">/opt/downloads在与downloads目录或其子目录不同的temp目录中构建基础结构：</code></pre><pre><code class="python">/tmp/gcc使用静态库配置基础架构，如下所示：./configure --disable-shared --enable-static --prefix=/tmp/gcc</code></pre><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/gmpy2.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/gmpy2.png" srcset="data:image/png;base64,666"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 密码学 </category>
+          
+          <category> kali </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> gmpy2 </tag>
             
         </tags>
       
@@ -73,33 +100,6 @@
             <tag> 图片 </tag>
             
             <tag> Python </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>kali安装gmpy2</title>
-      <link href="2020/11/14/kali%E5%AE%89%E8%A3%85gmpy2/"/>
-      <url>2020/11/14/kali%E5%AE%89%E8%A3%85gmpy2/</url>
-      
-        <content type="html"><![CDATA[<h1 id="kali-安装gmpy2"><a href="#kali-安装gmpy2" class="headerlink" title="kali-安装gmpy2"></a>kali-安装gmpy2</h1><h1 id="注释打开"><a href="#注释打开" class="headerlink" title="注释打开"></a>注释打开</h1><p>Port 22 #可以自己指定一个端口号来用。只要连接的时候客户端加入-p 参数即可</p><p>PasswordAuthentication yes</p><p>PermitRootLogin yes #当然担心安全的朋友可以用其他用户登录，我比较习惯就用root登录</p><p>/etc/init.d/ssh restart # 重启ssh</p><p>ifconfig 记录kali的ip</p><p>macOS： </p><p>ssh -l root -p 22 ip地址</p><p>gcc 原版本9.2</p><ul><li><p>安装gmp包：</p><pre><code class="python">wget [https://gmplib.org/download/gmp/gmp-6.2.0.tar.xz](https://gmplib.org/download/gmp/gmp-6.2.0.tar.xz)tar xvf gmp-6.2.0.tar.xzcd gmp-6.2.0./configure --prefix=/usr/local/gmp</code></pre><p>No usable m4 in $PATH or /usr/5bin (see config.log for reasons)</p><pre><code class="python">cdsudo apt-get install m4cd gmp-6.2.0./configure --prefix=/usr/local/gmpmake &amp;&amp; make install</code></pre></li><li><p>安装mpfr包：</p><pre><code>wget https://www.mpfr.org/mpfr-current/mpfr-4.1.0.tar.gztar xvf mpfr-4.1.0.tar.gzcd mpfr-4.1.0./configure --prefix=/usr/local/mpfr --with-gmp=/usr/local/gmpmake &amp;&amp; make install</code></pre></li><li><p>安装mpc</p><ul><li><p>apt-get的方式下载</p><pre><code class="python">apt-get install libmpc-dev</code></pre><p>会同时安装libmpfr-dev</p><pre><code class="python">apt-get install libgmp-dev</code></pre><p>报错，</p><pre><code class="python">apt-get update</code></pre><pre><code class="python">apt-get install libgmp-dev</code></pre><p>成功</p><pre><code class="python">wget ftp://ftp.gnu.org/gnu/mpc/mpc-1.0.3.tar.gztar xvf mpc-1.0.3.tar.gzcd mpc-1.0.3./configure --prefix=/usr/local/mpc --with-gmp=/usr/local/gmp --with-mpfr=/usr/local/mpfr</code></pre></li></ul><p><code>make &amp;&amp; make install</code></p><p>error: conflicting types for ‘mpfr_fmma’</p><p>不要管这个报错，是个软连接的问题。很麻烦。</p></li><li><p>tip</p><p>在文件夹内输入地址。mpc下载</p><p>获取GCC基础架构：</p><pre><code class="python">[ftp://gcc.gnu.org/pub/gcc/infrastructure/](ftp://gcc.gnu.org/pub/gcc/infrastructure/)将下载文件放在临时目录中(您可以使用所需的任何目录)。</code></pre><pre><code class="python">/opt/downloads在与downloads目录或其子目录不同的temp目录中构建基础结构：</code></pre><pre><code class="python">/tmp/gcc使用静态库配置基础架构，如下所示：./configure --disable-shared --enable-static --prefix=/tmp/gcc</code></pre><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/gmpy2.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/gmpy2.png" srcset="data:image/png;base64,666"></p></li><li><p>安装gmpy2</p><p><code>pip install gmpy2</code></p></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 密码学 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> gmpy2 </tag>
-            
-            <tag> kali </tag>
             
         </tags>
       

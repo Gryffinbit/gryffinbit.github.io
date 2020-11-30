@@ -21,7 +21,7 @@
   
   <title>kali安装gmpy2 - Gryffinbit</title>
   
-    <meta name="keywords" content="gmpy2,kali">
+    <meta name="keywords" content="gmpy2">
   
 
   
@@ -457,7 +457,7 @@
   <div class='new-meta-item category'>
     <a class='notlink'>
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
+      <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/kali/">kali</a>
     </a>
   </div>
 
@@ -468,7 +468,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年11月14日</p>
+    <p>发布于：2020年11月30日</p>
   </a>
 </div>
 
@@ -479,7 +479,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="kali安装gmpy2" data-path="/2020/11/14/kali%E5%AE%89%E8%A3%85gmpy2/">
+      <div id="lc-pv" data-title="kali安装gmpy2" data-path="/2020/11/30/kali%E5%AE%89%E8%A3%85gmpy2/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -496,42 +496,33 @@
 
 
   
-  <h1 id="kali-安装gmpy2"><a href="#kali-安装gmpy2" class="headerlink" title="kali-安装gmpy2"></a>kali-安装gmpy2</h1><h1 id="注释打开"><a href="#注释打开" class="headerlink" title="注释打开"></a>注释打开</h1><p>Port 22 #可以自己指定一个端口号来用。只要连接的时候客户端加入-p 参数即可</p>
-<p>PasswordAuthentication yes</p>
-<p>PermitRootLogin yes #当然担心安全的朋友可以用其他用户登录，我比较习惯就用root登录</p>
-<p>/etc/init.d/ssh restart # 重启ssh</p>
-<p>ifconfig 记录kali的ip</p>
-<p>macOS： </p>
-<p>ssh -l root -p 22 ip地址</p>
-<p>gcc 原版本9.2</p>
-<ul>
-<li><p>安装gmp包：</p>
-<pre><code class="python">wget [https://gmplib.org/download/gmp/gmp-6.2.0.tar.xz](https://gmplib.org/download/gmp/gmp-6.2.0.tar.xz)
+  <h1 id="kali-安装gmpy2"><a href="#kali-安装gmpy2" class="headerlink" title="kali-安装gmpy2"></a>kali-安装gmpy2</h1><h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>gcc 原版本9.2</p>
+<h2 id="安装gmp包："><a href="#安装gmp包：" class="headerlink" title="安装gmp包："></a>安装gmp包：</h2><pre><code class="python">wget [https://gmplib.org/download/gmp/gmp-6.2.0.tar.xz](https://gmplib.org/download/gmp/gmp-6.2.0.tar.xz)
 tar xvf gmp-6.2.0.tar.xz
 cd gmp-6.2.0
 ./configure --prefix=/usr/local/gmp
 </code></pre>
-<p>No usable m4 in $PATH or /usr/5bin (see config.log for reasons)</p>
+<blockquote>
+<p>⛔️报错：No usable m4 in $PATH or /usr/5bin (see config.log for reasons)</p>
+</blockquote>
 <pre><code class="python">cd
 sudo apt-get install m4
 cd gmp-6.2.0
 ./configure --prefix=/usr/local/gmp
 make &amp;&amp; make install</code></pre>
-</li>
-<li><p>安装mpfr包：</p>
-<pre><code>wget https://www.mpfr.org/mpfr-current/mpfr-4.1.0.tar.gz
+<h2 id="安装mpfr包："><a href="#安装mpfr包：" class="headerlink" title="安装mpfr包："></a>安装mpfr包：</h2><pre><code>wget https://www.mpfr.org/mpfr-current/mpfr-4.1.0.tar.gz
 tar xvf mpfr-4.1.0.tar.gz
 cd mpfr-4.1.0
 ./configure --prefix=/usr/local/mpfr --with-gmp=/usr/local/gmp
 make &amp;&amp; make install</code></pre>
-</li>
-<li><p>安装mpc</p>
-<ul>
+<h2 id="安装mpc"><a href="#安装mpc" class="headerlink" title="安装mpc"></a>安装mpc</h2><ul>
 <li><p>apt-get的方式下载</p>
 <pre><code class="python">apt-get install libmpc-dev</code></pre>
 <p>会同时安装libmpfr-dev</p>
 <pre><code class="python">apt-get install libgmp-dev</code></pre>
-<p>报错，</p>
+<blockquote>
+<p>报错</p>
+</blockquote>
 <pre><code class="python">apt-get update</code></pre>
 <pre><code class="python">apt-get install libgmp-dev</code></pre>
 <p>成功</p>
@@ -544,9 +535,8 @@ cd mpc-1.0.3
 <p><code>make &amp;&amp; make install</code></p>
 <p>error: conflicting types for ‘mpfr_fmma’</p>
 <p>不要管这个报错，是个软连接的问题。很麻烦。</p>
-</li>
-<li><p>tip</p>
-<p>在文件夹内输入地址。mpc下载</p>
+<h2 id="安装gmpy2"><a href="#安装gmpy2" class="headerlink" title="安装gmpy2"></a>安装gmpy2</h2><p><code>pip install gmpy2</code></p>
+<h2 id="tip：其他下载mpc的方式"><a href="#tip：其他下载mpc的方式" class="headerlink" title="tip：其他下载mpc的方式"></a>tip：其他下载mpc的方式</h2><p>在文件夹内输入地址。mpc下载</p>
 <p>获取GCC基础架构：</p>
 <pre><code class="python">[ftp://gcc.gnu.org/pub/gcc/infrastructure/](ftp://gcc.gnu.org/pub/gcc/infrastructure/)
 将下载文件放在临时目录中(您可以使用所需的任何目录)。</code></pre>
@@ -556,11 +546,6 @@ cd mpc-1.0.3
 使用静态库配置基础架构，如下所示：
 ./configure --disable-shared --enable-static --prefix=/tmp/gcc</code></pre>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/gmpy2.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/gmpy2.png" srcset="data:image/png;base64,666"></p>
-</li>
-<li><p>安装gmpy2</p>
-<p><code>pip install gmpy2</code></p>
-</li>
-</ul>
 
   
   
@@ -578,7 +563,7 @@ cd mpc-1.0.3
               
             
               
-                <p>本文永久链接是：<a href=https://gryffinbit.top/2020/11/14/kali%E5%AE%89%E8%A3%85gmpy2/>https://gryffinbit.top/2020/11/14/kali%E5%AE%89%E8%A3%85gmpy2/</a></p>
+                <p>本文永久链接是：<a href=https://gryffinbit.top/2020/11/30/kali%E5%AE%89%E8%A3%85gmpy2/>https://gryffinbit.top/2020/11/30/kali%E5%AE%89%E8%A3%85gmpy2/</a></p>
               
             
           </blockquote>
@@ -595,10 +580,10 @@ cd mpc-1.0.3
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-14T20:12:18+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-30T22:04:49+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年11月14日</p>
+    <p>更新于：2020年11月30日</p>
   </a>
 </div>
 
@@ -607,7 +592,7 @@ cd mpc-1.0.3
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/gmpy2/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>gmpy2</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/kali/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>kali</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/gmpy2/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>gmpy2</p></a></div>
 
 
         
@@ -620,7 +605,7 @@ cd mpc-1.0.3
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gryffinbit.top/2020/11/14/kali%E5%AE%89%E8%A3%85gmpy2/&title=kali安装gmpy2 - Gryffinbit&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gryffinbit.top/2020/11/30/kali%E5%AE%89%E8%A3%85gmpy2/&title=kali安装gmpy2 - Gryffinbit&summary="
           
           >
           
@@ -632,7 +617,7 @@ cd mpc-1.0.3
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://gryffinbit.top/2020/11/14/kali%E5%AE%89%E8%A3%85gmpy2/&title=kali安装gmpy2 - Gryffinbit&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://gryffinbit.top/2020/11/30/kali%E5%AE%89%E8%A3%85gmpy2/&title=kali安装gmpy2 - Gryffinbit&summary="
           
           >
           
@@ -644,7 +629,7 @@ cd mpc-1.0.3
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://gryffinbit.top/2020/11/14/kali%E5%AE%89%E8%A3%85gmpy2/&title=kali安装gmpy2 - Gryffinbit&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://gryffinbit.top/2020/11/30/kali%E5%AE%89%E8%A3%85gmpy2/&title=kali安装gmpy2 - Gryffinbit&summary="
           
           >
           
@@ -674,20 +659,21 @@ cd mpc-1.0.3
   
     <div class="prev-next">
       
-        <a class='prev' href='/2020/11/14/%E5%9B%BE%E7%89%87%E6%8B%BC%E6%8E%A5/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>图片拼接</p>
+        <a class='prev' href='/2020/11/30/kali%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEsnort/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>kali安装配置snort</p>
+          <p class='content'>kali 下snort安装软件包，配置环境实验环境：kali-linux-2020.1 debian8 
+安装snort及其依赖包在官网上下载snort, daq
+https://www.sno...</p>
+        </a>
+      
+      
+        <a class='next' href='/2020/11/14/%E5%9B%BE%E7%89%87%E6%8B%BC%E6%8E%A5/'>
+          <p class='title'>图片拼接<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>import PIL.Image as Image
 import os
 
 IMAGES_PATH = &#39;./就这?/&#39;  # 图片集地址
 IMAGES_FORMAT = [&#3...</p>
-        </a>
-      
-      
-        <a class='next' href='/2020/11/14/xtime%E7%AE%97%E6%B3%95/'>
-          <p class='title'>xtime算法<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>xtime算法理论基础：
-C(x)=A(x)B(x) mod P(x)二进制数转换为多项式:A(a7,a6,a5,a4,a3,a2,a1,a0)==&gt;A(X)=a7x7+a6x6+a5x5...</p>
         </a>
       
     </div>
@@ -788,7 +774,7 @@ C(x)=A(x)B(x) mod P(x)二进制数转换为多项式:A(a7,a6,a5,a4,a3,a2,a1,a0)=
 
 
     <div class='content'>
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83"><span class="toc-text">安装环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85gmp%E5%8C%85%EF%BC%9A"><span class="toc-text">安装gmp包：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85mpfr%E5%8C%85%EF%BC%9A"><span class="toc-text">安装mpfr包：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85mpc"><span class="toc-text">安装mpc</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85gmpy2"><span class="toc-text">安装gmpy2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tip%EF%BC%9A%E5%85%B6%E4%BB%96%E4%B8%8B%E8%BD%BDmpc%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-text">tip：其他下载mpc的方式</span></a></li></ol>
     </div>
   </section>
 
