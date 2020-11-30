@@ -221,14 +221,14 @@
   </url>
   
   <url>
-    <loc>https://gryffinbit.top/tags/%E5%9B%BE%E7%89%87/</loc>
+    <loc>https://gryffinbit.top/tags/DES/</loc>
     <lastmod>2020-11-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://gryffinbit.top/tags/DES/</loc>
+    <loc>https://gryffinbit.top/tags/%E5%9B%BE%E7%89%87/</loc>
     <lastmod>2020-11-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -277,6 +277,13 @@
   </url>
   
   <url>
+    <loc>https://gryffinbit.top/tags/snort/</loc>
+    <lastmod>2020-11-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://gryffinbit.top/tags/%E6%9D%82/</loc>
     <lastmod>2020-11-30</lastmod>
     <changefreq>daily</changefreq>
@@ -304,13 +311,6 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>https://gryffinbit.top/tags/snort/</loc>
-    <lastmod>2020-11-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   
   <url>
@@ -328,14 +328,14 @@
   </url>
   
   <url>
-    <loc>https://gryffinbit.top/categories/write-up/</loc>
+    <loc>https://gryffinbit.top/categories/kali/</loc>
     <lastmod>2020-11-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://gryffinbit.top/categories/kali/</loc>
+    <loc>https://gryffinbit.top/categories/write-up/</loc>
     <lastmod>2020-11-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
