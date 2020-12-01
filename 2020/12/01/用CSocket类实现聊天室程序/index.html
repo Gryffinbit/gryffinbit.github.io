@@ -496,17 +496,14 @@
 
 
   
-  <p>##实验目标</p>
-<p>采用C/S模型，分为客户端和服务器端程序。服务器可以与多个客户端建立连接，为多个客户机服务。服务器动态统计进入聊天室的客户端数量，并显示。会显示进入和退出聊天室的动态。</p>
+  <h2 id="实验目标"><a href="#实验目标" class="headerlink" title="实验目标"></a>实验目标</h2><p>采用C/S模型，分为客户端和服务器端程序。服务器可以与多个客户端建立连接，为多个客户机服务。服务器动态统计进入聊天室的客户端数量，并显示。会显示进入和退出聊天室的动态。</p>
 <p>采用链表来管理客户机的套接字对象。</p>
-<p>##实验目的</p>
-<ol>
+<h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><ol>
 <li>学习如何从CSocket类派生出自己的WinSock类。</li>
 <li>学习如何利用CSocketFile类、CArchive类和CSocket类的合作来实现网络进程之间的数据传输。</li>
 <li>学习如何用链表管理多个动态客户机的套接字，实现服务器和所有的聊天客户机所显示信息的同步更新</li>
 </ol>
-<p>##实验环境</p>
-<p>Windows10 x64，Visual Studio 2017</p>
+<h2 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h2><p>Windows10 x64，Visual Studio 2017</p>
 <h2 id="实验内容"><a href="#实验内容" class="headerlink" title="实验内容"></a>实验内容</h2><p>分为两大块，创建客户端和创建服务器端。</p>
 <h3 id="服务器端："><a href="#服务器端：" class="headerlink" title="服务器端："></a>服务器端：</h3><ol>
 <li>使用MFC ApplicationWizard创建客户端应用程序框架</li>
@@ -1666,7 +1663,7 @@ IMPLEMENT_DYNAMIC(CMsg,CObject)</code></pre>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-01T11:35:05+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-01T11:52:50+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2020年12月1日</p>
@@ -1747,11 +1744,9 @@ IMPLEMENT_DYNAMIC(CMsg,CObject)</code></pre>
       
         <a class='prev' href='/2020/12/01/%E7%94%A8CAsyncSocket%E7%B1%BB%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E5%AE%A4%E7%A8%8B%E5%BA%8F/'>
           <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>用CAsyncSocket类实现聊天室程序</p>
-          <p class='content'>##实验目标
-简单的聊天室程序，采用C/S模型，分为客户端和服务器端程序。是点对点通信的程序。客户端和服务器端通过网络交换聊天的字符串内容，并显示。
-##实验目的
-
-学习如何从CAsyncSoc...</p>
+          <p class='content'>实验目标简单的聊天室程序，采用C/S模型，分为客户端和服务器端程序。是点对点通信的程序。客户端和服务器端通过网络交换聊天的字符串内容，并显示。
+实验目的
+学习如何从CAsyncSocket类派生...</p>
         </a>
       
       
@@ -1858,7 +1853,7 @@ IMPLEMENT_DYNAMIC(CMsg,CObject)</code></pre>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-text">实验内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%EF%BC%9A"><span class="toc-text">服务器端：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%EF%BC%9A"><span class="toc-text">客户端：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%8E%9F%E7%90%86%EF%BC%88%E6%A8%A1%E5%9E%8B%EF%BC%89"><span class="toc-text">实验原理（模型）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%EF%BC%9A-1"><span class="toc-text">服务器端：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%EF%BC%9A-1"><span class="toc-text">客户端：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%BF%87%E7%A8%8B%EF%BC%88%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%EF%BC%89"><span class="toc-text">实验过程（代码分析）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%B1%BBCTsApp%E3%80%81CTcApp%E5%AF%B9%E5%BA%94%E6%96%87%E4%BB%B6"><span class="toc-text">应用程序类CTsApp、CTcApp对应文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%AF%9D%E6%A1%86%E7%B1%BBCTsDlg%E3%80%81CTcDlg%E5%AF%B9%E5%BA%94%E6%96%87%E4%BB%B6"><span class="toc-text">对话框类CTsDlg、CTcDlg对应文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E5%BA%8F%E5%88%97%E5%8C%96%E5%A4%84%E7%90%86%E7%B1%BBCMsg%E5%AF%B9%E5%BA%94%E6%96%87%E4%BB%B6"><span class="toc-text">数据传输序列化处理类CMsg对应文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%95%8C%E9%9D%A2%E7%BB%93%E6%9E%9C%E5%B1%95%E7%A4%BA"><span class="toc-text">实验界面结果展示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">实验过程中遇到的问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%8F%82%E8%80%83%E4%B9%A6"><span class="toc-text">实验参考书</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E6%A0%87"><span class="toc-text">实验目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84"><span class="toc-text">实验目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83"><span class="toc-text">实验环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-text">实验内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%EF%BC%9A"><span class="toc-text">服务器端：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%EF%BC%9A"><span class="toc-text">客户端：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%8E%9F%E7%90%86%EF%BC%88%E6%A8%A1%E5%9E%8B%EF%BC%89"><span class="toc-text">实验原理（模型）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%EF%BC%9A-1"><span class="toc-text">服务器端：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%EF%BC%9A-1"><span class="toc-text">客户端：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%BF%87%E7%A8%8B%EF%BC%88%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%EF%BC%89"><span class="toc-text">实验过程（代码分析）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%B1%BBCTsApp%E3%80%81CTcApp%E5%AF%B9%E5%BA%94%E6%96%87%E4%BB%B6"><span class="toc-text">应用程序类CTsApp、CTcApp对应文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%AF%9D%E6%A1%86%E7%B1%BBCTsDlg%E3%80%81CTcDlg%E5%AF%B9%E5%BA%94%E6%96%87%E4%BB%B6"><span class="toc-text">对话框类CTsDlg、CTcDlg对应文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E5%BA%8F%E5%88%97%E5%8C%96%E5%A4%84%E7%90%86%E7%B1%BBCMsg%E5%AF%B9%E5%BA%94%E6%96%87%E4%BB%B6"><span class="toc-text">数据传输序列化处理类CMsg对应文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%95%8C%E9%9D%A2%E7%BB%93%E6%9E%9C%E5%B1%95%E7%A4%BA"><span class="toc-text">实验界面结果展示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">实验过程中遇到的问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%8F%82%E8%80%83%E4%B9%A6"><span class="toc-text">实验参考书</span></a></li></ol>
     </div>
   </section>
 
