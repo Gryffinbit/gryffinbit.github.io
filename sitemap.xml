@@ -360,6 +360,13 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://gryffinbit.top/tags/kali/</loc>
+    <lastmod>2020-12-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
@@ -392,13 +399,6 @@
   
   <url>
     <loc>https://gryffinbit.top/categories/write-up/</loc>
-    <lastmod>2020-12-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://gryffinbit.top/categories/%E5%AF%86%E7%A0%81%E5%AD%A6-kali/</loc>
     <lastmod>2020-12-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
