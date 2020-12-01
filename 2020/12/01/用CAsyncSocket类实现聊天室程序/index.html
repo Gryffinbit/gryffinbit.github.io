@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -21,7 +19,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>归档：2020/11 - Gryffinbit</title>
+  <title>用CAsyncSocket类实现聊天室程序 - Gryffinbit</title>
+  
+    <meta name="keywords" content="CAsyncSocket,MFC,WinSock">
   
 
   
@@ -90,7 +90,7 @@
   
   
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -341,7 +341,7 @@
     <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper  dock' style="display: ;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div id='cover-backstretch'></div>
           
@@ -427,579 +427,590 @@
         
 
 <div class='l_main'>
-	
-		
-  <section class="post-list">
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  
+  <div class="article-meta" id="top">
     
     
-      
+    
+      <h1 class="title">
+        用CAsyncSocket类实现聊天室程序
+      </h1>
+      <div class='new-meta-box'>
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/DES%E5%AE%9E%E9%AA%8C/">
-        DES实验报告
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        DES实验报告一、实验题目DES加密算法
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>Gryffinbit</p>
+  </a>
+</div>
 
-二、实验目的和要求通过实验，掌握DES密码的程序实现，熟悉比特串的操作，矩阵变换，提高C++程序设计能力。
-编写 DES 密码的加密解密程序，运行并验证。 (1) 输入 64 比特明文和密文，利用 DES 密码对其加密并输出密文。 (2) 输入 DES 加密的 64 比特密文和密钥，对其进行解密。 (3) 记录调试和验证过程，完成实验报告。
-
-三、...
-      
-    
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">网络编程</a>
+    </a>
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+
+
+          
         
-        <time>2020-11-14</time>
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年12月1日</p>
+  </a>
+</div>
+
+          
         
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="用CAsyncSocket类实现聊天室程序" data-path="/2020/12/01/%E7%94%A8CAsyncSocket%E7%B1%BB%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E5%AE%A4%E7%A8%8B%E5%BA%8F/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  <h1 id="用CAsyncSocket类实现聊天室程序"><a href="#用CAsyncSocket类实现聊天室程序" class="headerlink" title="用CAsyncSocket类实现聊天室程序"></a>用CAsyncSocket类实现聊天室程序</h1><h1 id="实验目标"><a href="#实验目标" class="headerlink" title="实验目标"></a>实验目标</h1><p>简单的聊天室程序，采用C/S模型，分为客户端和服务器端程序。是点对点通信的程序。客户端和服务器端通过网络交换聊天的字符串内容，并显示。</p>
+<h1 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h1><ol>
+<li>学习如何从CAsyncSocket类派生出自己的WinSock类。</li>
+<li>理解WinSock类与应用程序框架的关系</li>
+<li>学习流式套接字对象的使用</li>
+<li>学习处理网络事件的方法</li>
+<li>了解MFC编程</li>
+</ol>
+<h1 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h1><p>Windows10 x64，Visual Studio 2017</p>
+<h1 id="实验内容"><a href="#实验内容" class="headerlink" title="实验内容"></a>实验内容</h1><p>分为两大块，创建客户端和创建服务器端。</p>
+<h3 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h3><ol>
+<li>使用MFC ApplicationWizard创建客户端应用程序框架</li>
+<li>为对话框界面添加控件对象</li>
+<li>为对话框中的控件对象定义相应的成员变量</li>
+<li>创建从CAsynSocket类继承的派生类</li>
+<li>为对话框类添加控件对象事件的响应函数</li>
+<li>为CtalkcDlg对话框类添加其他的成员函数和成员变量</li>
+<li>添加关于控件变量的初始化代码</li>
+<li>添加事件函数和成员函数的代码</li>
+</ol>
+<h3 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h3><p>与客户端同理</p>
+<h1 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h1><h3 id="服务器端："><a href="#服务器端：" class="headerlink" title="服务器端："></a>服务器端：</h3><ul>
+<li>创建一个套接字</li>
+<li>创建Socket，绑定到指定端口</li>
+<li>启动监听，准备客户端的连接请求</li>
+<li>接收连接</li>
+<li>消息的传送</li>
+<li>关闭套接字</li>
+</ul>
+<h3 id="客户端："><a href="#客户端：" class="headerlink" title="客户端："></a>客户端：</h3><ul>
+<li>创建一个套接字</li>
+<li>创建Socket</li>
+<li>请求连接服务器</li>
+<li>消息的传送</li>
+<li>关闭套接字</li>
+</ul>
+<h1 id="实验过程-代码分析）"><a href="#实验过程-代码分析）" class="headerlink" title="实验过程(代码分析）"></a>实验过程(代码分析）</h1><p>👉创造程序框架 （MFC基于对话框）</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-1.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-1.png" srcset="data:image/png;base64,666"></p>
+<p>👉添加控件对象</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-2.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-2.png" srcset="data:image/png;base64,666"></p>
+<p>👉添加控件成员变量</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-3.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-3.png" srcset="data:image/png;base64,666"></p>
+<p><strong>CSocket类从CAsynSocket类继承了许多成员函数，封装了Windows套接字应用程序编程接口API。</strong></p>
+<h3 id="应用程序类CtalkcApp对应文件"><a href="#应用程序类CtalkcApp对应文件" class="headerlink" title="应用程序类CtalkcApp对应文件"></a>应用程序类CtalkcApp对应文件</h3><p>VC++自动生成</p>
+<h3 id="派生类CMySocket对应文件"><a href="#派生类CMySocket对应文件" class="headerlink" title="派生类CMySocket对应文件"></a>派生类CMySocket对应文件</h3><p>对CMySocket进行定义。它是从<strong>CAsynSocket类</strong>继承下来的派生类，将Socket事件传给对话框，以便执行用户自己的事件处理函数。</p>
+<pre><code>class CMySocket:public CAsynSocket</code></pre>
+<p>添加事件响应函数，用于连接、断开、和接收</p>
+<ul>
+<li><p>MySocket.h</p>
+<pre><code class="C++">#pragma once
+#include &lt;afxsock.h&gt;
+
+class CtalkcDlg;
+////////////////////////////////
+//CMySocket 类的定义
+class CMySocket :
+    public CAsyncSocket
+&#123;
+public:
+    CMySocket();
+    virtual ~CMySocket();
+public:
+    virtual void OnConnect(int nErrorCode);
+    virtual void OnClose(int nErrorCode);
+    virtual void OnReceive(int nErrorCode);
+
+private:
+    CtalkcDlg* m_pDlg;
+public:
+    void SetParent(CtalkcDlg* pDlg);
+&#125;</code></pre>
+</li>
+</ul>
+<ul>
+<li><p>MySocket.cpp</p>
+<pre><code class="C++">#include &quot;talkc.h&quot;
+#include &quot;pch.h&quot;
+#include &quot;MySocket.h&quot;
+#include &quot;talkcDlg.h&quot;
+
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+#endif
+
+// CMySocket
+
+CMySocket::CMySocket()
+&#123;
+    m_pDlg = NULL;        
+&#125;
+CMySocket::~CMySocket()
+&#123;
+    m_pDlg = NULL;
+&#125;
+void CMySocket::SetParent(CtalkcDlg* pDlg)
+&#123;
+    m_pDlg = pDlg;
+&#125;
+
+</code></pre>
+</li>
+</ul>
+<p>  #if 0<br>  BEGIN_MESSAGE_MAP(CMySocket, CAsyncSocket)</p>
+<p>  END_MESSAGE_MAP()<br>  #endif</p>
+<p>  //CMySocket member functions</p>
+<p>  void CMySocket::OnConnect(int nErrorCode)<br>  {</p>
+<pre><code>  if (nErrorCode == 0) m_pDlg -&gt; OnConnect();</code></pre>
+<p>  }</p>
+<p>  void CMySocket::OnClose(int nErrorCode)<br>  {</p>
+<pre><code>  if (nErrorCode == 0) m_pDlg-&gt;OnClose();</code></pre>
+<p>  }</p>
+<p>  void CMySocket::OnReceive(int nErrorCode)<br>  {</p>
+<pre><code>  if (nErrorCode == 0) m_pDlg-&gt;OnReceive();</code></pre>
+<p>  }</p>
+<pre><code>
+
+
+### 对话框类CTalkDlg对应文件
+
+主要是对控件变量的声明和定义。
+
+* talkcDlg.h
+
+```C++
+#if _MSC_VER &gt; 1000
+#pragma once
+#endif // _MSC_VER &gt;1000
+// talkcDlg.h: 头文件
+//
+#include &quot;MySocket.h&quot;
+#pragma once
+
+
+// CtalkcDlg 对话框
+class CtalkcDlg : public CDialogEx
+&#123;
+// 构造
+public:
+    void OnClose();
+    void OnConnect();
+    void OnReceive();
+    CMySocket m_sConnectSocket;
+    CtalkcDlg(CWnd* pParent = nullptr);    // 标准构造函数
+
+// 对话框数据
+#ifdef AFX_DESIGN_TIME
+    enum &#123; IDD = IDD_TALKC_DIALOG &#125;;
+#endif
+    CListBox m_listSent;
+    CListBox m_listReceived;
+    CButton m_btnConnect;
+    CString m_strMsg;
+    CString m_strServName;
+    int m_nServPort;
+
+
+
+protected:
+    virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 支持
+
+
+// 实现
+protected:
+    HICON m_hIcon;
+
+    // 生成的消息映射函数
+    virtual BOOL OnInitDialog();
+    afx_msg void OnSysCommand(UINT nID, LPARAM lParam);
+    afx_msg void OnPaint();
+    afx_msg HCURSOR OnQueryDragIcon();
+    DECLARE_MESSAGE_MAP()
+public:
+
+    afx_msg void OnButtonClose();
+    afx_msg void OnButtonConnect();
+    afx_msg void OnSendMsg();
+&#125;;</code></pre>
+<ul>
+<li><p>talkcDlg.cpp</p>
+<pre><code class="C++">// talkcDlg.cpp: 实现文件
+//
+
+#include &quot;pch.h&quot;
+#include &quot;framework.h&quot;
+#include &quot;talkc.h&quot;
+#include &quot;talkcDlg.h&quot;
+#include &quot;afxdialogex.h&quot;
+
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#endif
+
+</code></pre>
+</li>
+</ul>
+<p>  // 用于应用程序“关于”菜单项的 CAboutDlg 对话框</p>
+<p>  class CAboutDlg : public CDialogEx<br>  {<br>  public:<br>      CAboutDlg();</p>
+<p>  // 对话框数据<br>  #ifdef AFX_DESIGN_TIME<br>      enum { IDD = IDD_ABOUTBOX };<br>  #endif</p>
+<pre><code>  protected:
+  virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 支持</code></pre>
+<p>  // 实现<br>  protected:<br>      DECLARE_MESSAGE_MAP()<br>  };</p>
+<p>  CAboutDlg::CAboutDlg() : CDialogEx(IDD_ABOUTBOX)<br>  {<br>  }</p>
+<p>  void CAboutDlg::DoDataExchange(CDataExchange* pDX)<br>  {<br>      CDialogEx::DoDataExchange(pDX);<br>  }</p>
+<p>  BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)<br>  END_MESSAGE_MAP()</p>
+<p>  // CtalkcDlg 对话框</p>
+<p>  CtalkcDlg::CtalkcDlg(CWnd* pParent /<em>=NULL</em>/)<br>      : CDialogEx(IDD_TALKC_DIALOG, pParent)<br>      , m_strServName(_T(“”))<br>      , m_nServPort(0)<br>      , m_strMsg(_T(“”))<br>  {<br>      m_hIcon = AfxGetApp()-&gt;LoadIcon(IDR_MAINFRAME);<br>  }</p>
+<p>  void CtalkcDlg::DoDataExchange(CDataExchange* pDX)<br>  {<br>      CDialogEx::DoDataExchange(pDX);<br>      DDX_Control(pDX, IDC_BUTTON_CONNECT, m_btnConnect);<br>      DDX_Text(pDX, IDC_EDIT_SERNAME, m_strServName);<br>      DDX_Text(pDX, IDC_EDIT_SERVPORT, m_nServPort);<br>      DDX_Text(pDX, IDC_EDIT_MSG, m_strMsg);<br>      DDX_Control(pDX, IDC_LIST_SENT, m_listSent);<br>      DDX_Control(pDX, IDC_LIST_RECEIVED, m_listReceived);<br>  }</p>
+<p>  BEGIN_MESSAGE_MAP(CtalkcDlg, CDialogEx)<br>      ON_WM_SYSCOMMAND()<br>      ON_WM_PAINT()<br>      ON_WM_QUERYDRAGICON()<br>      ON_BN_CLICKED(IDC_BUTTON_CLOSE, &amp;CtalkcDlg::OnButtonClose)<br>      ON_BN_CLICKED(IDC_BUTTON_CONNECT, &amp;CtalkcDlg::OnButtonConnect)<br>      ON_BN_CLICKED(IDOK, &amp;CtalkcDlg::OnSendMsg)<br>  END_MESSAGE_MAP()</p>
+<p>  // CtalkcDlg 消息处理程序</p>
+<p>  BOOL CtalkcDlg::OnInitDialog()<br>  {<br>      CDialogEx::OnInitDialog();</p>
+<pre><code>  // 将“关于...”菜单项添加到系统菜单中。
+
+  // IDM_ABOUTBOX 必须在系统命令范围内。
+  ASSERT((IDM_ABOUTBOX &amp; 0xFFF0) == IDM_ABOUTBOX);
+  ASSERT(IDM_ABOUTBOX &lt; 0xF000);
+
+  CMenu* pSysMenu = GetSystemMenu(FALSE);
+  if (pSysMenu != nullptr)
+  &#123;
+      BOOL bNameValid;
+      CString strAboutMenu;
+      bNameValid = strAboutMenu.LoadString(IDS_ABOUTBOX);
+      ASSERT(bNameValid);
+      if (!strAboutMenu.IsEmpty())
+      &#123;
+          pSysMenu-&gt;AppendMenu(MF_SEPARATOR);
+          pSysMenu-&gt;AppendMenu(MF_STRING, IDM_ABOUTBOX, strAboutMenu);
+      &#125;
+  &#125;
+
+  // 设置此对话框的图标。  当应用程序主窗口不是对话框时，框架将自动
+  //  执行此操作
+  SetIcon(m_hIcon, TRUE);            // 设置大图标
+  SetIcon(m_hIcon, FALSE);        // 设置小图标
+
+  // TODO: 在此添加额外的初始化代码
+  m_strServName = &quot;localhost&quot;;
+  m_nServPort = 1000;
+  UpdateData(FALSE);
+  GetDlgItem(IDC_BUTTON_CONNECT)-&gt;EnableWindow(FALSE);
+  GetDlgItem(IDC_EDIT_SERNAME)-&gt;EnableWindow(FALSE);
+  GetDlgItem(IDC_EDIT_SERVPORT)-&gt;EnableWindow(FALSE);
+  GetDlgItem(IDC_STATIC_SERVNAME)-&gt;EnableWindow(FALSE);
+  GetDlgItem(IDC_STATIC_SERVPORT)-&gt;EnableWindow(FALSE);
+
+  m_sConnectSocket.SetParent(this);
+  return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE</code></pre>
+<p>  }</p>
+<p>  void CtalkcDlg::OnSysCommand(UINT nID, LPARAM lParam)<br>  {<br>      if ((nID &amp; 0xFFF0) == IDM_ABOUTBOX)<br>      {<br>          CAboutDlg dlgAbout;<br>          dlgAbout.DoModal();<br>      }<br>      else<br>      {<br>          CDialogEx::OnSysCommand(nID, lParam);<br>      }<br>  }</p>
+<p>  // 如果向对话框添加最小化按钮，则需要下面的代码<br>  //  来绘制该图标。  对于使用文档/视图模型的 MFC 应用程序，<br>  //  这将由框架自动完成。</p>
+<p>  void CtalkcDlg::OnPaint()<br>  {<br>      if (IsIconic())<br>      {<br>          CPaintDC dc(this); // 用于绘制的设备上下文</p>
+<pre><code>      SendMessage(WM_ICONERASEBKGND, reinterpret_cast&lt;WPARAM&gt;(dc.GetSafeHdc()), 0);
+
+      // 使图标在工作区矩形中居中
+      int cxIcon = GetSystemMetrics(SM_CXICON);
+      int cyIcon = GetSystemMetrics(SM_CYICON);
+      CRect rect;
+      GetClientRect(&amp;rect);
+      int x = (rect.Width() - cxIcon + 1) / 2;
+      int y = (rect.Height() - cyIcon + 1) / 2;
+
+      // 绘制图标
+      dc.DrawIcon(x, y, m_hIcon);
+  &#125;
+  else
+  &#123;
+      CDialogEx::OnPaint();
+  &#125;</code></pre>
+<p>  }</p>
+<p>  //当用户拖动最小化窗口时系统调用此函数取得光标<br>  //显示。<br>  HCURSOR CtalkcDlg::OnQueryDragIcon()<br>  {<br>      return static_cast<HCURSOR>(m_hIcon);<br>  }</p>
+<p>  void CtalkcDlg::OnButtonConnect()<br>  {<br>      // TODO: 在此添加控件通知处理程序代码<br>      UpdateData(TRUE);<br>      GetDlgItem(IDC_BUTTON_CONNECT)-&gt;EnableWindow(FALSE);<br>      GetDlgItem(IDC_EDIT_SERNAME)-&gt;EnableWindow(FALSE);<br>      GetDlgItem(IDC_EDIT_SERVPORT)-&gt;EnableWindow(FALSE);<br>      GetDlgItem(IDC_STATIC_SERVNAME)-&gt;EnableWindow(FALSE);<br>      GetDlgItem(IDC_STATIC_SERVPORT)-&gt;EnableWindow(FALSE);<br>      m_sConnectSocket.Create();<br>      m_sConnectSocket.Connect(m_strServName, m_nServPort);</p>
+<p>  }</p>
+<p>  void CtalkcDlg::OnSendMsg()<br>  {<br>      // TODO: 在此添加控件通知处理程序代码<br>      int nLen;<br>      int nSent;<br>      UpdateData(TRUE);<br>      if (!m_strMsg.IsEmpty())<br>      {<br>          nLen = m_strMsg.GetLength();<br>          nSent = m_sConnectSocket.Send(LPCTSTR(m_strMsg), nLen);<br>          if (nSent != SOCKET_ERROR)<br>          {<br>              m_listSent.AddString(m_strMsg);<br>              UpdateData(FALSE);<br>          }<br>          else {<br>              AfxMessageBox(_T(“信息发送错误！”, MB_OK | MB_ICONSTOP));<br>          }<br>          m_strMsg.Empty();<br>          UpdateData(FALSE);<br>      }<br>  }</p>
+<p>  void CtalkcDlg::OnButtonClose()<br>  {<br>      // TODO: 在此添加控件通知处理程序代码<br>      OnClose();<br>  }</p>
+<p>  void CtalkcDlg::OnReceive()<br>  {<br>      // TODO: 在此处添加实现代码.<br>      char *pBuf = new char[1025];<br>      int nBufSize = 1024;<br>      int nReceived;<br>      CString strReceived;<br>      nReceived = m_sConnectSocket.Receive(pBuf, nBufSize);<br>      if (nReceived != SOCKET_ERROR)<br>      {<br>          pBuf[nReceived] = NULL;<br>          strReceived = pBuf;<br>          m_listReceived.AddString(strReceived);<br>          UpdateData(FALSE);<br>      }<br>      else {<br>          AfxMessageBox(_T(“信息接收出错啦！！”, MB_OK | MB_ICONSTOP));<br>      }<br>  }</p>
+<p>  void CtalkcDlg::OnConnect()<br>  {<br>      // TODO: 在此处添加实现代码.<br>      //开放连接配置的相关控件，如“连接”按钮、服务器名称、端口的文本框和标签<br>      GetDlgItem(IDC_EDIT_MSG)-&gt;EnableWindow(TRUE);<br>      GetDlgItem(IDOK)-&gt;EnableWindow(TRUE);<br>      GetDlgItem(IDC_STATIC_MSG)-&gt;EnableWindow(TRUE);<br>      GetDlgItem(IDC_BUTTON_CLOSE)-&gt;EnableWindow(TRUE);</p>
+<p>  }</p>
+<p>  void CtalkcDlg::OnClose()<br>  {<br>      // TODO: 在此处添加实现代码.<br>      m_sConnectSocket.Close();<br>      GetDlgItem(IDC_EDIT_MSG)-&gt;EnableWindow(FALSE);<br>      GetDlgItem(IDOK)-&gt;EnableWindow(FALSE);<br>      GetDlgItem(IDC_STATIC_MSG)-&gt;EnableWindow(FALSE);<br>      GetDlgItem(IDC_BUTTON_CLOSE)-&gt;EnableWindow(FALSE);</p>
+<pre><code>  while (m_listSent.GetCount() != 0) m_listSent.DeleteString(0);
+  while (m_listReceived.GetCount() != 0) m_listReceived.DeleteString(0);
+
+  GetDlgItem(IDC_BUTTON_CONNECT)-&gt;EnableWindow(TRUE);
+  GetDlgItem(IDC_EDIT_SERVNAME)-&gt;EnableWindow(TRUE);
+  GetDlgItem(IDC_EDIT_SERVPORT)-&gt;EnableWindow(TRUE);
+  GetDlgItem(IDC_STATIC_SERVNAME)-&gt;EnableWindow(TRUE);
+  GetDlgItem(IDC_STATIC_SERVPORT)-&gt;EnableWindow(TRUE);</code></pre>
+<p>  }</p>
+<p>  ```</p>
+<h1 id="实验界面结果展示"><a href="#实验界面结果展示" class="headerlink" title="实验界面结果展示"></a>实验界面结果展示</h1><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-4.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-4.png" srcset="data:image/png;base64,666"></p>
+<h1 id="实验过程中遇到的问题"><a href="#实验过程中遇到的问题" class="headerlink" title="实验过程中遇到的问题"></a>实验过程中遇到的问题</h1><p>⛔️关于字符的问题</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-5.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-5.png" srcset="data:image/png;base64,666"></p>
+<p>💚在配置中调属性，或宏定义_T_。解决该报错</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-6.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-6.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-7.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-7.png" srcset="data:image/png;base64,666"></p>
+<h2 id="实验参考书"><a href="#实验参考书" class="headerlink" title="实验参考书"></a>实验参考书</h2><p><strong>客户端</strong></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-8.jpg" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-8.jpg" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-9.jpg" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-9.jpg" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-10.jpg" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-10.jpg" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-11.jpg" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-11.jpg" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-12.jpg" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-12.jpg" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-13.jpg" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-13.jpg" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-14.jpg" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-14.jpg" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-15.jpg" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-15.jpg" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-16.jpg" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-16.jpg" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-17.jpg" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-17.jpg" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-18.jpg" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-18.jpg" srcset="data:image/png;base64,666"></p>
+<p><strong>服务器端</strong></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-19.jpg" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-19.jpg" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-20.jpg" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-20.jpg" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-21.jpg" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CAsyncSocket-21.jpg" srcset="data:image/png;base64,666"></p>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2020/11/14/DES%E5%AE%9E%E9%AA%8C/'>
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://gryffinbit.top/2020/12/01/%E7%94%A8CAsyncSocket%E7%B1%BB%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E5%AE%A4%E7%A8%8B%E5%BA%8F/>https://gryffinbit.top/2020/12/01/%E7%94%A8CAsyncSocket%E7%B1%BB%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E5%AE%A4%E7%A8%8B%E5%BA%8F/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-01T10:18:12+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年12月1日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
+          
   
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/OpenCv/">
-        OpenCv
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        macOS下opencv的安装。在CLion上配置使用OpenCV （C++）安装opencv
-brew的安装
-/usr/bin/ruby -e &quot;$(curl -fsSL &lt;https://raw.githubusercontent.com/Homebrew/install/master/install&gt;)&quot;
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/CAsyncSocket/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>CAsyncSocket</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/MFC/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>MFC</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/WinSock/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>WinSock</p></a></div>
 
-brew安装opencv
-brew insta...
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gryffinbit.top/2020/12/01/%E7%94%A8CAsyncSocket%E7%B1%BB%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E5%AE%A4%E7%A8%8B%E5%BA%8F/&title=用CAsyncSocket类实现聊天室程序 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://gryffinbit.top/2020/12/01/%E7%94%A8CAsyncSocket%E7%B1%BB%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E5%AE%A4%E7%A8%8B%E5%BA%8F/&title=用CAsyncSocket类实现聊天室程序 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://gryffinbit.top/2020/12/01/%E7%94%A8CAsyncSocket%E7%B1%BB%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E5%AE%A4%E7%A8%8B%E5%BA%8F/&title=用CAsyncSocket类实现聊天室程序 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
       
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Misc/">Misc</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/OpenCv/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
 </div>
 
-          </div>
+
+
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/CRC%E6%A0%A1%E9%AA%8C/">
-        CRC校验
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        CRC检验错误pngcheck -v 分析png格式，报错CRC ERROR
-对一张正常的图片，通过修改其宽度或者高度隐藏信息，使计算出的CRC校验码与原图的CRC校验码不一致；windows的图片查看器会忽略错误的CRC校验码，因此会显示图片，但此时的图片已经是修改过的，所以会有显示不全或扭曲等情况，借此可以隐藏信息。
-而Linux、macOS下的图片查看器不会忽略错误的CRC校验码，因此...
-      
-    
+    </div>
   </div>
+
+
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Misc/">Misc</a>
-        
-      </div>
+  
+
+  
+    <div class="prev-next">
       
-        <div>
-          <a class='readmore' href='/2020/11/14/CRC%E6%A0%A1%E9%AA%8C/'>
-            阅读全文
-          </a>
-        </div>
+        <a class='prev' href='/2020/12/01/%E7%94%A8CSocket%E7%B1%BB%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E5%AE%A4%E7%A8%8B%E5%BA%8F/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>用CSocket类实现聊天室程序</p>
+          <p class='content'>#用CSocket类实现聊天室程序
+实验目标采用C/S模型，分为客户端和服务器端程序。服务器可以与多个客户端建立连接，为多个客户机服务。服务器动态统计进入聊天室的客户端数量，并显示。会显示进入和...</p>
+        </a>
+      
+      
+        <a class='next' href='/2020/11/30/kali%E4%B8%8Bsnort%E6%8A%A5%E8%AD%A6%E8%A7%84%E5%88%99%E8%AE%BE%E8%AE%A1%E5%92%8C%E6%B5%8B%E8%AF%95/'>
+          <p class='title'>kali下snort报警规则设计和测试<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>snort报警规则设计和测试捕捉关键字Search记录打开Google网页的动作👉编写一个规则，通过捕捉关键字Search记录打开Google网页的动作，并将符合规则的数据包输出到Alert文...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/Jpegsnoop/">
-        Jpegsnoop
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        
-github 项目链接
-https://github.com/ImpulseAdventure/JPEGsnoop
+  </article>
 
 
-可参考jpeg的格式详解
-
-JPEG原理简介文件格式
-JPEG文件大体上可以分成两个部分：标记码和压缩数据
-标记码：
-由两个字节构成，第一个字节是固定值0xFF，后一个字节则根据不同意义有不同数值
-在每个标记码之前可以添加数目不限的无意义的0xFF填充，连续的多个0xFF...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Misc/">Misc</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/Jpegsnoop/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/stegdetect/">
-        stegdetect
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        
-在kali下
 
 
-github项目
-https://github.com/abeluck/stegdetect
 
-原理简介文件格式
-JPEG文件大体上可以分成两个部分：标记码和压缩数据
-标记码：
-由两个字节构成，第一个字节是固定值0xFF，后一个字节则根据不同意义有不同数值
-在每个标记码之前可以添加数目不限的无意义的0xFF填充，连续的多个0xFF可以被理解为一个0xFF，并表示一个标记码...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Misc/">Misc</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/stegdetect/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/%E5%B8%B8%E8%A7%81%E7%BC%96%E7%A0%81/">
-        常见编码
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        常见的编码##base64
-长度是3的倍数，不足时结尾用= 补全
-##xxencode
-与base64相似。 但结尾用+ 补全
-uuencode特殊符号很多
-
-##jjencode
-针对JavaScript的编码方式
-转换成只有符号的字符串
-
-##aaencode
-针对JavaScript的编码方式
-转换成常用的网络表情
-
-###维吉尼亚密码
-由一些偏移量不同的凯撒密码组成。 （多表密码的简...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/%E5%B8%B8%E8%A7%81%E7%BC%96%E7%A0%81/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%AF%86%E7%A0%81%E5%8F%98%E4%BD%93/">
-        维吉尼亚密码变体
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        原题：
-
-It is said that Vigenere cipher does not achieve the perfect secrecy actually :-)Tips:1.The encode pragram is given;2.Do u no index of coincidence ？3.The key is last 6 words of the plain text(...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%AF%86%E7%A0%81%E5%8F%98%E4%BD%93/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B9%B1%E7%9A%84%E5%AF%86%E7%A0%81/">
-        一些杂乱的密码
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        记录遇到的一些奇奇怪怪的密码###变异凯撒
-第一位 偏移5，第二位偏移6 ， 第三位偏移7 ，第四位偏移8……以此类推
-k = 5 
-str = &#39;afZ_r9VYfScOeO_UL^RWUc&#39; 
-for i in str:                    
- print(chr(ord(i)+k),end=&quot;&quot;)
- k +=1
-###quoted_...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B9%B1%E7%9A%84%E5%AF%86%E7%A0%81/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/RSA%E5%8E%9F%E7%90%86%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/">
-        RSA原理基本介绍
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        RSA的基本介绍
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
 
 
-python pow函数的用法：计算x的y次方，如果z在存在，则再对结果进行取模，其结果等效于pow(x,y) %z     
-
-import math
-
-math.pow(x, y[, z])
-求明文m，用该函数求c（密文cipher）的d次方，得到：
-$$d\equiv e^{-1}$$
-$$m=pow(cipher,e^{-1})$$
-
-d是e的乘法逆元 ，e^-...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/RSA%E5%8E%9F%E7%90%86%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/13/RSA/">
-        RSA
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        参数N：大整数N，我们称之为模数（modulus）
-p 和 q ：大整数N的两个因子（factor）
-e 和 d：互为模反数的两个指数（exponent）
- c 和 m：分别是密文和明文
-&#123;N,e&#125;称为公钥,&#123;N,d&#125;称为私钥
-解题思路
-选取两个较大的互不相等的质数p和q，计算n = p * q 。
-计算phi = (p-1) * (q-1) 。
-选取...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-13</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/13/RSA/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/archives/2020/11/">
-            <section class="post prev white-box shadow" >
-              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          2 / 3
-        </p>
-        
-          <a class="next" rel="next" href="/archives/2020/11/page/3/">
-            <section class="post next white-box shadow">
-              &nbsp;下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
-    
-  
 
 
-	
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -1007,156 +1018,28 @@ e 和 d：互为模反数的两个指数（exponent）
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/photo.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Gryffinbit</h2>
-        
-        
-          <p>兔子</p>
 
-        
-        
-          <p>凡殺不死我的，必使我更強大。</p>
 
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/img/QQ.jpg"
-              class="social fab fa-qq flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;tf=1&amp;source=mailto&amp;to=Gryffinbit@Gmail.com"
-              class="social fas fa-envelope-open flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/Gryffinbit/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://blog.csdn.net/Gryffinbit"
-              class="social fab fa-cuttlefish flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Misc/" href="/categories/Misc/"
-            id="categoriesMisc"
-            ><div class='name'>Misc</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/kali/" href="/categories/kali/"
-            id="categorieskali"
-            ><div class='name'>kali</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/write-up/" href="/categories/write-up/"
-            id="categorieswrite-up"
-            ><div class='name'>write up</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"
-            id="categoriesE5AF86E7A081E5ADA6"
-            ><div class='name'>密码学</div><div class='badge'>(13)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/kali/" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/kali/"
-            id="categoriesE5AF86E7A081E5ADA6kali"
-            ><div class='name'>kali</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" href="/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"
-            id="categoriesE7BD91E7BB9CE7BC96E7A88B"
-            ><div class='name'>网络编程</div><div class='badge'>(2)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-text">客户端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF"><span class="toc-text">服务器端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%EF%BC%9A"><span class="toc-text">服务器端：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%EF%BC%9A"><span class="toc-text">客户端：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%B1%BBCtalkcApp%E5%AF%B9%E5%BA%94%E6%96%87%E4%BB%B6"><span class="toc-text">应用程序类CtalkcApp对应文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B4%BE%E7%94%9F%E7%B1%BBCMySocket%E5%AF%B9%E5%BA%94%E6%96%87%E4%BB%B6"><span class="toc-text">派生类CMySocket对应文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%8F%82%E8%80%83%E4%B9%A6"><span class="toc-text">实验参考书</span></a>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/AES/" style="font-size: 14px; color: #999">AES</a> <a href="/tags/CAsyncSocket/" style="font-size: 14px; color: #999">CAsyncSocket</a> <a href="/tags/CSocket/" style="font-size: 14px; color: #999">CSocket</a> <a href="/tags/DES/" style="font-size: 14px; color: #999">DES</a> <a href="/tags/MFC/" style="font-size: 16.5px; color: #888">MFC</a> <a href="/tags/Python/" style="font-size: 14px; color: #999">Python</a> <a href="/tags/RSA/" style="font-size: 19px; color: #777">RSA</a> <a href="/tags/SHA-1/" style="font-size: 14px; color: #999">SHA-1</a> <a href="/tags/WinSock/" style="font-size: 16.5px; color: #888">WinSock</a> <a href="/tags/gmpy2/" style="font-size: 14px; color: #999">gmpy2</a> <a href="/tags/snort/" style="font-size: 21.5px; color: #666">snort</a> <a href="/tags/%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81/" style="font-size: 19px; color: #777">古典密码</a> <a href="/tags/%E5%9B%BE%E7%89%87/" style="font-size: 24px; color: #555">图片</a> <a href="/tags/%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B0/" style="font-size: 14px; color: #999">散列函数</a> <a href="/tags/%E6%9D%82/" style="font-size: 14px; color: #999">杂</a> <a href="/tags/%E6%B5%81%E5%AF%86%E7%A0%81/" style="font-size: 14px; color: #999">流密码</a> <a href="/tags/%E7%AC%AC%E4%B8%80%E5%B1%8A%E4%BF%A1%E5%AE%89%E5%A4%A7%E6%8C%91%E6%88%98/" style="font-size: 14px; color: #999">第一届信安大挑战</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 </aside>
+
 
 
         
@@ -1166,14 +1049,14 @@ e 和 d：互为模反数的两个指数（exponent）
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="用CAsyncSocket类实现聊天室程序";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
 </script>
 

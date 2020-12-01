@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -21,7 +19,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>归档：2020/11 - Gryffinbit</title>
+  <title>kali下snort报警规则设计和测试 - Gryffinbit</title>
+  
+    <meta name="keywords" content="snort">
   
 
   
@@ -90,7 +90,7 @@
   
   
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -341,7 +341,7 @@
     <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper  dock' style="display: ;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div id='cover-backstretch'></div>
           
@@ -427,579 +427,318 @@
         
 
 <div class='l_main'>
-	
-		
-  <section class="post-list">
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  
+  <div class="article-meta" id="top">
     
     
-      
+    
+      <h1 class="title">
+        kali下snort报警规则设计和测试
+      </h1>
+      <div class='new-meta-box'>
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/DES%E5%AE%9E%E9%AA%8C/">
-        DES实验报告
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        DES实验报告一、实验题目DES加密算法
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>Gryffinbit</p>
+  </a>
+</div>
 
-二、实验目的和要求通过实验，掌握DES密码的程序实现，熟悉比特串的操作，矩阵变换，提高C++程序设计能力。
-编写 DES 密码的加密解密程序，运行并验证。 (1) 输入 64 比特明文和密文，利用 DES 密码对其加密并输出密文。 (2) 输入 DES 加密的 64 比特密文和密钥，对其进行解密。 (3) 记录调试和验证过程，完成实验报告。
-
-三、...
-      
-    
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/kali/">kali</a>
+    </a>
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+
+
+          
         
-        <time>2020-11-14</time>
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年11月30日</p>
+  </a>
+</div>
+
+          
         
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="kali下snort报警规则设计和测试" data-path="/2020/11/30/kali%E4%B8%8Bsnort%E6%8A%A5%E8%AD%A6%E8%A7%84%E5%88%99%E8%AE%BE%E8%AE%A1%E5%92%8C%E6%B5%8B%E8%AF%95/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  <h1 id="snort报警规则设计和测试"><a href="#snort报警规则设计和测试" class="headerlink" title="snort报警规则设计和测试"></a>snort报警规则设计和测试</h1><h2 id="捕捉关键字Search记录打开Google网页的动作"><a href="#捕捉关键字Search记录打开Google网页的动作" class="headerlink" title="捕捉关键字Search记录打开Google网页的动作"></a>捕捉关键字Search记录打开Google网页的动作</h2><p>👉编写一个规则，通过捕捉关键字Search记录打开Google网页的动作，并将符合规则的数据包输出到Alert文件中</p>
+<p>在Snort的Rules文件夹下创建myrule文件，输入如下内容：</p>
+<pre><code class="makefile">alert tcp any any -&gt; 172.16.68.139 any (msg:&quot;Google Search Query&quot;;content:&quot;search&quot;;nocase; sid:10000001;)</code></pre>
+<blockquote>
+<p>sid snort id ,这个关键字被用来识别snort规则的唯一性。sid 的范围是如下分配的：                                                 </p>
+<p>&lt;100 保留做将来使用 </p>
+<p>100-1000,000 包含在snort发布包中                    </p>
+<p>1000,000 作为本地规则使用 msg 标示一个消息.</p>
+<p>但是规则中的msg不起作用，sid和msg的对应关系查阅sid-msg.map。</p>
+</blockquote>
+<p><em>所以这里自定义了一个sid为10000001.</em></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-30.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-30.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-31.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-31.png" srcset="data:image/png;base64,666"></p>
+<p>在Snort.conf文件中添加新建的规则文件</p>
+<pre><code class="makefile">include $RULE_PATH/myrule.rules</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-32.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-32.png" srcset="data:image/png;base64,666"></p>
+<p>开启检测模式。打开浏览器，输入<a target="_blank" rel="noopener" href="http://www.google.com到google页面.到log文件夹下查看alert文件,规则中的字符串已经被记录了下来,即snort成功地检测到载入google网页的动作,所定义的规则起到了预想的作用/">www.google.com到google页面。到Log文件夹下查看Alert文件，规则中的字符串已经被记录了下来，即Snort成功地检测到载入Google网页的动作，所定义的规则起到了预想的作用</a></p>
+<pre><code class="bash">snort -i eth0 -c /snort-2.9.17/etc/snort.conf -A fast -l log/snort-detect/</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-34.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-34.png" srcset="data:image/png;base64,666"></p>
+<p><em>注意vm中宿主机和虚拟机的网络模式</em></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-33.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-33.png" srcset="data:image/png;base64,666"></p>
+<h2 id="尝试定义几个更为实用的规则，并在使用中检验它们的效果。"><a href="#尝试定义几个更为实用的规则，并在使用中检验它们的效果。" class="headerlink" title="尝试定义几个更为实用的规则，并在使用中检验它们的效果。"></a>尝试定义几个更为实用的规则，并在使用中检验它们的效果。</h2><p>👉在new.rules中添加如下3条规则：</p>
+<pre><code class="makefile">alert icmp any any -&gt; any any (dsize:0;itype:8;msg:&quot;NMAP PING SCAN&quot;; sid:1000002;)
+alert tcp any any -&gt; any any (flags:SF;msg:&quot;NMAP SYN FIN SCAN&quot;; sid:1000003; )
+aler tcp any any -&gt; any any (flags:A;ack:0;msg:&quot;NMAP TCP PING&quot;; sid:1000004)</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-35.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-35.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-36.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-36.png" srcset="data:image/png;base64,666"></p>
+<p>运行Snort，在局域网另一台主机上运行Nmap，对主机进行端口扫描。首先使用Nmap的-sP选项进行ping扫描，然后使用-sS选项的SYN扫描，最后使用-sA选项进行ACK扫描。</p>
+<p><code>nmap -sP 172.16.68.0/24</code> ping 扫描</p>
+<p><code>sudo nmap -sS 172.16.68.0/24</code>  SYN扫描</p>
+<p><code>sudo nmap -sA 172.16.68.0/24</code>  ACK扫描</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-37.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-37.png" srcset="data:image/png;base64,666"></p>
+<p>扫描完成后，回到kali主机查看Alert文件。</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-38.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/snort-38.png" srcset="data:image/png;base64,666"></p>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2020/11/14/DES%E5%AE%9E%E9%AA%8C/'>
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://gryffinbit.top/2020/11/30/kali%E4%B8%8Bsnort%E6%8A%A5%E8%AD%A6%E8%A7%84%E5%88%99%E8%AE%BE%E8%AE%A1%E5%92%8C%E6%B5%8B%E8%AF%95/>https://gryffinbit.top/2020/11/30/kali%E4%B8%8Bsnort%E6%8A%A5%E8%AD%A6%E8%A7%84%E5%88%99%E8%AE%BE%E8%AE%A1%E5%92%8C%E6%B5%8B%E8%AF%95/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-01T09:35:15+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年12月1日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
+          
   
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/OpenCv/">
-        OpenCv
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        macOS下opencv的安装。在CLion上配置使用OpenCV （C++）安装opencv
-brew的安装
-/usr/bin/ruby -e &quot;$(curl -fsSL &lt;https://raw.githubusercontent.com/Homebrew/install/master/install&gt;)&quot;
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/snort/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>snort</p></a></div>
 
-brew安装opencv
-brew insta...
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gryffinbit.top/2020/11/30/kali%E4%B8%8Bsnort%E6%8A%A5%E8%AD%A6%E8%A7%84%E5%88%99%E8%AE%BE%E8%AE%A1%E5%92%8C%E6%B5%8B%E8%AF%95/&title=kali下snort报警规则设计和测试 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://gryffinbit.top/2020/11/30/kali%E4%B8%8Bsnort%E6%8A%A5%E8%AD%A6%E8%A7%84%E5%88%99%E8%AE%BE%E8%AE%A1%E5%92%8C%E6%B5%8B%E8%AF%95/&title=kali下snort报警规则设计和测试 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://gryffinbit.top/2020/11/30/kali%E4%B8%8Bsnort%E6%8A%A5%E8%AD%A6%E8%A7%84%E5%88%99%E8%AE%BE%E8%AE%A1%E5%92%8C%E6%B5%8B%E8%AF%95/&title=kali下snort报警规则设计和测试 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
       
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Misc/">Misc</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/OpenCv/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
 </div>
 
-          </div>
+
+
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/CRC%E6%A0%A1%E9%AA%8C/">
-        CRC校验
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        CRC检验错误pngcheck -v 分析png格式，报错CRC ERROR
-对一张正常的图片，通过修改其宽度或者高度隐藏信息，使计算出的CRC校验码与原图的CRC校验码不一致；windows的图片查看器会忽略错误的CRC校验码，因此会显示图片，但此时的图片已经是修改过的，所以会有显示不全或扭曲等情况，借此可以隐藏信息。
-而Linux、macOS下的图片查看器不会忽略错误的CRC校验码，因此...
-      
-    
+    </div>
   </div>
+
+
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Misc/">Misc</a>
-        
-      </div>
+  
+
+  
+    <div class="prev-next">
       
-        <div>
-          <a class='readmore' href='/2020/11/14/CRC%E6%A0%A1%E9%AA%8C/'>
-            阅读全文
-          </a>
-        </div>
+        <a class='prev' href='/2020/12/01/%E7%94%A8CAsyncSocket%E7%B1%BB%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E5%AE%A4%E7%A8%8B%E5%BA%8F/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>用CAsyncSocket类实现聊天室程序</p>
+          <p class='content'>用CAsyncSocket类实现聊天室程序实验目标简单的聊天室程序，采用C/S模型，分为客户端和服务器端程序。是点对点通信的程序。客户端和服务器端通过网络交换聊天的字符串内容，并显示。
+实验目的...</p>
+        </a>
+      
+      
+        <a class='next' href='/2020/11/30/kali%E4%B8%8Bsnort%E7%AE%80%E5%8D%95%E7%9A%84%E6%8A%A5%E8%AD%A6%E8%A7%84%E5%88%99/'>
+          <p class='title'>kali下snort简单的报警规则<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>snort简单的报警规则在官网下载规则包（需要注册登陆）https://www.snort.org/downloads
+
+我下载的是29151版本的
+
+
+将snort安装目录的包用规则包进行替换...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/Jpegsnoop/">
-        Jpegsnoop
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        
-github 项目链接
-https://github.com/ImpulseAdventure/JPEGsnoop
+  </article>
 
 
-可参考jpeg的格式详解
-
-JPEG原理简介文件格式
-JPEG文件大体上可以分成两个部分：标记码和压缩数据
-标记码：
-由两个字节构成，第一个字节是固定值0xFF，后一个字节则根据不同意义有不同数值
-在每个标记码之前可以添加数目不限的无意义的0xFF填充，连续的多个0xFF...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Misc/">Misc</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/Jpegsnoop/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/stegdetect/">
-        stegdetect
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        
-在kali下
 
 
-github项目
-https://github.com/abeluck/stegdetect
 
-原理简介文件格式
-JPEG文件大体上可以分成两个部分：标记码和压缩数据
-标记码：
-由两个字节构成，第一个字节是固定值0xFF，后一个字节则根据不同意义有不同数值
-在每个标记码之前可以添加数目不限的无意义的0xFF填充，连续的多个0xFF可以被理解为一个0xFF，并表示一个标记码...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Misc/">Misc</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/stegdetect/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/%E5%B8%B8%E8%A7%81%E7%BC%96%E7%A0%81/">
-        常见编码
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        常见的编码##base64
-长度是3的倍数，不足时结尾用= 补全
-##xxencode
-与base64相似。 但结尾用+ 补全
-uuencode特殊符号很多
-
-##jjencode
-针对JavaScript的编码方式
-转换成只有符号的字符串
-
-##aaencode
-针对JavaScript的编码方式
-转换成常用的网络表情
-
-###维吉尼亚密码
-由一些偏移量不同的凯撒密码组成。 （多表密码的简...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/%E5%B8%B8%E8%A7%81%E7%BC%96%E7%A0%81/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%AF%86%E7%A0%81%E5%8F%98%E4%BD%93/">
-        维吉尼亚密码变体
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        原题：
-
-It is said that Vigenere cipher does not achieve the perfect secrecy actually :-)Tips:1.The encode pragram is given;2.Do u no index of coincidence ？3.The key is last 6 words of the plain text(...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%AF%86%E7%A0%81%E5%8F%98%E4%BD%93/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B9%B1%E7%9A%84%E5%AF%86%E7%A0%81/">
-        一些杂乱的密码
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        记录遇到的一些奇奇怪怪的密码###变异凯撒
-第一位 偏移5，第二位偏移6 ， 第三位偏移7 ，第四位偏移8……以此类推
-k = 5 
-str = &#39;afZ_r9VYfScOeO_UL^RWUc&#39; 
-for i in str:                    
- print(chr(ord(i)+k),end=&quot;&quot;)
- k +=1
-###quoted_...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B9%B1%E7%9A%84%E5%AF%86%E7%A0%81/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/RSA%E5%8E%9F%E7%90%86%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/">
-        RSA原理基本介绍
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        RSA的基本介绍
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
 
 
-python pow函数的用法：计算x的y次方，如果z在存在，则再对结果进行取模，其结果等效于pow(x,y) %z     
-
-import math
-
-math.pow(x, y[, z])
-求明文m，用该函数求c（密文cipher）的d次方，得到：
-$$d\equiv e^{-1}$$
-$$m=pow(cipher,e^{-1})$$
-
-d是e的乘法逆元 ，e^-...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/RSA%E5%8E%9F%E7%90%86%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/13/RSA/">
-        RSA
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        参数N：大整数N，我们称之为模数（modulus）
-p 和 q ：大整数N的两个因子（factor）
-e 和 d：互为模反数的两个指数（exponent）
- c 和 m：分别是密文和明文
-&#123;N,e&#125;称为公钥,&#123;N,d&#125;称为私钥
-解题思路
-选取两个较大的互不相等的质数p和q，计算n = p * q 。
-计算phi = (p-1) * (q-1) 。
-选取...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-13</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/13/RSA/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/archives/2020/11/">
-            <section class="post prev white-box shadow" >
-              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          2 / 3
-        </p>
-        
-          <a class="next" rel="next" href="/archives/2020/11/page/3/">
-            <section class="post next white-box shadow">
-              &nbsp;下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
-    
-  
 
 
-	
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -1007,156 +746,28 @@ e 和 d：互为模反数的两个指数（exponent）
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/photo.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Gryffinbit</h2>
-        
-        
-          <p>兔子</p>
 
-        
-        
-          <p>凡殺不死我的，必使我更強大。</p>
 
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/img/QQ.jpg"
-              class="social fab fa-qq flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;tf=1&amp;source=mailto&amp;to=Gryffinbit@Gmail.com"
-              class="social fas fa-envelope-open flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/Gryffinbit/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://blog.csdn.net/Gryffinbit"
-              class="social fab fa-cuttlefish flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Misc/" href="/categories/Misc/"
-            id="categoriesMisc"
-            ><div class='name'>Misc</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/kali/" href="/categories/kali/"
-            id="categorieskali"
-            ><div class='name'>kali</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/write-up/" href="/categories/write-up/"
-            id="categorieswrite-up"
-            ><div class='name'>write up</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"
-            id="categoriesE5AF86E7A081E5ADA6"
-            ><div class='name'>密码学</div><div class='badge'>(13)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/kali/" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/kali/"
-            id="categoriesE5AF86E7A081E5ADA6kali"
-            ><div class='name'>kali</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" href="/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"
-            id="categoriesE7BD91E7BB9CE7BC96E7A88B"
-            ><div class='name'>网络编程</div><div class='badge'>(2)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8D%95%E6%8D%89%E5%85%B3%E9%94%AE%E5%AD%97Search%E8%AE%B0%E5%BD%95%E6%89%93%E5%BC%80Google%E7%BD%91%E9%A1%B5%E7%9A%84%E5%8A%A8%E4%BD%9C"><span class="toc-text">捕捉关键字Search记录打开Google网页的动作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%9D%E8%AF%95%E5%AE%9A%E4%B9%89%E5%87%A0%E4%B8%AA%E6%9B%B4%E4%B8%BA%E5%AE%9E%E7%94%A8%E7%9A%84%E8%A7%84%E5%88%99%EF%BC%8C%E5%B9%B6%E5%9C%A8%E4%BD%BF%E7%94%A8%E4%B8%AD%E6%A3%80%E9%AA%8C%E5%AE%83%E4%BB%AC%E7%9A%84%E6%95%88%E6%9E%9C%E3%80%82"><span class="toc-text">尝试定义几个更为实用的规则，并在使用中检验它们的效果。</span></a></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/AES/" style="font-size: 14px; color: #999">AES</a> <a href="/tags/CAsyncSocket/" style="font-size: 14px; color: #999">CAsyncSocket</a> <a href="/tags/CSocket/" style="font-size: 14px; color: #999">CSocket</a> <a href="/tags/DES/" style="font-size: 14px; color: #999">DES</a> <a href="/tags/MFC/" style="font-size: 16.5px; color: #888">MFC</a> <a href="/tags/Python/" style="font-size: 14px; color: #999">Python</a> <a href="/tags/RSA/" style="font-size: 19px; color: #777">RSA</a> <a href="/tags/SHA-1/" style="font-size: 14px; color: #999">SHA-1</a> <a href="/tags/WinSock/" style="font-size: 16.5px; color: #888">WinSock</a> <a href="/tags/gmpy2/" style="font-size: 14px; color: #999">gmpy2</a> <a href="/tags/snort/" style="font-size: 21.5px; color: #666">snort</a> <a href="/tags/%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81/" style="font-size: 19px; color: #777">古典密码</a> <a href="/tags/%E5%9B%BE%E7%89%87/" style="font-size: 24px; color: #555">图片</a> <a href="/tags/%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B0/" style="font-size: 14px; color: #999">散列函数</a> <a href="/tags/%E6%9D%82/" style="font-size: 14px; color: #999">杂</a> <a href="/tags/%E6%B5%81%E5%AF%86%E7%A0%81/" style="font-size: 14px; color: #999">流密码</a> <a href="/tags/%E7%AC%AC%E4%B8%80%E5%B1%8A%E4%BF%A1%E5%AE%89%E5%A4%A7%E6%8C%91%E6%88%98/" style="font-size: 14px; color: #999">第一届信安大挑战</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 </aside>
+
 
 
         
@@ -1166,14 +777,14 @@ e 和 d：互为模反数的两个指数（exponent）
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="kali下snort报警规则设计和测试";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
 </script>
 
