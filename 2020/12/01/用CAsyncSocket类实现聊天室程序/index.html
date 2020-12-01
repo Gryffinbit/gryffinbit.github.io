@@ -595,16 +595,24 @@ void CMySocket::SetParent(CtalkcDlg* pDlg)
 &#123;
     m_pDlg = pDlg;
 &#125;
+\#if 0
+BEGIN_MESSAGE_MAP(CMySocket, CAsyncSocket)
+
+END_MESSAGE_MAP()
+\#endif
+
+//CMySocket member functions
+
+void CMySocket::OnConnect(int nErrorCode)
+&#123;
+
+    if (nErrorCode == 0) m_pDlg -&gt; OnConnect();
+
+&#125;
 
 </code></pre>
 </li>
 </ul>
-<p>  #if 0<br>  BEGIN_MESSAGE_MAP(CMySocket, CAsyncSocket)</p>
-<p>  END_MESSAGE_MAP()<br>  #endif</p>
-<p>  //CMySocket member functions</p>
-<p>  void CMySocket::OnConnect(int nErrorCode)<br>  {</p>
-<pre><code>  if (nErrorCode == 0) m_pDlg -&gt; OnConnect();</code></pre>
-<p>  }</p>
 <p>  void CMySocket::OnClose(int nErrorCode)<br>  {</p>
 <pre><code>  if (nErrorCode == 0) m_pDlg-&gt;OnClose();</code></pre>
 <p>  }</p>
@@ -687,7 +695,7 @@ public:
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
-#endif
+\#endif
 
 </code></pre>
 </li>
@@ -707,9 +715,8 @@ public:
 <p>  BEGIN_MESSAGE_MAP(CtalkcDlg, CDialogEx)<br>      ON_WM_SYSCOMMAND()<br>      ON_WM_PAINT()<br>      ON_WM_QUERYDRAGICON()<br>      ON_BN_CLICKED(IDC_BUTTON_CLOSE, &amp;CtalkcDlg::OnButtonClose)<br>      ON_BN_CLICKED(IDC_BUTTON_CONNECT, &amp;CtalkcDlg::OnButtonConnect)<br>      ON_BN_CLICKED(IDOK, &amp;CtalkcDlg::OnSendMsg)<br>  END_MESSAGE_MAP()</p>
 <p>  // CtalkcDlg 消息处理程序</p>
 <p>  BOOL CtalkcDlg::OnInitDialog()<br>  {<br>      CDialogEx::OnInitDialog();</p>
-<pre><code>  // 将“关于...”菜单项添加到系统菜单中。
-
-  // IDM_ABOUTBOX 必须在系统命令范围内。
+<p>  \    // 将“关于…”菜单项添加到系统菜单中。</p>
+<pre><code>  // IDM_ABOUTBOX 必须在系统命令范围内。
   ASSERT((IDM_ABOUTBOX &amp; 0xFFF0) == IDM_ABOUTBOX);
   ASSERT(IDM_ABOUTBOX &lt; 0xF000);
 
@@ -744,8 +751,7 @@ public:
 
   m_sConnectSocket.SetParent(this);
   return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE</code></pre>
-<p>  }</p>
-<p>  void CtalkcDlg::OnSysCommand(UINT nID, LPARAM lParam)<br>  {<br>      if ((nID &amp; 0xFFF0) == IDM_ABOUTBOX)<br>      {<br>          CAboutDlg dlgAbout;<br>          dlgAbout.DoModal();<br>      }<br>      else<br>      {<br>          CDialogEx::OnSysCommand(nID, lParam);<br>      }<br>  }</p>
+<p>  }<br>  void CtalkcDlg::OnSysCommand(UINT nID, LPARAM lParam)<br>  {<br>      if ((nID &amp; 0xFFF0) == IDM_ABOUTBOX)<br>      {<br>          CAboutDlg dlgAbout;<br>          dlgAbout.DoModal();<br>      }<br>      else<br>      {<br>          CDialogEx::OnSysCommand(nID, lParam);<br>      }<br>  }</p>
 <p>  // 如果向对话框添加最小化按钮，则需要下面的代码<br>  //  来绘制该图标。  对于使用文档/视图模型的 MFC 应用程序，<br>  //  这将由框架自动完成。</p>
 <p>  void CtalkcDlg::OnPaint()<br>  {<br>      if (IsIconic())<br>      {<br>          CPaintDC dc(this); // 用于绘制的设备上下文</p>
 <pre><code>      SendMessage(WM_ICONERASEBKGND, reinterpret_cast&lt;WPARAM&gt;(dc.GetSafeHdc()), 0);
@@ -841,7 +847,7 @@ public:
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-01T10:18:12+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-01T10:34:09+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2020年12月1日</p>
