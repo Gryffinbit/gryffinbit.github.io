@@ -571,7 +571,7 @@ public:
 </ul>
 <ul>
 <li><p>MySocket.cpp</p>
-<pre><code class="C++">#include &quot;talkc.h&quot;
+<pre><code class="C++s">#include &quot;talkc.h&quot;
 #include &quot;pch.h&quot;
 #include &quot;MySocket.h&quot;
 #include &quot;talkcDlg.h&quot;
@@ -595,11 +595,11 @@ void CMySocket::SetParent(CtalkcDlg* pDlg)
 &#123;
     m_pDlg = pDlg;
 &#125;
-\#if 0
+#if 0
 BEGIN_MESSAGE_MAP(CMySocket, CAsyncSocket)
 
 END_MESSAGE_MAP()
-\#endif
+#endif
 
 //CMySocket member functions
 
@@ -620,6 +620,8 @@ void CMySocket::OnConnect(int nErrorCode)
 <pre><code>  if (nErrorCode == 0) m_pDlg-&gt;OnReceive();</code></pre>
 <p>  }</p>
 <pre><code>
+
+
 
 
 ### 对话框类CTalkDlg对应文件
@@ -660,12 +662,8 @@ public:
     CString m_strServName;
     int m_nServPort;
 
-
-
 protected:
     virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 支持
-
-
 // 实现
 protected:
     HICON m_hIcon;
@@ -715,7 +713,7 @@ public:
 <p>  BEGIN_MESSAGE_MAP(CtalkcDlg, CDialogEx)<br>      ON_WM_SYSCOMMAND()<br>      ON_WM_PAINT()<br>      ON_WM_QUERYDRAGICON()<br>      ON_BN_CLICKED(IDC_BUTTON_CLOSE, &amp;CtalkcDlg::OnButtonClose)<br>      ON_BN_CLICKED(IDC_BUTTON_CONNECT, &amp;CtalkcDlg::OnButtonConnect)<br>      ON_BN_CLICKED(IDOK, &amp;CtalkcDlg::OnSendMsg)<br>  END_MESSAGE_MAP()</p>
 <p>  // CtalkcDlg 消息处理程序</p>
 <p>  BOOL CtalkcDlg::OnInitDialog()<br>  {<br>      CDialogEx::OnInitDialog();</p>
-<p>  \    // 将“关于…”菜单项添加到系统菜单中。</p>
+<p>  // 将“关于…”菜单项添加到系统菜单中。</p>
 <pre><code>  // IDM_ABOUTBOX 必须在系统命令范围内。
   ASSERT((IDM_ABOUTBOX &amp; 0xFFF0) == IDM_ABOUTBOX);
   ASSERT(IDM_ABOUTBOX &lt; 0xF000);
@@ -847,7 +845,7 @@ public:
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-01T10:34:09+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-01T11:10:23+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2020年12月1日</p>
@@ -928,8 +926,8 @@ public:
       
         <a class='prev' href='/2020/12/01/%E7%94%A8CSocket%E7%B1%BB%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E5%AE%A4%E7%A8%8B%E5%BA%8F/'>
           <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>用CSocket类实现聊天室程序</p>
-          <p class='content'>#用CSocket类实现聊天室程序
-实验目标采用C/S模型，分为客户端和服务器端程序。服务器可以与多个客户端建立连接，为多个客户机服务。服务器动态统计进入聊天室的客户端数量，并显示。会显示进入和...</p>
+          <p class='content'>实验目标采用C/S模型，分为客户端和服务器端程序。服务器可以与多个客户端建立连接，为多个客户机服务。服务器动态统计进入聊天室的客户端数量，并显示。会显示进入和退出聊天室的动态。
+采用链表来管理客...</p>
         </a>
       
       
