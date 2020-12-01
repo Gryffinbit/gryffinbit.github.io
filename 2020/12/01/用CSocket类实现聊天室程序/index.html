@@ -496,16 +496,19 @@
 
 
   
-  <h1 id="实验目标"><a href="#实验目标" class="headerlink" title="实验目标"></a>实验目标</h1><p>采用C/S模型，分为客户端和服务器端程序。服务器可以与多个客户端建立连接，为多个客户机服务。服务器动态统计进入聊天室的客户端数量，并显示。会显示进入和退出聊天室的动态。</p>
+  <p>##实验目标</p>
+<p>采用C/S模型，分为客户端和服务器端程序。服务器可以与多个客户端建立连接，为多个客户机服务。服务器动态统计进入聊天室的客户端数量，并显示。会显示进入和退出聊天室的动态。</p>
 <p>采用链表来管理客户机的套接字对象。</p>
-<h1 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h1><ol>
+<p>##实验目的</p>
+<ol>
 <li>学习如何从CSocket类派生出自己的WinSock类。</li>
 <li>学习如何利用CSocketFile类、CArchive类和CSocket类的合作来实现网络进程之间的数据传输。</li>
 <li>学习如何用链表管理多个动态客户机的套接字，实现服务器和所有的聊天客户机所显示信息的同步更新</li>
 </ol>
-<h1 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h1><p>Windows10 x64，Visual Studio 2017</p>
-<h1 id="实验内容"><a href="#实验内容" class="headerlink" title="实验内容"></a>实验内容</h1><p>分为两大块，创建客户端和创建服务器端。</p>
-<h3 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h3><ol>
+<p>##实验环境</p>
+<p>Windows10 x64，Visual Studio 2017</p>
+<h2 id="实验内容"><a href="#实验内容" class="headerlink" title="实验内容"></a>实验内容</h2><p>分为两大块，创建客户端和创建服务器端。</p>
+<h3 id="服务器端："><a href="#服务器端：" class="headerlink" title="服务器端："></a>服务器端：</h3><ol>
 <li>使用MFC ApplicationWizard创建客户端应用程序框架</li>
 <li>为对话框界面添加控件对象</li>
 <li>为对话框中的控件对象定义相应的成员变量</li>
@@ -515,10 +518,10 @@
 <li>创建专用于数据传输序列化处理的类CMsg</li>
 <li>添加事件函数和成员函数的代码</li>
 </ol>
-<h3 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h3><p>与客户端同理</p>
-<h1 id="实验原理（模型）"><a href="#实验原理（模型）" class="headerlink" title="实验原理（模型）"></a>实验原理（模型）</h1><h3 id="服务器端："><a href="#服务器端：" class="headerlink" title="服务器端："></a>服务器端：</h3><ol>
+<h3 id="客户端："><a href="#客户端：" class="headerlink" title="客户端："></a>客户端：</h3><p>与服务器端同理</p>
+<h2 id="实验原理（模型）"><a href="#实验原理（模型）" class="headerlink" title="实验原理（模型）"></a>实验原理（模型）</h2><h3 id="服务器端：-1"><a href="#服务器端：-1" class="headerlink" title="服务器端："></a>服务器端：</h3><ol>
 <li><p>创建空的服务器监听套接字对象</p>
-<pre><code class="cpp">CSocket sockserv;</code></pre>
+<pre><code class="C++">CSocket sockserv;</code></pre>
 </li>
 <li><p>创建监听套接字对象底层句柄</p>
 <pre><code class="cpp">CLSocket.Create(8000);</code></pre>
@@ -550,7 +553,7 @@ sockSecv.Close();</code></pre>
 <blockquote>
 <p>创建CSocket对象分为两步：1. 调用CSocket类的构造函数，创建一个空的CSocket对象。2. 调用此CSocket对象的Create（）成员函数，创建对象的底层套接字</p>
 </blockquote>
-<h3 id="客户端："><a href="#客户端：" class="headerlink" title="客户端："></a>客户端：</h3><ol>
+<h3 id="客户端：-1"><a href="#客户端：-1" class="headerlink" title="客户端："></a>客户端：</h3><ol>
 <li><p>创建空的客户端套接字对象</p>
 <pre><code class="cpp">CSocket sockClient;</code></pre>
 </li>
@@ -582,20 +585,18 @@ adOut &lt;&lt; dwValue;  //数据输出</code></pre>
 <blockquote>
 <p>服务器端：收到连接请求之后，需要创建一个专门用于连接的套接字对象。（即每个与服务器连接的客户端都有一个专属的用于连接和数据交换的套接字对象）</p>
 </blockquote>
-<hr>
-<h1 id="实验过程-代码分析）"><a href="#实验过程-代码分析）" class="headerlink" title="实验过程(代码分析）"></a>实验过程(代码分析）</h1><p>👉创造程序框架 （MFC基于对话框）</p>
+<h2 id="实验过程（代码分析）"><a href="#实验过程（代码分析）" class="headerlink" title="实验过程（代码分析）"></a>实验过程（代码分析）</h2><p>👉创造程序框架 （MFC基于对话框）</p>
 <p>👉添加控件对象</p>
 <p>👉添加控件成员变量</p>
-<p><strong>CSocket类从CAsynSocket类继承了许多成员函数，封装了Windows套接字应用程序编程接口API。</strong></p>
-<h2 id="应用程序类CTsApp、CTcApp对应文件"><a href="#应用程序类CTsApp、CTcApp对应文件" class="headerlink" title="应用程序类CTsApp、CTcApp对应文件"></a>应用程序类CTsApp、CTcApp对应文件</h2><p>VC++自动生成</p>
-<hr>
-<h2 id="派生类CLSocket、CCSocket对应文件"><a href="#派生类CLSocket、CCSocket对应文件" class="headerlink" title="派生类CLSocket、CCSocket对应文件"></a>派生类CLSocket、CCSocket对应文件</h2><p><strong>服务器端：</strong></p>
+<p><em>CSocket类从CAsynSocket类继承了许多成员函数，封装了Windows套接字应用程序编程接口API。</em></p>
+<h3 id="应用程序类CTsApp、CTcApp对应文件"><a href="#应用程序类CTsApp、CTcApp对应文件" class="headerlink" title="应用程序类CTsApp、CTcApp对应文件"></a>应用程序类CTsApp、CTcApp对应文件</h3><p>VC++自动生成</p>
+<p>###派生类CLSocket、CCSocket对应文件</p>
+<p><strong>服务器端：</strong></p>
 <p>CLSocket，专用于监听客户端的连接请求（添加OnAccept事件处理函数）</p>
 <p>CCSocket，专用于客户端建立连接并交换数据（添加OnReceive事件处理函数）</p>
 <p>添加事件响应函数，用于停止服务、和监听</p>
-<ul>
-<li><p>LSocket.h</p>
-<pre><code class="cpp">#pragma once
+<p>✏️LSocket.h</p>
+<pre><code class="C++">#pragma once
 class CTsDlg;
 class CLSocket : public CSocket
 &#123;
@@ -607,9 +608,8 @@ public:
 protected:
     virtual void OnAccept(int nErrorCode);
 &#125;;</code></pre>
-</li>
-<li><p>LSocket.cpp</p>
-<pre><code class="cpp">#include &quot;pch.h&quot;
+<p>✏️LSocket.cpp</p>
+<pre><code class="C++">#include &quot;pch.h&quot;
 #include &quot;LSocket.h&quot;
 #include &quot;tsDlg.h&quot;
 
@@ -629,9 +629,8 @@ void CLSocket::OnAccept(int nErrorCode)
     m_pDlg-&gt;OnAccept();
 &#125;
 IMPLEMENT_DYNAMIC(CLSocket, CSocket)</code></pre>
-</li>
-<li><p>CSocket.h</p>
-<pre><code class="cpp">#pragma once
+<p>✏️CSocket.h</p>
+<pre><code class="C++">#pragma once
 
 class CTsDlg;
 class CMsg;
@@ -652,10 +651,11 @@ public:
     void ReceiveMessage(CMsg* pMsg);
 protected:
     virtual void OnReceive(int nErrorCode);
-&#125;;</code></pre>
-</li>
-<li><p>CSocket.cpp</p>
-<pre><code class="cpp">#include &quot;pch.h&quot;
+&#125;;
+
+</code></pre>
+<p>✏️CSocket.cpp</p>
+<pre><code class="C++">#include &quot;pch.h&quot;
 #include &quot;CSocket.h&quot;
 #include &quot;tsDlg.h&quot;
 #include &quot;Msg.h&quot;
@@ -676,12 +676,15 @@ CCSocket::~CCSocket()
     if (m_pFile != NULL) delete m_pFile;
 &#125;
 
+
+
 void CCSocket::Initialize()
 &#123;
     m_pFile = new CSocketFile(this, TRUE);
     m_pArchiveIn = new CArchive(m_pFile, CArchive::load);
     m_pArchiveOut = new CArchive(m_pFile, CArchive::store);
 &#125;
+
 
 void CCSocket::SendMessage(CMsg* pMsg)
 &#123;
@@ -691,6 +694,7 @@ void CCSocket::SendMessage(CMsg* pMsg)
         m_pArchiveOut-&gt;Flush();
     &#125;
 &#125;
+
 
 void CCSocket::ReceiveMessage(CMsg* pMsg)
 &#123;
@@ -704,13 +708,10 @@ void CCSocket::OnReceive(int nErrorCode)
     m_pDlg-&gt;OnReceive(this);
 &#125;
 IMPLEMENT_DYNAMIC(CCSocket,CSocket)</code></pre>
-</li>
-</ul>
-<p><strong>客户端：</strong></p>
+<p><strong>客户端:</strong></p>
 <p>CCSocket，专用于于服务器建立连接并交换数据（添加OnReceive事件处理函数）</p>
-<ul>
-<li><p>CSocket.h</p>
-<pre><code class="cpp">#pragma once
+<p>✏️CSocket.h</p>
+<pre><code class="C++">#pragma once
 class CTcDlg;
 class CCSocket:public CSocket
 &#123;
@@ -721,10 +722,11 @@ public:
     CTcDlg* m_pDlg;
 protected:
     virtual void OnReceive(int nErrorCode);
-&#125;;</code></pre>
-</li>
-<li><p>CSocket.cpp</p>
-<pre><code class="cpp">#include &quot;pch.h&quot;
+&#125;;
+
+</code></pre>
+<p>✏️CSocket.cpp</p>
+<pre><code class="C++">#include &quot;pch.h&quot;
 #include &quot;CSocket.h&quot;
 #include &quot;tcDlg.h&quot;
 IMPLEMENT_DYNAMIC(CCSocket,CSocket)
@@ -744,14 +746,11 @@ void CCSocket::OnReceive(int nErrorCode)
     CSocket::OnReceive(nErrorCode);
     if (nErrorCode == 0) m_pDlg-&gt;OnReceive();
 &#125;</code></pre>
-</li>
-</ul>
-<hr>
-<h2 id="对话框类CTsDlg、CTcDlg对应文件"><a href="#对话框类CTsDlg、CTcDlg对应文件" class="headerlink" title="对话框类CTsDlg、CTcDlg对应文件"></a>对话框类CTsDlg、CTcDlg对应文件</h2><p>主要是对控件变量的声明和定义。</p>
+<h3 id="对话框类CTsDlg、CTcDlg对应文件"><a href="#对话框类CTsDlg、CTcDlg对应文件" class="headerlink" title="对话框类CTsDlg、CTcDlg对应文件"></a>对话框类CTsDlg、CTcDlg对应文件</h3><p>主要是对控件变量的声明和定义。</p>
 <p><strong>服务器端：</strong></p>
-<ul>
-<li><p>tsDlg.h</p>
-<pre><code class="cpp">// tsDlg.h: 头文件
+<p>✏️tsDlg.h</p>
+<pre><code class="C++">
+// tsDlg.h: 头文件
 //
 
 #pragma once
@@ -794,6 +793,7 @@ public:
     afx_msg void OnButtonListen();
     afx_msg void OnClose();
 
+
     // 生成的消息映射函数
 
 public:
@@ -803,10 +803,11 @@ public:
     void OnAccept();
     void OnReceive(CCSocket* pSocket);
     void backClients(CMsg* pMsg);
-&#125;;</code></pre>
-</li>
-<li><p>tsDlg.cpp</p>
-<pre><code class="cpp">// tsDlg.cpp: 实现文件
+&#125;;
+</code></pre>
+<p>✏️tsDlg.cpp</p>
+<pre><code class="C++">
+// tsDlg.cpp: 实现文件
 //
 
 #include &quot;pch.h&quot;
@@ -819,6 +820,7 @@ public:
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
+
 
 // 用于应用程序“关于”菜单项的 CAboutDlg 对话框
 
@@ -852,7 +854,10 @@ void CAboutDlg::DoDataExchange(CDataExchange* pDX)
 BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)
 END_MESSAGE_MAP()
 
+
 // CTsDlg 对话框
+
+
 
 CTsDlg::CTsDlg(CWnd* pParent /*=nullptr*/)
     : CDialogEx(IDD_TS_DIALOG, pParent)
@@ -880,6 +885,7 @@ BEGIN_MESSAGE_MAP(CTsDlg, CDialogEx)
     ON_BN_CLICKED(IDOK, &amp;CTsDlg::OnClose)
     ON_BN_CLICKED(IDC_BUTTON_LISTEN, &amp;CTsDlg::OnButtonListen)
 END_MESSAGE_MAP()
+
 
 // CTsDlg 消息处理程序
 
@@ -969,6 +975,8 @@ HCURSOR CTsDlg::OnQueryDragIcon()
     return (HCURSOR) m_hIcon;
 &#125;
 
+
+
 void CTsDlg::OnClose()
 &#123;
     CMsg msg;
@@ -988,6 +996,7 @@ void CTsDlg::OnClose()
     GetDlgItem(IDOK)-&gt;EnableWindow(FALSE);
 
 &#125;
+
 
 void CTsDlg::OnButtonListen()
 &#123;
@@ -1013,6 +1022,7 @@ void CTsDlg::OnButtonListen()
 
 &#125;
 
+
 void CTsDlg::OnAccept()
 &#123;
     CCSocket* pSocket = new CCSocket(this);
@@ -1026,6 +1036,7 @@ void CTsDlg::OnAccept()
     &#125;
     else delete pSocket;
 &#125;
+
 
 void CTsDlg::OnReceive(CCSocket* pSocket)
 &#123;
@@ -1057,6 +1068,8 @@ void CTsDlg::OnReceive(CCSocket* pSocket)
     &#125; while (!pSocket-&gt;m_pArchiveIn-&gt;IsBufferEmpty());
 &#125;
 
+
+
 void CTsDlg::backClients(CMsg* pMsg)
 &#123;
     for (POSITION pos = m_connList.GetHeadPosition(); pos != NULL;)
@@ -1064,17 +1077,17 @@ void CTsDlg::backClients(CMsg* pMsg)
         CCSocket* pSocket = (CCSocket*)m_connList.GetNext(pos);
         pSocket-&gt;SendMessage(pMsg);
     &#125;
-&#125;</code></pre>
-</li>
-</ul>
+&#125;
+</code></pre>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CSocket--1.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CSocket--1.png" srcset="data:image/png;base64,666"></p>
 <p><strong>客户端：</strong></p>
-<ul>
-<li><p>tcDlg.h</p>
-<pre><code class="cpp">// tcDlg.h: 头文件
+<p>✏️tcDlg.h</p>
+<pre><code class="C++">
+// tcDlg.h: 头文件
 //
 #include &quot;CSocket.h&quot;
 #pragma once
+
 
 // CTcDlg 对话框
 class CTcDlg : public CDialogEx
@@ -1090,6 +1103,7 @@ public:
 
     protected:
     virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 支持
+
 
 // 实现
 protected:
@@ -1123,10 +1137,11 @@ public:
     void OnReceive();
     void ReceiveMsg();
     void SendMsg(CString&amp; strText, bool st);
-&#125;;</code></pre>
-</li>
-<li><p>tcDlg.cpp</p>
-<pre><code class="cpp">// tcDlg.cpp: 实现文件
+&#125;;
+</code></pre>
+<p>✏️tcDlg.cpp</p>
+<pre><code class="C++">
+// tcDlg.cpp: 实现文件
 //
 
 #include &quot;pch.h&quot;
@@ -1140,6 +1155,7 @@ public:
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
+
 
 // 用于应用程序“关于”菜单项的 CAboutDlg 对话框
 
@@ -1173,7 +1189,10 @@ void CAboutDlg::DoDataExchange(CDataExchange* pDX)
 BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)
 END_MESSAGE_MAP()
 
+
 // CTcDlg 对话框
+
+
 
 CTcDlg::CTcDlg(CWnd* pParent /*=nullptr*/)
     : CDialogEx(IDD_TC_DIALOG, pParent)
@@ -1214,6 +1233,7 @@ BEGIN_MESSAGE_MAP(CTcDlg, CDialogEx)
     ON_WM_DESTROY()
 END_MESSAGE_MAP()
 
+
 // CTcDlg 消息处理程序
 
 BOOL CTcDlg::OnInitDialog()
@@ -1253,6 +1273,7 @@ BOOL CTcDlg::OnInitDialog()
     GetDlgItem(IDOK)-&gt;EnableWindow(FALSE);
     GetDlgItem(IDC_BUTTON_CLOSE)-&gt;EnableWindow(FALSE);
     UpdateData(FALSE);
+
 
     return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 &#125;
@@ -1306,6 +1327,8 @@ HCURSOR CTcDlg::OnQueryDragIcon()
     return static_cast&lt;HCURSOR&gt;(m_hIcon);
 &#125;
 
+
+
 void CTcDlg::OnEnChangeEdit2()
 &#123;
     // TODO:  如果该控件是 RICHEDIT 控件，它将不
@@ -1315,6 +1338,7 @@ void CTcDlg::OnEnChangeEdit2()
 
     // TODO:  在此添加控件通知处理程序代码
 &#125;
+
 
 void CTcDlg::OnSend()
 &#123;
@@ -1327,6 +1351,7 @@ void CTcDlg::OnSend()
         UpdateData(FALSE);
     &#125;
 &#125;
+
 
 void CTcDlg::OnButtonConn()
 &#123;
@@ -1364,6 +1389,11 @@ void CTcDlg::OnButtonConn()
     GetDlgItem(IDC_BUTTON_CONN)-&gt;EnableWindow(FALSE);
 &#125;
 
+
+
+
+
+
 void CTcDlg::OnButtonClose()
 &#123;
     CString strTemp;
@@ -1391,6 +1421,7 @@ void CTcDlg::OnButtonClose()
     GetDlgItem(IDC_BUTTON_CONN)-&gt;EnableWindow(TRUE);
 
 &#125;
+
 
 void CTcDlg::OnDestroy()
 &#123;
@@ -1421,6 +1452,7 @@ void CTcDlg::OnDestroy()
     m_pSocket = NULL;
 &#125;
 
+
 void CTcDlg::OnReceive()
 &#123;
     do
@@ -1429,6 +1461,7 @@ void CTcDlg::OnReceive()
         if (m_pSocket = NULL) return;
     &#125; while (!m_pArchiveIn-&gt;IsBufferEmpty());
 &#125;
+
 
 void CTcDlg::ReceiveMsg()
 &#123;
@@ -1457,6 +1490,7 @@ void CTcDlg::ReceiveMsg()
     END_CATCH
 &#125;
 
+
 void CTcDlg::SendMsg(CString&amp; strText, bool st)
 &#123;
     if (m_pArchiveOut != NULL)
@@ -1467,16 +1501,15 @@ void CTcDlg::SendMsg(CString&amp; strText, bool st)
         msg.Serialize(*m_pArchiveOut);
         m_pArchiveOut-&gt;Flush();
     &#125;
-&#125;</code></pre>
-</li>
-</ul>
+&#125;
+</code></pre>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CSocket--2.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CSocket--2.png" srcset="data:image/png;base64,666"></p>
-<h2 id="数据传输序列化处理类CMsg对应文件"><a href="#数据传输序列化处理类CMsg对应文件" class="headerlink" title="数据传输序列化处理类CMsg对应文件"></a>数据传输序列化处理类CMsg对应文件</h2><p><strong>服务器端：</strong></p>
-<ul>
-<li><p>Msg.h</p>
-<pre><code class="cpp">#pragma once
+<h3 id="数据传输序列化处理类CMsg对应文件"><a href="#数据传输序列化处理类CMsg对应文件" class="headerlink" title="数据传输序列化处理类CMsg对应文件"></a>数据传输序列化处理类CMsg对应文件</h3><p><strong>服务器端：</strong></p>
+<p>✏️Msg.h</p>
+<pre><code class="C++">#pragma once
 
 // CMsg 命令目标
+
 
 class CMsg : public CObject
 &#123;
@@ -1489,15 +1522,18 @@ public:
     BOOL m_bClose;
 public:
     virtual void Serialize(CArchive&amp;ar);
-&#125;;</code></pre>
-</li>
-<li><p>Msg.cpp</p>
-<pre><code class="cpp">// CMsg.cpp: 实现文件
+&#125;;
+
+
+</code></pre>
+<p>✏️Msg.cpp</p>
+<pre><code class="C++">// CMsg.cpp: 实现文件
 //
 
 #include &quot;pch.h&quot;
 #include &quot;ts.h&quot;
 #include &quot;Msg.h&quot;
+
 
 // CMsg
 
@@ -1526,13 +1562,11 @@ CMsg::~CMsg()
 
 &#125;
 
-IMPLEMENT_DYNAMIC(CMsg,CObject)</code></pre>
-</li>
-</ul>
+IMPLEMENT_DYNAMIC(CMsg,CObject)
+</code></pre>
 <p><strong>客户端：</strong></p>
-<ul>
-<li><p>Msg.h</p>
-<pre><code class="cpp">#pragma once
+<p>✏️Msg.h</p>
+<pre><code class="C++">#pragma once
 #include &lt;afx.h&gt;
 class CMsg :
     public CObject
@@ -1544,10 +1578,11 @@ public:
     virtual void Serialize(CArchive&amp; ar);
     CString m_strBuf;
     BOOL m_bClose;
-&#125;;</code></pre>
-</li>
-<li><p>Msg.cpp</p>
-<pre><code class="cpp">#include &quot;pch.h&quot;
+&#125;;
+
+</code></pre>
+<p>✏️Msg.cpp</p>
+<pre><code class="C++">#include &quot;pch.h&quot;
 #include &quot;Msg.h&quot;
 CMsg::CMsg() 
 &#123;
@@ -1574,13 +1609,11 @@ CMsg::~CMsg()
 
 &#125;
 IMPLEMENT_DYNAMIC(CMsg,CObject)</code></pre>
-</li>
-</ul>
-<h1 id="实验界面结果展示"><a href="#实验界面结果展示" class="headerlink" title="实验界面结果展示"></a>实验界面结果展示</h1><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CSocket--3.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CSocket--3.png" srcset="data:image/png;base64,666"></p>
+<h2 id="实验界面结果展示"><a href="#实验界面结果展示" class="headerlink" title="实验界面结果展示"></a>实验界面结果展示</h2><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CSocket--3.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CSocket--3.png" srcset="data:image/png;base64,666"></p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CSocket--4.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CSocket--4.png" srcset="data:image/png;base64,666"></p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CSocket--5.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CSocket--5.png" srcset="data:image/png;base64,666"></p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CSocket--6.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CSocket--6.png" srcset="data:image/png;base64,666"></p>
-<h1 id="实验过程中遇到的问题"><a href="#实验过程中遇到的问题" class="headerlink" title="实验过程中遇到的问题"></a>实验过程中遇到的问题</h1><p>⛔️在Msg.h中声明了析构函数，但cpp中没有定义</p>
+<h3 id="实验过程中遇到的问题"><a href="#实验过程中遇到的问题" class="headerlink" title="实验过程中遇到的问题"></a>实验过程中遇到的问题</h3><p>⛔️在Msg.h中声明了析构函数，但cpp中没有定义</p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CSocket--7.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CSocket--7.png" srcset="data:image/png;base64,666"></p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CSocket--8.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CSocket--8.png" srcset="data:image/png;base64,666"></p>
 <p>💚在Msg.cpp中补上析构函数的定义</p>
@@ -1589,7 +1622,7 @@ IMPLEMENT_DYNAMIC(CMsg,CObject)</code></pre>
 <p>⛔️ 字符问题</p>
 <pre><code class="cpp">strTemp = m_strCName + &quot;：进入聊天室&quot;;</code></pre>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CSocket--10.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CSocket--10.png" srcset="data:image/png;base64,666"></p>
-<p>在字符串前面，加上_T</p>
+<p>💚在字符串前面，加上_T</p>
 <pre><code class="cpp">strTemp = m_strCName + (_T(&quot;：进入聊天室&quot;));</code></pre>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CSocket--11.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/CSocket--11.png" srcset="data:image/png;base64,666"></p>
 <h2 id="实验参考书"><a href="#实验参考书" class="headerlink" title="实验参考书"></a>实验参考书</h2><p><strong>服务器端</strong></p>
@@ -1633,7 +1666,7 @@ IMPLEMENT_DYNAMIC(CMsg,CObject)</code></pre>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-01T11:10:50+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-01T11:35:05+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2020年12月1日</p>
@@ -1712,11 +1745,19 @@ IMPLEMENT_DYNAMIC(CMsg,CObject)</code></pre>
   
     <div class="prev-next">
       
+        <a class='prev' href='/2020/12/01/%E7%94%A8CAsyncSocket%E7%B1%BB%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E5%AE%A4%E7%A8%8B%E5%BA%8F/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>用CAsyncSocket类实现聊天室程序</p>
+          <p class='content'>##实验目标
+简单的聊天室程序，采用C/S模型，分为客户端和服务器端程序。是点对点通信的程序。客户端和服务器端通过网络交换聊天的字符串内容，并显示。
+##实验目的
+
+学习如何从CAsyncSoc...</p>
+        </a>
       
-        <a class='next' href='/2020/12/01/%E7%94%A8CAsyncSocket%E7%B1%BB%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E5%AE%A4%E7%A8%8B%E5%BA%8F/'>
-          <p class='title'>用CAsyncSocket类实现聊天室程序<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>用CAsyncSocket类实现聊天室程序实验目标简单的聊天室程序，采用C/S模型，分为客户端和服务器端程序。是点对点通信的程序。客户端和服务器端通过网络交换聊天的字符串内容，并显示。
-实验目的...</p>
+      
+        <a class='next' href='/2020/11/30/kali%E4%B8%8Bsnort%E6%8A%A5%E8%AD%A6%E8%A7%84%E5%88%99%E8%AE%BE%E8%AE%A1%E5%92%8C%E6%B5%8B%E8%AF%95/'>
+          <p class='title'>kali下snort报警规则设计和测试<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>snort报警规则设计和测试捕捉关键字Search记录打开Google网页的动作👉编写一个规则，通过捕捉关键字Search记录打开Google网页的动作，并将符合规则的数据包输出到Alert文...</p>
         </a>
       
     </div>
@@ -1817,7 +1858,7 @@ IMPLEMENT_DYNAMIC(CMsg,CObject)</code></pre>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF"><span class="toc-text">服务器端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-text">客户端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%EF%BC%9A"><span class="toc-text">服务器端：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%EF%BC%9A"><span class="toc-text">客户端：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%B1%BBCTsApp%E3%80%81CTcApp%E5%AF%B9%E5%BA%94%E6%96%87%E4%BB%B6"><span class="toc-text">应用程序类CTsApp、CTcApp对应文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B4%BE%E7%94%9F%E7%B1%BBCLSocket%E3%80%81CCSocket%E5%AF%B9%E5%BA%94%E6%96%87%E4%BB%B6"><span class="toc-text">派生类CLSocket、CCSocket对应文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E8%AF%9D%E6%A1%86%E7%B1%BBCTsDlg%E3%80%81CTcDlg%E5%AF%B9%E5%BA%94%E6%96%87%E4%BB%B6"><span class="toc-text">对话框类CTsDlg、CTcDlg对应文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E5%BA%8F%E5%88%97%E5%8C%96%E5%A4%84%E7%90%86%E7%B1%BBCMsg%E5%AF%B9%E5%BA%94%E6%96%87%E4%BB%B6"><span class="toc-text">数据传输序列化处理类CMsg对应文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%8F%82%E8%80%83%E4%B9%A6"><span class="toc-text">实验参考书</span></a>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-text">实验内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%EF%BC%9A"><span class="toc-text">服务器端：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%EF%BC%9A"><span class="toc-text">客户端：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%8E%9F%E7%90%86%EF%BC%88%E6%A8%A1%E5%9E%8B%EF%BC%89"><span class="toc-text">实验原理（模型）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%EF%BC%9A-1"><span class="toc-text">服务器端：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%EF%BC%9A-1"><span class="toc-text">客户端：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%BF%87%E7%A8%8B%EF%BC%88%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%EF%BC%89"><span class="toc-text">实验过程（代码分析）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%B1%BBCTsApp%E3%80%81CTcApp%E5%AF%B9%E5%BA%94%E6%96%87%E4%BB%B6"><span class="toc-text">应用程序类CTsApp、CTcApp对应文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%AF%9D%E6%A1%86%E7%B1%BBCTsDlg%E3%80%81CTcDlg%E5%AF%B9%E5%BA%94%E6%96%87%E4%BB%B6"><span class="toc-text">对话框类CTsDlg、CTcDlg对应文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E5%BA%8F%E5%88%97%E5%8C%96%E5%A4%84%E7%90%86%E7%B1%BBCMsg%E5%AF%B9%E5%BA%94%E6%96%87%E4%BB%B6"><span class="toc-text">数据传输序列化处理类CMsg对应文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%95%8C%E9%9D%A2%E7%BB%93%E6%9E%9C%E5%B1%95%E7%A4%BA"><span class="toc-text">实验界面结果展示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">实验过程中遇到的问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%8F%82%E8%80%83%E4%B9%A6"><span class="toc-text">实验参考书</span></a></li></ol>
     </div>
   </section>
 
