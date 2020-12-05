@@ -54,6 +54,31 @@
     
     
     <entry>
+      <title>IDS设备的配置和使用</title>
+      <link href="2020/12/04/IDS%E8%AE%BE%E5%A4%87%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/"/>
+      <url>2020/12/04/IDS%E8%AE%BE%E5%A4%87%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/</url>
+      
+        <content type="html"><![CDATA[<h1 id="IDS设备的配置和使用"><a href="#IDS设备的配置和使用" class="headerlink" title="IDS设备的配置和使用"></a>IDS设备的配置和使用</h1><h2 id="实验目的："><a href="#实验目的：" class="headerlink" title="实验目的："></a>实验目的：</h2><ol><li><p>熟悉IDS设备的部署方式 </p></li><li><p>掌握设备的连接和简单设置</p></li></ol><h2 id="实验环境："><a href="#实验环境：" class="headerlink" title="实验环境："></a>实验环境：</h2><p>物理主机：macOS Catalina</p><p>虚拟机：Windows</p><h2 id="实验内容："><a href="#实验内容：" class="headerlink" title="实验内容："></a>实验内容：</h2><ol><li>GNS3安装与基本操作</li><li>路由器配置</li><li>IDS配置</li></ol><h2 id="实验过程："><a href="#实验过程：" class="headerlink" title="实验过程："></a>实验过程：</h2><blockquote><p>一、GNS3安装与基本操作</p></blockquote><p>👉安装GNS3，基本配置</p><p>R1，ping虚拟机，成功</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/IDS-1.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/IDS-1.png" srcset="data:image/png;base64,666"></p><p>👉桥接模式</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/IDS-2.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/IDS-2.png" srcset="data:image/png;base64,666"></p><p>👉配置IDS</p><p>进行网络联通的检测</p><p>虚拟机和宿主机之间可以ping通</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/IDS-3.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/IDS-3.png" srcset="data:image/png;base64,666"></p><p>进行初始登陆</p><p> <img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/IDS-4.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/IDS-4.png" srcset="data:image/png;base64,666"></p><p>进行配置，开启web服务</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/IDS-5.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/IDS-5.png" srcset="data:image/png;base64,666"></p><p>IDS和虚拟机可以双向ping通</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/IDS-6.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/IDS-6.png" srcset="data:image/png;base64,666"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> IDS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> GNS3 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>用CAsyncSocket类实现聊天室程序</title>
       <link href="2020/12/01/%E7%94%A8CAsyncSocket%E7%B1%BB%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E5%AE%A4%E7%A8%8B%E5%BA%8F/"/>
       <url>2020/12/01/%E7%94%A8CAsyncSocket%E7%B1%BB%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E5%AE%A4%E7%A8%8B%E5%BA%8F/</url>

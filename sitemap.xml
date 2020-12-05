@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://gryffinbit.top/2020/12/04/IDS%E8%AE%BE%E5%A4%87%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/</loc>
+    
+    <lastmod>2020-12-05</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://gryffinbit.top/2020/12/05/kali%E4%B8%8Bvolatility%E5%8F%96%E8%AF%81%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
     
     <lastmod>2020-12-05</lastmod>
@@ -395,6 +402,13 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://gryffinbit.top/tags/GNS3/</loc>
+    <lastmod>2020-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
@@ -427,6 +441,13 @@
   
   <url>
     <loc>https://gryffinbit.top/categories/write-up/</loc>
+    <lastmod>2020-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://gryffinbit.top/categories/IDS/</loc>
     <lastmod>2020-12-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
