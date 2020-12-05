@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>kali虚拟机扩容</title>
+      <link href="2020/12/05/kali%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%89%A9%E5%AE%B9/"/>
+      <url>2020/12/05/kali%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%89%A9%E5%AE%B9/</url>
+      
+        <content type="html"><![CDATA[<h1 id="kali虚拟机扩容"><a href="#kali虚拟机扩容" class="headerlink" title="kali虚拟机扩容"></a>kali虚拟机扩容</h1><p>##更改大小</p><h3 id="在VMware设置中扩展虚拟磁盘大小"><a href="#在VMware设置中扩展虚拟磁盘大小" class="headerlink" title="在VMware设置中扩展虚拟磁盘大小"></a>在VMware设置中扩展虚拟磁盘大小</h3><p>Hard Disk选项</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-1.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-1.png" srcset="data:image/png;base64,666"></p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-2.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-2.png" srcset="data:image/png;base64,666"></p><h3 id="在kali中调整分区"><a href="#在kali中调整分区" class="headerlink" title="在kali中调整分区"></a>在kali中调整分区</h3><p><code>/bin/sh /usr/lib/udisks2/udisks2-inhibit /usr/sbin/gpartedbin</code></p><p>调出图形界面的磁盘管理</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-4.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-4.png" srcset="data:image/png;base64,666"></p><h3 id="最后启动更改"><a href="#最后启动更改" class="headerlink" title="最后启动更改"></a>最后启动更改</h3><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-3.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-3.png" srcset="data:image/png;base64,666"></p><h2 id="解决扩容后启动慢的问题"><a href="#解决扩容后启动慢的问题" class="headerlink" title="解决扩容后启动慢的问题"></a>解决扩容后启动慢的问题</h2><p>在重建swap分区后，分区中的ID发生了变化，导致启动的时候找不到分区，需要等待。修复该问题，首先找到两个分区的UUID</p><p><code>sudo blkid</code></p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-5.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-5.png" srcset="data:image/png;base64,666"></p><p><strong>修改配置文件，将UUID都替换为上面查询出来的UUID</strong></p><p><code>vim /etc/fstab</code></p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-6.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-6.png" srcset="data:image/png;base64,666"></p><p>进行修改</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-6.5.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-6.5.png" srcset="data:image/png;base64,666"></p><p><code> vim /etc/initramfs-tools/conf.d/resume</code></p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-7.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-7.png" srcset="data:image/png;base64,666"></p><p>进行修改</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-8.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-8.png" srcset="data:image/png;base64,666"></p><p><strong>进行重建</strong></p><p><code>sudo update-initramfs -u</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> kali </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 虚拟机 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>用CAsyncSocket类实现聊天室程序</title>
       <link href="2020/12/01/%E7%94%A8CAsyncSocket%E7%B1%BB%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E5%AE%A4%E7%A8%8B%E5%BA%8F/"/>
       <url>2020/12/01/%E7%94%A8CAsyncSocket%E7%B1%BB%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E5%AE%A4%E7%A8%8B%E5%BA%8F/</url>
