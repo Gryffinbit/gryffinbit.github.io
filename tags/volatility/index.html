@@ -21,7 +21,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>归档：2020/11 - Gryffinbit</title>
+  <title>标签：volatility - Gryffinbit</title>
   
 
   
@@ -90,7 +90,7 @@
   
   
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -341,7 +341,7 @@
     <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper  dock' style="display: ;">
+        <div id="full" class='cover-wrapper  dock' style="display: none;">
           
             <div id='cover-backstretch'></div>
           
@@ -426,10 +426,18 @@
       <div class='body-wrapper' id="pjax-container">
         
 
+
 <div class='l_main'>
-	
-		
+  
+    
+      
   <section class="post-list">
+    
+      
+        
+          
+        
+      
     
     
       
@@ -442,24 +450,23 @@
   
     
     <h2 class="article-title" >
-      <a href="/2020/11/11/%E7%AC%AC%E4%B8%80%E5%B1%8A%E4%BF%A1%E5%AE%89%E5%A4%A7%E6%8C%91%E6%88%98WP/">
-        第一届信安大挑战WP
+      <a href="/2020/12/05/kali%E4%B8%8Bvolatility%E5%8F%96%E8%AF%81%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/">
+        kali下volatility取证工具的使用
       </a>
     </h2>
   
   <div class='md'>
     
       
-        CDUT第一届信安大挑战Misc（部分） 和 Crypto 的write up
-密码学
-crypto 1
+        Kali下 volatility取证软件的使用实验所用附件下载https://gryffinbit.lanzous.com/b01bwm4ab密码:15j0
+实验环境：Debian 8 kali
+实验要求：使用Volatility 取证软件从内存转储文件中获取有用信息，包括:
 
-题目描述
-
-modulus：99742889480132178464693625265991467727088330702125690789109469022100733238623exponent：65537请提交私钥注：私钥为十六进制。Flag格式 dino{0x…….}
-
-
-题解...
+查看内存镜像中进程列表
+查看内存镜像中注册表信息
+获取用户名和用户登陆密码
+查看转储前都运行了哪些程序
+把某个程序...
       
     
   </div>
@@ -467,15 +474,15 @@ modulus：9974288948013217846469362526599146772708833070212569078910946902210073
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time>2020-11-11</time>
+        <time>2020-12-05</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/write-up/">write up</a>
+          <a class="category-link" href="/categories/kali/">kali</a>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2020/11/11/%E7%AC%AC%E4%B8%80%E5%B1%8A%E4%BF%A1%E5%AE%89%E5%A4%A7%E6%8C%91%E6%88%98WP/'>
+          <a class='readmore' href='/2020/12/05/kali%E4%B8%8Bvolatility%E5%8F%96%E8%AF%81%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/'>
             阅读全文
           </a>
         </div>
@@ -492,25 +499,11 @@ modulus：9974288948013217846469362526599146772708833070212569078910946902210073
   </section>
   
     
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/archives/2020/11/page/2/">
-            <section class="post prev white-box shadow" >
-              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          3 / 3
-        </p>
-        
-      </div>
-    
   
 
 
-	
+    
+  
 </div>
 <aside class='l_side'>
   
@@ -679,7 +672,7 @@ modulus：9974288948013217846469362526599146772708833070212569078910946902210073
 
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
 </script>
 

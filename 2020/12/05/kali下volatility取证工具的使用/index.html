@@ -19,9 +19,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>kali虚拟机扩容 - Gryffinbit</title>
+  <title>kali下volatility取证工具的使用 - Gryffinbit</title>
   
-    <meta name="keywords" content="虚拟机">
+    <meta name="keywords" content="volatility">
   
 
   
@@ -437,7 +437,7 @@
     
     
       <h1 class="title">
-        kali虚拟机扩容
+        kali下volatility取证工具的使用
       </h1>
       <div class='new-meta-box'>
         
@@ -479,7 +479,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="kali虚拟机扩容" data-path="/2020/12/05/kali%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%89%A9%E5%AE%B9/">
+      <div id="lc-pv" data-title="kali下volatility取证工具的使用" data-path="/2020/12/05/kali%E4%B8%8Bvolatility%E5%8F%96%E8%AF%81%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -496,27 +496,796 @@
 
 
   
-  <h1 id="kali虚拟机扩容"><a href="#kali虚拟机扩容" class="headerlink" title="kali虚拟机扩容"></a>kali虚拟机扩容</h1><h2 id="更改大小"><a href="#更改大小" class="headerlink" title="更改大小"></a>更改大小</h2><h3 id="在VMware设置中扩展虚拟磁盘大小"><a href="#在VMware设置中扩展虚拟磁盘大小" class="headerlink" title="在VMware设置中扩展虚拟磁盘大小"></a>在VMware设置中扩展虚拟磁盘大小</h3><p>Hard Disk选项</p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-1.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-1.png" srcset="data:image/png;base64,666"></p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-2.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-2.png" srcset="data:image/png;base64,666"></p>
-<h3 id="在kali中调整分区"><a href="#在kali中调整分区" class="headerlink" title="在kali中调整分区"></a>在kali中调整分区</h3><p><code>/bin/sh /usr/lib/udisks2/udisks2-inhibit /usr/sbin/gpartedbin</code></p>
-<p>调出图形界面的磁盘管理</p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-4.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-4.png" srcset="data:image/png;base64,666"></p>
-<h3 id="最后启动更改"><a href="#最后启动更改" class="headerlink" title="最后启动更改"></a>最后启动更改</h3><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-3.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-3.png" srcset="data:image/png;base64,666"></p>
-<h2 id="解决扩容后启动慢的问题"><a href="#解决扩容后启动慢的问题" class="headerlink" title="解决扩容后启动慢的问题"></a>解决扩容后启动慢的问题</h2><p>在重建swap分区后，分区中的ID发生了变化，导致启动的时候找不到分区，需要等待。修复该问题，首先找到两个分区的UUID</p>
-<p><code>sudo blkid</code></p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-5.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-5.png" srcset="data:image/png;base64,666"></p>
-<p><strong>修改配置文件，将UUID都替换为上面查询出来的UUID</strong></p>
-<p><code>vim /etc/fstab</code></p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-6.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-6.png" srcset="data:image/png;base64,666"></p>
-<p>进行修改</p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-6.5.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-6.5.png" srcset="data:image/png;base64,666"></p>
-<p><code> vim /etc/initramfs-tools/conf.d/resume</code></p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-7.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-7.png" srcset="data:image/png;base64,666"></p>
-<p>进行修改</p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-8.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kali-8.png" srcset="data:image/png;base64,666"></p>
-<p><strong>进行重建</strong></p>
-<p><code>sudo update-initramfs -u</code></p>
+  <h1 id="Kali下-volatility取证软件的使用"><a href="#Kali下-volatility取证软件的使用" class="headerlink" title="Kali下 volatility取证软件的使用"></a>Kali下 volatility取证软件的使用</h1><h2 id="实验所用附件下载"><a href="#实验所用附件下载" class="headerlink" title="实验所用附件下载"></a>实验所用附件下载</h2><p><a target="_blank" rel="noopener" href="https://gryffinbit.lanzous.com/b01bwm4ab">https://gryffinbit.lanzous.com/b01bwm4ab</a><br>密码:15j0</p>
+<h2 id="实验环境："><a href="#实验环境：" class="headerlink" title="实验环境："></a>实验环境：</h2><p>Debian 8 kali</p>
+<h2 id="实验要求："><a href="#实验要求：" class="headerlink" title="实验要求："></a>实验要求：</h2><p>使用Volatility 取证软件从内存转储文件中获取有用信息，包括:</p>
+<ol>
+<li>查看内存镜像中进程列表</li>
+<li>查看内存镜像中注册表信息</li>
+<li>获取用户名和用户登陆密码</li>
+<li>查看转储前都运行了哪些程序</li>
+<li>把某个程序的相关数据转储成-一个文件，对这个文件进行进一步分析</li>
+<li>提取目标系统的命令行历史</li>
+<li>提取目标系统的网络连接情况</li>
+<li>提取目标系统的使用IE浏览器访问网络情况</li>
+</ol>
+<h2 id="实验内容："><a href="#实验内容：" class="headerlink" title="实验内容："></a>实验内容：</h2><ol>
+<li>首先使用内容转储软件dumpit在Windows7虚拟机(目标系统)中将内存中所有信息转储为-一个文件。</li>
+<li>将转储生成的文件拷贝到Kali系统中进行分析。</li>
+</ol>
+<h2 id="实验过程："><a href="#实验过程：" class="headerlink" title="实验过程："></a>实验过程：</h2><p>volatility官方文档</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/volatilityfoundation/volatility/wiki/Installation">https://github.com/volatilityfoundation/volatility/wiki/Installation</a></p>
+<blockquote>
+<p>基本依赖包及环境配置</p>
+</blockquote>
+<p>👉下载volatility</p>
+<p><code>git clone [https://github.com/volatilityfoundation/volatility.git](https://github.com/volatilityfoundation/volatility.git)</code></p>
+<p>解压该压缩包，cd到文件夹位置，运行安装脚本</p>
+<p><code>python [setup.py](http://setup.py) build</code></p>
+<p><code>python [setup.py](http://setup.py) install</code></p>
+<p>用法</p>
+<pre><code class="bash">cd /root/volatility/
+chmod +x vol.py
+./vol.py</code></pre>
+<p>缺少依赖包</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-1.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-1.png" srcset="data:image/png;base64,666"></p>
+<p>👉pip 安装缺少的依赖包</p>
+<pre><code class="bash">sudo pip install yara
+pip install distorm3==3.4.4
+sudo pip install pycrypto 
+sudo pip install openpyxl 
+sudo pip install Pillow</code></pre>
+<blockquote>
+<p>内存工具Dump的使用</p>
+</blockquote>
+<p>👉进行转储</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-2.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-2.png" srcset="data:image/png;base64,666"></p>
+<p>👉制备实验用的转储文件</p>
+<p>在目标系统中打开一些应用程序，例如：记事本</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-3.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-3.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-4.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-4.png" srcset="data:image/png;base64,666"></p>
+<blockquote>
+<p>使用kali分析转储生成的文件</p>
+</blockquote>
+<p>👉查看帮助文档</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-5.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-5.png" srcset="data:image/png;base64,666"></p>
+<p>👉分析系统信息</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-6.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-6.png" srcset="data:image/png;base64,666"></p>
+<p>👉使用pslist查看内存镜像中进程列表</p>
+<pre><code class="bash">python vol.py -f /root/桌面/suspicion/mem.vmem --profile=WinXPSP2x86 pslist</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-7.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-7.png" srcset="data:image/png;base64,666"></p>
+<p>👉使用hiveliest查看内存中缓存的注册表信息，例如所有用户名、密码hash、病毒隐藏、恶意启动项、映射劫持。等</p>
+<pre><code class="bash">python [vol.py](http://vol.py/) -f /root/桌面/suspicion/mem.vmem --profile=WinXPSP2x86 hivelist
+Volatility Foundation Volatility Framework 2.6.1</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-8.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-8.png" srcset="data:image/png;base64,666"></p>
+<p>👉hivedump可以查看hivelist中列出的所有文件内容 </p>
+<p><code>hivedump -o offset</code></p>
+<p>-o的后面传递一个offset偏移量参数。是虚地址（内存地址）</p>
+<pre><code class="bash">python vol.py -f /root/桌面/suspicion/mem.vmem --profile=WinXPSP2x86 hivedump -o 0xe16aab60</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-9.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-9.png" srcset="data:image/png;base64,666"></p>
+<p>👉查看注册表中的某一项健值</p>
+<p><code>printkey -K 路径</code></p>
+<pre><code class="bash">python vol.py -f /root/桌面/suspicion/mem.vmem --profile=WinXPSP2x86 printkey -K &quot;SAM\Domains\Account\Users\Names&quot;</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-10.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-10.png" srcset="data:image/png;base64,666"></p>
+<p>👉Winlogon健值查询在内存转储前，最后登录的账户是哪个</p>
+<pre><code class="bash">python vol.py -f /root/桌面/suspicion/mem.vmem --profile=WinXPSP2x86 printkey -K &quot;SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon&quot;</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-11.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-11.png" srcset="data:image/png;base64,666"></p>
+<p>👉取得用户密码的哈希值</p>
+<p><code>hashdump -y system的偏移量 -s SAM的偏移量</code></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-12.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-12.png" srcset="data:image/png;base64,666"></p>
+<pre><code class="bash">python vol.py -f /root/桌面/suspicion/mem.vmem --profile=WinXPSP2x86 hashdump -y 0xe1035b60 -s 0xe16aab60</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-13.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-13.png" srcset="data:image/png;base64,666"></p>
+<p>这步失败了，没有提取出来密码的hash</p>
+<p>👉使用mimikatz插件，获取用户明文密码</p>
+<pre><code class="bash">sudo pip install construct==2.5.5-reupload</code></pre>
+<p>mimikatz.py</p>
+<pre><code class="python"># Volatility mimikatz plugin
+#
+# Based on the research made by Gentil_Kiwi for his mimikatz
+# http://blog.gentilkiwi.com/mimikatz
+# https://code.google.com/p/mimikatz/
+#
+# Author: Francesco Picasso &lt;francesco.picasso@gmail.com&gt;
+#
+# This plugin is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This plugin is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this plugin.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+
+&quot;&quot;&quot;
+@author       : Francesco Picasso
+@license      : GPL 2 or later
+@contact      : francesco.picasso@gmail.com
+@organization : www.realitynet.it
+&quot;&quot;&quot;
+
+import construct
+import os
+import re
+import struct
+import volatility.obj as obj
+import volatility.debug as debug
+import volatility.commands as commands
+import volatility.constants as constants
+import volatility.utils as utils
+import volatility.win32.tasks as tasks
+
+from Crypto.Cipher import AES
+from Crypto.Cipher import DES3
+
+#------------------------------------------------------------------------------
+
+class Credential():
+  &quot;&quot;&quot;TODO: add description here.&quot;&quot;&quot;
+
+  def __init__(self, module=&#39;&#39;, username=&#39;&#39;, domain=&#39;&#39;, epwd=&#39;&#39;, pwd=&#39;&#39;):
+    self.module = module
+    self.username = username
+    self.domain = domain
+    self.epwd = epwd
+    self.pwd = pwd
+    self.signature = module + username + domain + epwd.encode(&#39;hex&#39;)
+
+  def decrypt_epwd(self, decryptor):
+    if self.epwd and decryptor:
+      self.pwd = decryptor.decrypt(self.epwd)
+      try:
+        self.pwd = self.pwd.decode(&#39;utf-16-le&#39;).rstrip(&#39;\0&#39;)
+      except UnicodeDecodeError:
+        debug.warning(&#39;[Credential:decrypt_epwd] unicode decode error&#39;)
+        self.pwd = self.pwd.encode(&#39;hex&#39;)
+
+  def dump(self):
+    debug.notice(&#39;m&lt;&#123;&#125;&gt; u&lt;&#123;&#125;&gt; d&lt;&#123;&#125;&gt; ep&lt;&#123;&#125;&gt; p&lt;&#123;&#125;&gt;&#39;.format(
+        self.module, self.username, self.domain,
+        self.epwd.encode(&#39;hex&#39;), self.pwd))
+
+
+class Credentials():
+  &quot;&quot;&quot;TODO: add description here.&quot;&quot;&quot;
+
+  def __init__(self):
+    self.credentials = []
+
+  def add_credential(self, credential):
+    already_in = False
+    for cred in self.credentials:
+      if cred.signature == credential.signature:
+        already_in = True
+    if not already_in:
+      self.credentials.append(credential)
+
+#------------------------------------------------------------------------------
+
+class MemoryScanner(object):
+  &quot;&quot;&quot;An address space scanner based on scudette&#39;s Yara Scanner&quot;&quot;&quot;
+
+  def __init__(self, task):
+    self.task = task
+
+  def _find_first(self, address_space, offset, maxlen, signature):
+    &quot;&quot;&quot;Raw memory scanner with overlap.&quot;&quot;&quot;
+    # Allow some bytes for overlapping signatures
+    overlap = 1024
+    i = offset
+    while i &lt; offset + maxlen:
+      to_read = min(
+        constants.SCAN_BLOCKSIZE + overlap, offset + maxlen - i)
+      block = address_space.zread(i, to_read)
+      if block:
+        match = block.find(signature)
+        if match &gt;= 0:
+          return match
+      i += constants.SCAN_BLOCKSIZE
+
+  def find_first(self, offset, signature):
+    &quot;&quot;&quot;Find the first match using VADs. It retuns a VA.&quot;&quot;&quot;
+    task_as = self.task.get_process_address_space()
+    task_vads = self.task.get_vads(skip_max_commit = True)
+    for vad, __ in task_vads:
+      if offset &gt;= vad.Start and offset &lt;= vad.Start + vad.Length:
+        position = self._find_first(task_as, vad.Start, vad.Length, signature)
+        if position:
+          return position + vad.Start
+
+#------------------------------------------------------------------------------
+
+class MimikatzBase(object):
+  &quot;&quot;&quot;The mimikatz base class, used to defined common attributes/methods.&quot;&quot;&quot;
+  SIZEOF_LONG = 4
+  SIZEOF_PTR = None
+  UNPACK_PTR = None
+  UNPACK_LONG = &#39;&lt;L&#39;
+
+  def __init__(self, task):
+    self.task = task
+    self.task_as = task.get_process_address_space()
+
+  def get_ptr(self, pos):
+    raw_data = self.task_as.zread(pos, self.SIZEOF_PTR)
+    if raw_data:
+      return struct.unpack(self.UNPACK_PTR, raw_data)[0]
+
+  def get_data(self, pos, size):
+    if pos and size:
+      return self.task_as.zread(pos, size)
+    return &#39;&#39;
+
+
+class Mimikatz_x86(MimikatzBase):
+  &quot;&quot;&quot;The mimikatz x86 base class.&quot;&quot;&quot;
+  SIZEOF_PTR = 4
+  UNPACK_PTR = &#39;&lt;L&#39;
+
+  def __init__(self, task):
+    MimikatzBase.__init__(self, task)
+    MimikatzBase.__init__(self, task)
+
+  def get_ptr_with_offset(self, pos):
+    return self.get_ptr(pos)
+
+
+class Mimikatz_x64(MimikatzBase):
+  &quot;&quot;&quot;The mimikatz x64 base class.&quot;&quot;&quot;
+  SIZEOF_PTR = 8
+  UNPACK_PTR = &#39;&lt;Q&#39;
+
+  def __init__(self, task):
+    MimikatzBase.__init__(self, task)
+
+  def get_ptr_with_offset(self, pos):
+    raw_data = self.task_as.zread(pos, self.SIZEOF_LONG)
+    if raw_data:
+      ptr = struct.unpack(self.UNPACK_LONG, raw_data)[0]
+      return pos + self.SIZEOF_LONG + ptr
+
+#------------------------------------------------------------------------------    
+
+class LsaDecryptor():
+  &quot;&quot;&quot;TODO: add description.&quot;&quot;&quot;
+  SIGNATURE = None
+  IV_LENGTH = 16
+  PTR_IV_OFFSET = None
+  PTR_AES_KEY_OFFSET = None
+  PTR_DES_KEY_OFFSET = None
+  UUUR_TAG = 0x55555552
+  MSSK_TAG = 0x4d53534b
+
+  HARD_KEY = construct.Struct(&#39;KIWI_HARD_KEY&#39;,
+      construct.ULInt32(&#39;cbSecret&#39;),
+      construct.Field(&#39;data&#39;, lambda ctx: ctx.cbSecret))
+
+  # Modified to include HARD_KEY size.
+  BCRYPT_KEY = construct.Struct(&#39;KIWI_BCRYPT_KEY&#39;,
+      construct.ULInt32(&#39;size&#39;),
+      construct.ULInt32(&#39;tag&#39;), # &#39;MSSK&#39;.
+      construct.ULInt32(&#39;type&#39;),
+      construct.ULInt32(&#39;unk0&#39;),
+      construct.ULInt32(&#39;unk1&#39;),
+      construct.ULInt32(&#39;unk2&#39;),
+      construct.ULInt32(&#39;cbSecret&#39;))
+
+  def __init__(self):
+    self.iv = &#39;&#39;
+    self.aes_key = &#39;&#39;
+    self.des_key = &#39;&#39;
+
+  def find_signature(self):
+    for mod in self.task.get_load_modules():
+      if str(mod.BaseDllName).lower() == &#39;lsasrv.dll&#39;:
+        scanner = MemoryScanner(self.task)
+        return scanner.find_first(mod.DllBase.v(), self.SIGNATURE)
+    debug.warning(&#39;[LsaDecryptor:find_signature()] signature not found!&#39;)
+
+  def get_IV(self, pos):
+    ptr_iv = self.get_ptr_with_offset(pos + self.PTR_IV_OFFSET)
+    if ptr_iv:
+      return self.get_data(ptr_iv, self.IV_LENGTH)
+
+  def get_key(self, pos, key_offset):
+    ptr_key = self.get_ptr_with_offset(pos + key_offset)
+    if ptr_key:
+      ptr_key = self.get_ptr(ptr_key)
+      if ptr_key:
+        size = self.BCRYPT_HANDLE_KEY.sizeof()
+        data = self.get_data(ptr_key, size)
+        if data:
+          kbhk = self.BCRYPT_HANDLE_KEY.parse(data)
+          if kbhk.tag == self.UUUR_TAG:
+            ptr_key = kbhk.ptr_kiwi_bcrypt_key
+            size = self.BCRYPT_KEY.sizeof()
+            data = self.get_data(ptr_key, size)
+            if data:
+              kbk = self.BCRYPT_KEY.parse(data)
+              if kbk.tag == self.MSSK_TAG:
+                adjust = construct.ULInt32(&#39;&#39;).sizeof()
+                size = kbk.cbSecret + adjust
+                ptr_key = ptr_key + self.BCRYPT_KEY.sizeof() - adjust
+                data = self.get_data(ptr_key, size)
+                if data:
+                  khk = self.HARD_KEY.parse(data)
+                  return khk.data
+                else:
+                  debug.warning(&#39;get_key() unable to get HARD_KEY.&#39;)
+              else:
+                debug.warning(&#39;get_key() BCRYPT_KEY invalid tag&#39;)
+            else:
+              debug.warning(&#39;get_key() unable to read BCRYPT_KEY data.&#39;)
+          else:
+            debug.warning(&#39;get_key() BCRYPT_HANDLE_KEY invalid tag&#39;)
+            debug.warning(kbhk)
+        else:
+          debug.warning(&#39;get_key() unable to read BCRYPT_HANDLE_KEY data.&#39;)
+      else:
+        debug.warning(&#39;get_key() unable to get BCRYPT_HANDLE_KEY pointer.&#39;)
+    else:
+      debug.warning(&#39;get_key()unable to get first pointer.&#39;)
+
+  def get_des_key(self, pos):
+    return self.get_key(pos, self.PTR_DES_KEY_OFFSET)
+
+  def get_aes_key(self, pos):
+    return self.get_key(pos, self.PTR_AES_KEY_OFFSET)
+
+  def acquire_crypto_material(self):
+    sigpos = self.find_signature()
+    if not sigpos:
+      debug.warning(&#39;[LsaDecryptor] unable to find signature!&#39;)
+      return
+    self.iv = self.get_IV(sigpos)
+    self.des_key = self.get_des_key(sigpos)
+    self.aes_key = self.get_aes_key(sigpos)
+
+  def decrypt(self, encrypted):
+    # TODO: NT version specific, move from here in subclasses.
+    cleartext = &#39;&#39;
+    size = len(encrypted)
+    if size:
+      if size % 8:
+        if not self.aes_key or not self.iv:
+          return cleartext
+        cipher = AES.new(self.aes_key, AES.MODE_CBC, self.iv)
+      else:
+        if not self.des_key or not self.iv:
+          return cleartext
+        cipher = DES3.new(self.des_key, DES3.MODE_CBC, self.iv[:8])
+      cleartext = cipher.decrypt(encrypted)
+    return cleartext
+
+  def dump(self):
+    print &#39;Dumping LSA Decryptor&#39;
+    print &#39;     IV (&#123;&#125;): &#123;&#125;&#39;.format(len(self.iv), self.iv.encode(&#39;hex&#39;))
+    print &#39;DES_KEY (&#123;&#125;): &#123;&#125;&#39;.format(
+        len(self.des_key), self.des_key.encode(&#39;hex&#39;))
+    print &#39;AES_KEY (&#123;&#125;): &#123;&#125;&#39;.format(
+        len(self.aes_key), self.aes_key.encode(&#39;hex&#39;))
+
+
+class LsaDecryptor_x86(LsaDecryptor, Mimikatz_x86):
+  &quot;&quot;&quot;TODO: add description.&quot;&quot;&quot;
+  def __init__(self, lsass_task):
+    Mimikatz_x86.__init__(self, lsass_task)
+    LsaDecryptor.__init__(self)
+
+
+class LsaDecryptor_x64(LsaDecryptor, Mimikatz_x64):
+  &quot;&quot;&quot;TODO: add description.&quot;&quot;&quot;
+  def __init__(self, lsass_task):
+    Mimikatz_x64.__init__(self, lsass_task)
+    LsaDecryptor.__init__(self)
+
+
+class LsaDecryptor_Vista_x86(LsaDecryptor_x86):
+  &quot;&quot;&quot;Class for Windows Vista x86.&quot;&quot;&quot;
+  # MIMIKATZ x86: BYTE PTRN_WNO8_LsaInitializeProtectedMemory_KEY[]
+  SIGNATURE    = &#39;\x8b\xf0\x3b\xf3\x7c\x2c\x6a\x02\x6a\x10\x68&#39;
+  PTR_IV_OFFSET = 11;
+  PTR_AES_KEY_OFFSET = -15;
+  PTR_DES_KEY_OFFSET = -70;
+
+  BCRYPT_HANDLE_KEY = construct.Struct(&#39;KIWI_BCRYPT_HANDLE_KEY&#39;,
+      construct.ULInt32(&#39;size&#39;),
+      construct.ULInt32(&#39;tag&#39;), # Tag &#39;UUUR&#39;, 0x55555552.
+      construct.ULInt32(&#39;ptr_void_algorithm&#39;),
+      construct.ULInt32(&#39;ptr_kiwi_bcrypt_key&#39;),
+      construct.ULInt32(&#39;ptr_unknown&#39;))
+
+  def __init__(self, lsass_task):
+    LsaDecryptor_x86.__init__(self, lsass_task)
+
+
+class LsaDecryptor_Win7_x86(LsaDecryptor_x86):
+  &quot;&quot;&quot;Class for Windows 7 x86.&quot;&quot;&quot;
+  # MIMIKATZ x86: BYTE PTRN_WNO8_LsaInitializeProtectedMemory_KEY[]
+  SIGNATURE    = &#39;\x8b\xf0\x3b\xf3\x7c\x2c\x6a\x02\x6a\x10\x68&#39;
+  PTR_IV_OFFSET = 11;
+  PTR_AES_KEY_OFFSET = -15;
+  PTR_DES_KEY_OFFSET = -70;
+
+  BCRYPT_HANDLE_KEY = construct.Struct(&#39;KIWI_BCRYPT_HANDLE_KEY&#39;,
+      construct.ULInt32(&#39;size&#39;),
+      construct.ULInt32(&#39;tag&#39;), # Tag &#39;UUUR&#39;, 0x55555552.
+      construct.ULInt32(&#39;ptr_void_algorithm&#39;),
+      construct.ULInt32(&#39;ptr_kiwi_bcrypt_key&#39;),
+      construct.ULInt32(&#39;ptr_unknown&#39;))
+
+  def __init__(self, lsass_task):
+    LsaDecryptor_x86.__init__(self, lsass_task)
+
+
+class LsaDecryptor_Vista_x64(LsaDecryptor_x64):
+  &quot;&quot;&quot;Class for Vista x64.&quot;&quot;&quot;
+  SIGNATURE    = &#39;\x83\x64\x24\x30\x00\x44\x8b\x4c\x24\x48\x48\x8b\x0d&#39;
+  PTR_IV_OFFSET = 63;
+  PTR_AES_KEY_OFFSET = 25;
+  PTR_DES_KEY_OFFSET = -69;
+
+  BCRYPT_HANDLE_KEY = construct.Struct(&#39;KIWI_BCRYPT_HANDLE_KEY&#39;,
+      construct.ULInt32(&#39;size&#39;),
+      construct.ULInt32(&#39;tag&#39;), # Tag &#39;UUUR&#39;, 0x55555552.
+      construct.ULInt64(&#39;ptr_void_algorithm&#39;),
+      construct.ULInt64(&#39;ptr_kiwi_bcrypt_key&#39;),
+      construct.ULInt64(&#39;ptr_unknown&#39;))
+
+  def __init__(self, lsass_task):
+    LsaDecryptor_x64.__init__(self, lsass_task)
+
+
+class LsaDecryptor_Win7_x64(LsaDecryptor_x64):
+  &quot;&quot;&quot;Class for Windows 7 x64.&quot;&quot;&quot;
+  # MIMIKATZ x64: BYTE PTRN_WNO8_LsaInitializeProtectedMemory_KEY[]
+  SIGNATURE    = &#39;\x83\x64\x24\x30\x00\x44\x8b\x4c\x24\x48\x48\x8b\x0d&#39;
+  PTR_IV_OFFSET = 59;
+  PTR_AES_KEY_OFFSET = 25;
+  PTR_DES_KEY_OFFSET = -61;
+
+  BCRYPT_HANDLE_KEY = construct.Struct(&#39;KIWI_BCRYPT_HANDLE_KEY&#39;,
+      construct.ULInt32(&#39;size&#39;),
+      construct.ULInt32(&#39;tag&#39;), # Tag &#39;UUUR&#39;, 0x55555552.
+      construct.ULInt64(&#39;ptr_void_algorithm&#39;),
+      construct.ULInt64(&#39;ptr_kiwi_bcrypt_key&#39;),
+      construct.ULInt64(&#39;ptr_unknown&#39;))
+
+  def __init__(self, lsass_task):
+    LsaDecryptor_x64.__init__(self, lsass_task)
+
+#------------------------------------------------------------------------------    
+
+class Wdigest():
+  &quot;&quot;&quot;TODO: add description.&quot;&quot;&quot;
+  SIGNATURE = None
+  FIRST_ENTRY_OFFSET = 0
+  WDIGEST_LIST_ENTRY = None
+  MODULE_NAME = &#39;wdigest&#39;
+  MAX_WALK = 32
+
+  def __init__(self, credentials_obj):
+    self.entries = []
+    self.entries_seen = &#123;&#125;
+    self.credentials_obj = credentials_obj
+
+  def find_signature(self):
+    for mod in self.task.get_load_modules():
+      if str(mod.BaseDllName).lower() == &#39;wdigest.dll&#39;:
+        scanner = MemoryScanner(self.task)
+        return scanner.find_first(mod.DllBase.v(), self.SIGNATURE)
+    debug.warning(&#39;[Wdigest] no wdigest.dll found in lsass process!&#39;)
+
+  def get_entry_at(self, ptr):
+    if ptr:
+      size = self.WDIGEST_LIST_ENTRY.sizeof()
+      data = self.get_data(ptr, size)
+      if data:
+        entry = self.WDIGEST_LIST_ENTRY.parse(data)
+        return entry
+
+  def get_first_entry(self):
+    position = self.find_signature()
+    if position:
+      ptr_entry = self.get_ptr_with_offset(position + self.FIRST_ENTRY_OFFSET)
+      if ptr_entry:
+        ptr_entry = self.get_ptr(ptr_entry)
+        if ptr_entry:
+          entry = self.get_entry_at(ptr_entry)
+          if entry:
+            return entry, ptr_entry
+    else:
+      debug.warning(&#39;[Wdigest] no wdigest package found.&#39;)
+      return None, None
+
+  def get_unicode_string_at(self, ptr, size):
+    data = self.get_data(ptr, size)
+    if data:
+      data_str = &#39;&#39;
+      try:
+        data_str = data.decode(&#39;utf-16-le&#39;).rstrip(&#39;\0&#39;)
+      except UnicodeDecodeError as ee:
+        debug.error(
+            &#39;[Wdigest] get_unicode_string_at() unicode error &#123;&#125;&#39;.format(
+            ee))
+        debug.warning(&#39;[Wdigest] src data is &lt;&#123;&#125;&gt;&#39;.format(data_str))
+      return data_str
+    else:
+      debug.error(&#39;[Wdigest] get_unicode_string_at() unable to get data&#39;)
+      return &#39;&#39;
+
+  def add_entry(self, entry, found_at):
+    if entry.usage_count:
+      if entry.this_entry == found_at:
+        user = domain = epwd = &#39;&#39;
+        if entry.user_string_ptr and entry.user_len:
+          user = self.get_unicode_string_at(
+              entry.user_string_ptr, entry.user_max_len)
+        if entry.domain_string_ptr and entry.domain_len:
+          domain = self.get_unicode_string_at(
+              entry.domain_string_ptr, entry.domain_max_len)
+        if entry.password_encrypted_ptr and entry.password_len:
+          epwd = data = self.get_data(
+              entry.password_encrypted_ptr, entry.password_max_len)
+        if user:
+          cred_entry = Credential(self.MODULE_NAME, user, domain, epwd)
+          self.credentials_obj.add_credential(cred_entry)
+
+  def walk_entries(self):
+    entry, found_at = self.get_first_entry()
+    if entry:
+      walk_num = 1
+      while walk_num &lt; self.MAX_WALK:
+        self.add_entry(entry, found_at)
+        self.entries_seen[found_at] = 1
+        found_at = entry.previous
+        entry = self.get_entry_at(found_at)
+        if not entry:
+          debug.error(&#39;Next entry not found!&#39;)
+          break
+        if entry.this_entry in self.entries_seen:
+          break
+        walk_num += 1
+
+
+class Wdigest_x86(Wdigest, Mimikatz_x86):
+  &quot;&quot;&quot;TODO: add description.&quot;&quot;&quot;
+
+  WDIGEST_LIST_ENTRY = construct.Struct(&#39;WdigestListEntry&#39;,
+      construct.ULInt32(&#39;previous&#39;),
+      construct.ULInt32(&#39;next&#39;),
+      construct.ULInt32(&#39;usage_count&#39;),
+      construct.ULInt32(&#39;this_entry&#39;),
+      construct.ULInt64(&#39;luid&#39;),
+      construct.ULInt64(&#39;flag&#39;),
+      construct.ULInt16(&#39;user_len&#39;),
+      construct.ULInt16(&#39;user_max_len&#39;),
+      construct.ULInt32(&#39;user_string_ptr&#39;),
+      construct.ULInt16(&#39;domain_len&#39;),
+      construct.ULInt16(&#39;domain_max_len&#39;),
+      construct.ULInt32(&#39;domain_string_ptr&#39;),
+      construct.ULInt16(&#39;password_len&#39;),
+      construct.ULInt16(&#39;password_max_len&#39;),
+      construct.ULInt32(&#39;password_encrypted_ptr&#39;))
+
+  def __init__(self, lsass_task, credentials_obj):
+    Mimikatz_x86.__init__(self, lsass_task)
+    Wdigest.__init__(self, credentials_obj)
+
+
+class Wdigest_x64(Wdigest, Mimikatz_x64):
+  &quot;&quot;&quot;TODO: add description.&quot;&quot;&quot;
+
+  WDIGEST_LIST_ENTRY = construct.Struct(&#39;WdigestListEntry&#39;,
+      construct.ULInt64(&#39;previous&#39;),
+      construct.ULInt64(&#39;next&#39;),
+      construct.ULInt32(&#39;usage_count&#39;),
+      construct.ULInt32(&#39;align1&#39;),
+      construct.ULInt64(&#39;this_entry&#39;),
+      construct.ULInt64(&#39;luid&#39;),
+      construct.ULInt64(&#39;flag&#39;),
+      construct.ULInt16(&#39;user_len&#39;),
+      construct.ULInt16(&#39;user_max_len&#39;),
+      construct.ULInt32(&#39;align2&#39;),
+      construct.ULInt64(&#39;user_string_ptr&#39;),
+      construct.ULInt16(&#39;domain_len&#39;),
+      construct.ULInt16(&#39;domain_max_len&#39;),
+      construct.ULInt32(&#39;align3&#39;),
+      construct.ULInt64(&#39;domain_string_ptr&#39;),
+      construct.ULInt16(&#39;password_len&#39;),
+      construct.ULInt16(&#39;password_max_len&#39;),
+      construct.ULInt32(&#39;align4&#39;),
+      construct.ULInt64(&#39;password_encrypted_ptr&#39;))
+
+  def __init__(self, lsass_task, credentials_obj):
+    Mimikatz_x64.__init__(self, lsass_task)
+    Wdigest.__init__(self, credentials_obj)
+
+
+class Wdigest_Vista_x86(Wdigest_x86):
+  &quot;&quot;&quot;Class for Windows Vista x86.&quot;&quot;&quot;
+  SIGNATURE    = &#39;\x74\x11\x8b\x0b\x39\x4e\x10&#39;
+  FIRST_ENTRY_OFFSET = -6
+
+  def __init__(self, lsass_task, credentials_obj):
+    Wdigest_x86.__init__(self, lsass_task, credentials_obj)
+
+
+class Wdigest_Win7_x86(Wdigest_x86):
+  &quot;&quot;&quot;Class for Windows 7 x86.&quot;&quot;&quot;
+  SIGNATURE    = &#39;\x74\x11\x8b\x0b\x39\x4e\x10&#39;
+  FIRST_ENTRY_OFFSET = -6
+
+  def __init__(self, lsass_task, credentials_obj):
+    Wdigest_x86.__init__(self, lsass_task, credentials_obj)
+
+
+class Wdigest_Win7_x64(Wdigest_x64):
+  &quot;&quot;&quot;Class for Windows 7 x64.&quot;&quot;&quot;
+  SIGNATURE    = &#39;\x48\x3b\xd9\x74&#39;
+  FIRST_ENTRY_OFFSET = -4
+
+  def __init__(self, lsass_task, credentials_obj):
+    Wdigest_x64.__init__(self, lsass_task, credentials_obj)
+
+
+class Wdigest_Vista_x64(Wdigest_x64):
+  &quot;&quot;&quot;Class for Windows Vista x64.&quot;&quot;&quot;
+  SIGNATURE    = &#39;\x48\x3b\xd9\x74&#39;
+  FIRST_ENTRY_OFFSET = -4
+
+  def __init__(self, lsass_task, credentials_obj):
+    Wdigest_x64.__init__(self, lsass_task, credentials_obj)
+
+#------------------------------------------------------------------------------
+
+class mimikatz(commands.Command):
+  &quot;&quot;&quot;mimikatz offline&quot;&quot;&quot;
+  def __init__(self, config, *args, **kwargs):
+    commands.Command.__init__(self, config, *args, **kwargs)
+    self.profile = config.get_value(&#39;profile&#39;)
+    self.credentials_obj = Credentials()
+
+  def find_lsass(self):
+    addr_space = utils.load_as(self._config)
+    for task in tasks.pslist(addr_space):
+      if str(task.ImageFileName) == &#39;lsass.exe&#39;:
+        return task
+
+  def init_objects(self, lsass_task):
+    lsa_decryptor = None
+    wdigest = None
+    if len(self.profile) &gt;= 7:
+      arch = self.profile[-3:]
+      sp = self.profile[-6:-3]
+      os = self.profile[:-6]
+      if os == &#39;Vista&#39;:
+        if arch == &#39;x86&#39;:
+          lsa_decryptor = LsaDecryptor_Vista_x86(lsass_task)
+          wdigest = Wdigest_Vista_x86(lsass_task, self.credentials_obj)
+        elif arch == &#39;x64&#39;:
+          lsa_decryptor = LsaDecryptor_Vista_x64(lsass_task)
+          wdigest = Wdigest_Vista_x64(lsass_task, self.credentials_obj)
+      elif os == &#39;Win7&#39;:
+        if arch == &#39;x86&#39;:
+          lsa_decryptor = LsaDecryptor_Win7_x86(lsass_task)
+          wdigest = Wdigest_Win7_x86(lsass_task, self.credentials_obj)
+        elif arch == &#39;x64&#39;:
+          lsa_decryptor = LsaDecryptor_Win7_x64(lsass_task)
+          wdigest = Wdigest_Win7_x64(lsass_task, self.credentials_obj)
+      else:
+        pass
+    return lsa_decryptor, wdigest
+
+  def calculate(self):
+    lsass_task = self.find_lsass()
+    if not lsass_task:
+      debug.error(&#39;lsass_task process not found!!&#39;)
+      return
+
+    lsa_decryptor, wdigest = self.init_objects(lsass_task)
+    if not lsa_decryptor or not wdigest:
+      return
+
+    lsa_decryptor.acquire_crypto_material()
+    wdigest.walk_entries()
+
+    for cred in self.credentials_obj.credentials:
+      cred.decrypt_epwd(lsa_decryptor)
+
+  def render_text(self, outfd, data):
+    self.table_header(outfd, [(&quot;Module&quot;, &quot;8&quot;), 
+                              (&quot;User&quot;, &quot;16&quot;), 
+                              (&quot;Domain&quot;, &quot;16&quot;),
+                              (&quot;Password&quot;, &quot;40&quot;)])
+    for cred in self.credentials_obj.credentials:
+      self.table_row(
+          outfd, cred.module, cred.username, cred.domain, cred.pwd)</code></pre>
+<p>把py放进volatility文件夹的plugins文件夹内</p>
+<pre><code class="bash">python vol.py -f /root/桌面/suspicion/mem.vmem --profile=WinXPSP2x86 mimikatz</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-14.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-14.png" srcset="data:image/png;base64,666"></p>
+<p>👉使用userassist命令可以获取到内存在转储前都运行了哪些程序，运行多少次，最后一次运行时间</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-15.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-15.png" srcset="data:image/png;base64,666"></p>
+<p>👉使用memdump把某个程序的相关数据转储成一个文件，然后对这个文件进一步分析</p>
+<p><code>memdump -p PID -D 转储文件的存放目录</code></p>
+<p>​    pslist获取PID</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-16.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-16.png" srcset="data:image/png;base64,666"></p>
+<pre><code class="bash">python vol.py -f /root/桌面/suspicion/mem.vmem memdump -p 1736 -D mem</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-17.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-17.png" srcset="data:image/png;base64,666"></p>
+<p>👉文件成功生成，用editor打开</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-18.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-18.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-19.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-19.png" srcset="data:image/png;base64,666"></p>
+<p>👉用strings 命令提取文件中的字符串</p>
+<pre><code class="bash">strings 1736.dmp|grep flag | more</code></pre>
+<p> |grep flag 是以flag为关键词进行搜索</p>
+<p>| more 是逐页显示搜索结果</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-20.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-20.png" srcset="data:image/png;base64,666"></p>
+<p>👉使用cmdscan命令从转储内容中提取目标系统的命令行历史</p>
+<pre><code class="bash">python vol.py -f /root/桌面/suspicion/mem.vmem --profile=WinXPSP2x86 cmdscan</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-21.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-21.png" srcset="data:image/png;base64,666"></p>
+<p>👉使用netscan提取网络连接情况</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-22.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-22.png" srcset="data:image/png;base64,666"></p>
+<p>👉使用iehistory提取使用IE浏览器访问网络情况</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-23.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-23.png" srcset="data:image/png;base64,666"></p>
+<p>​    volatility自带的是ie的，也可以下载其他的插件来提取其他浏览器的浏览记录</p>
+<h2 id="Tip：volatility入门指令"><a href="#Tip：volatility入门指令" class="headerlink" title="Tip：volatility入门指令"></a>Tip：volatility入门指令</h2><pre><code>Volatility -f name imageinfo
+volatility -f name pslist --profile=WinXPSP2x86   列举进程：
+volatility -f name  --profile=WinXPSP2x86 volshell
+dt(&quot;_PEB&quot;) 查看进程环境块
+volatility -f name --profile=WinXPSP2x86 hivelist列举缓存在内存的注册表 ：</code></pre>
+<p><strong>hivedump打印出注册表中的数据 ：</strong></p>
+<pre><code>volatility -f name  --profile=WinXPSP2x86 hivedump -o 注册表的 virtual 地址</code></pre>
+<p><strong>显示每个进程的加载dll列表</strong></p>
+<pre><code>Volatility -f name -profile = Win7SP0x86 dlllist&gt; dlllist.txt</code></pre>
+<p><strong>获取SAM表中的用户：</strong></p>
+<pre><code>volatility -f name --profile=WinXPSP2x86 printkey -K &quot;SAM\Domains\Account\Users\Names&quot;</code></pre>
+<p><strong>登陆账户系统</strong></p>
+<pre><code>volatility -f name --profile=WinXPSP2x86 printkey -K &quot;SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon&quot;</code></pre>
+<p><strong>userassist键值包含系统或桌面执行文件的信息，如名称、路径、执行次数、最后一次执行时间等</strong></p>
+<pre><code>volatility -f name --profile=WinXPSP2x86 userassist</code></pre>
+<p><strong>将内存中的某个进程数据以 dmp 的格式保存出来</strong></p>
+<pre><code>volatility -f name --profile=WinXPSP2x86 -p [PID] -D [dump 出的文件保存的目录]</code></pre>
+<p><strong>提取内存中保留的 cmd 命令使用情况</strong></p>
+<pre><code>volatility -f name --profile=WinXPSP2x86 cmdscan</code></pre>
+<p><strong>获取到当时的网络连接情况</strong></p>
+<pre><code>volatility -f name --profile=WinXPSP2x86 netscan</code></pre>
+<p>获取 IE 浏览器的使用情况 ：</p>
+<pre><code>volatility -f name --profile=WinXPSP2x86 iehistory</code></pre>
+<p><strong>获取内存中的系统密码，可以使用 hashdump 将它提取出来</strong></p>
+<pre><code>volatility -f name --profile=WinXPSP2x86 hashdump -y （注册表 system 的 virtual 地址 ）-s （SAM 的 virtual 地址）
+volatility -f name --profile=WinXPSP2x86 hashdump -y 0xe1035b60 -s 0xe16aab60
+volatility -f name --profile=WinXPSP2x86 timeliner</code></pre>
+<p><strong>对文件查找及dumo提取某个进程：</strong></p>
+<pre><code>volatility -f name --profile=Win7SP1x64 memdump -D . -p 2872
+strings -e l ./2872.dmp | grep flag
+volatility -f name --profile=Win7SP1x64 dumpfiles -Q 0x000000007e410890 -n --dump-dir=./</code></pre>
+<p><strong>HASH匹配用户账户名密码：</strong></p>
+<pre><code>Hash, 然后使用john filename --format=NT破解</code></pre>
+<p><strong>安全进程扫描</strong></p>
+<pre><code>volatility -f name --profile=Win7SP1x64 psscan</code></pre>
+<p><strong>Flag字符串扫描：</strong></p>
+<pre><code>strings -e l 2616.dmp | grep flag</code></pre>
+<p><strong>查找图片：</strong></p>
+<pre><code>volatility -f name--profile=Win7SP1x64 filescan | grep -E &#39;jpg|png|jpeg|bmp|gif
+volatility -f name --profile=Win7SP1x64 netscan</code></pre>
+<p><strong>注册表解析</strong></p>
+<pre><code>volatility -f name --profile=Win7SP1x64 hivelist
+volatility -f name --profile=Win7SP1x64  -o 0xfffff8a000024010 printkey -K &quot;ControlSet001\Control;&quot;</code></pre>
+<p><strong>复制、剪切版：</strong></p>
+<pre><code>volatility -f name --profile=Win7SP1x64 clipboard
+volatility -f name --profile=Win7SP1x64 dlllist -p 3820</code></pre>
+<p><strong>Dump所有进程：</strong></p>
+<pre><code>volatility -f name --profile=Win7SP1x64 memdump -n chrome -D .
+利用字符串查找download
+python vol.py -f name --profile=Win7SP1x86 shimcache</code></pre>
+<p><strong>svcscan查看服务</strong></p>
+<pre><code>python vol.py -f name --profile=Win7SP1x86 svcscan</code></pre>
+<pre><code>modules 查看内核驱动
+modscan、driverscan 可查看一些隐藏的内核驱动
+ShimCache来识别应用程序兼容性问题。跟踪文件路径，大小，最后修改时间和最后“执行”时间.</code></pre>
 
   
   
@@ -534,7 +1303,7 @@
               
             
               
-                <p>本文永久链接是：<a href=https://gryffinbit.top/2020/12/05/kali%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%89%A9%E5%AE%B9/>https://gryffinbit.top/2020/12/05/kali%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%89%A9%E5%AE%B9/</a></p>
+                <p>本文永久链接是：<a href=https://gryffinbit.top/2020/12/05/kali%E4%B8%8Bvolatility%E5%8F%96%E8%AF%81%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/>https://gryffinbit.top/2020/12/05/kali%E4%B8%8Bvolatility%E5%8F%96%E8%AF%81%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/</a></p>
               
             
           </blockquote>
@@ -551,7 +1320,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-05T11:07:00+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-05T18:37:03+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2020年12月5日</p>
@@ -563,7 +1332,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>虚拟机</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/volatility/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>volatility</p></a></div>
 
 
         
@@ -576,7 +1345,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gryffinbit.top/2020/12/05/kali%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%89%A9%E5%AE%B9/&title=kali虚拟机扩容 - Gryffinbit&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gryffinbit.top/2020/12/05/kali%E4%B8%8Bvolatility%E5%8F%96%E8%AF%81%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/&title=kali下volatility取证工具的使用 - Gryffinbit&summary="
           
           >
           
@@ -588,7 +1357,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://gryffinbit.top/2020/12/05/kali%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%89%A9%E5%AE%B9/&title=kali虚拟机扩容 - Gryffinbit&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://gryffinbit.top/2020/12/05/kali%E4%B8%8Bvolatility%E5%8F%96%E8%AF%81%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/&title=kali下volatility取证工具的使用 - Gryffinbit&summary="
           
           >
           
@@ -600,7 +1369,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://gryffinbit.top/2020/12/05/kali%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%89%A9%E5%AE%B9/&title=kali虚拟机扩容 - Gryffinbit&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://gryffinbit.top/2020/12/05/kali%E4%B8%8Bvolatility%E5%8F%96%E8%AF%81%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/&title=kali下volatility取证工具的使用 - Gryffinbit&summary="
           
           >
           
@@ -630,18 +1399,13 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/2020/12/05/kali%E4%B8%8Bvolatility%E5%8F%96%E8%AF%81%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>kali下volatility取证工具的使用</p>
-          <p class='content'>Kali下 volatility取证软件的使用实验所用附件下载https://gryffinbit.lanzous.com/b01bwm4ab密码:15j0
-实验环境：Debian 8 kali...</p>
-        </a>
       
-      
-        <a class='next' href='/2020/12/01/%E7%94%A8CAsyncSocket%E7%B1%BB%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E5%AE%A4%E7%A8%8B%E5%BA%8F/'>
-          <p class='title'>用CAsyncSocket类实现聊天室程序<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>实验目标简单的聊天室程序，采用C/S模型，分为客户端和服务器端程序。是点对点通信的程序。客户端和服务器端通过网络交换聊天的字符串内容，并显示。
-实验目的
-学习如何从CAsyncSocket类派生...</p>
+        <a class='next' href='/2020/12/05/kali%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%89%A9%E5%AE%B9/'>
+          <p class='title'>kali虚拟机扩容<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>kali虚拟机扩容更改大小在VMware设置中扩展虚拟磁盘大小Hard Disk选项
+
+
+在kali中调整分区/bin/sh /usr/lib/udisks2/udisks2-inhibit /...</p>
         </a>
       
     </div>
@@ -742,7 +1506,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%94%B9%E5%A4%A7%E5%B0%8F"><span class="toc-text">更改大小</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8VMware%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%89%A9%E5%B1%95%E8%99%9A%E6%8B%9F%E7%A3%81%E7%9B%98%E5%A4%A7%E5%B0%8F"><span class="toc-text">在VMware设置中扩展虚拟磁盘大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8kali%E4%B8%AD%E8%B0%83%E6%95%B4%E5%88%86%E5%8C%BA"><span class="toc-text">在kali中调整分区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%90%8E%E5%90%AF%E5%8A%A8%E6%9B%B4%E6%94%B9"><span class="toc-text">最后启动更改</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%89%A9%E5%AE%B9%E5%90%8E%E5%90%AF%E5%8A%A8%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">解决扩容后启动慢的问题</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%89%80%E7%94%A8%E9%99%84%E4%BB%B6%E4%B8%8B%E8%BD%BD"><span class="toc-text">实验所用附件下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83%EF%BC%9A"><span class="toc-text">实验环境：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%A6%81%E6%B1%82%EF%BC%9A"><span class="toc-text">实验要求：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9%EF%BC%9A"><span class="toc-text">实验内容：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="toc-text">实验过程：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tip%EF%BC%9Avolatility%E5%85%A5%E9%97%A8%E6%8C%87%E4%BB%A4"><span class="toc-text">Tip：volatility入门指令</span></a></li></ol>
     </div>
   </section>
 
@@ -762,7 +1526,7 @@
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="kali虚拟机扩容";
+  pdata.postTitle="kali下volatility取证工具的使用";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
