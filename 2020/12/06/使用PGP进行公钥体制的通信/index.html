@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -21,7 +19,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>标签：散列函数 - Gryffinbit</title>
+  <title>使用PGP进行公钥体制的通信 - Gryffinbit</title>
+  
+    <meta name="keywords" content="PGP,公钥体制">
   
 
   
@@ -341,7 +341,7 @@
     <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper  dock' style="display: none;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div id='cover-backstretch'></div>
           
@@ -426,86 +426,349 @@
       <div class='body-wrapper' id="pjax-container">
         
 
-
 <div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
+
+
+  
+  <div class="article-meta" id="top">
     
-      
-  <section class="post-list">
     
-      
+    
+      <h1 class="title">
+        使用PGP进行公钥体制的通信
+      </h1>
+      <div class='new-meta-box'>
         
           
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>Gryffinbit</p>
+  </a>
+</div>
+
+          
         
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/SHA-1/">
-        SHA-1
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        SHA-1实验报告一、实验题目SHA-加密算法
-
-二、实验目的和要求熟悉SHA-1算法的运行过程，使用C++语言编写实现SHA-1算法程序，增加对摘要函数的理解。
-理解 SHA-1 轮函数的定义和工作过程。实现 SHA-1 哈希算法。分析 SHA-1 算法运行性能。
-
-三、实验环境clion
-
-四、实验内容给定的 SHA-1 对单个 512 分组处理结构如图，程序完成功能：
-
-
-五、算法描述...
-      
-    
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
+    </a>
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+
+
+          
         
-        <time>2020-11-14</time>
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年12月6日</p>
+  </a>
+</div>
+
+          
         
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="使用PGP进行公钥体制的通信" data-path="/2020/12/06/%E4%BD%BF%E7%94%A8PGP%E8%BF%9B%E8%A1%8C%E5%85%AC%E9%92%A5%E4%BD%93%E5%88%B6%E7%9A%84%E9%80%9A%E4%BF%A1/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  <h1 id="加密综合实验"><a href="#加密综合实验" class="headerlink" title="加密综合实验"></a><strong>加密综合实验</strong></h1><h2 id="实验附件下载地址："><a href="#实验附件下载地址：" class="headerlink" title="实验附件下载地址："></a>实验附件下载地址：</h2><p><a target="_blank" rel="noopener" href="https://gryffinbit.lanzous.com/i5ISij3kh6f">https://gryffinbit.lanzous.com/i5ISij3kh6f</a></p>
+<h2 id="实验目的："><a href="#实验目的：" class="headerlink" title="实验目的："></a><strong>实验目的：</strong></h2><ol>
+<li>掌握加解密的原理和公钥体制。</li>
+<li>了解PGP软件的功能与使用。</li>
+<li>掌握PGP的加密原理。</li>
+</ol>
+<h2 id="实验环境："><a href="#实验环境：" class="headerlink" title="实验环境："></a>实验环境：</h2><p>VMware Win10虚拟机</p>
+<h2 id="实验过程与步骤："><a href="#实验过程与步骤：" class="headerlink" title="实验过程与步骤："></a><strong>实验过程与步骤：</strong></h2><h3 id="一、PGP加密软件的安装"><a href="#一、PGP加密软件的安装" class="headerlink" title="一、PGP加密软件的安装"></a>一、PGP加密软件的安装</h3><p>​    <img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-1.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-1.png" srcset="data:image/png;base64,666"></p>
+<h3 id="二、生成密钥"><a href="#二、生成密钥" class="headerlink" title="二、生成密钥"></a>二、生成密钥</h3><blockquote>
+<p>要使用该软件进行加密的话，首先要生成一对密钥。也就是一个公钥和一个私钥。其中公钥是发送给别人用来加密钥发送给自己的文件的，私钥是自己保存，用于解密别人用公钥加密的文件，或者起数字签名的作用。　　PGP有很好的创建密钥对的向导，跟着向导很容易生成一对密钥。每一对密钥都对应着一个确定的用户。用户名不一定要真实，但是要方便通信者看到该用户名能知道这个用户名对应的真实的人；邮件地址也是一样不需要真实，但是要能方便与你通信的人在多个公钥中快速的找出你的公钥。　　密钥对的私钥还必须进一步用密码加密，这个加密是对你的私钥加密。这个密码非常重要，切记不要泄漏了，为安全起见，密码长度至少8位，而且应该包含非字母的字符。　　</p>
+</blockquote>
+<p>​    <img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-2.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-2.png" srcset="data:image/png;base64,666"></p>
+<p>​    <img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-3.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-3.png" srcset="data:image/png;base64,666"></p>
+<h3 id="三、导出并发送公钥"><a href="#三、导出并发送公钥" class="headerlink" title="三、导出并发送公钥"></a>三、导出并发送公钥</h3><p>现在将这个密钥导出，在这个密钥上右击选择“Export…”，出现如下界面：</p>
+<p>​    <img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-4.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-4.png" srcset="data:image/png;base64,666"></p>
+<p>导出密钥后，把密钥文件保存在硬盘上，并把公钥文件发送到一个“公钥管理”文件夹（例如QQ群文件中建一个公钥管理文件夹），大家的公钥整理后都放在这个夹里。　</p>
+<p>注意：如果想同时导出公钥和私钥，就把“Include Private Key（s）”选上。如果只想导出公钥给别人加密使用，千万不能选上。</p>
+<h3 id="四、文件加密与解密"><a href="#四、文件加密与解密" class="headerlink" title="四、文件加密与解密"></a>四、文件加密与解密</h3><ol>
+<li><p>若karlie想给Lichunquan发送加密文件，则从“公钥管理”文件夹获取LiChunquan的公钥，即LiChunquan.asc，放到指定的位置，然后双击这个公钥文件，点击“Import”，即将这个文件导入到密钥盘上。</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-5.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-5.png" srcset="data:image/png;base64,666"></p>
+</li>
+<li><p>Karlie用Lichunquan的公钥将一个文件加密,例如文件“Text.txt”，方法如下：</p>
+</li>
+</ol>
+<p>在菜单栏左侧，选择PGPZIP→ 建立新的项目   </p>
+<p>​    <img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-6.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-6.png" srcset="data:image/png;base64,666"></p>
+<p>→ 将需要加密的文件拖入</p>
+<p>​    <img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-7.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-7.png" srcset="data:image/png;base64,666"></p>
+<p>→选择Lichunquan的公钥</p>
+<p>​    <img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-8.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-8.png" srcset="data:image/png;base64,666"></p>
+<p>→ 进行加密和签名</p>
+<p>​    <img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-9.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-9.png" srcset="data:image/png;base64,666"></p>
+<p>→ 加密完成后得到text.txt.pgp 文件</p>
+<ol start="3">
+<li><p>Karlie通过通信软件，将加密文件“text.txt.pgp”发送给Lichunquan。</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-10.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-10.png" srcset="data:image/png;base64,666"></p>
+</li>
+<li><p>Lichunquan收到文件后，利用自己的私钥将文件解密。</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-11.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-11.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-11.5.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-11.5.png" srcset="data:image/png;base64,666"></p>
+</li>
+</ol>
+<h3 id="五、数字签名"><a href="#五、数字签名" class="headerlink" title="五、数字签名"></a>五、数字签名</h3><blockquote>
+<p>对文件签名只能证明是你发出该文件，但是文件的内容并没有被加密，同时，进行数字签名时，关注的是表明该文件是从自己这里发出，因此对于文件的内容并不在意被别人看到，经过数字签名的文件要同原明文文件一同发送给对方，对方才能验证数字签名是否有效。</p>
+</blockquote>
+<blockquote>
+<p>数字签名（digital signature）是公钥密码的逆应用：用私钥加密消息，用公钥解密消息。</p>
+</blockquote>
+<blockquote>
+<p>用私钥加密的消息称为签名，只有拥有私钥的用户可以生成签名。<br>用公钥解密签名这一步称为验证签名，所有用户都可以验证签名(因为公钥是公开的)</p>
+</blockquote>
+<ol>
+<li><p>在菜单栏左侧，选择PGPZIP→ 建立新的项目</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-6.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-6.png" srcset="data:image/png;base64,666"></p>
+</li>
+</ol>
+<p>→ 将需要签名的文件拖入</p>
+<p>​    <img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-7.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-7.png" srcset="data:image/png;base64,666">    </p>
+<p>→ 选择sign only，只进行签名</p>
+<p>​    <img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-11.55.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-11.55.png" srcset="data:image/png;base64,666"></p>
+<p>→ 用自己的私钥进行签名</p>
+<p>→ 获得签名文件“text.txt.sig“</p>
+<p>​    <img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-12.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-12.png" srcset="data:image/png;base64,666"></p>
+<ol start="2">
+<li><p>Karlie通过通信软件，将原文件“text.txt”和签名文件“text.txt.sig”发送给LiChunquan。</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-13.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-13.png" srcset="data:image/png;base64,666"></p>
+</li>
+<li><p>LiChunquan从“公钥管理”文件夹获取Karlie的公钥，即lijingyi.asc，然后双击这个公钥文件，点击“Import”，即将这个文件导入到密钥盘上。</p>
+<p>→ 导入Karlie的公钥以后，打开PGP Desktop，选择“All Keys” →右键单击“Karlie”→选择“Sign”（使“Karlie”的“Verified”状态变为“✔”）。</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-14.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-14.png" srcset="data:image/png;base64,666"></p>
+<p>→ LiChunquan将两个文件放在同一目录下，双击签名文件“text.txt.sig”即可验证签名。</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-15.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PGP-15.png" srcset="data:image/png;base64,666"></p>
+</li>
+</ol>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2020/11/14/SHA-1/'>
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://gryffinbit.top/2020/12/06/%E4%BD%BF%E7%94%A8PGP%E8%BF%9B%E8%A1%8C%E5%85%AC%E9%92%A5%E4%BD%93%E5%88%B6%E7%9A%84%E9%80%9A%E4%BF%A1/>https://gryffinbit.top/2020/12/06/%E4%BD%BF%E7%94%A8PGP%E8%BF%9B%E8%A1%8C%E5%85%AC%E9%92%A5%E4%BD%93%E5%88%B6%E7%9A%84%E9%80%9A%E4%BF%A1/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-06T17:42:22+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年12月6日</p>
+  </a>
 </div>
 
-          </div>
         
       
-    
-  </section>
+        
+          
   
-    
-  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/PGP/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>PGP</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%85%AC%E9%92%A5%E4%BD%93%E5%88%B6/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>公钥体制</p></a></div>
 
 
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gryffinbit.top/2020/12/06/%E4%BD%BF%E7%94%A8PGP%E8%BF%9B%E8%A1%8C%E5%85%AC%E9%92%A5%E4%BD%93%E5%88%B6%E7%9A%84%E9%80%9A%E4%BF%A1/&title=使用PGP进行公钥体制的通信 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://gryffinbit.top/2020/12/06/%E4%BD%BF%E7%94%A8PGP%E8%BF%9B%E8%A1%8C%E5%85%AC%E9%92%A5%E4%BD%93%E5%88%B6%E7%9A%84%E9%80%9A%E4%BF%A1/&title=使用PGP进行公钥体制的通信 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://gryffinbit.top/2020/12/06/%E4%BD%BF%E7%94%A8PGP%E8%BF%9B%E8%A1%8C%E5%85%AC%E9%92%A5%E4%BD%93%E5%88%B6%E7%9A%84%E9%80%9A%E4%BF%A1/&title=使用PGP进行公钥体制的通信 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
   
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2020/12/05/kali%E4%B8%8Bvolatility%E5%8F%96%E8%AF%81%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/'>
+          <p class='title'>kali下volatility取证工具的使用<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>Kali下 volatility取证软件的使用实验所用附件下载https://gryffinbit.lanzous.com/b01bwm4ab密码:15j0
+实验环境：Debian 8 kali...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -513,156 +776,28 @@
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/photo.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Gryffinbit</h2>
-        
-        
-          <p>兔子</p>
 
-        
-        
-          <p>凡殺不死我的，必使我更強大。</p>
 
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/img/QQ.jpg"
-              class="social fab fa-qq flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;tf=1&amp;source=mailto&amp;to=Gryffinbit@Gmail.com"
-              class="social fas fa-envelope-open flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/Gryffinbit/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://blog.csdn.net/Gryffinbit"
-              class="social fab fa-cuttlefish flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/IDS/" href="/categories/IDS/"
-            id="categoriesIDS"
-            ><div class='name'>IDS</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Misc/" href="/categories/Misc/"
-            id="categoriesMisc"
-            ><div class='name'>Misc</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/kali/" href="/categories/kali/"
-            id="categorieskali"
-            ><div class='name'>kali</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/write-up/" href="/categories/write-up/"
-            id="categorieswrite-up"
-            ><div class='name'>write up</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"
-            id="categoriesE5AF86E7A081E5ADA6"
-            ><div class='name'>密码学</div><div class='badge'>(14)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" href="/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"
-            id="categoriesE7BD91E7BB9CE7BC96E7A88B"
-            ><div class='name'>网络编程</div><div class='badge'>(2)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E9%99%84%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80%EF%BC%9A"><span class="toc-text">实验附件下载地址：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84%EF%BC%9A"><span class="toc-text">实验目的：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83%EF%BC%9A"><span class="toc-text">实验环境：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%BF%87%E7%A8%8B%E4%B8%8E%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-text">实验过程与步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81PGP%E5%8A%A0%E5%AF%86%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%AE%89%E8%A3%85"><span class="toc-text">一、PGP加密软件的安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%94%9F%E6%88%90%E5%AF%86%E9%92%A5"><span class="toc-text">二、生成密钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%AF%BC%E5%87%BA%E5%B9%B6%E5%8F%91%E9%80%81%E5%85%AC%E9%92%A5"><span class="toc-text">三、导出并发送公钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%96%87%E4%BB%B6%E5%8A%A0%E5%AF%86%E4%B8%8E%E8%A7%A3%E5%AF%86"><span class="toc-text">四、文件加密与解密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D"><span class="toc-text">五、数字签名</span></a></li></ol></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/AES/" style="font-size: 14px; color: #999">AES</a> <a href="/tags/CAsyncSocket/" style="font-size: 14px; color: #999">CAsyncSocket</a> <a href="/tags/CSocket/" style="font-size: 14px; color: #999">CSocket</a> <a href="/tags/DES/" style="font-size: 14px; color: #999">DES</a> <a href="/tags/GNS3/" style="font-size: 14px; color: #999">GNS3</a> <a href="/tags/MFC/" style="font-size: 16.5px; color: #888">MFC</a> <a href="/tags/PGP/" style="font-size: 14px; color: #999">PGP</a> <a href="/tags/Python/" style="font-size: 14px; color: #999">Python</a> <a href="/tags/RSA/" style="font-size: 19px; color: #777">RSA</a> <a href="/tags/SHA-1/" style="font-size: 14px; color: #999">SHA-1</a> <a href="/tags/WinSock/" style="font-size: 16.5px; color: #888">WinSock</a> <a href="/tags/gmpy2/" style="font-size: 14px; color: #999">gmpy2</a> <a href="/tags/kali/" style="font-size: 14px; color: #999">kali</a> <a href="/tags/snort/" style="font-size: 21.5px; color: #666">snort</a> <a href="/tags/volatility/" style="font-size: 14px; color: #999">volatility</a> <a href="/tags/%E5%85%AC%E9%92%A5%E4%BD%93%E5%88%B6/" style="font-size: 14px; color: #999">公钥体制</a> <a href="/tags/%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81/" style="font-size: 19px; color: #777">古典密码</a> <a href="/tags/%E5%9B%BE%E7%89%87/" style="font-size: 24px; color: #555">图片</a> <a href="/tags/%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B0/" style="font-size: 14px; color: #999">散列函数</a> <a href="/tags/%E6%9D%82/" style="font-size: 14px; color: #999">杂</a> <a href="/tags/%E6%B5%81%E5%AF%86%E7%A0%81/" style="font-size: 14px; color: #999">流密码</a> <a href="/tags/%E7%AC%AC%E4%B8%80%E5%B1%8A%E4%BF%A1%E5%AE%89%E5%A4%A7%E6%8C%91%E6%88%98/" style="font-size: 14px; color: #999">第一届信安大挑战</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 14px; color: #999">虚拟机</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 </aside>
+
 
 
         
@@ -672,8 +807,8 @@
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="使用PGP进行公钥体制的通信";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
