@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://gryffinbit.top/2020/12/09/MFC-WinInet%E7%B1%BB%E5%AE%9E%E7%8E%B0FTP%E5%AE%A2%E6%88%B7%E7%AB%AF/</loc>
+    
+    <lastmod>2020-12-09</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://gryffinbit.top/%E6%9D%83%E5%93%A5%E5%8F%AF%E8%A7%81/index.html</loc>
     
     <lastmod>2020-12-09</lastmod>
@@ -439,6 +446,13 @@
   
   <url>
     <loc>https://gryffinbit.top/tags/CA/</loc>
+    <lastmod>2020-12-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://gryffinbit.top/tags/WinInet/</loc>
     <lastmod>2020-12-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
