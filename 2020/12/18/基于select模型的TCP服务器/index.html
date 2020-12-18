@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -21,7 +19,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>归档：2020 - Gryffinbit</title>
+  <title>基于select模型的TCP服务器 - Gryffinbit</title>
+  
+    <meta name="keywords" content="WinSock">
   
 
   
@@ -90,7 +90,7 @@
   
   
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -341,7 +341,7 @@
     <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper  dock' style="display: ;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div id='cover-backstretch'></div>
           
@@ -427,579 +427,637 @@
         
 
 <div class='l_main'>
-	
-		
-  <section class="post-list">
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  
+  <div class="article-meta" id="top">
     
     
-      
+    
+      <h1 class="title">
+        基于select模型的TCP服务器
+      </h1>
+      <div class='new-meta-box'>
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/DES%E5%AE%9E%E9%AA%8C/">
-        DES实验报告
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        DES实验报告一、实验题目DES加密算法
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>Gryffinbit</p>
+  </a>
+</div>
 
-二、实验目的和要求通过实验，掌握DES密码的程序实现，熟悉比特串的操作，矩阵变换，提高C++程序设计能力。
-编写 DES 密码的加密解密程序，运行并验证。 (1) 输入 64 比特明文和密文，利用 DES 密码对其加密并输出密文。 (2) 输入 DES 加密的 64 比特密文和密钥，对其进行解密。 (3) 记录调试和验证过程，完成实验报告。
-
-三、...
-      
-    
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">网络编程</a>
+    </a>
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+
+
+          
         
-        <time>2020-11-14</time>
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年12月18日</p>
+  </a>
+</div>
+
+          
         
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="基于select模型的TCP服务器" data-path="/2020/12/18/%E5%9F%BA%E4%BA%8Eselect%E6%A8%A1%E5%9E%8B%E7%9A%84TCP%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  <h1 id="基于select模型的TCP服务器"><a href="#基于select模型的TCP服务器" class="headerlink" title="基于select模型的TCP服务器"></a>基于select模型的TCP服务器</h1><h2 id="实验工程文件下载"><a href="#实验工程文件下载" class="headerlink" title="实验工程文件下载"></a>实验工程文件下载</h2><p><a target="_blank" rel="noopener" href="https://gryffinbit.lanzous.com/iSR7Gjhg68b">https://gryffinbit.lanzous.com/iSR7Gjhg68b</a></p>
+<h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><ol>
+<li>熟悉非阻塞套接字的工作模式</li>
+<li>理解select模型的基本思路</li>
+</ol>
+<h2 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h2><p>Windows10 x64，Visual Studio 2017</p>
+<h2 id="实验要求"><a href="#实验要求" class="headerlink" title="实验要求"></a>实验要求</h2><p>将第三章的点对点的C/S模型改用select模型。为了方便理解，我们只是关注可读套接字，也就是select函数的第三个和第四个参数均为NULL。</p>
+<h2 id="实验原理（模型）"><a href="#实验原理（模型）" class="headerlink" title="实验原理（模型）"></a>实验原理（模型）</h2><h3 id="select的函数"><a href="#select的函数" class="headerlink" title="select的函数"></a><strong>select的函数</strong></h3><pre><code class="cpp">int select(
+        int nfds,
+        fd_set FAR* readfds,
+        fd_set FAR* writefds,
+        fd_set FAR* exceptfds,
+        const struct timeval FAR* timeout
+);</code></pre>
+<ul>
+<li>fd_set数据类型，代表着一系列特定套接字的集合。</li>
+<li>nfds ： 为保持与早期套接字应用程序兼容。</li>
+<li>readfds： 用于检查可读性。该集合包括想要检查是否符合下述任何一个条件的套接字。<ul>
+<li>有数据到达，可以读入</li>
+<li>连接已关闭、重设或中止</li>
+<li>假如已调用了listen，而且一个连接正在建立，那么accept函数调用会成功。</li>
+</ul>
+</li>
+<li>wirtefds：用于检查可写性。该集合包括想要检查是否符合下述任何一个条件的套接字。<ul>
+<li>发送缓冲区已空，可以发送数据。</li>
+<li>如果已完成了对一个非锁定连接调用的处理，连接就会成功。</li>
+</ul>
+</li>
+<li>exceptfds：用于检查带外数据。该集合包括想要检查是否符合下述任何一个条件的套接字。<ul>
+<li>假如已完成了对一个非锁定连接调用的处理，连接尝试就会失败。</li>
+<li>有带外（out-of-band，OOB）数据可供读取</li>
+</ul>
+</li>
+<li>timeout：是一个指向一个timeval结构的指针，用于决定select等待I/O操作完成的最长时间。如果timeout是一个空指针，那么select调用会无限制地等待下去，直到至少有一个套接字符合制定的条件后才结束。</li>
+</ul>
+<h3 id="timeval结构的定义"><a href="#timeval结构的定义" class="headerlink" title="timeval结构的定义"></a>timeval结构的定义</h3><pre><code class="cpp">strcut timeval&#123;
+    long tv_sec;    //以秒为单位指定等待时间
+    long tv_usec;   //以毫秒为单位指定等待时间
+&#125;;</code></pre>
+<h3 id="select模型的操作步骤"><a href="#select模型的操作步骤" class="headerlink" title="select模型的操作步骤"></a>select模型的操作步骤</h3><p>用select操作一个或多个套接字句柄，一般采用下述步骤。</p>
+<ol>
+<li>使用FD_ZERO宏，初始化自己感兴趣的每一个fd_set集合。</li>
+<li>使用FD_SET宏，将要检查的套接字句柄添加到自己感兴趣的每哥fd_set集合中，相当于在指定的fd_set集合中，设置好要检查的I/O活动。</li>
+<li>调用select函数，然后等待。select完成返回后，会修改每个fd_set结构，删除那些不存在待决I/O操作的套接字句柄，在各个fd_set集合中返回符合条件的套接字。</li>
+<li>根据select的返回值，使用FD_ISSET宏，对每个fd_set集合进行检查，判断一个待定的套接字是否仍在集合中，便可判断出哪些套接字存在着尚未完成的I/O操作。</li>
+<li>知道了每个集合中未完成的I/O操作之后，对相应的套接字的I/O进行处理，然后返回步骤1，继续进行select处理。</li>
+</ol>
+<hr>
+<h2 id="实验过程"><a href="#实验过程" class="headerlink" title="实验过程"></a>实验过程</h2><ol>
+<li><p>将客户端中调用recv函数的部分都删掉，也就是客户端只能给服务器发消息，不能接收消息。</p>
+</li>
+<li><p>select模型也需要引用头文件库文件，打开网络库，校验版本，创建监听套接字，绑定地址，开始监听，然后创建一个fd_set结构体，并把监听套接字放这个集合中。</p>
+</li>
+<li><p>在一个死循环中调用select函数，并判断select的返回值。</p>
+<p>若返回值为SOCKET_ERROR，则报错并做相应处理；</p>
+<p>若返回值为0, 则继续；</p>
+<p>若返回值大于0，说明select函数有反应。有反应就要区分是监听套接字还是响应套接字导致的。若是监听套接字导致的，就调用accept函数，创建一个新的响应套接字，并把这个响应套接字放到第2步定义的fd_set结构当中。如果是响应套接字，就调用recv函数接收客户机发来的消息。</p>
+</li>
+<li><p>最后释放掉所有的套接字，并关闭网络库</p>
+</li>
+<li><p>测试。先开始运行select模型，然后在客户端的Debug/Release文件夹中双击exe文件即可打开多个客户端，这些客户端均可给服务器发消息。</p>
+</li>
+<li><p>测试完成后，可以在accept函数之后调用send函数，发消息给客户端提示连接成功。相应的，就需要先在客户端调用recv函数接收此消息。</p>
+</li>
+</ol>
+<p><strong>👉创建服务器端</strong></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/select-1.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/select-1.png" srcset="data:image/png;base64,666"></p>
+<pre><code class="c++">#include &lt;stdio.h&gt;        
+#include &lt;stdlib.h&gt;
+#include &lt;WinSock2.h&gt;
+#include &lt;WS2tcpip.h&gt;
+//winsock2.h转到文档，可以查看当且编译器环境支持的最高版本
+
+//引用库文件
+#pragma comment(lib,&quot;Ws2_32.lib&quot;)
+
+int main(void)
+&#123;
+    //打开网络库
+    WORD wdVersion = MAKEWORD(2, 2);
+    WSADATA wsaData;
+
+    if (0 != WSAStartup(wdVersion, &amp;wsaData))
+    &#123;
+        printf(&quot;WSAStartup fail!&quot;);
+        return -1;
+    &#125;
+
+    //校验版本
+    if (2 != HIBYTE(wsaData.wVersion) || 2 != LOBYTE(wsaData.wVersion))
+    &#123;
+        printf(&quot;Version fail!&quot;);
+        //关闭库
+        WSACleanup();
+        return -1;
+    &#125;
+
+    //创建监听套接字
+    SOCKET socketListen = socket(AF_INET, SOCK_STREAM, 0);
+    if (SOCKET_ERROR == socketListen)
+    &#123;
+        printf(&quot;socket fail!&quot;);
+        //关闭库
+        WSACleanup();
+        return -1;
+    &#125;
+
+    //绑定地址
+    SOCKADDR_IN sockAddress;
+    sockAddress.sin_family = AF_INET;//通信域为IPV4
+    //sockAddress.sin_addr.s_addr = inet_addr(&quot;127.0.0.1&quot;);//回送地址，主要用于网络软件测试以及本地机进程间通信
+    inet_pton(AF_INET, &quot;127.0.0.1&quot;, (void*)&amp;sockAddress.sin_addr);
+    sockAddress.sin_port = htons(51314);
+
+    if (SOCKET_ERROR == bind(socketListen, (struct sockaddr*)&amp;sockAddress, sizeof(sockAddress)))
+    &#123;
+        printf(&quot;bind fail!&quot;);
+        //关闭监听套接字
+        closesocket(socketListen);
+        //关闭库
+        WSACleanup();
+        return -1;
+    &#125;
+
+    //开始监听
+    if (SOCKET_ERROR == listen(socketListen, 5))
+    &#123;
+        printf(&quot;listen fail!&quot;);
+        //关闭监听套接字
+        closesocket(socketListen);
+        //关闭库
+        WSACleanup();
+        return -1;
+    &#125;
+
+    //申明一个fd_set结构体存放套接字，可以右键转定义查看它的结构
+    fd_set allSockets;
+    //初始化
+    FD_ZERO(&amp;allSockets);
+    //把监听套接字放到fd_set这个集合中
+    FD_SET(socketListen, &amp;allSockets);
+
+    while (true)
+    &#123;
+        //由于给select传入一个fd_set结构体，它只返回fd_set中有响应的套接字，所以需要定义一个中转变量
+        fd_set TempSockets = allSockets;
+
+        //最大等待时间
+        struct timeval st;
+        st.tv_sec = 10;
+        st.tv_usec = 0;
+
+        //调用select函数，这里我们将第三个和第四个参数设为了NULL，
+        //即只是关心可读的套接字，也就是调用accept和recv的情况
+        int ret = select(0, &amp;TempSockets, NULL, NULL, &amp;st);
+        //判断select的返回值分为SOCKET_ERROR，0, 和大于0三种情况
+        if (ret == SOCKET_ERROR)
+        &#123;
+            printf(&quot;select fail！&quot;);
+            break;
+        &#125;
+
+        if (0 == ret) //没有反应，继续
+        &#123;
+            continue;
+        &#125;
+
+        if (ret &gt; 0)
+        &#123;
+            //select函数有反应，有反应就要区分是监听套接字还是响应套接字导致的
+            for (u_int i = 0; i &lt; TempSockets.fd_count; i++)
+            &#123;
+                //是监听套接字导致的
+                if (TempSockets.fd_array[i] == socketListen)
+                &#123;
+                    //需要创建响应套接字
+                    SOCKET SockAccept = accept(socketListen, NULL, NULL);
+                    //判断accept函数是否调用失败，失败的返回值是INVALID_SOCKET，不是SOCKET_ERROR
+                    if (SockAccept == INVALID_SOCKET)
+                    &#123;
+                        //创建响应套接字失败
+                        printf(&quot;创建响应套接字失败！&quot;);
+                        continue;
+                    &#125;
+                    //把新创建的响应套接字也放到fd_set集合中
+                    FD_SET(SockAccept, &amp;allSockets);
+                    //给客户端发消息
+                    if (SOCKET_ERROR == send(SockAccept, &quot;我是服务器，您已成功连接&quot;, strlen(&quot;我是服务器，您已成功连接&quot;), 0))
+                    &#123;
+                        printf(&quot;send fail!&quot;);
+                        //关闭响应套接字
+                        closesocket(SockAccept);
+                     //关闭库
+                        WSACleanup();
+                        return -1;
+                    &#125;
+                &#125;
+                else
+                &#123;
+                    //是响应套接字导致的,那就需要调用recv函数
+                    //判断客户端连接的集合中是否有需要接收的数据
+                    char szRecvBuffer[1024] = &#123; 0 &#125;;
+
+                    int nReturnValue = recv(TempSockets.fd_array[i], szRecvBuffer, sizeof(szRecvBuffer) - 1, 0);
+
+                    if (0 == nReturnValue)
+                    &#123;
+                        //客户端正常关闭   
+                        printf(&quot;客户端已下线&quot;);
+                        //从集合中删掉Socket，还得调用closesocket关闭这个socket
+                        SOCKET SockTemp = TempSockets.fd_array[i];
+                        FD_CLR(TempSockets.fd_array[i], &amp;allSockets);
+                        closesocket(SockTemp);
+                    &#125;
+                    else if (SOCKET_ERROR == nReturnValue)
+                    &#123;
+                        //网络中断 
+                        int nRes = WSAGetLastError();
+                        printf(&quot;响应套接字%d所对应的客户端中断连接\n&quot;,  TempSockets.fd_array[i]);
+                        //同样需要从集合删掉套接字和关闭它。
+                    &#125;
+                    else
+                    &#123;
+                        //接收到客户端消息 
+                        printf(&quot;Data from Socket %d : %s \n&quot;, TempSockets.fd_array[i],szRecvBuffer);
+                    &#125;
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+    //释放所有socket
+    for (u_int i = 0; i &lt; allSockets.fd_count; i++)
+    &#123;
+        closesocket(allSockets.fd_array[i]);
+    &#125;
+    //关闭网络库
+    WSACleanup();
+
+    system(&quot;pause&quot;);
+    return 0;
+&#125;</code></pre>
+<p><strong>👉创建客户端</strong></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/select-2.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/select-2.png" srcset="data:image/png;base64,666"></p>
+<pre><code class="c++">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;WinSock2.h&gt;
+#include &lt;WS2tcpip.h&gt;
+
+#pragma comment(lib,&quot;Ws2_32.lib&quot;)
+
+int main()
+&#123;
+    //打开网络库
+    WORD wdVersion = MAKEWORD(2, 2);
+    WSADATA wsaData;
+
+    if (0 != WSAStartup(wdVersion, &amp;wsaData))
+    &#123;
+
+        printf(&quot;WSAStartup fail!&quot;);
+        return -1;
+    &#125;
+
+    //校验版本
+    if (2 != HIBYTE(wsaData.wHighVersion) || 2 != LOBYTE(wsaData.wVersion))
+    &#123;
+        printf(&quot;Version fail!&quot;);
+        //关闭库
+        WSACleanup();
+        return -1;
+    &#125;
+
+    //创建一个SOCKET 监听
+    //套接字的类型，使用的协议一定要和服务器的类型和协议匹配上
+    SOCKET socketUser = socket(AF_INET, SOCK_STREAM, 0);
+    if (SOCKET_ERROR == socketUser)
+    &#123;
+        printf(&quot;socket fail!&quot;);
+        //关闭库
+        WSACleanup();
+        return -1;
+    &#125;
+
+    //初始化服务器端的地址，IP和端口一定要和想要连接的服务器一样，不然就连接不上
+    SOCKADDR_IN sockAddress;
+    sockAddress.sin_family = AF_INET;  //IPv4的协议
+    //sockAddress.sin_addr.s_addr = inet_addr(&quot;127.0.0.1&quot;);
+    inet_pton(AF_INET, &quot;127.0.0.1&quot;, (void*)&amp;sockAddress.sin_addr); //服务器地址
+    sockAddress.sin_port = htons(51314);  //服务器的端口
+
+    //客户机端主动连接服务器端 
+    if (SOCKET_ERROR == connect(socketUser, (struct sockaddr*)&amp;sockAddress, sizeof(sockAddress)))
+    &#123;
+
+        printf(&quot;connect fail!\n&quot;);
+        //int a=WSAGetLastError();
+        //printf(&quot;error code : %d\n&quot;, a);
+        //关闭套接字
+        closesocket(socketUser);
+        //关闭库
+        WSACleanup();
+        return -1;
+    &#125;
+
+    //接收服务器返回的信息
+    char szBuffer[1024] = &#123; 0 &#125;;
+    //接收数据， 跟服务器端一样
+    int nReturnValue = recv(socketUser, szBuffer, sizeof(szBuffer), 0);
+
+    if (0 == nReturnValue)
+    &#123;
+        //客户端正常关闭   释放Socket
+        closesocket(socketUser);
+    &#125;
+    else if (SOCKET_ERROR == nReturnValue)
+    &#123;
+        //网络中断  
+        printf(&quot;连接中断&quot;);
+    &#125;
+    else
+    &#123;
+        //接收到客户端消息 
+        printf(&quot;server data : %s\n&quot;, szBuffer);
+
+
+
+    //发送消息给服务器
+    while (1)
+    &#123;
+
+            //发送数据， 跟服务器端一样
+            char szSendData[1024] = &#123; 0 &#125;;
+            printf(&quot;Input Something : &quot;);
+            scanf_s(&quot;%s&quot;, szSendData, 1024);
+            if (SOCKET_ERROR == send(socketUser, szSendData, strlen(szSendData), 0))
+            &#123;
+
+            printf(&quot;send fail!&quot;);
+            //关闭客户机Socket
+            closesocket(socketUser);
+            //关闭库
+            WSACleanup();
+            return -1;
+            &#125;
+        &#125;
+    &#125;
+
+    //关闭socket
+    closesocket(socketUser);
+    //关闭网络库
+    WSACleanup();
+
+    system(&quot;pause&quot;);
+    return 0;
+&#125;</code></pre>
+<p>👉<strong>最后运行客户端，生成解决方案之后，到工程文件夹里找到exe，开启多个客户端。</strong></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/select-3.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/select-3.png" srcset="data:image/png;base64,666"></p>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2020/11/14/DES%E5%AE%9E%E9%AA%8C/'>
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://gryffinbit.top/2020/12/18/%E5%9F%BA%E4%BA%8Eselect%E6%A8%A1%E5%9E%8B%E7%9A%84TCP%E6%9C%8D%E5%8A%A1%E5%99%A8/>https://gryffinbit.top/2020/12/18/%E5%9F%BA%E4%BA%8Eselect%E6%A8%A1%E5%9E%8B%E7%9A%84TCP%E6%9C%8D%E5%8A%A1%E5%99%A8/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-18T16:29:35+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年12月18日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
+          
   
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/OpenCv/">
-        OpenCv
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        macOS下opencv的安装。在CLion上配置使用OpenCV （C++）安装opencv
-brew的安装
-/usr/bin/ruby -e &quot;$(curl -fsSL &lt;https://raw.githubusercontent.com/Homebrew/install/master/install&gt;)&quot;
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/WinSock/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>WinSock</p></a></div>
 
-brew安装opencv
-brew insta...
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gryffinbit.top/2020/12/18/%E5%9F%BA%E4%BA%8Eselect%E6%A8%A1%E5%9E%8B%E7%9A%84TCP%E6%9C%8D%E5%8A%A1%E5%99%A8/&title=基于select模型的TCP服务器 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://gryffinbit.top/2020/12/18/%E5%9F%BA%E4%BA%8Eselect%E6%A8%A1%E5%9E%8B%E7%9A%84TCP%E6%9C%8D%E5%8A%A1%E5%99%A8/&title=基于select模型的TCP服务器 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://gryffinbit.top/2020/12/18/%E5%9F%BA%E4%BA%8Eselect%E6%A8%A1%E5%9E%8B%E7%9A%84TCP%E6%9C%8D%E5%8A%A1%E5%99%A8/&title=基于select模型的TCP服务器 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
       
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Misc/">Misc</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/OpenCv/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
 </div>
 
-          </div>
+
+
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/CRC%E6%A0%A1%E9%AA%8C/">
-        CRC校验
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        CRC检验错误pngcheck -v 分析png格式，报错CRC ERROR
-对一张正常的图片，通过修改其宽度或者高度隐藏信息，使计算出的CRC校验码与原图的CRC校验码不一致；windows的图片查看器会忽略错误的CRC校验码，因此会显示图片，但此时的图片已经是修改过的，所以会有显示不全或扭曲等情况，借此可以隐藏信息。
-而Linux、macOS下的图片查看器不会忽略错误的CRC校验码，因此...
-      
-    
+    </div>
   </div>
+
+
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Misc/">Misc</a>
-        
-      </div>
+  
+
+  
+    <div class="prev-next">
       
-        <div>
-          <a class='readmore' href='/2020/11/14/CRC%E6%A0%A1%E9%AA%8C/'>
-            阅读全文
-          </a>
-        </div>
+      
+        <a class='next' href='/2020/12/17/%E7%97%85%E6%AF%92%E5%8E%9F%E7%90%86%E8%80%83%E7%82%B9/'>
+          <p class='title'>病毒原理考点<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>病毒原理考点病毒程序一般基入对象的侵入一般有哪几种方式。（对象的不同有哪几种
+磁盘引导区传染的计算机病毒
+操作系统传染
+可执行程序传染
+
+计算机病毒的特点
+计算机病毒特征1：传染性
+可以通过中介...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/Jpegsnoop/">
-        Jpegsnoop
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        
-github 项目链接
-https://github.com/ImpulseAdventure/JPEGsnoop
+  </article>
 
 
-可参考jpeg的格式详解
-
-JPEG原理简介文件格式
-JPEG文件大体上可以分成两个部分：标记码和压缩数据
-标记码：
-由两个字节构成，第一个字节是固定值0xFF，后一个字节则根据不同意义有不同数值
-在每个标记码之前可以添加数目不限的无意义的0xFF填充，连续的多个0xFF...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Misc/">Misc</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/Jpegsnoop/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/stegdetect/">
-        stegdetect
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        
-在kali下
 
 
-github项目
-https://github.com/abeluck/stegdetect
 
-原理简介文件格式
-JPEG文件大体上可以分成两个部分：标记码和压缩数据
-标记码：
-由两个字节构成，第一个字节是固定值0xFF，后一个字节则根据不同意义有不同数值
-在每个标记码之前可以添加数目不限的无意义的0xFF填充，连续的多个0xFF可以被理解为一个0xFF，并表示一个标记码...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Misc/">Misc</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/stegdetect/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/%E5%B8%B8%E8%A7%81%E7%BC%96%E7%A0%81/">
-        常见编码
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        常见的编码##base64
-长度是3的倍数，不足时结尾用= 补全
-##xxencode
-与base64相似。 但结尾用+ 补全
-uuencode特殊符号很多
-
-##jjencode
-针对JavaScript的编码方式
-转换成只有符号的字符串
-
-##aaencode
-针对JavaScript的编码方式
-转换成常用的网络表情
-
-###维吉尼亚密码
-由一些偏移量不同的凯撒密码组成。 （多表密码的简...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/%E5%B8%B8%E8%A7%81%E7%BC%96%E7%A0%81/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%AF%86%E7%A0%81%E5%8F%98%E4%BD%93/">
-        维吉尼亚密码变体
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        原题：
-
-It is said that Vigenere cipher does not achieve the perfect secrecy actually :-)Tips:1.The encode pragram is given;2.Do u no index of coincidence ？3.The key is last 6 words of the plain text(...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%AF%86%E7%A0%81%E5%8F%98%E4%BD%93/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B9%B1%E7%9A%84%E5%AF%86%E7%A0%81/">
-        一些杂乱的密码
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        记录遇到的一些奇奇怪怪的密码###变异凯撒
-第一位 偏移5，第二位偏移6 ， 第三位偏移7 ，第四位偏移8……以此类推
-k = 5 
-str = &#39;afZ_r9VYfScOeO_UL^RWUc&#39; 
-for i in str:                    
- print(chr(ord(i)+k),end=&quot;&quot;)
- k +=1
-###quoted_...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B9%B1%E7%9A%84%E5%AF%86%E7%A0%81/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/RSA%E5%8E%9F%E7%90%86%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/">
-        RSA原理基本介绍
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        RSA的基本介绍
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
 
 
-python pow函数的用法：计算x的y次方，如果z在存在，则再对结果进行取模，其结果等效于pow(x,y) %z     
-
-import math
-
-math.pow(x, y[, z])
-求明文m，用该函数求c（密文cipher）的d次方，得到：
-$$d\equiv e^{-1}$$
-$$m=pow(cipher,e^{-1})$$
-
-d是e的乘法逆元 ，e^-...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/RSA%E5%8E%9F%E7%90%86%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/13/RSA/">
-        RSA
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        参数N：大整数N，我们称之为模数（modulus）
-p 和 q ：大整数N的两个因子（factor）
-e 和 d：互为模反数的两个指数（exponent）
- c 和 m：分别是密文和明文
-&#123;N,e&#125;称为公钥,&#123;N,d&#125;称为私钥
-解题思路
-选取两个较大的互不相等的质数p和q，计算n = p * q 。
-计算phi = (p-1) * (q-1) 。
-选取...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-13</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/13/RSA/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/archives/2020/page/2/">
-            <section class="post prev white-box shadow" >
-              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          3 / 4
-        </p>
-        
-          <a class="next" rel="next" href="/archives/2020/page/4/">
-            <section class="post next white-box shadow">
-              &nbsp;下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
-    
-  
 
 
-	
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -1007,166 +1065,28 @@ e 和 d：互为模反数的两个指数（exponent）
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/photo.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Gryffinbit</h2>
-        
-        
-          <p>兔子</p>
 
-        
-        
-          <p>凡殺不死我的，必使我更強大。</p>
 
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/img/QQ.jpg"
-              class="social fab fa-qq flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;tf=1&amp;source=mailto&amp;to=Gryffinbit@Gmail.com"
-              class="social fas fa-envelope-open flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/Gryffinbit/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://blog.csdn.net/Gryffinbit"
-              class="social fab fa-cuttlefish flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/IDS/" href="/categories/IDS/"
-            id="categoriesIDS"
-            ><div class='name'>IDS</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Misc/" href="/categories/Misc/"
-            id="categoriesMisc"
-            ><div class='name'>Misc</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/kali/" href="/categories/kali/"
-            id="categorieskali"
-            ><div class='name'>kali</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/write-up/" href="/categories/write-up/"
-            id="categorieswrite-up"
-            ><div class='name'>write up</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"
-            id="categoriesE5AF86E7A081E5ADA6"
-            ><div class='name'>密码学</div><div class='badge'>(14)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" href="/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"
-            id="categoriesE7BD91E7BB9CE7BC96E7A88B"
-            ><div class='name'>网络编程</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%80%83%E8%AF%95/" href="/categories/%E8%80%83%E8%AF%95/"
-            id="categoriesE88083E8AF95"
-            ><div class='name'>考试</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%AF%81%E4%B9%A6/" href="/categories/%E8%AF%81%E4%B9%A6/"
-            id="categoriesE8AF81E4B9A6"
-            ><div class='name'>证书</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%B7%A5%E7%A8%8B%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD"><span class="toc-text">实验工程文件下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84"><span class="toc-text">实验目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83"><span class="toc-text">实验环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%A6%81%E6%B1%82"><span class="toc-text">实验要求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%8E%9F%E7%90%86%EF%BC%88%E6%A8%A1%E5%9E%8B%EF%BC%89"><span class="toc-text">实验原理（模型）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#select%E7%9A%84%E5%87%BD%E6%95%B0"><span class="toc-text">select的函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timeval%E7%BB%93%E6%9E%84%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">timeval结构的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#select%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4"><span class="toc-text">select模型的操作步骤</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%BF%87%E7%A8%8B"><span class="toc-text">实验过程</span></a></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/AES/" style="font-size: 14px; color: #999">AES</a> <a href="/tags/CA/" style="font-size: 14px; color: #999">CA</a> <a href="/tags/CAsyncSocket/" style="font-size: 14px; color: #999">CAsyncSocket</a> <a href="/tags/CSocket/" style="font-size: 14px; color: #999">CSocket</a> <a href="/tags/DES/" style="font-size: 14px; color: #999">DES</a> <a href="/tags/GNS3/" style="font-size: 14px; color: #999">GNS3</a> <a href="/tags/MFC/" style="font-size: 17.33px; color: #828282">MFC</a> <a href="/tags/PGP/" style="font-size: 14px; color: #999">PGP</a> <a href="/tags/Python/" style="font-size: 14px; color: #999">Python</a> <a href="/tags/RSA/" style="font-size: 17.33px; color: #828282">RSA</a> <a href="/tags/SHA-1/" style="font-size: 14px; color: #999">SHA-1</a> <a href="/tags/WinInet/" style="font-size: 14px; color: #999">WinInet</a> <a href="/tags/WinSock/" style="font-size: 17.33px; color: #828282">WinSock</a> <a href="/tags/gmpy2/" style="font-size: 14px; color: #999">gmpy2</a> <a href="/tags/kali/" style="font-size: 14px; color: #999">kali</a> <a href="/tags/snort/" style="font-size: 20.67px; color: #6c6c6c">snort</a> <a href="/tags/volatility/" style="font-size: 14px; color: #999">volatility</a> <a href="/tags/%E5%85%AC%E9%92%A5%E4%BD%93%E5%88%B6/" style="font-size: 14px; color: #999">公钥体制</a> <a href="/tags/%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81/" style="font-size: 17.33px; color: #828282">古典密码</a> <a href="/tags/%E5%9B%BE%E7%89%87/" style="font-size: 24px; color: #555">图片</a> <a href="/tags/%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B0/" style="font-size: 14px; color: #999">散列函数</a> <a href="/tags/%E6%9D%82/" style="font-size: 14px; color: #999">杂</a> <a href="/tags/%E6%B5%81%E5%AF%86%E7%A0%81/" style="font-size: 14px; color: #999">流密码</a> <a href="/tags/%E7%97%85%E6%AF%92%E5%8E%9F%E7%90%86/" style="font-size: 14px; color: #999">病毒原理</a> <a href="/tags/%E7%AC%AC%E4%B8%80%E5%B1%8A%E4%BF%A1%E5%AE%89%E5%A4%A7%E6%8C%91%E6%88%98/" style="font-size: 14px; color: #999">第一届信安大挑战</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 14px; color: #999">虚拟机</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 </aside>
+
 
 
         
@@ -1176,14 +1096,14 @@ e 和 d：互为模反数的两个指数（exponent）
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="基于select模型的TCP服务器";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
 </script>
 
