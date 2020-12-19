@@ -21,7 +21,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>标签：CA - Gryffinbit</title>
+  <title>分类：snort - Gryffinbit</title>
   
 
   
@@ -437,6 +437,12 @@
         
           
         
+          
+        
+          
+        
+          
+        
       
     
     
@@ -450,27 +456,17 @@
   
     
     <h2 class="article-title" >
-      <a href="/2020/12/07/%E4%BC%81%E4%B8%9A%E6%A0%B9CA%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/">
-        企业根CA的安装和使用
+      <a href="/2020/11/30/kali%E4%B8%8Bsnort%E6%8A%A5%E8%AD%A6%E8%A7%84%E5%88%99%E8%AE%BE%E8%AE%A1%E5%92%8C%E6%B5%8B%E8%AF%95/">
+        kali下snort报警规则设计和测试
       </a>
     </h2>
   
   <div class='md'>
     
       
-        企业根CA的安装和使用实验目的：
-理解CA认证原理及其结构
-掌握Windows Server2003环境下企业根证书安装和使用
-
-实验目标：
-通过网络安全技术实验认识网络安全技术的基本概念、原理和技术，掌握基本的网络安全常用工具的使用方法及原理。加深对课堂理论教学的理解。
-培养实验技能、动手能力和分析问题、解决问题的能力。
-
-实验内容：
-企业根CA的安装
-Web方式申请和安装证书
-
-实验原理...
+        snort报警规则设计和测试捕捉关键字Search记录打开Google网页的动作👉编写一个规则，通过捕捉关键字Search记录打开Google网页的动作，并将符合规则的数据包输出到Alert文件中
+在Snort的Rules文件夹下创建myrule文件，输入如下内容：
+alert tcp any any -&gt; 172.16.68.139 any (msg:&quot;Google Se...
       
     
   </div>
@@ -478,15 +474,184 @@ Web方式申请和安装证书
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time>2020-12-07</time>
+        <time>2020-11-30</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/%E8%AF%81%E4%B9%A6/">证书</a>
+          <a class="category-link" href="/categories/snort/">snort</a>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2020/12/07/%E4%BC%81%E4%B8%9A%E6%A0%B9CA%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/'>
+          <a class='readmore' href='/2020/11/30/kali%E4%B8%8Bsnort%E6%8A%A5%E8%AD%A6%E8%A7%84%E5%88%99%E8%AE%BE%E8%AE%A1%E5%92%8C%E6%B5%8B%E8%AF%95/'>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2020/11/30/kali%E4%B8%8Bsnort%E7%AE%80%E5%8D%95%E7%9A%84%E6%8A%A5%E8%AD%A6%E8%A7%84%E5%88%99/">
+        kali下snort简单的报警规则
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        snort简单的报警规则在官网下载规则包（需要注册登陆）https://www.snort.org/downloads
+
+我下载的是29151版本的
+
+
+将snort安装目录的包用规则包进行替换
+
+替换到snort-2.9.17文件夹内
+
+练习一条规则👉在rules/local.rules下进行规则配置。实现对内网的ICMP相关流量进行检测，并报警
+
+编辑文件的时候都采用vim的方式   ...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2020-11-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/snort/">snort</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2020/11/30/kali%E4%B8%8Bsnort%E7%AE%80%E5%8D%95%E7%9A%84%E6%8A%A5%E8%AD%A6%E8%A7%84%E5%88%99/'>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2020/11/30/kali%E4%B8%8Bsnort%E6%95%B0%E6%8D%AE%E5%8C%85%E5%97%85%E6%8E%A2/">
+        kali下snort数据包嗅探
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        kali下snort数据包嗅探常用的命令 显示IP和TCP/UDP/ICMP包头信息 
+snort -v    
+ 显示应用层的数据，输出包头信息的同时显示包的数据信息
+snort -vd 
+显示数据链路层的信息
+snort -vde
+
+更多命令参考snort手册http://www.kaiyuanba.cn/content/network/snort/Snortman.htm
+
+仅捕获同组...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2020-11-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/snort/">snort</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2020/11/30/kali%E4%B8%8Bsnort%E6%95%B0%E6%8D%AE%E5%8C%85%E5%97%85%E6%8E%A2/'>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2020/11/30/kali%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEsnort/">
+        kali安装配置snort
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        kali 下snort安装软件包，配置环境实验环境：kali-linux-2020.1 debian8 
+安装snort及其依赖包在官网上下载snort, daq
+https://www.snort.org/downloads
+snort-2.9.17.tar.gz
+
+daq-2.0.7.tar.gz
+
+进行安装包解压：
+
+tar -zxvf snort-2.9.17.tar.gz
+
+tar...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2020-11-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/snort/">snort</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2020/11/30/kali%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEsnort/'>
             阅读全文
           </a>
         </div>

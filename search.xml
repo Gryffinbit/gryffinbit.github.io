@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>活取证和死取证</title>
+      <link href="2020/12/19/%E6%B4%BB%E5%8F%96%E8%AF%81%E5%92%8C%E6%AD%BB%E5%8F%96%E8%AF%81/"/>
+      <url>2020/12/19/%E6%B4%BB%E5%8F%96%E8%AF%81%E5%92%8C%E6%AD%BB%E5%8F%96%E8%AF%81/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 取证 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>基于select模型的TCP服务器</title>
       <link href="2020/12/18/%E5%9F%BA%E4%BA%8Eselect%E6%A8%A1%E5%9E%8B%E7%9A%84TCP%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
       <url>2020/12/18/%E5%9F%BA%E4%BA%8Eselect%E6%A8%A1%E5%9E%8B%E7%9A%84TCP%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
@@ -142,12 +161,14 @@
       
       <categories>
           
-          <category> kali </category>
+          <category> 取证 </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> kali </tag>
             
             <tag> volatility </tag>
             
@@ -167,14 +188,14 @@
       
       <categories>
           
-          <category> kali </category>
+          <category> Issue </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 虚拟机 </tag>
+            <tag> kali </tag>
             
         </tags>
       
@@ -275,14 +296,14 @@
       
       <categories>
           
-          <category> kali </category>
+          <category> snort </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> snort </tag>
+            <tag> kali </tag>
             
         </tags>
       
@@ -300,14 +321,14 @@
       
       <categories>
           
-          <category> kali </category>
+          <category> snort </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> snort </tag>
+            <tag> kali </tag>
             
         </tags>
       
@@ -325,14 +346,14 @@
       
       <categories>
           
-          <category> kali </category>
+          <category> snort </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> snort </tag>
+            <tag> kali </tag>
             
         </tags>
       
@@ -350,14 +371,14 @@
       
       <categories>
           
-          <category> kali </category>
+          <category> snort </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> snort </tag>
+            <tag> kali </tag>
             
         </tags>
       
