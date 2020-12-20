@@ -21,6 +21,8 @@
   
   <title>活取证和死取证 - Gryffinbit</title>
   
+    <meta name="keywords" content="kali">
+  
 
   
 
@@ -494,7 +496,149 @@
 
 
   
-  
+  <h1 id="活取证和死取证"><a href="#活取证和死取证" class="headerlink" title="活取证和死取证"></a>活取证和死取证</h1><h2 id="实验软件下载"><a href="#实验软件下载" class="headerlink" title="实验软件下载"></a>实验软件下载</h2><p><a target="_blank" rel="noopener" href="https://gryffinbit.lanzous.com/iZMymji46yb">https://gryffinbit.lanzous.com/iZMymji46yb</a></p>
+<h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><p>1.理解“活取证”和“死取证”两类技术的差别和应用场合</p>
+<p>2.掌握“活取证”和“死取证”基本工具的使用方法</p>
+<h2 id="实验环境："><a href="#实验环境：" class="headerlink" title="实验环境："></a>实验环境：</h2><p>kali-Linux debian8</p>
+<p>Windows 7 professional</p>
+<h2 id="实验内容："><a href="#实验内容：" class="headerlink" title="实验内容："></a>实验内容：</h2><p>一.活取证:</p>
+<ol>
+<li>从内存还原文字</li>
+<li>从内存还原图片</li>
+<li>从内存中提取明文密码</li>
+</ol>
+<p>二.死取证:</p>
+<ol>
+<li>使用Kali live 制作光盘镜像</li>
+<li>使用 Autopsy 对硬盘镜像进行分析</li>
+</ol>
+<h2 id="实验过程："><a href="#实验过程：" class="headerlink" title="实验过程："></a>实验过程：</h2><h3 id="实验-1-使用-procdump-strings-从内存中还原文字"><a href="#实验-1-使用-procdump-strings-从内存中还原文字" class="headerlink" title="实验 1:使用 procdump+ strings 从内存中还原文字"></a>实验 <strong>1</strong>:使用 <strong>procdump+ strings</strong> 从内存中还原文字</h3><p>👉 Win7 系统下进行实验，以记事本程序为例。</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%81-0.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%81-0.png" srcset="data:image/png;base64,666"></p>
+<p>👉打开一个记事本，查看该程序的映像名和PID等信息。打开cmd，输入命令。然后找到notepad.exe</p>
+<pre><code class="bash">tasklist</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%81-1.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%81-1.png" srcset="data:image/png;base64,666"></p>
+<p>👉使用 procdump 工具提取 notepad 程序在内存中的镜像</p>
+<blockquote>
+<p>💡cd 到procdump64.exe 所在文件夹</p>
+</blockquote>
+<pre><code class="bash">procdump64.exe -ma notepad.exe notepad.dmp</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%81-2.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%81-2.png" srcset="data:image/png;base64,666"></p>
+<p>👉使用 strings 工具提取出其中的字符串，找到有用信息。</p>
+<pre><code class="bash">strings.exe notepad.dmp &gt; result.txt</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%813.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%813.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%814.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%814.png" srcset="data:image/png;base64,666"></p>
+<blockquote>
+<p>💡这不仅适用于 notepad 程序，只要当前系统中正在使用的文字处理软件，如:word、 outlook(邮件)等，都可以用相同的方法 dump 内存中数据内容。</p>
+</blockquote>
+<hr>
+<h3 id="实验-2-从内存还原图片"><a href="#实验-2-从内存还原图片" class="headerlink" title="实验 2:从内存还原图片"></a>实验 2:从内存还原图片</h3><ol>
+<li>从图画工具中打开</li>
+</ol>
+<p>👉用画图工具打开一幅图片，画图工具程序名是“mspaint.exe”</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%815.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%815.png" srcset="data:image/png;base64,666"></p>
+<p>👉用procdump抓取内存中的内容</p>
+<pre><code class="bash">procdump64.exe -ma mspaint.exe mspaint.dmp</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%816.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%816.png" srcset="data:image/png;base64,666"></p>
+<p>👉分析处理 mspaint.dmp 文件还是需要在 kali 系统中进行，将其拷贝到 kali 系统:</p>
+<p>👉kali 下提取图像信息使用的工具是 gimp(photoshop 的 linux 版)</p>
+<p>为避免找不到gimp包，先进行修复</p>
+<pre><code class="bash">apt --fix-broken install 
+apt-get install gimp</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%817.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%817.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%818.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%818.png" srcset="data:image/png;base64,666"></p>
+<p>👉给mspaint.dmp 改名为 mspaint.data</p>
+<p>gimp不能直接打开dmp文件，但是可以打开data文件，两种类型本质是一样的， 我们把抓取的 mspaint.dmp 改名为 mspaint.data</p>
+<pre><code class="bash">mv mspaint.dmp mspaint.data</code></pre>
+<p>👉然后用 gimp 打开 mspaint.data</p>
+<p>打开后显示的图片是一团混乱的像素点，通过调节宽度、高度以及位移三个参数，从混乱中寻找可能的图像</p>
+<blockquote>
+<p>💡如果我们知道元素图片的宽度和高度信息，可以先设定好这两个参数， 调节位移一个参数就可以了。（作弊方法)</p>
+</blockquote>
+<p>左上角找到gimp，运行</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%819.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%819.png" srcset="data:image/png;base64,666"></p>
+<p>打开data文件</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8110.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8110.png" srcset="data:image/png;base64,666"></p>
+<p>调整宽度、高度（已知这个图片是3840*2160）</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8111.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8111.png" srcset="data:image/png;base64,666"></p>
+<p>调整位移到合适的位置，显示完整图片</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8112.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8112.png" srcset="data:image/png;base64,666"></p>
+<ol start="2">
+<li>从远程桌面打开</li>
+</ol>
+<p>👉在目标系统中启动 mstsc(远程桌面程序)并登陆一台远程计算机</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8113.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8113.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8114.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8114.png" srcset="data:image/png;base64,666"></p>
+<p>👉抓取远程桌面的内存数据</p>
+<p>如果连接上远程计算机后，远程计算机的桌面都是以图像的形式在本地目标系统的 mstsc 程序中显示和处理，现在我们抓取远程桌面的内存数据:</p>
+<pre><code class="bash">procdump64.exe -ma mstsc.exe mstsc.dmp</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8115.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8115.png" srcset="data:image/png;base64,666"></p>
+<p>👉把 mstsc.dmp 拷贝到 kali 系统中进行处理</p>
+<p>处理过程与前面的例子是一样的，通过调整参数，可以获取下图的图像:</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8116.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8116.png" srcset="data:image/png;base64,666"></p>
+<hr>
+<h3 id="实验3-从内存中提取明文密码"><a href="#实验3-从内存中提取明文密码" class="headerlink" title="实验3: 从内存中提取明文密码"></a>实验3: 从内存中提取明文密码</h3><p>👉从管理用户令牌程序的内存提取用户密码</p>
+<p>Windows系统中当用户登陆后，系统会启动一个叫做lsass.exe的程序，管理用户令牌，在 lsass 程序中会存储有用户的明文密码，我们现在尝试使用 procdump 从 这个程序的内存中提取用户的密码。</p>
+<blockquote>
+<p>💡注意要以管理员权限打开终端程序</p>
+</blockquote>
+<pre><code class="bash">procdump64.exe -ma lsass.exe lsass.dmp</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8117.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8117.png" srcset="data:image/png;base64,666"></p>
+<p>👉获取到 dmp 文件后，使用 mimikatz 进行密码提取。</p>
+<p>把 lsass.dmp 文件拷贝到 mimikatz.exe 所在文件夹，双击打开 mimikatz.exe 程序。 输入::回车，可以查看 mimikatz 所有的模块，我们需要使用的模块是 sekurlsa。</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8118.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8118.png" srcset="data:image/png;base64,666"></p>
+<p>在依次使用命令</p>
+<pre><code class="bash">sekurlsa::minidump lsass.dmp 
+sekurlsa::logonPasswords</code></pre>
+<p>就可以将用户密码提取出来</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8119.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8119.png" srcset="data:image/png;base64,666"></p>
+<hr>
+<h3 id="实验4-死取证"><a href="#实验4-死取证" class="headerlink" title="实验4:死取证"></a>实验4:死取证</h3><ol>
+<li>使用 Live 版 Kali 系统中的 Guymager 来创建一台 Win7 虚拟机的硬盘镜像</li>
+</ol>
+<p>👉首先要将 Live 版 Kali 的 iso 文件装载到 Win7 虚拟机</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8120.jpg" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8120.jpg" srcset="data:image/png;base64,666"></p>
+<p>👉启动虚拟机，让电脑从光盘启动，进入 Live 版的 Kali 系统。</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8121.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8121.png" srcset="data:image/png;base64,666"></p>
+<p>👉选择进入 kali(取证模式)系统</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8122.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8122.png" srcset="data:image/png;base64,666"></p>
+<p>👉打开 guymager 程序:</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8123.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8123.png" srcset="data:image/png;base64,666"></p>
+<p>右键，选择acquire image</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8124.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8124.png" srcset="data:image/png;base64,666"></p>
+<p>选择start开始取证进程。</p>
+<hr>
+<ol start="2">
+<li>使用 Autopsy 对硬盘镜像进行分析</li>
+</ol>
+<blockquote>
+<p>Autopsy 是 Kali Linux 预安装的一款磁盘镜像分析工具。该工具可以对磁盘镜像 的卷和文件系统进行分析，支持 Unix 和 Windows 系统。Autopsy 是一个命令行 工具，也提供基于浏览器的图形界面。用户使用该工具，可以很轻松浏览镜像中的目录和文件，甚至是已删除的文件。同时，该工具提供强大的分析功能，允许用户直接分析磁盘块，关键字搜索，文件分类过滤。针对数字取证，该工具提供 镜像完整性验证、文件 MD5 比对、文件操作时间表、报告生成功能。 这里我们介绍 Autopsy 基于浏览器-服务器架构的使用方式。</p>
+</blockquote>
+<p>👉在 kali 终端输入 autopsy 回车，会启动 autopsy 的服务器端</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8125.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8125.png" srcset="data:image/png;base64,666"></p>
+<p>👉打开网页</p>
+<p>该服务器在端口 9999 进行侦听，可以使用浏览器访问。在浏览器地址栏输入上面网址，可以看到下面操作界面:</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8126.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8126.png" srcset="data:image/png;base64,666"></p>
+<p>👉新建case</p>
+<p>这款软件是按照网络犯罪取证的过程来设计的，所有操作都是以 case 作为基本 单元，首先要先创建一个新的 case:</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8127.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8127.png" srcset="data:image/png;base64,666"></p>
+<p>点击 NewCase 后，会提示新的 case 创建好了，显示文件目录和配置文件存放位置</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8128.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8128.png" srcset="data:image/png;base64,666"></p>
+<p>👉为这个 case 添加主机信息</p>
+<p>点击 ADD HOST 后，在下个页面完善主机信息:(这些信息不是必填的)</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8129.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8129.png" srcset="data:image/png;base64,666"></p>
+<p>下面是将硬盘镜像上传到新建的 case 中，点击 ADD IMAGE: (在这个实验中，我们使用网上的一个镜像——计算机取证参考数据集，下载网 址:<a target="_blank" rel="noopener" href="http://www.cfreds.nist.gov/Controlv1_0/control.dd">http://www.cfreds.nist.gov/Controlv1_0/control.dd</a>)</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8130.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8130.png" srcset="data:image/png;base64,666"></p>
+<blockquote>
+<p>control.dd只是一个磁盘的分区。 注意，将control.dd放在这里填写的位置，root文件下</p>
+</blockquote>
+<blockquote>
+<p>Import Method 三种方式:symlink(镜像放在原位置/root 中，如镜像文件移动， 这个 case 就无法再找到这个镜像继续进行分析了)，Move(把镜像从原位置剪 切到 Autopsy 的 evidence locker 中，evidence locker 可以对其中的数据进行写保 护，但是如果 move 过程中如果断电，镜像会被损坏)，Copy(把镜像从拷贝一 份到 Autopsy 的 evidence locker 中，比较保险，一般选 copy)</p>
+</blockquote>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8131.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8131.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8132.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8132.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8133.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8133.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8134.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8134.png" srcset="data:image/png;base64,666"></p>
+
   
   
     
@@ -528,10 +672,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-19T09:38:19+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-20T12:40:05+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年12月19日</p>
+    <p>更新于：2020年12月20日</p>
   </a>
 </div>
 
@@ -539,6 +683,9 @@
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/kali/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>kali</p></a></div>
+
 
         
       
@@ -647,6 +794,20 @@
     
 
 
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%BD%AF%E4%BB%B6%E4%B8%8B%E8%BD%BD"><span class="toc-text">实验软件下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84"><span class="toc-text">实验目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83%EF%BC%9A"><span class="toc-text">实验环境：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9%EF%BC%9A"><span class="toc-text">实验内容：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="toc-text">实验过程：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C-1-%E4%BD%BF%E7%94%A8-procdump-strings-%E4%BB%8E%E5%86%85%E5%AD%98%E4%B8%AD%E8%BF%98%E5%8E%9F%E6%96%87%E5%AD%97"><span class="toc-text">实验 1:使用 procdump+ strings 从内存中还原文字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C-2-%E4%BB%8E%E5%86%85%E5%AD%98%E8%BF%98%E5%8E%9F%E5%9B%BE%E7%89%87"><span class="toc-text">实验 2:从内存还原图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C3-%E4%BB%8E%E5%86%85%E5%AD%98%E4%B8%AD%E6%8F%90%E5%8F%96%E6%98%8E%E6%96%87%E5%AF%86%E7%A0%81"><span class="toc-text">实验3: 从内存中提取明文密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C4-%E6%AD%BB%E5%8F%96%E8%AF%81"><span class="toc-text">实验4:死取证</span></a></li></ol></li></ol>
+    </div>
+  </section>
 
 
   
