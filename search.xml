@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>基于Web的SSL连接设置</title>
+      <link href="2020/12/21/%E5%9F%BA%E4%BA%8EWeb%E7%9A%84SSL%E8%BF%9E%E6%8E%A5%E8%AE%BE%E7%BD%AE/"/>
+      <url>2020/12/21/%E5%9F%BA%E4%BA%8EWeb%E7%9A%84SSL%E8%BF%9E%E6%8E%A5%E8%AE%BE%E7%BD%AE/</url>
+      
+        <content type="html"><![CDATA[<h1 id="实验四：基于Web的SSL连接设置"><a href="#实验四：基于Web的SSL连接设置" class="headerlink" title="实验四：基于Web的SSL连接设置"></a>实验四：基于Web的SSL连接设置</h1><h2 id="实验目的："><a href="#实验目的：" class="headerlink" title="实验目的："></a>实验目的：</h2><p>学习基于Web的SSL连接设置，加深SSL的理解</p><h2 id="实验原理："><a href="#实验原理：" class="headerlink" title="实验原理："></a>实验原理：</h2><p>数字证书概念</p><p>将用户身份ID与其所持有的公钥PK绑定，再由CA对该身份及对应公钥的组合{ID||PK}进行数字签名得到S，将{签名S||身份ID||公钥PK}加以存储。</p><h2 id="实验内容："><a href="#实验内容：" class="headerlink" title="实验内容："></a>实验内容：</h2><p><strong>Web服务器证书的申请和安装（步骤要点）</strong> 配置Web服务器（管理工具，Internet信息管理，IIS）</p><ol><li>新建网站（“网站”右键，注意IP地址选择，读写等权限）</li></ol><p>暂停新建的网站，启用根CA默认网站</p><ol><li>新建网站属性，证书服务向导生成“证书申请书”</li></ol><p>Web证书服务向导</p><p>再在右键属性中，目录安全性，证书服务器</p><ol><li>企业根CAIP/certsrv，递交证书申请书，根CA生成证书并下载。</li><li>新建网站属性，启用Web证书</li><li>客户端验证证书</li></ol><h2 id="实验环境："><a href="#实验环境：" class="headerlink" title="实验环境："></a>实验环境：</h2><p>宿主机： macOS Catalina</p><p>虚拟机：Windows Sever 2003</p><h2 id="实验过程："><a href="#实验过程：" class="headerlink" title="实验过程："></a>实验过程：</h2><h3 id="1-新建Web服务器网站"><a href="#1-新建Web服务器网站" class="headerlink" title="1.新建Web服务器网站"></a>1.新建Web服务器网站</h3><p>预先配置：配置服务器，并开启IIS服务</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-1.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-1.png" srcset="data:image/png;base64,666"></p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-2.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-2.png" srcset="data:image/png;base64,666"></p><p>管理工具→Internet信息管理→IIS</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-3.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-3.png" srcset="data:image/png;base64,666"></p><p>新建网站（“网站”右键，注意IP地址选择，读写等权限） 局域网卡IP</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-4.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-4.png" srcset="data:image/png;base64,666"></p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-5.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-5.png" srcset="data:image/png;base64,666"></p><h3 id="2-Web服务器生成“证书申请书"><a href="#2-Web服务器生成“证书申请书" class="headerlink" title="2. Web服务器生成“证书申请书"></a>2. Web服务器生成“证书申请书</h3><p>新建网站属性，证书服务向导生成“证书申请书”，进入Web证书服务向导</p><p>右键属性→目录安全性→服务器证书</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5--6.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5--6.png" srcset="data:image/png;base64,666"></p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-6.5.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-6.5.png" srcset="data:image/png;base64,666"></p><p>IIS证书向导 新建证书→现在准备证书请求（证书名称、部门）→生成“证书请求文件”（用于向根CA申请证书）</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-7.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-7.png" srcset="data:image/png;base64,666"></p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-8.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-8.png" srcset="data:image/png;base64,666"></p><h3 id="3-递交“证书申请书”并获取证书"><a href="#3-递交“证书申请书”并获取证书" class="headerlink" title="3. 递交“证书申请书”并获取证书"></a>3. 递交“证书申请书”并获取证书</h3><p>企业根CAIP/certsrv，递交证书请求文件，根CA生成证书并下载。</p><p>高级证书申请→使用base64编码→复制证书请求文件内容→粘贴进网页空白→提交</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-9.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-9.png" srcset="data:image/png;base64,666"></p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-10.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-10.png" srcset="data:image/png;base64,666"></p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-11.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-11.png" srcset="data:image/png;base64,666"></p><p>企业根CAIP/certsrv，递交证书请求文件，根CA生成证书并下载。 证书颁发→下载本地</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-12.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-12.png" srcset="data:image/png;base64,666"></p><h3 id="4-应用Web服务器证书"><a href="#4-应用Web服务器证书" class="headerlink" title="4. 应用Web服务器证书"></a>4. 应用Web服务器证书</h3><p>新建网站属性，启用Web证书</p><p>属性中→目录安全性→证书服务器→处理挂起请求并安装证书→确认SSL端口443</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-13.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-13.png" srcset="data:image/png;base64,666"></p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-14.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-14.png" srcset="data:image/png;base64,666"></p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-15.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-15.png" srcset="data:image/png;base64,666"></p><p>证书摘要，属性可以查看</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-16.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-16.png" srcset="data:image/png;base64,666"></p><p>属性中→目录安全性→编辑“要求安全通道”→客户端“忽略客户端证书” （客户端拥有证书之后，可以接受或要求）</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-17.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-17.png" srcset="data:image/png;base64,666"></p><h3 id="5-客户端验证Web服务器证书"><a href="#5-客户端验证Web服务器证书" class="headerlink" title="5. 客户端验证Web服务器证书"></a>5. 客户端验证Web服务器证书</h3><p>暂停根CA默认网站，启用新建的网站</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-18.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-18.png" srcset="data:image/png;base64,666"></p><p>客户端浏览器，<a href="http://企业根caip/">http://企业根CAIP</a>，受到SSL提醒</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-19.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-19.png" srcset="data:image/png;base64,666"></p><p>客户端浏览器，<a href="https://企业根caip/">https://企业根CAIP</a></p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-20.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-20.png" srcset="data:image/png;base64,666"></p><p>客户端验证证书 客户端浏览器，<a href="https://企业根caip/">https://企业根CAIP</a></p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-21.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-21.png" srcset="data:image/png;base64,666"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SSL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>活取证和死取证</title>
       <link href="2020/12/19/%E6%B4%BB%E5%8F%96%E8%AF%81%E5%92%8C%E6%AD%BB%E5%8F%96%E8%AF%81/"/>
       <url>2020/12/19/%E6%B4%BB%E5%8F%96%E8%AF%81%E5%92%8C%E6%AD%BB%E5%8F%96%E8%AF%81/</url>
@@ -115,7 +140,7 @@
       
       <categories>
           
-          <category> 证书 </category>
+          <category> 网络安全技术 </category>
           
       </categories>
       
@@ -123,6 +148,8 @@
         <tags>
             
             <tag> CA </tag>
+            
+            <tag> 证书 </tag>
             
         </tags>
       
