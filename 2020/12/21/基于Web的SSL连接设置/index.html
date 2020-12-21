@@ -501,18 +501,25 @@
 <p>将用户身份ID与其所持有的公钥PK绑定，再由CA对该身份及对应公钥的组合{ID||PK}进行数字签名得到S，将{签名S||身份ID||公钥PK}加以存储。</p>
 <h2 id="实验内容："><a href="#实验内容：" class="headerlink" title="实验内容："></a>实验内容：</h2><p><strong>Web服务器证书的申请和安装（步骤要点）</strong> 配置Web服务器（管理工具，Internet信息管理，IIS）</p>
 <ol>
-<li>新建网站（“网站”右键，注意IP地址选择，读写等权限）</li>
-</ol>
-<p>暂停新建的网站，启用根CA默认网站</p>
-<ol>
-<li>新建网站属性，证书服务向导生成“证书申请书”</li>
-</ol>
-<p>Web证书服务向导</p>
-<p>再在右键属性中，目录安全性，证书服务器</p>
-<ol>
-<li>企业根CAIP/certsrv，递交证书申请书，根CA生成证书并下载。</li>
-<li>新建网站属性，启用Web证书</li>
-<li>客户端验证证书</li>
+<li><p>新建网站（“网站”右键，注意IP地址选择，读写等权限）</p>
+<ul>
+<li>暂停新建的网站，启用根CA默认网站</li>
+</ul>
+</li>
+<li><p>新建网站属性，证书服务向导生成“证书申请书”</p>
+<ul>
+<li><p>Web证书服务向导</p>
+</li>
+<li><p>再在右键属性中，目录安全性，证书服务器</p>
+</li>
+</ul>
+</li>
+<li><p>企业根CAIP/certsrv，递交证书申请书，根CA生成证书并下载。</p>
+</li>
+<li><p>新建网站属性，启用Web证书</p>
+</li>
+<li><p>客户端验证证书</p>
+</li>
 </ol>
 <h2 id="实验环境："><a href="#实验环境：" class="headerlink" title="实验环境："></a>实验环境：</h2><p>宿主机： macOS Catalina</p>
 <p>虚拟机：Windows Sever 2003</p>
@@ -536,7 +543,8 @@
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-9.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-9.png" srcset="data:image/png;base64,666"></p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-10.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-10.png" srcset="data:image/png;base64,666"></p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-11.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-11.png" srcset="data:image/png;base64,666"></p>
-<p>企业根CAIP/certsrv，递交证书请求文件，根CA生成证书并下载。 证书颁发→下载本地</p>
+<p>企业根CAIP/certsrv，递交证书请求文件，根CA生成证书并下载。</p>
+<p>证书颁发→下载本地</p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-12.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-12.png" srcset="data:image/png;base64,666"></p>
 <h3 id="4-应用Web服务器证书"><a href="#4-应用Web服务器证书" class="headerlink" title="4. 应用Web服务器证书"></a>4. 应用Web服务器证书</h3><p>新建网站属性，启用Web证书</p>
 <p>属性中→目录安全性→证书服务器→处理挂起请求并安装证书→确认SSL端口443</p>
@@ -589,7 +597,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-21T20:28:32+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-21T20:33:14+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2020年12月21日</p>
