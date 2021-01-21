@@ -40,6 +40,8 @@
       
       <categories>
           
+          <category> 实验 </category>
+          
           <category> 网络安全技术 </category>
           
       </categories>
@@ -65,7 +67,9 @@
       
       <categories>
           
-          <category> 取证 </category>
+          <category> 实验 </category>
+          
+          <category> 入侵检测与取证 </category>
           
       </categories>
       
@@ -73,6 +77,8 @@
         <tags>
             
             <tag> kali </tag>
+            
+            <tag> 取证 </tag>
             
         </tags>
       
@@ -89,6 +95,8 @@
       
       
       <categories>
+          
+          <category> 实验 </category>
           
           <category> 网络编程 </category>
           
@@ -142,6 +150,8 @@
       
       <categories>
           
+          <category> 实验 </category>
+          
           <category> 网络编程 </category>
           
       </categories>
@@ -168,6 +178,8 @@
       
       
       <categories>
+          
+          <category> 实验 </category>
           
           <category> 网络安全技术 </category>
           
@@ -196,6 +208,8 @@
       
       <categories>
           
+          <category> 实验 </category>
+          
           <category> 密码学 </category>
           
       </categories>
@@ -223,7 +237,9 @@
       
       <categories>
           
-          <category> 取证 </category>
+          <category> 实验 </category>
+          
+          <category> 入侵检测与取证 </category>
           
       </categories>
       
@@ -233,6 +249,8 @@
             <tag> kali </tag>
             
             <tag> volatility </tag>
+            
+            <tag> 取证 </tag>
             
         </tags>
       
@@ -250,7 +268,7 @@
       
       <categories>
           
-          <category> Issue </category>
+          <category> 报错调试 </category>
           
       </categories>
       
@@ -275,7 +293,9 @@
       
       <categories>
           
-          <category> IDS </category>
+          <category> 实验 </category>
+          
+          <category> 入侵检测与取证 </category>
           
       </categories>
       
@@ -283,6 +303,8 @@
         <tags>
             
             <tag> GNS3 </tag>
+            
+            <tag> IDS </tag>
             
         </tags>
       
@@ -299,6 +321,8 @@
       
       
       <categories>
+          
+          <category> 实验 </category>
           
           <category> 网络编程 </category>
           
@@ -329,6 +353,8 @@
       
       <categories>
           
+          <category> 实验 </category>
+          
           <category> 网络编程 </category>
           
       </categories>
@@ -358,12 +384,16 @@
       
       <categories>
           
-          <category> snort </category>
+          <category> 实验 </category>
+          
+          <category> 入侵检测与取证 </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> snort </tag>
             
             <tag> kali </tag>
             
@@ -383,12 +413,16 @@
       
       <categories>
           
-          <category> snort </category>
+          <category> 实验 </category>
+          
+          <category> 入侵检测与取证 </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> snort </tag>
             
             <tag> kali </tag>
             
@@ -408,12 +442,16 @@
       
       <categories>
           
-          <category> snort </category>
+          <category> 实验 </category>
+          
+          <category> 入侵检测与取证 </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> snort </tag>
             
             <tag> kali </tag>
             
@@ -433,12 +471,16 @@
       
       <categories>
           
-          <category> snort </category>
+          <category> 实验 </category>
+          
+          <category> 入侵检测与取证 </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> snort </tag>
             
             <tag> kali </tag>
             
@@ -558,6 +600,8 @@
       
       <categories>
           
+          <category> 实验 </category>
+          
           <category> 密码学 </category>
           
       </categories>
@@ -583,6 +627,8 @@
       
       <categories>
           
+          <category> 实验 </category>
+          
           <category> 密码学 </category>
           
       </categories>
@@ -607,6 +653,8 @@
       
       
       <categories>
+          
+          <category> 实验 </category>
           
           <category> 密码学 </category>
           
@@ -883,6 +931,8 @@
       
       <categories>
           
+          <category> 实验 </category>
+          
           <category> 密码学 </category>
           
       </categories>
@@ -907,6 +957,8 @@
       
       
       <categories>
+          
+          <category> 实验 </category>
           
           <category> 密码学 </category>
           

@@ -21,7 +21,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>分类：snort - Gryffinbit</title>
+  <title>分类：网络编程 - Gryffinbit</title>
   
 
   
@@ -456,17 +456,21 @@
   
     
     <h2 class="article-title" >
-      <a href="/2020/11/30/kali%E4%B8%8Bsnort%E6%8A%A5%E8%AD%A6%E8%A7%84%E5%88%99%E8%AE%BE%E8%AE%A1%E5%92%8C%E6%B5%8B%E8%AF%95/">
-        kali下snort报警规则设计和测试
+      <a href="/2020/12/18/%E5%9F%BA%E4%BA%8Eselect%E6%A8%A1%E5%9E%8B%E7%9A%84TCP%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+        基于select模型的TCP服务器
       </a>
     </h2>
   
   <div class='md'>
     
       
-        snort报警规则设计和测试捕捉关键字Search记录打开Google网页的动作👉编写一个规则，通过捕捉关键字Search记录打开Google网页的动作，并将符合规则的数据包输出到Alert文件中
-在Snort的Rules文件夹下创建myrule文件，输入如下内容：
-alert tcp any any -&gt; 172.16.68.139 any (msg:&quot;Google Se...
+        基于select模型的TCP服务器实验工程文件下载https://gryffinbit.lanzous.com/iSR7Gjhg68b
+实验目的
+熟悉非阻塞套接字的工作模式
+理解select模型的基本思路
+
+实验环境Windows10 x64，Visual Studio 2017
+实验要求将第三章的点对点的C/S模型改用select模型。为了方便理解，我们只是关注可读套接字，也就是selec...
       
     
   </div>
@@ -474,15 +478,15 @@ alert tcp any any -&gt; 172.16.68.139 any (msg:&quot;Google Se...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time>2020-11-30</time>
+        <time>2020-12-18</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/snort/">snort</a>
+          <a class="category-link" href="/categories/%E5%AE%9E%E9%AA%8C/">实验</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AE%9E%E9%AA%8C/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">网络编程</a>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2020/11/30/kali%E4%B8%8Bsnort%E6%8A%A5%E8%AD%A6%E8%A7%84%E5%88%99%E8%AE%BE%E8%AE%A1%E5%92%8C%E6%B5%8B%E8%AF%95/'>
+          <a class='readmore' href='/2020/12/18/%E5%9F%BA%E4%BA%8Eselect%E6%A8%A1%E5%9E%8B%E7%9A%84TCP%E6%9C%8D%E5%8A%A1%E5%99%A8/'>
             阅读全文
           </a>
         </div>
@@ -504,26 +508,21 @@ alert tcp any any -&gt; 172.16.68.139 any (msg:&quot;Google Se...
   
     
     <h2 class="article-title" >
-      <a href="/2020/11/30/kali%E4%B8%8Bsnort%E7%AE%80%E5%8D%95%E7%9A%84%E6%8A%A5%E8%AD%A6%E8%A7%84%E5%88%99/">
-        kali下snort简单的报警规则
+      <a href="/2020/12/09/MFC-WinInet%E7%B1%BB%E5%AE%9E%E7%8E%B0FTP%E5%AE%A2%E6%88%B7%E7%AB%AF/">
+        MFC WinInet类实现FTP客户端
       </a>
     </h2>
   
   <div class='md'>
     
       
-        snort简单的报警规则在官网下载规则包（需要注册登陆）https://www.snort.org/downloads
+        
+本次实验的工程文件下载：https://gryffinbit.lanzous.com/idK4Hj7kb4b
 
-我下载的是29151版本的
-
-
-将snort安装目录的包用规则包进行替换
-
-替换到snort-2.9.17文件夹内
-
-练习一条规则👉在rules/local.rules下进行规则配置。实现对内网的ICMP相关流量进行检测，并报警
-
-编辑文件的时候都采用vim的方式   ...
+实验目标程序能实现基本的 FTP 客户机端功能，能登录 FTP 服务器，显示登录客户机目录下的文件和 目录名，能从该目录中选择下载服务器的文件，也能向服务器上传文件。
+实验目的
+学习如何创建一个 Internet 会话，即创建 CInternetSession 对象;
+学习如何建...
       
     
   </div>
@@ -531,15 +530,15 @@ alert tcp any any -&gt; 172.16.68.139 any (msg:&quot;Google Se...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time>2020-11-30</time>
+        <time>2020-12-09</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/snort/">snort</a>
+          <a class="category-link" href="/categories/%E5%AE%9E%E9%AA%8C/">实验</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AE%9E%E9%AA%8C/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">网络编程</a>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2020/11/30/kali%E4%B8%8Bsnort%E7%AE%80%E5%8D%95%E7%9A%84%E6%8A%A5%E8%AD%A6%E8%A7%84%E5%88%99/'>
+          <a class='readmore' href='/2020/12/09/MFC-WinInet%E7%B1%BB%E5%AE%9E%E7%8E%B0FTP%E5%AE%A2%E6%88%B7%E7%AB%AF/'>
             阅读全文
           </a>
         </div>
@@ -561,24 +560,23 @@ alert tcp any any -&gt; 172.16.68.139 any (msg:&quot;Google Se...
   
     
     <h2 class="article-title" >
-      <a href="/2020/11/30/kali%E4%B8%8Bsnort%E6%95%B0%E6%8D%AE%E5%8C%85%E5%97%85%E6%8E%A2/">
-        kali下snort数据包嗅探
+      <a href="/2020/12/01/%E7%94%A8CAsyncSocket%E7%B1%BB%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E5%AE%A4%E7%A8%8B%E5%BA%8F/">
+        用CAsyncSocket类实现聊天室程序
       </a>
     </h2>
   
   <div class='md'>
     
       
-        kali下snort数据包嗅探常用的命令 显示IP和TCP/UDP/ICMP包头信息 
-snort -v    
- 显示应用层的数据，输出包头信息的同时显示包的数据信息
-snort -vd 
-显示数据链路层的信息
-snort -vde
+        实验目标简单的聊天室程序，采用C/S模型，分为客户端和服务器端程序。是点对点通信的程序。客户端和服务器端通过网络交换聊天的字符串内容，并显示。
+实验目的
+学习如何从CAsyncSocket类派生出自己的WinSock类。
+理解WinSock类与应用程序框架的关系
+学习流式套接字对象的使用
+学习处理网络事件的方法
+了解MFC编程
 
-更多命令参考snort手册http://www.kaiyuanba.cn/content/network/snort/Snortman.htm
-
-仅捕获同组...
+实验环境Windows10 x64，Visual Studio...
       
     
   </div>
@@ -586,15 +584,15 @@ snort -vde
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time>2020-11-30</time>
+        <time>2020-12-01</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/snort/">snort</a>
+          <a class="category-link" href="/categories/%E5%AE%9E%E9%AA%8C/">实验</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AE%9E%E9%AA%8C/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">网络编程</a>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2020/11/30/kali%E4%B8%8Bsnort%E6%95%B0%E6%8D%AE%E5%8C%85%E5%97%85%E6%8E%A2/'>
+          <a class='readmore' href='/2020/12/01/%E7%94%A8CAsyncSocket%E7%B1%BB%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E5%AE%A4%E7%A8%8B%E5%BA%8F/'>
             阅读全文
           </a>
         </div>
@@ -616,26 +614,20 @@ snort -vde
   
     
     <h2 class="article-title" >
-      <a href="/2020/11/30/kali%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEsnort/">
-        kali安装配置snort
+      <a href="/2020/12/01/%E7%94%A8CSocket%E7%B1%BB%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E5%AE%A4%E7%A8%8B%E5%BA%8F/">
+        用CSocket类实现聊天室程序
       </a>
     </h2>
   
   <div class='md'>
     
       
-        kali 下snort安装软件包，配置环境实验环境：kali-linux-2020.1 debian8 
-安装snort及其依赖包在官网上下载snort, daq
-https://www.snort.org/downloads
-snort-2.9.17.tar.gz
-
-daq-2.0.7.tar.gz
-
-进行安装包解压：
-
-tar -zxvf snort-2.9.17.tar.gz
-
-tar...
+        实验目标采用C/S模型，分为客户端和服务器端程序。服务器可以与多个客户端建立连接，为多个客户机服务。服务器动态统计进入聊天室的客户端数量，并显示。会显示进入和退出聊天室的动态。
+采用链表来管理客户机的套接字对象。
+实验目的
+学习如何从CSocket类派生出自己的WinSock类。
+学习如何利用CSocketFile类、CArchive类和CSocket类的合作来实现网络进程之间的数据传输。
+...
       
     
   </div>
@@ -643,15 +635,15 @@ tar...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time>2020-11-30</time>
+        <time>2020-12-01</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/snort/">snort</a>
+          <a class="category-link" href="/categories/%E5%AE%9E%E9%AA%8C/">实验</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AE%9E%E9%AA%8C/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">网络编程</a>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2020/11/30/kali%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEsnort/'>
+          <a class='readmore' href='/2020/12/01/%E7%94%A8CSocket%E7%B1%BB%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E5%AE%A4%E7%A8%8B%E5%BA%8F/'>
             阅读全文
           </a>
         </div>
@@ -768,24 +760,9 @@ tar...
       <ul class="entry navigation">
         
           <li><a class="flat-box"
-            title="/categories/IDS/" href="/categories/IDS/"
-            id="categoriesIDS"
-            ><div class='name'>IDS</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Issue/" href="/categories/Issue/"
-            id="categoriesIssue"
-            ><div class='name'>Issue</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
             title="/categories/Misc/" href="/categories/Misc/"
             id="categoriesMisc"
             ><div class='name'>Misc</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/snort/" href="/categories/snort/"
-            id="categoriessnort"
-            ><div class='name'>snort</div><div class='badge'>(4)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/write-up/" href="/categories/write-up/"
@@ -793,14 +770,39 @@ tar...
             ><div class='name'>write up</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
-            title="/categories/%E5%8F%96%E8%AF%81/" href="/categories/%E5%8F%96%E8%AF%81/"
-            id="categoriesE58F96E8AF81"
-            ><div class='name'>取证</div><div class='badge'>(2)</div></a></li>
+            title="/categories/%E5%AE%9E%E9%AA%8C/" href="/categories/%E5%AE%9E%E9%AA%8C/"
+            id="categoriesE5AE9EE9AA8C"
+            ><div class='name'>实验</div><div class='badge'>(19)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E5%AE%9E%E9%AA%8C/%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E4%B8%8E%E5%8F%96%E8%AF%81/" href="/categories/%E5%AE%9E%E9%AA%8C/%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E4%B8%8E%E5%8F%96%E8%AF%81/"
+            id="categoriesE5AE9EE9AA8CE585A5E4BEB5E6A380E6B58BE4B88EE58F96E8AF81"
+            ><div class='name'>入侵检测与取证</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E5%AE%9E%E9%AA%8C/%E5%AF%86%E7%A0%81%E5%AD%A6/" href="/categories/%E5%AE%9E%E9%AA%8C/%E5%AF%86%E7%A0%81%E5%AD%A6/"
+            id="categoriesE5AE9EE9AA8CE5AF86E7A081E5ADA6"
+            ><div class='name'>密码学</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E5%AE%9E%E9%AA%8C/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/" href="/categories/%E5%AE%9E%E9%AA%8C/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/"
+            id="categoriesE5AE9EE9AA8CE7BD91E7BB9CE5AE89E585A8E68A80E69CAF"
+            ><div class='name'>网络安全技术</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E5%AE%9E%E9%AA%8C/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" href="/categories/%E5%AE%9E%E9%AA%8C/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"
+            id="categoriesE5AE9EE9AA8CE7BD91E7BB9CE7BC96E7A88B"
+            ><div class='name'>网络编程</div><div class='badge'>(4)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"
             id="categoriesE5AF86E7A081E5ADA6"
-            ><div class='name'>密码学</div><div class='badge'>(14)</div></a></li>
+            ><div class='name'>密码学</div><div class='badge'>(8)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%8A%A5%E9%94%99%E8%B0%83%E8%AF%95/" href="/categories/%E6%8A%A5%E9%94%99%E8%B0%83%E8%AF%95/"
+            id="categoriesE68AA5E99499E8B083E8AF95"
+            ><div class='name'>报错调试</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/" href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/"
@@ -816,16 +818,6 @@ tar...
             title="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/" href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/"
             id="categoriesE69C9FE69CABE88083E8AF95E7BD91E7BB9CE5AE89E585A8E68A80E69CAF"
             ><div class='name'>网络安全技术</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/" href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/"
-            id="categoriesE7BD91E7BB9CE5AE89E585A8E68A80E69CAF"
-            ><div class='name'>网络安全技术</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" href="/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"
-            id="categoriesE7BD91E7BB9CE7BC96E7A88B"
-            ><div class='name'>网络编程</div><div class='badge'>(4)</div></a></li>
         
       </ul>
     </div>
@@ -849,7 +841,7 @@ tar...
 
 
     <div class='content'>
-      <a href="/tags/AES/" style="font-size: 14px; color: #999">AES</a> <a href="/tags/CA/" style="font-size: 14px; color: #999">CA</a> <a href="/tags/CAsyncSocket/" style="font-size: 14px; color: #999">CAsyncSocket</a> <a href="/tags/CSocket/" style="font-size: 14px; color: #999">CSocket</a> <a href="/tags/DES/" style="font-size: 14px; color: #999">DES</a> <a href="/tags/GNS3/" style="font-size: 14px; color: #999">GNS3</a> <a href="/tags/MFC/" style="font-size: 19px; color: #777">MFC</a> <a href="/tags/PGP/" style="font-size: 14px; color: #999">PGP</a> <a href="/tags/Python/" style="font-size: 14px; color: #999">Python</a> <a href="/tags/RSA/" style="font-size: 19px; color: #777">RSA</a> <a href="/tags/SHA-1/" style="font-size: 14px; color: #999">SHA-1</a> <a href="/tags/SSL/" style="font-size: 14px; color: #999">SSL</a> <a href="/tags/WinInet/" style="font-size: 14px; color: #999">WinInet</a> <a href="/tags/WinSock/" style="font-size: 19px; color: #777">WinSock</a> <a href="/tags/gmpy2/" style="font-size: 14px; color: #999">gmpy2</a> <a href="/tags/kali/" style="font-size: 24px; color: #555">kali</a> <a href="/tags/volatility/" style="font-size: 14px; color: #999">volatility</a> <a href="/tags/%E5%85%AC%E9%92%A5%E4%BD%93%E5%88%B6/" style="font-size: 14px; color: #999">公钥体制</a> <a href="/tags/%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81/" style="font-size: 19px; color: #777">古典密码</a> <a href="/tags/%E5%9B%BE%E7%89%87/" style="font-size: 21.5px; color: #666">图片</a> <a href="/tags/%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B0/" style="font-size: 14px; color: #999">散列函数</a> <a href="/tags/%E6%9D%82/" style="font-size: 14px; color: #999">杂</a> <a href="/tags/%E6%B5%81%E5%AF%86%E7%A0%81/" style="font-size: 14px; color: #999">流密码</a> <a href="/tags/%E7%AC%AC%E4%B8%80%E5%B1%8A%E4%BF%A1%E5%AE%89%E5%A4%A7%E6%8C%91%E6%88%98/" style="font-size: 14px; color: #999">第一届信安大挑战</a> <a href="/tags/%E8%80%83%E7%82%B9/" style="font-size: 16.5px; color: #888">考点</a> <a href="/tags/%E8%AF%81%E4%B9%A6/" style="font-size: 14px; color: #999">证书</a>
+      <a href="/tags/AES/" style="font-size: 14px; color: #999">AES</a> <a href="/tags/CA/" style="font-size: 14px; color: #999">CA</a> <a href="/tags/CAsyncSocket/" style="font-size: 14px; color: #999">CAsyncSocket</a> <a href="/tags/CSocket/" style="font-size: 14px; color: #999">CSocket</a> <a href="/tags/DES/" style="font-size: 14px; color: #999">DES</a> <a href="/tags/GNS3/" style="font-size: 14px; color: #999">GNS3</a> <a href="/tags/IDS/" style="font-size: 14px; color: #999">IDS</a> <a href="/tags/MFC/" style="font-size: 18px; color: #7e7e7e">MFC</a> <a href="/tags/PGP/" style="font-size: 14px; color: #999">PGP</a> <a href="/tags/Python/" style="font-size: 14px; color: #999">Python</a> <a href="/tags/RSA/" style="font-size: 18px; color: #7e7e7e">RSA</a> <a href="/tags/SHA-1/" style="font-size: 14px; color: #999">SHA-1</a> <a href="/tags/SSL/" style="font-size: 14px; color: #999">SSL</a> <a href="/tags/WinInet/" style="font-size: 14px; color: #999">WinInet</a> <a href="/tags/WinSock/" style="font-size: 18px; color: #7e7e7e">WinSock</a> <a href="/tags/gmpy2/" style="font-size: 14px; color: #999">gmpy2</a> <a href="/tags/kali/" style="font-size: 24px; color: #555">kali</a> <a href="/tags/snort/" style="font-size: 20px; color: #707070">snort</a> <a href="/tags/volatility/" style="font-size: 14px; color: #999">volatility</a> <a href="/tags/%E5%85%AC%E9%92%A5%E4%BD%93%E5%88%B6/" style="font-size: 14px; color: #999">公钥体制</a> <a href="/tags/%E5%8F%96%E8%AF%81/" style="font-size: 16px; color: #8b8b8b">取证</a> <a href="/tags/%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81/" style="font-size: 18px; color: #7e7e7e">古典密码</a> <a href="/tags/%E5%9B%BE%E7%89%87/" style="font-size: 22px; color: #636363">图片</a> <a href="/tags/%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B0/" style="font-size: 14px; color: #999">散列函数</a> <a href="/tags/%E6%9D%82/" style="font-size: 14px; color: #999">杂</a> <a href="/tags/%E6%B5%81%E5%AF%86%E7%A0%81/" style="font-size: 14px; color: #999">流密码</a> <a href="/tags/%E7%AC%AC%E4%B8%80%E5%B1%8A%E4%BF%A1%E5%AE%89%E5%A4%A7%E6%8C%91%E6%88%98/" style="font-size: 14px; color: #999">第一届信安大挑战</a> <a href="/tags/%E8%80%83%E7%82%B9/" style="font-size: 16px; color: #8b8b8b">考点</a> <a href="/tags/%E8%AF%81%E4%B9%A6/" style="font-size: 14px; color: #999">证书</a>
     </div>
   </section>
 
