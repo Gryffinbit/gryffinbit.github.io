@@ -19,9 +19,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>基于Web的SSL连接设置 - Gryffinbit</title>
+  <title>网络安全技术期末考点 - Gryffinbit</title>
   
-    <meta name="keywords" content="SSL">
+    <meta name="keywords" content="网络安全技术">
   
 
   
@@ -437,7 +437,7 @@
     
     
       <h1 class="title">
-        基于Web的SSL连接设置
+        网络安全技术期末考点
       </h1>
       <div class='new-meta-box'>
         
@@ -457,7 +457,7 @@
   <div class='new-meta-item category'>
     <a class='notlink'>
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/">网络安全技术</a>
+      <a class="category-link" href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/">期末考试</a>
     </a>
   </div>
 
@@ -468,7 +468,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年12月21日</p>
+    <p>发布于：2021年1月20日</p>
   </a>
 </div>
 
@@ -479,7 +479,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="基于Web的SSL连接设置" data-path="/2020/12/21/%E5%9F%BA%E4%BA%8EWeb%E7%9A%84SSL%E8%BF%9E%E6%8E%A5%E8%AE%BE%E7%BD%AE/">
+      <div id="lc-pv" data-title="网络安全技术期末考点" data-path="/2021/01/20/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -496,73 +496,562 @@
 
 
   
-  <h1 id="实验四：基于Web的SSL连接设置"><a href="#实验四：基于Web的SSL连接设置" class="headerlink" title="实验四：基于Web的SSL连接设置"></a>实验四：基于Web的SSL连接设置</h1><h2 id="实验目的："><a href="#实验目的：" class="headerlink" title="实验目的："></a>实验目的：</h2><p>学习基于Web的SSL连接设置，加深SSL的理解</p>
-<h2 id="实验原理："><a href="#实验原理：" class="headerlink" title="实验原理："></a>实验原理：</h2><p>数字证书概念</p>
-<p>将用户身份ID与其所持有的公钥PK绑定，再由CA对该身份及对应公钥的组合{ID||PK}进行数字签名得到S，将{签名S||身份ID||公钥PK}加以存储。</p>
-<h2 id="实验内容："><a href="#实验内容：" class="headerlink" title="实验内容："></a>实验内容：</h2><p><strong>Web服务器证书的申请和安装（步骤要点）</strong> 配置Web服务器（管理工具，Internet信息管理，IIS）</p>
-<ol>
-<li><p>新建网站（“网站”右键，注意IP地址选择，读写等权限）</p>
-<ul>
-<li>暂停新建的网站，启用根CA默认网站</li>
-</ul>
+  <h1 id="考点"><a href="#考点" class="headerlink" title="考点"></a>考点</h1><h2 id="填空题（15）"><a href="#填空题（15）" class="headerlink" title="填空题（15）"></a>填空题（15）</h2><ol>
+<li><p><strong>网络安全目标</strong></p>
+<p>机密性、完整性、可用性、合法性</p>
 </li>
-<li><p>新建网站属性，证书服务向导生成“证书申请书”</p>
-<ul>
-<li><p>Web证书服务向导</p>
+<li><p><strong>网络安全威胁</strong></p>
+<p>Impersonation冒充：伪造他人身份</p>
+<p>Replay重放：把合法的信息重新发一遍</p>
+<p>Denial of Service拒绝服务攻击</p>
 </li>
-<li><p>再在右键属性中，目录安全性，证书服务器</p>
+<li><p><strong>强制访问控制</strong></p>
+<p>最高秘密Top Secert &gt; 秘密Secret &gt; 机密Confidential</p>
 </li>
-</ul>
+<li><p><strong>Land攻击</strong></p>
+<p>相同的目的IP地址和源地址，loop死锁</p>
 </li>
-<li><p>企业根CAIP/certsrv，递交证书申请书，根CA生成证书并下载。</p>
+<li><p><strong>传输层的套接字：</strong></p>
+<p>工作在运输层</p>
 </li>
-<li><p>新建网站属性，启用Web证书</p>
+<li><p><strong>PKI的目标：</strong></p>
+<p>身份认证、信息完整性、不可抵赖性</p>
 </li>
-<li><p>客户端验证证书</p>
+<li><p><strong>数字证书含有：</strong></p>
+<p>有效期限、颁发者身份、数字证书算法（如何为它签名的RSA、Hash、Sha256等）</p>
+</li>
+<li><p><strong>sesion Key ：</strong></p>
+<p>会话密钥</p>
+</li>
+<li><p><strong>GSM认证</strong></p>
+<p>导致伪基站的产生的原因：用户对基站的证明是单向的</p>
+<p>（用户向基站证明自己是合法用户，而基站不会向用户证明）</p>
+</li>
+<li><p><strong>VPN</strong></p>
+<p>“虚拟”的专用网。 优势：安全、低成本、可扩展、可管理</p>
 </li>
 </ol>
-<h2 id="实验环境："><a href="#实验环境：" class="headerlink" title="实验环境："></a>实验环境：</h2><p>宿主机： macOS Catalina</p>
-<p>虚拟机：Windows Sever 2003</p>
-<h2 id="实验过程："><a href="#实验过程：" class="headerlink" title="实验过程："></a>实验过程：</h2><h3 id="1-新建Web服务器网站"><a href="#1-新建Web服务器网站" class="headerlink" title="1.新建Web服务器网站"></a>1.新建Web服务器网站</h3><p>预先配置：配置服务器，并开启IIS服务</p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-1.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-1.png" srcset="data:image/png;base64,666"></p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-2.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-2.png" srcset="data:image/png;base64,666"></p>
-<p>管理工具→Internet信息管理→IIS</p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-3.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-3.png" srcset="data:image/png;base64,666"></p>
-<p>新建网站（“网站”右键，注意IP地址选择，读写等权限） 局域网卡IP</p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-4.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-4.png" srcset="data:image/png;base64,666"></p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-5.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-5.png" srcset="data:image/png;base64,666"></p>
-<h3 id="2-Web服务器生成“证书申请书"><a href="#2-Web服务器生成“证书申请书" class="headerlink" title="2. Web服务器生成“证书申请书"></a>2. Web服务器生成“证书申请书</h3><p>新建网站属性，证书服务向导生成“证书申请书”，进入Web证书服务向导</p>
-<p>右键属性→目录安全性→服务器证书</p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5--6.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5--6.png" srcset="data:image/png;base64,666"></p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-6.5.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-6.5.png" srcset="data:image/png;base64,666"></p>
-<p>IIS证书向导 新建证书→现在准备证书请求（证书名称、部门）→生成“证书请求文件”（用于向根CA申请证书）</p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-7.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-7.png" srcset="data:image/png;base64,666"></p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-8.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-8.png" srcset="data:image/png;base64,666"></p>
-<h3 id="3-递交“证书申请书”并获取证书"><a href="#3-递交“证书申请书”并获取证书" class="headerlink" title="3. 递交“证书申请书”并获取证书"></a>3. 递交“证书申请书”并获取证书</h3><p>企业根CAIP/certsrv，递交证书请求文件，根CA生成证书并下载。</p>
-<p>高级证书申请→使用base64编码→复制证书请求文件内容→粘贴进网页空白→提交</p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-9.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-9.png" srcset="data:image/png;base64,666"></p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-10.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-10.png" srcset="data:image/png;base64,666"></p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-11.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-11.png" srcset="data:image/png;base64,666"></p>
-<p>企业根CAIP/certsrv，递交证书请求文件，根CA生成证书并下载。</p>
-<p>证书颁发→下载本地</p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-12.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-12.png" srcset="data:image/png;base64,666"></p>
-<h3 id="4-应用Web服务器证书"><a href="#4-应用Web服务器证书" class="headerlink" title="4. 应用Web服务器证书"></a>4. 应用Web服务器证书</h3><p>新建网站属性，启用Web证书</p>
-<p>属性中→目录安全性→证书服务器→处理挂起请求并安装证书→确认SSL端口443</p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-13.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-13.png" srcset="data:image/png;base64,666"></p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-14.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-14.png" srcset="data:image/png;base64,666"></p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-15.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-15.png" srcset="data:image/png;base64,666"></p>
-<p>证书摘要，属性可以查看</p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-16.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-16.png" srcset="data:image/png;base64,666"></p>
-<p>属性中→目录安全性→编辑“要求安全通道”→客户端“忽略客户端证书” （客户端拥有证书之后，可以接受或要求）</p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-17.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-17.png" srcset="data:image/png;base64,666"></p>
-<h3 id="5-客户端验证Web服务器证书"><a href="#5-客户端验证Web服务器证书" class="headerlink" title="5. 客户端验证Web服务器证书"></a>5. 客户端验证Web服务器证书</h3><p>暂停根CA默认网站，启用新建的网站</p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-18.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-18.png" srcset="data:image/png;base64,666"></p>
-<p>客户端浏览器，<a target="_blank" rel="noopener" href="http://企业根caip/">http://企业根CAIP</a>，受到SSL提醒</p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-19.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-19.png" srcset="data:image/png;base64,666"></p>
-<p>客户端浏览器，<a target="_blank" rel="noopener" href="https://企业根caip/">https://企业根CAIP</a></p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-20.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-20.png" srcset="data:image/png;base64,666"></p>
-<p>客户端验证证书 客户端浏览器，<a target="_blank" rel="noopener" href="https://企业根caip/">https://企业根CAIP</a></p>
-<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-21.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/SSL%E8%BF%9E%E6%8E%A5-21.png" srcset="data:image/png;base64,666"></p>
+<h2 id="选择题（10）"><a href="#选择题（10）" class="headerlink" title="选择题（10）"></a>选择题（10）</h2><ol>
+<li><p><strong>抵抗重放攻击</strong></p>
+<p>一次一密</p>
+</li>
+<li><p><strong>死亡ping</strong></p>
+<p>在目的端重组IP分片，形成超大IP数据包，超过最大尺寸导致缓冲区溢出。</p>
+</li>
+<li><p><strong>抵抗中间人攻击：</strong></p>
+<p>数字签名</p>
+</li>
+<li><p><strong>密码协议的种类</strong></p>
+<ol>
+<li>密码建立协议</li>
+<li>认证协议</li>
+<li>可认证密钥建立</li>
+</ol>
+<p><em>没有一次一密</em></p>
+</li>
+<li><p>企业根CA需要活动目录技术支持（独立根证书不需要）</p>
+</li>
+<li><p><strong>网络加密</strong></p>
+<p>链路加密、结点加密、端到端加密</p>
+<p>（不是网络加密的是？）</p>
+</li>
+<li><p><strong>可信的密钥分发中心</strong></p>
+<p>性能和安全的瓶颈</p>
+</li>
+<li><p><strong>动态包过滤：</strong></p>
+<p>（按需）</p>
+<p>监控数据包交换并且根据需要来进行有效控制通信</p>
+</li>
+</ol>
+<h2 id="判断题（5）"><a href="#判断题（5）" class="headerlink" title="判断题（5）"></a>判断题（5）</h2><ol>
+<li><p><strong>kerberos协议：</strong></p>
+<p>可认证的票据，使用的是对称加密，而不是公钥加密</p>
+</li>
+<li><p><strong>可信的密钥分发中心：</strong></p>
+<p>性能和安全的瓶颈</p>
+</li>
+</ol>
+<h2 id="简答题（4道）"><a href="#简答题（4道）" class="headerlink" title="简答题（4道）"></a>简答题（4道）</h2><h3 id="ARP原理，ARP欺骗"><a href="#ARP原理，ARP欺骗" class="headerlink" title="ARP原理，ARP欺骗"></a>ARP原理，ARP欺骗</h3><p>ARP：地址解析，在局域网中，将IP地址转换成MAC地址</p>
+<p>ARP欺骗：通过欺骗局域网内<strong>访问者</strong>PC的网关MAC地址，使访问者PC错以为攻击者更改后的MAC地址是网关的MAC，导致网络不通。此种攻击可让攻击者获取局域网上的数据包甚至可篡改数据包，且可让网络上特定计算机或所有计算机无法正常连线。</p>
+<p>🌻 修改数据包中的目的MAC地址，攻击者将被攻击者的MAC地址替换成自己的MAC地址</p>
+<h3 id="ICMP反弹Smurf攻击"><a href="#ICMP反弹Smurf攻击" class="headerlink" title="ICMP反弹Smurf攻击"></a>ICMP反弹Smurf攻击</h3><p>使用将源地址设置成受害网络的广播地址的ICMP应答请求（ping）数据包，来淹没受害主机，最终导致该网络的所有主机都对此ICMP应答请求做出答复，导致网络阻塞。</p>
+<p><strong>ICMP回显泛洪攻击</strong></p>
+<p>发送假冒ping数据包，其中：</p>
+<ol>
+<li>源地址设置为受害者的IP地址</li>
+<li>目的地址设置为子网的广播地址（向整个局域网传播）</li>
+</ol>
+<p>如此，ping回显数据流堵塞，耗尽被攻击者的带宽，无法提供正常服务，进而拒绝服务。</p>
+<hr>
+<h3 id="桥接或仅主机网卡的虚拟机不能和同子网的宿主机获得ping回显，为什么？"><a href="#桥接或仅主机网卡的虚拟机不能和同子网的宿主机获得ping回显，为什么？" class="headerlink" title="桥接或仅主机网卡的虚拟机不能和同子网的宿主机获得ping回显，为什么？"></a>桥接或仅主机网卡的虚拟机不能和同子网的宿主机获得ping回显，为什么？</h3><p>因为ICMP回显请求在防火墙中没有被启用</p>
+<hr>
+<h3 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h3><p><strong>防火墙的概念</strong>：</p>
+<p>在内部专用网络和公共网络之间</p>
+<p><strong>丢弃数据包</strong>：</p>
+<p>不予处理并且无响应消息</p>
+<p><strong>静态的包过滤系统：</strong></p>
+<p>NAT保护内部计算机不受外部攻击</p>
+<p><strong>防火墙分为：</strong></p>
+<ol>
+<li>电路级网关  2. 应用层网关  3. 包过滤技术（静态和动态）</li>
+</ol>
+<p>应用级网关在OSI模型中的应用层过滤数据，电路级网关在会话层，包过滤技术在网络层</p>
+<h2 id="综合大题（2道）"><a href="#综合大题（2道）" class="headerlink" title="综合大题（2道）"></a>综合大题（2道）</h2><h3 id="如何保证完整性和机密性？"><a href="#如何保证完整性和机密性？" class="headerlink" title="如何保证完整性和机密性？"></a>如何保证完整性和机密性？</h3><p><strong>完整性：web服务器</strong></p>
+<p>底层信息流上不去。用户：低级。web服务器：高级</p>
+<ul>
+<li>不下读：阻止坏信息从较低完整性等级向上流（服务器拒绝读坏信息）</li>
+<li>不上写：阻止坏信息从下方流向较高完整性等级（不能向服务器写坏信息）</li>
+</ul>
+<p><strong>机密性：防火墙</strong></p>
+<p>高层信息流不下来。防火墙内部：高级。防火墙外部：低级</p>
+<ul>
+<li>不上读：阻止好信息从较高机密级别向下流（防火墙外无法访问防火墙内）</li>
+<li>不下写：阻止好信息从上方流向较低机密级（防火墙内无法写出防火墙外）</li>
+</ul>
+<hr>
+<h3 id="中间人攻击？"><a href="#中间人攻击？" class="headerlink" title="中间人攻击？"></a>中间人攻击？</h3><p>在没有察觉的情况下，攻击者拦截被攻击者的通信，劫持发送方的消息替换并且转发给接收方。如此，通信双方认为自己已经和对方完成密钥协商，但是实际上是各自和攻击者进行了密钥协商。</p>
+<p>用数字签名和公钥绑在一起发送，抵御中间人攻击</p>
+<p><strong>联锁协议（互锁协议，interlock protocol）抵抗中间人攻击</strong></p>
+<p>可以挫败双方密钥交换时的中间人攻击。</p>
+<p>安全特性：仅有加密消息的一半无法解密</p>
+<p>过程：</p>
+<ol>
+<li>如果尝试拦截会话，敌手既无法解密A发送消息密文的一半，又无法使用B的公钥重新加密一半的消息</li>
+<li>敌手不得不等待接收到两个完整的密文，然而这个时候B已经可以使用自己的私钥来解密这个消息</li>
+<li>B成功获取到A的正确消息，后续将直接丢弃敌手的消息</li>
+</ol>
+<h1 id="补充笔记"><a href="#补充笔记" class="headerlink" title="补充笔记"></a>补充笔记</h1><h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><h3 id="信息安全4个基本目标"><a href="#信息安全4个基本目标" class="headerlink" title="信息安全4个基本目标"></a>信息安全4个基本目标</h3><ul>
+<li><p>保密性</p>
+<p>不被泄露</p>
+</li>
+<li><p>完整性</p>
+<p>数据一致性</p>
+</li>
+<li><p>可用性</p>
+<p>合法用户不会无故被拒绝</p>
+</li>
+<li><p>合法使用</p>
+<p>不被非授权使用、不被非授权的人使用</p>
+</li>
+</ul>
+<h3 id="安全威胁来源"><a href="#安全威胁来源" class="headerlink" title="安全威胁来源"></a>安全威胁来源</h3><ul>
+<li>信息泄露</li>
+<li>完整性破坏</li>
+<li>拒绝服务</li>
+<li>非法使用</li>
+</ul>
+<h3 id="主要可实现威胁"><a href="#主要可实现威胁" class="headerlink" title="主要可实现威胁"></a>主要可实现威胁</h3><ul>
+<li><p>假冒</p>
+<p>未授权实体盗取合法用户的权利和特权</p>
+</li>
+<li><p>旁路控制</p>
+<p>为获取非授权的权限，发掘系统缺陷或漏洞，绕过守卫者的防线</p>
+</li>
+<li><p>授权侵犯</p>
+<p>有授权的人，将其权限用于非授权的目的，通常称为内部攻击</p>
+<ul>
+<li><p>特洛伊木马</p>
+<p>含有不易察觉的或无害程序段，执行的时候会破坏用户安全性</p>
+</li>
+<li><p>陷门</p>
+<p>在系统或其部件设置机关，在输入特定的数据时，允许违反安全策略</p>
+</li>
+</ul>
+</li>
+<li><p>截获/修改</p>
+<p>某一通讯数据，在传输中被改变、删除或替换</p>
+</li>
+<li><p>消息重发</p>
+<p>对所截获的某次合法的数据备份，出于非法目的重新发送该数据</p>
+</li>
+<li><p>业务否认</p>
+<p>参与某次通讯交换的一方，事后否认曾经发生过此次信息交换</p>
+</li>
+<li><p>流量分析</p>
+<p>对通信流量进行观察，可能泄露机密信息</p>
+</li>
+</ul>
+<h3 id="安全防护措施"><a href="#安全防护措施" class="headerlink" title="安全防护措施"></a>安全防护措施</h3><ul>
+<li><p>物理安全</p>
+<p>环境的安全、物理的访问控制措施、设备防篡改等</p>
+</li>
+<li><p>人员安全</p>
+<p>岗位划分</p>
+</li>
+<li><p>管理安全</p>
+<p>对设备进行管理、泄露信息事件的追查、审计</p>
+</li>
+<li><p>媒体安全</p>
+<p>对受保护信息的存储、磁盘的销毁</p>
+</li>
+<li><p>辐射安全</p>
+<p>射频等其他电磁的控制</p>
+</li>
+<li><p>生命周期控制</p>
+<p>对系统的设计、安全评估、记录和日志进行控制</p>
+</li>
+</ul>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h3 id="访问控制策略（安全策略）"><a href="#访问控制策略（安全策略）" class="headerlink" title="访问控制策略（安全策略）"></a>访问控制策略（安全策略）</h3><p><strong>自主性访问</strong></p>
+<p>Who and When访问控制列表、文件授权</p>
+<p>![%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%20552aa0ba0e144390b16b916febbb89d3/Screen_Shot_2020-09-27_at_9.56.01_PM.png](/Users/gryffinbit/Desktop/网络安全技术/网络安全技术与实践笔记 552aa0ba0e144390b16b916febbb89d3/Screen_Shot_2020-09-27_at_9.56.01_PM.png)</p>
+<p>允许用户自主在系统中规定谁可以取它的资源</p>
+<ul>
+<li>基于身份</li>
+<li>基于任务</li>
+</ul>
+<p><strong>强制性访问</strong></p>
+<p>用户的权限和客体的安全属性固定，安全属性由管理员设置，用户不能修改</p>
+<p>客体访问限制：根据客体信息的敏感标记和访问主体的访问等级</p>
+<p>客体：各种设备等</p>
+<ul>
+<li>多等级访问</li>
+</ul>
+<p><strong>基于角色访问控制</strong></p>
+<p>会因为不同的作业功能产生不同的角色，执行某项操作的权限会被赋予特定的角色</p>
+<p>一个主体可以有多个角色，一个角色也可以分配不同主体。关注角色、用户、权限的关系</p>
+<p>![%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%20552aa0ba0e144390b16b916febbb89d3/Screen_Shot_2020-09-28_at_9.15.39_AM.png](/Users/gryffinbit/Desktop/网络安全技术/网络安全技术与实践笔记 552aa0ba0e144390b16b916febbb89d3/Screen_Shot_2020-09-28_at_9.15.39_AM.png)</p>
+<ul>
+<li><p>运行方式：角色继承。</p>
+<ul>
+<li><p>受限继承关系：一个角色只能直接继承另一个角色资浅的角色权限</p>
+</li>
+<li><p>间接继承：不受限制</p>
+</li>
+<li><p>一般继承关系：一个角色能直接继承多于一个资浅角色的权</p>
+<p>![%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%20552aa0ba0e144390b16b916febbb89d3/Screen_Shot_2020-09-28_at_9.19.43_AM.png](/Users/gryffinbit/Desktop/网络安全技术/网络安全技术与实践笔记 552aa0ba0e144390b16b916febbb89d3/Screen_Shot_2020-09-28_at_9.19.43_AM.png)</p>
+</li>
+</ul>
+<p>![%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%20552aa0ba0e144390b16b916febbb89d3/Screen_Shot_2020-09-28_at_9.20.07_AM.png](/Users/gryffinbit/Desktop/网络安全技术/网络安全技术与实践笔记 552aa0ba0e144390b16b916febbb89d3/Screen_Shot_2020-09-28_at_9.20.07_AM.png)</p>
+</li>
+</ul>
+<hr>
+<h3 id="安全攻击的分类"><a href="#安全攻击的分类" class="headerlink" title="安全攻击的分类"></a>安全攻击的分类</h3><p><strong>被动攻击</strong></p>
+<p>对传输信息的窃听和监测</p>
+<ul>
+<li>信息泄露</li>
+<li>流量分析</li>
+</ul>
+<p><strong>主动攻击</strong></p>
+<ul>
+<li><p>伪装攻击</p>
+<p>某个实体伪装成另外的实体，将获取的认证信息重放，以获得某实体的权限</p>
+</li>
+<li><p>重放攻击</p>
+<p>将获得的信息再次发送，以在非授权的情况下进行传输</p>
+<p>![%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%20552aa0ba0e144390b16b916febbb89d3/Screen_Shot_2020-09-28_at_5.00.51_PM.png](/Users/gryffinbit/Desktop/网络安全技术/网络安全技术与实践笔记 552aa0ba0e144390b16b916febbb89d3/Screen_Shot_2020-09-28_at_5.00.51_PM.png)</p>
+</li>
+<li><p>消息篡改</p>
+<p>修改或延迟消息传输，达到非授权的目的</p>
+</li>
+<li><p>拒绝服务</p>
+<p>破坏某个网络使其瘫痪或过载以降低性能。</p>
+<ul>
+<li>Dos<ul>
+<li>过度使用服务，使软件硬件过度运行，网络连接超出其容量</li>
+<li>造成关机或系统瘫痪或降低服务质量</li>
+</ul>
+</li>
+<li>DDos（分布式拒绝服务攻击）<ul>
+<li>使用多个internet主机同时向一个目标发起攻击</li>
+</ul>
+</li>
+<li>减轻攻击强度措施<ul>
+<li>过滤不良数据包</li>
+<li>追查关闭攻击站点</li>
+<li>提高接收数据处理、增加硬件和网络扩容</li>
+</ul>
+</li>
+</ul>
+<p>![%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%20552aa0ba0e144390b16b916febbb89d3/Screen_Shot_2020-09-28_at_5.02.19_PM.png](/Users/gryffinbit/Desktop/网络安全技术/网络安全技术与实践笔记 552aa0ba0e144390b16b916febbb89d3/Screen_Shot_2020-09-28_at_5.02.19_PM.png)</p>
+</li>
+</ul>
+<hr>
+<h3 id="网络攻击常见形式"><a href="#网络攻击常见形式" class="headerlink" title="网络攻击常见形式"></a>网络攻击常见形式</h3><p><strong>口令窃取</strong></p>
+<ul>
+<li>已知</li>
+<li>字典攻击</li>
+<li>窃听合法终端间的会话</li>
+</ul>
+<p><strong>欺骗攻击</strong></p>
+<ul>
+<li>社工欺骗</li>
+</ul>
+<p><strong>缺陷和后门</strong></p>
+<ul>
+<li>蠕虫病毒<ul>
+<li>向守护程序发送新的代码，向缓冲区注入大量数据，直到gets堆栈中的返回地址覆盖，则返回时会执行入侵者的代码</li>
+<li>缓冲区溢出攻击</li>
+<li>缺陷：程序中的某些代码不能满足特定的要求</li>
+</ul>
+</li>
+</ul>
+<p><strong>认证失败</strong></p>
+<ul>
+<li>源地址有效性的验证机制，在某些场合可以发挥作用，但是如果黑客攻击欺骗了地址，让消息看起来好像来自本地，这样就躲过了攻击</li>
+</ul>
+<p><strong>协议缺陷</strong></p>
+<p><strong>信息泄露</strong></p>
+<p><strong>指数攻击</strong></p>
+<ul>
+<li>病毒和蠕虫</li>
+</ul>
+<h3 id="安全服务"><a href="#安全服务" class="headerlink" title="安全服务"></a>安全服务</h3><ul>
+<li><p>认证</p>
+<p>确保通信实体就是他们所声称的实体</p>
+</li>
+<li><p>访问控制</p>
+<p>防止非授权的访问</p>
+</li>
+<li><p>数据保密性</p>
+<p>保护数据，防止非授权的泄露</p>
+</li>
+<li><p>数据完整性</p>
+<p>保证收到的数据不被删除、插入、重发、修改</p>
+</li>
+<li><p>不可否认性</p>
+<p>确保通信一方没有否认的行为</p>
+</li>
+</ul>
+<h3 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h3><ul>
+<li><p><strong>信息安全的3个基本目标是：</strong></p>
+<p>保密性、完整性、可用性、合法使用</p>
+</li>
+<li><p><strong>网络中存在的4种基本安全威胁:</strong></p>
+<p>有信息泄露、完整性破坏、拒绝服务、非法使用</p>
+</li>
+<li><p><strong>X.800定义的5类安全服务：</strong></p>
+<p>认证、访问控制、数据保密性、数据完整信息、不可否认性</p>
+</li>
+<li><p><strong>X.800定义的8种特定的安全机制是：</strong></p>
+<p>加密、数字签名、访问控制、数据完整性、认证交换、流量填充、路由控制、公证</p>
+</li>
+<li><p><strong>简述通信安全、计算机安全、网络安全之间的联系与区别</strong></p>
+<p>网络安全：双方共同使用通信协议来建立逻辑信息通道，保护信息传输以防止攻击者威胁消息的保密性、完整性、真实性。</p>
+<p>安全模型（由6个功能实体组成）：消息发送方（信源）、消息接收方（信宿）、安全变换、信息通道、可信第三方、攻击者</p>
+<p>通信安全：在发送的过程中，保证消息能够安全到达，不被截获、篡改、替换。</p>
+<p>计算机安全：信源、信宿自己的计算机不被恶意代码攻击</p>
+<hr>
+</li>
+<li><p><strong>在选课系统中，存在教师、学生、管理员3类用户。需要适时进行系统访问、数据输入和管理。采用自主访问控制、强制访问控制和基于角色访问控制，可以使用的有哪些？哪一种时间和存储成本较低？</strong></p>
+<p><strong>自主访问控制</strong>是可以由用户自主的决定谁可以访问它的资源。</p>
+<p><strong>强制访问控制</strong>是只能按照已经规定好的权限去访问。</p>
+<p><strong>基于角色访问</strong>，是执行某项操作的权限会被赋予特定的角色。</p>
+<p><strong>管理员</strong>可以使用<strong>自主访问控制，</strong>便于进行资源的分配和管理，以及权限的设定。</p>
+<p><strong>教师</strong>可以是<strong>基于角色访问</strong>，被赋予一定的权限，进行数据的输入。</p>
+<p><strong>学生</strong>采取<strong>强制访问控制</strong>，只能按照已经设定好的权限，来对选课系统进行访问。</p>
+<p>基于角色的访问控制时间和存储成本比较低。根据选课需求和后续功能增加等问题，基于角色的访问控制会更灵活，应用范围更广。</p>
+</li>
+</ul>
+<hr>
+<hr>
+<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><h3 id="TCP-IP协议族"><a href="#TCP-IP协议族" class="headerlink" title="TCP/IP协议族"></a>TCP/IP协议族</h3><p>网际协议（internet protocol，IP）是TCP/IP协议族的核心</p>
+<ul>
+<li><p>网络接口层（数据链路层、物理层）</p>
+<p>TCP/IP模型的最底层</p>
+</li>
+<li><p>网际层（网络层）</p>
+<ul>
+<li><p>IP协议</p>
+<p>网际协议（internet protocol，IP）是网际层最重要的协议</p>
+<ul>
+<li><p>传递中易被监听、窃取。</p>
+<p>应该对IP数据报进行加密</p>
+</li>
+<li><p>IP层没有采取措施保证传递的正确性，可能会被修改数据报的内容。</p>
+<p>应对数据报的内容采取完整性检查机制</p>
+</li>
+<li><p>IP欺骗攻击</p>
+<p>源地址鉴别机制加以防御</p>
+<p>Land攻击：通过发送精心构造的、具有相同源地址和目标地址的欺骗数据包，致使缺乏相应防护机制的目标设备瘫痪。</p>
+</li>
+<li><p>在数据报传输时分段重组的过程中，注入大量病态小数据报，影响包过滤器正常工作</p>
+<p>防火墙能重组分段的数据报，检查其内容</p>
+</li>
+<li><p>用定向广播的目的地址的IP数据报来攻击不同类型的主机</p>
+<p>配置路由时进制发送定向广播数据包的功能</p>
+</li>
+</ul>
+</li>
+<li><p>ARP协议</p>
+<p>地址解析协议（address resolution protocol , ARP）根据IP地址获取物理地址（MAC地址）的TCP/IP协议</p>
+<ul>
+<li><p>ARP欺骗</p>
+<p>应在交换机上配置802.1x协议，这样攻击者连接交换机的时候需要进行身份认证；</p>
+<p>建立静态ARP表</p>
+</li>
+</ul>
+</li>
+<li><p>ICMP协议</p>
+<p>控制报文协议（internet control message protocol），错误处理、消息处理协议</p>
+<ul>
+<li>通知主机到底目的地的最佳路径，报告路由故障</li>
+<li>监控工具ping和tracert的重要组成部分</li>
+<li>是差错和控制报文协议，用于传输差错报文和控制报文</li>
+</ul>
+<hr>
+<ul>
+<li><p>ICMP重定向攻击</p>
+<p>利用ICMP对消息进行重定向，使目标主机受到连接劫持和拒绝服务等攻击；</p>
+<p>重定向消息一般由仅主机来进行。仅当消息直接来自路由器的时候，才由路由器进行重定向。若当网管使用ICMP来创建通往目的地址的新路由，会产生安全问题</p>
+</li>
+<li><p>ICMP路由器发现攻击</p>
+<p>ICMP在进行路由发现的时候，并不会对应答方进行验证。可能会遭受中间人攻击，假冒是应答方。</p>
+</li>
+<li><p>防火墙穿越攻击</p>
+<p>攻击者穿越防火墙的访问控制列表和规则集，获取过滤的内容和方式。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>传输层（传输层）</p>
+<p>仅为梗概，详情见goodnotes</p>
+<ul>
+<li><p>TCP</p>
+<p>控制传输协议（Transmission Control Protocol，TCP）面向连接的可靠的传输层协议</p>
+<ul>
+<li>建立连接时三次握手</li>
+</ul>
+<p>![%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%20552aa0ba0e144390b16b916febbb89d3/Untitled.png](/Users/gryffinbit/Desktop/网络安全技术/网络安全技术与实践笔记 552aa0ba0e144390b16b916febbb89d3/Untitled.png)</p>
+<ul>
+<li><p>存在的攻击方式</p>
+<ul>
+<li><p>SYN Flood</p>
+<p>发生在三次握手过程中。 一种不能建立正常的连接，使用户得不到响应的Dos攻击。</p>
+<p>攻击者不断向服务器发送TCP的连接请求SYN，使其处于半开放状态，无法接受其他的正常连接。</p>
+<p>应该在服务器前端部署安全防护，如防火墙，来过滤掉数据包</p>
+</li>
+<li><p>TCP会话劫持</p>
+<p>由于TCP协议不对数据包进行加密和认证而发生的，获取非授权的权限的攻击方式</p>
+<p>TCP确定数据包是否真实，是根据数据包中的32位序列号。如果攻击者能预测目标主机的起始序列号，伪造有效接收窗口报文，就能欺骗主机</p>
+<p>![%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%20552aa0ba0e144390b16b916febbb89d3/Screen_Shot_2020-09-30_at_11.16.39_AM.png](/Users/gryffinbit/Desktop/网络安全技术/网络安全技术与实践笔记 552aa0ba0e144390b16b916febbb89d3/Screen_Shot_2020-09-30_at_11.16.39_AM.png)</p>
+<p>应该在TCP建立连接时，用一个随机数作为起始序列号</p>
+</li>
+<li><p>拥塞控制攻击</p>
+<p>发生在建立连接后的数据阶段，利用TCP拥塞控制，降低正常传输能力的一种攻击</p>
+<p>TCP的拥塞控制是为了防止过多的数据注入网络，攻击者会制造关键节点的拥塞以触发该机制。使其触发窗口慢启动，来降低正常的传输能力。</p>
+<p>网管应该实时监控网络异常流量</p>
+</li>
+<li><p>欺骗IP地址获得远程非法授权访问 （综合运用SYN Flood和TCP会话劫持）</p>
+<p>B授予A某些权限，X要得到与A相同的权限</p>
+<ol>
+<li>X假冒A和B建立连接，（X假冒A的IP地址），使B相信消息是A发来的</li>
+<li>阻止A向B报告网络认证系统的故障</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>UDP</p>
+<p>用户数据报协议（User Datagram Protocol，UDP）无连接的传输层协议，提供面向事务的不可靠信息传送</p>
+<ul>
+<li><p>特点</p>
+<ul>
+<li>无需连接传输高效</li>
+<li>无拥塞控制的不可靠传输</li>
+<li>数据报首部仅8字节</li>
+<li>网络拥塞不会降低发送速率</li>
+</ul>
+</li>
+<li><p>安全问题</p>
+<ul>
+<li><p>UDP Flood —-大量包阻塞目标主机</p>
+<p>向攻击目标发送大量UDP小包，使网络设备忙于应对UDP报文，系统资源使用率飙高，设备不能提供正常服务或直接死机。</p>
+<p>防护：</p>
+<ul>
+<li>根据攻击包大小，设定包碎片重组大小，通常不小于1500</li>
+<li>攻击端口是业务端口，设置UDP最大包来过滤异常流量</li>
+<li>攻击端口为非业务端口，先建立TCP连接</li>
+</ul>
+</li>
+<li><p>UDP Fraggle攻击  ——正常响应阻塞目标主机</p>
+<p>向子网广播地址发送UDP包，端口号为7，目的是占用目标主机网络带宽</p>
+<p>攻方IP地址=广播地址</p>
+<p>若开启功能：广播地址的所有主机，向目标主机返回收到的包，使其不断回应UDP报文呢，系统资源使用率飙增，不能正常服务或死机。</p>
+<p>若关闭功能：每一个都生成ICMP不可达信息，大量ICMP拥塞网络</p>
+<p>防护：进入防火墙，目的端口为7或19的UDP报文拒绝</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>应用层（应用层、表示层、会话层）</p>
+<ul>
+<li><p>HTTP（端口TCP 80）</p>
+<p>超文本传输协议（Hyper Text Transfer Protocol，HTTP）客户端和服务器端请求和应答的标准</p>
+<ul>
+<li><p>明文传输</p>
+</li>
+<li><p>安全隐患</p>
+<ul>
+<li>传输的是明文，没有加密，网络嗅探工具就可以获取传输数据</li>
+<li>无状态连接，唯一的完整性检验是检查报文头部的数据传输长度。可发动中间人攻击</li>
+</ul>
+<p>![%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%20552aa0ba0e144390b16b916febbb89d3/Screen_Shot_2020-09-30_at_4.56.17_PM.png](/Users/gryffinbit/Desktop/网络安全技术/网络安全技术与实践笔记 552aa0ba0e144390b16b916febbb89d3/Screen_Shot_2020-09-30_at_4.56.17_PM.png)</p>
+</li>
+<li><p>防护措施</p>
+<ul>
+<li>在TCP和HTTP传输之间增加安全层（SSL、TLS）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>TELNET（端口 TCP 23）</p>
+<p>远程登录协议（Teletype Network）是Internet远程登录服务的标准协议和主要方式</p>
+<ul>
+<li>安全隐患及防护措施<ul>
+<li>攻击者记录整个会话或者登陆的口令</li>
+<li>劫持会话，认证完成后进行篡改</li>
+<li>应该对会话进行加密</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>SSH （端口 TCP 22）</p>
+<p>安全壳协议（Secure Shell）在不安全网络上建立安全远程登录或其他网路服务的协议</p>
+<p>建立TCP连接→版本协商 → 算法协商→服务器认证和密钥建立 →用户认证 → 通信会话</p>
+<ul>
+<li><p>支持身份认证和数据加密</p>
+</li>
+<li><p>可提供安全隧道，防止中间人攻击</p>
+</li>
+<li><p>安全问题</p>
+<ul>
+<li><p>服务器认证：在不可信的环境下，不能对服务器真实性进行认证</p>
+<p>应该要验证主机密钥来验证服务器的正确性</p>
+</li>
+<li><p>协议版本协商：可能存在对有漏洞的版本进行攻击</p>
+<p>对版本上有安全问题的通讯方，中断TCP连接</p>
+</li>
+<li><p>主机密钥文件安全：密钥被窃取或篡改，实施攻击</p>
+<p>应加强对密钥文件的管理</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>PGP</p>
+<p>安全电子邮件标准</p>
+</li>
+<li><p>POP3</p>
+</li>
+<li><p>FTP</p>
+</li>
+<li><p>SMTP</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="第三章-安全协议"><a href="#第三章-安全协议" class="headerlink" title="第三章 安全协议"></a>第三章 安全协议</h2><p>两个或两个以上的参与者为完成某项特定的任务而采取的一系列步骤。</p>
+<h3 id="协议三要素"><a href="#协议三要素" class="headerlink" title="协议三要素"></a>协议三要素</h3><ul>
+<li>依次执行</li>
+<li>至少两个参与者</li>
+<li>通过执行协议，必须能完成某项任务</li>
+</ul>
+<h2 id="仲裁协议"><a href="#仲裁协议" class="headerlink" title="仲裁协议"></a>仲裁协议</h2><p>公正、可信赖</p>
 
   
   
@@ -580,7 +1069,7 @@
               
             
               
-                <p>本文永久链接是：<a href=https://gryffinbit.top/2020/12/21/%E5%9F%BA%E4%BA%8EWeb%E7%9A%84SSL%E8%BF%9E%E6%8E%A5%E8%AE%BE%E7%BD%AE/>https://gryffinbit.top/2020/12/21/%E5%9F%BA%E4%BA%8EWeb%E7%9A%84SSL%E8%BF%9E%E6%8E%A5%E8%AE%BE%E7%BD%AE/</a></p>
+                <p>本文永久链接是：<a href=https://gryffinbit.top/2021/01/20/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/>https://gryffinbit.top/2021/01/20/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/</a></p>
               
             
           </blockquote>
@@ -597,10 +1086,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-21T20:33:14+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-21T14:25:05+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年12月21日</p>
+    <p>更新于：2021年1月21日</p>
   </a>
 </div>
 
@@ -609,7 +1098,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/SSL/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>SSL</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>网络安全技术</p></a></div>
 
 
         
@@ -622,7 +1111,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gryffinbit.top/2020/12/21/%E5%9F%BA%E4%BA%8EWeb%E7%9A%84SSL%E8%BF%9E%E6%8E%A5%E8%AE%BE%E7%BD%AE/&title=基于Web的SSL连接设置 - Gryffinbit&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gryffinbit.top/2021/01/20/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/&title=网络安全技术期末考点 - Gryffinbit&summary="
           
           >
           
@@ -634,7 +1123,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://gryffinbit.top/2020/12/21/%E5%9F%BA%E4%BA%8EWeb%E7%9A%84SSL%E8%BF%9E%E6%8E%A5%E8%AE%BE%E7%BD%AE/&title=基于Web的SSL连接设置 - Gryffinbit&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://gryffinbit.top/2021/01/20/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/&title=网络安全技术期末考点 - Gryffinbit&summary="
           
           >
           
@@ -646,7 +1135,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://gryffinbit.top/2020/12/21/%E5%9F%BA%E4%BA%8EWeb%E7%9A%84SSL%E8%BF%9E%E6%8E%A5%E8%AE%BE%E7%BD%AE/&title=基于Web的SSL连接设置 - Gryffinbit&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://gryffinbit.top/2021/01/20/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/&title=网络安全技术期末考点 - Gryffinbit&summary="
           
           >
           
@@ -676,24 +1165,12 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/2021/01/20/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>网络安全技术期末考点</p>
-          <p class='content'>考点填空题（15）
-网络安全目标
-机密性、完整性、可用性、合法性
-
-网络安全威胁
-Impersonation冒充：伪造他人身份
-Replay重放：把合法的信息重新发一遍
-Denial of Se...</p>
-        </a>
       
-      
-        <a class='next' href='/2020/12/19/%E6%B4%BB%E5%8F%96%E8%AF%81%E5%92%8C%E6%AD%BB%E5%8F%96%E8%AF%81/'>
-          <p class='title'>活取证和死取证<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>活取证和死取证实验软件下载https://gryffinbit.lanzous.com/iZMymji46yb
-镜像下载：
-链接: https://pan.baidu.com/s/1u4yOjE...</p>
+        <a class='next' href='/2020/12/21/%E5%9F%BA%E4%BA%8EWeb%E7%9A%84SSL%E8%BF%9E%E6%8E%A5%E8%AE%BE%E7%BD%AE/'>
+          <p class='title'>基于Web的SSL连接设置<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>实验四：基于Web的SSL连接设置实验目的：学习基于Web的SSL连接设置，加深SSL的理解
+实验原理：数字证书概念
+将用户身份ID与其所持有的公钥PK绑定，再由CA对该身份及对应公钥的组合{I...</p>
         </a>
       
     </div>
@@ -714,6 +1191,59 @@ Denial of Se...</p>
 
 
 
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
 
 
 
@@ -741,7 +1271,7 @@ Denial of Se...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84%EF%BC%9A"><span class="toc-text">实验目的：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%8E%9F%E7%90%86%EF%BC%9A"><span class="toc-text">实验原理：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9%EF%BC%9A"><span class="toc-text">实验内容：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83%EF%BC%9A"><span class="toc-text">实验环境：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="toc-text">实验过程：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%96%B0%E5%BB%BAWeb%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BD%91%E7%AB%99"><span class="toc-text">1.新建Web服务器网站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Web%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%94%9F%E6%88%90%E2%80%9C%E8%AF%81%E4%B9%A6%E7%94%B3%E8%AF%B7%E4%B9%A6"><span class="toc-text">2. Web服务器生成“证书申请书</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%80%92%E4%BA%A4%E2%80%9C%E8%AF%81%E4%B9%A6%E7%94%B3%E8%AF%B7%E4%B9%A6%E2%80%9D%E5%B9%B6%E8%8E%B7%E5%8F%96%E8%AF%81%E4%B9%A6"><span class="toc-text">3. 递交“证书申请书”并获取证书</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%BA%94%E7%94%A8Web%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AF%81%E4%B9%A6"><span class="toc-text">4. 应用Web服务器证书</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%AA%8C%E8%AF%81Web%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AF%81%E4%B9%A6"><span class="toc-text">5. 客户端验证Web服务器证书</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A1%AB%E7%A9%BA%E9%A2%98%EF%BC%8815%EF%BC%89"><span class="toc-text">填空题（15）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E9%A2%98%EF%BC%8810%EF%BC%89"><span class="toc-text">选择题（10）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E9%A2%98%EF%BC%885%EF%BC%89"><span class="toc-text">判断题（5）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E7%AD%94%E9%A2%98%EF%BC%884%E9%81%93%EF%BC%89"><span class="toc-text">简答题（4道）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ARP%E5%8E%9F%E7%90%86%EF%BC%8CARP%E6%AC%BA%E9%AA%97"><span class="toc-text">ARP原理，ARP欺骗</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ICMP%E5%8F%8D%E5%BC%B9Smurf%E6%94%BB%E5%87%BB"><span class="toc-text">ICMP反弹Smurf攻击</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%A5%E6%8E%A5%E6%88%96%E4%BB%85%E4%B8%BB%E6%9C%BA%E7%BD%91%E5%8D%A1%E7%9A%84%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8D%E8%83%BD%E5%92%8C%E5%90%8C%E5%AD%90%E7%BD%91%E7%9A%84%E5%AE%BF%E4%B8%BB%E6%9C%BA%E8%8E%B7%E5%BE%97ping%E5%9B%9E%E6%98%BE%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">桥接或仅主机网卡的虚拟机不能和同子网的宿主机获得ping回显，为什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%B2%E7%81%AB%E5%A2%99"><span class="toc-text">防火墙</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E5%A4%A7%E9%A2%98%EF%BC%882%E9%81%93%EF%BC%89"><span class="toc-text">综合大题（2道）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E5%AE%8C%E6%95%B4%E6%80%A7%E5%92%8C%E6%9C%BA%E5%AF%86%E6%80%A7%EF%BC%9F"><span class="toc-text">如何保证完整性和机密性？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB%EF%BC%9F"><span class="toc-text">中间人攻击？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0"><span class="toc-text">第一章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A84%E4%B8%AA%E5%9F%BA%E6%9C%AC%E7%9B%AE%E6%A0%87"><span class="toc-text">信息安全4个基本目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E5%A8%81%E8%83%81%E6%9D%A5%E6%BA%90"><span class="toc-text">安全威胁来源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%8F%AF%E5%AE%9E%E7%8E%B0%E5%A8%81%E8%83%81"><span class="toc-text">主要可实现威胁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4%E6%8E%AA%E6%96%BD"><span class="toc-text">安全防护措施</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text"></span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E7%AD%96%E7%95%A5%EF%BC%88%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5%EF%BC%89"><span class="toc-text">访问控制策略（安全策略）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%94%BB%E5%87%BB%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-text">安全攻击的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%94%BB%E5%87%BB%E5%B8%B8%E8%A7%81%E5%BD%A2%E5%BC%8F"><span class="toc-text">网络攻击常见形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%9C%8D%E5%8A%A1"><span class="toc-text">安全服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E4%B8%9A"><span class="toc-text">作业</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0"><span class="toc-text">第二章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP-IP%E5%8D%8F%E8%AE%AE%E6%97%8F"><span class="toc-text">TCP&#x2F;IP协议族</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE"><span class="toc-text">第三章 安全协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%8F%E8%AE%AE%E4%B8%89%E8%A6%81%E7%B4%A0"><span class="toc-text">协议三要素</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%B2%E8%A3%81%E5%8D%8F%E8%AE%AE"><span class="toc-text">仲裁协议</span></a></li></ol>
     </div>
   </section>
 
@@ -761,7 +1291,7 @@ Denial of Se...</p>
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="基于Web的SSL连接设置";
+  pdata.postTitle="网络安全技术期末考点";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
