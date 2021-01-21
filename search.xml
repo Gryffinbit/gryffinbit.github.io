@@ -13,16 +13,16 @@
       
       <categories>
           
-          <category> 网络安全技术 </category>
-          
           <category> 期末考试 </category>
+          
+          <category> 网络安全技术 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 期末考试 </tag>
+            <tag> 考点 </tag>
             
         </tags>
       
@@ -115,14 +115,16 @@
       
       <categories>
           
-          <category> 考试 </category>
+          <category> 期末考试 </category>
+          
+          <category> 病毒原理 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 病毒原理 </tag>
+            <tag> 考点 </tag>
             
         </tags>
       
