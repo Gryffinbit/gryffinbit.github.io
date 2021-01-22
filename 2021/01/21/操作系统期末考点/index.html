@@ -496,7 +496,7 @@
 
 
   
-  <h1 id="考卷"><a href="#考卷" class="headerlink" title="考卷"></a>考卷</h1><h2 id="选择题"><a href="#选择题" class="headerlink" title="选择题"></a>选择题</h2><ol>
+  <h2 id="考卷"><a href="#考卷" class="headerlink" title="考卷"></a>考卷</h2><h3 id="选择题"><a href="#选择题" class="headerlink" title="选择题"></a>选择题</h3><ol>
 <li><p>某计算机系统中有8台打印机，由K个进程竞争使用，每个进程最多需要3台打印机，该系统发生死锁的K的最小值是<strong><strong><em>C____</em></strong></strong> 。</p>
 <p>A. 2  B. 3 C.4 D.5</p>
 </li>
@@ -509,11 +509,11 @@
 <p>C. 回收实现比较简单       D.用户存取方便</p>
 </li>
 </ol>
-<h2 id="填空题"><a href="#填空题" class="headerlink" title="填空题"></a>填空题</h2><p>1.文件的物理结构有，顺序结构、 链接结构、和索引结构。</p>
+<h3 id="填空题"><a href="#填空题" class="headerlink" title="填空题"></a>填空题</h3><p>1.文件的物理结构有，顺序结构、 链接结构、和索引结构。</p>
 <p>2.磁盘高速缓冲是在内存中为磁盘快设置的一个缓冲区，其主要目的是提高磁盘的I/O速度。</p>
 <p>3.位示图是利用二进制的一位来表示文件存储空间中的一个块的使用情况。</p>
 <p>4.SPOOLing技术的中文译名为外部设备联机并行操作，它是关于慢速字符设备如何与计算机主机交换信息的一种技术，通常叫作假脱机技术。</p>
-<h2 id="编写程序（PV源语）三选一"><a href="#编写程序（PV源语）三选一" class="headerlink" title="编写程序（PV源语）三选一"></a>编写程序（PV源语）三选一</h2><hr>
+<h3 id="编写程序（PV源语）三选一"><a href="#编写程序（PV源语）三选一" class="headerlink" title="编写程序（PV源语）三选一"></a>编写程序（PV源语）三选一</h3><hr>
 <ul>
 <li><p><strong>有三个进程 PA、PB和PC协作解决文件打印问题。PA将文件记录从磁盘读入内存的缓冲区1，每执行一次读一个记录；PB 将缓冲区1的内容复制到缓冲区2中，每执行一次复制一个记录；PC将缓冲区2的内容打印出来，每执行一次打印一个记录。缓冲区的大小与记录大小一样。请用信号量来保证文件的正确打印。</strong></p>
 <p>分析：本题又是生产者-消费者问题的一个变形，对缓冲区1来说，PA是生产者，PB是消费者;对缓冲区2来说，PB是生产者，PC是消费者。<br>需要说明的有两点：<br>①缓冲区1和缓冲区2都只能存放一个记录，故无须设置in、out 指针，原来生产者一消费者问题中的mutex信号量也因此可以省去；<br>②PB进程既是消费者，又是生产者。</p>
@@ -610,11 +610,11 @@ writer()&#123;
 &#125;</code></pre>
 </li>
 </ul>
-<h2 id="clock算法"><a href="#clock算法" class="headerlink" title="clock算法"></a>clock算法</h2><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-1.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-1.png" srcset="data:image/png;base64,666"></p>
+<h3 id="clock算法"><a href="#clock算法" class="headerlink" title="clock算法"></a>clock算法</h3><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-1.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-1.png" srcset="data:image/png;base64,666"></p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-2.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-2.png" srcset="data:image/png;base64,666"></p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-3.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-3.png" srcset="data:image/png;base64,666"></p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-4.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-4.png" srcset="data:image/png;base64,666"></p>
-<h2 id="简答题"><a href="#简答题" class="headerlink" title="简答题"></a>简答题</h2><p><strong>什么是进程?由几部分组成?与程序的区别是什么?</strong></p>
+<h3 id="简答题"><a href="#简答题" class="headerlink" title="简答题"></a>简答题</h3><p><strong>什么是进程?由几部分组成?与程序的区别是什么?</strong></p>
 <p>定义：</p>
 <p>进程是可并发执行的程序在一个数据集合上的运行过程，是系统进行资源分配和调度的一个独立单位。</p>
 <p>组成部分：</p>
@@ -678,12 +678,12 @@ writer()&#123;
 <li>DMA与CPU交替访内</li>
 </ol>
 <p>一个 CPU周期可分为2个周期，一个专供DMA控制器访内，另一个专供CPU访内。不需要总线使用权的申请、建立和归还过程。</p>
-<h2 id="银行家算法"><a href="#银行家算法" class="headerlink" title="银行家算法"></a>银行家算法</h2><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-5.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-5.png" srcset="data:image/png;base64,666"></p>
+<h3 id="银行家算法"><a href="#银行家算法" class="headerlink" title="银行家算法"></a>银行家算法</h3><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-5.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-5.png" srcset="data:image/png;base64,666"></p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-6.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-6.png" srcset="data:image/png;base64,666"></p>
-<p>![操作系统卷子-7](/Users/gryffinbit/Desktop/juan/操作系统考卷 ddf93a08e221453fa52e5abf595aa67a/操作系统卷子-7.png)</p>
-<h2 id="段页式存储管理系统的地址转换过程"><a href="#段页式存储管理系统的地址转换过程" class="headerlink" title="段页式存储管理系统的地址转换过程"></a>段页式存储管理系统的地址转换过程</h2><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-8.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-8.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-7.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-7.png" srcset="data:image/png;base64,666"></p>
+<h3 id="段页式存储管理系统的地址转换过程"><a href="#段页式存储管理系统的地址转换过程" class="headerlink" title="段页式存储管理系统的地址转换过程"></a>段页式存储管理系统的地址转换过程</h3><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-8.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-8.png" srcset="data:image/png;base64,666"></p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-9.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-9.png" srcset="data:image/png;base64,666"></p>
-<h2 id="作业调度算法"><a href="#作业调度算法" class="headerlink" title="作业调度算法"></a>作业调度算法</h2><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-19.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-19.png" srcset="data:image/png;base64,666"></p>
+<h3 id="作业调度算法"><a href="#作业调度算法" class="headerlink" title="作业调度算法"></a>作业调度算法</h3><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-19.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-19.png" srcset="data:image/png;base64,666"></p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-29.jpg" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-29.jpg" srcset="data:image/png;base64,666"></p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-30.jpg" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-30.jpg" srcset="data:image/png;base64,666"></p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-31.jpg" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-31.jpg" srcset="data:image/png;base64,666"></p>
@@ -698,7 +698,7 @@ writer()&#123;
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-16.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-16.png" srcset="data:image/png;base64,666"></p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-17.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-17.png" srcset="data:image/png;base64,666"></p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-18.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-18.png" srcset="data:image/png;base64,666"></p>
-<h2 id="磁盘调度算法"><a href="#磁盘调度算法" class="headerlink" title="磁盘调度算法"></a>磁盘调度算法</h2><p><strong>SSTF最短寻找时间优先</strong></p>
+<h3 id="磁盘调度算法"><a href="#磁盘调度算法" class="headerlink" title="磁盘调度算法"></a>磁盘调度算法</h3><p><strong>SSTF最短寻找时间优先</strong></p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-20.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-20.png" srcset="data:image/png;base64,666"></p>
 <p><strong>SCAN电梯算法</strong></p>
 <p>移动到最外侧之后，再向内移动。</p>
@@ -706,8 +706,7 @@ writer()&#123;
 <p><strong>C-SCAN循环扫描算法</strong></p>
 <p>只处理某一单独方向上的请求，返回时直接到始端，不处理任何请求</p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-22.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-22.png" srcset="data:image/png;base64,666"></p>
-<hr>
-<h1 id="考点"><a href="#考点" class="headerlink" title="考点"></a>考点</h1><h2 id="题型"><a href="#题型" class="headerlink" title="题型"></a>题型</h2><p>选择 10分  每题一分</p>
+<h2 id="题型"><a href="#题型" class="headerlink" title="题型"></a>题型</h2><p>选择 10分  每题一分</p>
 <p>填空 10分  每题一分</p>
 <p>编写程序    10分</p>
 <p>clock 算法  10分</p>
@@ -748,15 +747,13 @@ writer()&#123;
 </ol>
 </li>
 </ul>
-<hr>
-<h2 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h2><p><strong>处理机调度</strong></p>
+<h3 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h3><p><strong>处理机调度</strong></p>
 <p>看PPT笔记</p>
 <p><strong>例题：</strong></p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-1.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-1.png" srcset="data:image/png;base64,666"></p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-2.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-2.png" srcset="data:image/png;base64,666"></p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-3.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-3.png" srcset="data:image/png;base64,666"></p>
-<hr>
-<h2 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h2><p><strong>什么是虚拟存储器？特点？</strong></p>
+<h3 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h3><p><strong>什么是虚拟存储器？特点？</strong></p>
 <ul>
 <li>由进程中的目标代码、数据等的虚拟地址组成的虚拟空间称为虚拟存储器。</li>
 <li>虚拟存储器不考虑物理存储器的大小和信息存放的实际位置，只规定每个进程中相互关联的信息的相对位置。</li>
@@ -860,7 +857,7 @@ writer()&#123;
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-10.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-10.png" srcset="data:image/png;base64,666"></p>
 <p>存取指令时，需要对内存进行三次以上的访问：1.从段表中取出对应的页表地址 2.访问页表得到数据或指令的物理地址 3. 访问物理单元。    降低CPU执行指令的速度</p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-11.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-11.png" srcset="data:image/png;base64,666"></p>
-<h2 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h2><p><strong>什么是软中断（概念题，解释题5分）？</strong></p>
+<h3 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h3><p><strong>什么是软中断（概念题，解释题5分）？</strong></p>
 <ul>
 <li>软中断是对硬件的一种模拟</li>
 <li>发送软中断就是向接收进程的一个相应项发送一个特殊信号</li>
@@ -868,7 +865,7 @@ writer()&#123;
 <li>收到信号后不立即启动，要等到接收进程执行时才能生效</li>
 <li>可以向自己发软中断信号</li>
 </ul>
-<h2 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h2><p><strong>简述虚拟地址到物理内存地址的转换过程(必考，有个计算题)</strong></p>
+<h3 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h3><p><strong>简述虚拟地址到物理内存地址的转换过程(必考，有个计算题)</strong></p>
 <ol>
 <li>每个进程对应一个页目录，当操作系统开始执行某一进程时，系统会设置当前进程所对应的页目录</li>
 <li>一个进程可有多个页表，通过页目录索引，内存管理器可定位相应的虚拟地址所对应的页表</li>
@@ -876,7 +873,7 @@ writer()&#123;
 <li>定位物理页框号后，通过字节索引，可判断虚拟地址对应的物理地址</li>
 </ol>
 <p>页表的作用：通过页表查到虚拟地址的页表入口，再通过该入口查到该地址对应的物理地址</p>
-<h2 id="第八章"><a href="#第八章" class="headerlink" title="第八章"></a>第八章</h2><p><strong>磁盘调度算法</strong></p>
+<h3 id="第八章"><a href="#第八章" class="headerlink" title="第八章"></a>第八章</h3><p><strong>磁盘调度算法</strong></p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-12.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-12.png" srcset="data:image/png;base64,666"></p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-13.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-13.png" srcset="data:image/png;base64,666"></p>
 <p><strong>先来先服务（FCFS）</strong></p>
@@ -913,7 +910,7 @@ writer()&#123;
 <li>提高搜索速度</li>
 </ul>
 <p>符号文件目录表和基本文件目录表是实现文件共享的方法，不是二级目录</p>
-<h2 id="第九章"><a href="#第九章" class="headerlink" title="第九章"></a>第九章</h2><p><strong>DMA</strong></p>
+<h3 id="第九章"><a href="#第九章" class="headerlink" title="第九章"></a>第九章</h3><p><strong>DMA</strong></p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-21.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-21.png" srcset="data:image/png;base64,666"></p>
 <p><strong>数据传送控制方式有哪几种？</strong></p>
 <ul>
@@ -949,7 +946,7 @@ writer()&#123;
 <p><strong>什么是缓冲？</strong></p>
 <p>缓冲是使用专用硬件缓冲器，或在内存中划出一个区域暂时存放输入输出数据的器件。</p>
 <p>引入缓冲是为了匹配外设和CPU之间的处理速度。减少中断次数和CPU的中断处理时间。解决DMA或通道方式时的数据传输瓶颈问题。</p>
-<h2 id="定义、概念理解"><a href="#定义、概念理解" class="headerlink" title="定义、概念理解"></a>定义、概念理解</h2><p><strong>系统调用</strong>：操作系统提供给编程人员的唯一接口，其指令在核心态下执行。</p>
+<h3 id="定义、概念理解"><a href="#定义、概念理解" class="headerlink" title="定义、概念理解"></a>定义、概念理解</h3><p><strong>系统调用</strong>：操作系统提供给编程人员的唯一接口，其指令在核心态下执行。</p>
 <p><strong>进程：一个程序对数据集的执行过程。</strong></p>
 <p>并发： 一组在逻辑上互相独立的程序，在执行过程中，执行时间上互相重叠。</p>
 <p>并行：一组程序按独立的、异常的速度执行</p>
@@ -1078,71 +1075,6 @@ writer()&#123;
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-83.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-83.png" srcset="data:image/png;base64,666"></p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-84.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-84.png" srcset="data:image/png;base64,666"></p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-85.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-85.png" srcset="data:image/png;base64,666"></p>
-<hr>
-<h2 id="简答题-1"><a href="#简答题-1" class="headerlink" title="简答题"></a>简答题</h2><p><strong>什么是进程?由几部分组成?与程序的区别是什么?</strong></p>
-<p>定义：</p>
-<p>进程是可并发执行的程序在一个数据集合上的运行过程，是系统进行资源分配和调度的一个独立单位。</p>
-<p>组成部分：</p>
-<p>进程由程序、数据和进程控制块三部分组成: .</p>
-<ol>
-<li>程序段：程序段是进程中能被进程调度程序调度到CPU上执行的程序代码段，它能实现相应的特定功能。</li>
-<li>数据段：一个进程的数据段，可以是进程对应的程序加工处理的原始数据，也可以是程序执行时产生的中间或最终结果数据。</li>
-<li>进程控制块PCB组成：每一个进程均有一个进程控制块PCB。用户进程被创建时，系统为它申请和构造一个相应的PCB。</li>
-</ol>
-<p>进程和程序的区别：</p>
-<ol>
-<li>程序是静态概念，而进程是动态概念</li>
-<li>程序是永久的，而进程是暂时的</li>
-<li>进程之间能并发地活动</li>
-<li>进程是竞争计算机系统有限资源的基本单位</li>
-<li>程序和进程无一一对应关系</li>
-</ol>
-<p><strong>何谓死锁?产生死锁的原因和必要条件是什么?</strong></p>
-<p>死锁的定义：</p>
-<p>死锁是指多个进程在运行过程中因争夺资源而造成的一种僵局，当进程处于这种僵持状态时，若无外力作用，它们都将无法再向前推进。</p>
-<p>产生死锁的原因：</p>
-<p>产生死锁的原因可归结为竞争资源引起进程死锁和进程推进顺序不当引起死锁两个方面。</p>
-<p>产生死锁的必要条件：</p>
-<ol>
-<li>互斥条件</li>
-<li>请求和保持条件</li>
-<li>不剥夺条件</li>
-<li>环路等待条件</li>
-</ol>
-<p><strong>分页和分段存储管理有何区别?</strong></p>
-<ol>
-<li><p>页是信息的物理单位，分页是为实现离散分配方式，以消减内存的外零头，提高内存利用率。或者说，分页仅仅是由于系统管理的需要而不是用户的需要。</p>
-<p>段则是信息的逻辑单位，它含有一组意义相对完整的信息，分段的目的是为了能更好地满足用户的需要。</p>
-</li>
-<li><p>页的大小固定且由系统决定，由系统把逻辑地址划分为页号和页内地址两部分，是机械硬件实现的，因而在系统中只能有一种大小的的页面；</p>
-<p>而段的长度却不固定，决定于用户所编写的程序，通常由编译程序对源程序进行编译时，根据信息的性质来划分。</p>
-</li>
-<li><p>分页的作业地址空间是一维的，即单一的线性地址空间，程序员只需利用一个记忆符，即可表示一个地址。</p>
-<p>分段的作业地址空间则是二维的，程序员在标识一个地址时，既需给出段名，又需给出段内地址。</p>
-</li>
-</ol>
-<p><strong>为什么要引入动态重定位?如何实现?</strong></p>
-<p>原因：</p>
-<p>在连续分配方式中，必须把一个系统或用户程序装入一连续的内存空间。如果在系统中只有若干个小的分区，即使它们容量的总和大于要装入的程序，但由于这些分区不相邻接，也无法把该程序装入内存。若想把程序装入，可采用的一种方法是：将内存中的所有作业进行移动，使它们全都相邻接，这样，即可把原来分散的多个小分区拼接成一个大分区，这时就可把作业装入该区。这种通过移动内存中作业的位置，以把原来多个分散的小分区拼：接成一个大分区的方法，称为“拼接”或“紧凑”。由于经过紧凑后的某些用户程序在内存中的位置发生了变化，此时若不对程序和数据的地址加以修改(变换)，则程序必将无法执行。为此，在每次“紧凑”后，都必须对移动了的程序或数据进行重定位。</p>
-<p>实现：</p>
-<p>在动态运行时装入的方式中，作业装入内存后的所有地址都仍然是相对地址，将相对地址转换为物理地址的工作，被推迟到程序指令要真正执行时进行。为使地址的转换不会影响到指令的执行速度，必须有硬件地址变换机构的支持，即须在系统中增设一个重定位寄存器，用它来存放程序(数据)在内存中的起始地址。程序在执行时，真正访问的内存地址是相对地址与重定位寄存器中的地址相加而形成的。当系统对内存进行了“紧凑”而使若干程序从内存的某处移至另一处时,不需对程序做任何修改，只要用该程序在内存的新起始地址去置换原来的起始地址即可。</p>
-<p><strong>在请求分页系统中，产生“抖动”的原因是什么?</strong></p>
-<p>发生“抖动”的根本原因是，同时在系统中运行的进程太多，由此分配给每一个进程的物理块太少，不能满足进程正常运行的基本要求，致使每个进程在运行时，频繁地出现缺页，必须请求系统将所缺之页调入内存。这会使得在系统中排队等待页面调进/调出的进程数目增加。显然，对磁盘的有效访问时间也随之急剧增加，造成每个进程的大部分时间都用于页面的换进，换出，而几乎不能再去做任何有效的工作，从而导致发生处理机的利用率急剧下降并趋于0的情况。我们称此时的进程是处于“抖动”状态。</p>
-<p><strong>何谓DMA方式? DMA控制器可采用哪几种方式与CPU分时使用内存?</strong></p>
-<p>直接内存访问(DMA)方式是一种完全由硬件执行I/O交换的工作方式。DMA 控制器从CPU完全接管对总线的控制。数据交换不经过CPU,而直接在内存和I/O设备之间进行。</p>
-<p>DMA控制器采用以下三种方式：</p>
-<ol>
-<li>停止CPU访问内存</li>
-</ol>
-<p>当外设要求传送一批数据时，由DMA控制器发一个信号给CPU。 DMA控制器获得总线控制权后，开始进行数据传送。一批数据传送完毕后，DMA控制器通知CPU可以使用内存，并把总线控制权交还给CPU。</p>
-<ol start="2">
-<li>周期挪用</li>
-</ol>
-<p>当I/O设备没有DMA请求时，CPU按程序要求访问内存: 一旦I/O设备有DMA请求，则I/O设备挪用一个或几个周期。</p>
-<ol start="3">
-<li>DMA与CPU交替访内</li>
-</ol>
-<p>一个 CPU周期可分为2个周期，一个专供DMA控制器访内，另一个专供CPU访内。不需要总线使用权的申请、建立和归还过程。</p>
 
   
   
@@ -1177,7 +1109,7 @@ writer()&#123;
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-22T14:54:44+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-22T16:54:56+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年1月22日</p>
@@ -1363,7 +1295,7 @@ A.以CRTM为可信...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E9%A2%98"><span class="toc-text">选择题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A1%AB%E7%A9%BA%E9%A2%98"><span class="toc-text">填空题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E5%86%99%E7%A8%8B%E5%BA%8F%EF%BC%88PV%E6%BA%90%E8%AF%AD%EF%BC%89%E4%B8%89%E9%80%89%E4%B8%80"><span class="toc-text">编写程序（PV源语）三选一</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#clock%E7%AE%97%E6%B3%95"><span class="toc-text">clock算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E7%AD%94%E9%A2%98"><span class="toc-text">简答题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%93%B6%E8%A1%8C%E5%AE%B6%E7%AE%97%E6%B3%95"><span class="toc-text">银行家算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AE%B5%E9%A1%B5%E5%BC%8F%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2%E8%BF%87%E7%A8%8B"><span class="toc-text">段页式存储管理系统的地址转换过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%9C%E4%B8%9A%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="toc-text">作业调度算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="toc-text">磁盘调度算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E5%9E%8B"><span class="toc-text">题型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AB%A0%E8%8A%82%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-text">章节知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0"><span class="toc-text">第三章</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0"><span class="toc-text">第四章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0"><span class="toc-text">第五章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0"><span class="toc-text">第六章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E7%AB%A0"><span class="toc-text">第七章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%85%AB%E7%AB%A0"><span class="toc-text">第八章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0"><span class="toc-text">第九章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E3%80%81%E6%A6%82%E5%BF%B5%E7%90%86%E8%A7%A3"><span class="toc-text">定义、概念理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%99%E6%9D%90%E8%80%83%E7%82%B9"><span class="toc-text">教材考点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PPT%E4%B8%8A%E4%B9%A0%E9%A2%98"><span class="toc-text">PPT上习题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E7%AD%94%E9%A2%98-1"><span class="toc-text">简答题</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%80%83%E5%8D%B7"><span class="toc-text">考卷</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E9%A2%98"><span class="toc-text">选择题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A1%AB%E7%A9%BA%E9%A2%98"><span class="toc-text">填空题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E5%86%99%E7%A8%8B%E5%BA%8F%EF%BC%88PV%E6%BA%90%E8%AF%AD%EF%BC%89%E4%B8%89%E9%80%89%E4%B8%80"><span class="toc-text">编写程序（PV源语）三选一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#clock%E7%AE%97%E6%B3%95"><span class="toc-text">clock算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E7%AD%94%E9%A2%98"><span class="toc-text">简答题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%B6%E8%A1%8C%E5%AE%B6%E7%AE%97%E6%B3%95"><span class="toc-text">银行家算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AE%B5%E9%A1%B5%E5%BC%8F%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2%E8%BF%87%E7%A8%8B"><span class="toc-text">段页式存储管理系统的地址转换过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E4%B8%9A%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="toc-text">作业调度算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="toc-text">磁盘调度算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E5%9E%8B"><span class="toc-text">题型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AB%A0%E8%8A%82%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-text">章节知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0"><span class="toc-text">第三章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0"><span class="toc-text">第四章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0"><span class="toc-text">第五章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0"><span class="toc-text">第六章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E7%AB%A0"><span class="toc-text">第七章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%85%AB%E7%AB%A0"><span class="toc-text">第八章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0"><span class="toc-text">第九章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E3%80%81%E6%A6%82%E5%BF%B5%E7%90%86%E8%A7%A3"><span class="toc-text">定义、概念理解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%99%E6%9D%90%E8%80%83%E7%82%B9"><span class="toc-text">教材考点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PPT%E4%B8%8A%E4%B9%A0%E9%A2%98"><span class="toc-text">PPT上习题</span></a></li></ol>
     </div>
   </section>
 

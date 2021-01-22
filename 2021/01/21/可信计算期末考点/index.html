@@ -496,7 +496,7 @@
 
 
   
-  <h1 id="考卷"><a href="#考卷" class="headerlink" title="考卷"></a>考卷</h1><h2 id="选择题"><a href="#选择题" class="headerlink" title="选择题"></a>选择题</h2><p><strong>1. 下列哪一个为身份认证密钥的英文简写（B）</strong></p>
+  <h2 id="考卷"><a href="#考卷" class="headerlink" title="考卷"></a>考卷</h2><h3 id="选择题"><a href="#选择题" class="headerlink" title="选择题"></a>选择题</h3><p><strong>1. 下列哪一个为身份认证密钥的英文简写（B）</strong></p>
 <p>A.EK     B.AIK     C.LK     D.AK</p>
 <p><strong>2.下列哪一个不是静态信任链的运行特点( D )</strong></p>
 <p>A.以CRTM为可信根</p>
@@ -575,7 +575,7 @@
 <p>A.上下文管理     B.密钥与证书管理     C.设备驱动管理     D.事件管理</p>
 <p><strong>21.下列哪一项不是TPM的核心功能（ C ）</strong></p>
 <p>A.远程证明 B.数据保护 C.储存器屏蔽 D.密钥管理</p>
-<h2 id="填空题"><a href="#填空题" class="headerlink" title="填空题"></a>填空题</h2><ol>
+<h3 id="填空题"><a href="#填空题" class="headerlink" title="填空题"></a>填空题</h3><ol>
 <li><p>TPM部件体系结构可包括为:<strong>分离部件</strong>、<strong>通信接口</strong>、<strong>防篡改攻击封装</strong> 三大类。</p>
 </li>
 <li><p>可信计算的发展阶段：<strong>硬件可信阶段</strong>、<strong>综合可信阶段</strong>、<strong>深入发展阶段</strong>。</p>
@@ -613,7 +613,7 @@
 <li><p>TPM可信平台模块，本身是一种<strong>SOC</strong>芯片，是可信计算平台的<strong>信任</strong>根。</p>
 </li>
 </ol>
-<h2 id="判断题"><a href="#判断题" class="headerlink" title="判断题"></a>判断题</h2><ol>
+<h3 id="判断题"><a href="#判断题" class="headerlink" title="判断题"></a>判断题</h3><ol>
 <li><p>信任可以分为身份信任和直接信任两部分。（×）</p>
 </li>
 <li><p>每个TPM拥有唯一的EK 。  （√）</p>
@@ -635,12 +635,12 @@
 </ol>
 <p>（正确功能应该是本地和远程的可信代理，位于书P51）</p>
 <hr>
-<h1 id="考点"><a href="#考点" class="headerlink" title="考点"></a>考点</h1><h2 id="第一章（重点）"><a href="#第一章（重点）" class="headerlink" title="第一章（重点）"></a>第一章（重点）</h2><p><strong>可信计算的定义：</strong></p>
+<h2 id="考点"><a href="#考点" class="headerlink" title="考点"></a>考点</h2><h3 id="第一章（重点）"><a href="#第一章（重点）" class="headerlink" title="第一章（重点）"></a>第一章（重点）</h3><p><strong>可信计算的定义：</strong></p>
 <p>一个实体如果它的行为总是以预期的方式，达到预期的目标，则这个实体就是可信的。</p>
 <p><strong>清楚它的启动过程：</strong></p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%AF%E4%BF%A1%E8%AE%A1%E7%AE%97-1.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%AF%E4%BF%A1%E8%AE%A1%E7%AE%97-1.png" srcset="data:image/png;base64,666"></p>
 <p>要看第一章宏观的这些基本知识</p>
-<h2 id="第二章（重点）"><a href="#第二章（重点）" class="headerlink" title="第二章（重点）"></a>第二章（重点）</h2><p><strong>TPM概述：</strong></p>
+<h3 id="第二章（重点）"><a href="#第二章（重点）" class="headerlink" title="第二章（重点）"></a>第二章（重点）</h3><p><strong>TPM概述：</strong></p>
 <p>TPM可信平台模块是一项安全芯片的国际标准，旨在使用设备中集成的专用微控制器安全硬件处理设备中的加密密钥。</p>
 <p>是带密码运算功能的安全芯片，通过总线与PC芯片连在一起</p>
 <p>可信：</p>
@@ -708,7 +708,7 @@
 <p>关系：AIK可以看作是EK的“别名”，EK只有一对，但EK可以对应多对AIK。</p>
 <p><strong>为什么有了EK还要AIK？</strong></p>
 <p>为保证EK的安全，避免使用EK。EK是重要的私有信息，用EK加密或签名数据，攻击者可能会从被加密的数据中获取EK的相关信息而攻击TPM，平台身份密钥AIK由此产生（Attestation Identity Key）</p>
-<h2 id="公钥加密算法（P22）"><a href="#公钥加密算法（P22）" class="headerlink" title="公钥加密算法（P22）"></a>公钥加密算法（P22）</h2><ul>
+<h4 id="公钥加密算法（P22）"><a href="#公钥加密算法（P22）" class="headerlink" title="公钥加密算法（P22）"></a>公钥加密算法（P22）</h4><ul>
 <li><p><strong>公钥算法在可信计算里扮演着什么样的角色？</strong></p>
 <p>公钥密码算法克服了对称密码的缺陷，能够通过公开的信道进行密钥交换。</p>
 </li>
@@ -723,7 +723,7 @@
 <p>私钥解密，公钥加密。</p>
 </li>
 </ul>
-<h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><h3 id="可信根"><a href="#可信根" class="headerlink" title="可信根"></a>可信根</h3><p><strong>概念：</strong></p>
+<h3 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h3><h4 id="可信根"><a href="#可信根" class="headerlink" title="可信根"></a>可信根</h4><p><strong>概念：</strong></p>
 <p>可信根是信任基点，是信任链的核心，是所有系统行为完整性的测量基础。</p>
 <p><strong>如何建立信任？如何衡量信任？</strong></p>
 <p>信任链的传递机制：从可信根出发，每一次平台转换信任关系都可以通过传递的方式保持下去不被破坏，那么平台上的计算环境始终是可信的，在该环境下的操作也不会破坏平台的可信。平台本身的完整性得到保证，终端安全也得到保证。信任链的起点，可信根。</p>
@@ -733,10 +733,10 @@
 <p>可信度量根（RTM）：用于生成固有的可依赖的完整性度量值的计算部件，可测量任何用户定义的平台配置。</p>
 <p>可信存储根（RTS）：完成密钥管理、密钥产生、加密、解密</p>
 <p>可信报告根（RTR）：允许受TPM保护的区域中的数据可以被验证通过的需求者获取（非易失性内存+PCR）。PCR数据的真实性需要RTR用签名密钥签名证实。</p>
-<h3 id="可信传递"><a href="#可信传递" class="headerlink" title="可信传递"></a>可信传递</h3><p>可信根确认下一级的可信度，下一级若是可信的，则可信范围从可信根传递到下一级。以此类推，过程重复，实现可信系统可信范围的延伸。</p>
+<h4 id="可信传递"><a href="#可信传递" class="headerlink" title="可信传递"></a>可信传递</h4><p>可信根确认下一级的可信度，下一级若是可信的，则可信范围从可信根传递到下一级。以此类推，过程重复，实现可信系统可信范围的延伸。</p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%AF%E4%BF%A1%E8%AE%A1%E7%AE%97-3.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%AF%E4%BF%A1%E8%AE%A1%E7%AE%97-3.png" srcset="data:image/png;base64,666"></p>
 <p>根据PC启动的过程传递。</p>
-<h3 id="可信度量"><a href="#可信度量" class="headerlink" title="可信度量"></a>可信度量</h3><p>对代码程序及其相关配置的完整性验证。</p>
+<h4 id="可信度量"><a href="#可信度量" class="headerlink" title="可信度量"></a>可信度量</h4><p>对代码程序及其相关配置的完整性验证。</p>
 <p>生成hash值，把hash传到PCR里</p>
 <p><strong>可信度量完整性分为两方面：</strong></p>
 <p>第一方面：静态可信度量：完整性基准值的建立。</p>
@@ -750,7 +750,7 @@
 <p>发生在系统引导阶段，BIOS、操作系统装载器、操作系统顺序比较固定，是一个单一链式过程。</p>
 <p>第二方面：动态可信度量：完整性认证，实现可信传递的过程。</p>
 <p>完整性认证过程是通过对实体计算结果和生成的完整性基准值相比较。</p>
-<h3 id="信任链"><a href="#信任链" class="headerlink" title="信任链"></a>信任链</h3><p><strong>信任链有动态静态之分，要区分它们，各自指的是什么？有什么优缺点？</strong></p>
+<h4 id="信任链"><a href="#信任链" class="headerlink" title="信任链"></a>信任链</h4><p><strong>信任链有动态静态之分，要区分它们，各自指的是什么？有什么优缺点？</strong></p>
 <p>静态：</p>
 <p>从终端加电至操作系统装在的静态可信认证。</p>
 <p>优点：无法攻击，无法通过重置、回溯手段篡改信任链</p>
@@ -764,12 +764,14 @@
 <p>从操作系统至应用程序的动态可信认证。</p>
 <p>优点：程序隔离。即使系统不可信，敏感代码也能安全执行</p>
 <p>缺点：硬件限制</p>
-<h3 id="动态信任链怎么运作的？"><a href="#动态信任链怎么运作的？" class="headerlink" title="动态信任链怎么运作的？"></a>动态信任链怎么运作的？</h3><p>→ 应用程序调用DRTM，指明要保护的内存地址</p>
+<p><strong>动态信任链怎么运作的？</strong></p>
+<p>→ 应用程序调用DRTM，指明要保护的内存地址</p>
 <p>→ CPU禁止DMA访问该地址段，禁止中断、debug命令 </p>
 <p>→ 将程序载入CPU缓存并锁定缓存  </p>
 <p>→ 设置PCR为-1  </p>
 <p>→ 将缓存中的代码发到TPM进行度量并扩展完整性到PCR17</p>
-<h3 id="PCR？一个TPM里有几个PCR，功能是什么？"><a href="#PCR？一个TPM里有几个PCR，功能是什么？" class="headerlink" title="PCR？一个TPM里有几个PCR，功能是什么？"></a>PCR？一个TPM里有几个PCR，功能是什么？</h3><p>PCR：平台配置寄存器，是用来记录系统运行状态的寄存器，是TPM的核心器件。</p>
+<p><strong>PCR一个TPM里有几个PCR，功能是什么？</strong></p>
+<p>PCR：平台配置寄存器，是用来记录系统运行状态的寄存器，是TPM的核心器件。</p>
 <p>TPM1.1 版 有16个PCR。不同PCR保存不同模块的完整性。</p>
 <p>传递的过程，不同PCR负责不同步骤的hash</p>
 <ol>
@@ -790,7 +792,8 @@
 <li><p>PCR[7]:保留</p>
 </li>
 </ol>
-<h3 id="信任链的应用？"><a href="#信任链的应用？" class="headerlink" title="信任链的应用？"></a>信任链的应用？</h3><p>基于静态可信根的信任链应用系统</p>
+<p><strong>信任链的应用？</strong></p>
+<p>基于静态可信根的信任链应用系统</p>
 <p>基于动态可信根的信任链应用系统</p>
 <p>信任链远程证明技术</p>
 <p>云计算环境下的信任链应用系统</p>
@@ -806,7 +809,7 @@
 <li>应用软件 Application运行。</li>
 </ol>
 <p>会画，会解释，文字要记住，步骤也要明确，描述用语准确。</p>
-<h2 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h2><p>可信软件栈，类似小型的操作系统</p>
+<h3 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h3><p>可信软件栈，类似小型的操作系统</p>
 <p><strong>TSS体系结构？</strong></p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%AF%E4%BF%A1%E8%AE%A1%E7%AE%97-5.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%AF%E4%BF%A1%E8%AE%A1%E7%AE%97-5.png" srcset="data:image/png;base64,666"></p>
 <p>TPM → 设备驱动程序 → 设备驱动程序接口 → 核心服务 → 核心服务的接口</p>
@@ -820,7 +823,7 @@
 <p><strong>远程证明（P62）</strong></p>
 <p>大概看下两个协议，privacy CA、DAA</p>
 <p>挑战应答</p>
-<h2 id="第五章（了解一下）"><a href="#第五章（了解一下）" class="headerlink" title="第五章（了解一下）"></a>第五章（了解一下）</h2><p><strong>可信计算平台？</strong></p>
+<h3 id="第五章（了解一下）"><a href="#第五章（了解一下）" class="headerlink" title="第五章（了解一下）"></a>第五章（了解一下）</h3><p><strong>可信计算平台？</strong></p>
 <p>软硬件结合的实体</p>
 <p><strong>可信计算平台的体系架构？</strong></p>
 <p>基础硬件层、可信服务层、安全应用层</p>
@@ -832,7 +835,7 @@
 <p><strong>可信平台的应用？</strong></p>
 <p>虚拟可信计算平台</p>
 <p>移动可信计算平台</p>
-<h2 id="第六章（稍微了解一下）"><a href="#第六章（稍微了解一下）" class="headerlink" title="第六章（稍微了解一下）"></a>第六章（稍微了解一下）</h2><h2 id="第七章（重点）"><a href="#第七章（重点）" class="headerlink" title="第七章（重点）"></a>第七章（重点）</h2><p><strong>完整性度量</strong></p>
+<h3 id="第六章（稍微了解一下）"><a href="#第六章（稍微了解一下）" class="headerlink" title="第六章（稍微了解一下）"></a>第六章（稍微了解一下）</h3><h3 id="第七章（重点）"><a href="#第七章（重点）" class="headerlink" title="第七章（重点）"></a>第七章（重点）</h3><p><strong>完整性度量</strong></p>
 <p>是TPM/TCM安全芯片获取平台软硬件可信度特征值的过程，通常这些值以摘要的形式扩展存储到安全芯片的 PCR 中</p>
 <p><strong>平台身份密钥引证</strong></p>
 <p>AIK专门用于远程证明，TPM 远程证明的签名过程也被称为平台身份密钥引证</p>
@@ -894,7 +897,7 @@
 <p>基 于 属 性 的 远 程 证 明 (PB A ,Property - based At testation )是 一 种 在 从 平 台 的 配 置 可 以 转 换得到平台属性的基础上,由可信第三方提供属性证书,来证明被证明方的组件满足某个或某 些属性的远程证明机制</p>
 <p><strong>远程证明的应用</strong></p>
 <p>数字版权管理DRM、移动手机平台、可信信道构建、可信网络接入、云计算节点验证</p>
-<h2 id="第八章（比较重要）"><a href="#第八章（比较重要）" class="headerlink" title="第八章（比较重要）"></a>第八章（比较重要）</h2><p><strong>NAC技术框架？</strong></p>
+<h3 id="第八章（比较重要）"><a href="#第八章（比较重要）" class="headerlink" title="第八章（比较重要）"></a>第八章（比较重要）</h3><p><strong>NAC技术框架？</strong></p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%AF%E4%BF%A1%E8%AE%A1%E7%AE%97-10.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%AF%E4%BF%A1%E8%AE%A1%E7%AE%97-10.png" srcset="data:image/png;base64,666"></p>
 <p><strong>C-NAC技术？</strong></p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%AF%E4%BF%A1%E8%AE%A1%E7%AE%97-11.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%AF%E4%BF%A1%E8%AE%A1%E7%AE%97-11.png" srcset="data:image/png;base64,666"></p>
@@ -907,7 +910,8 @@
 <p><strong>TNC的架构？</strong></p>
 <p>会画，会描述。描述好总的架构知识，不需要特别细致</p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%AF%E4%BF%A1%E8%AE%A1%E7%AE%97-12.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%AF%E4%BF%A1%E8%AE%A1%E7%AE%97-12.png" srcset="data:image/png;base64,666"></p>
-<h2 id="TNC的工作流程（8-2-3）"><a href="#TNC的工作流程（8-2-3）" class="headerlink" title="TNC的工作流程（8.2.3）"></a>TNC的工作流程（8.2.3）</h2><p>看明白就好</p>
+<p><strong>TNC的工作流程（8.2.3）</strong></p>
+<p>看明白就好</p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%AF%E4%BF%A1%E8%AE%A1%E7%AE%97-13.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%AF%E4%BF%A1%E8%AE%A1%E7%AE%97-13.png" srcset="data:image/png;base64,666"></p>
 <ol>
 <li><p>在开始接入网络之前,TNCC使用平台专用的绑定工具载入平台相关的IMC,并且对IMC执行初始化<br>操作。与此类似,TNCS则载入相关的IMV 并初始化。</p>
@@ -935,7 +939,7 @@
 <li><p>NAA 将网络接入决策发送给 PEP,PEP根据接入决策实施网络访问控制,并将最后的接入结果返<br>回给 AR。如果 AR没有满足完整性验证,TNCS可以将这个 AR隔离到修复网络,在修复网络中通<br>过完整性修复后可以重新发起连接请求。</p>
 </li>
 </ol>
-<h2 id="第九章"><a href="#第九章" class="headerlink" title="第九章"></a>第九章</h2><p><strong>信任的定义？分类？</strong></p>
+<h3 id="第九章"><a href="#第九章" class="headerlink" title="第九章"></a>第九章</h3><p><strong>信任的定义？分类？</strong></p>
 <p>定义：任表征对实体身份的确认和对其本身行为的期望,一方面是对实体的历史行为的直 接认知,另一方面是其他实体对该实体的推荐。信任可以随实体行为动态变化且随时间延续而衰 减。信任强调可预测性。</p>
 <p>分类：身份信任、行为信任</p>
 <p><strong>常见的身份信任有什么方法？（P136）</strong></p>
@@ -989,7 +993,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-22T15:25:49+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-22T16:59:01+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年1月22日</p>
@@ -1182,7 +1186,7 @@ A. 2  B. 3 C.4 D.5
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E9%A2%98"><span class="toc-text">选择题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A1%AB%E7%A9%BA%E9%A2%98"><span class="toc-text">填空题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E9%A2%98"><span class="toc-text">判断题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="toc-text">第一章（重点）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="toc-text">第二章（重点）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AC%E9%92%A5%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%EF%BC%88P22%EF%BC%89"><span class="toc-text">公钥加密算法（P22）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0"><span class="toc-text">第三章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E4%BF%A1%E6%A0%B9"><span class="toc-text">可信根</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E4%BF%A1%E4%BC%A0%E9%80%92"><span class="toc-text">可信传递</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E4%BF%A1%E5%BA%A6%E9%87%8F"><span class="toc-text">可信度量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E4%BB%BB%E9%93%BE"><span class="toc-text">信任链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E4%BF%A1%E4%BB%BB%E9%93%BE%E6%80%8E%E4%B9%88%E8%BF%90%E4%BD%9C%E7%9A%84%EF%BC%9F"><span class="toc-text">动态信任链怎么运作的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PCR%EF%BC%9F%E4%B8%80%E4%B8%AATPM%E9%87%8C%E6%9C%89%E5%87%A0%E4%B8%AAPCR%EF%BC%8C%E5%8A%9F%E8%83%BD%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">PCR？一个TPM里有几个PCR，功能是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E4%BB%BB%E9%93%BE%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9F"><span class="toc-text">信任链的应用？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0"><span class="toc-text">第四章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0%EF%BC%88%E4%BA%86%E8%A7%A3%E4%B8%80%E4%B8%8B%EF%BC%89"><span class="toc-text">第五章（了解一下）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0%EF%BC%88%E7%A8%8D%E5%BE%AE%E4%BA%86%E8%A7%A3%E4%B8%80%E4%B8%8B%EF%BC%89"><span class="toc-text">第六章（稍微了解一下）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E7%AB%A0%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="toc-text">第七章（重点）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%85%AB%E7%AB%A0%EF%BC%88%E6%AF%94%E8%BE%83%E9%87%8D%E8%A6%81%EF%BC%89"><span class="toc-text">第八章（比较重要）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TNC%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%EF%BC%888-2-3%EF%BC%89"><span class="toc-text">TNC的工作流程（8.2.3）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0"><span class="toc-text">第九章</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%80%83%E5%8D%B7"><span class="toc-text">考卷</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E9%A2%98"><span class="toc-text">选择题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A1%AB%E7%A9%BA%E9%A2%98"><span class="toc-text">填空题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E9%A2%98"><span class="toc-text">判断题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%80%83%E7%82%B9"><span class="toc-text">考点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="toc-text">第一章（重点）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="toc-text">第二章（重点）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%AC%E9%92%A5%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%EF%BC%88P22%EF%BC%89"><span class="toc-text">公钥加密算法（P22）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0"><span class="toc-text">第三章</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E4%BF%A1%E6%A0%B9"><span class="toc-text">可信根</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E4%BF%A1%E4%BC%A0%E9%80%92"><span class="toc-text">可信传递</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E4%BF%A1%E5%BA%A6%E9%87%8F"><span class="toc-text">可信度量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E4%BB%BB%E9%93%BE"><span class="toc-text">信任链</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0"><span class="toc-text">第四章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0%EF%BC%88%E4%BA%86%E8%A7%A3%E4%B8%80%E4%B8%8B%EF%BC%89"><span class="toc-text">第五章（了解一下）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0%EF%BC%88%E7%A8%8D%E5%BE%AE%E4%BA%86%E8%A7%A3%E4%B8%80%E4%B8%8B%EF%BC%89"><span class="toc-text">第六章（稍微了解一下）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E7%AB%A0%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="toc-text">第七章（重点）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%85%AB%E7%AB%A0%EF%BC%88%E6%AF%94%E8%BE%83%E9%87%8D%E8%A6%81%EF%BC%89"><span class="toc-text">第八章（比较重要）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0"><span class="toc-text">第九章</span></a></li></ol></li></ol>
     </div>
   </section>
 
