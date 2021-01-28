@@ -505,10 +505,6 @@
 
 <a href="/2020/12/05/kali%E4%B8%8Bvolatility%E5%8F%96%E8%AF%81%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/" title="volatility取证工具的使用">volatility取证工具的使用</a>
 
-
-
-
-
 <p>或者分类下的入侵检测与取证文件夹。</p>
 <h2 id="题目思路概述"><a href="#题目思路概述" class="headerlink" title="题目思路概述"></a>题目思路概述</h2><p>是一个基础的取证题目。考察方向，对登陆密码取证，取证图片和文字。</p>
 <p>首先拿到题目是一个key.dmp和一个加密压缩包。</p>
@@ -519,9 +515,7 @@
 <p>Mimikatz：是一款能够从Windows认证(LSASS)的进程中获取内存，并且获取明文密码和NTLM哈希值的工具，攻击者可以借此漫游内网。他们可以通过明文密码或者传递hash值来提权</p>
 <p>gimp：kali下的（photoshop的Linux版）</p>
 <h2 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h2><h3 id="获取key"><a href="#获取key" class="headerlink" title="获取key"></a>获取key</h3><blockquote>
-<blockquote>
 <p>使用mimikatz</p>
-</blockquote>
 </blockquote>
 <p>把 key.dmp 文件拷贝到 mimikatz.exe 所在文件夹，以管理员身份打开 mimikatz.exe 程序。 输入::回车，可以查看 mimikatz 所有的模块，我们需要使用的模块是 sekurlsa。</p>
 <p>在依次使用命令</p>
@@ -530,7 +524,9 @@ sekurlsa::logonPasswords</code></pre>
 <p>就可以把用户名和密码提取出来。</p>
 <p>Dino209</p>
 <h3 id="取证flag1"><a href="#取证flag1" class="headerlink" title="取证flag1"></a>取证flag1</h3><p>在kali下分析flag1.</p>
+<blockquote>
 <p>kali 下提取图像信息使用的工具是 gimp(photoshop 的 linux 版）</p>
+</blockquote>
 <p>👉为避免找不到gimp包，先进行修复，再安装gimp</p>
 <pre><code>apt --fix-broken install 
 apt-get install gimp</code></pre>
@@ -543,14 +539,12 @@ apt-get install gimp</code></pre>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8110.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%8F%96%E8%AF%8110.png" srcset="data:image/png;base64,666"></p>
 <p>调节宽度、高度，hint给出1080x1577</p>
 <p>调整位移到合适的位置，显示完整图片</p>
-<h3 id="取证flag2"><a href="#取证flag2" class="headerlink" title="取证flag2"></a>取证flag2</h3><p>使用 strings 工具提取出其中的字符串，找到有用信息。</p>
+<h3 id="取证flag2"><a href="#取证flag2" class="headerlink" title="取证flag2"></a>取证flag2</h3><blockquote>
+<p>使用 strings 工具提取出其中的字符串，找到有用信息。</p>
+</blockquote>
 <p>在Windows7 下，管理员身份运行cmd</p>
 <pre><code>strings.exe flag2.dmp &gt; flag2.txt</code></pre>
-<blockquote>
-<blockquote>
-<p>这不仅适用于 notepad 程序，只要当前系统中正在使用的文字处理软件，如:word、 outlook(邮件)等，都可以用相同的方法 dump 内存中数据内容。</p>
-</blockquote>
-</blockquote>
+<p><em>这不仅适用于 notepad 程序，只要当前系统中正在使用的文字处理软件，如:word、 outlook(邮件)等，都可以用相同的方法 dump 内存中数据内容。</em></p>
 <p>提取到一个比较到的大的txt，搜索flag。找到flag{}包着一个链接，打开链接下载flag</p>
 
   
@@ -586,7 +580,7 @@ apt-get install gimp</code></pre>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-28T12:19:58+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-28T12:22:43+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年1月28日</p>
