@@ -531,6 +531,7 @@
   <h1 id="WIFI密码破解之密码生成"><a href="#WIFI密码破解之密码生成" class="headerlink" title="WIFI密码破解之密码生成"></a>WIFI密码破解之密码生成</h1><p>本文将介绍crunch以及pwgen生成密码字典方法。利用crunch、pwgen密码生成工具，制作有针对性的破解字典，加快破解速度。</p>
 <blockquote>
 <p>实验环境macOS Catalina 10.15.7</p>
+<p>Kali </p>
 </blockquote>
 <hr>
 <h2 id="附件下载链接"><a href="#附件下载链接" class="headerlink" title="附件下载链接"></a>附件下载链接</h2><p>Rockyou.txt 下载链接</p>
@@ -550,19 +551,62 @@
 </thead>
 <tbody><tr>
 <td>min-len</td>
-<td></td>
+<td>生成密码字符串的最小长度。</td>
 </tr>
 <tr>
 <td>max-len</td>
-<td></td>
+<td>生成密码字符串的最大长度。</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>character set</td>
+<td>指定用于生成密码的字符集。crunch工具默认提供的字符集保存在/usr/share/crunch/charset.lst中。用户可以直接使用这些字符集来生成对应的密码字典，也可以手动指定字符串。</td>
 </tr>
 </tbody></table>
-<p>min-len:生成密码字符串的最小长度。<br>max-len：生成密码字符串的最大长度。<br>character set：指定用于生成密码的字符集。crunch工具默认提供的字符集保存在/usr/share/crunch/charset.lst中。用户可以直接使用这些字符集来生成对应的密码字典，也可以手动指定字符串。</p>
-<p>crunch命令参数：<br>-b#指定写入文件最大的字节数 。该大小可以指定KB、MB或GB，但是必须与-o START选项一起使用。<br>-c#密码个数。<br>-d#限制出现连续相同元素的个数，比如-d 3就不会出现zzzzf。<br>-f#调用密码库文件<br>-o#指定用来保存密码的文件名<br>-p#定义密码元素<br>-z#打包压缩<br>-t#定义特殊的输出格式，其中@代表小写字母，%代表数字，^代表符号</p>
+<blockquote>
+<p>Kali 路径：/usr/share/crunch/charset.lst</p>
+<p>macOS 路径： /usr/local/Cellar/crunch/3.6/share/charset.lst</p>
+</blockquote>
+<p>crunch命令参数：</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-b</td>
+<td>指定写入文件最大的字节数 。该大小可以指定KB、MB或GB，但是必须与-o START选项一起使用。</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>密码个数。</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>限制出现连续相同元素的个数，比如-d 3就不会出现zzzzf。</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>调用密码库文件</td>
+</tr>
+<tr>
+<td>-o</td>
+<td>指定用来保存密码的文件名，以及路径</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>定义密码元素</td>
+</tr>
+<tr>
+<td>-z</td>
+<td>打包压缩</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>定义特殊的输出格式，其中@代表小写字母，%代表数字，^代表符号</td>
+</tr>
+</tbody></table>
 <hr>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><pre><code>brew search crunch
 brew install crunch</code></pre>
@@ -615,16 +659,74 @@ brew install crunch</code></pre>
 <blockquote>
 <p>介绍pwgen</p>
 </blockquote>
-<h2 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h2><pre><code class="shell">brew install pwgen</code></pre>
-<h2 id="pwgen"><a href="#pwgen" class="headerlink" title="pwgen"></a>pwgen</h2><p>​      下面介绍如何使用pwgen工具构建复杂密码。pwgen是一款密码生成工具，使用该工具生成的密码相当安全。其语法格式如下：<br>pwgen [option] [pw_length] [num_pw]<br>pwgen工具支持的选项及参数含义如下：<br>-c#生成的密码至少包含一个大写字母<br>-A#生成的密码不包含大写字母<br>-n#生成的密码至少包含一个数字<br>-0#生成的密码中不包含数字<br>-y#生成的密码中至少包含一个特殊符号<br>-s#生成完全随机密码<br>-B#生成的密码不包含歧义字符，如0、O<br>-v#不要使用任何元音<br>-1#按行显示密码</p>
+<h2 id="pwgen"><a href="#pwgen" class="headerlink" title="pwgen"></a>pwgen</h2><p>下面介绍如何使用pwgen工具构建复杂密码。pwgen是一款密码生成工具，使用该工具生成的密码相当安全。</p>
+<p>其语法格式如下：</p>
+<pre><code class="shell">pwgen [option] [pw_length] [num_pw]</code></pre>
+<p>pwgen工具支持的选项及参数含义如下：</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-c</td>
+<td>生成的密码至少包含一个大写字母</td>
+</tr>
+<tr>
+<td>-A</td>
+<td>生成的密码不包含大写字母</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>生成的密码至少包含一个数字</td>
+</tr>
+<tr>
+<td>-0</td>
+<td>生成的密码中不包含数字</td>
+</tr>
+<tr>
+<td>-y</td>
+<td>生成的密码中至少包含一个特殊符号</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>生成完全随机密码</td>
+</tr>
+<tr>
+<td>-B</td>
+<td>生成的密码不包含歧义字符，如0、O</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>不要使用任何元音</td>
+</tr>
+<tr>
+<td>-1</td>
+<td>按行显示密码</td>
+</tr>
+</tbody></table>
 <hr>
-<h1 id="生成字典-1"><a href="#生成字典-1" class="headerlink" title="生成字典"></a>生成字典</h1><p>pwgen工具生成一个长度为8，并且含有数字、不包含大写字母、不包含歧义字母的4个密码。</p>
+<h2 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h2><pre><code>brew install pwgen</code></pre>
+<h2 id="生成字典-1"><a href="#生成字典-1" class="headerlink" title="生成字典"></a>生成字典</h2><p>pwgen工具生成一个长度为8，并且含有数字、不包含大写字母、不包含歧义字母的4个密码。</p>
+<pre><code>pwgen -nAB 8 4</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/wifi-1(12).png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/wifi-1(12).png" srcset="data:image/png;base64,666"></p>
+<p>pwgen工具生成一个长度为17，并且包含大写字母、包含数字、包含特殊符号的5个密码，并按行显示。</p>
+<pre><code>pwgen -ncy1 17 5</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/wifi-1(13).png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/wifi-1(13).png" srcset="data:image/png;base64,666"></p>
+<p>生成长度为7的，含有数字和大小写字母的4个密码。</p>
+<pre><code>pwgen -ncC 7 4</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/wifi-1(14).png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/wifi-1(14).png" srcset="data:image/png;base64,666"></p>
 <hr>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p> Kali中自带了一些密码字典，可以帮助用户实施密码破解。自带密码文件默认保存在/usr/share/wordlists目录中。输入如下命令，查看默认自带内容</p>
 <pre><code>ls /usr/share/wordlists</code></pre>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/wifi-1(1).png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/wifi-1(1).png" srcset="data:image/png;base64,666"></p>
+<blockquote>
+<p>macOS </p>
 <p>Rockyou.txt 下载链接</p>
 <p>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1syYEHrskSy6P9RPqM8wNvQ">https://pan.baidu.com/s/1syYEHrskSy6P9RPqM8wNvQ</a> 提取码: jvgc 复制这段内容后打开百度网盘手机App，操作更方便哦</p>
+</blockquote>
 
   
   
@@ -659,7 +761,7 @@ brew install crunch</code></pre>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-03T12:26:56+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-03T12:41:43+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年5月3日</p>
@@ -852,7 +954,7 @@ strchr()
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%84%E4%BB%B6%E4%B8%8B%E8%BD%BD%E9%93%BE%E6%8E%A5"><span class="toc-text">附件下载链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#crunch"><span class="toc-text">crunch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E5%AD%97%E5%85%B8"><span class="toc-text">生成字典</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%BA%93"><span class="toc-text">密码库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%AF%86%E7%A0%81%E5%BA%93"><span class="toc-text">查看密码库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%83%E7%94%A8%E5%AF%86%E7%A0%81%E5%BA%93"><span class="toc-text">调用密码库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E6%8C%87%E5%AE%9A%E5%85%83%E7%B4%A0%E5%AD%97%E5%85%B8"><span class="toc-text">生成指定元素字典</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-1"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pwgen"><span class="toc-text">pwgen</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-text">后记</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%84%E4%BB%B6%E4%B8%8B%E8%BD%BD%E9%93%BE%E6%8E%A5"><span class="toc-text">附件下载链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#crunch"><span class="toc-text">crunch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E5%AD%97%E5%85%B8"><span class="toc-text">生成字典</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%BA%93"><span class="toc-text">密码库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%AF%86%E7%A0%81%E5%BA%93"><span class="toc-text">查看密码库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%83%E7%94%A8%E5%AF%86%E7%A0%81%E5%BA%93"><span class="toc-text">调用密码库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E6%8C%87%E5%AE%9A%E5%85%83%E7%B4%A0%E5%AD%97%E5%85%B8"><span class="toc-text">生成指定元素字典</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pwgen"><span class="toc-text">pwgen</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-1"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E5%AD%97%E5%85%B8-1"><span class="toc-text">生成字典</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-text">后记</span></a></li></ol>
     </div>
   </section>
 
