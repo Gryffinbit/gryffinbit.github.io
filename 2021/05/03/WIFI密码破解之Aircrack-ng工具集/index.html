@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -21,7 +19,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>标签：macOS - Gryffinbit</title>
+  <title>WIFI密码破解之Aircrack-ng工具集 - Gryffinbit</title>
+  
+    <meta name="keywords" content="kali,macOS">
   
 
   
@@ -373,7 +373,7 @@
     <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper  dock' style="display: none;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div id='cover-backstretch'></div>
           
@@ -458,137 +458,426 @@
       <div class='body-wrapper' id="pjax-container">
         
 
-
 <div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
-    
-      
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-        
-      
+
+
+  
+  <div class="article-meta" id="top">
     
     
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
     
-    <h2 class="article-title" >
-      <a href="/2021/05/03/WIFI%E5%AF%86%E7%A0%81%E7%A0%B4%E8%A7%A3%E4%B9%8BAircrack-ng%E5%B7%A5%E5%85%B7%E9%9B%86/">
+      <h1 class="title">
         WIFI密码破解之Aircrack-ng工具集
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
+      </h1>
+      <div class='new-meta-box'>
         
-实验环境 macOS Catalina 10.15.7
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>Gryffinbit</p>
+  </a>
+</div>
 
-
-参考链接：https://mba811.gitbooks.io/web-study/content/wlaq/gj/w1.html
-参考链接：https://osxdaily.com/2007/01/18/airport-the-little-known-command-line-wireless-utility/
-参考链接：ht...
-      
-    
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">无线网络安全</a>
+    </a>
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+
+
+          
         
-        <time>2021-05-03</time>
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年5月3日</p>
+  </a>
+</div>
+
+          
         
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">无线网络安全</a>
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="WIFI密码破解之Aircrack-ng工具集" data-path="/2021/05/03/WIFI%E5%AF%86%E7%A0%81%E7%A0%B4%E8%A7%A3%E4%B9%8BAircrack-ng%E5%B7%A5%E5%85%B7%E9%9B%86/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  <blockquote>
+<p>实验环境 macOS Catalina 10.15.7</p>
+</blockquote>
+<blockquote>
+<p>参考链接：<a target="_blank" rel="noopener" href="https://mba811.gitbooks.io/web-study/content/wlaq/gj/w1.html">https://mba811.gitbooks.io/web-study/content/wlaq/gj/w1.html</a></p>
+<p>参考链接：<a target="_blank" rel="noopener" href="https://osxdaily.com/2007/01/18/airport-the-little-known-command-line-wireless-utility/">https://osxdaily.com/2007/01/18/airport-the-little-known-command-line-wireless-utility/</a></p>
+<p>参考链接：<a target="_blank" rel="noopener" href="https://gwliang.com/2020/01/24/wifi-cracking/#appendix.zh.md">https://gwliang.com/2020/01/24/wifi-cracking/#appendix.zh.md</a></p>
+<p>参考链接：<a target="_blank" rel="noopener" href="https://github.com/0x0XDev/JamWiFi">https://github.com/0x0XDev/JamWiFi</a></p>
+</blockquote>
+<blockquote>
+<p>Kali 实验步骤文档下载链接</p>
+<p>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1lsYFPKTl4SY9Ksltl9OShw">https://pan.baidu.com/s/1lsYFPKTl4SY9Ksltl9OShw</a> 提取码: tx86 复制这段内容后打开百度网盘手机App，操作更方便哦</p>
+</blockquote>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol>
+<li><p>Download and install XCode</p>
+<pre><code class="shell">xcode-select --install</code></pre>
+</li>
+<li><p>Download and install <a target="_blank" rel="noopener" href="http://www.macports.org/install.php">MacPorts</a></p>
+</li>
+<li><p>Update Mac Ports</p>
+<pre><code class="shell">sudo port -v selfupdate</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/wifi-2(1).png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/wifi-2(1).png" srcset="data:image/png;base64,666"></p>
+</li>
+<li><p>Install AirCrack</p>
+<pre><code class="shell">brew install aircrack-ng</code></pre>
+</li>
+<li><p>create a symbolic link to the airport command</p>
+<pre><code class="shell">cd /usr/sbin</code></pre>
+<pre><code class="shell">sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport</code></pre>
+</li>
+</ol>
+<h2 id="aircrack-ng"><a href="#aircrack-ng" class="headerlink" title="aircrack - ng"></a>aircrack - ng</h2><p>​    Aircrack-ng是一个包含了多款工具的无线攻击审计套装，其中包含的工具在无线破解过程中都会用到。<br>​    在目标AP已有合法客户端连接的情况下，可以通过airodump-ng侦听数据包，然后用aireplay-ng的deauth强制合法客户端掉线，掉线后客户端会尝试重新连接AP，此时会产生握手包。如果成功抓取到该握手包，则可以用字典进行本地离线破解。使用这种方法进行攻击的前提有两个：一是必须处在目标AP的信号范围内；二是已有合法客户端连接该AP。<br>​    在客户端开启无线，但是没有与目标AP连接的情况下，可以通过airbase-ng伪造目标AP来欺骗客户端与其连接，这时也会产生握手包，通过这个握手包，同样可以实现破解目标AP无线密码以及入侵客户端。</p>
+<h2 id="无线网卡工作模式"><a href="#无线网卡工作模式" class="headerlink" title="无线网卡工作模式"></a>无线网卡工作模式</h2><ol>
+<li>管理模式（Managed）<br>Managed模式用于无线STA直接与无线AP进行接入连接。</li>
+<li>主模式（Master）<br>Master模式允许无线网卡使用特制的驱动程序和软件工作，作为其他设备的无线AP。例如，无线路由器就是工作在Master模式下。对于普通的PC机来说，如果有合适的硬件也可以变成一台无线AP。</li>
+<li>Ad_hoc模式<br> 当用户的网络由互相直连的设备组成时，就使用Ad_hoc模式。在这个模式中，各设备之间采用对等网络的方式进行连接，无线通信双方共同承担无线AP的职责。</li>
+<li>监听模式（Monitor）<br> Monitor模式主要用于监控无线网络内部的流量，用于检测网络和排错。如果要捕获无线数据包，用户的无线网卡和配套的驱动必须支持监听模式。</li>
+</ol>
+<hr>
+<p>​    正常情况下，网卡都工作在管理模式，将要发送的数据包发往连接在一起的所有主机，数据包中包含着应该接收数据包主机的正确地址，只有与数据包中目标地址一致的主机才能接收。</p>
+<p>​    但当处于监听模式时，无论数据包中的目标地址是什么，主机都将接收，而且网络监听不容易被发现。</p>
+<p>​    因为运行网络监听的主机只是在被动的接收局域网中传输的信息，不主动与其他主机交换信息，也没有修改在网络中传输的数据包。</p>
+<h2 id="airport-Wireless-Tool使用"><a href="#airport-Wireless-Tool使用" class="headerlink" title="airport Wireless Tool使用"></a>airport Wireless Tool使用</h2><h4 id="显示基本信息"><a href="#显示基本信息" class="headerlink" title="显示基本信息"></a>显示基本信息</h4><pre><code class="shell">airport -I</code></pre>
+<h4 id="扫描周边无线网络"><a href="#扫描周边无线网络" class="headerlink" title="扫描周边无线网络"></a>扫描周边无线网络</h4><pre><code class="shell">airport -s</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/wifi-2(2).png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/wifi-2(2).png" srcset="data:image/png;base64,666"></p>
+<h4 id="禁用airport，关闭wifi"><a href="#禁用airport，关闭wifi" class="headerlink" title="禁用airport，关闭wifi"></a>禁用airport，关闭wifi</h4><pre><code class="shell">networksetup -setairportpower airport off</code></pre>
+<p>设备名称可以是airport，EN0，EN1等，因Mac硬件和OS X的版本，因此，可能需要指定设备端口，而不是’airport’，例如EN1 EN0或：</p>
+<pre><code class="shell">networksetup -setairportpower en0 off</code></pre>
+<h4 id="检查端口-以en0为例子，可以替换成其他的"><a href="#检查端口-以en0为例子，可以替换成其他的" class="headerlink" title="检查端口(以en0为例子，可以替换成其他的)"></a>检查端口(以en0为例子，可以替换成其他的)</h4><pre><code class="shell">networksetup -getairportpower en0</code></pre>
+<h4 id="启用端口，打开wifi"><a href="#启用端口，打开wifi" class="headerlink" title="启用端口，打开wifi"></a>启用端口，打开wifi</h4><pre><code class="shell">networksetup -setairportpower en0 on</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/wifi-2(3).png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/wifi-2(3).png" srcset="data:image/png;base64,666"></p>
+<h4 id="扫描"><a href="#扫描" class="headerlink" title="扫描"></a>扫描</h4><pre><code class="shell">airport en0 scan</code></pre>
+<p>可以使用grep进行过滤，如</p>
+<pre><code class="shell">airport en0 scan |grep WEP
+airport en0 scan |grep WPA</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/wifi-2(6).png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/wifi-2(6).png" srcset="data:image/png;base64,666"></p>
+<h4 id="监听"><a href="#监听" class="headerlink" title="监听"></a>监听</h4><pre><code class="shell">sudo airport en0 sniff 6</code></pre>
+<p>​    en0是所使用网卡的名称，sniff表示模式，6表示信道</p>
+<p><code>Ctrl c</code> 停止监听</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/wifi-2(4).png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/wifi-2(4).png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/wifi-2(5).png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/wifi-2(5).png" srcset="data:image/png;base64,666"></p>
+<h4 id="Wireshark分析包"><a href="#Wireshark分析包" class="headerlink" title="Wireshark分析包"></a>Wireshark分析包</h4><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/wifi-2(7).png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/wifi-2(7).png" srcset="data:image/png;base64,666"></p>
+<h4 id="根据Mac地址查看厂商"><a href="#根据Mac地址查看厂商" class="headerlink" title="根据Mac地址查看厂商"></a>根据Mac地址查看厂商</h4><p><a target="_blank" rel="noopener" href="http://www.atoolbox.net/Tool.php?Id=808">http://www.atoolbox.net/Tool.php?Id=808</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.metools.info/other/o67.html">http://www.metools.info/other/o67.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://mac.bmcx.com/d0:76:e7:ef:c3:41__mac/">https://mac.bmcx.com/d0:76:e7:ef:c3:41__mac/</a></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/wifi-2(8).png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/wifi-2(8).png" srcset="data:image/png;base64,666"></p>
+<h4 id="在漏洞网站查看公开的漏洞信息"><a href="#在漏洞网站查看公开的漏洞信息" class="headerlink" title="在漏洞网站查看公开的漏洞信息"></a>在漏洞网站查看公开的漏洞信息</h4><p>Routerpwn.com</p>
+<h4 id="MAC地址伪装"><a href="#MAC地址伪装" class="headerlink" title="MAC地址伪装"></a>MAC地址伪装</h4><pre><code class="shell">sudo ifconfig en0 lladdr 00:00:00:00:00:00:01 </code></pre>
+<h2 id="Deauth攻击"><a href="#Deauth攻击" class="headerlink" title="Deauth攻击"></a>Deauth攻击</h2><p><a target="_blank" rel="noopener" href="https://github.com/0x0XDev/JamWiFi">https://github.com/0x0XDev/JamWiFi</a></p>
+<p>Jamwifi下载：</p>
+<p>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/180kUZjXXf6PS8C8ZtB2d6Q">https://pan.baidu.com/s/180kUZjXXf6PS8C8ZtB2d6Q</a> 提取码: fcu4 复制这段内容后打开百度网盘手机App，操作更方便哦</p>
+<h4 id="抓包"><a href="#抓包" class="headerlink" title="抓包"></a>抓包</h4><p><strong>无线诊断工具</strong></p>
+<p>幸运的是，OSX 配备了一套无线诊断工具。 要打开它们，请在按住键盘上 option 键的同时，点击菜单栏中的 Wi-Fi 图标。 然后选择“打开无线诊断…”</p>
+<p><strong>测定目标网络信道</strong></p>
+<p>打开无线诊断程序，单击<strong>窗口</strong> &gt; <strong>扫描</strong>。 找到目标网络，记录下其信道和宽度。</p>
+<p><img src="/Users/gryffinbit/Desktop/wifi-2(9).png" class="lazyload" data-srcset="/Users/gryffinbit/Desktop/wifi-2(9).png" srcset="data:image/png;base64,666" alt="wifi-2(9)"></p>
+<p><img src="/Users/gryffinbit/Desktop/wifi-2(10).png" class="lazyload" data-srcset="/Users/gryffinbit/Desktop/wifi-2(10).png" srcset="data:image/png;base64,666" alt="wifi-2(10)"></p>
+<p><strong>抓取一个 4-way handshake</strong></p>
+<ol>
+<li>在无线诊断程序打开的情况下，点击菜单栏中的<strong>窗口</strong> &gt; <strong>嗅探器</strong>。选择你在上一步中找到的信道和宽度。</li>
+<li>现在，你需要等待有设备连接到目标网络。如果你正在自己的网络上测试（使用者应当只在自己的网络上进行测试），将任意一个无线设备重新连接就可以抓取 handshake。</li>
+<li>当你感觉已经成功抓取 handshake 时，点击停止。</li>
+<li>根据你的操作系统版本，抓取的 <code>.wcap</code> 文件将被保存到桌面或<code>/var/tmp/</code>。</li>
+<li>将抓取的文件上传到 <a target="_blank" rel="noopener" href="https://hashcat.net/cap2hccapx/">https://hashcat.net/cap2hccapx/</a> 就可以将其转换为 <code>.hccapx</code> 文件。 如果你成功的抓到了 handshake ，站点将开始下载一个<code>.hccapx</code>文件。 否则将不会提示下载。</li>
+</ol>
+<p><img src="/Users/gryffinbit/Desktop/wifi-2(11).png" class="lazyload" data-srcset="/Users/gryffinbit/Desktop/wifi-2(11).png" srcset="data:image/png;base64,666" alt="wifi-2(11)"></p>
+<h4 id="破解"><a href="#破解" class="headerlink" title="破解"></a>破解</h4><pre><code class="shell">aircrack-ng -w /Users/gryffinbit/Downloads/rockyou.txt /tmp/airportSniffbW3DzV.cap</code></pre>
+<p>-w表示使用字典，/Users/gryffinbit/Downloads/rockyou.txt是字典所在的路径，airportSniffbW3DzV.cap是刚才监听生成的文件。执行后会分析这个文件，最后会询问你得目标网络是哪个。</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/wifi-2(12).png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/wifi-2(12).png" srcset="data:image/png;base64,666"></p>
+<pre><code class="shell">aircrack-ng -w dic.txt -M 100 -f 80 -1 -a 2 -b **:**:**:**:**:** /tmp/airportSniffbW3DzV.cap</code></pre>
+<pre><code class="shell">aircrack-ng -w /Users/gryffinbit/Documents/攻击包/naive-hashcat/dicts/rockyou.txt -M 100 -f 80 -1 -a 2 -b 40:B0:76:53:31:F8 /Users/gryffinbit/Desktop/Gryffinbit’s\ MacBook\ Pro_ch11_2021-05-04_10.43.18.435.pcap</code></pre>
+<ul>
+<li>-w 指定字典文件<ul>
+<li>-M 指定最大IVs，根据提示可以适当调大次参数</li>
+<li>-f 暴力破解因子，默认2，也可适当调大</li>
+<li>-a 加密类型，1:WEP, 2:WPA-PSK</li>
+<li>-b BSSID，刚刚纪录目标Wi-Fi的Mac地址<br>　　- 后面紧跟之前记录的捕获数据的存储地址即可。</li>
+</ul>
+</li>
+</ul>
+<p>　更多参数说明可以通过<code>aircrack-ng --help</code>查看。</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/wifi-2(13).png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/wifi-2(13).png" srcset="data:image/png;base64,666"></p>
+<hr>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><blockquote>
+<h3 id="kali"><a href="#kali" class="headerlink" title="kali"></a>kali</h3><p>​    airmon-ng是Aircrack-ng中的一个工具，主要用来设置监听模式。在破解无线网络时，通常都是用该工具将无线网卡设置为监听模式。语法格式如下：</p>
+<pre><code class="shell">airmon-ng &lt;start|stop&gt; &lt;interface&gt; [channel]</code></pre>
+<pre><code class="shell">airmon-ng &lt;check&gt; [kill]</code></pre>
+<p>参数含义：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>start</td>
+<td>启动监听模式</td>
+</tr>
+<tr>
+<td>stop</td>
+<td>停止监听模式</td>
+</tr>
+<tr>
+<td>interface</td>
+<td>指定设置监听模式的接口</td>
+</tr>
+<tr>
+<td>channel</td>
+<td>指定无线网络的信道</td>
+</tr>
+<tr>
+<td>check</td>
+<td>列出所有可能干扰无线网卡的程序。</td>
+</tr>
+<tr>
+<td>kill</td>
+<td>杀死所有可能干扰无线网卡的程序。</td>
+</tr>
+</tbody></table>
+</blockquote>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2021/05/03/WIFI%E5%AF%86%E7%A0%81%E7%A0%B4%E8%A7%A3%E4%B9%8BAircrack-ng%E5%B7%A5%E5%85%B7%E9%9B%86/'>
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://gryffinbit.top/2021/05/03/WIFI%E5%AF%86%E7%A0%81%E7%A0%B4%E8%A7%A3%E4%B9%8BAircrack-ng%E5%B7%A5%E5%85%B7%E9%9B%86/>https://gryffinbit.top/2021/05/03/WIFI%E5%AF%86%E7%A0%81%E7%A0%B4%E8%A7%A3%E4%B9%8BAircrack-ng%E5%B7%A5%E5%85%B7%E9%9B%86/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-04T14:59:18+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年5月4日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
+          
   
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/05/03/WIFI%E5%AF%86%E7%A0%81%E7%A0%B4%E8%A7%A3%E4%B9%8B%E5%AF%86%E7%A0%81%E7%94%9F%E6%88%90/">
-        WIFI密码破解之密码生成
-      </a>
-    </h2>
-  
-  <div class='md'>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/kali/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>kali</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/macOS/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>macOS</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        WIFI密码破解之密码生成本文将介绍crunch以及pwgen生成密码字典方法。利用crunch、pwgen密码生成工具，制作有针对性的破解字典，加快破解速度。
-
-实验环境macOS Catalina 10.15.7
-Kali 
-
-
-附件下载链接Rockyou.txt 下载链接
-链接: https://pan.baidu.com/s/1syYEHrskSy6P9RPqM8wNvQ 提取码: ...
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gryffinbit.top/2021/05/03/WIFI%E5%AF%86%E7%A0%81%E7%A0%B4%E8%A7%A3%E4%B9%8BAircrack-ng%E5%B7%A5%E5%85%B7%E9%9B%86/&title=WIFI密码破解之Aircrack-ng工具集 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://gryffinbit.top/2021/05/03/WIFI%E5%AF%86%E7%A0%81%E7%A0%B4%E8%A7%A3%E4%B9%8BAircrack-ng%E5%B7%A5%E5%85%B7%E9%9B%86/&title=WIFI密码破解之Aircrack-ng工具集 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://gryffinbit.top/2021/05/03/WIFI%E5%AF%86%E7%A0%81%E7%A0%B4%E8%A7%A3%E4%B9%8BAircrack-ng%E5%B7%A5%E5%85%B7%E9%9B%86/&title=WIFI密码破解之Aircrack-ng工具集 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
       
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+</div>
+
+
+
         
-        <time>2021-05-03</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">无线网络安全</a>
-        
-      </div>
       
-        <div>
-          <a class='readmore' href='/2021/05/03/WIFI%E5%AF%86%E7%A0%81%E7%A0%B4%E8%A7%A3%E4%B9%8B%E5%AF%86%E7%A0%81%E7%94%9F%E6%88%90/'>
-            阅读全文
-          </a>
-        </div>
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2021/05/04/WIFI%E5%AF%86%E7%A0%81%E7%A0%B4%E8%A7%A3%E4%B9%8BWEP%E5%8A%A0%E5%AF%86/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>WIFI密码破解之WEP加密</p>
+          <p class='content'>
+参考链接：https://www.aircrack-ng.org/doku.php?id=airbase-ng
+
+Aircrack-ng破解WEP加密原理：
+​    ARP request重...</p>
+        </a>
+      
+      
+        <a class='next' href='/2021/05/03/WIFI%E5%AF%86%E7%A0%81%E7%A0%B4%E8%A7%A3%E4%B9%8B%E5%AF%86%E7%A0%81%E7%94%9F%E6%88%90/'>
+          <p class='title'>WIFI密码破解之密码生成<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>WIFI密码破解之密码生成本文将介绍crunch以及pwgen生成密码字典方法。利用crunch、pwgen密码生成工具，制作有针对性的破解字典，加快破解速度。
+
+实验环境macOS Catal...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
+  </article>
 
 
-    
-  
+
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -596,211 +885,28 @@ Kali
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/photo.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Gryffinbit</h2>
-        
-        
-          <p>兔子</p>
 
-        
-        
-          <p>凡殺不死我的，必使我更強大。</p>
 
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/img/QQ.jpg"
-              class="social fab fa-qq flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;tf=1&amp;source=mailto&amp;to=Gryffinbit@Gmail.com"
-              class="social fas fa-envelope-open flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/Gryffinbit/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://blog.csdn.net/Gryffinbit"
-              class="social fab fa-cuttlefish flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Misc/" href="/categories/Misc/"
-            id="categoriesMisc"
-            ><div class='name'>Misc</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/write-up/" href="/categories/write-up/"
-            id="categorieswrite-up"
-            ><div class='name'>write up</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AE%9E%E9%AA%8C/" href="/categories/%E5%AE%9E%E9%AA%8C/"
-            id="categoriesE5AE9EE9AA8C"
-            ><div class='name'>实验</div><div class='badge'>(19)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E5%AE%9E%E9%AA%8C/%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E4%B8%8E%E5%8F%96%E8%AF%81/" href="/categories/%E5%AE%9E%E9%AA%8C/%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E4%B8%8E%E5%8F%96%E8%AF%81/"
-            id="categoriesE5AE9EE9AA8CE585A5E4BEB5E6A380E6B58BE4B88EE58F96E8AF81"
-            ><div class='name'>入侵检测与取证</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E5%AE%9E%E9%AA%8C/%E5%AF%86%E7%A0%81%E5%AD%A6/" href="/categories/%E5%AE%9E%E9%AA%8C/%E5%AF%86%E7%A0%81%E5%AD%A6/"
-            id="categoriesE5AE9EE9AA8CE5AF86E7A081E5ADA6"
-            ><div class='name'>密码学</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E5%AE%9E%E9%AA%8C/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/" href="/categories/%E5%AE%9E%E9%AA%8C/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/"
-            id="categoriesE5AE9EE9AA8CE7BD91E7BB9CE5AE89E585A8E68A80E69CAF"
-            ><div class='name'>网络安全技术</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E5%AE%9E%E9%AA%8C/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" href="/categories/%E5%AE%9E%E9%AA%8C/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"
-            id="categoriesE5AE9EE9AA8CE7BD91E7BB9CE7BC96E7A88B"
-            ><div class='name'>网络编程</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"
-            id="categoriesE5AF86E7A081E5ADA6"
-            ><div class='name'>密码学</div><div class='badge'>(8)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%8A%A5%E9%94%99%E8%B0%83%E8%AF%95/" href="/categories/%E6%8A%A5%E9%94%99%E8%B0%83%E8%AF%95/"
-            id="categoriesE68AA5E99499E8B083E8AF95"
-            ><div class='name'>报错调试</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" href="/categories/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"
-            id="categoriesE697A0E7BABFE7BD91E7BB9CE5AE89E585A8"
-            ><div class='name'>无线网络安全</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/" href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/"
-            id="categoriesE69C9FE69CABE88083E8AF95"
-            ><div class='name'>期末考试</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E5%8F%AF%E4%BF%A1%E8%AE%A1%E7%AE%97/" href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E5%8F%AF%E4%BF%A1%E8%AE%A1%E7%AE%97/"
-            id="categoriesE69C9FE69CABE88083E8AF95E58FAFE4BFA1E8AEA1E7AE97"
-            ><div class='name'>可信计算</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"
-            id="categoriesE69C9FE69CABE88083E8AF95E6938DE4BD9CE7B3BBE7BB9F"
-            ><div class='name'>操作系统</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"
-            id="categoriesE69C9FE69CABE88083E8AF95E695B0E68DAEE7BB93E69E84"
-            ><div class='name'>数据结构</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E7%97%85%E6%AF%92%E5%8E%9F%E7%90%86/" href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E7%97%85%E6%AF%92%E5%8E%9F%E7%90%86/"
-            id="categoriesE69C9FE69CABE88083E8AF95E79785E6AF92E58E9FE79086"
-            ><div class='name'>病毒原理</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/" href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/"
-            id="categoriesE69C9FE69CABE88083E8AF95E7BD91E7BB9CE5AE89E585A8E68A80E69CAF"
-            ><div class='name'>网络安全技术</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E9%80%86%E5%90%91/" href="/categories/%E9%80%86%E5%90%91/"
-            id="categoriesE98086E59091"
-            ><div class='name'>逆向</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#aircrack-ng"><span class="toc-text">aircrack - ng</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%A0%E7%BA%BF%E7%BD%91%E5%8D%A1%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F"><span class="toc-text">无线网卡工作模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#airport-Wireless-Tool%E4%BD%BF%E7%94%A8"><span class="toc-text">airport Wireless Tool使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">显示基本信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%AB%E6%8F%8F%E5%91%A8%E8%BE%B9%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C"><span class="toc-text">扫描周边无线网络</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A6%81%E7%94%A8airport%EF%BC%8C%E5%85%B3%E9%97%ADwifi"><span class="toc-text">禁用airport，关闭wifi</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A3%80%E6%9F%A5%E7%AB%AF%E5%8F%A3-%E4%BB%A5en0%E4%B8%BA%E4%BE%8B%E5%AD%90%EF%BC%8C%E5%8F%AF%E4%BB%A5%E6%9B%BF%E6%8D%A2%E6%88%90%E5%85%B6%E4%BB%96%E7%9A%84"><span class="toc-text">检查端口(以en0为例子，可以替换成其他的)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%AF%E7%94%A8%E7%AB%AF%E5%8F%A3%EF%BC%8C%E6%89%93%E5%BC%80wifi"><span class="toc-text">启用端口，打开wifi</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%AB%E6%8F%8F"><span class="toc-text">扫描</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%91%E5%90%AC"><span class="toc-text">监听</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Wireshark%E5%88%86%E6%9E%90%E5%8C%85"><span class="toc-text">Wireshark分析包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AEMac%E5%9C%B0%E5%9D%80%E6%9F%A5%E7%9C%8B%E5%8E%82%E5%95%86"><span class="toc-text">根据Mac地址查看厂商</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8%E6%BC%8F%E6%B4%9E%E7%BD%91%E7%AB%99%E6%9F%A5%E7%9C%8B%E5%85%AC%E5%BC%80%E7%9A%84%E6%BC%8F%E6%B4%9E%E4%BF%A1%E6%81%AF"><span class="toc-text">在漏洞网站查看公开的漏洞信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MAC%E5%9C%B0%E5%9D%80%E4%BC%AA%E8%A3%85"><span class="toc-text">MAC地址伪装</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Deauth%E6%94%BB%E5%87%BB"><span class="toc-text">Deauth攻击</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%93%E5%8C%85"><span class="toc-text">抓包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A0%B4%E8%A7%A3"><span class="toc-text">破解</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-text">后记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#kali"><span class="toc-text">kali</span></a></li></ol></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/AES/" style="font-size: 14px; color: #999">AES</a> <a href="/tags/CA/" style="font-size: 14px; color: #999">CA</a> <a href="/tags/CAsyncSocket/" style="font-size: 14px; color: #999">CAsyncSocket</a> <a href="/tags/CSocket/" style="font-size: 14px; color: #999">CSocket</a> <a href="/tags/DES/" style="font-size: 14px; color: #999">DES</a> <a href="/tags/GNS3/" style="font-size: 14px; color: #999">GNS3</a> <a href="/tags/IDS/" style="font-size: 14px; color: #999">IDS</a> <a href="/tags/MFC/" style="font-size: 18px; color: #7e7e7e">MFC</a> <a href="/tags/PGP/" style="font-size: 14px; color: #999">PGP</a> <a href="/tags/Python/" style="font-size: 14px; color: #999">Python</a> <a href="/tags/RSA/" style="font-size: 18px; color: #7e7e7e">RSA</a> <a href="/tags/SHA-1/" style="font-size: 14px; color: #999">SHA-1</a> <a href="/tags/SSL/" style="font-size: 14px; color: #999">SSL</a> <a href="/tags/WinInet/" style="font-size: 14px; color: #999">WinInet</a> <a href="/tags/WinSock/" style="font-size: 18px; color: #7e7e7e">WinSock</a> <a href="/tags/gmpy2/" style="font-size: 14px; color: #999">gmpy2</a> <a href="/tags/kali/" style="font-size: 24px; color: #555">kali</a> <a href="/tags/macOS/" style="font-size: 16px; color: #8b8b8b">macOS</a> <a href="/tags/snort/" style="font-size: 20px; color: #707070">snort</a> <a href="/tags/volatility/" style="font-size: 14px; color: #999">volatility</a> <a href="/tags/wifi%E7%A0%B4%E8%A7%A3/" style="font-size: 14px; color: #999">wifi破解</a> <a href="/tags/%E5%85%AC%E9%92%A5%E4%BD%93%E5%88%B6/" style="font-size: 14px; color: #999">公钥体制</a> <a href="/tags/%E5%8F%96%E8%AF%81/" style="font-size: 18px; color: #7e7e7e">取证</a> <a href="/tags/%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81/" style="font-size: 18px; color: #7e7e7e">古典密码</a> <a href="/tags/%E5%9B%BE%E7%89%87/" style="font-size: 22px; color: #636363">图片</a> <a href="/tags/%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B0/" style="font-size: 14px; color: #999">散列函数</a> <a href="/tags/%E6%9D%82/" style="font-size: 14px; color: #999">杂</a> <a href="/tags/%E6%B1%87%E7%BC%96/" style="font-size: 14px; color: #999">汇编</a> <a href="/tags/%E6%B5%81%E5%AF%86%E7%A0%81/" style="font-size: 14px; color: #999">流密码</a> <a href="/tags/%E7%AC%AC%E4%B8%80%E5%B1%8A%E4%BF%A1%E5%AE%89%E5%A4%A7%E6%8C%91%E6%88%98/" style="font-size: 14px; color: #999">第一届信安大挑战</a> <a href="/tags/%E8%80%83%E7%82%B9/" style="font-size: 22px; color: #636363">考点</a> <a href="/tags/%E8%AF%81%E4%B9%A6/" style="font-size: 14px; color: #999">证书</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 </aside>
+
 
 
         
@@ -810,8 +916,8 @@ Kali
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="WIFI密码破解之Aircrack-ng工具集";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
