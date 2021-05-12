@@ -21,7 +21,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>分类：无线网络安全 - Gryffinbit</title>
+  <title>分类：逆向 - Gryffinbit</title>
   
 
   
@@ -469,12 +469,6 @@
         
           
         
-          
-        
-          
-        
-          
-        
       
     
     
@@ -488,15 +482,29 @@
   
     
     <h2 class="article-title" >
-      <a href="/2021/05/04/%E7%AA%81%E7%A0%B4WIFI%E5%AE%89%E5%85%A8%E9%99%90%E5%88%B6/">
-        突破WIFI安全限制
+      <a href="/2021/05/02/%E7%94%A8%E6%B1%87%E7%BC%96%E5%AE%9E%E7%8E%B0C%E8%AF%AD%E8%A8%80%E5%87%BD%E6%95%B0/">
+        用汇编实现C语言函数
       </a>
     </h2>
   
   <div class='md'>
     
       
-        Aircrack挖掘隐藏ESSID热点实验原理：隐藏ESSID之后，AP发出的网络的信标数据包中不包括其“服务集标识”，也不回复客户端以广播方式发送的“探测请求”数据包。但用户在登录网络进行认证时，就必然会用到“服务集标识”。ESSID可以通过以下方式获取：（1）嗅探无线环境，然后使用mdk3工具暴力破解隐藏的ESSID。（2）嗅探无线环境，等待客户端关联到AP，然后捕获该关联。（3）发起D...
+        用win32汇编语言实现以下C语言函数，
+
+strlen()
+
+strcmp()
+
+strchr()
+
+
+安装MASM在官网下载https://www.masm32.com/
+解压文件夹到指定盘符。
+配置MASM路径控制面板-&gt;系统和安全-&gt; 系统 -&gt; 高级系统设置 -&gt; 环境变量 -&gt; 系统变量
+将masm相关路径添加到系统变量
+变量名：include
+变量...
       
     
   </div>
@@ -504,170 +512,15 @@
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time>2021-05-04</time>
+        <time>2021-05-02</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">无线网络安全</a>
+          <a class="category-link" href="/categories/%E5%AE%9E%E9%AA%8C/">实验</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AE%9E%E9%AA%8C/%E9%80%86%E5%90%91/">逆向</a>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2021/05/04/%E7%AA%81%E7%A0%B4WIFI%E5%AE%89%E5%85%A8%E9%99%90%E5%88%B6/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/05/04/WIFI%E5%AF%86%E7%A0%81%E7%A0%B4%E8%A7%A3%E4%B9%8BWEP%E5%8A%A0%E5%AF%86/">
-        WIFI密码破解之WEP加密
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        
-参考链接：https://www.aircrack-ng.org/doku.php?id=airbase-ng
-
-Aircrack-ng破解WEP加密原理：
-​    ARP request重放攻击，当抓取到一个ARP请求包的时候对它进行重放，WEP体系允许IV的重复使用，因此AP会对重放的ARP request进行应答，从而能够收集到足够数量的IV。​    在客户端开启无线，但是没有与...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-05-04</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">无线网络安全</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/05/04/WIFI%E5%AF%86%E7%A0%81%E7%A0%B4%E8%A7%A3%E4%B9%8BWEP%E5%8A%A0%E5%AF%86/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/05/03/WIFI%E5%AF%86%E7%A0%81%E7%A0%B4%E8%A7%A3%E4%B9%8BAircrack-ng%E5%B7%A5%E5%85%B7%E9%9B%86/">
-        WIFI密码破解之Aircrack-ng工具集
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        
-实验环境 macOS Catalina 10.15.7
-
-
-参考链接：https://mba811.gitbooks.io/web-study/content/wlaq/gj/w1.html
-参考链接：https://osxdaily.com/2007/01/18/airport-the-little-known-command-line-wireless-utility/
-参考链接：ht...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-05-03</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">无线网络安全</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/05/03/WIFI%E5%AF%86%E7%A0%81%E7%A0%B4%E8%A7%A3%E4%B9%8BAircrack-ng%E5%B7%A5%E5%85%B7%E9%9B%86/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/05/03/WIFI%E5%AF%86%E7%A0%81%E7%A0%B4%E8%A7%A3%E4%B9%8B%E5%AF%86%E7%A0%81%E7%94%9F%E6%88%90/">
-        WIFI密码破解之密码生成
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        WIFI密码破解之密码生成本文将介绍crunch以及pwgen生成密码字典方法。利用crunch、pwgen密码生成工具，制作有针对性的破解字典，加快破解速度。
-
-实验环境macOS Catalina 10.15.7
-Kali 
-
-
-附件下载链接Rockyou.txt 下载链接
-链接: https://pan.baidu.com/s/1syYEHrskSy6P9RPqM8wNvQ 提取码: ...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-05-03</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">无线网络安全</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/05/03/WIFI%E5%AF%86%E7%A0%81%E7%A0%B4%E8%A7%A3%E4%B9%8B%E5%AF%86%E7%A0%81%E7%94%9F%E6%88%90/'>
+          <a class='readmore' href='/2021/05/02/%E7%94%A8%E6%B1%87%E7%BC%96%E5%AE%9E%E7%8E%B0C%E8%AF%AD%E8%A8%80%E5%87%BD%E6%95%B0/'>
             阅读全文
           </a>
         </div>
@@ -801,7 +654,7 @@ Kali
           <li><a class="flat-box"
             title="/categories/%E5%AE%9E%E9%AA%8C/" href="/categories/%E5%AE%9E%E9%AA%8C/"
             id="categoriesE5AE9EE9AA8C"
-            ><div class='name'>实验</div><div class='badge'>(19)</div></a></li>
+            ><div class='name'>实验</div><div class='badge'>(26)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/%E5%AE%9E%E9%AA%8C/%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E4%B8%8E%E5%8F%96%E8%AF%81/" href="/categories/%E5%AE%9E%E9%AA%8C/%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E4%B8%8E%E5%8F%96%E8%AF%81/"
@@ -814,6 +667,16 @@ Kali
             ><div class='name'>密码学</div><div class='badge'>(6)</div></a></li>
         
           <li><a class="flat-box child"
+            title="/categories/%E5%AE%9E%E9%AA%8C/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" href="/categories/%E5%AE%9E%E9%AA%8C/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"
+            id="categoriesE5AE9EE9AA8CE697A0E7BABFE7BD91E7BB9CE5AE89E585A8"
+            ><div class='name'>无线网络安全</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E5%AE%9E%E9%AA%8C/%E7%89%A9%E8%81%94%E7%BD%91/" href="/categories/%E5%AE%9E%E9%AA%8C/%E7%89%A9%E8%81%94%E7%BD%91/"
+            id="categoriesE5AE9EE9AA8CE789A9E88194E7BD91"
+            ><div class='name'>物联网</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child"
             title="/categories/%E5%AE%9E%E9%AA%8C/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/" href="/categories/%E5%AE%9E%E9%AA%8C/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/"
             id="categoriesE5AE9EE9AA8CE7BD91E7BB9CE5AE89E585A8E68A80E69CAF"
             ><div class='name'>网络安全技术</div><div class='badge'>(2)</div></a></li>
@@ -822,6 +685,11 @@ Kali
             title="/categories/%E5%AE%9E%E9%AA%8C/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" href="/categories/%E5%AE%9E%E9%AA%8C/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"
             id="categoriesE5AE9EE9AA8CE7BD91E7BB9CE7BC96E7A88B"
             ><div class='name'>网络编程</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E5%AE%9E%E9%AA%8C/%E9%80%86%E5%90%91/" href="/categories/%E5%AE%9E%E9%AA%8C/%E9%80%86%E5%90%91/"
+            id="categoriesE5AE9EE9AA8CE98086E59091"
+            ><div class='name'>逆向</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"
@@ -832,11 +700,6 @@ Kali
             title="/categories/%E6%8A%A5%E9%94%99%E8%B0%83%E8%AF%95/" href="/categories/%E6%8A%A5%E9%94%99%E8%B0%83%E8%AF%95/"
             id="categoriesE68AA5E99499E8B083E8AF95"
             ><div class='name'>报错调试</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" href="/categories/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"
-            id="categoriesE697A0E7BABFE7BD91E7BB9CE5AE89E585A8"
-            ><div class='name'>无线网络安全</div><div class='badge'>(4)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/" href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/"
@@ -867,16 +730,6 @@ Kali
             title="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/" href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/"
             id="categoriesE69C9FE69CABE88083E8AF95E7BD91E7BB9CE5AE89E585A8E68A80E69CAF"
             ><div class='name'>网络安全技术</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%89%A9%E8%81%94%E7%BD%91/" href="/categories/%E7%89%A9%E8%81%94%E7%BD%91/"
-            id="categoriesE789A9E88194E7BD91"
-            ><div class='name'>物联网</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E9%80%86%E5%90%91/" href="/categories/%E9%80%86%E5%90%91/"
-            id="categoriesE98086E59091"
-            ><div class='name'>逆向</div><div class='badge'>(1)</div></a></li>
         
       </ul>
     </div>
