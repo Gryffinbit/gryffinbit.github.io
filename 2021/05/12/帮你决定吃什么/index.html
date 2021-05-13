@@ -546,7 +546,7 @@
 <li><p><code>void convert()</code> 将生成的随机数，与菜名的ID相对应上，显示结果的时候，就只显示菜名</p>
 </li>
 </ol>
-<h2 id="结果展示"><a href="#结果展示" class="headerlink" title="结果展示"></a>结果展示</h2><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/eat(1).png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/eat(1).png" srcset="data:image/png;base64,666"></p>
+<h2 id="结果展示"><a href="#结果展示" class="headerlink" title="结果展示"></a>结果展示</h2><p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen</a> Shot 2021-05-13 at 2.24.35 PM.png)</p>
 <h2 id="代码框架"><a href="#代码框架" class="headerlink" title="代码框架"></a>代码框架</h2><pre><code class="C">#include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
 #include &lt;string.h&gt;
@@ -592,12 +592,24 @@ void convert() &#123;   //将生成的随机数，与菜名的ID相对应上
 &#125;
 
 int main() &#123;
-  iterm();
-  classify();
-  avaliable();
-  generate();
-  convert();
-  return 0;
+    char confirm;
+    iterm();
+    printf(&quot;去哪吃呢？%s&quot;, location);
+    printf(&quot;可以选择的地方：芙蓉食堂附近，后街附近，网安院附近，香樟，东苑\n&quot;);
+    scanf(&quot;%s&quot;, location);
+    avaliable();
+    while(1)&#123;
+        generate();
+        convert();
+        printf(&quot;要不要吃这个菜呢？再来一次吗？[Y/N]  &quot;);
+        scanf(&quot;%s&quot;,&amp;confirm);
+        printf(&quot;----------------------💙------------------------\n&quot;);
+        if(confirm==&#39;N&#39;)
+            break;
+    &#125;
+
+
+    return 0;
 &#125;</code></pre>
 <h2 id="控诉权哥"><a href="#控诉权哥" class="headerlink" title="控诉权哥"></a>控诉权哥</h2><p>写完代码，功能实现有点小bug，于是就扔给权哥调试了。当时写的时候，很碎片化，思路也乱七八糟，想到哪里加哪里，于是变量名，全局变量都定义的乱七八糟的。看着他调试的时候，我对着代码随口来了句，什么狗屎代码。</p>
 <p>于是他说：“是啊，谁写的啊，哦，我明白了。狗拉的代码，就叫狗屎代码。”</p>
@@ -636,10 +648,10 @@ int main() &#123;
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-12T11:06:44+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-13T14:25:33+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年5月12日</p>
+    <p>更新于：2021年5月13日</p>
   </a>
 </div>
 
