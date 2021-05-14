@@ -4,6 +4,54 @@
   
     
     <entry>
+      <title>PE文件结构分析</title>
+      <link href="2021/05/14/PE%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90/"/>
+      <url>2021/05/14/PE%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90/</url>
+      
+        <content type="html"><![CDATA[<h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><p>通过对Win32平台下PE文件结构的分析，熟练掌握PE文件结构中各主要组成部分的构成，以及文件偏移FOA与内存相对虚拟地址RVA之间的转换。</p><h2 id="实验内容"><a href="#实验内容" class="headerlink" title="实验内容"></a>实验内容</h2><ol><li><p>、在Win10下编译如下汇编源程序pedemo.asm，编译后的PE文件命名为pedemo.exe; 文件名: pedemo.asm</p><pre><code class="assembly">.386.model flat, stdcalloption casemap:noneinclude windows.incinclude kernel32.incinclude user32.incincludelib kernel32.libincludelib user32.lib.data?  data   db 1000h dup (?)  ; 未初始化数据.data   szText db &#39;Test&#39;, 0  ; 5字节数据.codestart:   invoke MessageBox, NULL, offset szText, NULL, MB_OK   mov data, 1   invoke ExitProcess, NULLend start</code></pre></li><li><p>参考教材P70-P84，分析pedemo.exe文件中如下几部分内容：</p><p>(1) DOS头部</p><p>(2) PE标识</p><p>(3) IMAGE_FILE_HEADER</p><p>(4) IMAGE_OPTIONAL_HEADER</p><p>(5) IMAGE_DATA_DIRECTORY中与IMAGE_IMPORT_DESCRIPTOR有关部分</p><p>(6) IMAGE_SECTION_HEADER</p><p>(7) IMAGE_IMPORT_DESCRIPTOR（INT、IAT）</p></li></ol><h2 id="实验要求"><a href="#实验要求" class="headerlink" title="实验要求"></a>实验要求</h2><p>1、使用C32asm与LordPE两个工具对pedemo.exe文件进行分析。</p><p>2、要求对PE文件各个部分的字段的值逐一进行说明，其中DOS头部仅需要说明e_magic和e_lfanew两个字段。此外，要求在C32asm工具中对PE文件相关部分分别截图，然后对照截图，对PE结构体中的字段，在实验结果中用表格进行说明。</p><h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><p>请在此处按照实验要求进行截图，并逐一在其后通过表格对PE结构中各个结构体内部字段值进行记录，例如：</p><p><strong>1. IMAGE_DOS_HEADER</strong></p><p><img src="file:////private/var/folders/7c/5y2zr26x4vb1fx_r7dfldr_c0000gn/T/com.kingsoft.wpsoffice.mac/wps-gryffinbit/ksohtml/wpshQ0a33.jpg" class="lazyload" data-srcset="file:////private/var/folders/7c/5y2zr26x4vb1fx_r7dfldr_c0000gn/T/com.kingsoft.wpsoffice.mac/wps-gryffinbit/ksohtml/wpshQ0a33.jpg" srcset="data:image/png;base64,666" alt="img"> </p><table><thead><tr><th><strong><em>\</em>地址**</strong></th><th><strong><em>\</em>值（内存映像）**</strong></th><th><strong><em>\</em>字段名**</strong></th></tr></thead><tbody><tr><td>00000000</td><td>4D5A</td><td>e_magic</td></tr><tr><td>0000003C</td><td>40000000</td><td>e_lfanew</td></tr></tbody></table><p><strong>2. IMAGE_FILE_HEADER</strong></p><p><strong>3. IMAGE_OPTIONAL_HEADER</strong></p><p><strong>4. IMAGE_DATA_DIRECTORY中与IMAGE_IMPORT_DESCRIPTOR有关部分</strong></p><p><strong>5. IMAGE_SECTION_HEADER</strong></p><p><strong>6. IMAGE_IMPORT_DESCRIPTOR</strong></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 实验 </category>
+          
+          <category> 逆向 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> PE </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>C语言程序中函数调用的分析</title>
+      <link href="2021/05/14/C%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E4%B8%AD%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E7%9A%84%E5%88%86%E6%9E%90/"/>
+      <url>2021/05/14/C%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E4%B8%AD%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E7%9A%84%E5%88%86%E6%9E%90/</url>
+      
+        <content type="html"><![CDATA[<h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><p>通过对Win32平台下C语言程序中函数调用的分析，熟练掌握Win32平台下利于栈帧进行函数参数传递的方式，以及函数调用与返回过程。</p><h2 id="实验内容"><a href="#实验内容" class="headerlink" title="实验内容"></a>实验内容</h2><pre><code class="C">#include &quot;stdio.h&quot;long add(long *a, long *b)&#123;long *x, *y;x= a, y = b;    return (*x + *y);&#125;int main(int argc, char* argv[])&#123;    long a = 1, b = 2;    printf(&quot;%d\n&quot;, add(&amp;a, &amp;b));    return 0;&#125;</code></pre><h2 id="实验要求"><a href="#实验要求" class="headerlink" title="实验要求"></a>实验要求</h2><ol><li><p>在VC2010中，使用release模式编译上述源程序。</p></li><li><p>在Win10下使用Ollydbg软件对编译后的执行程序进行动态跟踪调试。</p></li><li><p>记录main()函数和add()函数被调用时栈帧的产生，以及调用结束后栈帧的撤销过</p></li></ol><h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><p>请在此处绘制本实验的栈帧产生与撤销过程，并且必须以字节为单位，标注OD中的真实地址、地址中相应存放的16进制数，以及标注EBP、ESP的值。</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/reverse-3%EF%BC%881%EF%BC%89.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/reverse-3%EF%BC%881%EF%BC%89.png" srcset="data:image/png;base64,666"></p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/reverse-3%EF%BC%882%EF%BC%89.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/reverse-3%EF%BC%882%EF%BC%89.png" srcset="data:image/png;base64,666"></p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/reverse-3%EF%BC%883%EF%BC%89.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/reverse-3%EF%BC%883%EF%BC%89.png" srcset="data:image/png;base64,666"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 实验 </category>
+          
+          <category> 逆向 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>帮你决定吃什么</title>
       <link href="2021/05/12/%E5%B8%AE%E4%BD%A0%E5%86%B3%E5%AE%9A%E5%90%83%E4%BB%80%E4%B9%88/"/>
       <url>2021/05/12/%E5%B8%AE%E4%BD%A0%E5%86%B3%E5%AE%9A%E5%90%83%E4%BB%80%E4%B9%88/</url>
