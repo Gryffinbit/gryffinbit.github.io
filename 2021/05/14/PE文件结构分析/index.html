@@ -528,7 +528,9 @@
 
 
   
-  <h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><p>通过对Win32平台下PE文件结构的分析，熟练掌握PE文件结构中各主要组成部分的构成，以及文件偏移FOA与内存相对虚拟地址RVA之间的转换。</p>
+  <h2 id="教材参考"><a href="#教材参考" class="headerlink" title="教材参考"></a>教材参考</h2><p>实验原理请参考教材。附上该部分教材的PDF下载链接</p>
+<p><a target="_blank" rel="noopener" href="https://gryffinbit.lanzoui.com/iUvfRpbfjlg">https://gryffinbit.lanzoui.com/iUvfRpbfjlg</a></p>
+<h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><p>通过对Win32平台下PE文件结构的分析，熟练掌握PE文件结构中各主要组成部分的构成，以及文件偏移FOA与内存相对虚拟地址RVA之间的转换。</p>
 <h2 id="实验内容"><a href="#实验内容" class="headerlink" title="实验内容"></a>实验内容</h2><ol>
 <li><p>、在Win10下编译如下汇编源程序pedemo.asm，编译后的PE文件命名为pedemo.exe; 文件名: pedemo.asm</p>
 <pre><code class="assembly">.386
@@ -551,7 +553,8 @@ start:
    invoke ExitProcess, NULL
 end start</code></pre>
 </li>
-<li><p>参考教材P70-P84，分析pedemo.exe文件中如下几部分内容：</p>
+<li><p>分析pedemo.exe文件中如下几部分内容：</p>
+<p>参考教材P70～84</p>
 <p>(1) DOS头部</p>
 <p>(2) PE标识</p>
 <p>(3) IMAGE_FILE_HEADER</p>
@@ -562,16 +565,17 @@ end start</code></pre>
 </li>
 </ol>
 <h2 id="实验要求"><a href="#实验要求" class="headerlink" title="实验要求"></a>实验要求</h2><p>1、使用C32asm与LordPE两个工具对pedemo.exe文件进行分析。</p>
+<p>​    （可以使用010editor进行分析）</p>
 <p>2、要求对PE文件各个部分的字段的值逐一进行说明，其中DOS头部仅需要说明e_magic和e_lfanew两个字段。此外，要求在C32asm工具中对PE文件相关部分分别截图，然后对照截图，对PE结构体中的字段，在实验结果中用表格进行说明。</p>
 <h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><p>请在此处按照实验要求进行截图，并逐一在其后通过表格对PE结构中各个结构体内部字段值进行记录，例如：</p>
 <p><strong>1. IMAGE_DOS_HEADER</strong></p>
-<p><img src="file:////private/var/folders/7c/5y2zr26x4vb1fx_r7dfldr_c0000gn/T/com.kingsoft.wpsoffice.mac/wps-gryffinbit/ksohtml/wpshQ0a33.jpg" class="lazyload" data-srcset="file:////private/var/folders/7c/5y2zr26x4vb1fx_r7dfldr_c0000gn/T/com.kingsoft.wpsoffice.mac/wps-gryffinbit/ksohtml/wpshQ0a33.jpg" srcset="data:image/png;base64,666" alt="img"> </p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/reverse-4%EF%BC%881%EF%BC%89.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/reverse-4%EF%BC%881%EF%BC%89.png" srcset="data:image/png;base64,666"></p>
 <table>
 <thead>
 <tr>
-<th><strong><em>\</em>地址**</strong></th>
-<th><strong><em>\</em>值（内存映像）**</strong></th>
-<th><strong><em>\</em>字段名**</strong></th>
+<th>地址</th>
+<th>值（内存映像）</th>
+<th>字段名</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -581,15 +585,140 @@ end start</code></pre>
 </tr>
 <tr>
 <td>0000003C</td>
-<td>40000000</td>
+<td>B0000000</td>
 <td>e_lfanew</td>
 </tr>
 </tbody></table>
 <p><strong>2. IMAGE_FILE_HEADER</strong></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/reverse-4%EF%BC%882%EF%BC%89.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/reverse-4%EF%BC%882%EF%BC%89.png" srcset="data:image/png;base64,666"></p>
+<table>
+<thead>
+<tr>
+<th>地址</th>
+<th>值（内存映像）</th>
+<th>字段名</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>000000B4</td>
+<td>4C01</td>
+<td>Machine</td>
+</tr>
+<tr>
+<td>000000C6</td>
+<td>0F01</td>
+<td>Characteristics</td>
+</tr>
+</tbody></table>
 <p><strong>3. IMAGE_OPTIONAL_HEADER</strong></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/reverse-4%EF%BC%883%EF%BC%89.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/reverse-4%EF%BC%883%EF%BC%89.png" srcset="data:image/png;base64,666"></p>
+<table>
+<thead>
+<tr>
+<th>地址</th>
+<th>值（内存映像）</th>
+<th>字段名</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>000000C8</td>
+<td>0B01</td>
+<td>Magic</td>
+</tr>
+<tr>
+<td>000001A6</td>
+<td>0000</td>
+<td>Size</td>
+</tr>
+</tbody></table>
 <p><strong>4. IMAGE_DATA_DIRECTORY中与IMAGE_IMPORT_DESCRIPTOR有关部分</strong></p>
+<p> <img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/reverse-4%EF%BC%884%EF%BC%89.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/reverse-4%EF%BC%884%EF%BC%89.png" srcset="data:image/png;base64,666"></p>
+<table>
+<thead>
+<tr>
+<th>地址</th>
+<th>值（内存映像）</th>
+<th>字段名</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>00000128</td>
+<td>0000</td>
+<td>VirtualAddress</td>
+</tr>
+<tr>
+<td>000001A6</td>
+<td>0000</td>
+<td>Size</td>
+</tr>
+</tbody></table>
 <p><strong>5. IMAGE_SECTION_HEADER</strong></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/reverse-4%EF%BC%885%EF%BC%89.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/reverse-4%EF%BC%885%EF%BC%89.png" srcset="data:image/png;base64,666"></p>
+<table>
+<thead>
+<tr>
+<th>地址</th>
+<th>值（内存映像）</th>
+<th>字段名</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>000001A8</td>
+<td>2E746578 74000000</td>
+<td>.text</td>
+</tr>
+<tr>
+<td>00001D8h</td>
+<td>146</td>
+<td>VirtualSize</td>
+</tr>
+<tr>
+<td>000001E0</td>
+<td>200H</td>
+<td>SizeofRawdata</td>
+</tr>
+<tr>
+<td>000001E4</td>
+<td>600H</td>
+<td>PointerToRaeData</td>
+</tr>
+</tbody></table>
 <p><strong>6. IMAGE_IMPORT_DESCRIPTOR</strong></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/reverse-4%EF%BC%886%EF%BC%89.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/reverse-4%EF%BC%886%EF%BC%89.png" srcset="data:image/png;base64,666"></p>
+<table>
+<thead>
+<tr>
+<th>地址</th>
+<th>值（内存映像）</th>
+<th>字段名</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>00000610</td>
+<td>Kernel32.dll</td>
+<td>Kernel32.dll</td>
+</tr>
+<tr>
+<td>00000614</td>
+<td>0</td>
+<td>TimeDateStamp</td>
+</tr>
+<tr>
+<td>00000618</td>
+<td>0</td>
+<td>ForwarderChain</td>
+</tr>
+<tr>
+<td>0000061C</td>
+<td>206A</td>
+<td>Name</td>
+</tr>
+<tr>
+<td>00000620</td>
+<td>2000</td>
+<td>firstThunk</td>
+</tr>
+</tbody></table>
 
   
   
@@ -624,10 +753,10 @@ end start</code></pre>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-14T09:03:21+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-21T11:39:26+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年5月14日</p>
+    <p>更新于：2021年5月21日</p>
   </a>
 </div>
 
@@ -808,7 +937,7 @@ end start</code></pre>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84"><span class="toc-text">实验目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-text">实验内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%A6%81%E6%B1%82"><span class="toc-text">实验要求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C"><span class="toc-text">实验结果</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%99%E6%9D%90%E5%8F%82%E8%80%83"><span class="toc-text">教材参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84"><span class="toc-text">实验目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-text">实验内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%A6%81%E6%B1%82"><span class="toc-text">实验要求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C"><span class="toc-text">实验结果</span></a></li></ol>
     </div>
   </section>
 
