@@ -531,6 +531,7 @@
   <h2 id="参考教材"><a href="#参考教材" class="headerlink" title="参考教材"></a>参考教材</h2><p><a target="_blank" rel="noopener" href="https://gryffinbit.lanzoui.com/imk3fpk3pfi">https://gryffinbit.lanzoui.com/imk3fpk3pfi</a></p>
 <h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><p>通过利用C32asm，手工编写一个Win32平台下的PE文件，进一步熟练掌握PE文件的结构。</p>
 <h2 id="实验内容"><a href="#实验内容" class="headerlink" title="实验内容"></a>实验内容</h2><p>参考教材P119-132，手工打造一个PE文件，该文件执行后输出如下内容：</p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen</a> Shot 2021-05-28 at 6.57.15 PM.png)</p>
 <h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><h4 id="1-构造IMAGE-DOS-HEADER结构"><a href="#1-构造IMAGE-DOS-HEADER结构" class="headerlink" title="1. 构造IMAGE_DOS_HEADER结构"></a>1. 构造IMAGE_DOS_HEADER结构</h4><p>该结构体的大小为 40h 字节(十进制的64 字节) 。打开 hex 编辑器，填入64 个字节的0，然后根据IMAGE_DOS_HEADER的结构进行修改，</p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/1.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/1.png" srcset="data:image/png;base64,666"></p>
 <h4 id="2-构造PE标识符"><a href="#2-构造PE标识符" class="headerlink" title="2. 构造PE标识符"></a>2. 构造PE标识符</h4><p>在构造完 DOS 头后,紧跟着构造 PE 标识符,PE 标识符占 4 个字节,因此hex中增加 4 个字节的数据，PE 标识符对应的十六进制数据为 “50 45 00 00”</p>
@@ -592,7 +593,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-28T18:54:41+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-28T18:57:31+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年5月28日</p>
