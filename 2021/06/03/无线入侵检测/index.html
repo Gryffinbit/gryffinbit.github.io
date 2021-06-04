@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -21,7 +19,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>分类：操作系统 - Gryffinbit</title>
+  <title>无线入侵检测 - Gryffinbit</title>
+  
+    <meta name="keywords" content="入侵检测">
   
 
   
@@ -373,7 +373,7 @@
     <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper  dock' style="display: none;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div id='cover-backstretch'></div>
           
@@ -458,84 +458,392 @@
       <div class='body-wrapper' id="pjax-container">
         
 
-
 <div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
+
+
+  
+  <div class="article-meta" id="top">
     
-      
-  <section class="post-list">
     
-      
+    
+      <h1 class="title">
+        无线入侵检测
+      </h1>
+      <div class='new-meta-box'>
         
           
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/">
-        操作系统期末考点
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        考卷选择题
-某计算机系统中有8台打印机，由K个进程竞争使用，每个进程最多需要3台打印机，该系统发生死锁的K的最小值是C____ 。
-A. 2  B. 3 C.4 D.5
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>Gryffinbit</p>
+  </a>
+</div>
 
-操作系统采用缓冲技术，能够减少对CPU的_____A______次数，从而提高资源的利用率。
-A.中断              B.访问
-C.控制              D.依赖
-
-索引式（随机）文件组织的一个主要优...
-      
-    
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E5%AE%9E%E9%AA%8C/">实验</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AE%9E%E9%AA%8C/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">无线网络安全</a>
+    </a>
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+
+
+          
         
-        <time>2021-01-21</time>
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年6月3日</p>
+  </a>
+</div>
+
+          
         
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/">期末考试</a><span class="sep"></span><a class="category-link" href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="无线入侵检测" data-path="/2021/06/03/%E6%97%A0%E7%BA%BF%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  <h1 id="无线入侵检测"><a href="#无线入侵检测" class="headerlink" title="无线入侵检测"></a>无线入侵检测</h1><h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><p>掌握在Kali上安装WAIDPS软件。<br>掌握使用WAIDPS软件进行信息收集的方法。<br>能够利用WAIDPS软件进行入侵检测。</p>
+<h2 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h2><p>Kali操作系统及相关工具<br>无线网卡<br>无线AP</p>
+<h2 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h2><p>WAIDPS是一个Python编写的无线入侵检测工具，基于Linux平台，完全开源。WAIDPS利用无线网卡可以收集WIFI相关的所有信息，并且它可以探测包括WEP/WPA/WPS在内的无线入侵和攻击方式。当发现攻击时，系统会在屏幕上显示并记录在日志中。</p>
+<h2 id="实验过程"><a href="#实验过程" class="headerlink" title="实验过程"></a>实验过程</h2><h3 id="安装WAIDPS"><a href="#安装WAIDPS" class="headerlink" title="安装WAIDPS"></a>安装WAIDPS</h3><ol>
+<li><p>输入cd /home切换到home目录，然后输入命令</p>
+<pre><code class="shell">git clone https://github.com/SYWorks/waidps.git</code></pre>
+</li>
+<li><p>输入ls可以看到waidps已经下载到了本地。输入cd waidps进入安装文件夹 。</p>
+<pre><code class="shell">ls
+cd waidps
+ls</code></pre>
+</li>
+<li><p>赋予waidps.py执行权限</p>
+<pre><code class="shell">chmod +x waidps.py</code></pre>
+</li>
+<li><p>安装软件</p>
+<pre><code class="shell">sudo ./ waidps.py</code></pre>
+<p>若提示Required file not found :xterm，安装</p>
+<pre><code class="shell">apt-get install xterm</code></pre>
+<p>软件提示需要安装database，输入y确认</p>
+</li>
+<li><p>软件安装成功，提示没有检测到无线网卡。</p>
+</li>
+<li><p>用法</p>
+<pre><code class="shell">sudo waidps.py [option] &lt;args&gt;</code></pre>
+</li>
+</ol>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/wifi-8[1].png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/wifi-8[1].png" srcset="data:image/png;base64,666"></p>
+<h4 id="启动WAIDPS软件"><a href="#启动WAIDPS软件" class="headerlink" title="启动WAIDPS软件"></a>启动WAIDPS软件</h4><p>进入软件目录</p>
+<pre><code class="shell">cd /.SYWorks/WAIDPS</code></pre>
+<p>tip：如果database下载失败，可以手动下载放入/.SYWorks/Database/</p>
+<p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/SYWorks/Database/master/mac-oui.db">https://raw.githubusercontent.com/SYWorks/Database/master/mac-oui.db</a></p>
+<p>启动软件</p>
+<pre><code class="shell">sudo waidps.py -i wlan0</code></pre>
+<p>软件会自动搜索无线信号。</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%90%9C%E7%B4%A2%E6%97%A0%E7%BA%BF%E4%BF%A1%E5%8F%B7.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%90%9C%E7%B4%A2%E6%97%A0%E7%BA%BF%E4%BF%A1%E5%8F%B7.png" srcset="data:image/png;base64,666"></p>
+<p>按回车，进入命令行选择菜单，可以进行一些信息筛选。</p>
+<table>
+<thead>
+<tr>
+<th>菜单</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>输入C</td>
+<td>可以更改信息刷新时间和IDS的灵敏度。</td>
+</tr>
+<tr>
+<td>输入A</td>
+<td>进入审计模式，可进行WPS PIN码暴力破解。</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%9B%B4%E6%94%B9%E9%BB%98%E8%AE%A4%E5%80%BC.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%9B%B4%E6%94%B9%E9%BB%98%E8%AE%A4%E5%80%BC.png" srcset="data:image/png;base64,666"></p>
+<h4 id="使用WAIDPS进行入侵检测"><a href="#使用WAIDPS进行入侵检测" class="headerlink" title="使用WAIDPS进行入侵检测"></a>使用WAIDPS进行入侵检测</h4><p>使用另一台机器或使用另外的无线网卡进行mdk3/mdk4进行ESSID暴力破解，在攻击列表会显示“MDK3-Basic Probing &amp; ESSID BruteForce Mode”</p>
+<p>第二个网卡，是wlan1，打开监听模式</p>
+<pre><code class="shell">airmon-ng start wlan1</code></pre>
+<p>选择攻击目标–连接到209网络的客户端</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E9%80%89%E6%8B%A9%E6%94%BB%E5%87%BB%E7%9B%AE%E6%A0%87.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E9%80%89%E6%8B%A9%E6%94%BB%E5%87%BB%E7%9B%AE%E6%A0%87.png" srcset="data:image/png;base64,666"></p>
+<p>对连接209网络的客户端进行认证洪水攻击</p>
+<pre><code class="shell">mdk4 wlan1mon a -a B0:B5:C3:CB:F8:FF -m</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E8%AE%A4%E8%AF%81%E6%B4%AA%E6%B0%B4%E6%94%BB%E5%87%BB.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E8%AE%A4%E8%AF%81%E6%B4%AA%E6%B0%B4%E6%94%BB%E5%87%BB.png" srcset="data:image/png;base64,666"></p>
+<hr>
+<p>检测到认证洪水攻击</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%A3%80%E6%B5%8B%E5%88%B0%E8%AE%A4%E8%AF%81%E6%B4%AA%E6%B0%B4%E6%94%BB%E5%87%BB.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%A3%80%E6%B5%8B%E5%88%B0%E8%AE%A4%E8%AF%81%E6%B4%AA%E6%B0%B4%E6%94%BB%E5%87%BB.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%A3%80%E6%B5%8B%E5%88%86%E6%9E%90%E5%88%B0%E8%AE%A4%E8%AF%81%E6%B4%AA%E6%B0%B4%E6%94%BB%E5%87%BB.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%A3%80%E6%B5%8B%E5%88%86%E6%9E%90%E5%88%B0%E8%AE%A4%E8%AF%81%E6%B4%AA%E6%B0%B4%E6%94%BB%E5%87%BB.png" srcset="data:image/png;base64,666"></p>
+<hr>
+<p>进行Deauth攻击</p>
+<pre><code class="shell">mdk4 wlan1mon d -s 120 -c 11</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/deauth%E6%94%BB%E5%87%BB.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/deauth%E6%94%BB%E5%87%BB.png" srcset="data:image/png;base64,666"></p>
+<p>检测到Deauth攻击</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%A3%80%E6%B5%8B%E5%88%B0deauth%E6%94%BB%E5%87%BB.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%A3%80%E6%B5%8B%E5%88%B0deauth%E6%94%BB%E5%87%BB.png" srcset="data:image/png;base64,666"></p>
+<hr>
+<p>进行假信标洪水攻击</p>
+<pre><code class="shell">mdk4 wlan1mon b -n 209 -t 0 -w w -c 6 -s 80</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%81%87%E4%BF%A1%E6%A0%87%E6%B4%AA%E6%B0%B4%E6%94%BB%E5%87%BB.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E5%81%87%E4%BF%A1%E6%A0%87%E6%B4%AA%E6%B0%B4%E6%94%BB%E5%87%BB.png" srcset="data:image/png;base64,666"></p>
+<p>检测到假信标洪水攻击</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%A3%80%E6%B5%8B%E5%88%B0.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%A3%80%E6%B5%8B%E5%88%B0.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%A3%80%E6%B5%8B%E5%88%B0%E5%81%87%E4%BF%A1%E6%A0%87.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%A3%80%E6%B5%8B%E5%88%B0%E5%81%87%E4%BF%A1%E6%A0%87.png" srcset="data:image/png;base64,666"></p>
+<hr>
+<h4 id="审计"><a href="#审计" class="headerlink" title="审计"></a>审计</h4><p>按回车，进入命令行菜单，输入A，进入审计模式，可进行WPS PIN码暴力破解。</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/A%E5%AE%A1%E8%AE%A1%E6%A8%A1%E5%BC%8F.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/A%E5%AE%A1%E8%AE%A1%E6%A8%A1%E5%BC%8F.png" srcset="data:image/png;base64,666"></p>
+<p>输入编号1，选择AP （看要攻击的那个编号是什么）</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E9%80%89%E6%8B%A9209.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E9%80%89%E6%8B%A9209.png" srcset="data:image/png;base64,666"></p>
+<table>
+<thead>
+<tr>
+<th>option</th>
+<th>use</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2</td>
+<td>可以选择2抓WPA握手包，选3进行WPS暴力破解PIN</td>
+</tr>
+<tr>
+<td>4</td>
+<td>输入4 选择快速破解方式</td>
+</tr>
+<tr>
+<td>n</td>
+<td>使用默认设置</td>
+</tr>
+</tbody></table>
+<hr>
+<p>PIN暴力破解中 </p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PIN%E7%A0%B4%E8%A7%A3%E4%B8%AD.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/PIN%E7%A0%B4%E8%A7%A3%E4%B8%AD.png" srcset="data:image/png;base64,666"></p>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2021/01/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/'>
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://gryffinbit.top/2021/06/03/%E6%97%A0%E7%BA%BF%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B/>https://gryffinbit.top/2021/06/03/%E6%97%A0%E7%BA%BF%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-06-04T14:20:21+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年6月4日</p>
+  </a>
 </div>
 
-          </div>
         
       
-    
-  </section>
+        
+          
   
-    
-  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>入侵检测</p></a></div>
 
 
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gryffinbit.top/2021/06/03/%E6%97%A0%E7%BA%BF%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B/&title=无线入侵检测 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://gryffinbit.top/2021/06/03/%E6%97%A0%E7%BA%BF%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B/&title=无线入侵检测 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://gryffinbit.top/2021/06/03/%E6%97%A0%E7%BA%BF%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B/&title=无线入侵检测 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
   
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2021/06/04/%E5%8E%8B%E7%BC%A9%E6%89%8B%E5%B7%A5%E6%89%93%E9%80%A0%E7%9A%84PE%E6%96%87%E4%BB%B6/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>压缩手工打造的PE文件</p>
+          <p class='content'>压缩手工打造的PE文件-压缩节区参考教材https://gryffinbit.lanzoui.com/iBgUCprnmpc
+实验目的通过利用C32asm，对实验六手工编写的一个Win32平台下...</p>
+        </a>
+      
+      
+        <a class='next' href='/2021/06/03/%E7%89%A9%E8%81%94%E7%BD%91%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/'>
+          <p class='title'>物联网期末考点<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>实验部分WIFI密码破解之WPS加密
+实验原理：WPS（Wi-Fi Protected Setup）是由Wi-Fi联盟组织实施的可选认证项目，主要是为了简化无线局域网安全及安全性能的配置工作。用...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -543,226 +851,28 @@ C.控制              D.依赖
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/photo.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Gryffinbit</h2>
-        
-        
-          <p>兔子</p>
 
-        
-        
-          <p>凡殺不死我的，必使我更強大。</p>
 
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/img/QQ.jpg"
-              class="social fab fa-qq flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;tf=1&amp;source=mailto&amp;to=Gryffinbit@Gmail.com"
-              class="social fas fa-envelope-open flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/Gryffinbit/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://blog.csdn.net/Gryffinbit"
-              class="social fab fa-cuttlefish flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Misc/" href="/categories/Misc/"
-            id="categoriesMisc"
-            ><div class='name'>Misc</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/write-up/" href="/categories/write-up/"
-            id="categorieswrite-up"
-            ><div class='name'>write up</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%88%9B%E6%84%8F%E5%BC%80%E5%8F%91/" href="/categories/%E5%88%9B%E6%84%8F%E5%BC%80%E5%8F%91/"
-            id="categoriesE5889BE6848FE5BC80E58F91"
-            ><div class='name'>创意开发</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AE%9E%E9%AA%8C/" href="/categories/%E5%AE%9E%E9%AA%8C/"
-            id="categoriesE5AE9EE9AA8C"
-            ><div class='name'>实验</div><div class='badge'>(34)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E5%AE%9E%E9%AA%8C/%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E4%B8%8E%E5%8F%96%E8%AF%81/" href="/categories/%E5%AE%9E%E9%AA%8C/%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E4%B8%8E%E5%8F%96%E8%AF%81/"
-            id="categoriesE5AE9EE9AA8CE585A5E4BEB5E6A380E6B58BE4B88EE58F96E8AF81"
-            ><div class='name'>入侵检测与取证</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E5%AE%9E%E9%AA%8C/%E5%AF%86%E7%A0%81%E5%AD%A6/" href="/categories/%E5%AE%9E%E9%AA%8C/%E5%AF%86%E7%A0%81%E5%AD%A6/"
-            id="categoriesE5AE9EE9AA8CE5AF86E7A081E5ADA6"
-            ><div class='name'>密码学</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E5%AE%9E%E9%AA%8C/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" href="/categories/%E5%AE%9E%E9%AA%8C/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"
-            id="categoriesE5AE9EE9AA8CE697A0E7BABFE7BD91E7BB9CE5AE89E585A8"
-            ><div class='name'>无线网络安全</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E5%AE%9E%E9%AA%8C/%E7%89%A9%E8%81%94%E7%BD%91/" href="/categories/%E5%AE%9E%E9%AA%8C/%E7%89%A9%E8%81%94%E7%BD%91/"
-            id="categoriesE5AE9EE9AA8CE789A9E88194E7BD91"
-            ><div class='name'>物联网</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E5%AE%9E%E9%AA%8C/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/" href="/categories/%E5%AE%9E%E9%AA%8C/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/"
-            id="categoriesE5AE9EE9AA8CE7BD91E7BB9CE5AE89E585A8E68A80E69CAF"
-            ><div class='name'>网络安全技术</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E5%AE%9E%E9%AA%8C/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" href="/categories/%E5%AE%9E%E9%AA%8C/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"
-            id="categoriesE5AE9EE9AA8CE7BD91E7BB9CE7BC96E7A88B"
-            ><div class='name'>网络编程</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E5%AE%9E%E9%AA%8C/%E9%80%86%E5%90%91/" href="/categories/%E5%AE%9E%E9%AA%8C/%E9%80%86%E5%90%91/"
-            id="categoriesE5AE9EE9AA8CE98086E59091"
-            ><div class='name'>逆向</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"
-            id="categoriesE5AF86E7A081E5ADA6"
-            ><div class='name'>密码学</div><div class='badge'>(10)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%8A%A5%E9%94%99%E8%B0%83%E8%AF%95/" href="/categories/%E6%8A%A5%E9%94%99%E8%B0%83%E8%AF%95/"
-            id="categoriesE68AA5E99499E8B083E8AF95"
-            ><div class='name'>报错调试</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/" href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/"
-            id="categoriesE69C9FE69CABE88083E8AF95"
-            ><div class='name'>期末考试</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E5%8F%AF%E4%BF%A1%E8%AE%A1%E7%AE%97/" href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E5%8F%AF%E4%BF%A1%E8%AE%A1%E7%AE%97/"
-            id="categoriesE69C9FE69CABE88083E8AF95E58FAFE4BFA1E8AEA1E7AE97"
-            ><div class='name'>可信计算</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"
-            id="categoriesE69C9FE69CABE88083E8AF95E6938DE4BD9CE7B3BBE7BB9F"
-            ><div class='name'>操作系统</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"
-            id="categoriesE69C9FE69CABE88083E8AF95E695B0E68DAEE7BB93E69E84"
-            ><div class='name'>数据结构</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E7%89%A9%E8%81%94%E7%BD%91/" href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E7%89%A9%E8%81%94%E7%BD%91/"
-            id="categoriesE69C9FE69CABE88083E8AF95E789A9E88194E7BD91"
-            ><div class='name'>物联网</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E7%97%85%E6%AF%92%E5%8E%9F%E7%90%86/" href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E7%97%85%E6%AF%92%E5%8E%9F%E7%90%86/"
-            id="categoriesE69C9FE69CABE88083E8AF95E79785E6AF92E58E9FE79086"
-            ><div class='name'>病毒原理</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/" href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/"
-            id="categoriesE69C9FE69CABE88083E8AF95E7BD91E7BB9CE5AE89E585A8E68A80E69CAF"
-            ><div class='name'>网络安全技术</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84"><span class="toc-text">实验目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83"><span class="toc-text">实验环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%8E%9F%E7%90%86"><span class="toc-text">实验原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%BF%87%E7%A8%8B"><span class="toc-text">实验过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85WAIDPS"><span class="toc-text">安装WAIDPS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8WAIDPS%E8%BD%AF%E4%BB%B6"><span class="toc-text">启动WAIDPS软件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8WAIDPS%E8%BF%9B%E8%A1%8C%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B"><span class="toc-text">使用WAIDPS进行入侵检测</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%A1%E8%AE%A1"><span class="toc-text">审计</span></a></li></ol></li></ol></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/AES/" style="font-size: 14px; color: #999">AES</a> <a href="/tags/C/" style="font-size: 14px; color: #999">C</a> <a href="/tags/CA/" style="font-size: 14px; color: #999">CA</a> <a href="/tags/CAsyncSocket/" style="font-size: 14px; color: #999">CAsyncSocket</a> <a href="/tags/CSocket/" style="font-size: 14px; color: #999">CSocket</a> <a href="/tags/DES/" style="font-size: 14px; color: #999">DES</a> <a href="/tags/GNS3/" style="font-size: 14px; color: #999">GNS3</a> <a href="/tags/IDS/" style="font-size: 14px; color: #999">IDS</a> <a href="/tags/MFC/" style="font-size: 17.33px; color: #828282">MFC</a> <a href="/tags/PE/" style="font-size: 19px; color: #777">PE</a> <a href="/tags/PGP/" style="font-size: 14px; color: #999">PGP</a> <a href="/tags/Python/" style="font-size: 14px; color: #999">Python</a> <a href="/tags/RSA/" style="font-size: 17.33px; color: #828282">RSA</a> <a href="/tags/SHA-1/" style="font-size: 14px; color: #999">SHA-1</a> <a href="/tags/SSL/" style="font-size: 14px; color: #999">SSL</a> <a href="/tags/WPA/" style="font-size: 15.67px; color: #8e8e8e">WPA</a> <a href="/tags/WPS/" style="font-size: 14px; color: #999">WPS</a> <a href="/tags/WinInet/" style="font-size: 14px; color: #999">WinInet</a> <a href="/tags/WinSock/" style="font-size: 17.33px; color: #828282">WinSock</a> <a href="/tags/gmpy2/" style="font-size: 14px; color: #999">gmpy2</a> <a href="/tags/kali/" style="font-size: 24px; color: #555">kali</a> <a href="/tags/macOS/" style="font-size: 15.67px; color: #8e8e8e">macOS</a> <a href="/tags/snort/" style="font-size: 19px; color: #777">snort</a> <a href="/tags/volatility/" style="font-size: 14px; color: #999">volatility</a> <a href="/tags/wifi%E7%A0%B4%E8%A7%A3/" style="font-size: 14px; color: #999">wifi破解</a> <a href="/tags/%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B/" style="font-size: 14px; color: #999">入侵检测</a> <a href="/tags/%E5%85%AC%E9%92%A5%E4%BD%93%E5%88%B6/" style="font-size: 14px; color: #999">公钥体制</a> <a href="/tags/%E5%8F%96%E8%AF%81/" style="font-size: 17.33px; color: #828282">取证</a> <a href="/tags/%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81/" style="font-size: 17.33px; color: #828282">古典密码</a> <a href="/tags/%E5%9B%BE%E7%89%87/" style="font-size: 20.67px; color: #6c6c6c">图片</a> <a href="/tags/%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B0/" style="font-size: 14px; color: #999">散列函数</a> <a href="/tags/%E6%9D%82/" style="font-size: 14px; color: #999">杂</a> <a href="/tags/%E6%B1%87%E7%BC%96/" style="font-size: 14px; color: #999">汇编</a> <a href="/tags/%E6%B5%81%E5%AF%86%E7%A0%81/" style="font-size: 14px; color: #999">流密码</a> <a href="/tags/%E7%AC%AC%E4%B8%80%E5%B1%8A%E4%BF%A1%E5%AE%89%E5%A4%A7%E6%8C%91%E6%88%98/" style="font-size: 14px; color: #999">第一届信安大挑战</a> <a href="/tags/%E8%80%83%E7%82%B9/" style="font-size: 22.33px; color: #606060">考点</a> <a href="/tags/%E8%AF%81%E4%B9%A6/" style="font-size: 14px; color: #999">证书</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 </aside>
+
 
 
         
@@ -772,8 +882,8 @@ C.控制              D.依赖
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="无线入侵检测";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
