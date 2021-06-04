@@ -531,11 +531,14 @@
   <h1 id="无线入侵检测"><a href="#无线入侵检测" class="headerlink" title="无线入侵检测"></a>无线入侵检测</h1><h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><p>掌握在Kali上安装WAIDPS软件。<br>掌握使用WAIDPS软件进行信息收集的方法。<br>能够利用WAIDPS软件进行入侵检测。</p>
 <h2 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h2><p>Kali操作系统及相关工具<br>无线网卡<br>无线AP</p>
 <h2 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h2><p>WAIDPS是一个Python编写的无线入侵检测工具，基于Linux平台，完全开源。WAIDPS利用无线网卡可以收集WIFI相关的所有信息，并且它可以探测包括WEP/WPA/WPS在内的无线入侵和攻击方式。当发现攻击时，系统会在屏幕上显示并记录在日志中。</p>
-<h2 id="实验过程"><a href="#实验过程" class="headerlink" title="实验过程"></a>实验过程</h2><h3 id="安装WAIDPS"><a href="#安装WAIDPS" class="headerlink" title="安装WAIDPS"></a>安装WAIDPS</h3><ol>
-<li><p>输入cd /home切换到home目录，然后输入命令</p>
+<h2 id="实验过程"><a href="#实验过程" class="headerlink" title="实验过程"></a>实验过程</h2><h3 id="安装WAIDPS"><a href="#安装WAIDPS" class="headerlink" title="安装WAIDPS"></a>安装WAIDPS</h3><ol start="0">
+<li><p>切换到home目录</p>
+<pre><code class="shell">cd /home</code></pre>
+</li>
+<li><p>下载waidps到本地</p>
 <pre><code class="shell">git clone https://github.com/SYWorks/waidps.git</code></pre>
 </li>
-<li><p>输入ls可以看到waidps已经下载到了本地。输入cd waidps进入安装文件夹 。</p>
+<li><p>输入ls可以看到waidps已经下载到了本地。输入cd waidps进入安装文件夹 </p>
 <pre><code class="shell">ls
 cd waidps
 ls</code></pre>
@@ -550,6 +553,7 @@ ls</code></pre>
 <p>软件提示需要安装database，输入y确认</p>
 </li>
 <li><p>软件安装成功，提示没有检测到无线网卡。</p>
+<p>后面的步骤都需要插入无线网卡</p>
 </li>
 <li><p>用法</p>
 <pre><code class="shell">sudo waidps.py [option] &lt;args&gt;</code></pre>
@@ -580,10 +584,6 @@ ls</code></pre>
 <td>输入A</td>
 <td>进入审计模式，可进行WPS PIN码暴力破解。</td>
 </tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
 </tbody></table>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%9B%B4%E6%94%B9%E9%BB%98%E8%AE%A4%E5%80%BC.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%9B%B4%E6%94%B9%E9%BB%98%E8%AE%A4%E5%80%BC.png" srcset="data:image/png;base64,666"></p>
 <h4 id="使用WAIDPS进行入侵检测"><a href="#使用WAIDPS进行入侵检测" class="headerlink" title="使用WAIDPS进行入侵检测"></a>使用WAIDPS进行入侵检测</h4><p>使用另一台机器或使用另外的无线网卡进行mdk3/mdk4进行ESSID暴力破解，在攻击列表会显示“MDK3-Basic Probing &amp; ESSID BruteForce Mode”</p>
@@ -600,7 +600,8 @@ ls</code></pre>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%A3%80%E6%B5%8B%E5%88%86%E6%9E%90%E5%88%B0%E8%AE%A4%E8%AF%81%E6%B4%AA%E6%B0%B4%E6%94%BB%E5%87%BB.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%A3%80%E6%B5%8B%E5%88%86%E6%9E%90%E5%88%B0%E8%AE%A4%E8%AF%81%E6%B4%AA%E6%B0%B4%E6%94%BB%E5%87%BB.png" srcset="data:image/png;base64,666"></p>
 <hr>
 <p>进行Deauth攻击</p>
-<pre><code class="shell">mdk4 wlan1mon d -s 120 -c 11</code></pre>
+<p>（要选择攻击的信道，209的信道是6）</p>
+<pre><code class="shell">mdk4 wlan1mon d -s 120 -c 6</code></pre>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/deauth%E6%94%BB%E5%87%BB.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/deauth%E6%94%BB%E5%87%BB.png" srcset="data:image/png;base64,666"></p>
 <p>检测到Deauth攻击</p>
 <p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%A3%80%E6%B5%8B%E5%88%B0deauth%E6%94%BB%E5%87%BB.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E6%A3%80%E6%B5%8B%E5%88%B0deauth%E6%94%BB%E5%87%BB.png" srcset="data:image/png;base64,666"></p>
@@ -673,7 +674,7 @@ ls</code></pre>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-06-04T14:20:21+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-06-04T14:38:09+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年6月4日</p>
