@@ -1,0 +1,2272 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,zh-HK,zh-TW,default">
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.5'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+  <title>网络安全技术期末考点 - Gryffinbit</title>
+  
+    <meta name="keywords" content="考点">
+  
+
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  
+    <link rel="shortcut icon" type='image/x-icon' href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/favicon.png">
+  
+
+  <!-- import link -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/first.css">
+
+  
+
+  
+  <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
+  
+
+  <script id="loadcss"></script>
+
+</head>
+
+<body>
+
+<!-- 导入jquery库 -->
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!--   樱花特效 -->
+  <script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js"></script>
+
+
+<!-- 雪花特效 -->
+<!-- <script type="text/javascript" src="\js\snow.js"></script> -->
+
+
+<!-- 点击出桃心特效 -->
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/clicklove.js"></script>
+
+
+
+<!-- 标签页显示 -->
+
+  <script type="text/javascript">
+    var OriginTitile = document.title,
+        st;
+    document.addEventListener("visibilitychange", function () {
+        document.hidden ? (document.title = "🥺去哪里了呀~", clearTimeout(st)) : (document.title =
+            "🤗终于回来了", st = setTimeout(function () {
+                document.title = OriginTitile
+            }, 3e3))
+    })
+  </script>
+<!-- 标签页显示 -->
+
+  
+  
+
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
+  <div class='container'>
+  <div id='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a id="s-comment" class="fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+            🐰兔子窝🥕
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/Gryffinbit
+                  
+                  
+                  
+                    id="https:githubcomGryffinbit"
+                  >
+                  <i class='fab fa-github fa-fw'></i>github
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>categories
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>tags
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>archives
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-users fa-fw'></i>friends
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-heart fa-fw'></i>me
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=http://xn--h5qq84c.xn--6qq986b3xl:1108/
+                  
+                  
+                  
+                    id="http:xn--h5qq84cxn--6qq986b3xl:1108"
+                  >
+                  <i class='fas fa-lock fa-fw'></i>权哥❤
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/Gryffinbit
+                  
+                  
+                  
+                    id="https:githubcomGryffinbit"
+                  >
+                  <i class='fab fa-github fa-fw'></i>github
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>categories
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>tags
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>archives
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-users fa-fw'></i>friends
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-heart fa-fw'></i>me
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=http://xn--h5qq84c.xn--6qq986b3xl:1108/
+                  
+                  
+                  
+                    id="http:xn--h5qq84cxn--6qq986b3xl:1108"
+                  >
+                  <i class='fas fa-lock fa-fw'></i>权哥❤
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  <div id="l_body">
+    <div id="l_cover">
+  
+    
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
+          
+            <div id='cover-backstretch'></div>
+          
+          <div class='cover-body'>
+  <div class='top'>
+    
+    
+      <p class="title" id="typed"></p>    
+    
+      <p class="subtitle">Stay Hungry. Stay Foolish.</p>
+    
+  </div>
+  <div class='bottom'>
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a target="_blank" rel="noopener" href="https://github.com/Gryffinbit"
+              
+              
+              id="https:githubcomGryffinbit">
+              <i class='fab fa-github fa-fw'></i><p>github</p>
+            </a>
+          
+            <a href="/categories/"
+              
+              
+              id="categories">
+              <i class='fas fa-folder-open fa-fw'></i><p>categories</p>
+            </a>
+          
+            <a href="/tags/"
+              
+              
+              id="tags">
+              <i class='fas fa-tags fa-fw'></i><p>tags</p>
+            </a>
+          
+            <a href="/archives/"
+              
+              
+              id="archives">
+              <i class='fas fa-archive fa-fw'></i><p>archives</p>
+            </a>
+          
+            <a href="/friends/"
+              
+              
+              id="friends">
+              <i class='fas fa-users fa-fw'></i><p>friends</p>
+            </a>
+          
+            <a href="/about/"
+              
+              
+              id="about">
+              <i class='fas fa-heart fa-fw'></i><p>me</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="http://xn--h5qq84c.xn--6qq986b3xl:1108/"
+              
+              
+              id="http:xn--h5qq84cxn--6qq986b3xl:1108">
+              <i class='fas fa-lock fa-fw'></i><p>权哥❤</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+        </div>
+    
+  
+  </div>
+  
+
+
+    <div id='safearea'>
+      <div class='body-wrapper' id="pjax-container">
+        
+
+<div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title">
+        网络安全技术期末考点
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>Gryffinbit</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/">期末考试</a><span class="sep"></span><a class="category-link" href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/">网络安全技术</a>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年1月20日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="网络安全技术期末考点" data-path="/2021/01/20/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
+    
+  </div>
+
+
+  
+  <h2 id="考点"><a href="#考点" class="headerlink" title="考点"></a>考点</h2><h3 id="填空题（15）"><a href="#填空题（15）" class="headerlink" title="填空题（15）"></a>填空题（15）</h3><ol>
+<li><p><strong>网络安全目标</strong></p>
+<p>机密性、完整性、可用性、合法性</p>
+</li>
+<li><p><strong>网络安全威胁</strong></p>
+<p>Impersonation冒充：伪造他人身份</p>
+<p>Replay重放：把合法的信息重新发一遍</p>
+<p>Denial of Service拒绝服务攻击</p>
+</li>
+<li><p><strong>强制访问控制</strong></p>
+<p>最高秘密Top Secert &gt; 秘密Secret &gt; 机密Confidential</p>
+</li>
+<li><p><strong>Land攻击</strong></p>
+<p>相同的目的IP地址和源地址，loop死锁</p>
+</li>
+<li><p><strong>传输层的套接字：</strong></p>
+<p>工作在运输层</p>
+</li>
+<li><p><strong>PKI的目标：</strong></p>
+<p>身份认证、信息完整性、不可抵赖性</p>
+</li>
+<li><p><strong>数字证书含有：</strong></p>
+<p>有效期限、颁发者身份、数字证书算法（如何为它签名的RSA、Hash、Sha256等）</p>
+</li>
+<li><p><strong>sesion Key ：</strong></p>
+<p>会话密钥</p>
+</li>
+<li><p><strong>GSM认证</strong></p>
+<p>导致伪基站的产生的原因：用户对基站的证明是单向的</p>
+<p>（用户向基站证明自己是合法用户，而基站不会向用户证明）</p>
+</li>
+<li><p><strong>VPN</strong></p>
+<p>“虚拟”的专用网。 优势：安全、低成本、可扩展、可管理</p>
+</li>
+</ol>
+<h3 id="选择题（10）"><a href="#选择题（10）" class="headerlink" title="选择题（10）"></a>选择题（10）</h3><ol>
+<li><p><strong>抵抗重放攻击</strong></p>
+<p>一次一密</p>
+</li>
+<li><p><strong>死亡ping</strong></p>
+<p>在目的端重组IP分片，形成超大IP数据包，超过最大尺寸导致缓冲区溢出。</p>
+</li>
+<li><p><strong>抵抗中间人攻击：</strong></p>
+<p>数字签名</p>
+</li>
+<li><p><strong>密码协议的种类</strong></p>
+<ol>
+<li>密码建立协议</li>
+<li>认证协议</li>
+<li>可认证密钥建立</li>
+</ol>
+<p><em>没有一次一密</em></p>
+</li>
+<li><p>企业根CA需要活动目录技术支持（独立根证书不需要）</p>
+</li>
+<li><p><strong>网络加密</strong></p>
+<p>链路加密、结点加密、端到端加密</p>
+<p>（不是网络加密的是？）</p>
+</li>
+<li><p><strong>可信的密钥分发中心</strong></p>
+<p>性能和安全的瓶颈</p>
+</li>
+<li><p><strong>动态包过滤：</strong></p>
+<p>（按需）</p>
+<p>监控数据包交换并且根据需要来进行有效控制通信</p>
+</li>
+</ol>
+<h3 id="判断题（5）"><a href="#判断题（5）" class="headerlink" title="判断题（5）"></a>判断题（5）</h3><ol>
+<li><p><strong>kerberos协议：</strong></p>
+<p>可认证的票据，使用的是对称加密，而不是公钥加密</p>
+</li>
+<li><p><strong>可信的密钥分发中心：</strong></p>
+<p>性能和安全的瓶颈</p>
+</li>
+</ol>
+<h3 id="简答题（4道）"><a href="#简答题（4道）" class="headerlink" title="简答题（4道）"></a>简答题（4道）</h3><p><strong>ARP原理，ARP欺骗</strong></p>
+<p>ARP：地址解析，在局域网中，将IP地址转换成MAC地址</p>
+<p>ARP欺骗：通过欺骗局域网内<strong>访问者</strong>PC的网关MAC地址，使访问者PC错以为攻击者更改后的MAC地址是网关的MAC，导致网络不通。此种攻击可让攻击者获取局域网上的数据包甚至可篡改数据包，且可让网络上特定计算机或所有计算机无法正常连线。</p>
+<p>🌻 修改数据包中的目的MAC地址，攻击者将被攻击者的MAC地址替换成自己的MAC地址</p>
+<p><strong>ICMP反弹Smurf攻击</strong></p>
+<p>使用将源地址设置成受害网络的广播地址的ICMP应答请求（ping）数据包，来淹没受害主机，最终导致该网络的所有主机都对此ICMP应答请求做出答复，导致网络阻塞。</p>
+<p><strong>ICMP回显泛洪攻击</strong></p>
+<p>发送假冒ping数据包，其中：</p>
+<ol>
+<li>源地址设置为受害者的IP地址</li>
+<li>目的地址设置为子网的广播地址（向整个局域网传播）</li>
+</ol>
+<p>如此，ping回显数据流堵塞，耗尽被攻击者的带宽，无法提供正常服务，进而拒绝服务。</p>
+<hr>
+<p><strong>桥接或仅主机网卡的虚拟机不能和同子网的宿主机获得ping回显，为什么？</strong></p>
+<p>因为ICMP回显请求在防火墙中没有被启用</p>
+<hr>
+<p><strong>防火墙</strong></p>
+<p>防火墙的概念：</p>
+<p>在内部专用网络和公共网络之间</p>
+<p>丢弃数据包：</p>
+<p>不予处理并且无响应消息</p>
+<p>静态的包过滤系统：</p>
+<p>NAT保护内部计算机不受外部攻击</p>
+<p>防火墙分为：</p>
+<ol>
+<li>电路级网关  2. 应用层网关  3. 包过滤技术（静态和动态）</li>
+</ol>
+<p>应用级网关在OSI模型中的应用层过滤数据，电路级网关在会话层，包过滤技术在网络层</p>
+<h3 id="综合大题（2道）"><a href="#综合大题（2道）" class="headerlink" title="综合大题（2道）"></a>综合大题（2道）</h3><p><strong>如何保证完整性和机密性？</strong></p>
+<p>完整性：web服务器</p>
+<p>底层信息流上不去。用户：低级。web服务器：高级</p>
+<ul>
+<li>不下读：阻止坏信息从较低完整性等级向上流（服务器拒绝读坏信息）</li>
+<li>不上写：阻止坏信息从下方流向较高完整性等级（不能向服务器写坏信息）</li>
+</ul>
+<p>机密性：防火墙</p>
+<p>高层信息流不下来。防火墙内部：高级。防火墙外部：低级</p>
+<ul>
+<li>不上读：阻止好信息从较高机密级别向下流（防火墙外无法访问防火墙内）</li>
+<li>不下写：阻止好信息从上方流向较低机密级（防火墙内无法写出防火墙外）</li>
+</ul>
+<hr>
+<p><strong>中间人攻击？</strong></p>
+<p>在没有察觉的情况下，攻击者拦截被攻击者的通信，劫持发送方的消息替换并且转发给接收方。如此，通信双方认为自己已经和对方完成密钥协商，但是实际上是各自和攻击者进行了密钥协商。</p>
+<p>用数字签名和公钥绑在一起发送，抵御中间人攻击</p>
+<p>联锁协议（互锁协议，interlock protocol）抵抗中间人攻击</p>
+<p>可以挫败双方密钥交换时的中间人攻击。</p>
+<p>安全特性：仅有加密消息的一半无法解密</p>
+<p>过程：</p>
+<ol>
+<li>如果尝试拦截会话，敌手既无法解密A发送消息密文的一半，又无法使用B的公钥重新加密一半的消息</li>
+<li>敌手不得不等待接收到两个完整的密文，然而这个时候B已经可以使用自己的私钥来解密这个消息</li>
+<li>B成功获取到A的正确消息，后续将直接丢弃敌手的消息</li>
+</ol>
+<h2 id="补充笔记"><a href="#补充笔记" class="headerlink" title="补充笔记"></a>补充笔记</h2><h3 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h3><h4 id="信息安全4个基本目标"><a href="#信息安全4个基本目标" class="headerlink" title="信息安全4个基本目标"></a>信息安全4个基本目标</h4><ul>
+<li><p>保密性</p>
+<p>不被泄露</p>
+</li>
+<li><p>完整性</p>
+<p>数据一致性</p>
+</li>
+<li><p>可用性</p>
+<p>合法用户不会无故被拒绝</p>
+</li>
+<li><p>合法使用</p>
+<p>不被非授权使用、不被非授权的人使用</p>
+</li>
+</ul>
+<h4 id="安全威胁来源"><a href="#安全威胁来源" class="headerlink" title="安全威胁来源"></a>安全威胁来源</h4><ul>
+<li>信息泄露</li>
+<li>完整性破坏</li>
+<li>拒绝服务</li>
+<li>非法使用</li>
+</ul>
+<h4 id="主要可实现威胁"><a href="#主要可实现威胁" class="headerlink" title="主要可实现威胁"></a>主要可实现威胁</h4><ul>
+<li><p>假冒</p>
+<p>未授权实体盗取合法用户的权利和特权</p>
+</li>
+<li><p>旁路控制</p>
+<p>为获取非授权的权限，发掘系统缺陷或漏洞，绕过守卫者的防线</p>
+</li>
+<li><p>授权侵犯</p>
+<p>有授权的人，将其权限用于非授权的目的，通常称为内部攻击</p>
+<ul>
+<li><p>特洛伊木马</p>
+<p>含有不易察觉的或无害程序段，执行的时候会破坏用户安全性</p>
+</li>
+<li><p>陷门</p>
+<p>在系统或其部件设置机关，在输入特定的数据时，允许违反安全策略</p>
+</li>
+</ul>
+</li>
+<li><p>截获/修改</p>
+<p>某一通讯数据，在传输中被改变、删除或替换</p>
+</li>
+<li><p>消息重发</p>
+<p>对所截获的某次合法的数据备份，出于非法目的重新发送该数据</p>
+</li>
+<li><p>业务否认</p>
+<p>参与某次通讯交换的一方，事后否认曾经发生过此次信息交换</p>
+</li>
+<li><p>流量分析</p>
+<p>对通信流量进行观察，可能泄露机密信息</p>
+</li>
+</ul>
+<h4 id="安全防护措施"><a href="#安全防护措施" class="headerlink" title="安全防护措施"></a>安全防护措施</h4><ul>
+<li><p>物理安全</p>
+<p>环境的安全、物理的访问控制措施、设备防篡改等</p>
+</li>
+<li><p>人员安全</p>
+<p>岗位划分</p>
+</li>
+<li><p>管理安全</p>
+<p>对设备进行管理、泄露信息事件的追查、审计</p>
+</li>
+<li><p>媒体安全</p>
+<p>对受保护信息的存储、磁盘的销毁</p>
+</li>
+<li><p>辐射安全</p>
+<p>射频等其他电磁的控制</p>
+</li>
+<li><p>生命周期控制</p>
+<p>对系统的设计、安全评估、记录和日志进行控制</p>
+</li>
+</ul>
+<h4 id="访问控制策略（安全策略）"><a href="#访问控制策略（安全策略）" class="headerlink" title="访问控制策略（安全策略）"></a>访问控制策略（安全策略）</h4><p><strong>自主性访问</strong></p>
+<p>Who and When访问控制列表、文件授权</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/1.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/1.png" srcset="data:image/png;base64,666"></p>
+<p>允许用户自主在系统中规定谁可以取它的资源</p>
+<ul>
+<li>基于身份</li>
+<li>基于任务</li>
+</ul>
+<p><strong>强制性访问</strong></p>
+<p>用户的权限和客体的安全属性固定，安全属性由管理员设置，用户不能修改</p>
+<p>客体访问限制：根据客体信息的敏感标记和访问主体的访问等级</p>
+<p>客体：各种设备等</p>
+<ul>
+<li>多等级访问</li>
+</ul>
+<p><strong>基于角色访问控制</strong></p>
+<p>会因为不同的作业功能产生不同的角色，执行某项操作的权限会被赋予特定的角色</p>
+<p>一个主体可以有多个角色，一个角色也可以分配不同主体。关注角色、用户、权限的关系</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/2.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/2.png" srcset="data:image/png;base64,666"></p>
+<ul>
+<li><p>运行方式：角色继承。</p>
+<ul>
+<li><p>受限继承关系：一个角色只能直接继承另一个角色资浅的角色权限</p>
+</li>
+<li><p>间接继承：不受限制</p>
+</li>
+<li><p>一般继承关系：一个角色能直接继承多于一个资浅角色的权</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/3.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/3.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/4.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/4.png" srcset="data:image/png;base64,666"></p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="安全攻击的分类"><a href="#安全攻击的分类" class="headerlink" title="安全攻击的分类"></a>安全攻击的分类</h4><p><strong>被动攻击</strong></p>
+<p>对传输信息的窃听和监测</p>
+<ul>
+<li>信息泄露</li>
+<li>流量分析</li>
+</ul>
+<p><strong>主动攻击</strong></p>
+<ul>
+<li><p>伪装攻击</p>
+<p>某个实体伪装成另外的实体，将获取的认证信息重放，以获得某实体的权限</p>
+</li>
+<li><p>重放攻击</p>
+<p>将获得的信息再次发送，以在非授权的情况下进行传输</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/5.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/5.png" srcset="data:image/png;base64,666"></p>
+</li>
+<li><p>消息篡改</p>
+<p>修改或延迟消息传输，达到非授权的目的</p>
+</li>
+<li><p>拒绝服务</p>
+<p>破坏某个网络使其瘫痪或过载以降低性能。</p>
+<ul>
+<li>Dos<ul>
+<li>过度使用服务，使软件硬件过度运行，网络连接超出其容量</li>
+<li>造成关机或系统瘫痪或降低服务质量</li>
+</ul>
+</li>
+<li>DDos（分布式拒绝服务攻击）<ul>
+<li>使用多个internet主机同时向一个目标发起攻击</li>
+</ul>
+</li>
+<li>减轻攻击强度措施<ul>
+<li>过滤不良数据包</li>
+<li>追查关闭攻击站点</li>
+<li>提高接收数据处理、增加硬件和网络扩容</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/6.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/6.png" srcset="data:image/png;base64,666"></p>
+</li>
+</ul>
+<hr>
+<h4 id="网络攻击常见形式"><a href="#网络攻击常见形式" class="headerlink" title="网络攻击常见形式"></a>网络攻击常见形式</h4><p><strong>口令窃取</strong></p>
+<ul>
+<li>已知</li>
+<li>字典攻击</li>
+<li>窃听合法终端间的会话</li>
+</ul>
+<p><strong>欺骗攻击</strong></p>
+<ul>
+<li>社工欺骗</li>
+</ul>
+<p><strong>缺陷和后门</strong></p>
+<ul>
+<li>蠕虫病毒<ul>
+<li>向守护程序发送新的代码，向缓冲区注入大量数据，直到gets堆栈中的返回地址覆盖，则返回时会执行入侵者的代码</li>
+<li>缓冲区溢出攻击</li>
+<li>缺陷：程序中的某些代码不能满足特定的要求</li>
+</ul>
+</li>
+</ul>
+<p><strong>认证失败</strong></p>
+<ul>
+<li>源地址有效性的验证机制，在某些场合可以发挥作用，但是如果黑客攻击欺骗了地址，让消息看起来好像来自本地，这样就躲过了攻击</li>
+</ul>
+<p><strong>协议缺陷</strong></p>
+<p><strong>信息泄露</strong></p>
+<p><strong>指数攻击</strong></p>
+<ul>
+<li>病毒和蠕虫</li>
+</ul>
+<h4 id="安全服务"><a href="#安全服务" class="headerlink" title="安全服务"></a>安全服务</h4><ul>
+<li><p>认证</p>
+<p>确保通信实体就是他们所声称的实体</p>
+</li>
+<li><p>访问控制</p>
+<p>防止非授权的访问</p>
+</li>
+<li><p>数据保密性</p>
+<p>保护数据，防止非授权的泄露</p>
+</li>
+<li><p>数据完整性</p>
+<p>保证收到的数据不被删除、插入、重发、修改</p>
+</li>
+<li><p>不可否认性</p>
+<p>确保通信一方没有否认的行为</p>
+</li>
+</ul>
+<h4 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h4><ul>
+<li><p><strong>信息安全的3个基本目标是：</strong></p>
+<p>保密性、完整性、可用性、合法使用</p>
+</li>
+<li><p><strong>网络中存在的4种基本安全威胁:</strong></p>
+<p>有信息泄露、完整性破坏、拒绝服务、非法使用</p>
+</li>
+<li><p><strong>X.800定义的5类安全服务：</strong></p>
+<p>认证、访问控制、数据保密性、数据完整信息、不可否认性</p>
+</li>
+<li><p><strong>X.800定义的8种特定的安全机制是：</strong></p>
+<p>加密、数字签名、访问控制、数据完整性、认证交换、流量填充、路由控制、公证</p>
+</li>
+<li><p><strong>简述通信安全、计算机安全、网络安全之间的联系与区别</strong></p>
+<p>网络安全：双方共同使用通信协议来建立逻辑信息通道，保护信息传输以防止攻击者威胁消息的保密性、完整性、真实性。</p>
+<p>安全模型（由6个功能实体组成）：消息发送方（信源）、消息接收方（信宿）、安全变换、信息通道、可信第三方、攻击者</p>
+<p>通信安全：在发送的过程中，保证消息能够安全到达，不被截获、篡改、替换。</p>
+<p>计算机安全：信源、信宿自己的计算机不被恶意代码攻击</p>
+<hr>
+</li>
+<li><p><strong>在选课系统中，存在教师、学生、管理员3类用户。需要适时进行系统访问、数据输入和管理。采用自主访问控制、强制访问控制和基于角色访问控制，可以使用的有哪些？哪一种时间和存储成本较低？</strong></p>
+<p><strong>自主访问控制</strong>是可以由用户自主的决定谁可以访问它的资源。</p>
+<p><strong>强制访问控制</strong>是只能按照已经规定好的权限去访问。</p>
+<p><strong>基于角色访问</strong>，是执行某项操作的权限会被赋予特定的角色。</p>
+<p><strong>管理员</strong>可以使用<strong>自主访问控制，</strong>便于进行资源的分配和管理，以及权限的设定。</p>
+<p><strong>教师</strong>可以是<strong>基于角色访问</strong>，被赋予一定的权限，进行数据的输入。</p>
+<p><strong>学生</strong>采取<strong>强制访问控制</strong>，只能按照已经设定好的权限，来对选课系统进行访问。</p>
+<p>基于角色的访问控制时间和存储成本比较低。根据选课需求和后续功能增加等问题，基于角色的访问控制会更灵活，应用范围更广。</p>
+</li>
+</ul>
+<hr>
+<hr>
+<h3 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h3><h4 id="TCP-IP协议族"><a href="#TCP-IP协议族" class="headerlink" title="TCP/IP协议族"></a>TCP/IP协议族</h4><p>网际协议（internet protocol，IP）是TCP/IP协议族的核心</p>
+<ul>
+<li><p>网络接口层（数据链路层、物理层）</p>
+<p>TCP/IP模型的最底层</p>
+</li>
+<li><p>网际层（网络层）</p>
+<ul>
+<li><p>IP协议</p>
+<p>网际协议（internet protocol，IP）是网际层最重要的协议</p>
+<ul>
+<li><p>传递中易被监听、窃取。</p>
+<p>应该对IP数据报进行加密</p>
+</li>
+<li><p>IP层没有采取措施保证传递的正确性，可能会被修改数据报的内容。</p>
+<p>应对数据报的内容采取完整性检查机制</p>
+</li>
+<li><p>IP欺骗攻击</p>
+<p>源地址鉴别机制加以防御</p>
+<p>Land攻击：通过发送精心构造的、具有相同源地址和目标地址的欺骗数据包，致使缺乏相应防护机制的目标设备瘫痪。</p>
+</li>
+<li><p>在数据报传输时分段重组的过程中，注入大量病态小数据报，影响包过滤器正常工作</p>
+<p>防火墙能重组分段的数据报，检查其内容</p>
+</li>
+<li><p>用定向广播的目的地址的IP数据报来攻击不同类型的主机</p>
+<p>配置路由时进制发送定向广播数据包的功能</p>
+</li>
+</ul>
+</li>
+<li><p>ARP协议</p>
+<p>地址解析协议（address resolution protocol , ARP）根据IP地址获取物理地址（MAC地址）的TCP/IP协议</p>
+<ul>
+<li><p>ARP欺骗</p>
+<p>应在交换机上配置802.1x协议，这样攻击者连接交换机的时候需要进行身份认证；</p>
+<p>建立静态ARP表</p>
+</li>
+</ul>
+</li>
+<li><p>ICMP协议</p>
+<p>控制报文协议（internet control message protocol），错误处理、消息处理协议</p>
+<ul>
+<li>通知主机到底目的地的最佳路径，报告路由故障</li>
+<li>监控工具ping和tracert的重要组成部分</li>
+<li>是差错和控制报文协议，用于传输差错报文和控制报文</li>
+</ul>
+<hr>
+<ul>
+<li><p>ICMP重定向攻击</p>
+<p>利用ICMP对消息进行重定向，使目标主机受到连接劫持和拒绝服务等攻击；</p>
+<p>重定向消息一般由仅主机来进行。仅当消息直接来自路由器的时候，才由路由器进行重定向。若当网管使用ICMP来创建通往目的地址的新路由，会产生安全问题</p>
+</li>
+<li><p>ICMP路由器发现攻击</p>
+<p>ICMP在进行路由发现的时候，并不会对应答方进行验证。可能会遭受中间人攻击，假冒是应答方。</p>
+</li>
+<li><p>防火墙穿越攻击</p>
+<p>攻击者穿越防火墙的访问控制列表和规则集，获取过滤的内容和方式。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>传输层（传输层）</p>
+<p>仅为梗概，详情见goodnotes</p>
+<ul>
+<li><p>TCP</p>
+<p>控制传输协议（Transmission Control Protocol，TCP）面向连接的可靠的传输层协议</p>
+<ul>
+<li>建立连接时三次握手</li>
+</ul>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/7.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/7.png" srcset="data:image/png;base64,666"></p>
+<ul>
+<li><p>存在的攻击方式</p>
+<ul>
+<li><p>SYN Flood</p>
+<p>发生在三次握手过程中。 一种不能建立正常的连接，使用户得不到响应的Dos攻击。</p>
+<p>攻击者不断向服务器发送TCP的连接请求SYN，使其处于半开放状态，无法接受其他的正常连接。</p>
+<p>应该在服务器前端部署安全防护，如防火墙，来过滤掉数据包</p>
+</li>
+<li><p>TCP会话劫持</p>
+<p>由于TCP协议不对数据包进行加密和认证而发生的，获取非授权的权限的攻击方式</p>
+<p>TCP确定数据包是否真实，是根据数据包中的32位序列号。如果攻击者能预测目标主机的起始序列号，伪造有效接收窗口报文，就能欺骗主机</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/8.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/8.png" srcset="data:image/png;base64,666"></p>
+<p>应该在TCP建立连接时，用一个随机数作为起始序列号</p>
+</li>
+<li><p>拥塞控制攻击</p>
+<p>发生在建立连接后的数据阶段，利用TCP拥塞控制，降低正常传输能力的一种攻击</p>
+<p>TCP的拥塞控制是为了防止过多的数据注入网络，攻击者会制造关键节点的拥塞以触发该机制。使其触发窗口慢启动，来降低正常的传输能力。</p>
+<p>网管应该实时监控网络异常流量</p>
+</li>
+<li><p>欺骗IP地址获得远程非法授权访问 （综合运用SYN Flood和TCP会话劫持）</p>
+<p>B授予A某些权限，X要得到与A相同的权限</p>
+<ol>
+<li>X假冒A和B建立连接，（X假冒A的IP地址），使B相信消息是A发来的</li>
+<li>阻止A向B报告网络认证系统的故障</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>UDP</p>
+<p>用户数据报协议（User Datagram Protocol，UDP）无连接的传输层协议，提供面向事务的不可靠信息传送</p>
+<ul>
+<li><p>特点</p>
+<ul>
+<li>无需连接传输高效</li>
+<li>无拥塞控制的不可靠传输</li>
+<li>数据报首部仅8字节</li>
+<li>网络拥塞不会降低发送速率</li>
+</ul>
+</li>
+<li><p>安全问题</p>
+<ul>
+<li><p>UDP Flood —-大量包阻塞目标主机</p>
+<p>向攻击目标发送大量UDP小包，使网络设备忙于应对UDP报文，系统资源使用率飙高，设备不能提供正常服务或直接死机。</p>
+<p>防护：</p>
+<ul>
+<li>根据攻击包大小，设定包碎片重组大小，通常不小于1500</li>
+<li>攻击端口是业务端口，设置UDP最大包来过滤异常流量</li>
+<li>攻击端口为非业务端口，先建立TCP连接</li>
+</ul>
+</li>
+<li><p>UDP Fraggle攻击  ——正常响应阻塞目标主机</p>
+<p>向子网广播地址发送UDP包，端口号为7，目的是占用目标主机网络带宽</p>
+<p>攻方IP地址=广播地址</p>
+<p>若开启功能：广播地址的所有主机，向目标主机返回收到的包，使其不断回应UDP报文呢，系统资源使用率飙增，不能正常服务或死机。</p>
+<p>若关闭功能：每一个都生成ICMP不可达信息，大量ICMP拥塞网络</p>
+<p>防护：进入防火墙，目的端口为7或19的UDP报文拒绝</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>应用层（应用层、表示层、会话层）</p>
+<ul>
+<li><p>HTTP（端口TCP 80）</p>
+<p>超文本传输协议（Hyper Text Transfer Protocol，HTTP）客户端和服务器端请求和应答的标准</p>
+<ul>
+<li><p>明文传输</p>
+</li>
+<li><p>安全隐患</p>
+<ul>
+<li>传输的是明文，没有加密，网络嗅探工具就可以获取传输数据</li>
+<li>无状态连接，唯一的完整性检验是检查报文头部的数据传输长度。可发动中间人攻击</li>
+</ul>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/9.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/9.png" srcset="data:image/png;base64,666"></p>
+</li>
+<li><p>防护措施</p>
+<ul>
+<li>在TCP和HTTP传输之间增加安全层（SSL、TLS）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>TELNET（端口 TCP 23）</p>
+<p>远程登录协议（Teletype Network）是Internet远程登录服务的标准协议和主要方式</p>
+<ul>
+<li>安全隐患及防护措施<ul>
+<li>攻击者记录整个会话或者登陆的口令</li>
+<li>劫持会话，认证完成后进行篡改</li>
+<li>应该对会话进行加密</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>SSH （端口 TCP 22）</p>
+<p>安全壳协议（Secure Shell）在不安全网络上建立安全远程登录或其他网路服务的协议</p>
+<p>建立TCP连接→版本协商 → 算法协商→服务器认证和密钥建立 →用户认证 → 通信会话</p>
+<ul>
+<li><p>支持身份认证和数据加密</p>
+</li>
+<li><p>可提供安全隧道，防止中间人攻击</p>
+</li>
+<li><p>安全问题</p>
+<ul>
+<li><p>服务器认证：在不可信的环境下，不能对服务器真实性进行认证</p>
+<p>应该要验证主机密钥来验证服务器的正确性</p>
+</li>
+<li><p>协议版本协商：可能存在对有漏洞的版本进行攻击</p>
+<p>对版本上有安全问题的通讯方，中断TCP连接</p>
+</li>
+<li><p>主机密钥文件安全：密钥被窃取或篡改，实施攻击</p>
+<p>应加强对密钥文件的管理</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>PGP</p>
+<p>安全电子邮件标准</p>
+</li>
+<li><p>POP3</p>
+</li>
+<li><p>FTP</p>
+</li>
+<li><p>SMTP</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="第三章-安全协议"><a href="#第三章-安全协议" class="headerlink" title="第三章 安全协议"></a>第三章 安全协议</h3><p>两个或两个以上的参与者为完成某项特定的任务而采取的一系列步骤。</p>
+<h4 id="协议三要素"><a href="#协议三要素" class="headerlink" title="协议三要素"></a>协议三要素</h4><ul>
+<li>依次执行</li>
+<li>至少两个参与者</li>
+<li>通过执行协议，必须能完成某项任务</li>
+</ul>
+<h4 id="仲裁协议"><a href="#仲裁协议" class="headerlink" title="仲裁协议"></a>仲裁协议</h4><p>公正、可信赖</p>
+
+  
+  
+    
+    <div class='footer'>
+      
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://gryffinbit.top/2021/01/20/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/>https://gryffinbit.top/2021/01/20/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/</a></p>
+              
+            
+          </blockquote>
+        </div>
+      
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-22T17:13:15+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年1月22日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E8%80%83%E7%82%B9/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>考点</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gryffinbit.top/2021/01/20/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/&title=网络安全技术期末考点 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://gryffinbit.top/2021/01/20/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/&title=网络安全技术期末考点 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://gryffinbit.top/2021/01/20/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/&title=网络安全技术期末考点 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2021/01/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>数据结构期末考点</p>
+          <p class='content'>数据结构期末考点
+本文章notion版本链接（格式更好看一些）：https://www.notion.so/gryffinbitworkspace/5dbf3d58c5404a99bcaaba9...</p>
+        </a>
+      
+      
+        <a class='next' href='/2020/12/21/%E5%9F%BA%E4%BA%8EWeb%E7%9A%84SSL%E8%BF%9E%E6%8E%A5%E8%AE%BE%E7%BD%AE/'>
+          <p class='title'>基于Web的SSL连接设置<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>实验四：基于Web的SSL连接设置实验目的：学习基于Web的SSL连接设置，加深SSL的理解
+实验原理：数字证书概念
+将用户身份ID与其所持有的公钥PK绑定，再由CA对该身份及对应公钥的组合{I...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%80%83%E7%82%B9"><span class="toc-text">考点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A1%AB%E7%A9%BA%E9%A2%98%EF%BC%8815%EF%BC%89"><span class="toc-text">填空题（15）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E9%A2%98%EF%BC%8810%EF%BC%89"><span class="toc-text">选择题（10）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E9%A2%98%EF%BC%885%EF%BC%89"><span class="toc-text">判断题（5）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E7%AD%94%E9%A2%98%EF%BC%884%E9%81%93%EF%BC%89"><span class="toc-text">简答题（4道）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E5%A4%A7%E9%A2%98%EF%BC%882%E9%81%93%EF%BC%89"><span class="toc-text">综合大题（2道）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%E7%AC%94%E8%AE%B0"><span class="toc-text">补充笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0"><span class="toc-text">第一章</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A84%E4%B8%AA%E5%9F%BA%E6%9C%AC%E7%9B%AE%E6%A0%87"><span class="toc-text">信息安全4个基本目标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E5%A8%81%E8%83%81%E6%9D%A5%E6%BA%90"><span class="toc-text">安全威胁来源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%8F%AF%E5%AE%9E%E7%8E%B0%E5%A8%81%E8%83%81"><span class="toc-text">主要可实现威胁</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4%E6%8E%AA%E6%96%BD"><span class="toc-text">安全防护措施</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E7%AD%96%E7%95%A5%EF%BC%88%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5%EF%BC%89"><span class="toc-text">访问控制策略（安全策略）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%94%BB%E5%87%BB%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-text">安全攻击的分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%94%BB%E5%87%BB%E5%B8%B8%E8%A7%81%E5%BD%A2%E5%BC%8F"><span class="toc-text">网络攻击常见形式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%9C%8D%E5%8A%A1"><span class="toc-text">安全服务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%9C%E4%B8%9A"><span class="toc-text">作业</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0"><span class="toc-text">第二章</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#TCP-IP%E5%8D%8F%E8%AE%AE%E6%97%8F"><span class="toc-text">TCP&#x2F;IP协议族</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE"><span class="toc-text">第三章 安全协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%8F%E8%AE%AE%E4%B8%89%E8%A6%81%E7%B4%A0"><span class="toc-text">协议三要素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%B2%E8%A3%81%E5%8D%8F%E8%AE%AE"><span class="toc-text">仲裁协议</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+
+        
+        
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+<script>
+  window.pdata={}
+  pdata.ispage=true;
+  pdata.postTitle="网络安全技术期末考点";
+  pdata.commentPath="";
+  pdata.commentPlaceholder="";
+
+  var l_header=document.getElementById("l_header");
+  
+  l_header.classList.add("show");
+  
+</script>
+
+        
+      </div>
+      
+  
+  <footer class="footer clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='true'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='320px'
+      server='netease'
+      type='playlist'
+      id='5316477077'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+          
+            
+          
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        
+          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+</div>
+        
+      
+    
+      
+        本站使用
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.5" target="_blank" class="codename">Volantis</a>
+        作为主题
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="/">Copyright © 2017-2020 ❤️万事皆爱❤️</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+
+
+      <a id="s-top" class="fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+    </div>
+  </div>
+  <div>
+    <script>
+window.volantis={};
+window.volantis.loadcss=document.getElementById("loadcss");
+/********************脚本懒加载函数********************************/
+function loadScript(src, cb) {
+var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
+var script = document.createElement('script');
+script.setAttribute('type','text/javascript');
+if (cb) script.onload = cb;
+script.setAttribute('src', src);
+HEAD.appendChild(script);
+}
+//https://github.com/filamentgroup/loadCSS
+var loadCSS = function( href, before, media, attributes ){
+	var doc = window.document;
+	var ss = doc.createElement( "link" );
+	var ref;
+	if( before ){
+		ref = before;
+	}
+	else {
+		var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
+		ref = refs[ refs.length - 1];
+	}
+	var sheets = doc.styleSheets;
+	if( attributes ){
+		for( var attributeName in attributes ){
+			if( attributes.hasOwnProperty( attributeName ) ){
+				ss.setAttribute( attributeName, attributes[attributeName] );
+			}
+		}
+	}
+	ss.rel = "stylesheet";
+	ss.href = href;
+	ss.media = "only x";
+	function ready( cb ){
+		if( doc.body ){
+			return cb();
+		}
+		setTimeout(function(){
+			ready( cb );
+		});
+	}
+	ready( function(){
+		ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
+	});
+	var onloadcssdefined = function( cb ){
+		var resolvedHref = ss.href;
+		var i = sheets.length;
+		while( i-- ){
+			if( sheets[ i ].href === resolvedHref ){
+				return cb();
+			}
+		}
+		setTimeout(function() {
+			onloadcssdefined( cb );
+		});
+	};
+	function loadCB(){
+		if( ss.addEventListener ){
+			ss.removeEventListener( "load", loadCB );
+		}
+		ss.media = media || "all";
+	}
+	if( ss.addEventListener ){
+		ss.addEventListener( "load", loadCB);
+	}
+	ss.onloadcssdefined = onloadcssdefined;
+	onloadcssdefined( loadCB );
+	return ss;
+};
+</script>
+<script>
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css", window.volantis.loadcss);
+  
+  
+  loadCSS("https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css", window.volantis.loadcss);
+  
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css", window.volantis.loadcss);
+  
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/solarized-light.css", window.volantis.loadcss);
+  
+</script>
+<!-- required -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
+<script>
+  function pjax_fancybox() {
+    $(".md .gallery").find("img").each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".md .gallery").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  function SCload_fancybox() {
+    if ($(".md .gallery").find("img").length == 0) return;
+    loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css", document.getElementById("loadcss"));
+    setTimeout(function() {
+      loadScript('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', pjax_fancybox)
+    }, 1);
+  };
+  $(function () {
+    SCload_fancybox();
+  });
+</script>
+
+
+<!-- internal -->
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+        var imgs=["https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/default.png", "https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/tag.png", "https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/category.png", "https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kakshi_naruto.png"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+	  function Pjax_backstretch(){
+        
+          $.backstretch(
+            imgs,
+          {
+            duration: "15000",
+            fade: "1500"
+          });
+        
+	  }
+	  loadScript("https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js",Pjax_backstretch)
+    </script>
+  
+
+
+
+
+
+  <script>
+  function loadIssuesJS() {
+    if ($(".md").find(".issues-api").length == 0) return;
+    setTimeout(function() {
+	
+	  loadScript('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.1.5/source/js/issues.min.js');
+	
+    }, 1);
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+</script>
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+
+  
+  
+    <script>
+      window.FPConfig = {
+        delay: 0,
+        ignoreKeywords: [],
+        maxRPS: 5,
+        hoverDelay: 25
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+		if($(".highlight .code pre").length+$(".article pre code").length==0)return;
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+</script>
+
+
+
+
+
+
+  <script>
+  let APlayerController = new Object();
+  APlayerController.id = '5316477077';  // 设定全局音乐播放ID
+  APlayerController.volume = '0.7';
+setTimeout(function() {
+  loadCSS("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css", window.volantis.loadcss);
+
+  loadScript("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js")
+
+  loadScript("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js")
+
+
+}, 10000);
+</script>
+
+
+
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    if(!document.querySelectorAll("#valine_container")[0])return;
+
+    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~ 评论前请填好“昵称”、“邮箱”这两栏内容，否则不会收到回复哦～";
+
+    let path = pdata.commentPath;
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: pagePlaceholder,
+      path: path,
+      appId: "SpRnpidOkCtC9wRmjSkdOhCw-MdYXbMMI",
+      appKey: "ELcHiAEif9x6qMgD0xUCAq7d",
+      pageSize: '10',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'true',
+      enableQQ: 'true',
+      recordIP: 'false',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });
+</script>
+
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.1.5/source/js/app.min.js"></script>
+
+
+
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.1.5/source/js/search.min.js"></script>
+
+  
+
+
+<!-- optional -->
+
+  <script>
+const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
+const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
+function listenSearch(){
+  
+    customSearch = new HexoSearch({
+      imagePath: SearchServiceimagePath
+    });
+  
+}
+document.addEventListener("DOMContentLoaded", listenSearch);
+
+</script>
+
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function () {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+  
+
+
+
+  <script defer>
+
+  const LCCounter = {
+    app_id: 'SpRnpidOkCtC9wRmjSkdOhCw-MdYXbMMI',
+    app_key: 'ELcHiAEif9x6qMgD0xUCAq7d',
+    custom_api_server: '',
+
+    // 查询存储的记录
+    getRecord(Counter, url, title) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {url, title: title, times: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    },
+
+    // 发起自增请求
+    increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    },
+
+    // 构建自增请求体
+    buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "times": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    },
+
+    // 校验是否为有效的 UV
+    validUV() {
+      var key = 'LeanCloudUVTimestamp';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    },
+
+    addCount(Counter) {
+      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
+      enableIncr = true;
+      var getterArr = [];
+      var incrArr = [];
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#lc-sv');
+      if (pvCtn || enableIncr) {
+        var pvGetter = this.getRecord(Counter, 'https://gryffinbit.top' + '/#lc-sv', 'Visits').then((record) => {
+          incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-sv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + 1;
+              if (pvCtn) {
+                pvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#lc-uv');
+      if (uvCtn || enableIncr) {
+        var uvGetter = this.getRecord(Counter, 'https://gryffinbit.top' + '/#lc-uv', 'Visitors').then((record) => {
+          var vuv = this.validUV();
+          vuv && incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-uv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + (vuv ? 1 : 0);
+              if (uvCtn) {
+                uvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 请求文章的浏览数，如果是当前页面就自增
+      var allPV = document.querySelectorAll('#lc-pv');
+      if (allPV.length > 0 || enableIncr) {
+        for (i = 0; i < allPV.length; i++) {
+          let pv = allPV[i];
+          let title = pv.getAttribute('data-title');
+          var url = 'https://gryffinbit.top' + pv.getAttribute('data-path');
+          if (url) {
+            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
+              // 是当前页面就自增
+              let curPath = window.location.pathname;
+              if (curPath.includes('index.html')) {
+                curPath = curPath.substring(0, curPath.lastIndexOf('index.html'));
+              }
+              if (pv.getAttribute('data-path') == curPath) {
+                incrArr.push(this.buildIncrement(record.objectId));
+              }
+              if (pv) {
+                var ele = pv.querySelector('#lc-pv #number');
+                if (ele) {
+                  if (pv.getAttribute('data-path') == curPath) {
+                    ele.innerText = (record.times || 0) + 1;
+                  } else {
+                    ele.innerText = record.times || 0;
+                  }
+                  pv.style.display = 'inline';
+                }
+              }
+            });
+            getterArr.push(viewGetter);
+          }
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && this.increment(Counter, incrArr);
+        })
+      }
+
+    },
+
+
+    fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': this.app_id,
+            'X-LC-Key': this.app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      this.addCount(Counter);
+    },
+
+    refreshCounter() {
+      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+      if (api_server) {
+        this.fetchData(api_server);
+      } else {
+        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
+          .then(resp => resp.json())
+          .then(({api_server}) => {
+            this.fetchData('https://' + api_server);
+          });
+      }
+    }
+
+  };
+
+  LCCounter.refreshCounter();
+
+  document.addEventListener('pjax:complete', function () {
+    LCCounter.refreshCounter();
+  });
+</script>
+
+
+
+
+
+
+
+
+<script>
+function listennSidebarTOC() {
+  const navItems = document.querySelectorAll(".toc li");
+  if (!navItems.length) return;
+  const sections = [...navItems].map((element) => {
+    const link = element.querySelector(".toc-link");
+    const target = document.getElementById(
+      decodeURI(link.getAttribute("href")).replace("#", "")
+    );
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({
+		top: target.offsetTop + 100,
+		
+		behavior: "smooth"
+		
+	  });
+    });
+    return target;
+  });
+
+  function activateNavByIndex(target) {
+    if (target.classList.contains("active-current")) return;
+
+    document.querySelectorAll(".toc .active").forEach((element) => {
+      element.classList.remove("active", "active-current");
+    });
+    target.classList.add("active", "active-current");
+    let parent = target.parentNode;
+    while (!parent.matches(".toc")) {
+      if (parent.matches("li")) parent.classList.add("active");
+      parent = parent.parentNode;
+    }
+  }
+
+  function findIndex(entries) {
+    let index = 0;
+    let entry = entries[index];
+    if (entry.boundingClientRect.top > 0) {
+      index = sections.indexOf(entry.target);
+      return index === 0 ? 0 : index - 1;
+    }
+    for (; index < entries.length; index++) {
+      if (entries[index].boundingClientRect.top <= 0) {
+        entry = entries[index];
+      } else {
+        return sections.indexOf(entry.target);
+      }
+    }
+    return sections.indexOf(entry.target);
+  }
+
+  function createIntersectionObserver(marginTop) {
+    marginTop = Math.floor(marginTop + 10000);
+    let intersectionObserver = new IntersectionObserver(
+      (entries, observe) => {
+        let scrollHeight = document.documentElement.scrollHeight + 100;
+        if (scrollHeight > marginTop) {
+          observe.disconnect();
+          createIntersectionObserver(scrollHeight);
+          return;
+        }
+        let index = findIndex(entries);
+        activateNavByIndex(navItems[index]);
+      },
+      {
+        rootMargin: marginTop + "px 0px -100% 0px",
+        threshold: 0,
+      }
+    );
+    sections.forEach((element) => {
+      element && intersectionObserver.observe(element);
+    });
+  }
+  createIntersectionObserver(document.documentElement.scrollHeight);
+}
+
+document.addEventListener("DOMContentLoaded", listennSidebarTOC);
+document.addEventListener("pjax:success", listennSidebarTOC);
+</script>
+
+<!-- more -->
+
+
+
+
+    
+      
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#l_cover",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 0
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      //window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = ["life/", "video/"];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      if (typeof $.fancybox != "undefined") {
+        $.fancybox.close();    // 关闭弹窗
+      }
+      volantis.$switcher.removeClass('active'); // 关闭移动端激活的搜索框
+      volantis.$header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      volantis.$wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      volantis.$topBtn.unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+	  
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+      try{
+          if (typeof $.fancybox == "undefined") {
+            SCload_fancybox();
+          } else {
+            pjax_fancybox();
+          }
+        
+		  Pjax_backstretch()
+        
+        
+        document.querySelectorAll('pre code').forEach((block) => {
+          hljs.highlightBlock(block);
+        });
+        
+        
+        
+          if (typeof IssuesAPI == "undefined") {
+            loadIssuesJS();
+          }
+        
+        
+          pjax_initCopyCode();
+        
+        
+          pjax_valine();
+        
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+	  
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+	  
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
+    
+  </div>
+
+ <!--  打字机特效 -->
+<script src="https://cdn.bootcss.com/typed.js/2.0.9/typed.min.js"></script>
+  <script type="text/javascript">
+      var options = {
+          strings: [
+              '欢迎来到Gryffinbit的思维殿堂'
+          ],
+          typeSpeed: 90,   //打印速度
+          startDelay: 300, //开始之前的延迟300毫秒
+          loop: false,      //是否循环
+      };
+      var typed = new Typed('#typed', options);
+  </script>
+  <!--  打字机特效 -->
+
+</body>
+</html>

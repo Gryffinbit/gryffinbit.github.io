@@ -1,0 +1,2557 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,zh-HK,zh-TW,default">
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.5'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+  <title>kali下volatility取证工具的使用 - Gryffinbit</title>
+  
+    <meta name="keywords" content="取证,kali,volatility">
+  
+
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  
+    <link rel="shortcut icon" type='image/x-icon' href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/favicon.png">
+  
+
+  <!-- import link -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/first.css">
+
+  
+
+  
+  <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
+  
+
+  <script id="loadcss"></script>
+
+</head>
+
+<body>
+
+<!-- 导入jquery库 -->
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!--   樱花特效 -->
+  <script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js"></script>
+
+
+<!-- 雪花特效 -->
+<!-- <script type="text/javascript" src="\js\snow.js"></script> -->
+
+
+<!-- 点击出桃心特效 -->
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/clicklove.js"></script>
+
+
+
+<!-- 标签页显示 -->
+
+  <script type="text/javascript">
+    var OriginTitile = document.title,
+        st;
+    document.addEventListener("visibilitychange", function () {
+        document.hidden ? (document.title = "🥺去哪里了呀~", clearTimeout(st)) : (document.title =
+            "🤗终于回来了", st = setTimeout(function () {
+                document.title = OriginTitile
+            }, 3e3))
+    })
+  </script>
+<!-- 标签页显示 -->
+
+  
+  
+
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
+  <div class='container'>
+  <div id='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a id="s-comment" class="fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+            🐰兔子窝🥕
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/Gryffinbit
+                  
+                  
+                  
+                    id="https:githubcomGryffinbit"
+                  >
+                  <i class='fab fa-github fa-fw'></i>github
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>categories
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>tags
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>archives
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-users fa-fw'></i>friends
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-heart fa-fw'></i>me
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=http://xn--h5qq84c.xn--6qq986b3xl:1108/
+                  
+                  
+                  
+                    id="http:xn--h5qq84cxn--6qq986b3xl:1108"
+                  >
+                  <i class='fas fa-lock fa-fw'></i>权哥❤
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/Gryffinbit
+                  
+                  
+                  
+                    id="https:githubcomGryffinbit"
+                  >
+                  <i class='fab fa-github fa-fw'></i>github
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>categories
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>tags
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>archives
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-users fa-fw'></i>friends
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-heart fa-fw'></i>me
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=http://xn--h5qq84c.xn--6qq986b3xl:1108/
+                  
+                  
+                  
+                    id="http:xn--h5qq84cxn--6qq986b3xl:1108"
+                  >
+                  <i class='fas fa-lock fa-fw'></i>权哥❤
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  <div id="l_body">
+    <div id="l_cover">
+  
+    
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
+          
+            <div id='cover-backstretch'></div>
+          
+          <div class='cover-body'>
+  <div class='top'>
+    
+    
+      <p class="title" id="typed"></p>    
+    
+      <p class="subtitle">Stay Hungry. Stay Foolish.</p>
+    
+  </div>
+  <div class='bottom'>
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a target="_blank" rel="noopener" href="https://github.com/Gryffinbit"
+              
+              
+              id="https:githubcomGryffinbit">
+              <i class='fab fa-github fa-fw'></i><p>github</p>
+            </a>
+          
+            <a href="/categories/"
+              
+              
+              id="categories">
+              <i class='fas fa-folder-open fa-fw'></i><p>categories</p>
+            </a>
+          
+            <a href="/tags/"
+              
+              
+              id="tags">
+              <i class='fas fa-tags fa-fw'></i><p>tags</p>
+            </a>
+          
+            <a href="/archives/"
+              
+              
+              id="archives">
+              <i class='fas fa-archive fa-fw'></i><p>archives</p>
+            </a>
+          
+            <a href="/friends/"
+              
+              
+              id="friends">
+              <i class='fas fa-users fa-fw'></i><p>friends</p>
+            </a>
+          
+            <a href="/about/"
+              
+              
+              id="about">
+              <i class='fas fa-heart fa-fw'></i><p>me</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="http://xn--h5qq84c.xn--6qq986b3xl:1108/"
+              
+              
+              id="http:xn--h5qq84cxn--6qq986b3xl:1108">
+              <i class='fas fa-lock fa-fw'></i><p>权哥❤</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+        </div>
+    
+  
+  </div>
+  
+
+
+    <div id='safearea'>
+      <div class='body-wrapper' id="pjax-container">
+        
+
+<div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title">
+        kali下volatility取证工具的使用
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>Gryffinbit</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E5%AE%9E%E9%AA%8C/">实验</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AE%9E%E9%AA%8C/%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E4%B8%8E%E5%8F%96%E8%AF%81/">入侵检测与取证</a>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年12月5日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="kali下volatility取证工具的使用" data-path="/2020/12/05/kali%E4%B8%8Bvolatility%E5%8F%96%E8%AF%81%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
+    
+  </div>
+
+
+  
+  <h1 id="Kali下-volatility取证软件的使用"><a href="#Kali下-volatility取证软件的使用" class="headerlink" title="Kali下 volatility取证软件的使用"></a>Kali下 volatility取证软件的使用</h1><h2 id="实验所用附件下载"><a href="#实验所用附件下载" class="headerlink" title="实验所用附件下载"></a>实验所用附件下载</h2><p><a target="_blank" rel="noopener" href="https://gryffinbit.lanzous.com/b01bwm4ab">https://gryffinbit.lanzous.com/b01bwm4ab</a><br>密码:15j0</p>
+<h2 id="实验环境："><a href="#实验环境：" class="headerlink" title="实验环境："></a>实验环境：</h2><p>Debian 8 kali</p>
+<h2 id="实验要求："><a href="#实验要求：" class="headerlink" title="实验要求："></a>实验要求：</h2><p>使用Volatility 取证软件从内存转储文件中获取有用信息，包括:</p>
+<ol>
+<li>查看内存镜像中进程列表</li>
+<li>查看内存镜像中注册表信息</li>
+<li>获取用户名和用户登陆密码</li>
+<li>查看转储前都运行了哪些程序</li>
+<li>把某个程序的相关数据转储成-一个文件，对这个文件进行进一步分析</li>
+<li>提取目标系统的命令行历史</li>
+<li>提取目标系统的网络连接情况</li>
+<li>提取目标系统的使用IE浏览器访问网络情况</li>
+</ol>
+<h2 id="实验内容："><a href="#实验内容：" class="headerlink" title="实验内容："></a>实验内容：</h2><ol>
+<li>首先使用内容转储软件dumpit在Windows7虚拟机(目标系统)中将内存中所有信息转储为-一个文件。</li>
+<li>将转储生成的文件拷贝到Kali系统中进行分析。</li>
+</ol>
+<h2 id="实验过程："><a href="#实验过程：" class="headerlink" title="实验过程："></a>实验过程：</h2><p>volatility官方文档</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/volatilityfoundation/volatility/wiki/Installation">https://github.com/volatilityfoundation/volatility/wiki/Installation</a></p>
+<blockquote>
+<p>基本依赖包及环境配置</p>
+</blockquote>
+<p>👉下载volatility</p>
+<p><code>git clone [https://github.com/volatilityfoundation/volatility.git](https://github.com/volatilityfoundation/volatility.git)</code></p>
+<p>解压该压缩包，cd到文件夹位置，运行安装脚本</p>
+<p><code>python [setup.py](http://setup.py) build</code></p>
+<p><code>python [setup.py](http://setup.py) install</code></p>
+<p>用法</p>
+<pre><code class="bash">cd /root/volatility/
+chmod +x vol.py
+./vol.py</code></pre>
+<p>缺少依赖包</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-1.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-1.png" srcset="data:image/png;base64,666"></p>
+<p>👉pip 安装缺少的依赖包</p>
+<pre><code class="bash">sudo pip install yara
+pip install distorm3==3.4.4
+sudo pip install pycrypto 
+sudo pip install openpyxl 
+sudo pip install Pillow</code></pre>
+<blockquote>
+<p>内存工具Dump的使用</p>
+</blockquote>
+<p>👉进行转储</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-2.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-2.png" srcset="data:image/png;base64,666"></p>
+<p>👉制备实验用的转储文件</p>
+<p>在目标系统中打开一些应用程序，例如：记事本</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-3.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-3.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-4.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-4.png" srcset="data:image/png;base64,666"></p>
+<blockquote>
+<p>使用kali分析转储生成的文件</p>
+</blockquote>
+<p>👉查看帮助文档</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-5.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-5.png" srcset="data:image/png;base64,666"></p>
+<p>👉分析系统信息</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-6.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-6.png" srcset="data:image/png;base64,666"></p>
+<p>👉使用pslist查看内存镜像中进程列表</p>
+<pre><code class="bash">python vol.py -f /root/桌面/suspicion/mem.vmem --profile=WinXPSP2x86 pslist</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-7.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-7.png" srcset="data:image/png;base64,666"></p>
+<p>👉使用hiveliest查看内存中缓存的注册表信息，例如所有用户名、密码hash、病毒隐藏、恶意启动项、映射劫持。等</p>
+<pre><code class="bash">python [vol.py](http://vol.py/) -f /root/桌面/suspicion/mem.vmem --profile=WinXPSP2x86 hivelist
+Volatility Foundation Volatility Framework 2.6.1</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-8.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-8.png" srcset="data:image/png;base64,666"></p>
+<p>👉hivedump可以查看hivelist中列出的所有文件内容 </p>
+<p><code>hivedump -o offset</code></p>
+<p>-o的后面传递一个offset偏移量参数。是虚地址（内存地址）</p>
+<pre><code class="bash">python vol.py -f /root/桌面/suspicion/mem.vmem --profile=WinXPSP2x86 hivedump -o 0xe16aab60</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-9.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-9.png" srcset="data:image/png;base64,666"></p>
+<p>👉查看注册表中的某一项健值</p>
+<p><code>printkey -K 路径</code></p>
+<pre><code class="bash">python vol.py -f /root/桌面/suspicion/mem.vmem --profile=WinXPSP2x86 printkey -K &quot;SAM\Domains\Account\Users\Names&quot;</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-10.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-10.png" srcset="data:image/png;base64,666"></p>
+<p>👉Winlogon健值查询在内存转储前，最后登录的账户是哪个</p>
+<pre><code class="bash">python vol.py -f /root/桌面/suspicion/mem.vmem --profile=WinXPSP2x86 printkey -K &quot;SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon&quot;</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-11.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-11.png" srcset="data:image/png;base64,666"></p>
+<p>👉取得用户密码的哈希值</p>
+<p><code>hashdump -y system的偏移量 -s SAM的偏移量</code></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-12.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-12.png" srcset="data:image/png;base64,666"></p>
+<pre><code class="bash">python vol.py -f /root/桌面/suspicion/mem.vmem --profile=WinXPSP2x86 hashdump -y 0xe1035b60 -s 0xe16aab60</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-13.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-13.png" srcset="data:image/png;base64,666"></p>
+<p>这步失败了，没有提取出来密码的hash</p>
+<p>👉使用mimikatz插件，获取用户明文密码</p>
+<pre><code class="bash">sudo pip install construct==2.5.5-reupload</code></pre>
+<p>mimikatz.py</p>
+<pre><code class="python"># Volatility mimikatz plugin
+#
+# Based on the research made by Gentil_Kiwi for his mimikatz
+# http://blog.gentilkiwi.com/mimikatz
+# https://code.google.com/p/mimikatz/
+#
+# Author: Francesco Picasso &lt;francesco.picasso@gmail.com&gt;
+#
+# This plugin is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This plugin is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this plugin.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+
+&quot;&quot;&quot;
+@author       : Francesco Picasso
+@license      : GPL 2 or later
+@contact      : francesco.picasso@gmail.com
+@organization : www.realitynet.it
+&quot;&quot;&quot;
+
+import construct
+import os
+import re
+import struct
+import volatility.obj as obj
+import volatility.debug as debug
+import volatility.commands as commands
+import volatility.constants as constants
+import volatility.utils as utils
+import volatility.win32.tasks as tasks
+
+from Crypto.Cipher import AES
+from Crypto.Cipher import DES3
+
+#------------------------------------------------------------------------------
+
+class Credential():
+  &quot;&quot;&quot;TODO: add description here.&quot;&quot;&quot;
+
+  def __init__(self, module=&#39;&#39;, username=&#39;&#39;, domain=&#39;&#39;, epwd=&#39;&#39;, pwd=&#39;&#39;):
+    self.module = module
+    self.username = username
+    self.domain = domain
+    self.epwd = epwd
+    self.pwd = pwd
+    self.signature = module + username + domain + epwd.encode(&#39;hex&#39;)
+
+  def decrypt_epwd(self, decryptor):
+    if self.epwd and decryptor:
+      self.pwd = decryptor.decrypt(self.epwd)
+      try:
+        self.pwd = self.pwd.decode(&#39;utf-16-le&#39;).rstrip(&#39;\0&#39;)
+      except UnicodeDecodeError:
+        debug.warning(&#39;[Credential:decrypt_epwd] unicode decode error&#39;)
+        self.pwd = self.pwd.encode(&#39;hex&#39;)
+
+  def dump(self):
+    debug.notice(&#39;m&lt;&#123;&#125;&gt; u&lt;&#123;&#125;&gt; d&lt;&#123;&#125;&gt; ep&lt;&#123;&#125;&gt; p&lt;&#123;&#125;&gt;&#39;.format(
+        self.module, self.username, self.domain,
+        self.epwd.encode(&#39;hex&#39;), self.pwd))
+
+
+class Credentials():
+  &quot;&quot;&quot;TODO: add description here.&quot;&quot;&quot;
+
+  def __init__(self):
+    self.credentials = []
+
+  def add_credential(self, credential):
+    already_in = False
+    for cred in self.credentials:
+      if cred.signature == credential.signature:
+        already_in = True
+    if not already_in:
+      self.credentials.append(credential)
+
+#------------------------------------------------------------------------------
+
+class MemoryScanner(object):
+  &quot;&quot;&quot;An address space scanner based on scudette&#39;s Yara Scanner&quot;&quot;&quot;
+
+  def __init__(self, task):
+    self.task = task
+
+  def _find_first(self, address_space, offset, maxlen, signature):
+    &quot;&quot;&quot;Raw memory scanner with overlap.&quot;&quot;&quot;
+    # Allow some bytes for overlapping signatures
+    overlap = 1024
+    i = offset
+    while i &lt; offset + maxlen:
+      to_read = min(
+        constants.SCAN_BLOCKSIZE + overlap, offset + maxlen - i)
+      block = address_space.zread(i, to_read)
+      if block:
+        match = block.find(signature)
+        if match &gt;= 0:
+          return match
+      i += constants.SCAN_BLOCKSIZE
+
+  def find_first(self, offset, signature):
+    &quot;&quot;&quot;Find the first match using VADs. It retuns a VA.&quot;&quot;&quot;
+    task_as = self.task.get_process_address_space()
+    task_vads = self.task.get_vads(skip_max_commit = True)
+    for vad, __ in task_vads:
+      if offset &gt;= vad.Start and offset &lt;= vad.Start + vad.Length:
+        position = self._find_first(task_as, vad.Start, vad.Length, signature)
+        if position:
+          return position + vad.Start
+
+#------------------------------------------------------------------------------
+
+class MimikatzBase(object):
+  &quot;&quot;&quot;The mimikatz base class, used to defined common attributes/methods.&quot;&quot;&quot;
+  SIZEOF_LONG = 4
+  SIZEOF_PTR = None
+  UNPACK_PTR = None
+  UNPACK_LONG = &#39;&lt;L&#39;
+
+  def __init__(self, task):
+    self.task = task
+    self.task_as = task.get_process_address_space()
+
+  def get_ptr(self, pos):
+    raw_data = self.task_as.zread(pos, self.SIZEOF_PTR)
+    if raw_data:
+      return struct.unpack(self.UNPACK_PTR, raw_data)[0]
+
+  def get_data(self, pos, size):
+    if pos and size:
+      return self.task_as.zread(pos, size)
+    return &#39;&#39;
+
+
+class Mimikatz_x86(MimikatzBase):
+  &quot;&quot;&quot;The mimikatz x86 base class.&quot;&quot;&quot;
+  SIZEOF_PTR = 4
+  UNPACK_PTR = &#39;&lt;L&#39;
+
+  def __init__(self, task):
+    MimikatzBase.__init__(self, task)
+    MimikatzBase.__init__(self, task)
+
+  def get_ptr_with_offset(self, pos):
+    return self.get_ptr(pos)
+
+
+class Mimikatz_x64(MimikatzBase):
+  &quot;&quot;&quot;The mimikatz x64 base class.&quot;&quot;&quot;
+  SIZEOF_PTR = 8
+  UNPACK_PTR = &#39;&lt;Q&#39;
+
+  def __init__(self, task):
+    MimikatzBase.__init__(self, task)
+
+  def get_ptr_with_offset(self, pos):
+    raw_data = self.task_as.zread(pos, self.SIZEOF_LONG)
+    if raw_data:
+      ptr = struct.unpack(self.UNPACK_LONG, raw_data)[0]
+      return pos + self.SIZEOF_LONG + ptr
+
+#------------------------------------------------------------------------------    
+
+class LsaDecryptor():
+  &quot;&quot;&quot;TODO: add description.&quot;&quot;&quot;
+  SIGNATURE = None
+  IV_LENGTH = 16
+  PTR_IV_OFFSET = None
+  PTR_AES_KEY_OFFSET = None
+  PTR_DES_KEY_OFFSET = None
+  UUUR_TAG = 0x55555552
+  MSSK_TAG = 0x4d53534b
+
+  HARD_KEY = construct.Struct(&#39;KIWI_HARD_KEY&#39;,
+      construct.ULInt32(&#39;cbSecret&#39;),
+      construct.Field(&#39;data&#39;, lambda ctx: ctx.cbSecret))
+
+  # Modified to include HARD_KEY size.
+  BCRYPT_KEY = construct.Struct(&#39;KIWI_BCRYPT_KEY&#39;,
+      construct.ULInt32(&#39;size&#39;),
+      construct.ULInt32(&#39;tag&#39;), # &#39;MSSK&#39;.
+      construct.ULInt32(&#39;type&#39;),
+      construct.ULInt32(&#39;unk0&#39;),
+      construct.ULInt32(&#39;unk1&#39;),
+      construct.ULInt32(&#39;unk2&#39;),
+      construct.ULInt32(&#39;cbSecret&#39;))
+
+  def __init__(self):
+    self.iv = &#39;&#39;
+    self.aes_key = &#39;&#39;
+    self.des_key = &#39;&#39;
+
+  def find_signature(self):
+    for mod in self.task.get_load_modules():
+      if str(mod.BaseDllName).lower() == &#39;lsasrv.dll&#39;:
+        scanner = MemoryScanner(self.task)
+        return scanner.find_first(mod.DllBase.v(), self.SIGNATURE)
+    debug.warning(&#39;[LsaDecryptor:find_signature()] signature not found!&#39;)
+
+  def get_IV(self, pos):
+    ptr_iv = self.get_ptr_with_offset(pos + self.PTR_IV_OFFSET)
+    if ptr_iv:
+      return self.get_data(ptr_iv, self.IV_LENGTH)
+
+  def get_key(self, pos, key_offset):
+    ptr_key = self.get_ptr_with_offset(pos + key_offset)
+    if ptr_key:
+      ptr_key = self.get_ptr(ptr_key)
+      if ptr_key:
+        size = self.BCRYPT_HANDLE_KEY.sizeof()
+        data = self.get_data(ptr_key, size)
+        if data:
+          kbhk = self.BCRYPT_HANDLE_KEY.parse(data)
+          if kbhk.tag == self.UUUR_TAG:
+            ptr_key = kbhk.ptr_kiwi_bcrypt_key
+            size = self.BCRYPT_KEY.sizeof()
+            data = self.get_data(ptr_key, size)
+            if data:
+              kbk = self.BCRYPT_KEY.parse(data)
+              if kbk.tag == self.MSSK_TAG:
+                adjust = construct.ULInt32(&#39;&#39;).sizeof()
+                size = kbk.cbSecret + adjust
+                ptr_key = ptr_key + self.BCRYPT_KEY.sizeof() - adjust
+                data = self.get_data(ptr_key, size)
+                if data:
+                  khk = self.HARD_KEY.parse(data)
+                  return khk.data
+                else:
+                  debug.warning(&#39;get_key() unable to get HARD_KEY.&#39;)
+              else:
+                debug.warning(&#39;get_key() BCRYPT_KEY invalid tag&#39;)
+            else:
+              debug.warning(&#39;get_key() unable to read BCRYPT_KEY data.&#39;)
+          else:
+            debug.warning(&#39;get_key() BCRYPT_HANDLE_KEY invalid tag&#39;)
+            debug.warning(kbhk)
+        else:
+          debug.warning(&#39;get_key() unable to read BCRYPT_HANDLE_KEY data.&#39;)
+      else:
+        debug.warning(&#39;get_key() unable to get BCRYPT_HANDLE_KEY pointer.&#39;)
+    else:
+      debug.warning(&#39;get_key()unable to get first pointer.&#39;)
+
+  def get_des_key(self, pos):
+    return self.get_key(pos, self.PTR_DES_KEY_OFFSET)
+
+  def get_aes_key(self, pos):
+    return self.get_key(pos, self.PTR_AES_KEY_OFFSET)
+
+  def acquire_crypto_material(self):
+    sigpos = self.find_signature()
+    if not sigpos:
+      debug.warning(&#39;[LsaDecryptor] unable to find signature!&#39;)
+      return
+    self.iv = self.get_IV(sigpos)
+    self.des_key = self.get_des_key(sigpos)
+    self.aes_key = self.get_aes_key(sigpos)
+
+  def decrypt(self, encrypted):
+    # TODO: NT version specific, move from here in subclasses.
+    cleartext = &#39;&#39;
+    size = len(encrypted)
+    if size:
+      if size % 8:
+        if not self.aes_key or not self.iv:
+          return cleartext
+        cipher = AES.new(self.aes_key, AES.MODE_CBC, self.iv)
+      else:
+        if not self.des_key or not self.iv:
+          return cleartext
+        cipher = DES3.new(self.des_key, DES3.MODE_CBC, self.iv[:8])
+      cleartext = cipher.decrypt(encrypted)
+    return cleartext
+
+  def dump(self):
+    print &#39;Dumping LSA Decryptor&#39;
+    print &#39;     IV (&#123;&#125;): &#123;&#125;&#39;.format(len(self.iv), self.iv.encode(&#39;hex&#39;))
+    print &#39;DES_KEY (&#123;&#125;): &#123;&#125;&#39;.format(
+        len(self.des_key), self.des_key.encode(&#39;hex&#39;))
+    print &#39;AES_KEY (&#123;&#125;): &#123;&#125;&#39;.format(
+        len(self.aes_key), self.aes_key.encode(&#39;hex&#39;))
+
+
+class LsaDecryptor_x86(LsaDecryptor, Mimikatz_x86):
+  &quot;&quot;&quot;TODO: add description.&quot;&quot;&quot;
+  def __init__(self, lsass_task):
+    Mimikatz_x86.__init__(self, lsass_task)
+    LsaDecryptor.__init__(self)
+
+
+class LsaDecryptor_x64(LsaDecryptor, Mimikatz_x64):
+  &quot;&quot;&quot;TODO: add description.&quot;&quot;&quot;
+  def __init__(self, lsass_task):
+    Mimikatz_x64.__init__(self, lsass_task)
+    LsaDecryptor.__init__(self)
+
+
+class LsaDecryptor_Vista_x86(LsaDecryptor_x86):
+  &quot;&quot;&quot;Class for Windows Vista x86.&quot;&quot;&quot;
+  # MIMIKATZ x86: BYTE PTRN_WNO8_LsaInitializeProtectedMemory_KEY[]
+  SIGNATURE    = &#39;\x8b\xf0\x3b\xf3\x7c\x2c\x6a\x02\x6a\x10\x68&#39;
+  PTR_IV_OFFSET = 11;
+  PTR_AES_KEY_OFFSET = -15;
+  PTR_DES_KEY_OFFSET = -70;
+
+  BCRYPT_HANDLE_KEY = construct.Struct(&#39;KIWI_BCRYPT_HANDLE_KEY&#39;,
+      construct.ULInt32(&#39;size&#39;),
+      construct.ULInt32(&#39;tag&#39;), # Tag &#39;UUUR&#39;, 0x55555552.
+      construct.ULInt32(&#39;ptr_void_algorithm&#39;),
+      construct.ULInt32(&#39;ptr_kiwi_bcrypt_key&#39;),
+      construct.ULInt32(&#39;ptr_unknown&#39;))
+
+  def __init__(self, lsass_task):
+    LsaDecryptor_x86.__init__(self, lsass_task)
+
+
+class LsaDecryptor_Win7_x86(LsaDecryptor_x86):
+  &quot;&quot;&quot;Class for Windows 7 x86.&quot;&quot;&quot;
+  # MIMIKATZ x86: BYTE PTRN_WNO8_LsaInitializeProtectedMemory_KEY[]
+  SIGNATURE    = &#39;\x8b\xf0\x3b\xf3\x7c\x2c\x6a\x02\x6a\x10\x68&#39;
+  PTR_IV_OFFSET = 11;
+  PTR_AES_KEY_OFFSET = -15;
+  PTR_DES_KEY_OFFSET = -70;
+
+  BCRYPT_HANDLE_KEY = construct.Struct(&#39;KIWI_BCRYPT_HANDLE_KEY&#39;,
+      construct.ULInt32(&#39;size&#39;),
+      construct.ULInt32(&#39;tag&#39;), # Tag &#39;UUUR&#39;, 0x55555552.
+      construct.ULInt32(&#39;ptr_void_algorithm&#39;),
+      construct.ULInt32(&#39;ptr_kiwi_bcrypt_key&#39;),
+      construct.ULInt32(&#39;ptr_unknown&#39;))
+
+  def __init__(self, lsass_task):
+    LsaDecryptor_x86.__init__(self, lsass_task)
+
+
+class LsaDecryptor_Vista_x64(LsaDecryptor_x64):
+  &quot;&quot;&quot;Class for Vista x64.&quot;&quot;&quot;
+  SIGNATURE    = &#39;\x83\x64\x24\x30\x00\x44\x8b\x4c\x24\x48\x48\x8b\x0d&#39;
+  PTR_IV_OFFSET = 63;
+  PTR_AES_KEY_OFFSET = 25;
+  PTR_DES_KEY_OFFSET = -69;
+
+  BCRYPT_HANDLE_KEY = construct.Struct(&#39;KIWI_BCRYPT_HANDLE_KEY&#39;,
+      construct.ULInt32(&#39;size&#39;),
+      construct.ULInt32(&#39;tag&#39;), # Tag &#39;UUUR&#39;, 0x55555552.
+      construct.ULInt64(&#39;ptr_void_algorithm&#39;),
+      construct.ULInt64(&#39;ptr_kiwi_bcrypt_key&#39;),
+      construct.ULInt64(&#39;ptr_unknown&#39;))
+
+  def __init__(self, lsass_task):
+    LsaDecryptor_x64.__init__(self, lsass_task)
+
+
+class LsaDecryptor_Win7_x64(LsaDecryptor_x64):
+  &quot;&quot;&quot;Class for Windows 7 x64.&quot;&quot;&quot;
+  # MIMIKATZ x64: BYTE PTRN_WNO8_LsaInitializeProtectedMemory_KEY[]
+  SIGNATURE    = &#39;\x83\x64\x24\x30\x00\x44\x8b\x4c\x24\x48\x48\x8b\x0d&#39;
+  PTR_IV_OFFSET = 59;
+  PTR_AES_KEY_OFFSET = 25;
+  PTR_DES_KEY_OFFSET = -61;
+
+  BCRYPT_HANDLE_KEY = construct.Struct(&#39;KIWI_BCRYPT_HANDLE_KEY&#39;,
+      construct.ULInt32(&#39;size&#39;),
+      construct.ULInt32(&#39;tag&#39;), # Tag &#39;UUUR&#39;, 0x55555552.
+      construct.ULInt64(&#39;ptr_void_algorithm&#39;),
+      construct.ULInt64(&#39;ptr_kiwi_bcrypt_key&#39;),
+      construct.ULInt64(&#39;ptr_unknown&#39;))
+
+  def __init__(self, lsass_task):
+    LsaDecryptor_x64.__init__(self, lsass_task)
+
+#------------------------------------------------------------------------------    
+
+class Wdigest():
+  &quot;&quot;&quot;TODO: add description.&quot;&quot;&quot;
+  SIGNATURE = None
+  FIRST_ENTRY_OFFSET = 0
+  WDIGEST_LIST_ENTRY = None
+  MODULE_NAME = &#39;wdigest&#39;
+  MAX_WALK = 32
+
+  def __init__(self, credentials_obj):
+    self.entries = []
+    self.entries_seen = &#123;&#125;
+    self.credentials_obj = credentials_obj
+
+  def find_signature(self):
+    for mod in self.task.get_load_modules():
+      if str(mod.BaseDllName).lower() == &#39;wdigest.dll&#39;:
+        scanner = MemoryScanner(self.task)
+        return scanner.find_first(mod.DllBase.v(), self.SIGNATURE)
+    debug.warning(&#39;[Wdigest] no wdigest.dll found in lsass process!&#39;)
+
+  def get_entry_at(self, ptr):
+    if ptr:
+      size = self.WDIGEST_LIST_ENTRY.sizeof()
+      data = self.get_data(ptr, size)
+      if data:
+        entry = self.WDIGEST_LIST_ENTRY.parse(data)
+        return entry
+
+  def get_first_entry(self):
+    position = self.find_signature()
+    if position:
+      ptr_entry = self.get_ptr_with_offset(position + self.FIRST_ENTRY_OFFSET)
+      if ptr_entry:
+        ptr_entry = self.get_ptr(ptr_entry)
+        if ptr_entry:
+          entry = self.get_entry_at(ptr_entry)
+          if entry:
+            return entry, ptr_entry
+    else:
+      debug.warning(&#39;[Wdigest] no wdigest package found.&#39;)
+      return None, None
+
+  def get_unicode_string_at(self, ptr, size):
+    data = self.get_data(ptr, size)
+    if data:
+      data_str = &#39;&#39;
+      try:
+        data_str = data.decode(&#39;utf-16-le&#39;).rstrip(&#39;\0&#39;)
+      except UnicodeDecodeError as ee:
+        debug.error(
+            &#39;[Wdigest] get_unicode_string_at() unicode error &#123;&#125;&#39;.format(
+            ee))
+        debug.warning(&#39;[Wdigest] src data is &lt;&#123;&#125;&gt;&#39;.format(data_str))
+      return data_str
+    else:
+      debug.error(&#39;[Wdigest] get_unicode_string_at() unable to get data&#39;)
+      return &#39;&#39;
+
+  def add_entry(self, entry, found_at):
+    if entry.usage_count:
+      if entry.this_entry == found_at:
+        user = domain = epwd = &#39;&#39;
+        if entry.user_string_ptr and entry.user_len:
+          user = self.get_unicode_string_at(
+              entry.user_string_ptr, entry.user_max_len)
+        if entry.domain_string_ptr and entry.domain_len:
+          domain = self.get_unicode_string_at(
+              entry.domain_string_ptr, entry.domain_max_len)
+        if entry.password_encrypted_ptr and entry.password_len:
+          epwd = data = self.get_data(
+              entry.password_encrypted_ptr, entry.password_max_len)
+        if user:
+          cred_entry = Credential(self.MODULE_NAME, user, domain, epwd)
+          self.credentials_obj.add_credential(cred_entry)
+
+  def walk_entries(self):
+    entry, found_at = self.get_first_entry()
+    if entry:
+      walk_num = 1
+      while walk_num &lt; self.MAX_WALK:
+        self.add_entry(entry, found_at)
+        self.entries_seen[found_at] = 1
+        found_at = entry.previous
+        entry = self.get_entry_at(found_at)
+        if not entry:
+          debug.error(&#39;Next entry not found!&#39;)
+          break
+        if entry.this_entry in self.entries_seen:
+          break
+        walk_num += 1
+
+
+class Wdigest_x86(Wdigest, Mimikatz_x86):
+  &quot;&quot;&quot;TODO: add description.&quot;&quot;&quot;
+
+  WDIGEST_LIST_ENTRY = construct.Struct(&#39;WdigestListEntry&#39;,
+      construct.ULInt32(&#39;previous&#39;),
+      construct.ULInt32(&#39;next&#39;),
+      construct.ULInt32(&#39;usage_count&#39;),
+      construct.ULInt32(&#39;this_entry&#39;),
+      construct.ULInt64(&#39;luid&#39;),
+      construct.ULInt64(&#39;flag&#39;),
+      construct.ULInt16(&#39;user_len&#39;),
+      construct.ULInt16(&#39;user_max_len&#39;),
+      construct.ULInt32(&#39;user_string_ptr&#39;),
+      construct.ULInt16(&#39;domain_len&#39;),
+      construct.ULInt16(&#39;domain_max_len&#39;),
+      construct.ULInt32(&#39;domain_string_ptr&#39;),
+      construct.ULInt16(&#39;password_len&#39;),
+      construct.ULInt16(&#39;password_max_len&#39;),
+      construct.ULInt32(&#39;password_encrypted_ptr&#39;))
+
+  def __init__(self, lsass_task, credentials_obj):
+    Mimikatz_x86.__init__(self, lsass_task)
+    Wdigest.__init__(self, credentials_obj)
+
+
+class Wdigest_x64(Wdigest, Mimikatz_x64):
+  &quot;&quot;&quot;TODO: add description.&quot;&quot;&quot;
+
+  WDIGEST_LIST_ENTRY = construct.Struct(&#39;WdigestListEntry&#39;,
+      construct.ULInt64(&#39;previous&#39;),
+      construct.ULInt64(&#39;next&#39;),
+      construct.ULInt32(&#39;usage_count&#39;),
+      construct.ULInt32(&#39;align1&#39;),
+      construct.ULInt64(&#39;this_entry&#39;),
+      construct.ULInt64(&#39;luid&#39;),
+      construct.ULInt64(&#39;flag&#39;),
+      construct.ULInt16(&#39;user_len&#39;),
+      construct.ULInt16(&#39;user_max_len&#39;),
+      construct.ULInt32(&#39;align2&#39;),
+      construct.ULInt64(&#39;user_string_ptr&#39;),
+      construct.ULInt16(&#39;domain_len&#39;),
+      construct.ULInt16(&#39;domain_max_len&#39;),
+      construct.ULInt32(&#39;align3&#39;),
+      construct.ULInt64(&#39;domain_string_ptr&#39;),
+      construct.ULInt16(&#39;password_len&#39;),
+      construct.ULInt16(&#39;password_max_len&#39;),
+      construct.ULInt32(&#39;align4&#39;),
+      construct.ULInt64(&#39;password_encrypted_ptr&#39;))
+
+  def __init__(self, lsass_task, credentials_obj):
+    Mimikatz_x64.__init__(self, lsass_task)
+    Wdigest.__init__(self, credentials_obj)
+
+
+class Wdigest_Vista_x86(Wdigest_x86):
+  &quot;&quot;&quot;Class for Windows Vista x86.&quot;&quot;&quot;
+  SIGNATURE    = &#39;\x74\x11\x8b\x0b\x39\x4e\x10&#39;
+  FIRST_ENTRY_OFFSET = -6
+
+  def __init__(self, lsass_task, credentials_obj):
+    Wdigest_x86.__init__(self, lsass_task, credentials_obj)
+
+
+class Wdigest_Win7_x86(Wdigest_x86):
+  &quot;&quot;&quot;Class for Windows 7 x86.&quot;&quot;&quot;
+  SIGNATURE    = &#39;\x74\x11\x8b\x0b\x39\x4e\x10&#39;
+  FIRST_ENTRY_OFFSET = -6
+
+  def __init__(self, lsass_task, credentials_obj):
+    Wdigest_x86.__init__(self, lsass_task, credentials_obj)
+
+
+class Wdigest_Win7_x64(Wdigest_x64):
+  &quot;&quot;&quot;Class for Windows 7 x64.&quot;&quot;&quot;
+  SIGNATURE    = &#39;\x48\x3b\xd9\x74&#39;
+  FIRST_ENTRY_OFFSET = -4
+
+  def __init__(self, lsass_task, credentials_obj):
+    Wdigest_x64.__init__(self, lsass_task, credentials_obj)
+
+
+class Wdigest_Vista_x64(Wdigest_x64):
+  &quot;&quot;&quot;Class for Windows Vista x64.&quot;&quot;&quot;
+  SIGNATURE    = &#39;\x48\x3b\xd9\x74&#39;
+  FIRST_ENTRY_OFFSET = -4
+
+  def __init__(self, lsass_task, credentials_obj):
+    Wdigest_x64.__init__(self, lsass_task, credentials_obj)
+
+#------------------------------------------------------------------------------
+
+class mimikatz(commands.Command):
+  &quot;&quot;&quot;mimikatz offline&quot;&quot;&quot;
+  def __init__(self, config, *args, **kwargs):
+    commands.Command.__init__(self, config, *args, **kwargs)
+    self.profile = config.get_value(&#39;profile&#39;)
+    self.credentials_obj = Credentials()
+
+  def find_lsass(self):
+    addr_space = utils.load_as(self._config)
+    for task in tasks.pslist(addr_space):
+      if str(task.ImageFileName) == &#39;lsass.exe&#39;:
+        return task
+
+  def init_objects(self, lsass_task):
+    lsa_decryptor = None
+    wdigest = None
+    if len(self.profile) &gt;= 7:
+      arch = self.profile[-3:]
+      sp = self.profile[-6:-3]
+      os = self.profile[:-6]
+      if os == &#39;Vista&#39;:
+        if arch == &#39;x86&#39;:
+          lsa_decryptor = LsaDecryptor_Vista_x86(lsass_task)
+          wdigest = Wdigest_Vista_x86(lsass_task, self.credentials_obj)
+        elif arch == &#39;x64&#39;:
+          lsa_decryptor = LsaDecryptor_Vista_x64(lsass_task)
+          wdigest = Wdigest_Vista_x64(lsass_task, self.credentials_obj)
+      elif os == &#39;Win7&#39;:
+        if arch == &#39;x86&#39;:
+          lsa_decryptor = LsaDecryptor_Win7_x86(lsass_task)
+          wdigest = Wdigest_Win7_x86(lsass_task, self.credentials_obj)
+        elif arch == &#39;x64&#39;:
+          lsa_decryptor = LsaDecryptor_Win7_x64(lsass_task)
+          wdigest = Wdigest_Win7_x64(lsass_task, self.credentials_obj)
+      else:
+        pass
+    return lsa_decryptor, wdigest
+
+  def calculate(self):
+    lsass_task = self.find_lsass()
+    if not lsass_task:
+      debug.error(&#39;lsass_task process not found!!&#39;)
+      return
+
+    lsa_decryptor, wdigest = self.init_objects(lsass_task)
+    if not lsa_decryptor or not wdigest:
+      return
+
+    lsa_decryptor.acquire_crypto_material()
+    wdigest.walk_entries()
+
+    for cred in self.credentials_obj.credentials:
+      cred.decrypt_epwd(lsa_decryptor)
+
+  def render_text(self, outfd, data):
+    self.table_header(outfd, [(&quot;Module&quot;, &quot;8&quot;), 
+                              (&quot;User&quot;, &quot;16&quot;), 
+                              (&quot;Domain&quot;, &quot;16&quot;),
+                              (&quot;Password&quot;, &quot;40&quot;)])
+    for cred in self.credentials_obj.credentials:
+      self.table_row(
+          outfd, cred.module, cred.username, cred.domain, cred.pwd)</code></pre>
+<p>把py放进volatility文件夹的plugins文件夹内</p>
+<pre><code class="bash">python vol.py -f /root/桌面/suspicion/mem.vmem --profile=WinXPSP2x86 mimikatz</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-14.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-14.png" srcset="data:image/png;base64,666"></p>
+<p>👉使用userassist命令可以获取到内存在转储前都运行了哪些程序，运行多少次，最后一次运行时间</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-15.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-15.png" srcset="data:image/png;base64,666"></p>
+<p>👉使用memdump把某个程序的相关数据转储成一个文件，然后对这个文件进一步分析</p>
+<p><code>memdump -p PID -D 转储文件的存放目录</code></p>
+<p>​    pslist获取PID</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-16.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-16.png" srcset="data:image/png;base64,666"></p>
+<pre><code class="bash">python vol.py -f /root/桌面/suspicion/mem.vmem memdump -p 1736 -D mem</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-17.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-17.png" srcset="data:image/png;base64,666"></p>
+<p>👉文件成功生成，用editor打开</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-18.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-18.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-19.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-19.png" srcset="data:image/png;base64,666"></p>
+<p>👉用strings 命令提取文件中的字符串</p>
+<pre><code class="bash">strings 1736.dmp|grep flag | more</code></pre>
+<p> |grep flag 是以flag为关键词进行搜索</p>
+<p>| more 是逐页显示搜索结果</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-20.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-20.png" srcset="data:image/png;base64,666"></p>
+<p>👉使用cmdscan命令从转储内容中提取目标系统的命令行历史</p>
+<pre><code class="bash">python vol.py -f /root/桌面/suspicion/mem.vmem --profile=WinXPSP2x86 cmdscan</code></pre>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-21.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-21.png" srcset="data:image/png;base64,666"></p>
+<p>👉使用netscan提取网络连接情况</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-22.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-22.png" srcset="data:image/png;base64,666"></p>
+<p>👉使用iehistory提取使用IE浏览器访问网络情况</p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-23.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/volatility-23.png" srcset="data:image/png;base64,666"></p>
+<p>​    volatility自带的是ie的，也可以下载其他的插件来提取其他浏览器的浏览记录</p>
+<h2 id="Tip：volatility入门指令"><a href="#Tip：volatility入门指令" class="headerlink" title="Tip：volatility入门指令"></a>Tip：volatility入门指令</h2><pre><code>Volatility -f name imageinfo
+volatility -f name pslist --profile=WinXPSP2x86   列举进程：
+volatility -f name  --profile=WinXPSP2x86 volshell
+dt(&quot;_PEB&quot;) 查看进程环境块
+volatility -f name --profile=WinXPSP2x86 hivelist列举缓存在内存的注册表 ：</code></pre>
+<p><strong>hivedump打印出注册表中的数据 ：</strong></p>
+<pre><code>volatility -f name  --profile=WinXPSP2x86 hivedump -o 注册表的 virtual 地址</code></pre>
+<p><strong>显示每个进程的加载dll列表</strong></p>
+<pre><code>Volatility -f name -profile = Win7SP0x86 dlllist&gt; dlllist.txt</code></pre>
+<p><strong>获取SAM表中的用户：</strong></p>
+<pre><code>volatility -f name --profile=WinXPSP2x86 printkey -K &quot;SAM\Domains\Account\Users\Names&quot;</code></pre>
+<p><strong>登陆账户系统</strong></p>
+<pre><code>volatility -f name --profile=WinXPSP2x86 printkey -K &quot;SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon&quot;</code></pre>
+<p><strong>userassist键值包含系统或桌面执行文件的信息，如名称、路径、执行次数、最后一次执行时间等</strong></p>
+<pre><code>volatility -f name --profile=WinXPSP2x86 userassist</code></pre>
+<p><strong>将内存中的某个进程数据以 dmp 的格式保存出来</strong></p>
+<pre><code>volatility -f name --profile=WinXPSP2x86 -p [PID] -D [dump 出的文件保存的目录]</code></pre>
+<p><strong>提取内存中保留的 cmd 命令使用情况</strong></p>
+<pre><code>volatility -f name --profile=WinXPSP2x86 cmdscan</code></pre>
+<p><strong>获取到当时的网络连接情况</strong></p>
+<pre><code>volatility -f name --profile=WinXPSP2x86 netscan</code></pre>
+<p>获取 IE 浏览器的使用情况 ：</p>
+<pre><code>volatility -f name --profile=WinXPSP2x86 iehistory</code></pre>
+<p><strong>获取内存中的系统密码，可以使用 hashdump 将它提取出来</strong></p>
+<pre><code>volatility -f name --profile=WinXPSP2x86 hashdump -y （注册表 system 的 virtual 地址 ）-s （SAM 的 virtual 地址）
+volatility -f name --profile=WinXPSP2x86 hashdump -y 0xe1035b60 -s 0xe16aab60
+volatility -f name --profile=WinXPSP2x86 timeliner</code></pre>
+<p><strong>对文件查找及dumo提取某个进程：</strong></p>
+<pre><code>volatility -f name --profile=Win7SP1x64 memdump -D . -p 2872
+strings -e l ./2872.dmp | grep flag
+volatility -f name --profile=Win7SP1x64 dumpfiles -Q 0x000000007e410890 -n --dump-dir=./</code></pre>
+<p><strong>HASH匹配用户账户名密码：</strong></p>
+<pre><code>Hash, 然后使用john filename --format=NT破解</code></pre>
+<p><strong>安全进程扫描</strong></p>
+<pre><code>volatility -f name --profile=Win7SP1x64 psscan</code></pre>
+<p><strong>Flag字符串扫描：</strong></p>
+<pre><code>strings -e l 2616.dmp | grep flag</code></pre>
+<p><strong>查找图片：</strong></p>
+<pre><code>volatility -f name--profile=Win7SP1x64 filescan | grep -E &#39;jpg|png|jpeg|bmp|gif
+volatility -f name --profile=Win7SP1x64 netscan</code></pre>
+<p><strong>注册表解析</strong></p>
+<pre><code>volatility -f name --profile=Win7SP1x64 hivelist
+volatility -f name --profile=Win7SP1x64  -o 0xfffff8a000024010 printkey -K &quot;ControlSet001\Control;&quot;</code></pre>
+<p><strong>复制、剪切版：</strong></p>
+<pre><code>volatility -f name --profile=Win7SP1x64 clipboard
+volatility -f name --profile=Win7SP1x64 dlllist -p 3820</code></pre>
+<p><strong>Dump所有进程：</strong></p>
+<pre><code>volatility -f name --profile=Win7SP1x64 memdump -n chrome -D .
+利用字符串查找download
+python vol.py -f name --profile=Win7SP1x86 shimcache</code></pre>
+<p><strong>svcscan查看服务</strong></p>
+<pre><code>python vol.py -f name --profile=Win7SP1x86 svcscan</code></pre>
+<pre><code>modules 查看内核驱动
+modscan、driverscan 可查看一些隐藏的内核驱动
+ShimCache来识别应用程序兼容性问题。跟踪文件路径，大小，最后修改时间和最后“执行”时间.</code></pre>
+
+  
+  
+    
+    <div class='footer'>
+      
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://gryffinbit.top/2020/12/05/kali%E4%B8%8Bvolatility%E5%8F%96%E8%AF%81%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/>https://gryffinbit.top/2020/12/05/kali%E4%B8%8Bvolatility%E5%8F%96%E8%AF%81%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/</a></p>
+              
+            
+          </blockquote>
+        </div>
+      
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-21T14:45:54+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年1月21日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8F%96%E8%AF%81/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>取证</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/kali/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>kali</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/volatility/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>volatility</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gryffinbit.top/2020/12/05/kali%E4%B8%8Bvolatility%E5%8F%96%E8%AF%81%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/&title=kali下volatility取证工具的使用 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://gryffinbit.top/2020/12/05/kali%E4%B8%8Bvolatility%E5%8F%96%E8%AF%81%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/&title=kali下volatility取证工具的使用 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://gryffinbit.top/2020/12/05/kali%E4%B8%8Bvolatility%E5%8F%96%E8%AF%81%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/&title=kali下volatility取证工具的使用 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2020/12/06/%E4%BD%BF%E7%94%A8PGP%E8%BF%9B%E8%A1%8C%E5%85%AC%E9%92%A5%E4%BD%93%E5%88%B6%E7%9A%84%E9%80%9A%E4%BF%A1/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>使用PGP进行公钥体制的通信</p>
+          <p class='content'>加密综合实验实验附件下载地址：https://gryffinbit.lanzous.com/i5ISij3kh6f
+实验目的：
+掌握加解密的原理和公钥体制。
+了解PGP软件的功能与使用。
+掌握P...</p>
+        </a>
+      
+      
+        <a class='next' href='/2020/12/05/kali%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%89%A9%E5%AE%B9/'>
+          <p class='title'>kali虚拟机扩容<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>kali虚拟机扩容更改大小在VMware设置中扩展虚拟磁盘大小Hard Disk选项
+
+
+在kali中调整分区/bin/sh /usr/lib/udisks2/udisks2-inhibit /...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+
+
+
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%89%80%E7%94%A8%E9%99%84%E4%BB%B6%E4%B8%8B%E8%BD%BD"><span class="toc-text">实验所用附件下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83%EF%BC%9A"><span class="toc-text">实验环境：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%A6%81%E6%B1%82%EF%BC%9A"><span class="toc-text">实验要求：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9%EF%BC%9A"><span class="toc-text">实验内容：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="toc-text">实验过程：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tip%EF%BC%9Avolatility%E5%85%A5%E9%97%A8%E6%8C%87%E4%BB%A4"><span class="toc-text">Tip：volatility入门指令</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+
+        
+        
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+<script>
+  window.pdata={}
+  pdata.ispage=true;
+  pdata.postTitle="kali下volatility取证工具的使用";
+  pdata.commentPath="";
+  pdata.commentPlaceholder="";
+
+  var l_header=document.getElementById("l_header");
+  
+  l_header.classList.add("show");
+  
+</script>
+
+        
+      </div>
+      
+  
+  <footer class="footer clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='true'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='320px'
+      server='netease'
+      type='playlist'
+      id='5316477077'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+          
+            
+          
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        
+          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+</div>
+        
+      
+    
+      
+        本站使用
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.5" target="_blank" class="codename">Volantis</a>
+        作为主题
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="/">Copyright © 2017-2020 ❤️万事皆爱❤️</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+
+
+      <a id="s-top" class="fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+    </div>
+  </div>
+  <div>
+    <script>
+window.volantis={};
+window.volantis.loadcss=document.getElementById("loadcss");
+/********************脚本懒加载函数********************************/
+function loadScript(src, cb) {
+var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
+var script = document.createElement('script');
+script.setAttribute('type','text/javascript');
+if (cb) script.onload = cb;
+script.setAttribute('src', src);
+HEAD.appendChild(script);
+}
+//https://github.com/filamentgroup/loadCSS
+var loadCSS = function( href, before, media, attributes ){
+	var doc = window.document;
+	var ss = doc.createElement( "link" );
+	var ref;
+	if( before ){
+		ref = before;
+	}
+	else {
+		var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
+		ref = refs[ refs.length - 1];
+	}
+	var sheets = doc.styleSheets;
+	if( attributes ){
+		for( var attributeName in attributes ){
+			if( attributes.hasOwnProperty( attributeName ) ){
+				ss.setAttribute( attributeName, attributes[attributeName] );
+			}
+		}
+	}
+	ss.rel = "stylesheet";
+	ss.href = href;
+	ss.media = "only x";
+	function ready( cb ){
+		if( doc.body ){
+			return cb();
+		}
+		setTimeout(function(){
+			ready( cb );
+		});
+	}
+	ready( function(){
+		ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
+	});
+	var onloadcssdefined = function( cb ){
+		var resolvedHref = ss.href;
+		var i = sheets.length;
+		while( i-- ){
+			if( sheets[ i ].href === resolvedHref ){
+				return cb();
+			}
+		}
+		setTimeout(function() {
+			onloadcssdefined( cb );
+		});
+	};
+	function loadCB(){
+		if( ss.addEventListener ){
+			ss.removeEventListener( "load", loadCB );
+		}
+		ss.media = media || "all";
+	}
+	if( ss.addEventListener ){
+		ss.addEventListener( "load", loadCB);
+	}
+	ss.onloadcssdefined = onloadcssdefined;
+	onloadcssdefined( loadCB );
+	return ss;
+};
+</script>
+<script>
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css", window.volantis.loadcss);
+  
+  
+  loadCSS("https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css", window.volantis.loadcss);
+  
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css", window.volantis.loadcss);
+  
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/solarized-light.css", window.volantis.loadcss);
+  
+</script>
+<!-- required -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
+<script>
+  function pjax_fancybox() {
+    $(".md .gallery").find("img").each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".md .gallery").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  function SCload_fancybox() {
+    if ($(".md .gallery").find("img").length == 0) return;
+    loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css", document.getElementById("loadcss"));
+    setTimeout(function() {
+      loadScript('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', pjax_fancybox)
+    }, 1);
+  };
+  $(function () {
+    SCload_fancybox();
+  });
+</script>
+
+
+<!-- internal -->
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+        var imgs=["https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/default.png", "https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/tag.png", "https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/category.png", "https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kakshi_naruto.png"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+	  function Pjax_backstretch(){
+        
+          $.backstretch(
+            imgs,
+          {
+            duration: "15000",
+            fade: "1500"
+          });
+        
+	  }
+	  loadScript("https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js",Pjax_backstretch)
+    </script>
+  
+
+
+
+
+
+  <script>
+  function loadIssuesJS() {
+    if ($(".md").find(".issues-api").length == 0) return;
+    setTimeout(function() {
+	
+	  loadScript('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.1.5/source/js/issues.min.js');
+	
+    }, 1);
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+</script>
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+
+  
+  
+    <script>
+      window.FPConfig = {
+        delay: 0,
+        ignoreKeywords: [],
+        maxRPS: 5,
+        hoverDelay: 25
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+		if($(".highlight .code pre").length+$(".article pre code").length==0)return;
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+</script>
+
+
+
+
+
+
+  <script>
+  let APlayerController = new Object();
+  APlayerController.id = '5316477077';  // 设定全局音乐播放ID
+  APlayerController.volume = '0.7';
+setTimeout(function() {
+  loadCSS("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css", window.volantis.loadcss);
+
+  loadScript("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js")
+
+  loadScript("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js")
+
+
+}, 10000);
+</script>
+
+
+
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    if(!document.querySelectorAll("#valine_container")[0])return;
+
+    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~ 评论前请填好“昵称”、“邮箱”这两栏内容，否则不会收到回复哦～";
+
+    let path = pdata.commentPath;
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: pagePlaceholder,
+      path: path,
+      appId: "SpRnpidOkCtC9wRmjSkdOhCw-MdYXbMMI",
+      appKey: "ELcHiAEif9x6qMgD0xUCAq7d",
+      pageSize: '10',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'true',
+      enableQQ: 'true',
+      recordIP: 'false',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });
+</script>
+
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.1.5/source/js/app.min.js"></script>
+
+
+
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.1.5/source/js/search.min.js"></script>
+
+  
+
+
+<!-- optional -->
+
+  <script>
+const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
+const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
+function listenSearch(){
+  
+    customSearch = new HexoSearch({
+      imagePath: SearchServiceimagePath
+    });
+  
+}
+document.addEventListener("DOMContentLoaded", listenSearch);
+
+</script>
+
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function () {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+  
+
+
+
+  <script defer>
+
+  const LCCounter = {
+    app_id: 'SpRnpidOkCtC9wRmjSkdOhCw-MdYXbMMI',
+    app_key: 'ELcHiAEif9x6qMgD0xUCAq7d',
+    custom_api_server: '',
+
+    // 查询存储的记录
+    getRecord(Counter, url, title) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {url, title: title, times: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    },
+
+    // 发起自增请求
+    increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    },
+
+    // 构建自增请求体
+    buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "times": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    },
+
+    // 校验是否为有效的 UV
+    validUV() {
+      var key = 'LeanCloudUVTimestamp';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    },
+
+    addCount(Counter) {
+      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
+      enableIncr = true;
+      var getterArr = [];
+      var incrArr = [];
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#lc-sv');
+      if (pvCtn || enableIncr) {
+        var pvGetter = this.getRecord(Counter, 'https://gryffinbit.top' + '/#lc-sv', 'Visits').then((record) => {
+          incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-sv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + 1;
+              if (pvCtn) {
+                pvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#lc-uv');
+      if (uvCtn || enableIncr) {
+        var uvGetter = this.getRecord(Counter, 'https://gryffinbit.top' + '/#lc-uv', 'Visitors').then((record) => {
+          var vuv = this.validUV();
+          vuv && incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-uv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + (vuv ? 1 : 0);
+              if (uvCtn) {
+                uvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 请求文章的浏览数，如果是当前页面就自增
+      var allPV = document.querySelectorAll('#lc-pv');
+      if (allPV.length > 0 || enableIncr) {
+        for (i = 0; i < allPV.length; i++) {
+          let pv = allPV[i];
+          let title = pv.getAttribute('data-title');
+          var url = 'https://gryffinbit.top' + pv.getAttribute('data-path');
+          if (url) {
+            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
+              // 是当前页面就自增
+              let curPath = window.location.pathname;
+              if (curPath.includes('index.html')) {
+                curPath = curPath.substring(0, curPath.lastIndexOf('index.html'));
+              }
+              if (pv.getAttribute('data-path') == curPath) {
+                incrArr.push(this.buildIncrement(record.objectId));
+              }
+              if (pv) {
+                var ele = pv.querySelector('#lc-pv #number');
+                if (ele) {
+                  if (pv.getAttribute('data-path') == curPath) {
+                    ele.innerText = (record.times || 0) + 1;
+                  } else {
+                    ele.innerText = record.times || 0;
+                  }
+                  pv.style.display = 'inline';
+                }
+              }
+            });
+            getterArr.push(viewGetter);
+          }
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && this.increment(Counter, incrArr);
+        })
+      }
+
+    },
+
+
+    fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': this.app_id,
+            'X-LC-Key': this.app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      this.addCount(Counter);
+    },
+
+    refreshCounter() {
+      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+      if (api_server) {
+        this.fetchData(api_server);
+      } else {
+        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
+          .then(resp => resp.json())
+          .then(({api_server}) => {
+            this.fetchData('https://' + api_server);
+          });
+      }
+    }
+
+  };
+
+  LCCounter.refreshCounter();
+
+  document.addEventListener('pjax:complete', function () {
+    LCCounter.refreshCounter();
+  });
+</script>
+
+
+
+
+
+
+
+
+<script>
+function listennSidebarTOC() {
+  const navItems = document.querySelectorAll(".toc li");
+  if (!navItems.length) return;
+  const sections = [...navItems].map((element) => {
+    const link = element.querySelector(".toc-link");
+    const target = document.getElementById(
+      decodeURI(link.getAttribute("href")).replace("#", "")
+    );
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({
+		top: target.offsetTop + 100,
+		
+		behavior: "smooth"
+		
+	  });
+    });
+    return target;
+  });
+
+  function activateNavByIndex(target) {
+    if (target.classList.contains("active-current")) return;
+
+    document.querySelectorAll(".toc .active").forEach((element) => {
+      element.classList.remove("active", "active-current");
+    });
+    target.classList.add("active", "active-current");
+    let parent = target.parentNode;
+    while (!parent.matches(".toc")) {
+      if (parent.matches("li")) parent.classList.add("active");
+      parent = parent.parentNode;
+    }
+  }
+
+  function findIndex(entries) {
+    let index = 0;
+    let entry = entries[index];
+    if (entry.boundingClientRect.top > 0) {
+      index = sections.indexOf(entry.target);
+      return index === 0 ? 0 : index - 1;
+    }
+    for (; index < entries.length; index++) {
+      if (entries[index].boundingClientRect.top <= 0) {
+        entry = entries[index];
+      } else {
+        return sections.indexOf(entry.target);
+      }
+    }
+    return sections.indexOf(entry.target);
+  }
+
+  function createIntersectionObserver(marginTop) {
+    marginTop = Math.floor(marginTop + 10000);
+    let intersectionObserver = new IntersectionObserver(
+      (entries, observe) => {
+        let scrollHeight = document.documentElement.scrollHeight + 100;
+        if (scrollHeight > marginTop) {
+          observe.disconnect();
+          createIntersectionObserver(scrollHeight);
+          return;
+        }
+        let index = findIndex(entries);
+        activateNavByIndex(navItems[index]);
+      },
+      {
+        rootMargin: marginTop + "px 0px -100% 0px",
+        threshold: 0,
+      }
+    );
+    sections.forEach((element) => {
+      element && intersectionObserver.observe(element);
+    });
+  }
+  createIntersectionObserver(document.documentElement.scrollHeight);
+}
+
+document.addEventListener("DOMContentLoaded", listennSidebarTOC);
+document.addEventListener("pjax:success", listennSidebarTOC);
+</script>
+
+<!-- more -->
+
+
+
+
+    
+      
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#l_cover",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 0
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      //window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = ["life/", "video/"];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      if (typeof $.fancybox != "undefined") {
+        $.fancybox.close();    // 关闭弹窗
+      }
+      volantis.$switcher.removeClass('active'); // 关闭移动端激活的搜索框
+      volantis.$header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      volantis.$wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      volantis.$topBtn.unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+	  
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+      try{
+          if (typeof $.fancybox == "undefined") {
+            SCload_fancybox();
+          } else {
+            pjax_fancybox();
+          }
+        
+		  Pjax_backstretch()
+        
+        
+        document.querySelectorAll('pre code').forEach((block) => {
+          hljs.highlightBlock(block);
+        });
+        
+        
+        
+          if (typeof IssuesAPI == "undefined") {
+            loadIssuesJS();
+          }
+        
+        
+          pjax_initCopyCode();
+        
+        
+          pjax_valine();
+        
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+	  
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+	  
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
+    
+  </div>
+
+ <!--  打字机特效 -->
+<script src="https://cdn.bootcss.com/typed.js/2.0.9/typed.min.js"></script>
+  <script type="text/javascript">
+      var options = {
+          strings: [
+              '欢迎来到Gryffinbit的思维殿堂'
+          ],
+          typeSpeed: 90,   //打印速度
+          startDelay: 300, //开始之前的延迟300毫秒
+          loop: false,      //是否循环
+      };
+      var typed = new Typed('#typed', options);
+  </script>
+  <!--  打字机特效 -->
+
+</body>
+</html>

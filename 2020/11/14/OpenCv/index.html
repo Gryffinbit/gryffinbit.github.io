@@ -1,0 +1,2134 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,zh-HK,zh-TW,default">
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.5'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+  <title>OpenCv - Gryffinbit</title>
+  
+    <meta name="keywords" content="图片">
+  
+
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  
+    <link rel="shortcut icon" type='image/x-icon' href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/favicon.png">
+  
+
+  <!-- import link -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/first.css">
+
+  
+
+  
+  <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
+  
+
+  <script id="loadcss"></script>
+
+</head>
+
+<body>
+
+<!-- 导入jquery库 -->
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!--   樱花特效 -->
+  <script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js"></script>
+
+
+<!-- 雪花特效 -->
+<!-- <script type="text/javascript" src="\js\snow.js"></script> -->
+
+
+<!-- 点击出桃心特效 -->
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/clicklove.js"></script>
+
+
+
+<!-- 标签页显示 -->
+
+  <script type="text/javascript">
+    var OriginTitile = document.title,
+        st;
+    document.addEventListener("visibilitychange", function () {
+        document.hidden ? (document.title = "🥺去哪里了呀~", clearTimeout(st)) : (document.title =
+            "🤗终于回来了", st = setTimeout(function () {
+                document.title = OriginTitile
+            }, 3e3))
+    })
+  </script>
+<!-- 标签页显示 -->
+
+  
+  
+
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
+  <div class='container'>
+  <div id='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a id="s-comment" class="fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+            🐰兔子窝🥕
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/Gryffinbit
+                  
+                  
+                  
+                    id="https:githubcomGryffinbit"
+                  >
+                  <i class='fab fa-github fa-fw'></i>github
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>categories
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>tags
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>archives
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-users fa-fw'></i>friends
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-heart fa-fw'></i>me
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=http://xn--h5qq84c.xn--6qq986b3xl:1108/
+                  
+                  
+                  
+                    id="http:xn--h5qq84cxn--6qq986b3xl:1108"
+                  >
+                  <i class='fas fa-lock fa-fw'></i>权哥❤
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/Gryffinbit
+                  
+                  
+                  
+                    id="https:githubcomGryffinbit"
+                  >
+                  <i class='fab fa-github fa-fw'></i>github
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>categories
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>tags
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>archives
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-users fa-fw'></i>friends
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-heart fa-fw'></i>me
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=http://xn--h5qq84c.xn--6qq986b3xl:1108/
+                  
+                  
+                  
+                    id="http:xn--h5qq84cxn--6qq986b3xl:1108"
+                  >
+                  <i class='fas fa-lock fa-fw'></i>权哥❤
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  <div id="l_body">
+    <div id="l_cover">
+  
+    
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
+          
+            <div id='cover-backstretch'></div>
+          
+          <div class='cover-body'>
+  <div class='top'>
+    
+    
+      <p class="title" id="typed"></p>    
+    
+      <p class="subtitle">Stay Hungry. Stay Foolish.</p>
+    
+  </div>
+  <div class='bottom'>
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a target="_blank" rel="noopener" href="https://github.com/Gryffinbit"
+              
+              
+              id="https:githubcomGryffinbit">
+              <i class='fab fa-github fa-fw'></i><p>github</p>
+            </a>
+          
+            <a href="/categories/"
+              
+              
+              id="categories">
+              <i class='fas fa-folder-open fa-fw'></i><p>categories</p>
+            </a>
+          
+            <a href="/tags/"
+              
+              
+              id="tags">
+              <i class='fas fa-tags fa-fw'></i><p>tags</p>
+            </a>
+          
+            <a href="/archives/"
+              
+              
+              id="archives">
+              <i class='fas fa-archive fa-fw'></i><p>archives</p>
+            </a>
+          
+            <a href="/friends/"
+              
+              
+              id="friends">
+              <i class='fas fa-users fa-fw'></i><p>friends</p>
+            </a>
+          
+            <a href="/about/"
+              
+              
+              id="about">
+              <i class='fas fa-heart fa-fw'></i><p>me</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="http://xn--h5qq84c.xn--6qq986b3xl:1108/"
+              
+              
+              id="http:xn--h5qq84cxn--6qq986b3xl:1108">
+              <i class='fas fa-lock fa-fw'></i><p>权哥❤</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+        </div>
+    
+  
+  </div>
+  
+
+
+    <div id='safearea'>
+      <div class='body-wrapper' id="pjax-container">
+        
+
+<div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title">
+        OpenCv
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>Gryffinbit</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/Misc/">Misc</a>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年11月14日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="OpenCv" data-path="/2020/11/14/OpenCv/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
+    
+  </div>
+
+
+  
+  <h1 id="macOS下opencv的安装。在CLion上配置使用OpenCV-（C-）"><a href="#macOS下opencv的安装。在CLion上配置使用OpenCV-（C-）" class="headerlink" title="macOS下opencv的安装。在CLion上配置使用OpenCV （C++）"></a><strong>macOS下opencv的安装。在CLion上配置使用OpenCV （C++）</strong></h1><h2 id="安装opencv"><a href="#安装opencv" class="headerlink" title="安装opencv"></a><strong>安装opencv</strong></h2><ul>
+<li><p>brew的安装</p>
+<pre><code>/usr/bin/ruby -e &quot;$(curl -fsSL &lt;https://raw.githubusercontent.com/Homebrew/install/master/install&gt;)&quot;</code></pre>
+</li>
+<li><p>brew安装opencv</p>
+<pre><code>brew install opencv</code></pre>
+<pre><code>cmake_minimum_required(VERSION 3.17)
+project(opencv)
+
+set(CMAKE_CXX_STANDARD 11)
+
+find_package(OpenCV REQUIRED)
+
+include_directories($&#123;OpenCV_INCLUDE_DIRS&#125;)
+
+add_executable(opencv main.cpp) 
+
+target_link_libraries(opencv $&#123;OpenCV_LIBS&#125;)</code></pre>
+<pre><code>cd &quot;$(brew --repo)&quot;
+git remote set-url origin &lt;https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git&gt;
+cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot;
+git remote set-url origin &lt;https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git&gt;
+cd 
+brew update</code></pre>
+<pre><code>brew update
+brew install opencv</code></pre>
+<pre><code>brew install libav</code></pre>
+<pre><code>cmake_minimum_required(VERSION 3.17)
+project(watermark_C__14)
+
+find_package(OpenCV)
+include_directories($&#123;OpenCV_INCLUDE_DIRS&#125;)
+
+set(CMAKE_CXX_STANDARD 14)
+set(SOURCE_FILES main.cpp)
+
+add_executable(watermark_C__14 $&#123;SOURCE_FILES&#125;)
+target_link_libraries(watermark_C__14 $&#123;OpenCV_LIBS&#125;) # 链接库</code></pre>
+<pre><code>/usr/local/Cellar/gcc</code></pre>
+<pre><code>preferences &gt;&gt; Build,execution,deployment &gt;&gt; toolchains &gt;&gt; GCC</code></pre>
+<pre><code> brew install opencv@3</code></pre>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;opencv2/opencv.hpp&gt;       //调用 OpenCV 的库
+
+using namespace cv;
+
+int main()
+&#123;
+    Mat image;      // OpenCV 中图片格式为 Mat
+
+    image = imread( &quot;要显示的图片路径.png&quot;); //读取图片
+    if( image.empty() )             //检查是否读取成功
+    &#123;
+        std::cout &lt;&lt;  &quot;Could not open or find the image&quot; &lt;&lt; std::endl ;
+        return -1;
+    &#125;
+    imshow(&quot;demo&quot;,image);   //显示图片
+
+    waitKey();
+    return 0;
+&#125;</code></pre>
+<pre><code>void test()&#123;
+    std::cout &lt;&lt; CV_VERSION_MAJOR &lt;&lt; CV_VERSION_MINOR &lt;&lt; std::endl;
+    std::cout &lt;&lt; cv::getBuildInformation().c_str() &lt;&lt; std::endl;
+&#125;
+int main()
+&#123;
+    test();
+&#125;</code></pre>
+<pre><code>#include &lt;stdlib.h&gt;
+
+#include &lt;opencv2/core/utility.hpp&gt;
+#include &lt;opencv2/tracking.hpp&gt;
+#include &lt;opencv2/videoio.hpp&gt;
+#include &lt;opencv2/highgui.hpp&gt;
+
+#include &quot;opencv2/imgproc/types_c.h&quot;
+
+using namespace cv;
+std::vector&lt;cv::Mat&gt; planes;
+cv::Mat complexImage;
+
+void shiftDFT(cv::Mat image)
+&#123;
+    image = image(Rect(0, 0, image.cols &amp; -2, image.rows &amp; -2));
+    int cx = image.cols / 2;
+    int cy = image.rows / 2;
+
+    Mat q0 = Mat(image, Rect(0, 0, cx, cy));
+    Mat q1 = Mat(image, Rect(cx, 0, cx, cy));
+    Mat q2 = Mat(image, Rect(0, cy, cx, cy));
+    Mat q3 = Mat(image, Rect(cx, cy, cx, cy));
+
+    cv::Mat tmp = cv::Mat();
+    q0.copyTo(tmp);
+    q3.copyTo(q0);
+    tmp.copyTo(q3);
+
+    q1.copyTo(tmp);
+    q2.copyTo(q1);
+    tmp.copyTo(q2);
+&#125;
+
+cv::Mat optimizeImageDim(cv::Mat image)
+&#123;
+    // init
+    cv::Mat padded;
+    // get the optimal rows size for dft
+    int addPixelRows = cv::getOptimalDFTSize(image.rows);
+    // get the optimal cols size for dft
+    int addPixelCols = cv::getOptimalDFTSize(image.cols);
+    // apply the optimal cols and rows size to the image
+    cv::copyMakeBorder(image, padded, 0, addPixelRows - image.rows, 0, addPixelCols - image.cols,
+                       cv::BORDER_CONSTANT, Scalar::all(0));
+
+    return padded;
+&#125;
+
+cv::Mat createOptimizedMagnitude(cv::Mat complexImage)
+&#123;
+    // init
+    std::vector&lt;cv::Mat&gt; newPlanes;
+    cv::Mat mag = cv::Mat();
+    // split the comples image in two planes
+    cv::split(complexImage, newPlanes);
+    // compute the magnitude
+    cv::magnitude(newPlanes[0], newPlanes[1], mag);
+
+    // move to a logarithmic scale
+    cv::add(cv::Mat::ones(mag.size(), CV_32F), mag, mag);
+    cv::log(mag, mag);
+    // optionally reorder the 4 quadrants of the magnitude image
+    shiftDFT(mag);
+    // normalize the magnitude image for the visualization since both JavaFX
+    // and OpenCV need images with value between 0 and 255
+    // convert back to CV_8UC1
+    mag.convertTo(mag, CV_8UC1);
+    cv::normalize(mag, mag, 0, 255, cv::NORM_MINMAX, CV_8UC1);
+
+    return mag;
+&#125;
+
+cv::Mat transformImage(cv::Mat image)
+&#123;
+    // planes??????????????,???.
+    if (!planes.empty()) &#123;
+        planes.clear();
+    &#125;
+    // optimize the dimension of the loaded image
+    cv::Mat padded = optimizeImageDim(image);
+    padded.convertTo(padded, CV_32F);
+    // prepare the image planes to obtain the complex image
+    planes.push_back(padded);
+    planes.push_back(cv::Mat::zeros(padded.size(), CV_32F));
+    // prepare a complex image for performing the dft
+    cv::merge(planes, complexImage);
+    // dft
+    printf(&quot;complexImage types %d\\n&quot;, complexImage.type());
+    cv::dft(complexImage, complexImage);
+
+    // optimize the image resulting from the dft operation
+    cv::Mat magnitude = createOptimizedMagnitude(complexImage);
+    planes.clear();
+    return magnitude;
+&#125;
+
+void transformImageWithText(cv::Mat image, String watermarkText,
+                            cv::Point point, double fontSize, Scalar scalar)
+&#123;
+    // planes??????????????,???.
+    if (!planes.empty()) &#123;
+        planes.clear();
+    &#125;
+    // optimize the dimension of the loaded image
+    cv::Mat padded = optimizeImageDim(image);
+    padded.convertTo(padded, CV_32F);
+    printf(&quot;padded types %d CV_32FC1 %d\\n&quot;, padded.type(), CV_32F);
+    // prepare the image planes to obtain the complex image
+    planes.push_back(padded);
+    planes.push_back(cv::Mat::zeros(padded.size(), CV_32F));
+    // prepare a complex image for performing the dft
+    cv::merge(planes, complexImage);
+    printf(&quot;complexImage types %d\\n&quot;, complexImage.type());
+    // dft
+    cv::dft(complexImage, complexImage);
+    // ????????
+    cv::putText(complexImage, watermarkText, point, cv::FONT_HERSHEY_DUPLEX, fontSize, scalar,2);
+    cv::flip(complexImage, complexImage, -1);
+    cv::putText(complexImage, watermarkText, point, cv::FONT_HERSHEY_DUPLEX, fontSize, scalar,2);
+    cv::flip(complexImage, complexImage, -1);
+
+    planes.clear();
+&#125;
+
+cv::Mat antitransformImage()
+&#123;
+    cv::Mat invDFT = cv::Mat();
+    cv::idft(complexImage, invDFT, cv::DFT_SCALE | cv::DFT_REAL_OUTPUT, 0);
+    cv::Mat restoredImage = cv::Mat();
+    invDFT.convertTo(restoredImage, CV_8U);
+    planes.clear();
+    return restoredImage;
+&#125;
+
+int main(int argc, char* argv[])
+&#123;
+    if (argc &lt; 3)
+    &#123;
+        printf(&quot;watermark enc/dec file_name\\n&quot;);
+    &#125;
+    else
+    &#123;
+        if (strcmp(argv[1], &quot;enc&quot;) == 0)
+        &#123;
+            //load image
+            Point point(50, 100);
+            Scalar scalar(0, 0, 0, 0);
+            printf(&quot;read file %s\\n&quot;, argv[2]);
+
+            cv::Mat img1 = cv::imread(argv[2], cv::IMREAD_GRAYSCALE);
+            transformImageWithText(img1, &quot;shennug&quot;, point, 2.0, scalar);
+            cv::Mat img2 = createOptimizedMagnitude(complexImage);
+
+            cv::Mat img3 = antitransformImage();
+
+            cv::namedWindow(&quot;Matrix1&quot;, cv::WINDOW_AUTOSIZE);
+            cv::imshow(&quot;Matrix1&quot;, img1);
+
+            cv::namedWindow(&quot;Matrix2&quot;, cv::WINDOW_AUTOSIZE);
+            cv::imshow(&quot;Matrix2&quot;, img2);
+
+            cv::namedWindow(&quot;Matrix3&quot;, cv::WINDOW_AUTOSIZE);
+            cv::imshow(&quot;Matrix3&quot;, img3);
+
+            cv::imwrite(&quot;1_orig.jpg&quot;, img1);
+            cv::imwrite(&quot;1_watermark.jpg&quot;, img2);
+
+            cv::waitKey(0);
+            cv::destroyAllWindows();
+        &#125;
+        if (strcmp(argv[1], &quot;dec&quot;) == 0)
+        &#123;
+            //load image
+            Point point(50, 100);
+            Scalar scalar(0, 0, 0, 0);
+            printf(&quot;read file %s\\n&quot;, argv[2]);
+
+            cv::Mat img1 = cv::imread(argv[2], cv::IMREAD_GRAYSCALE);
+            transformImage(img1);
+            cv::Mat img2 = createOptimizedMagnitude(complexImage);
+
+            cv::Mat img3 = antitransformImage();
+
+            cv::namedWindow(&quot;Matrix1&quot;, cv::WINDOW_AUTOSIZE);
+            cv::imshow(&quot;Matrix1&quot;, img1);
+
+            cv::namedWindow(&quot;Matrix2&quot;, cv::WINDOW_AUTOSIZE);
+            cv::imshow(&quot;Matrix2&quot;, img2);
+            cv::imwrite(&quot;1_decode.jpg&quot;, img2);
+
+            cv::waitKey(0);
+            cv::destroyAllWindows();
+        &#125;
+
+    &#125;
+
+    return 1;
+
+&#125;</code></pre>
+<pre><code>ln -s -f /usr/local/bin/python3.8 /usr/local/bin/python</code></pre>
+<p>ln -s -f /usr/local/bin/pip3 /usr/local/bin/pip</p>
+<p>pip install opencv-python</p>
+<p>pip install -i <a target="_blank" rel="noopener" href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a> opencv-python</p>
+<h2 id="python"><a href="#python" class="headerlink" title="python"></a><strong>python</strong></h2><h2 id="不好用的加水印C"><a href="#不好用的加水印C" class="headerlink" title="不好用的加水印C++"></a><strong>不好用的加水印C++</strong></h2><p><code>brew reinstall llvm</code></p>
+<p>Please note that, you can’t use gcc compiler on Mac-Sierra for your project which needs openMP and also openCV. You need to use llvm compiler.</p>
+<ul>
+<li><p>报错排查</p>
+<p><code>nm -g /usr/local/lib/libopencv_imgcodecs.dylib | grep imwrite</code> 0000000000006223 T <strong>ZN2cv7imwriteERKNS_6StringERKNS_11_InputArrayERKNSt3</strong>16vectorIiNS6_9allocatorIiEEEE</p>
+<p><code>nm -g main.o | grep imwrite</code> /Library/Developer/CommandLineTools/usr/bin/nm: error: main.o: No such file or directory.</p>
+<p>这个报错需要换个编译器解决</p>
+</li>
+<li><p>check compiler version</p>
+<ul>
+<li>app:</li>
+</ul>
+<pre><code>/Applications/Clion.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -v</code></pre>
+<pre><code>/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -v</code></pre>
+<ul>
+<li>换个编译器</li>
+</ul>
+<p>And rebuild/reinstall OpenCV with current version of compiler.</p>
+<ul>
+<li>library:</li>
+</ul>
+</li>
+</ul>
+<h3 id="opencv-测试"><a href="#opencv-测试" class="headerlink" title="opencv 测试"></a><strong>opencv 测试</strong></h3><p>成功显示</p>
+<p>测试代码</p>
+<ul>
+<li><p>指定brew的执行版本。</p>
+<p>因为之前下载的是最新的版本4，所以要先解除4的链接</p>
+<pre><code>brew unlink opencv@4</code></pre>
+<pre><code>brew link opencv@3 --force</code></pre>
+<pre><code>brew uninstall opencv</code></pre>
+<pre><code>opencv_version</code></pre>
+<p>最后检查一下现在的版本</p>
+<p>tip: 版本3的名字是</p>
+<p>卸载掉之前下载的（从brew下载的最新版本）</p>
+<p>然后链接上版本3</p>
+</li>
+<li><p>回到cmake</p>
+<pre><code>cmake_minimum_required(VERSION 3.17)
+project(watermark_C__14)
+
+find_package(OpenCV)
+include_directories($&#123;OpenCV_INCLUDE_DIRS&#125;)
+
+set(CMAKE_CXX_STANDARD 14)
+set(SOURCE_FILES main.cpp)
+
+add_executable(watermark_C__14 $&#123;SOURCE_FILES&#125;)
+target_link_libraries(watermark_C__14 $&#123;OpenCV_LIBS&#125;) # 链接库</code></pre>
+<p>然后就可以正常显示了</p>
+<p>对clion重新加载，建议最好电脑重启一下。</p>
+</li>
+<li><p>先指定版本下载opencv3</p>
+</li>
+</ul>
+<h2 id="opencv版本"><a href="#opencv版本" class="headerlink" title="opencv版本"></a><strong>opencv版本</strong></h2><p>大概意思就是说 ‘imgcodecs‘仅opencv3+版本支持。然后我就发现应该是版本问题，根据这个启发。通过homebrew对opencv版本进行重新整理</p>
+<blockquote>
+<p>It took me a week to solve this problem… I want to share my solution with you in detail so fewer people would get stuck with this <a target="_blank" rel="noopener" href="http://situation.in/">situation.In</a> my case, the problem lies in the conflict between opencv2 and opencv3. My ubuntu was installed with opencv 2.4.9 before by someone else, but I didn’t manage to find the build file of it and uninstall it. I learned somewhere that ‘imgcodecs’ only exists in opencv 3+, so I realized that caffe must have used opencv2 and then run into this mistake.I used cmake-gui to install opencv 3.4.3 (without clicking BUILD_opencv_world), and CMAKE_INSTALL_PREFIX was set to usr/local/opencv343 (whatever u like, just set to be separated from opencv2, which was installed in the default path). Then add usr/local/opencv343/lib to ‘sudo gedit /etc/ld.so.conf.d/opencv.conf’, and add ‘PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig export PKG_CONFIG_PATH’ to ‘sudo gedit /etc/bash.bashrc’.Then put ‘usr/local/opencv343/include’ and ‘usr/local/opencv343/lib’ behind the ‘(PYTHON INCLUDE)’ and ‘(PYTHON LIB)’ in the makefile.config respectively (before other paths).This works for me, where my ubuntu has both opencv 2 and 3. Hope it would work for you guys too.</p>
+</blockquote>
+<p>原话是这样的。</p>
+<p>后来发现是opencv库的问题，在github上找到了一点启发</p>
+<p>cannot find -<em>lopencv_imgcodecs</em></p>
+<p>运行又报错了</p>
+<p>哦！天呐！顺滑顺滑顺滑！</p>
+<p>brew 和 gcc都更新好，并且修改新路径后。 编译过程就变得崭新且如丝般顺滑～倍儿爽～</p>
+<p>查看自己的版本号，在Clion中修改complier路径</p>
+<p>进入</p>
+<p>Clion要修改配置，不然编译的时候可能会出现报错。gcc版本更新问题</p>
+<p>cmake</p>
+<p>将旧的安装包清理掉</p>
+<p><code>brew cleanup</code></p>
+<p>brew 更新后可以用</p>
+<p>提示出现了一点小报错，按照提示继续安装</p>
+<p>于是我更换了homebrew镜像源。替换<code>Homebrew</code>源. 替换<code>homebrew-core</code>源.</p>
+<p>我出现了Undefined symbols for architecture x86_64: 的报错</p>
+<h2 id="报错"><a href="#报错" class="headerlink" title="报错"></a><strong>报错</strong></h2><ul>
+<li><p>通过pip安装</p>
+<pre><code>sudo python3 -m pip install opencv-python</code></pre>
+</li>
+<li><p>检验是否安装成功</p>
+<p>在iterm下输入</p>
+<p><code>python3</code></p>
+<pre><code>import cv2
+print(cv2.__version__)</code></pre>
+<p>如果显示版本号则安装成功</p>
+</li>
+</ul>
+<h2 id="python安装opencv库"><a href="#python安装opencv库" class="headerlink" title="python安装opencv库"></a><strong>python安装opencv库</strong></h2><p>project的名字，自己命名，我这里取的是opencv。你自己命名后，要相应的修改cmake</p>
+<p><code>&quot;OpenCV 4.x+ requires enabled C++11 support&quot;![Screen Shot 2020-08-23 at 10.29.49 AM](/Users/KarlieLee/Library/Application Support/typora-user-images/Screen Shot 2020-08-23 at 10.29.49 AM.png)</code></p>
+<ul>
+<li><p>cmake文件配置</p>
+<p>使用C++11标准</p>
+</li>
+</ul>
+<h2 id="clion配置opencv环境"><a href="#clion配置opencv环境" class="headerlink" title="clion配置opencv环境"></a><strong>clion配置opencv环境</strong></h2><p>要下载的包很多，慢慢等会。</p>
+</li>
+</ul>
+
+  
+  
+    
+    <div class='footer'>
+      
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://gryffinbit.top/2020/11/14/OpenCv/>https://gryffinbit.top/2020/11/14/OpenCv/</a></p>
+              
+            
+          </blockquote>
+        </div>
+      
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-14T17:50:36+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年11月14日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%9B%BE%E7%89%87/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>图片</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gryffinbit.top/2020/11/14/OpenCv/&title=OpenCv - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://gryffinbit.top/2020/11/14/OpenCv/&title=OpenCv - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://gryffinbit.top/2020/11/14/OpenCv/&title=OpenCv - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2020/11/14/DES%E5%AE%9E%E9%AA%8C/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>DES实验报告</p>
+          <p class='content'>DES实验报告一、实验题目DES加密算法
+
+二、实验目的和要求通过实验，掌握DES密码的程序实现，熟悉比特串的操作，矩阵变换，提高C++程序设计能力。
+编写 DES 密码的加密解密程序，运行并验...</p>
+        </a>
+      
+      
+        <a class='next' href='/2020/11/14/CRC%E6%A0%A1%E9%AA%8C/'>
+          <p class='title'>CRC校验<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>CRC检验错误pngcheck -v 分析png格式，报错CRC ERROR
+对一张正常的图片，通过修改其宽度或者高度隐藏信息，使计算出的CRC校验码与原图的CRC校验码不一致；windows的...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+
+
+
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85opencv"><span class="toc-text">安装opencv</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#python"><span class="toc-text">python</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E5%A5%BD%E7%94%A8%E7%9A%84%E5%8A%A0%E6%B0%B4%E5%8D%B0C"><span class="toc-text">不好用的加水印C++</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#opencv-%E6%B5%8B%E8%AF%95"><span class="toc-text">opencv 测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#opencv%E7%89%88%E6%9C%AC"><span class="toc-text">opencv版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%A5%E9%94%99"><span class="toc-text">报错</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#python%E5%AE%89%E8%A3%85opencv%E5%BA%93"><span class="toc-text">python安装opencv库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#clion%E9%85%8D%E7%BD%AEopencv%E7%8E%AF%E5%A2%83"><span class="toc-text">clion配置opencv环境</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+
+        
+        
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+<script>
+  window.pdata={}
+  pdata.ispage=true;
+  pdata.postTitle="OpenCv";
+  pdata.commentPath="";
+  pdata.commentPlaceholder="";
+
+  var l_header=document.getElementById("l_header");
+  
+  l_header.classList.add("show");
+  
+</script>
+
+        
+      </div>
+      
+  
+  <footer class="footer clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='true'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='320px'
+      server='netease'
+      type='playlist'
+      id='5316477077'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+          
+            
+          
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        
+          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+</div>
+        
+      
+    
+      
+        本站使用
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.5" target="_blank" class="codename">Volantis</a>
+        作为主题
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="/">Copyright © 2017-2020 ❤️万事皆爱❤️</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+
+
+      <a id="s-top" class="fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+    </div>
+  </div>
+  <div>
+    <script>
+window.volantis={};
+window.volantis.loadcss=document.getElementById("loadcss");
+/********************脚本懒加载函数********************************/
+function loadScript(src, cb) {
+var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
+var script = document.createElement('script');
+script.setAttribute('type','text/javascript');
+if (cb) script.onload = cb;
+script.setAttribute('src', src);
+HEAD.appendChild(script);
+}
+//https://github.com/filamentgroup/loadCSS
+var loadCSS = function( href, before, media, attributes ){
+	var doc = window.document;
+	var ss = doc.createElement( "link" );
+	var ref;
+	if( before ){
+		ref = before;
+	}
+	else {
+		var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
+		ref = refs[ refs.length - 1];
+	}
+	var sheets = doc.styleSheets;
+	if( attributes ){
+		for( var attributeName in attributes ){
+			if( attributes.hasOwnProperty( attributeName ) ){
+				ss.setAttribute( attributeName, attributes[attributeName] );
+			}
+		}
+	}
+	ss.rel = "stylesheet";
+	ss.href = href;
+	ss.media = "only x";
+	function ready( cb ){
+		if( doc.body ){
+			return cb();
+		}
+		setTimeout(function(){
+			ready( cb );
+		});
+	}
+	ready( function(){
+		ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
+	});
+	var onloadcssdefined = function( cb ){
+		var resolvedHref = ss.href;
+		var i = sheets.length;
+		while( i-- ){
+			if( sheets[ i ].href === resolvedHref ){
+				return cb();
+			}
+		}
+		setTimeout(function() {
+			onloadcssdefined( cb );
+		});
+	};
+	function loadCB(){
+		if( ss.addEventListener ){
+			ss.removeEventListener( "load", loadCB );
+		}
+		ss.media = media || "all";
+	}
+	if( ss.addEventListener ){
+		ss.addEventListener( "load", loadCB);
+	}
+	ss.onloadcssdefined = onloadcssdefined;
+	onloadcssdefined( loadCB );
+	return ss;
+};
+</script>
+<script>
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css", window.volantis.loadcss);
+  
+  
+  loadCSS("https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css", window.volantis.loadcss);
+  
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css", window.volantis.loadcss);
+  
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/solarized-light.css", window.volantis.loadcss);
+  
+</script>
+<!-- required -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
+<script>
+  function pjax_fancybox() {
+    $(".md .gallery").find("img").each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".md .gallery").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  function SCload_fancybox() {
+    if ($(".md .gallery").find("img").length == 0) return;
+    loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css", document.getElementById("loadcss"));
+    setTimeout(function() {
+      loadScript('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', pjax_fancybox)
+    }, 1);
+  };
+  $(function () {
+    SCload_fancybox();
+  });
+</script>
+
+
+<!-- internal -->
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+        var imgs=["https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/default.png", "https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/tag.png", "https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/category.png", "https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kakshi_naruto.png"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+	  function Pjax_backstretch(){
+        
+          $.backstretch(
+            imgs,
+          {
+            duration: "15000",
+            fade: "1500"
+          });
+        
+	  }
+	  loadScript("https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js",Pjax_backstretch)
+    </script>
+  
+
+
+
+
+
+  <script>
+  function loadIssuesJS() {
+    if ($(".md").find(".issues-api").length == 0) return;
+    setTimeout(function() {
+	
+	  loadScript('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.1.5/source/js/issues.min.js');
+	
+    }, 1);
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+</script>
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+
+  
+  
+    <script>
+      window.FPConfig = {
+        delay: 0,
+        ignoreKeywords: [],
+        maxRPS: 5,
+        hoverDelay: 25
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+		if($(".highlight .code pre").length+$(".article pre code").length==0)return;
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+</script>
+
+
+
+
+
+
+  <script>
+  let APlayerController = new Object();
+  APlayerController.id = '5316477077';  // 设定全局音乐播放ID
+  APlayerController.volume = '0.7';
+setTimeout(function() {
+  loadCSS("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css", window.volantis.loadcss);
+
+  loadScript("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js")
+
+  loadScript("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js")
+
+
+}, 10000);
+</script>
+
+
+
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    if(!document.querySelectorAll("#valine_container")[0])return;
+
+    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~ 评论前请填好“昵称”、“邮箱”这两栏内容，否则不会收到回复哦～";
+
+    let path = pdata.commentPath;
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: pagePlaceholder,
+      path: path,
+      appId: "SpRnpidOkCtC9wRmjSkdOhCw-MdYXbMMI",
+      appKey: "ELcHiAEif9x6qMgD0xUCAq7d",
+      pageSize: '10',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'true',
+      enableQQ: 'true',
+      recordIP: 'false',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });
+</script>
+
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.1.5/source/js/app.min.js"></script>
+
+
+
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.1.5/source/js/search.min.js"></script>
+
+  
+
+
+<!-- optional -->
+
+  <script>
+const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
+const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
+function listenSearch(){
+  
+    customSearch = new HexoSearch({
+      imagePath: SearchServiceimagePath
+    });
+  
+}
+document.addEventListener("DOMContentLoaded", listenSearch);
+
+</script>
+
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function () {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+  
+
+
+
+  <script defer>
+
+  const LCCounter = {
+    app_id: 'SpRnpidOkCtC9wRmjSkdOhCw-MdYXbMMI',
+    app_key: 'ELcHiAEif9x6qMgD0xUCAq7d',
+    custom_api_server: '',
+
+    // 查询存储的记录
+    getRecord(Counter, url, title) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {url, title: title, times: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    },
+
+    // 发起自增请求
+    increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    },
+
+    // 构建自增请求体
+    buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "times": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    },
+
+    // 校验是否为有效的 UV
+    validUV() {
+      var key = 'LeanCloudUVTimestamp';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    },
+
+    addCount(Counter) {
+      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
+      enableIncr = true;
+      var getterArr = [];
+      var incrArr = [];
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#lc-sv');
+      if (pvCtn || enableIncr) {
+        var pvGetter = this.getRecord(Counter, 'https://gryffinbit.top' + '/#lc-sv', 'Visits').then((record) => {
+          incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-sv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + 1;
+              if (pvCtn) {
+                pvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#lc-uv');
+      if (uvCtn || enableIncr) {
+        var uvGetter = this.getRecord(Counter, 'https://gryffinbit.top' + '/#lc-uv', 'Visitors').then((record) => {
+          var vuv = this.validUV();
+          vuv && incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-uv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + (vuv ? 1 : 0);
+              if (uvCtn) {
+                uvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 请求文章的浏览数，如果是当前页面就自增
+      var allPV = document.querySelectorAll('#lc-pv');
+      if (allPV.length > 0 || enableIncr) {
+        for (i = 0; i < allPV.length; i++) {
+          let pv = allPV[i];
+          let title = pv.getAttribute('data-title');
+          var url = 'https://gryffinbit.top' + pv.getAttribute('data-path');
+          if (url) {
+            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
+              // 是当前页面就自增
+              let curPath = window.location.pathname;
+              if (curPath.includes('index.html')) {
+                curPath = curPath.substring(0, curPath.lastIndexOf('index.html'));
+              }
+              if (pv.getAttribute('data-path') == curPath) {
+                incrArr.push(this.buildIncrement(record.objectId));
+              }
+              if (pv) {
+                var ele = pv.querySelector('#lc-pv #number');
+                if (ele) {
+                  if (pv.getAttribute('data-path') == curPath) {
+                    ele.innerText = (record.times || 0) + 1;
+                  } else {
+                    ele.innerText = record.times || 0;
+                  }
+                  pv.style.display = 'inline';
+                }
+              }
+            });
+            getterArr.push(viewGetter);
+          }
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && this.increment(Counter, incrArr);
+        })
+      }
+
+    },
+
+
+    fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': this.app_id,
+            'X-LC-Key': this.app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      this.addCount(Counter);
+    },
+
+    refreshCounter() {
+      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+      if (api_server) {
+        this.fetchData(api_server);
+      } else {
+        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
+          .then(resp => resp.json())
+          .then(({api_server}) => {
+            this.fetchData('https://' + api_server);
+          });
+      }
+    }
+
+  };
+
+  LCCounter.refreshCounter();
+
+  document.addEventListener('pjax:complete', function () {
+    LCCounter.refreshCounter();
+  });
+</script>
+
+
+
+
+
+
+
+
+<script>
+function listennSidebarTOC() {
+  const navItems = document.querySelectorAll(".toc li");
+  if (!navItems.length) return;
+  const sections = [...navItems].map((element) => {
+    const link = element.querySelector(".toc-link");
+    const target = document.getElementById(
+      decodeURI(link.getAttribute("href")).replace("#", "")
+    );
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({
+		top: target.offsetTop + 100,
+		
+		behavior: "smooth"
+		
+	  });
+    });
+    return target;
+  });
+
+  function activateNavByIndex(target) {
+    if (target.classList.contains("active-current")) return;
+
+    document.querySelectorAll(".toc .active").forEach((element) => {
+      element.classList.remove("active", "active-current");
+    });
+    target.classList.add("active", "active-current");
+    let parent = target.parentNode;
+    while (!parent.matches(".toc")) {
+      if (parent.matches("li")) parent.classList.add("active");
+      parent = parent.parentNode;
+    }
+  }
+
+  function findIndex(entries) {
+    let index = 0;
+    let entry = entries[index];
+    if (entry.boundingClientRect.top > 0) {
+      index = sections.indexOf(entry.target);
+      return index === 0 ? 0 : index - 1;
+    }
+    for (; index < entries.length; index++) {
+      if (entries[index].boundingClientRect.top <= 0) {
+        entry = entries[index];
+      } else {
+        return sections.indexOf(entry.target);
+      }
+    }
+    return sections.indexOf(entry.target);
+  }
+
+  function createIntersectionObserver(marginTop) {
+    marginTop = Math.floor(marginTop + 10000);
+    let intersectionObserver = new IntersectionObserver(
+      (entries, observe) => {
+        let scrollHeight = document.documentElement.scrollHeight + 100;
+        if (scrollHeight > marginTop) {
+          observe.disconnect();
+          createIntersectionObserver(scrollHeight);
+          return;
+        }
+        let index = findIndex(entries);
+        activateNavByIndex(navItems[index]);
+      },
+      {
+        rootMargin: marginTop + "px 0px -100% 0px",
+        threshold: 0,
+      }
+    );
+    sections.forEach((element) => {
+      element && intersectionObserver.observe(element);
+    });
+  }
+  createIntersectionObserver(document.documentElement.scrollHeight);
+}
+
+document.addEventListener("DOMContentLoaded", listennSidebarTOC);
+document.addEventListener("pjax:success", listennSidebarTOC);
+</script>
+
+<!-- more -->
+
+
+
+
+    
+      
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#l_cover",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 0
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      //window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = ["life/", "video/"];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      if (typeof $.fancybox != "undefined") {
+        $.fancybox.close();    // 关闭弹窗
+      }
+      volantis.$switcher.removeClass('active'); // 关闭移动端激活的搜索框
+      volantis.$header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      volantis.$wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      volantis.$topBtn.unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+	  
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+      try{
+          if (typeof $.fancybox == "undefined") {
+            SCload_fancybox();
+          } else {
+            pjax_fancybox();
+          }
+        
+		  Pjax_backstretch()
+        
+        
+        document.querySelectorAll('pre code').forEach((block) => {
+          hljs.highlightBlock(block);
+        });
+        
+        
+        
+          if (typeof IssuesAPI == "undefined") {
+            loadIssuesJS();
+          }
+        
+        
+          pjax_initCopyCode();
+        
+        
+          pjax_valine();
+        
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+	  
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+	  
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
+    
+  </div>
+
+ <!--  打字机特效 -->
+<script src="https://cdn.bootcss.com/typed.js/2.0.9/typed.min.js"></script>
+  <script type="text/javascript">
+      var options = {
+          strings: [
+              '欢迎来到Gryffinbit的思维殿堂'
+          ],
+          typeSpeed: 90,   //打印速度
+          startDelay: 300, //开始之前的延迟300毫秒
+          loop: false,      //是否循环
+      };
+      var typed = new Typed('#typed', options);
+  </script>
+  <!--  打字机特效 -->
+
+</body>
+</html>
