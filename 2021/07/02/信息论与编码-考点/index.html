@@ -1,0 +1,2115 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,zh-HK,zh-TW,default">
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.5'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+  <title>信息论与编码-考点 - Gryffinbit</title>
+  
+    <meta name="keywords" content="考点">
+  
+
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  
+    <link rel="shortcut icon" type='image/x-icon' href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/favicon.png">
+  
+
+  <!-- import link -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/first.css">
+
+  
+
+  
+  <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
+  
+
+  <script id="loadcss"></script>
+
+</head>
+
+<body>
+
+<!-- 导入jquery库 -->
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!--   樱花特效 -->
+  <script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js"></script>
+
+
+<!-- 雪花特效 -->
+<!-- <script type="text/javascript" src="\js\snow.js"></script> -->
+
+
+<!-- 点击出桃心特效 -->
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/clicklove.js"></script>
+
+
+
+<!-- 标签页显示 -->
+
+  <script type="text/javascript">
+    var OriginTitile = document.title,
+        st;
+    document.addEventListener("visibilitychange", function () {
+        document.hidden ? (document.title = "🥺去哪里了呀~", clearTimeout(st)) : (document.title =
+            "🤗终于回来了", st = setTimeout(function () {
+                document.title = OriginTitile
+            }, 3e3))
+    })
+  </script>
+<!-- 标签页显示 -->
+
+  
+  
+
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
+  <div class='container'>
+  <div id='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a id="s-comment" class="fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+            🐰兔子窝🥕
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/Gryffinbit
+                  
+                  
+                  
+                    id="https:githubcomGryffinbit"
+                  >
+                  <i class='fab fa-github fa-fw'></i>github
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>categories
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>tags
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>archives
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-users fa-fw'></i>friends
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-heart fa-fw'></i>me
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=http://xn--h5qq84c.xn--6qq986b3xl:1108/
+                  
+                  
+                  
+                    id="http:xn--h5qq84cxn--6qq986b3xl:1108"
+                  >
+                  <i class='fas fa-lock fa-fw'></i>权哥❤
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/Gryffinbit
+                  
+                  
+                  
+                    id="https:githubcomGryffinbit"
+                  >
+                  <i class='fab fa-github fa-fw'></i>github
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>categories
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>tags
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>archives
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-users fa-fw'></i>friends
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-heart fa-fw'></i>me
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=http://xn--h5qq84c.xn--6qq986b3xl:1108/
+                  
+                  
+                  
+                    id="http:xn--h5qq84cxn--6qq986b3xl:1108"
+                  >
+                  <i class='fas fa-lock fa-fw'></i>权哥❤
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  <div id="l_body">
+    <div id="l_cover">
+  
+    
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
+          
+            <div id='cover-backstretch'></div>
+          
+          <div class='cover-body'>
+  <div class='top'>
+    
+    
+      <p class="title" id="typed"></p>    
+    
+      <p class="subtitle">Stay Hungry. Stay Foolish.</p>
+    
+  </div>
+  <div class='bottom'>
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a target="_blank" rel="noopener" href="https://github.com/Gryffinbit"
+              
+              
+              id="https:githubcomGryffinbit">
+              <i class='fab fa-github fa-fw'></i><p>github</p>
+            </a>
+          
+            <a href="/categories/"
+              
+              
+              id="categories">
+              <i class='fas fa-folder-open fa-fw'></i><p>categories</p>
+            </a>
+          
+            <a href="/tags/"
+              
+              
+              id="tags">
+              <i class='fas fa-tags fa-fw'></i><p>tags</p>
+            </a>
+          
+            <a href="/archives/"
+              
+              
+              id="archives">
+              <i class='fas fa-archive fa-fw'></i><p>archives</p>
+            </a>
+          
+            <a href="/friends/"
+              
+              
+              id="friends">
+              <i class='fas fa-users fa-fw'></i><p>friends</p>
+            </a>
+          
+            <a href="/about/"
+              
+              
+              id="about">
+              <i class='fas fa-heart fa-fw'></i><p>me</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="http://xn--h5qq84c.xn--6qq986b3xl:1108/"
+              
+              
+              id="http:xn--h5qq84cxn--6qq986b3xl:1108">
+              <i class='fas fa-lock fa-fw'></i><p>权哥❤</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+        </div>
+    
+  
+  </div>
+  
+
+
+    <div id='safearea'>
+      <div class='body-wrapper' id="pjax-container">
+        
+
+<div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title">
+        信息论与编码-考点
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>Gryffinbit</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/">期末考试</a><span class="sep"></span><a class="category-link" href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E4%BF%A1%E6%81%AF%E8%AE%BA%E4%B8%8E%E7%BC%96%E7%A0%81/">信息论与编码</a>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年7月2日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="信息论与编码-考点" data-path="/2021/07/02/%E4%BF%A1%E6%81%AF%E8%AE%BA%E4%B8%8E%E7%BC%96%E7%A0%81-%E8%80%83%E7%82%B9/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
+    
+  </div>
+
+
+  
+  <h1 id="【信息论与编码】期末考试"><a href="#【信息论与编码】期末考试" class="headerlink" title="【信息论与编码】期末考试"></a>【信息论与编码】期末考试</h1><h2 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h2><p>课程学习时的电子书、课后题、实验报告</p>
+<p>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1atIkMwzXMjKJ62QJY2QD5g">https://pan.baidu.com/s/1atIkMwzXMjKJ62QJY2QD5g</a> 提取码: 8ped 复制这段内容后打开百度网盘手机App，操作更方便哦</p>
+<h2 id="题型"><a href="#题型" class="headerlink" title="题型"></a>题型</h2><p>选择、填空、判断、简答、计算、编程（三个实验中的）</p>
+<hr>
+<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><blockquote>
+<p>所有基本概念</p>
+</blockquote>
+<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p><strong>对数度量信息</strong></p>
+<p>一个信息所含有的信息量用它的所有可能的取值的个数的对数来表示。</p>
+<p><strong>香农信息的定义</strong></p>
+<p>信息是对事物运动状态或存在方式的不确定性的描述</p>
+<p><strong>概率</strong></p>
+<p>不确定性就是随机性，具有不确定性的事件就是随机事件。概率用来测度不确定性的大小。</p>
+<p><strong>自信息</strong></p>
+<p>某个消息 $x_i$ 出现的不确定性大小定义为自信息，用这个消息出现概率的对数的负值来表示 $I(x_i) = -log\ \ p(x_i)$  自信息同时表示这个信息所包含的信息量。</p>
+<p><strong>信息熵</strong></p>
+<p>信息熵表示信源的平均不确定性的大小，同时表示信源输出的消息平均所含信息量</p>
+<p>信源所含有的信息量定义为信源发出的所有可能消息的平均不确定性，信源所含有的信息量称为信息熵。信息熵定义为自信息的统计平均</p>
+<p>$H(X)=-\sum_{i=1}^{q} p\left(x_{i}\right) \log p\left(x_{i}\right)$     $q$ 表示信源消息的个数。</p>
+<h3 id="通信系统"><a href="#通信系统" class="headerlink" title="通信系统"></a>通信系统</h3><ol>
+<li>信源：产生消息和消息序列的源</li>
+<li>编码器：是信号，携带消息，是信息的载体<ol>
+<li>信源编码器：压缩信源冗余度。提高传输效率</li>
+<li>信道编码器：添加监督码元。提高传输可靠性</li>
+</ol>
+</li>
+<li>信道： 通信系统把载荷消息的信号从发送端送到接收端的媒介或通道，包括收发设备在内的物理设施。</li>
+<li>译码器： 把信道输出的已叠加了干扰的编码信号进行反变换，变成信宿能够理解的消息。</li>
+<li>信宿： 消息传送的对象，即接收消息的人、机器或其他</li>
+</ol>
+<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><blockquote>
+<h3 id="考点"><a href="#考点" class="headerlink" title="考点"></a>考点</h3><p>信息熵、条件熵、联合熵。要知道怎么计算</p>
+<p>平均互信息。  ✅</p>
+<p>互信息有什么作用：第四章信道容量，求。 第七章   ✅</p>
+<p>熵有什么作用：信源熵。信源编码定理用到了熵。香农定理89页。编码的长度，码长的上限    ✅</p>
+<p>信息熵、平均互信息很重要 ✅</p>
+<p>信息的度量</p>
+<p>I 表示自信息     ✅</p>
+<p>I 表示互信息连用  ✅</p>
+<p>：表示两个信息变量之间的互信息</p>
+<p>，表示多个变量之间的联合概率分布</p>
+<p>注意逗号和冒号区别，</p>
+<p>看课后的习题、书上的例题</p>
+<p>信息熵hx定义P9的2.3，条件熵定义P13 2.18 2.16联合熵。怎么变换</p>
+<p>书上P9习题。</p>
+</blockquote>
+<h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h3><p><strong>自信息（量）</strong></p>
+<p>一个事件（消息）本身所包含的信息量，它是由事件的不确定性决定的</p>
+<p><strong>互信息（量）</strong></p>
+<p>一个事件所给出关于另一个事件的信息量</p>
+<p><strong>平均自信息（量）——  信息熵</strong></p>
+<p>事件集所包含的平均信息量，它表示信源的平均不确定性</p>
+<p><strong>平均互信息（量）</strong></p>
+<p>一个事件集所给出关于另一个事件集的平均信息量</p>
+<h3 id="自信息-I-x-i"><a href="#自信息-I-x-i" class="headerlink" title="自信息   $I(x_i)$"></a>自信息   $I(x_i)$</h3><p>随机事件的自信息量 $I(x_i)$ 是该事件发生概率 $p(x_i)$ 的函数</p>
+<ol>
+<li>概率越小，事件发生的不确定性越大，事件发生以后所包含的自信息量越大</li>
+<li>极限情况 $p(x_i)=0,\implies I(x_i)\to \infin$  ;  $p(x_i)=1, \implies I(x_i)=0$</li>
+<li>信息量可加</li>
+</ol>
+<hr>
+<p>设随机事件 $x_i$ 发生的概率为 $p(x_i)$ ，则它的信息量定义为 $I(x_i)=-log\ p(x_i)\ =log\ \frac{1}{p(x_i)}$</p>
+<hr>
+<p>$I(x_i)$的含义</p>
+<ul>
+<li>事件发生以前 = 事件发生的不确定性的大小</li>
+<li>事件发生以后 = 事件所含有的信息量</li>
+</ul>
+<hr>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled.png" srcset="data:image/png;base64,666"></p>
+<h3 id="互信息"><a href="#互信息" class="headerlink" title="互信息"></a>互信息</h3><p>一个事件 $y_i$ 所给出关于另一个事件 $x_i$ 的信息定义为互信息，用 $I(x_i;y_i)$ 表示</p>
+<p>$I(x_i;y_i)=I(x_i)-I(x_i|y_i)=log\frac{p(x_i|y_i)}{p(x_i)}$</p>
+<p>互信息 $I(x_i;y_i)$  是 已知事件 $y_i$ 后所消除的关于事件 $x_i$ 的不确定性</p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 1.png)</p>
+<h3 id="🔆-平均自信息-H-X-—-信息熵"><a href="#🔆-平均自信息-H-X-—-信息熵" class="headerlink" title="🔆 平均自信息 H(X) — 信息熵"></a>🔆 平均自信息 H(X) — 信息熵</h3><p>信息熵只会减少，不会增加。是对信源的平均不确定性的描述</p>
+<p>平均自信息量表征整个信源的不确定度，又称信息熵、信源熵、简称熵</p>
+<p>一个随机变量的所有可能的取值和这些取值对应的概率 $[X,P(X)]$  称为它的概率空间</p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 2.png)</p>
+<hr>
+<p>随机变量 $X$ 的每一个可能取值的自信息 $I(x_i)$ 的统计平均值定义为随机变量 $X$的平均自信息量</p>
+<p>$H(X)=E\ [\ I(x_i)\ ] = -\sum^{q}_{i=1}p(x_i)\ log\ p(x_i)$    $q$ 为 $X$ 的所有可能取值的个数</p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 3.png)</p>
+<hr>
+<p><strong>熵有什么作用</strong></p>
+<ol>
+<li><p><strong>信源编码定理</strong></p>
+<p> 定长信源编码定理给出了定长编码时每个信源符号最少所需的码符号的理论极限，该值由 $H(S)$ 决定。</p>
+</li>
+</ol>
+<ul>
+<li><strong>熵函数的性质</strong></li>
+</ul>
+<h3 id="联合熵与条件熵"><a href="#联合熵与条件熵" class="headerlink" title="联合熵与条件熵"></a>联合熵与条件熵</h3><p>二维随机变量XY的联合熵定义为联合自信息的数学期望，它是二维随机变量XY的不确定性度量。</p>
+<p>对联合熵的所有可能值进行统计平均，得出给定X时，Y的条件熵 $H(Y|X)$</p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 4.png)</p>
+<p>熵函数的链规则</p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 5.png)</p>
+<hr>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 6.png)</p>
+<h3 id="🔆-平均互信息-I-X-Y"><a href="#🔆-平均互信息-I-X-Y" class="headerlink" title="🔆 平均互信息 $I(X;Y)$"></a>🔆 平均互信息 $I(X;Y)$</h3><p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 7.png)</p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 8.png)</p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 9.png)</p>
+<hr>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 10.png)</p>
+<p><strong>平均互信息的作用</strong></p>
+<ol>
+<li>信道容量为平均互信息对于输入概率分布的最大值<br>当信道输入等概分布时，输出也为等概分布，信道达到信道容量，也就是最大。 </li>
+<li>平均互信息 $I(X;Y)$ 是信源概率分布 $p(x_i)$ 的上凸函数，又是信道传递概率 $p(y_j,x_i)$ 的下凸函数，因此信道容量 $C$ 和信息失真函数 $R(D)$ 具有对偶性。</li>
+</ol>
+<h2 id="第三章-信源-信源熵"><a href="#第三章-信源-信源熵" class="headerlink" title="第三章 信源 信源熵"></a>第三章 信源 信源熵</h2><blockquote>
+<h3 id="考点-1"><a href="#考点-1" class="headerlink" title="考点"></a>考点</h3><p>离散平稳，什么叫平稳性、无记忆性  P26   ✅</p>
+<p>假设是这种信源，就给了条件</p>
+<p>P27 极限熵 定义是什么   ✅</p>
+<p>平均符号熵  ✅</p>
+<p>分成不同的信源，就是对应不同的假设，怎么计算极限熵（其实就是信源熵）  ✅<br>马尔多夫信源 了解一下     ✅</p>
+<p>P35  剩余度  ✅</p>
+</blockquote>
+<hr>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 11.png)</p>
+<h3 id="信源的分类（根据离散还是连续）"><a href="#信源的分类（根据离散还是连续）" class="headerlink" title="信源的分类（根据离散还是连续）"></a>信源的分类（根据离散还是连续）</h3><p><strong>离散信源（数字信源）</strong></p>
+<p>离散随机变量序列。文字、数据、离散化图像</p>
+<p><strong>连续信源</strong></p>
+<p>连续随机变量序列。多人跳远比赛的结果，语音信号抽样以后</p>
+<p><strong>波形信源（模拟信源）— 连续</strong></p>
+<p>语音、音乐、热噪声、图像、图形</p>
+<h3 id="信源的分类（根据概率分布）"><a href="#信源的分类（根据概率分布）" class="headerlink" title="信源的分类（根据概率分布）"></a>信源的分类（根据概率分布）</h3><p>根据概率分布是否随时间的推移而变化</p>
+<p><strong>平稳信源</strong></p>
+<p>离散平稳信源：信源的概率分布与事件无关</p>
+<p>各维联合概率分布均与时间起点无关的信源，称为离散平稳信源</p>
+<p><strong>非平稳信源</strong></p>
+<h3 id="信源的分类（根据统计独立）"><a href="#信源的分类（根据统计独立）" class="headerlink" title="信源的分类（根据统计独立）"></a>信源的分类（根据统计独立）</h3><p>根据随机变量间是否统计独立</p>
+<p><strong>无记忆信源</strong></p>
+<p>离散平稳无记忆信源输出的符号序列是平稳随机序列，且符号之间是无关的，即统计独立的。不同时刻发出的消息是独立的</p>
+<p>无记忆平稳信源，输出N长符号序列的信源记为： $X=X_1X_2…X_N=X^N$</p>
+<p>关系： $H(X)=H(X^N)=NH(X)$</p>
+<p>离散平稳无记忆信源的熵率：</p>
+<p>$H_{\infin}=lim_{N\to \infin}H_N(X)=lim_{N\to\infin}\frac{1}{N}·NH(X)=H(X)$</p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 12.png)</p>
+<p><strong>有记忆信源</strong></p>
+<p>每个随机变量之间存在统计依赖关系</p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 13.png)</p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 14.png)</p>
+<h3 id="极限熵（熵率）"><a href="#极限熵（熵率）" class="headerlink" title="极限熵（熵率）"></a>极限熵（熵率）</h3><p>熵率：信源输出的符号序列中，平均每个符号所携带的信息量</p>
+<p>平均符号熵：随机变量序列中，对前N个随机变量的联合熵求平均：</p>
+<p>$H_N(X)=\frac{1}{N}H(X_1X_2…X_N)$</p>
+<p>当 $N\to \infin$ 时，上式极限存在，则 $lim_{N\to \infin}H_N(X)$ 称为熵率，或极限熵</p>
+<p>$H_{\infin} = lim_{N\to \infin}H_N(X)$      </p>
+<h3 id="马尔可夫信源"><a href="#马尔可夫信源" class="headerlink" title="马尔可夫信源"></a>马尔可夫信源</h3><p>有一类信源，在某时刻发出的符号仅与在此之前发出的有限个符号有关，而与更早些时候发出的符号无关，这称为马尔可夫性，这类信源称为马尔可夫信源</p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 15.png)</p>
+<h3 id="剩余度"><a href="#剩余度" class="headerlink" title="剩余度"></a>剩余度</h3><p>一个信源的极限熵与具有相同符号集的最大熵的比值称为熵的相对率 $\eta=\frac{H_{\infin}}{H_0}$ ，信源剩余度 $\gamma =1-\eta=1-\frac{H_\infin}{log_2q}$  ， $H_0-H_\infin$ 越大，信源的剩余度越大。</p>
+<p>信源的剩余度来自两个方面：</p>
+<ol>
+<li>信源符号间的相关性，相关程度越大，符号间的依赖关系越长，信源的 $H_\infin$ 越小</li>
+<li>信源输出消息的不等概分布使信源的 $H_\infin$ 减小</li>
+</ol>
+<ul>
+<li>当信源输出符号间不存在相关性，且输出消息为等概分布时，信源的 $H_\infin$  最大，等于 $H_0$</li>
+<li>为有效传递信息，要压缩信源剩余度，方法是减少符号间的相关性，并尽可能的使信源输出消息等概分布</li>
+</ul>
+<h2 id="第四章-信道容量（和互信息有关系）"><a href="#第四章-信道容量（和互信息有关系）" class="headerlink" title="第四章 信道容量（和互信息有关系）"></a>第四章 信道容量（和互信息有关系）</h2><blockquote>
+<h3 id="考点-2"><a href="#考点-2" class="headerlink" title="考点"></a>考点</h3><p>4.1 4.2 4.3 4.4</p>
+<p>平稳、无记忆、有记忆是什么  ✅</p>
+<p>P49  先验概率、后验概率容易混淆。xyz是信道容量。知道什么是先验概率什么是后验概率  ✅</p>
+<p>pxi先验概率 pyj后验概率</p>
+<p>信道容量 4.2.2  ✅</p>
+<p>信道容量是平均互信息。。。。。哪一种概率分布可以使得xy最大。</p>
+<p>计算信道容量</p>
+</blockquote>
+<h3 id="信道分类"><a href="#信道分类" class="headerlink" title="信道分类"></a>信道分类</h3><p><strong>无记忆信道</strong></p>
+<p>信道的输出只与信道该时刻的输入有关而与其他时刻的输入、输出无关</p>
+<p><strong>有记忆信道</strong></p>
+<p>信道的输出与其他时刻的输入输出有关，信道中的记忆现象来源于物理信道中的惯性，如电感电容等</p>
+<p><strong>平稳信道（恒参信道）</strong></p>
+<p>信道的统计特性不随时间变化</p>
+<p><strong>非平稳信道（随参信道）</strong></p>
+<p>信道的统计特性随时间变化</p>
+<h3 id="先验概率、后验概率"><a href="#先验概率、后验概率" class="headerlink" title="先验概率、后验概率"></a>先验概率、后验概率</h3><p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 16.png)</p>
+<h3 id="信道容量"><a href="#信道容量" class="headerlink" title="信道容量"></a>信道容量</h3><p>信道容量为平均互信息对于输入概率分布的最大值<br>当信道输入等概分布时，输出也为等概分布，信道达到信道容量，也就是最大。</p>
+<p>对于固定的信道，总存在一种概率信源（某种输入概率分布）使信道传输一个符号接收端获得的平均信息量最大，也就是说对于每个固定信道都有一个最大的信息传输率，这个最大信息传输率即为信道容量。</p>
+<p><strong>计算信道容量</strong></p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 17.png)</p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 18.png)</p>
+<h2 id="第五章-信源编码"><a href="#第五章-信源编码" class="headerlink" title="第五章 信源编码"></a>第五章 信源编码</h2><blockquote>
+<h3 id="考点-3"><a href="#考点-3" class="headerlink" title="考点"></a>考点</h3><p>5.1 5.2 5.3 5.4</p>
+<p>定理，要知道定理的内容。香农第一第二第三定理。定理解决了什么样的问题。最好知道怎么推导的  ✅</p>
+<p>编码：香农编码、霍夫曼编码  ✅</p>
+</blockquote>
+<h3 id="定理"><a href="#定理" class="headerlink" title="定理"></a>定理</h3><p><strong>定长码及定长信源编码定理</strong></p>
+<p>用以实现无失真的编码，所编的码必须是唯一可译码。<br>根据定长信源编码定理，每个信源符号平均所需的二元码符号可大大减少，从而使编码效率提高。</p>
+<p>定长信源编码定理给出了定长编码时每个信源符号最少所需的码符号的理论极限，该值由 $H(S)$ 决定。</p>
+<p>对定长码来说，若定长码是非奇异码。则它的任意有限长 $N$ 次扩展码一定也是非奇异码，因此定长非奇异码一定是唯一可译码。</p>
+<p><strong>变长码和变长信源编码定理</strong></p>
+<p>变长码要成为唯一可译码不仅本身应是非奇异的，而且它的有限长 $N$  次扩展码也应是非奇异的。</p>
+<p><strong>紧致码平均码长界限定理</strong></p>
+<p>对同一信源用同一码符号集编成的即时码或唯一可译码可有很多种。从高效传输信息的角度，要选择码符号序列长度较短的码字，也就是采用码长较短的码字，所以有了码的平均长度</p>
+<h3 id="无失真变长信源编码定理（香农第一定理）——-改进信源编码"><a href="#无失真变长信源编码定理（香农第一定理）——-改进信源编码" class="headerlink" title="无失真变长信源编码定理（香农第一定理）—— 改进信源编码"></a><strong>无失真变长信源编码定理（香农第一定理）—— 改进信源编码</strong></h3><p>信源的信息熵是无失真信源编码平均码长的极限值，也可以认为信源的信息熵是表示每个信源符号平均所需最少的二元码符号数</p>
+<p>要做到无失真信源编码，每个信源符号平均所需最少的 $r$  元码符号数就是信源的熵值。若编码的平均码长小于信源的熵值，则唯一可译码不存在，在译码时必然带来失真或差错。</p>
+<p>通过对扩展信源进行变长编码，当 $N \to \infin$ 时，平均码长 $\frac{\bar{L_N}}{N}$ 可达到这个极限值</p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 19.png)</p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 20.png)</p>
+<h3 id="香农编码"><a href="#香农编码" class="headerlink" title="香农编码"></a>香农编码</h3><p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 21.png)</p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 22.png)</p>
+<hr>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 23.png)</p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 24.png)</p>
+<hr>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 25.png)</p>
+<h3 id="二元霍夫曼编码"><a href="#二元霍夫曼编码" class="headerlink" title="二元霍夫曼编码"></a>二元霍夫曼编码</h3><p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 26.png)</p>
+<hr>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 27.png)</p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 28.png)</p>
+<p><strong>霍夫曼码编码方法，得到的码不是唯一的</strong></p>
+<ol>
+<li>每次对信源缩减时，概率最小的两个信源符号对应的码符号0和1是可以互换的，所以可得到不同的霍夫曼码</li>
+<li>对信源进行缩减时，如果两个概率最小的信源符号合并后的概率与其他信源符号的概率相同，则在缩减信源中进行概率排序的次序可以是任意的，因此会得到不同的霍夫曼码。</li>
+</ol>
+<p><strong>霍夫曼编码的特点</strong></p>
+<p>霍夫曼码是用概率匹配的方法进行信源编码，它的特点保证了霍夫曼码一定是最佳码。特点如下：</p>
+<ol>
+<li>霍夫曼码的编码方法保证了概率大的信源符号对应于短码，概率小的信源符号对应于长码，充分利用短码</li>
+<li>每次缩减信源的最后两个码字有相同的码长，并且总是最后一位码元不同，前面各位码元相同</li>
+</ol>
+<h2 id="第六章-信道编码"><a href="#第六章-信道编码" class="headerlink" title="第六章 信道编码"></a>第六章 信道编码</h2><blockquote>
+<h3 id="考点-4"><a href="#考点-4" class="headerlink" title="考点"></a>考点</h3><p>除卷积码都看</p>
+<p>线性码，nk 都代表什么</p>
+<p>编码定理 香农第二定理</p>
+<p>线性代数和编码怎么对应起来的。怎么用线性代数解决编码的问题。</p>
+</blockquote>
+<h3 id="信道编码定理（香农第二定理）—-改进信道编码"><a href="#信道编码定理（香农第二定理）—-改进信道编码" class="headerlink" title="信道编码定理（香农第二定理）— 改进信道编码"></a>信道编码定理（香农第二定理）— 改进信道编码</h3><p>信道中存在噪声或干扰，信息传输会造成损失。</p>
+<p>信道中无错误传输的最大信息传输率，这个极限就是香农第二定理。传送消息在传送前事先编码，接收端采用适当方法译码，可以实现通过不可靠信道实现可靠的信息传输。</p>
+<p>错误概率与信道的统计特性有关。信道的统计特性可由信道矩阵来表示，由信道矩阵就可以求出错误概率。</p>
+<h3 id="线性码"><a href="#线性码" class="headerlink" title="线性码"></a>线性码</h3><p>分组码：把信息序列以每 $k$ 个码元分组，然后把每组 $k$ 个信息元按一定规律产生 $r$ 个多余的校验元，输出序列每组长为 $n=k+r$ 。每一码字的 $r$ 个校验元只与本组的 $k$ 个信息元有关，与别的分组的信息位无关，记为分组码 $(n,k)$</p>
+<p>树码：信息序列以每 $k_0$ 个码元分段，编码器输出该段的校验元不仅与本段的 $k_0$ 个信息元有关，而且还与其前面若干段的信息元有关，称为树码或链码，卷积码，它的校验元与信息元的关系是线性关系</p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 29.png)</p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 30.png)![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 31.png)$(n,k)$ 线性分组码是 $n$ 维 $n$ 长向量构成的线性空间中一个 $k$ 维线性子空间</p>
+<p><strong>线性分组码的性质</strong></p>
+<ol>
+<li>码中任意两个码字之和仍为一码字</li>
+<li>任意码字是 <strong>$\bold{G}$</strong> 的行向量 $G_1,G_2,…,G_k$ 的线性组合</li>
+<li>零向量 <strong>$\bold{0}=(0,0,….,0)$</strong> 是一个码字，称为零码字</li>
+<li>线性分组码的最小距离等于非零码字的最小重量</li>
+</ol>
+<p>线性分组码最重要的性质是其线性特性以及在此基础上的对称性。</p>
+<ul>
+<li>线性特性是指线性码中任意两个 码字的和或差仍为一码字。</li>
+<li>对称性是指我们在一个码的所有码字上减去一个特定的码字，结果仍是同一码的全部码字</li>
+</ul>
+<hr>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 32.png)</p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 33.png)</p>
+<hr>
+<ul>
+<li>线性分组码的最小Hamming距离等于其非零码字的最小Hamming重量</li>
+<li>对于任何线性分组码，码字的重量或全部为偶数，或奇数重量的码字数为偶数</li>
+<li></li>
+</ul>
+<h2 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h2><blockquote>
+<h3 id="考点-5"><a href="#考点-5" class="headerlink" title="考点"></a>考点</h3><p>7.1 7.2 7.3 7.4</p>
+<p>（预）失真函数的定义，平均失真度，平均失真的概念</p>
+<p>概率编码定义，概念。知道例题和习题怎么做</p>
+</blockquote>
+<h3 id="失真函数"><a href="#失真函数" class="headerlink" title="失真函数"></a>失真函数</h3><p><strong>失真函数的定义</strong></p>
+<p>失真函数是根据人们的实际需要和失真引起的损失、风险大小等人为规定的</p>
+<p>对于每一对 $(x_i,y_j)$ 指定一个非负的函数 $d(x_i,y_j)\ge0,\ i=1,2,….,s$ ，表示信源发出一个符号 $x_i$ ，而在接收端再现为 $y_i$ 所引起的误差或失真的大小，称 $d(x_i,y_j)$ 为单个符号的失真度或失真函数，通常较小的 $d$ 值代表较小的失真，而 $d(x_i,y_j)=0$ 表示没有失真</p>
+<ol>
+<li>汉明失真</li>
+</ol>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 34.png)</p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 35.png)</p>
+<p><strong>平均失真度</strong></p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> 36.png)</p>
+<h2 id="课后题"><a href="#课后题" class="headerlink" title="课后题"></a>课后题</h2><h3 id="第二章-1"><a href="#第二章-1" class="headerlink" title="第二章"></a>第二章</h3><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.45.18_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.45.18_PM.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.45.51_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.45.51_PM.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.46.11_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.46.11_PM.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.46.32_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.46.32_PM.png" srcset="data:image/png;base64,666"></p>
+<hr>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.47.11_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.47.11_PM.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.47.29_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.47.29_PM.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.48.04_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.48.04_PM.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.48.34_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.48.34_PM.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.48.45_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.48.45_PM.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.48.59_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.48.59_PM.png" srcset="data:image/png;base64,666"></p>
+<hr>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.49.22_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.49.22_PM.png" srcset="data:image/png;base64,666"></p>
+<hr>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.49.55_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.49.55_PM.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.50.09_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.50.09_PM.png" srcset="data:image/png;base64,666"></p>
+<h3 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h3><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.54.30_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.54.30_PM.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.55.02_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.55.02_PM.png" srcset="data:image/png;base64,666"></p>
+<hr>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.55.53_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.55.53_PM.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.56.13_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.56.13_PM.png" srcset="data:image/png;base64,666"></p>
+<hr>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.56.53_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.56.53_PM.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.57.07_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.57.07_PM.png" srcset="data:image/png;base64,666"></p>
+<hr>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.57.57_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.57.57_PM.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.58.12_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_1.58.12_PM.png" srcset="data:image/png;base64,666"></p>
+<hr>
+<h3 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h3><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.00.14_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.00.14_PM.png" srcset="data:image/png;base64,666"></p>
+<hr>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.00.39_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.00.39_PM.png" srcset="data:image/png;base64,666"></p>
+<hr>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.01.10_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.01.10_PM.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.01.27_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.01.27_PM.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.01.36_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.01.36_PM.png" srcset="data:image/png;base64,666"></p>
+<hr>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.02.38_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.02.38_PM.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.03.10_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.03.10_PM.png" srcset="data:image/png;base64,666"></p>
+<hr>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.03.43_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.03.43_PM.png" srcset="data:image/png;base64,666"></p>
+<hr>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.04.39_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.04.39_PM.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.05.07_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.05.07_PM.png" srcset="data:image/png;base64,666"></p>
+<h3 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h3><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.06.16_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.06.16_PM.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.06.35_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.06.35_PM.png" srcset="data:image/png;base64,666"></p>
+<hr>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.06.55_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.06.55_PM.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.07.11_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.07.11_PM.png" srcset="data:image/png;base64,666"></p>
+<hr>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.07.27_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.07.27_PM.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.07.51_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.07.51_PM.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.08.04_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.08.04_PM.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.08.18_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.08.18_PM.png" srcset="data:image/png;base64,666"></p>
+<hr>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.08.38_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.08.38_PM.png" srcset="data:image/png;base64,666"></p>
+<hr>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.09.03_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.09.03_PM.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.09.15_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.09.15_PM.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.09.27_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.09.27_PM.png" srcset="data:image/png;base64,666"></p>
+<h3 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h3><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.10.45_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.10.45_PM.png" srcset="data:image/png;base64,666"></p>
+<hr>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.14.00_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.14.00_PM.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.14.18_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.14.18_PM.png" srcset="data:image/png;base64,666"></p>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.14.30_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.14.30_PM.png" srcset="data:image/png;base64,666"></p>
+<h3 id="第七章-1"><a href="#第七章-1" class="headerlink" title="第七章"></a>第七章</h3><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.15.08_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.15.08_PM.png" srcset="data:image/png;base64,666"></p>
+<hr>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.15.27_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.15.27_PM.png" srcset="data:image/png;base64,666"></p>
+<hr>
+<p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.15.44_PM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-07-01_at_2.15.44_PM.png" srcset="data:image/png;base64,666"></p>
+<hr>
+<hr>
+<h2 id="部分课后习题详解"><a href="#部分课后习题详解" class="headerlink" title="部分课后习题详解"></a>部分课后习题详解</h2><p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> (Draft)-01.jpg)</p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> (Draft)-02.jpg)</p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> (Draft)-03.jpg)</p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> (Draft)-04.jpg)</p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> (Draft)-05.jpg)</p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> (Draft)-06.jpg)</p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> (Draft)-07.jpg)</p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> (Draft)-08.jpg)</p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> (Draft)-09.jpg)</p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> (Draft)-10.jpg)</p>
+<p>![Untitled (Draft)-11](/Users/gryffinbit/Downloads/Untitled (Draft)-11.jpg)</p>
+<p>![](<a target="_blank" rel="noopener" href="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled">https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Untitled</a> (Draft)-12.jpg)</p>
+
+  
+  
+    
+    <div class='footer'>
+      
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://gryffinbit.top/2021/07/02/%E4%BF%A1%E6%81%AF%E8%AE%BA%E4%B8%8E%E7%BC%96%E7%A0%81-%E8%80%83%E7%82%B9/>https://gryffinbit.top/2021/07/02/%E4%BF%A1%E6%81%AF%E8%AE%BA%E4%B8%8E%E7%BC%96%E7%A0%81-%E8%80%83%E7%82%B9/</a></p>
+              
+            
+          </blockquote>
+        </div>
+      
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-07-08T10:29:55+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年7月8日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E8%80%83%E7%82%B9/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>考点</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gryffinbit.top/2021/07/02/%E4%BF%A1%E6%81%AF%E8%AE%BA%E4%B8%8E%E7%BC%96%E7%A0%81-%E8%80%83%E7%82%B9/&title=信息论与编码-考点 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://gryffinbit.top/2021/07/02/%E4%BF%A1%E6%81%AF%E8%AE%BA%E4%B8%8E%E7%BC%96%E7%A0%81-%E8%80%83%E7%82%B9/&title=信息论与编码-考点 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://gryffinbit.top/2021/07/02/%E4%BF%A1%E6%81%AF%E8%AE%BA%E4%B8%8E%E7%BC%96%E7%A0%81-%E8%80%83%E7%82%B9/&title=信息论与编码-考点 - Gryffinbit&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2021/06/25/%E7%BD%91%E7%BB%9C%E6%94%BB%E9%98%B2%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/'>
+          <p class='title'>网络攻防期末考试<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>题型选择题 15 *2
+填空题 15 *1
+判断题 10 * 1
+简述题 5*7
+网络数据分析 1*10   十个空，一整个大题
+
+选择题unix中采用什么机制来增加了破解linux密码的难度【...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+
+
+
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%84%E4%BB%B6"><span class="toc-text">附件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E5%9E%8B"><span class="toc-text">题型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0"><span class="toc-text">第一章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-text">概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F"><span class="toc-text">通信系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0"><span class="toc-text">第二章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%80%83%E7%82%B9"><span class="toc-text">考点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5-1"><span class="toc-text">概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E4%BF%A1%E6%81%AF-I-x-i"><span class="toc-text">自信息   $I(x_i)$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%92%E4%BF%A1%E6%81%AF"><span class="toc-text">互信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%94%86-%E5%B9%B3%E5%9D%87%E8%87%AA%E4%BF%A1%E6%81%AF-H-X-%E2%80%94-%E4%BF%A1%E6%81%AF%E7%86%B5"><span class="toc-text">🔆 平均自信息 H(X) — 信息熵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%94%E5%90%88%E7%86%B5%E4%B8%8E%E6%9D%A1%E4%BB%B6%E7%86%B5"><span class="toc-text">联合熵与条件熵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%94%86-%E5%B9%B3%E5%9D%87%E4%BA%92%E4%BF%A1%E6%81%AF-I-X-Y"><span class="toc-text">🔆 平均互信息 $I(X;Y)$</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E4%BF%A1%E6%BA%90-%E4%BF%A1%E6%BA%90%E7%86%B5"><span class="toc-text">第三章 信源 信源熵</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%80%83%E7%82%B9-1"><span class="toc-text">考点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E6%BA%90%E7%9A%84%E5%88%86%E7%B1%BB%EF%BC%88%E6%A0%B9%E6%8D%AE%E7%A6%BB%E6%95%A3%E8%BF%98%E6%98%AF%E8%BF%9E%E7%BB%AD%EF%BC%89"><span class="toc-text">信源的分类（根据离散还是连续）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E6%BA%90%E7%9A%84%E5%88%86%E7%B1%BB%EF%BC%88%E6%A0%B9%E6%8D%AE%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83%EF%BC%89"><span class="toc-text">信源的分类（根据概率分布）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E6%BA%90%E7%9A%84%E5%88%86%E7%B1%BB%EF%BC%88%E6%A0%B9%E6%8D%AE%E7%BB%9F%E8%AE%A1%E7%8B%AC%E7%AB%8B%EF%BC%89"><span class="toc-text">信源的分类（根据统计独立）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%81%E9%99%90%E7%86%B5%EF%BC%88%E7%86%B5%E7%8E%87%EF%BC%89"><span class="toc-text">极限熵（熵率）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E4%BF%A1%E6%BA%90"><span class="toc-text">马尔可夫信源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%A9%E4%BD%99%E5%BA%A6"><span class="toc-text">剩余度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E4%BF%A1%E9%81%93%E5%AE%B9%E9%87%8F%EF%BC%88%E5%92%8C%E4%BA%92%E4%BF%A1%E6%81%AF%E6%9C%89%E5%85%B3%E7%B3%BB%EF%BC%89"><span class="toc-text">第四章 信道容量（和互信息有关系）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%80%83%E7%82%B9-2"><span class="toc-text">考点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E9%81%93%E5%88%86%E7%B1%BB"><span class="toc-text">信道分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%88%E9%AA%8C%E6%A6%82%E7%8E%87%E3%80%81%E5%90%8E%E9%AA%8C%E6%A6%82%E7%8E%87"><span class="toc-text">先验概率、后验概率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E9%81%93%E5%AE%B9%E9%87%8F"><span class="toc-text">信道容量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E4%BF%A1%E6%BA%90%E7%BC%96%E7%A0%81"><span class="toc-text">第五章 信源编码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%80%83%E7%82%B9-3"><span class="toc-text">考点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E7%90%86"><span class="toc-text">定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A0%E5%A4%B1%E7%9C%9F%E5%8F%98%E9%95%BF%E4%BF%A1%E6%BA%90%E7%BC%96%E7%A0%81%E5%AE%9A%E7%90%86%EF%BC%88%E9%A6%99%E5%86%9C%E7%AC%AC%E4%B8%80%E5%AE%9A%E7%90%86%EF%BC%89%E2%80%94%E2%80%94-%E6%94%B9%E8%BF%9B%E4%BF%A1%E6%BA%90%E7%BC%96%E7%A0%81"><span class="toc-text">无失真变长信源编码定理（香农第一定理）—— 改进信源编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A6%99%E5%86%9C%E7%BC%96%E7%A0%81"><span class="toc-text">香农编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E5%85%83%E9%9C%8D%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81"><span class="toc-text">二元霍夫曼编码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E4%BF%A1%E9%81%93%E7%BC%96%E7%A0%81"><span class="toc-text">第六章 信道编码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%80%83%E7%82%B9-4"><span class="toc-text">考点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E9%81%93%E7%BC%96%E7%A0%81%E5%AE%9A%E7%90%86%EF%BC%88%E9%A6%99%E5%86%9C%E7%AC%AC%E4%BA%8C%E5%AE%9A%E7%90%86%EF%BC%89%E2%80%94-%E6%94%B9%E8%BF%9B%E4%BF%A1%E9%81%93%E7%BC%96%E7%A0%81"><span class="toc-text">信道编码定理（香农第二定理）— 改进信道编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E7%A0%81"><span class="toc-text">线性码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E7%AB%A0"><span class="toc-text">第七章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%80%83%E7%82%B9-5"><span class="toc-text">考点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%B1%E7%9C%9F%E5%87%BD%E6%95%B0"><span class="toc-text">失真函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%BE%E5%90%8E%E9%A2%98"><span class="toc-text">课后题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-1"><span class="toc-text">第二章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0"><span class="toc-text">第三章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0"><span class="toc-text">第四章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0"><span class="toc-text">第五章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0"><span class="toc-text">第六章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-1"><span class="toc-text">第七章</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E5%88%86%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98%E8%AF%A6%E8%A7%A3"><span class="toc-text">部分课后习题详解</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+
+        
+        
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+<script>
+  window.pdata={}
+  pdata.ispage=true;
+  pdata.postTitle="信息论与编码-考点";
+  pdata.commentPath="";
+  pdata.commentPlaceholder="";
+
+  var l_header=document.getElementById("l_header");
+  
+  l_header.classList.add("show");
+  
+</script>
+
+        
+      </div>
+      
+  
+  <footer class="footer clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='true'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='320px'
+      server='netease'
+      type='playlist'
+      id='5316477077'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+          
+            
+          
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        
+          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+</div>
+        
+      
+    
+      
+        本站使用
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.5" target="_blank" class="codename">Volantis</a>
+        作为主题
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="/">Copyright © 2017-2020 ❤️万事皆爱❤️</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+
+
+      <a id="s-top" class="fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+    </div>
+  </div>
+  <div>
+    <script>
+window.volantis={};
+window.volantis.loadcss=document.getElementById("loadcss");
+/********************脚本懒加载函数********************************/
+function loadScript(src, cb) {
+var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
+var script = document.createElement('script');
+script.setAttribute('type','text/javascript');
+if (cb) script.onload = cb;
+script.setAttribute('src', src);
+HEAD.appendChild(script);
+}
+//https://github.com/filamentgroup/loadCSS
+var loadCSS = function( href, before, media, attributes ){
+	var doc = window.document;
+	var ss = doc.createElement( "link" );
+	var ref;
+	if( before ){
+		ref = before;
+	}
+	else {
+		var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
+		ref = refs[ refs.length - 1];
+	}
+	var sheets = doc.styleSheets;
+	if( attributes ){
+		for( var attributeName in attributes ){
+			if( attributes.hasOwnProperty( attributeName ) ){
+				ss.setAttribute( attributeName, attributes[attributeName] );
+			}
+		}
+	}
+	ss.rel = "stylesheet";
+	ss.href = href;
+	ss.media = "only x";
+	function ready( cb ){
+		if( doc.body ){
+			return cb();
+		}
+		setTimeout(function(){
+			ready( cb );
+		});
+	}
+	ready( function(){
+		ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
+	});
+	var onloadcssdefined = function( cb ){
+		var resolvedHref = ss.href;
+		var i = sheets.length;
+		while( i-- ){
+			if( sheets[ i ].href === resolvedHref ){
+				return cb();
+			}
+		}
+		setTimeout(function() {
+			onloadcssdefined( cb );
+		});
+	};
+	function loadCB(){
+		if( ss.addEventListener ){
+			ss.removeEventListener( "load", loadCB );
+		}
+		ss.media = media || "all";
+	}
+	if( ss.addEventListener ){
+		ss.addEventListener( "load", loadCB);
+	}
+	ss.onloadcssdefined = onloadcssdefined;
+	onloadcssdefined( loadCB );
+	return ss;
+};
+</script>
+<script>
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css", window.volantis.loadcss);
+  
+  
+  loadCSS("https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css", window.volantis.loadcss);
+  
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css", window.volantis.loadcss);
+  
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/solarized-light.css", window.volantis.loadcss);
+  
+</script>
+<!-- required -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
+<script>
+  function pjax_fancybox() {
+    $(".md .gallery").find("img").each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".md .gallery").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  function SCload_fancybox() {
+    if ($(".md .gallery").find("img").length == 0) return;
+    loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css", document.getElementById("loadcss"));
+    setTimeout(function() {
+      loadScript('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', pjax_fancybox)
+    }, 1);
+  };
+  $(function () {
+    SCload_fancybox();
+  });
+</script>
+
+
+<!-- internal -->
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+        var imgs=["https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/default.png", "https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/tag.png", "https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/category.png", "https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/kakshi_naruto.png"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+	  function Pjax_backstretch(){
+        
+          $.backstretch(
+            imgs,
+          {
+            duration: "15000",
+            fade: "1500"
+          });
+        
+	  }
+	  loadScript("https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js",Pjax_backstretch)
+    </script>
+  
+
+
+
+
+
+  <script>
+  function loadIssuesJS() {
+    if ($(".md").find(".issues-api").length == 0) return;
+    setTimeout(function() {
+	
+	  loadScript('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.1.5/source/js/issues.min.js');
+	
+    }, 1);
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+</script>
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+
+  
+  
+    <script>
+      window.FPConfig = {
+        delay: 0,
+        ignoreKeywords: [],
+        maxRPS: 5,
+        hoverDelay: 25
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+		if($(".highlight .code pre").length+$(".article pre code").length==0)return;
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+</script>
+
+
+
+
+
+
+  <script>
+  let APlayerController = new Object();
+  APlayerController.id = '5316477077';  // 设定全局音乐播放ID
+  APlayerController.volume = '0.7';
+setTimeout(function() {
+  loadCSS("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css", window.volantis.loadcss);
+
+  loadScript("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js")
+
+  loadScript("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js")
+
+
+}, 10000);
+</script>
+
+
+
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    if(!document.querySelectorAll("#valine_container")[0])return;
+
+    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~ 评论前请填好“昵称”、“邮箱”这两栏内容，否则不会收到回复哦～";
+
+    let path = pdata.commentPath;
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: pagePlaceholder,
+      path: path,
+      appId: "SpRnpidOkCtC9wRmjSkdOhCw-MdYXbMMI",
+      appKey: "ELcHiAEif9x6qMgD0xUCAq7d",
+      pageSize: '10',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'true',
+      enableQQ: 'true',
+      recordIP: 'false',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });
+</script>
+
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.1.5/source/js/app.min.js"></script>
+
+
+
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.1.5/source/js/search.min.js"></script>
+
+  
+
+
+<!-- optional -->
+
+  <script>
+const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
+const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
+function listenSearch(){
+  
+    customSearch = new HexoSearch({
+      imagePath: SearchServiceimagePath
+    });
+  
+}
+document.addEventListener("DOMContentLoaded", listenSearch);
+
+</script>
+
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function () {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+  
+
+
+
+  <script defer>
+
+  const LCCounter = {
+    app_id: 'SpRnpidOkCtC9wRmjSkdOhCw-MdYXbMMI',
+    app_key: 'ELcHiAEif9x6qMgD0xUCAq7d',
+    custom_api_server: '',
+
+    // 查询存储的记录
+    getRecord(Counter, url, title) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {url, title: title, times: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    },
+
+    // 发起自增请求
+    increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    },
+
+    // 构建自增请求体
+    buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "times": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    },
+
+    // 校验是否为有效的 UV
+    validUV() {
+      var key = 'LeanCloudUVTimestamp';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    },
+
+    addCount(Counter) {
+      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
+      enableIncr = true;
+      var getterArr = [];
+      var incrArr = [];
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#lc-sv');
+      if (pvCtn || enableIncr) {
+        var pvGetter = this.getRecord(Counter, 'https://gryffinbit.top' + '/#lc-sv', 'Visits').then((record) => {
+          incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-sv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + 1;
+              if (pvCtn) {
+                pvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#lc-uv');
+      if (uvCtn || enableIncr) {
+        var uvGetter = this.getRecord(Counter, 'https://gryffinbit.top' + '/#lc-uv', 'Visitors').then((record) => {
+          var vuv = this.validUV();
+          vuv && incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-uv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + (vuv ? 1 : 0);
+              if (uvCtn) {
+                uvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 请求文章的浏览数，如果是当前页面就自增
+      var allPV = document.querySelectorAll('#lc-pv');
+      if (allPV.length > 0 || enableIncr) {
+        for (i = 0; i < allPV.length; i++) {
+          let pv = allPV[i];
+          let title = pv.getAttribute('data-title');
+          var url = 'https://gryffinbit.top' + pv.getAttribute('data-path');
+          if (url) {
+            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
+              // 是当前页面就自增
+              let curPath = window.location.pathname;
+              if (curPath.includes('index.html')) {
+                curPath = curPath.substring(0, curPath.lastIndexOf('index.html'));
+              }
+              if (pv.getAttribute('data-path') == curPath) {
+                incrArr.push(this.buildIncrement(record.objectId));
+              }
+              if (pv) {
+                var ele = pv.querySelector('#lc-pv #number');
+                if (ele) {
+                  if (pv.getAttribute('data-path') == curPath) {
+                    ele.innerText = (record.times || 0) + 1;
+                  } else {
+                    ele.innerText = record.times || 0;
+                  }
+                  pv.style.display = 'inline';
+                }
+              }
+            });
+            getterArr.push(viewGetter);
+          }
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && this.increment(Counter, incrArr);
+        })
+      }
+
+    },
+
+
+    fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': this.app_id,
+            'X-LC-Key': this.app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      this.addCount(Counter);
+    },
+
+    refreshCounter() {
+      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+      if (api_server) {
+        this.fetchData(api_server);
+      } else {
+        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
+          .then(resp => resp.json())
+          .then(({api_server}) => {
+            this.fetchData('https://' + api_server);
+          });
+      }
+    }
+
+  };
+
+  LCCounter.refreshCounter();
+
+  document.addEventListener('pjax:complete', function () {
+    LCCounter.refreshCounter();
+  });
+</script>
+
+
+
+
+
+
+
+
+<script>
+function listennSidebarTOC() {
+  const navItems = document.querySelectorAll(".toc li");
+  if (!navItems.length) return;
+  const sections = [...navItems].map((element) => {
+    const link = element.querySelector(".toc-link");
+    const target = document.getElementById(
+      decodeURI(link.getAttribute("href")).replace("#", "")
+    );
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({
+		top: target.offsetTop + 100,
+		
+		behavior: "smooth"
+		
+	  });
+    });
+    return target;
+  });
+
+  function activateNavByIndex(target) {
+    if (target.classList.contains("active-current")) return;
+
+    document.querySelectorAll(".toc .active").forEach((element) => {
+      element.classList.remove("active", "active-current");
+    });
+    target.classList.add("active", "active-current");
+    let parent = target.parentNode;
+    while (!parent.matches(".toc")) {
+      if (parent.matches("li")) parent.classList.add("active");
+      parent = parent.parentNode;
+    }
+  }
+
+  function findIndex(entries) {
+    let index = 0;
+    let entry = entries[index];
+    if (entry.boundingClientRect.top > 0) {
+      index = sections.indexOf(entry.target);
+      return index === 0 ? 0 : index - 1;
+    }
+    for (; index < entries.length; index++) {
+      if (entries[index].boundingClientRect.top <= 0) {
+        entry = entries[index];
+      } else {
+        return sections.indexOf(entry.target);
+      }
+    }
+    return sections.indexOf(entry.target);
+  }
+
+  function createIntersectionObserver(marginTop) {
+    marginTop = Math.floor(marginTop + 10000);
+    let intersectionObserver = new IntersectionObserver(
+      (entries, observe) => {
+        let scrollHeight = document.documentElement.scrollHeight + 100;
+        if (scrollHeight > marginTop) {
+          observe.disconnect();
+          createIntersectionObserver(scrollHeight);
+          return;
+        }
+        let index = findIndex(entries);
+        activateNavByIndex(navItems[index]);
+      },
+      {
+        rootMargin: marginTop + "px 0px -100% 0px",
+        threshold: 0,
+      }
+    );
+    sections.forEach((element) => {
+      element && intersectionObserver.observe(element);
+    });
+  }
+  createIntersectionObserver(document.documentElement.scrollHeight);
+}
+
+document.addEventListener("DOMContentLoaded", listennSidebarTOC);
+document.addEventListener("pjax:success", listennSidebarTOC);
+</script>
+
+<!-- more -->
+
+
+
+
+    
+      
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#l_cover",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 0
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      //window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = ["life/", "video/"];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      if (typeof $.fancybox != "undefined") {
+        $.fancybox.close();    // 关闭弹窗
+      }
+      volantis.$switcher.removeClass('active'); // 关闭移动端激活的搜索框
+      volantis.$header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      volantis.$wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      volantis.$topBtn.unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+	  
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+      try{
+          if (typeof $.fancybox == "undefined") {
+            SCload_fancybox();
+          } else {
+            pjax_fancybox();
+          }
+        
+		  Pjax_backstretch()
+        
+        
+        document.querySelectorAll('pre code').forEach((block) => {
+          hljs.highlightBlock(block);
+        });
+        
+        
+        
+          if (typeof IssuesAPI == "undefined") {
+            loadIssuesJS();
+          }
+        
+        
+          pjax_initCopyCode();
+        
+        
+          pjax_valine();
+        
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+	  
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+	  
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
+    
+  </div>
+
+ <!--  打字机特效 -->
+<script src="https://cdn.bootcss.com/typed.js/2.0.9/typed.min.js"></script>
+  <script type="text/javascript">
+      var options = {
+          strings: [
+              '欢迎来到Gryffinbit的思维殿堂'
+          ],
+          typeSpeed: 90,   //打印速度
+          startDelay: 300, //开始之前的延迟300毫秒
+          loop: false,      //是否循环
+      };
+      var typed = new Typed('#typed', options);
+  </script>
+  <!--  打字机特效 -->
+
+</body>
+</html>
