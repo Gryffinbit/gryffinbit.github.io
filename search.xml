@@ -4,6 +4,87 @@
   
     
     <entry>
+      <title>专业英语</title>
+      <link href="2021/07/08/%E4%B8%93%E4%B8%9A%E8%8B%B1%E8%AF%AD/"/>
+      <url>2021/07/08/%E4%B8%93%E4%B8%9A%E8%8B%B1%E8%AF%AD/</url>
+      
+        <content type="html"><![CDATA[<h2 id="考核内容"><a href="#考核内容" class="headerlink" title="考核内容"></a>考核内容</h2><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E4%B8%93%E4%B8%9A%E8%8B%B1%E8%AF%AD%E8%80%83%E6%A0%B8.jpg" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/%E4%B8%93%E4%B8%9A%E8%8B%B1%E8%AF%AD%E8%80%83%E6%A0%B8.jpg" srcset="data:image/png;base64,666"></p><h2 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h2><p>链接: <a href="https://pan.baidu.com/s/14ErQdA18zEQggeYIp2KwUg">https://pan.baidu.com/s/14ErQdA18zEQggeYIp2KwUg</a>  密码: 9dam<br>–来自百度网盘超级会员V4的分享</p><p>附件包含：</p><ol><li>考核内容</li><li>RSA-latex的一次作业</li><li>Latex学术模板</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 期末考试 </category>
+          
+          <category> 专业英语 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 考点 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>信息安全工程</title>
+      <link href="2021/07/08/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%B7%A5%E7%A8%8B/"/>
+      <url>2021/07/08/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%B7%A5%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<h1 id="【信息安全工程】期末考试"><a href="#【信息安全工程】期末考试" class="headerlink" title="【信息安全工程】期末考试"></a>【信息安全工程】期末考试</h1><h2 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h2><p>信息安全工程的实验报告</p><p>链接: <a href="https://pan.baidu.com/s/1fFeykV8HBbEEBw-fV4YFAQ">https://pan.baidu.com/s/1fFeykV8HBbEEBw-fV4YFAQ</a> 提取码: 16u7 复制这段内容后打开百度网盘手机App，操作更方便哦</p><h2 id="题型"><a href="#题型" class="headerlink" title="题型"></a>题型</h2><p>1、单选题：20题20分<br>2、填空题：10题10分<br>3、判断题：10题10分<br>4、简单题：3题30分<br>5、综合题：2题30分</p><h2 id="第一章：信息安全工程基础"><a href="#第一章：信息安全工程基础" class="headerlink" title="第一章：信息安全工程基础"></a>第一章：信息安全工程基础</h2><h3 id="信息"><a href="#信息" class="headerlink" title="信息"></a>信息</h3><p><strong>定义</strong></p><p>信息是能够用来消除随机不确定性的东⻄—香农</p><p><strong>理解</strong></p><p>信息是对客观世界中各种事物的运动状态和变化的反映，是客观事物之间相互联系和相互作用的表征，表现的是客观事物运动状态和变化的实质内容。</p><p><strong>价值</strong></p><p>当今人们正处在一个“信息时代”，信息如水，石油一样，成为我们维持正常生活必不可少的资 源，人类离不开信息。</p><h3 id="信息安全"><a href="#信息安全" class="headerlink" title="信息安全"></a>信息安全</h3><p><strong>定义</strong></p><p>网络空间安全的核心内涵是信息安全。</p><p><strong>成因</strong></p><p>内因：</p><p>信息技术与产业的空前繁荣，使我们需要重视信息的安全。</p><p>信息系统的复杂性，易导致错误。</p><p>结构复杂，容易让不法分子有机可乘。</p><p>外因：人为威胁与自然威胁</p><p><strong>信息系统</strong></p><p>构成：软件、硬件、数据、人、操作</p><p>功能：输入、储存、处理、输出、控制</p><p><strong>目标</strong></p><p>总体目标：保护信息不受到损害。确保业务连续性、缝风险最小化。投资和回报最大化。</p><p>基本目标：</p><p>三大属性安全：CIA   机密性、完整性、可用性</p><p>多层要素安全：</p><p>设备安全、数据安全、行为安全、内容安全</p><p><strong>发展史</strong></p><p>网络空间安全：人、物质世界、信息空间</p><p>通信  →  计算机  →  信息系统  →  信息安全保障  →  CS/IA</p><h3 id="信息安全保障"><a href="#信息安全保障" class="headerlink" title="信息安全保障"></a>信息安全保障</h3><p><strong>定义</strong></p><p>对信息系统风险分析，制定安全策略，保障信息系统CIA，降低风险</p><p><strong>理解、价值</strong></p><p>信息系统安全保障模型的3个方面:保障要素、生命周期、安全特征。</p><p><strong>生命周期</strong></p><p>计划组织阶段→开发采购阶段→实施交付阶段→运行维护阶段→废弃阶段 （变更和反馈）</p><p><strong>保障要素</strong></p><p>技术、管理、工程、人员</p><p><strong>目标</strong></p><p>信息系统(包括硬件、软件、数据、人、物理环境及其基础设施)受到保护，不受偶然的或者恶意的原因而遭到破坏、更改、泄露，系统连续可靠正常地运行，信息服务不中断，最终实现业务连续性。</p><h3 id="信息安全保障技术框架（IATF）"><a href="#信息安全保障技术框架（IATF）" class="headerlink" title="信息安全保障技术框架（IATF）"></a>信息安全保障技术框架（IATF）</h3><ul><li><p>纵深防御</p></li><li><p>技术框架焦点域</p><p>  计算环境、区域边界、网络基础设施、支持性基础设施</p></li></ul><h3 id="信息安全工程"><a href="#信息安全工程" class="headerlink" title="信息安全工程"></a>信息安全工程</h3><p><strong>定义</strong></p><p>信息安全工程是采用工程的概念、原理、技术和方法，来研究、开发、实施与维护信息系统安全的过程，它将经过时间证明是正确的工程实践流程、管理技术和当前能够得到的最好的技术方法相结合，来解决信息安全保障问题。</p><h2 id="第二章：信息系统安全工程"><a href="#第二章：信息系统安全工程" class="headerlink" title="第二章：信息系统安全工程"></a>第二章：信息系统安全工程</h2><h3 id="信息系统安全工程（ISSE）"><a href="#信息系统安全工程（ISSE）" class="headerlink" title="信息系统安全工程（ISSE）"></a>信息系统安全工程（ISSE）</h3><p><strong>一项工程：系统工程</strong></p><p>系统：信息系统：具有特定功能的有机整体</p><p>生命周期：计算环境、区域边界、网络基础设施、支持性基础设施</p><p><strong>九大思想</strong></p><ol><li><p>目的：满足用户安全需求             2. 基础：系统风险分析               3. 指导：系统工程方法论</p></li><li><p>要素：技术、运行、人                5. 技术支撑：纵深防御               6.运行安全保证：生命期支持</p></li><li><p>安全管理基础：安全实践             8. 质量依据：测评认证               9. 质量保证：PDCA</p></li></ol><p><strong>六大功能</strong></p><p>安全规划与控制、确定安全需求、支持安全设计、分析安全操作、支持安全生命周期、管理安全风险</p><p><strong>五大过程</strong></p><p>挖掘信息安全需求→定义信息系统安全→设计信息系统安全→实施信息系统安全→评估信息系统安全</p><h2 id="第三章：信息安全工程能力成熟度模型"><a href="#第三章：信息安全工程能力成熟度模型" class="headerlink" title="第三章：信息安全工程能力成熟度模型"></a>第三章：信息安全工程能力成熟度模型</h2><h3 id="能力成熟度模型"><a href="#能力成熟度模型" class="headerlink" title="能力成熟度模型"></a>能力成熟度模型</h3><p><strong>框架</strong></p><p>按成熟度分成5个级别：初始级、可重复级、已定义级、已管理级、优化级</p><p>每个成熟级别指示了这个级别所对应的过程能力，包含关键过程域（KPA），每个KPA代表一组相关工作，完成该目标认为该过程能力提高。</p><p>每个KPA的工作，以组织方式细化为一般特性（CF），由若干个关键实施KP组成，KP是软件过程的基础/结构</p><p><strong>名词解释</strong></p><p>CMM（Capability Maturity Model）：能力成熟度模型<br>CMMI（Capability Maturity Model Integration）：能力成熟度模型集成<br>SSE-CMM：系统安全能力成熟度模型<br>DMM：数据管理成熟度模型<br>CMMC（Cybersecurity Maturity Model Certification）：网络安全成熟度模型<br>DCMM：数据管理能力成熟度评估模型<br>DSMM：数据安全能力成熟度模型<br>Level: 级别 ← CF: 一般特征 ←GP: 通用实施<br>Process: 过程 ← PC: 过程类别 ← PA: 过程域 ← BP: 基本实施</p><h3 id="系统安全工程能力成熟度模型"><a href="#系统安全工程能力成熟度模型" class="headerlink" title="系统安全工程能力成熟度模型"></a>系统安全工程能力成熟度模型</h3><ul><li><p>结构</p><p>  Level: 级别 ← CF: 一般特征 ←GP: 通用实施<br>  Process: 过程 ← PC: 过程类别 ← PA: 过程域 ← BP: 基本实施</p></li><li><p>PC：1.安全工程过程 + 2.项目过程 + 3.组织过程</p></li><li><p>安全工程过程： 1.风险过程 + 2.工程过程 + 3.保证过程</p></li></ul><h2 id="第四章：信息安全等级保护制度"><a href="#第四章：信息安全等级保护制度" class="headerlink" title="第四章：信息安全等级保护制度"></a>第四章：信息安全等级保护制度</h2><h3 id="网络安全等级保护制度"><a href="#网络安全等级保护制度" class="headerlink" title="网络安全等级保护制度"></a>网络安全等级保护制度</h3><p>等保1.0→等保2.0</p><p><strong>实施信息安全等级保护制度</strong></p><ol><li>有效地提高我国信息和信息系统安全建设的整体水平。</li><li>有利于实现保障信息安全与信息化建设相协调，为信息系统安全建设和管理提供系统性、针对性、可行性的指导和服务，有效控制信息安全建设成本。</li></ol><p><strong>实施网络安全等级保护制度</strong></p><ol><li>实现国家对重要信息系统、网络重点的保护;促进信息化、维护国家信息安全;是事关国家安全、社会稳定、公共利益的基础性工作。</li><li>有效解决我国信息安全面临的威胁和存在的主要问题，加强网络安全管理，有效提高我国信息安全<br>保障工作的整体水平。</li><li>有利于为信息系统安全建设和管理提供系统性、针对性、可行性的指导和服务，有效控制信息安全<br>建设成本。</li><li>有利于优化信息安全资源的配置，保障重要信息系统的安全</li><li>有利于推动信息安全产业的发展，逐步探索出一条适应社会主义市场经济发展和网络强国发展的信<br>息安全模式。</li></ol><p><strong>保护对象</strong></p><p>基础信息网络、云计算、大数据、物联网、工业控制系统和采用移动互联技术的系统等</p><p><strong>保护流程</strong></p><p>定级备案→安全建设→等级测评→安全整改 （监督检查）</p><p><strong>保护要求</strong></p><p>通用要求：一个中心，三重防护<br>扩展要求：云计算、移动互联、物联网、工控</p><p><strong>保护流程</strong></p><p>定级备案→安全建设→等级测评→安全整改 (监督检查)</p><p><strong>安全通用要求</strong></p><ul><li>安全物理环境</li><li>安全通信网络</li><li>安全区域边界</li><li>安全计算环境</li><li>安全管理制度</li><li>安全管理机构</li><li>安全管理人员</li><li>安全建设管理</li><li>安全运维管理</li></ul><h2 id="第五章：信息安全风险评估"><a href="#第五章：信息安全风险评估" class="headerlink" title="第五章：信息安全风险评估"></a>第五章：信息安全风险评估</h2><h3 id="信息安全风险评估"><a href="#信息安全风险评估" class="headerlink" title="信息安全风险评估"></a>信息安全风险评估</h3><p><strong>关系</strong></p><p>核心：风险<br>三大要素：资产、威胁、脆弱性</p><p><strong>流程</strong></p><p>准备：目标、范围、团队、调研、依据、方案、支持<br>识别：资产、威胁、脆弱性（已有安全措施）<br>计算：风险值<br>处理：要干什么，怎么干</p><h2 id="第六章：信息安全管理基础"><a href="#第六章：信息安全管理基础" class="headerlink" title="第六章：信息安全管理基础"></a>第六章：信息安全管理基础</h2><h3 id="信息安全管理基础"><a href="#信息安全管理基础" class="headerlink" title="信息安全管理基础"></a>信息安全管理基础</h3><p><strong>概念</strong></p><p>对信息系统进行规划和管理，保证其正常运行，对提高系统运行的可用性和连续性有着至关重<br>要的意义。涵盖4个层次，信息系统管理规范化、流程的规范化、组织结构的规范化、规章制度的规范化</p><p><strong>意义</strong></p><p>管理是贯穿信息安全整个过程的生命线。有助于贯彻实施信息安全等级保护制度，有助于达到<br>高级别的安全要求、是许多安全技术和机制发挥作用的保证</p><p><strong>内容</strong></p><ol><li>信息安全⻛险管理</li><li>设施的安全管理包括<ol><li>网络的安全管理</li><li>保密设备的安全管理</li><li>硬件设施的安全管理</li><li>场地设施的安全管理</li></ol></li><li>信息的安全管理<ol><li>存储介质的安全管理</li><li>技术文档的安全管理</li><li>软件设施的安全管理</li><li>密钥和口令的安全管理</li></ol></li><li>运行的安全管理<ol><li>安全审计</li><li>安全恢复</li></ol></li></ol><p><strong>原则</strong></p><ol><li><p>规范化原则  2. 系统化原则  3. 合保障原则  4. 以人为本原则  5. 预防原则  6. 风险评估原则</p><ol start="7"><li> 动态原则     8. 成本效益原则  9. 其他原则:分权制衡原则、最小特权原则、职权分离原则、普遍参与原则、审计独立原则等。</li></ol></li></ol><h3 id="信息安全管理体系-ISMS"><a href="#信息安全管理体系-ISMS" class="headerlink" title="信息安全管理体系(ISMS)"></a>信息安全管理体系(ISMS)</h3><p><strong>演变</strong></p><p>BS7799 → ISO/IEC17799→ ISO/IEC 27000→GB/T</p><p><strong>概念、原则（就是上面的那9个原则）</strong></p><p>概念：指的是在一定范围内建立的信息安全方针和目标，以及为实现这些方针和目标所采用的文件体<br>系和方法的总和。</p><p><strong>流程</strong></p><p>识别资产、明确要求   →   风险评估、处置   →   风险控制   →   持续改进</p><h2 id="第七章：信息安全策略"><a href="#第七章：信息安全策略" class="headerlink" title="第七章：信息安全策略"></a>第七章：信息安全策略</h2><h3 id="网络安全体系"><a href="#网络安全体系" class="headerlink" title="网络安全体系"></a>网络安全体系</h3><ul><li><p>PDR模型</p></li><li><p>PDRR模型</p></li><li><p>PPDR模型</p></li><li><p>PPDRR模型</p><p>  策略、保护、检测、响应、恢复、安全、能力定义（基于时间）</p></li></ul><h3 id="信息安全策略"><a href="#信息安全策略" class="headerlink" title="信息安全策略"></a>信息安全策略</h3><p><strong>概念、意义</strong></p><p>概念:</p><p>是描述组织具有哪些重要信息资产，并说明这些信息资产如何被保护的一个计划。信息安全策<br>略是进一步制定控制规则和安全程序的必要基础;是一组规则，这组规则描述了一个组织要实现的信息安全目标和实现 这些信息安全目标的途径。</p><p>意义:</p><p>信息安全策略是一个有效的信息安全项目制定的必要基础。(2)信息安全策略的制定和<br>实施决定了任何一个信息安全项目的成功(3)改善了信息安全管理的可扩展性和灵活性是应用信息安全策略的主要优势。</p><p><strong>制定流程</strong></p><p>调查与分析阶段→设计阶段→实施阶段→维护阶段</p><p><strong>书写</strong></p><p><img src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-06-15_at_10.59.47_AM.png" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/Screen_Shot_2021-06-15_at_10.59.47_AM.png" srcset="data:image/png;base64,666"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 期末考试 </category>
+          
+          <category> 信息安全工程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 考点 </tag>
+            
+            <tag> 实验 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>渗透测试实训</title>
+      <link href="2021/07/08/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E5%AE%9E%E8%AE%AD/"/>
+      <url>2021/07/08/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E5%AE%9E%E8%AE%AD/</url>
+      
+        <content type="html"><![CDATA[<h2 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h2><p>链接: <a href="https://pan.baidu.com/s/18XawGQqRQYyjp70qcdMDMA">https://pan.baidu.com/s/18XawGQqRQYyjp70qcdMDMA</a>  密码: 1hrs<br>–来自百度网盘超级会员V4的分享</p><p>附件内容包括：</p><ol><li>rockoa-靶机所需要的php版本。php_5.4.45</li><li>常见漏洞小结xmind</li><li>渗透测试攻击流程xmind （DAY2）</li><li>IdeaProjects 一个web的课程设计，《吃啥？一个帮你解决吃饭选择恐惧症的系统》</li><li>HBuilderProjects 。一些前端部署</li><li>Nnnn靶机</li><li>一个已经装好的kali，最新版本。安装了Gvm（Openvas）</li><li>渗透测试的最终实验报告</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 渗透测试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> kali </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>信息论与编码-考点</title>
       <link href="2021/07/02/%E4%BF%A1%E6%81%AF%E8%AE%BA%E4%B8%8E%E7%BC%96%E7%A0%81-%E8%80%83%E7%82%B9/"/>
       <url>2021/07/02/%E4%BF%A1%E6%81%AF%E8%AE%BA%E4%B8%8E%E7%BC%96%E7%A0%81-%E8%80%83%E7%82%B9/</url>

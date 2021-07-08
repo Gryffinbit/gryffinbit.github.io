@@ -475,6 +475,155 @@
   
     
     <h2 class="article-title" >
+      <a href="/2020/11/30/kali%E5%AE%89%E8%A3%85gmpy2/">
+        kali安装gmpy2
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        kali-安装gmpy2安装环境gcc 原版本9.2
+安装gmp包：wget [https://gmplib.org/download/gmp/gmp-6.2.0.tar.xz](https://gmplib.org/download/gmp/gmp-6.2.0.tar.xz)
+tar xvf gmp-6.2.0.tar.xz
+cd gmp-6.2.0
+./configure --prefi...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2020-11-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2020/11/30/kali%E5%AE%89%E8%A3%85gmpy2/'>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2020/11/14/%E5%9B%BE%E7%89%87%E6%8B%BC%E6%8E%A5/">
+        图片拼接
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        import PIL.Image as Image
+import os
+
+IMAGES_PATH = &#39;./就这?/&#39;  # 图片集地址
+IMAGES_FORMAT = [&#39;.jpg&#39;, &#39;.JPG&#39;, &#39;png&#39;]  # 图片格式
+IMAGE_WIDTH = 15  # 每张图片的宽度
+IMAGE_HEIGHT = 15 # ...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2020-11-14</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/Misc/">Misc</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2020/11/14/%E5%9B%BE%E7%89%87%E6%8B%BC%E6%8E%A5/'>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2020/11/14/xtime%E7%AE%97%E6%B3%95/">
+        xtime算法
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        xtime算法理论基础：
+C(x)=A(x)B(x) mod P(x)二进制数转换为多项式:A(a7,a6,a5,a4,a3,a2,a1,a0)==&gt;A(X)=a7x7+a6x6+a5x5+a4x4+a3x3+a2x2+a1x+a0，GF(28)内的最大值为(11111111)2==&gt; x7+x6+x5+x4+x3+x2+x+1，P(x)=x8+x4+x3+x2+x+1==&gt...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2020-11-14</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2020/11/14/xtime%E7%AE%97%E6%B3%95/'>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
       <a href="/2020/11/14/SHA-1/">
         SHA-1
       </a>
@@ -835,172 +984,6 @@ JPEG文件大体上可以分成两个部分：标记码和压缩数据
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/stegdetect/">
-        stegdetect
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        
-在kali下
-
-
-github项目
-https://github.com/abeluck/stegdetect
-
-原理简介文件格式
-JPEG文件大体上可以分成两个部分：标记码和压缩数据
-标记码：
-由两个字节构成，第一个字节是固定值0xFF，后一个字节则根据不同意义有不同数值
-在每个标记码之前可以添加数目不限的无意义的0xFF填充，连续的多个0xFF可以被理解为一个0xFF，并表示一个标记码...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Misc/">Misc</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/stegdetect/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/%E5%B8%B8%E8%A7%81%E7%BC%96%E7%A0%81/">
-        常见编码
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        常见的编码##base64
-长度是3的倍数，不足时结尾用= 补全
-##xxencode
-与base64相似。 但结尾用+ 补全
-uuencode特殊符号很多
-
-##jjencode
-针对JavaScript的编码方式
-转换成只有符号的字符串
-
-##aaencode
-针对JavaScript的编码方式
-转换成常用的网络表情
-
-###维吉尼亚密码
-由一些偏移量不同的凯撒密码组成。 （多表密码的简...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/%E5%B8%B8%E8%A7%81%E7%BC%96%E7%A0%81/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%AF%86%E7%A0%81%E5%8F%98%E4%BD%93/">
-        维吉尼亚密码变体
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        原题：
-
-It is said that Vigenere cipher does not achieve the perfect secrecy actually :-)Tips:1.The encode pragram is given;2.Do u no index of coincidence ？3.The key is last 6 words of the plain text(...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%AF%86%E7%A0%81%E5%8F%98%E4%BD%93/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
@@ -1191,12 +1174,22 @@ It is said that Vigenere cipher does not achieve the perfect secrecy actually :-
           <li><a class="flat-box"
             title="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/" href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/"
             id="categoriesE69C9FE69CABE88083E8AF95"
-            ><div class='name'>期末考试</div><div class='badge'>(12)</div></a></li>
+            ><div class='name'>期末考试</div><div class='badge'>(14)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/WEB%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/" href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/WEB%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/"
             id="categoriesE69C9FE69CABE88083E8AF95WEBE5BA94E794A8E5BC80E58F91"
             ><div class='name'>WEB应用开发</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E4%B8%93%E4%B8%9A%E8%8B%B1%E8%AF%AD/" href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E4%B8%93%E4%B8%9A%E8%8B%B1%E8%AF%AD/"
+            id="categoriesE69C9FE69CABE88083E8AF95E4B893E4B89AE88BB1E8AFAD"
+            ><div class='name'>专业英语</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%B7%A5%E7%A8%8B/" href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%B7%A5%E7%A8%8B/"
+            id="categoriesE69C9FE69CABE88083E8AF95E4BFA1E681AFE5AE89E585A8E5B7A5E7A88B"
+            ><div class='name'>信息安全工程</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E4%BF%A1%E6%81%AF%E8%AE%BA%E4%B8%8E%E7%BC%96%E7%A0%81/" href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E4%BF%A1%E6%81%AF%E8%AE%BA%E4%B8%8E%E7%BC%96%E7%A0%81/"
@@ -1243,6 +1236,11 @@ It is said that Vigenere cipher does not achieve the perfect secrecy actually :-
             id="categoriesE69C9FE69CABE88083E8AF95E7BD91E7BB9CE694BBE998B2"
             ><div class='name'>网络攻防</div><div class='badge'>(1)</div></a></li>
         
+          <li><a class="flat-box"
+            title="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"
+            id="categoriesE6B897E9808FE6B58BE8AF95"
+            ><div class='name'>渗透测试</div><div class='badge'>(1)</div></a></li>
+        
       </ul>
     </div>
   </section>
@@ -1265,7 +1263,7 @@ It is said that Vigenere cipher does not achieve the perfect secrecy actually :-
 
 
     <div class='content'>
-      <a href="/tags/AES/" style="font-size: 14px; color: #999">AES</a> <a href="/tags/C/" style="font-size: 14px; color: #999">C</a> <a href="/tags/CA/" style="font-size: 14px; color: #999">CA</a> <a href="/tags/CAsyncSocket/" style="font-size: 14px; color: #999">CAsyncSocket</a> <a href="/tags/CSocket/" style="font-size: 14px; color: #999">CSocket</a> <a href="/tags/DES/" style="font-size: 14px; color: #999">DES</a> <a href="/tags/GNS3/" style="font-size: 14px; color: #999">GNS3</a> <a href="/tags/IDS/" style="font-size: 14px; color: #999">IDS</a> <a href="/tags/MFC/" style="font-size: 17.33px; color: #828282">MFC</a> <a href="/tags/PE/" style="font-size: 19px; color: #777">PE</a> <a href="/tags/PGP/" style="font-size: 14px; color: #999">PGP</a> <a href="/tags/Python/" style="font-size: 14px; color: #999">Python</a> <a href="/tags/RSA/" style="font-size: 17.33px; color: #828282">RSA</a> <a href="/tags/SHA-1/" style="font-size: 14px; color: #999">SHA-1</a> <a href="/tags/SSL/" style="font-size: 14px; color: #999">SSL</a> <a href="/tags/WPA/" style="font-size: 15.67px; color: #8e8e8e">WPA</a> <a href="/tags/WPS/" style="font-size: 14px; color: #999">WPS</a> <a href="/tags/WinInet/" style="font-size: 14px; color: #999">WinInet</a> <a href="/tags/WinSock/" style="font-size: 17.33px; color: #828282">WinSock</a> <a href="/tags/gmpy2/" style="font-size: 14px; color: #999">gmpy2</a> <a href="/tags/kali/" style="font-size: 22.33px; color: #606060">kali</a> <a href="/tags/macOS/" style="font-size: 15.67px; color: #8e8e8e">macOS</a> <a href="/tags/snort/" style="font-size: 19px; color: #777">snort</a> <a href="/tags/volatility/" style="font-size: 14px; color: #999">volatility</a> <a href="/tags/wifi%E7%A0%B4%E8%A7%A3/" style="font-size: 14px; color: #999">wifi破解</a> <a href="/tags/%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B/" style="font-size: 14px; color: #999">入侵检测</a> <a href="/tags/%E5%85%AC%E9%92%A5%E4%BD%93%E5%88%B6/" style="font-size: 14px; color: #999">公钥体制</a> <a href="/tags/%E5%8F%96%E8%AF%81/" style="font-size: 17.33px; color: #828282">取证</a> <a href="/tags/%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81/" style="font-size: 17.33px; color: #828282">古典密码</a> <a href="/tags/%E5%9B%BE%E7%89%87/" style="font-size: 20.67px; color: #6c6c6c">图片</a> <a href="/tags/%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B0/" style="font-size: 14px; color: #999">散列函数</a> <a href="/tags/%E6%9D%82/" style="font-size: 14px; color: #999">杂</a> <a href="/tags/%E6%B1%87%E7%BC%96/" style="font-size: 14px; color: #999">汇编</a> <a href="/tags/%E6%B5%81%E5%AF%86%E7%A0%81/" style="font-size: 14px; color: #999">流密码</a> <a href="/tags/%E7%AC%AC%E4%B8%80%E5%B1%8A%E4%BF%A1%E5%AE%89%E5%A4%A7%E6%8C%91%E6%88%98/" style="font-size: 14px; color: #999">第一届信安大挑战</a> <a href="/tags/%E8%80%83%E7%82%B9/" style="font-size: 24px; color: #555">考点</a> <a href="/tags/%E8%AF%81%E4%B9%A6/" style="font-size: 14px; color: #999">证书</a>
+      <a href="/tags/AES/" style="font-size: 14px; color: #999">AES</a> <a href="/tags/C/" style="font-size: 14px; color: #999">C</a> <a href="/tags/CA/" style="font-size: 14px; color: #999">CA</a> <a href="/tags/CAsyncSocket/" style="font-size: 14px; color: #999">CAsyncSocket</a> <a href="/tags/CSocket/" style="font-size: 14px; color: #999">CSocket</a> <a href="/tags/DES/" style="font-size: 14px; color: #999">DES</a> <a href="/tags/GNS3/" style="font-size: 14px; color: #999">GNS3</a> <a href="/tags/IDS/" style="font-size: 14px; color: #999">IDS</a> <a href="/tags/MFC/" style="font-size: 17.33px; color: #828282">MFC</a> <a href="/tags/PE/" style="font-size: 19px; color: #777">PE</a> <a href="/tags/PGP/" style="font-size: 14px; color: #999">PGP</a> <a href="/tags/Python/" style="font-size: 14px; color: #999">Python</a> <a href="/tags/RSA/" style="font-size: 17.33px; color: #828282">RSA</a> <a href="/tags/SHA-1/" style="font-size: 14px; color: #999">SHA-1</a> <a href="/tags/SSL/" style="font-size: 14px; color: #999">SSL</a> <a href="/tags/WPA/" style="font-size: 15.67px; color: #8e8e8e">WPA</a> <a href="/tags/WPS/" style="font-size: 14px; color: #999">WPS</a> <a href="/tags/WinInet/" style="font-size: 14px; color: #999">WinInet</a> <a href="/tags/WinSock/" style="font-size: 17.33px; color: #828282">WinSock</a> <a href="/tags/gmpy2/" style="font-size: 14px; color: #999">gmpy2</a> <a href="/tags/kali/" style="font-size: 22.33px; color: #606060">kali</a> <a href="/tags/macOS/" style="font-size: 15.67px; color: #8e8e8e">macOS</a> <a href="/tags/snort/" style="font-size: 19px; color: #777">snort</a> <a href="/tags/volatility/" style="font-size: 14px; color: #999">volatility</a> <a href="/tags/wifi%E7%A0%B4%E8%A7%A3/" style="font-size: 14px; color: #999">wifi破解</a> <a href="/tags/%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B/" style="font-size: 14px; color: #999">入侵检测</a> <a href="/tags/%E5%85%AC%E9%92%A5%E4%BD%93%E5%88%B6/" style="font-size: 14px; color: #999">公钥体制</a> <a href="/tags/%E5%8F%96%E8%AF%81/" style="font-size: 17.33px; color: #828282">取证</a> <a href="/tags/%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81/" style="font-size: 17.33px; color: #828282">古典密码</a> <a href="/tags/%E5%9B%BE%E7%89%87/" style="font-size: 20.67px; color: #6c6c6c">图片</a> <a href="/tags/%E5%AE%9E%E9%AA%8C/" style="font-size: 14px; color: #999">实验</a> <a href="/tags/%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B0/" style="font-size: 14px; color: #999">散列函数</a> <a href="/tags/%E6%9D%82/" style="font-size: 14px; color: #999">杂</a> <a href="/tags/%E6%B1%87%E7%BC%96/" style="font-size: 14px; color: #999">汇编</a> <a href="/tags/%E6%B5%81%E5%AF%86%E7%A0%81/" style="font-size: 14px; color: #999">流密码</a> <a href="/tags/%E7%AC%AC%E4%B8%80%E5%B1%8A%E4%BF%A1%E5%AE%89%E5%A4%A7%E6%8C%91%E6%88%98/" style="font-size: 14px; color: #999">第一届信安大挑战</a> <a href="/tags/%E8%80%83%E7%82%B9/" style="font-size: 24px; color: #555">考点</a> <a href="/tags/%E8%AF%81%E4%B9%A6/" style="font-size: 14px; color: #999">证书</a>
     </div>
   </section>
 
