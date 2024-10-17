@@ -1711,7 +1711,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/Blog/favicon.png","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1729177992780),
+    lastupdate: new Date(1729178673121),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2541,7 +2541,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://gryffinbit.top/2020/11/15/图片拼接/">
+  <link itemprop="mainEntityOfPage" href="https://gryffinbit.top/2020/11/30/kali下snort报警规则设计和测试/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Gryffinbit的思维殿堂">
   </span>
@@ -2559,15 +2559,26 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2020/11/15/%E5%9B%BE%E7%89%87%E6%8B%BC%E6%8E%A5/"  itemprop="url">
-        图片拼接
+      <a href="/2020/11/30/kali%E4%B8%8Bsnort%E6%8A%A5%E8%AD%A6%E8%A7%84%E5%88%99%E8%AE%BE%E8%AE%A1%E5%92%8C%E6%B5%8B%E8%AF%95/"  itemprop="url">
+        kali下snort报警规则设计和测试
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        1234567891011121314151617181920212223242526272829303132333435import PIL.Image as Imageimport os IMAGES_PATH = &#x27;./就这?/&#x27;  # 图片集地址IMAGES_FORMAT = [&#x27;.jpg&#x27;, &#x27;.JPG&#x27;, &#x27;p...
+        snort报警规则设计和测试snort简单的报警规则在官网下载规则包（需要注册登陆）https://www.snort.org/downloads
+
+我下载的是29151版本的
+
+
+将snort安装目录的包用规则包进行替换
+
+替换到snort-2.9.17文件夹内
+
+练习一条规则👉在rules&#x2F;local.rules下进行规则配置。实现对内网的ICMP相关流量进行检测，并报警
+
+...
       
     
   </div>
@@ -2575,20 +2586,24 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2020-11-15T05:03:28+08:00">2020-11-15</time>
+        <time itemprop="dateCreated datePublished" datetime="2020-11-30T22:38:23+08:00">2020-11-30</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/Misc/">Misc</a>
+          <a class="category-link" href="/categories/%E5%AE%9E%E9%AA%8C/">实验</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AE%9E%E9%AA%8C/%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E4%B8%8E%E5%8F%96%E8%AF%81/">入侵检测与取证</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Misc/" itemprop="url"><span itemprop="name">Misc</span></a>
+              <a href="/categories/%E5%AE%9E%E9%AA%8C/" itemprop="url"><span itemprop="name">实验</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E5%AE%9E%E9%AA%8C/%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E4%B8%8E%E5%8F%96%E8%AF%81/" itemprop="url"><span itemprop="name">入侵检测与取证</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2020/11/15/%E5%9B%BE%E7%89%87%E6%8B%BC%E6%8E%A5/' itemprop="url">
+          <a class='readmore' href='/2020/11/30/kali%E4%B8%8Bsnort%E6%8A%A5%E8%AD%A6%E8%A7%84%E5%88%99%E8%AE%BE%E8%AE%A1%E5%92%8C%E6%B5%8B%E8%AF%95/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2604,7 +2619,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://gryffinbit.top/2020/11/15/xtime算法/">
+  <link itemprop="mainEntityOfPage" href="https://gryffinbit.top/2020/11/30/kali下snort简单的报警规则/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Gryffinbit的思维殿堂">
   </span>
@@ -2622,7 +2637,356 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2020/11/15/xtime%E7%AE%97%E6%B3%95/"  itemprop="url">
+      <a href="/2020/11/30/kali%E4%B8%8Bsnort%E7%AE%80%E5%8D%95%E7%9A%84%E6%8A%A5%E8%AD%A6%E8%A7%84%E5%88%99/"  itemprop="url">
+        kali下snort简单的报警规则
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        snort简单的报警规则在官网下载规则包（需要注册登陆）https://www.snort.org/downloads
+
+我下载的是29151版本的
+
+
+将snort安装目录的包用规则包进行替换
+
+替换到snort-2.9.17文件夹内
+
+练习一条规则👉在rules&#x2F;local.rules下进行规则配置。实现对内网的ICMP相关流量进行检测，并报警
+
+编辑文件的时候都采用vim的...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2020-11-30T22:05:56+08:00">2020-11-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E5%AE%9E%E9%AA%8C/">实验</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AE%9E%E9%AA%8C/%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E4%B8%8E%E5%8F%96%E8%AF%81/">入侵检测与取证</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E5%AE%9E%E9%AA%8C/" itemprop="url"><span itemprop="name">实验</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E5%AE%9E%E9%AA%8C/%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E4%B8%8E%E5%8F%96%E8%AF%81/" itemprop="url"><span itemprop="name">入侵检测与取证</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2020/11/30/kali%E4%B8%8Bsnort%E7%AE%80%E5%8D%95%E7%9A%84%E6%8A%A5%E8%AD%A6%E8%A7%84%E5%88%99/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://gryffinbit.top/2020/11/30/kali下snort数据包嗅探/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Gryffinbit的思维殿堂">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Gryffinbit的思维殿堂">
+    <meta itemprop="description" content="一个网络安全网站">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2020/11/30/kali%E4%B8%8Bsnort%E6%95%B0%E6%8D%AE%E5%8C%85%E5%97%85%E6%8E%A2/"  itemprop="url">
+        kali下snort数据包嗅探
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        kali下snort数据包嗅探常用的命令 显示IP和TCP&#x2F;UDP&#x2F;ICMP包头信息 
+snort -v    
+ 显示应用层的数据，输出包头信息的同时显示包的数据信息
+snort -vd 
+显示数据链路层的信息
+snort -vde
+
+更多命令参考snort手册http://www.kaiyuanba.cn/content/network/snort/Snortman....
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2020-11-30T21:10:04+08:00">2020-11-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E5%AE%9E%E9%AA%8C/">实验</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AE%9E%E9%AA%8C/%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E4%B8%8E%E5%8F%96%E8%AF%81/">入侵检测与取证</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E5%AE%9E%E9%AA%8C/" itemprop="url"><span itemprop="name">实验</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E5%AE%9E%E9%AA%8C/%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E4%B8%8E%E5%8F%96%E8%AF%81/" itemprop="url"><span itemprop="name">入侵检测与取证</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2020/11/30/kali%E4%B8%8Bsnort%E6%95%B0%E6%8D%AE%E5%8C%85%E5%97%85%E6%8E%A2/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://gryffinbit.top/2020/11/30/kali安装配置snort/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Gryffinbit的思维殿堂">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Gryffinbit的思维殿堂">
+    <meta itemprop="description" content="一个网络安全网站">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2020/11/30/kali%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEsnort/"  itemprop="url">
+        kali安装配置snort
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        kali 下snort安装软件包，配置环境实验环境：kali-linux-2020.1 debian8 
+安装snort及其依赖包在官网上下载snort, daq
+https://www.snort.org/downloads
+1234567891011snort-2.9.17.tar.gzdaq-2.0.7.tar.gz进行安装包解压：tar -zxvf snort-2.9.17.tar....
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2020-11-30T21:02:46+08:00">2020-11-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E5%AE%9E%E9%AA%8C/">实验</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AE%9E%E9%AA%8C/%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E4%B8%8E%E5%8F%96%E8%AF%81/">入侵检测与取证</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E5%AE%9E%E9%AA%8C/" itemprop="url"><span itemprop="name">实验</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E5%AE%9E%E9%AA%8C/%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E4%B8%8E%E5%8F%96%E8%AF%81/" itemprop="url"><span itemprop="name">入侵检测与取证</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2020/11/30/kali%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEsnort/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://gryffinbit.top/2020/11/30/kali安装gmpy2/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Gryffinbit的思维殿堂">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Gryffinbit的思维殿堂">
+    <meta itemprop="description" content="一个网络安全网站">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2020/11/30/kali%E5%AE%89%E8%A3%85gmpy2/"  itemprop="url">
+        kali安装gmpy2
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        kali-安装gmpy2安装环境gcc 原版本9.2
+安装gmp包：12345wget [https://gmplib.org/download/gmp/gmp-6.2.0.tar.xz](https://gmplib.org/download/gmp/gmp-6.2.0.tar.xz)tar xvf gmp-6.2.0.tar.xzcd gmp-6.2.0./configure --pre...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2020-11-30T20:00:50+08:00">2020-11-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/" itemprop="url"><span itemprop="name">密码学</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2020/11/30/kali%E5%AE%89%E8%A3%85gmpy2/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://gryffinbit.top/2020/11/14/图片拼接/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Gryffinbit的思维殿堂">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Gryffinbit的思维殿堂">
+    <meta itemprop="description" content="一个网络安全网站">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2020/11/14/%E5%9B%BE%E7%89%87%E6%8B%BC%E6%8E%A5/"  itemprop="url">
+        图片拼接
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        1234567891011121314151617181920212223242526272829303132333435import PIL.Image as Imageimport os IMAGES_PATH = &#x27;./就这?/&#x27;  # 图片集地址IMAGES_FORMAT = [&#x27;.jpg&#x27;, &#x27;.JPG&#x27;, &#x27;p...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2020-11-14T21:03:28+08:00">2020-11-14</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/Misc/">Misc</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/Misc/" itemprop="url"><span itemprop="name">Misc</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2020/11/14/%E5%9B%BE%E7%89%87%E6%8B%BC%E6%8E%A5/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://gryffinbit.top/2020/11/14/xtime算法/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Gryffinbit的思维殿堂">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Gryffinbit的思维殿堂">
+    <meta itemprop="description" content="一个网络安全网站">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2020/11/14/xtime%E7%AE%97%E6%B3%95/"  itemprop="url">
         xtime算法
       </a>
     </h2>
@@ -2639,7 +3003,7 @@ C(x)&#x3D;A(x)B(x) mod P(x)二进制数转换为多项式:A(a7,a6,a5,a4,a3,a2,a1
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2020-11-15T03:57:37+08:00">2020-11-15</time>
+        <time itemprop="dateCreated datePublished" datetime="2020-11-14T19:57:37+08:00">2020-11-14</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
@@ -2652,7 +3016,7 @@ C(x)&#x3D;A(x)B(x) mod P(x)二进制数转换为多项式:A(a7,a6,a5,a4,a3,a2,a1
       </div>
       
         <div>
-          <a class='readmore' href='/2020/11/15/xtime%E7%AE%97%E6%B3%95/' itemprop="url">
+          <a class='readmore' href='/2020/11/14/xtime%E7%AE%97%E6%B3%95/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2668,7 +3032,7 @@ C(x)&#x3D;A(x)B(x) mod P(x)二进制数转换为多项式:A(a7,a6,a5,a4,a3,a2,a1
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://gryffinbit.top/2020/11/15/SHA-1/">
+  <link itemprop="mainEntityOfPage" href="https://gryffinbit.top/2020/11/14/SHA-1/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Gryffinbit的思维殿堂">
   </span>
@@ -2686,7 +3050,7 @@ C(x)&#x3D;A(x)B(x) mod P(x)二进制数转换为多项式:A(a7,a6,a5,a4,a3,a2,a1
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2020/11/15/SHA-1/"  itemprop="url">
+      <a href="/2020/11/14/SHA-1/"  itemprop="url">
         SHA-1
       </a>
     </h2>
@@ -2712,7 +3076,7 @@ C(x)&#x3D;A(x)B(x) mod P(x)二进制数转换为多项式:A(a7,a6,a5,a4,a3,a2,a1
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2020-11-15T03:44:46+08:00">2020-11-15</time>
+        <time itemprop="dateCreated datePublished" datetime="2020-11-14T19:44:46+08:00">2020-11-14</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
@@ -2725,7 +3089,7 @@ C(x)&#x3D;A(x)B(x) mod P(x)二进制数转换为多项式:A(a7,a6,a5,a4,a3,a2,a1
       </div>
       
         <div>
-          <a class='readmore' href='/2020/11/15/SHA-1/' itemprop="url">
+          <a class='readmore' href='/2020/11/14/SHA-1/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2741,7 +3105,7 @@ C(x)&#x3D;A(x)B(x) mod P(x)二进制数转换为多项式:A(a7,a6,a5,a4,a3,a2,a1
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://gryffinbit.top/2020/11/15/RSA实验/">
+  <link itemprop="mainEntityOfPage" href="https://gryffinbit.top/2020/11/14/RSA实验/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Gryffinbit的思维殿堂">
   </span>
@@ -2759,7 +3123,7 @@ C(x)&#x3D;A(x)B(x) mod P(x)二进制数转换为多项式:A(a7,a6,a5,a4,a3,a2,a1
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2020/11/15/RSA%E5%AE%9E%E9%AA%8C/"  itemprop="url">
+      <a href="/2020/11/14/RSA%E5%AE%9E%E9%AA%8C/"  itemprop="url">
         RSA实验
       </a>
     </h2>
@@ -2784,7 +3148,7 @@ C(x)&#x3D;A(x)B(x) mod P(x)二进制数转换为多项式:A(a7,a6,a5,a4,a3,a2,a1
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2020-11-15T03:32:14+08:00">2020-11-15</time>
+        <time itemprop="dateCreated datePublished" datetime="2020-11-14T19:32:14+08:00">2020-11-14</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/%E5%AE%9E%E9%AA%8C/">实验</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AE%9E%E9%AA%8C/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
@@ -2801,7 +3165,7 @@ C(x)&#x3D;A(x)B(x) mod P(x)二进制数转换为多项式:A(a7,a6,a5,a4,a3,a2,a1
       </div>
       
         <div>
-          <a class='readmore' href='/2020/11/15/RSA%E5%AE%9E%E9%AA%8C/' itemprop="url">
+          <a class='readmore' href='/2020/11/14/RSA%E5%AE%9E%E9%AA%8C/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2817,7 +3181,7 @@ C(x)&#x3D;A(x)B(x) mod P(x)二进制数转换为多项式:A(a7,a6,a5,a4,a3,a2,a1
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://gryffinbit.top/2020/11/15/AES实验/">
+  <link itemprop="mainEntityOfPage" href="https://gryffinbit.top/2020/11/14/AES实验/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Gryffinbit的思维殿堂">
   </span>
@@ -2835,7 +3199,7 @@ C(x)&#x3D;A(x)B(x) mod P(x)二进制数转换为多项式:A(a7,a6,a5,a4,a3,a2,a1
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2020/11/15/AES%E5%AE%9E%E9%AA%8C/"  itemprop="url">
+      <a href="/2020/11/14/AES%E5%AE%9E%E9%AA%8C/"  itemprop="url">
         AES实验报告
       </a>
     </h2>
@@ -2854,7 +3218,7 @@ C(x)&#x3D;A(x)B(x) mod P(x)二进制数转换为多项式:A(a7,a6,a5,a4,a3,a2,a1
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2020-11-15T03:24:19+08:00">2020-11-15</time>
+        <time itemprop="dateCreated datePublished" datetime="2020-11-14T19:24:19+08:00">2020-11-14</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/%E5%AE%9E%E9%AA%8C/">实验</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AE%9E%E9%AA%8C/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
@@ -2871,360 +3235,7 @@ C(x)&#x3D;A(x)B(x) mod P(x)二进制数转换为多项式:A(a7,a6,a5,a4,a3,a2,a1
       </div>
       
         <div>
-          <a class='readmore' href='/2020/11/15/AES%E5%AE%9E%E9%AA%8C/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://gryffinbit.top/2020/11/15/DES实验/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Gryffinbit的思维殿堂">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Gryffinbit的思维殿堂">
-    <meta itemprop="description" content="一个网络安全网站">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2020/11/15/DES%E5%AE%9E%E9%AA%8C/"  itemprop="url">
-        DES实验报告
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        DES实验报告一、实验题目DES加密算法
-
-二、实验目的和要求通过实验，掌握DES密码的程序实现，熟悉比特串的操作，矩阵变换，提高C++程序设计能力。
-编写 DES 密码的加密解密程序，运行并验证。 (1) 输入 64 比特明文和密文，利用 DES 密码对其加密并输出密文。 (2) 输入 DES 加密的 64 比特密文和密钥，对其进行解密。 (3) 记录调试和验证过程，完成实验报告。
-
-三、...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2020-11-15T02:53:19+08:00">2020-11-15</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AE%9E%E9%AA%8C/">实验</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AE%9E%E9%AA%8C/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%AE%9E%E9%AA%8C/" itemprop="url"><span itemprop="name">实验</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%AE%9E%E9%AA%8C/%E5%AF%86%E7%A0%81%E5%AD%A6/" itemprop="url"><span itemprop="name">密码学</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/15/DES%E5%AE%9E%E9%AA%8C/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://gryffinbit.top/2020/11/15/OpenCv/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Gryffinbit的思维殿堂">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Gryffinbit的思维殿堂">
-    <meta itemprop="description" content="一个网络安全网站">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2020/11/15/OpenCv/"  itemprop="url">
-        OpenCv
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        macOS下opencv的安装。在CLion上配置使用OpenCV （C++）安装opencv
-brew的安装
-1/usr/bin/ruby -e &quot;$(curl -fsSL &lt;https://raw.githubusercontent.com/Homebrew/install/master/install&gt;)&quot;
-
-brew安装opencv
-1brew ins...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2020-11-15T01:47:14+08:00">2020-11-15</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Misc/">Misc</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Misc/" itemprop="url"><span itemprop="name">Misc</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/15/OpenCv/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://gryffinbit.top/2020/11/15/CRC校验/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Gryffinbit的思维殿堂">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Gryffinbit的思维殿堂">
-    <meta itemprop="description" content="一个网络安全网站">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2020/11/15/CRC%E6%A0%A1%E9%AA%8C/"  itemprop="url">
-        CRC校验
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        CRC检验错误pngcheck -v 分析png格式，报错CRC ERROR
-对一张正常的图片，通过修改其宽度或者高度隐藏信息，使计算出的CRC校验码与原图的CRC校验码不一致；windows的图片查看器会忽略错误的CRC校验码，因此会显示图片，但此时的图片已经是修改过的，所以会有显示不全或扭曲等情况，借此可以隐藏信息。
-而Linux、macOS下的图片查看器不会忽略错误的CRC校验码，因此...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2020-11-15T01:39:10+08:00">2020-11-15</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Misc/">Misc</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Misc/" itemprop="url"><span itemprop="name">Misc</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/15/CRC%E6%A0%A1%E9%AA%8C/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://gryffinbit.top/2020/11/15/Jpegsnoop/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Gryffinbit的思维殿堂">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Gryffinbit的思维殿堂">
-    <meta itemprop="description" content="一个网络安全网站">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2020/11/15/Jpegsnoop/"  itemprop="url">
-        Jpegsnoop
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        
-github 项目链接
-https://github.com/ImpulseAdventure/JPEGsnoop
-
-
-可参考jpeg的格式详解
-
-JPEG原理简介文件格式
-JPEG文件大体上可以分成两个部分：标记码和压缩数据
-标记码：
-由两个字节构成，第一个字节是固定值0xFF，后一个字节则根据不同意义有不同数值
-在每个标记码之前可以添加数目不限的无意义的0xFF填充，连续的多个0xFF...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2020-11-15T01:25:27+08:00">2020-11-15</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Misc/">Misc</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Misc/" itemprop="url"><span itemprop="name">Misc</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/15/Jpegsnoop/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://gryffinbit.top/2020/11/15/stegdetect/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Gryffinbit的思维殿堂">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Gryffinbit的思维殿堂">
-    <meta itemprop="description" content="一个网络安全网站">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2020/11/15/stegdetect/"  itemprop="url">
-        stegdetect
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        
-在kali下
-
-
-github项目
-https://github.com/abeluck/stegdetect
-
-原理简介文件格式
-JPEG文件大体上可以分成两个部分：标记码和压缩数据
-标记码：
-由两个字节构成，第一个字节是固定值0xFF，后一个字节则根据不同意义有不同数值
-在每个标记码之前可以添加数目不限的无意义的0xFF填充，连续的多个0xFF可以被理解为一个0xFF，并表示一个标记码...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2020-11-15T01:18:25+08:00">2020-11-15</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Misc/">Misc</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Misc/" itemprop="url"><span itemprop="name">Misc</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/15/stegdetect/' itemprop="url">
+          <a class='readmore' href='/2020/11/14/AES%E5%AE%9E%E9%AA%8C/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3245,7 +3256,7 @@ JPEG文件大体上可以分成两个部分：标记码和压缩数据
       <div class="prev-next">
         
         <p class="current">
-          1 / 2
+          1 / 3
         </p>
         
           <a class="next" rel="next" href="/archives/2020/11/page/2/">
@@ -4004,7 +4015,7 @@ JPEG文件大体上可以分成两个部分：标记码和压缩数据
 
 
   <script>
-  let imgs = ["https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071510254.JPG","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071524050.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071525889.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071509129.JPG","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071510106.JPG","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071525544.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071524967.jpg","https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/202211111636871.jpg"];
+  let imgs = ["https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071524050.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071510106.JPG","https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/202211111636871.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071524967.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071525889.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071509129.JPG","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071525544.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071510254.JPG"];
   let index = 0;
   let IntervalParallax = null;
 
