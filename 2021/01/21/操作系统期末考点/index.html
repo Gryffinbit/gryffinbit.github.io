@@ -1,0 +1,4020 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/#5.8.0'>
+  <meta name="generator" content="Hexo 7.3.0">
+  <meta name="Volantis" content="5.8.0">
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+  <link rel="canonical" href="https://gryffinbit.top/2021/01/21/操作系统期末考点/"/>
+  <!-- 渲染优化 -->
+    <meta http-equiv='x-dns-prefetch-control' content='on' />
+      <link rel='dns-prefetch' href='https://unpkg.com'>
+      <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Content-Security-Policy" content=" default-src 'self' https:; block-all-mixed-content; base-uri 'self' https:; form-action 'self' https:; worker-src 'self' https:; connect-src 'self' https: *; img-src 'self' data: https: *; media-src 'self' https: *; font-src 'self' data: https: *; frame-src 'self' https: *; manifest-src 'self' https: *; child-src https:; script-src 'self' https: 'unsafe-inline' *; style-src 'self' https: 'unsafe-inline' *; ">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <!-- import head_begin begin -->
+  <!-- import head_begin end -->
+  <!-- Custom Files headBegin begin-->
+  
+  <!-- Custom Files headBegin end-->
+  <!-- front-matter head_begin begin -->
+  <!-- front-matter head_begin end -->
+    <link rel="shortcut icon" type='image/x-icon' href="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/favicon.png">
+  <link rel="preload" href="/css/style.css" as="style">
+  <link rel="preload" href="https://gcore.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+<link rel="preload" href="https://gcore.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+
+  <!-- feed -->
+  <!-- 页面元数据 -->
+  <title>操作系统期末考点 - Gryffinbit的思维殿堂</title>
+  <meta name="keywords" content="考点,null">
+  <meta desc name="description" content="一个网络安全网站 - Gryffinbit - Gryffinbit的思维殿堂">
+  
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统期末考点">
+<meta property="og:url" content="https://gryffinbit.top/2021/01/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/index.html">
+<meta property="og:site_name" content="Gryffinbit的思维殿堂">
+<meta property="og:description" content="考卷选择题 某计算机系统中有8台打印机，由K个进程竞争使用，每个进程最多需要3台打印机，该系统发生死锁的K的最小值是_____C_________ 。 A. 2  B. 3 C.4 D.5  操作系统采用缓冲技术，能够减少对CPU的_____A______次数，从而提高资源的利用率。 A.中断              B.访问 C.控制              D.依赖  索引式（随机）文件组">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2021-01-21T15:10:00.000Z">
+<meta property="article:modified_time" content="2024-11-12T07:00:20.000Z">
+<meta property="article:author" content="Gryffinbit">
+<meta property="article:tag" content="考点">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+  <style>
+    /* 首屏样式 */
+    #safearea {
+  display: none;
+}
+:root {
+  --color-site-body: #f4f4f4;
+  --color-site-bg: #f4f4f4;
+  --color-site-inner: #fff;
+  --color-site-footer: #666;
+  --color-card: #fff;
+  --color-text: #444;
+  --color-block: #f6f6f6;
+  --color-inlinecode: #c74f00;
+  --color-codeblock: #fff7ea;
+  --color-h1: #3a3a3a;
+  --color-h2: #3a3a3a;
+  --color-h3: #333;
+  --color-h4: #444;
+  --color-h5: #555;
+  --color-h6: #666;
+  --color-p: #444;
+  --color-list: #666;
+  --color-list-hl: #30ad91;
+  --color-meta: #888;
+  --color-read-bkg: #e0d8c8;
+  --color-read-post: #f8f1e2;
+  --color-copyright-bkg: #f5f5f5;
+}
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+*::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+*::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: #3dd9b6;
+  cursor: pointer;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #ff5722;
+}
+html {
+  color: var(--color-text);
+  width: 100%;
+  height: 100%;
+  font-family: UbuntuMono, "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  font-size: 16px;
+}
+html >::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+html >::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+html >::-webkit-scrollbar-thumb {
+  background: #54b5a0 linear-gradient(45deg, rgba(255,255,255,0.4) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.4) 75%, transparent 75%, transparent);
+  cursor: pointer;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+html >::-webkit-scrollbar-thumb:hover {
+  background: #54b5a0 linear-gradient(45deg, rgba(255,255,255,0.4) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.4) 75%, transparent 75%, transparent);
+}
+body {
+  background-color: var(--color-site-body);
+  text-rendering: optimizelegibility;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+body.modal-active {
+  overflow: hidden;
+}
+@media screen and (max-width: 680px) {
+  body.modal-active {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+a {
+  color: #2092ec;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+a:hover {
+  color: #ff5722;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+ul,
+ol {
+  padding-left: 0;
+}
+ul li,
+ol li {
+  list-style: none;
+}
+header {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+}
+img {
+  border: 0;
+  background: none;
+  max-width: 100%;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  height: 0;
+  border: 0;
+  border-radius: 1px;
+  -webkit-border-radius: 1px;
+  border-bottom: 1px solid rgba(68,68,68,0.1);
+}
+button,
+input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+button {
+  overflow: visible;
+  text-transform: none;
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+@supports (backdrop-filter: blur(20px)) {
+  .blur {
+    background: rgba(255,255,255,0.9) !important;
+    backdrop-filter: saturate(200%) blur(20px);
+  }
+}
+.shadow {
+  box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+}
+.shadow.floatable {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+.shadow.floatable:hover {
+  box-shadow: 0 2px 4px 0px rgba(0,0,0,0.1), 0 4px 8px 0px rgba(0,0,0,0.1), 0 8px 16px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 2px 4px 0px rgba(0,0,0,0.1), 0 4px 8px 0px rgba(0,0,0,0.1), 0 8px 16px 0px rgba(0,0,0,0.1);
+}
+#l_cover {
+  min-height: 64px;
+}
+.cover-wrapper {
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  height: 100vh;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -khtml-flex-wrap: nowrap;
+  -moz-flex-wrap: nowrap;
+  -o-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  color: var(--color-site-inner);
+  padding: 0 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: -100px;
+}
+.cover-wrapper .cover-body {
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.cover-wrapper#full {
+  height: calc(100vh + 100px);
+  padding-bottom: 100px;
+}
+.cover-wrapper#half {
+  max-height: 640px;
+  min-height: 400px;
+  height: calc(36vh - 64px + 200px);
+}
+.cover-wrapper #scroll-down {
+  width: 100%;
+  height: 64px;
+  position: absolute;
+  bottom: 100px;
+  text-align: center;
+  cursor: pointer;
+}
+.cover-wrapper #scroll-down .scroll-down-effects {
+  color: #fff;
+  font-size: 24px;
+  line-height: 64px;
+  position: absolute;
+  width: 24px;
+  left: calc(50% - 12px);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  animation: scroll-down-effect 1.5s infinite;
+  -webkit-animation: scroll-down-effect 1.5s infinite;
+  -khtml-animation: scroll-down-effect 1.5s infinite;
+  -moz-animation: scroll-down-effect 1.5s infinite;
+  -o-animation: scroll-down-effect 1.5s infinite;
+  -ms-animation: scroll-down-effect 1.5s infinite;
+}
+@-moz-keyframes scroll-down-effect {
+  0% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+  50% {
+    top: -16px;
+    opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -moz-opacity: 0.4;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-webkit-keyframes scroll-down-effect {
+  0% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+  50% {
+    top: -16px;
+    opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -moz-opacity: 0.4;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-o-keyframes scroll-down-effect {
+  0% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+  50% {
+    top: -16px;
+    opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -moz-opacity: 0.4;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@keyframes scroll-down-effect {
+  0% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+  50% {
+    top: -16px;
+    opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -moz-opacity: 0.4;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+.cover-wrapper .cover-body {
+  margin-top: 64px;
+  margin-bottom: 100px;
+}
+.cover-wrapper .cover-body,
+.cover-wrapper .cover-body .top,
+.cover-wrapper .cover-body .bottom {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -khtml-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  -ms-justify-content: center;
+  max-width: 100%;
+}
+.cover-wrapper .cover-body .bottom {
+  margin-top: 32px;
+}
+.cover-wrapper .cover-body .title {
+  font-family: "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Helvetica, monospace;
+  font-size: 3.125rem;
+  line-height: 1.2;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+.cover-wrapper .cover-body .subtitle {
+  font-size: 20px;
+}
+.cover-wrapper .cover-body .logo {
+  max-height: 120px;
+  max-width: calc(100% - 4 * 16px);
+}
+@media screen and (min-height: 1024px) {
+  .cover-wrapper .cover-body .title {
+    font-size: 3rem;
+  }
+  .cover-wrapper .cover-body .subtitle {
+    font-size: 1.05rem;
+  }
+  .cover-wrapper .cover-body .logo {
+    max-height: 150px;
+  }
+}
+.cover-wrapper .cover-body .m_search {
+  position: relative;
+  max-width: calc(100% - 16px);
+  width: 320px;
+  vertical-align: middle;
+}
+.cover-wrapper .cover-body .m_search .form {
+  position: relative;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  width: 100%;
+}
+.cover-wrapper .cover-body .m_search .icon,
+.cover-wrapper .cover-body .m_search .input {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+.cover-wrapper .cover-body .m_search .icon {
+  position: absolute;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  line-height: 2.5rem;
+  width: 32px;
+  top: 0;
+  left: 5px;
+  color: rgba(68,68,68,0.75);
+}
+.cover-wrapper .cover-body .m_search .input {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  height: 2.5rem;
+  width: 100%;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  font-size: 0.875rem;
+  -webkit-appearance: none;
+  padding-left: 36px;
+  border-radius: 1.4rem;
+  -webkit-border-radius: 1.4rem;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+  border: none;
+  color: var(--color-text);
+}
+@media screen and (max-width: 500px) {
+  .cover-wrapper .cover-body .m_search .input {
+    padding-left: 36px;
+  }
+}
+.cover-wrapper .cover-body .m_search .input:hover {
+  background: rgba(255,255,255,0.8);
+}
+.cover-wrapper .cover-body .m_search .input:focus {
+  background: #fff;
+}
+.cover-wrapper .list-h {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -khtml-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  align-items: stretch;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.cover-wrapper .list-h a {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1 0;
+  -ms-flex: 1 0;
+  flex: 1 0;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  font-weight: 600;
+}
+.cover-wrapper .list-h a img {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  margin: 4px;
+  min-width: 40px;
+  max-width: 44px;
+}
+@media screen and (max-width: 768px) {
+  .cover-wrapper .list-h a img {
+    min-width: 36px;
+    max-width: 40px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .cover-wrapper .list-h a img {
+    margin: 2px 4px;
+    min-width: 32px;
+    max-width: 36px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .cover-wrapper .list-h a img {
+    min-width: 28px;
+    max-width: 32px;
+  }
+}
+.cover-wrapper {
+  max-width: 100%;
+}
+.cover-wrapper.search .bottom .menu {
+  margin-top: 16px;
+}
+.cover-wrapper.search .bottom .menu .list-h a {
+  white-space: nowrap;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  align-items: baseline;
+  padding: 2px;
+  margin: 4px;
+  color: var(--color-site-inner);
+  opacity: 0.75;
+  -webkit-opacity: 0.75;
+  -moz-opacity: 0.75;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  border-bottom: 2px solid transparent;
+}
+.cover-wrapper.search .bottom .menu .list-h a i {
+  margin-right: 4px;
+}
+.cover-wrapper.search .bottom .menu .list-h a p {
+  font-size: 0.9375rem;
+}
+.cover-wrapper.search .bottom .menu .list-h a:hover,
+.cover-wrapper.search .bottom .menu .list-h a.active,
+.cover-wrapper.search .bottom .menu .list-h a:active {
+  opacity: 1;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  border-bottom: 2px solid var(--color-site-inner);
+}
+.cover-wrapper.dock .menu,
+.cover-wrapper.featured .menu,
+.cover-wrapper.focus .menu {
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+}
+.cover-wrapper.dock .menu .list-h a,
+.cover-wrapper.featured .menu .list-h a,
+.cover-wrapper.focus .menu .list-h a {
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  line-height: 24px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-bottom: none;
+  text-align: center;
+  align-content: flex-end;
+  color: rgba(68,68,68,0.7);
+  font-size: 1.5rem;
+}
+@media screen and (max-width: 500px) {
+  .cover-wrapper.dock .menu .list-h a,
+  .cover-wrapper.featured .menu .list-h a,
+  .cover-wrapper.focus .menu .list-h a {
+    padding: 12px 8px;
+  }
+}
+.cover-wrapper.dock .menu .list-h a i,
+.cover-wrapper.featured .menu .list-h a i,
+.cover-wrapper.focus .menu .list-h a i {
+  margin: 8px;
+}
+.cover-wrapper.dock .menu .list-h a p,
+.cover-wrapper.featured .menu .list-h a p,
+.cover-wrapper.focus .menu .list-h a p {
+  font-size: 0.875rem;
+}
+.cover-wrapper.dock .menu .list-h a.active,
+.cover-wrapper.featured .menu .list-h a.active,
+.cover-wrapper.focus .menu .list-h a.active {
+  background: var(--color-card);
+  backdrop-filter: none;
+}
+.cover-wrapper.dock .menu .list-h a.active i,
+.cover-wrapper.featured .menu .list-h a.active i,
+.cover-wrapper.focus .menu .list-h a.active i,
+.cover-wrapper.dock .menu .list-h a.active i+p,
+.cover-wrapper.featured .menu .list-h a.active i+p,
+.cover-wrapper.focus .menu .list-h a.active i+p {
+  color: #3dd9b6;
+}
+.cover-wrapper.dock .menu .list-h a.active img+p,
+.cover-wrapper.featured .menu .list-h a.active img+p,
+.cover-wrapper.focus .menu .list-h a.active img+p {
+  color: var(--color-text);
+}
+.cover-wrapper.dock .menu .list-h a:hover,
+.cover-wrapper.featured .menu .list-h a:hover,
+.cover-wrapper.focus .menu .list-h a:hover {
+  background: var(--color-card);
+}
+.cover-wrapper.dock .top {
+  margin-bottom: 48px;
+}
+.cover-wrapper.dock .menu {
+  background: rgba(255,255,255,0.5);
+  position: absolute;
+  bottom: 0;
+  max-width: 100%;
+}
+.cover-wrapper.dock .menu .list-h {
+  flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -khtml-flex-wrap: nowrap;
+  -moz-flex-wrap: nowrap;
+  -o-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  margin: 4px;
+}
+.cover-wrapper.dock .menu .list-h a+a {
+  margin-left: 4px;
+}
+@media screen and (max-width: 500px) {
+  .cover-wrapper.dock .menu .list-h {
+    overflow-x: scroll;
+  }
+  .cover-wrapper.dock .menu .list-h::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+  }
+  .cover-wrapper.dock .menu .list-h::-webkit-scrollbar-track-piece {
+    background: transparent;
+  }
+  .cover-wrapper.dock .menu .list-h::-webkit-scrollbar-thumb {
+    background: #3dd9b6;
+    cursor: pointer;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+  }
+  .cover-wrapper.dock .menu .list-h::-webkit-scrollbar-thumb:hover {
+    background: #ff5722;
+  }
+}
+@supports (backdrop-filter: blur(20px)) {
+  .cover-wrapper.dock .menu {
+    background: rgba(255,255,255,0.5);
+    backdrop-filter: saturate(200%) blur(20px);
+  }
+}
+.cover-wrapper #parallax-window {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+.parallax-mirror {
+  animation-delay: 0s;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  animation-name: fadeIn;
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@font-face {
+  font-family: 'UbuntuMono';
+  src: url("https://gcore.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf");
+  font-weight: 'normal';
+  font-style: 'normal';
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Varela Round';
+  src: url("https://gcore.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf");
+  font-weight: 'normal';
+  font-style: 'normal';
+  font-display: swap;
+}
+.l_header {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  width: 100%;
+  height: 64px;
+  background: var(--color-card);
+  box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+}
+.l_header.auto {
+  transition: opacity 0.4s ease;
+  -webkit-transition: opacity 0.4s ease;
+  -khtml-transition: opacity 0.4s ease;
+  -moz-transition: opacity 0.4s ease;
+  -o-transition: opacity 0.4s ease;
+  -ms-transition: opacity 0.4s ease;
+  visibility: hidden;
+}
+.l_header.auto.show {
+  opacity: 1 !important;
+  -webkit-opacity: 1 !important;
+  -moz-opacity: 1 !important;
+  visibility: visible;
+}
+.l_header .container {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.l_header #wrapper {
+  height: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.l_header #wrapper .nav-main,
+.l_header #wrapper .nav-sub {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -khtml-flex-wrap: nowrap;
+  -moz-flex-wrap: nowrap;
+  -o-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -khtml-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -o-justify-content: space-between;
+  -ms-justify-content: space-between;
+  align-items: center;
+}
+.l_header #wrapper .nav-main {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+.l_header #wrapper.sub .nav-main {
+  transform: translateY(-64px);
+  -webkit-transform: translateY(-64px);
+  -khtml-transform: translateY(-64px);
+  -moz-transform: translateY(-64px);
+  -o-transform: translateY(-64px);
+  -ms-transform: translateY(-64px);
+}
+.l_header #wrapper .nav-sub {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  opacity: 0;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  height: 64px;
+  width: calc(100% - 2 * 16px);
+  position: absolute;
+}
+.l_header #wrapper .nav-sub ::-webkit-scrollbar {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+}
+@media screen and (min-width: 2048px) {
+  .l_header #wrapper .nav-sub {
+    max-width: 55vw;
+    margin: auto;
+  }
+}
+.l_header #wrapper.sub .nav-sub {
+  opacity: 1;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+}
+.l_header #wrapper .title {
+  position: relative;
+  color: var(--color-text);
+  padding-left: 24px;
+  max-height: 64px;
+}
+.l_header #wrapper .nav-main .title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+  line-height: 64px;
+  padding: 0 24px;
+  font-size: 1.25rem;
+  font-family: "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Helvetica, monospace;
+}
+.l_header #wrapper .nav-main .title img {
+  height: 64px;
+}
+.l_header .nav-sub {
+  max-width: 1080px;
+  margin: auto;
+}
+.l_header .nav-sub .title {
+  font-weight: bold;
+  font-family: UbuntuMono, "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  line-height: 1.2;
+  max-height: 64px;
+  white-space: normal;
+  flex-shrink: 1;
+}
+.l_header .switcher {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  line-height: 64px;
+  align-items: center;
+}
+.l_header .switcher .s-toc {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .l_header .switcher .s-toc {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: -ms-flexbox /* TWEENER - IE 10 */;
+    display: -webkit-flex /* NEW - Chrome */;
+    display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+    display: flex;
+  }
+}
+.l_header .switcher >li {
+  height: 48px;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  margin: 2px;
+}
+@media screen and (max-width: 500px) {
+  .l_header .switcher >li {
+    margin: 0 1px;
+    height: 48px;
+  }
+}
+.l_header .switcher >li >a {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -khtml-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  -ms-justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0.85em 1.1em;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  border: none;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  color: #3dd9b6;
+}
+.l_header .switcher >li >a:hover {
+  border: none;
+}
+.l_header .switcher >li >a.active,
+.l_header .switcher >li >a:active {
+  border: none;
+  background: var(--color-site-bg);
+}
+@media screen and (max-width: 500px) {
+  .l_header .switcher >li >a {
+    width: 36px;
+    height: 48px;
+  }
+}
+.l_header .nav-sub .switcher {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+}
+.l_header .m_search {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  height: 64px;
+  width: 240px;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+@media screen and (max-width: 1024px) {
+  .l_header .m_search {
+    width: 44px;
+    min-width: 44px;
+  }
+  .l_header .m_search input::placeholder {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+  }
+  .l_header .m_search:hover {
+    width: 240px;
+  }
+  .l_header .m_search:hover input::placeholder {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@media screen and (min-width: 500px) {
+  .l_header .m_search:hover .input {
+    width: 100%;
+  }
+  .l_header .m_search:hover .input::placeholder {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@media screen and (max-width: 500px) {
+  .l_header .m_search {
+    min-width: 0;
+  }
+  .l_header .m_search input::placeholder {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+.l_header .m_search .form {
+  position: relative;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.l_header .m_search .icon {
+  position: absolute;
+  width: 36px;
+  left: 5px;
+  color: var(--color-meta);
+}
+@media screen and (max-width: 500px) {
+  .l_header .m_search .icon {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: none;
+  }
+}
+.l_header .m_search .input {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  line-height: 1.3;
+  width: 100%;
+  color: var(--color-text);
+  background: #fafafa;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding-left: 40px;
+  font-size: 0.875rem;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border: none;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+@media screen and (min-width: 500px) {
+  .l_header .m_search .input:focus {
+    box-shadow: 0 4px 8px 0px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0 4px 8px 0px rgba(0,0,0,0.1);
+  }
+}
+@media screen and (max-width: 500px) {
+  .l_header .m_search .input {
+    background: var(--color-block);
+    padding-left: 8px;
+    border: none;
+  }
+  .l_header .m_search .input:hover,
+  .l_header .m_search .input:focus {
+    border: none;
+  }
+}
+@media (max-width: 500px) {
+  .l_header .m_search {
+    left: 0;
+    width: 0;
+    overflow: hidden;
+    position: absolute;
+    background: #fff;
+    transition: all 0.28s ease;
+    -webkit-transition: all 0.28s ease;
+    -khtml-transition: all 0.28s ease;
+    -moz-transition: all 0.28s ease;
+    -o-transition: all 0.28s ease;
+    -ms-transition: all 0.28s ease;
+  }
+  .l_header .m_search .input {
+    border-radius: 32px;
+    -webkit-border-radius: 32px;
+    margin-left: 16px;
+    padding-left: 16px;
+  }
+  .l_header.z_search-open .m_search {
+    width: 100%;
+  }
+  .l_header.z_search-open .m_search .input {
+    width: calc(100% - 120px);
+  }
+}
+ul.m-pc >li>a {
+  color: inherit;
+  border-bottom: 2px solid transparent;
+}
+ul.m-pc >li>a:active,
+ul.m-pc >li>a.active {
+  border-bottom: 2px solid #3dd9b6;
+}
+ul.m-pc li:hover >ul.list-v,
+ul.list-v li:hover >ul.list-v {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+}
+ul.nav-list-h {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  align-items: stretch;
+}
+ul.nav-list-h>li {
+  position: relative;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -khtml-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  -ms-justify-content: center;
+  height: 100%;
+  line-height: 2.4;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+ul.nav-list-h>li >a {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 600;
+}
+ul.list-v {
+  z-index: 1;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  position: absolute;
+  background: var(--color-card);
+  box-shadow: 0 2px 4px 0px rgba(0,0,0,0.08), 0 4px 8px 0px rgba(0,0,0,0.08), 0 8px 16px 0px rgba(0,0,0,0.08);
+  -webkit-box-shadow: 0 2px 4px 0px rgba(0,0,0,0.08), 0 4px 8px 0px rgba(0,0,0,0.08), 0 8px 16px 0px rgba(0,0,0,0.08);
+  margin-top: -6px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  padding: 8px 0;
+}
+ul.list-v.show {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+}
+ul.list-v hr {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+ul.list-v >li {
+  white-space: nowrap;
+  word-break: keep-all;
+}
+ul.list-v >li.header {
+  font-size: 0.78125rem;
+  font-weight: bold;
+  line-height: 2em;
+  color: var(--color-meta);
+  margin: 8px 16px 4px;
+}
+ul.list-v >li.header i {
+  margin-right: 8px;
+}
+ul.list-v >li ul {
+  margin-left: 0;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  margin-top: -40px;
+}
+ul.list-v .aplayer-container {
+  min-height: 64px;
+  padding: 6px 16px;
+}
+ul.list-v >li>a {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  color: var(--color-list);
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 36px;
+  padding: 0 20px 0 16px;
+  text-overflow: ellipsis;
+  margin: 0 4px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+@media screen and (max-width: 1024px) {
+  ul.list-v >li>a {
+    line-height: 40px;
+  }
+}
+ul.list-v >li>a >i {
+  margin-right: 8px;
+}
+ul.list-v >li>a:active,
+ul.list-v >li>a.active {
+  color: var(--color-list-hl);
+}
+ul.list-v >li>a:hover {
+  color: var(--color-list-hl);
+  background: var(--color-site-bg);
+}
+.l_header .menu >ul>li>a {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  padding: 0 8px;
+}
+.l_header .menu >ul>li>a >i {
+  margin-right: 4px;
+}
+.l_header ul.nav-list-h>li {
+  color: var(--color-list);
+  line-height: 64px;
+}
+.l_header ul.nav-list-h>li >a {
+  max-height: 64px;
+  overflow: hidden;
+  color: inherit;
+}
+.l_header ul.nav-list-h>li >a:active,
+.l_header ul.nav-list-h>li >a.active {
+  color: #3dd9b6;
+}
+.l_header ul.nav-list-h>li:hover>a {
+  color: var(--color-list-hl);
+}
+.l_header ul.nav-list-h>li i.music {
+  animation: rotate-effect 1.5s linear infinite;
+  -webkit-animation: rotate-effect 1.5s linear infinite;
+  -khtml-animation: rotate-effect 1.5s linear infinite;
+  -moz-animation: rotate-effect 1.5s linear infinite;
+  -o-animation: rotate-effect 1.5s linear infinite;
+  -ms-animation: rotate-effect 1.5s linear infinite;
+}
+@-moz-keyframes rotate-effect {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -khtml-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -khtml-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -khtml-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rotate-effect {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -khtml-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -khtml-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -khtml-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+@-o-keyframes rotate-effect {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -khtml-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -khtml-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -khtml-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+@keyframes rotate-effect {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -khtml-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -khtml-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -khtml-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+.menu-phone li ul.list-v {
+  right: calc(100% - 0.5 * 16px);
+}
+.menu-phone li ul.list-v ul {
+  right: calc(100% - 0.5 * 16px);
+}
+#wrapper {
+  max-width: 1080px;
+  margin: auto;
+}
+@media screen and (min-width: 2048px) {
+  #wrapper {
+    max-width: 55vw;
+  }
+}
+#wrapper .menu {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  margin: 0 16px 0 0;
+}
+#wrapper .menu .list-v ul {
+  left: calc(100% - 0.5 * 16px);
+}
+.menu-phone {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  margin-top: 16px;
+  right: 8px;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+.menu-phone ul {
+  right: calc(100% - 0.5 * 16px);
+}
+@media screen and (max-width: 500px) {
+  .menu-phone {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: block;
+  }
+}
+.l_header {
+  max-width: 65vw;
+  left: calc((100% - 65vw) * 0.5);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+@media screen and (max-width: 2048px) {
+  .l_header {
+    max-width: 1112px;
+    left: calc((100% - 1112px) * 0.5);
+  }
+}
+@media screen and (max-width: 1112px) {
+  .l_header {
+    left: 0;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .l_header .container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .l_header #wrapper .nav-main .title {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .l_header #wrapper .nav-sub {
+    width: 100%;
+  }
+  .l_header #wrapper .nav-sub .title {
+    overflow-y: scroll;
+    margin-top: 2px;
+    padding: 8px 16px;
+  }
+  .l_header #wrapper .switcher {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: -ms-flexbox /* TWEENER - IE 10 */;
+    display: -webkit-flex /* NEW - Chrome */;
+    display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+    display: flex;
+    margin-right: 8px;
+  }
+  .l_header .menu {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  .list-v li {
+    max-width: 270px;
+  }
+}
+#u-search {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 60px 20px;
+  z-index: 1001;
+}
+@media screen and (max-width: 680px) {
+  #u-search {
+    padding: 0px;
+  }
+}
+
+  </style>
+  <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
+  
+<script>
+if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
+    document.write(
+	'<style>'+
+		'html{'+
+			'overflow-x: hidden !important;'+
+			'overflow-y: hidden !important;'+
+		'}'+
+		'.kill-ie{'+
+			'text-align:center;'+
+			'height: 100%;'+
+			'margin-top: 15%;'+
+			'margin-bottom: 5500%;'+
+		'}'+
+    '.kill-t{'+
+      'font-size: 2rem;'+
+    '}'+
+    '.kill-c{'+
+      'font-size: 1.2rem;'+
+    '}'+
+		'#l_header,#l_body{'+
+			'display: none;'+
+		'}'+
+	'</style>'+
+    '<div class="kill-ie">'+
+        `<span class="kill-t"><b>抱歉，您的浏览器无法访问本站</b></span><br/>`+
+        `<span class="kill-c">微软已经于2016年终止了对 Internet Explorer (IE) 10 及更早版本的支持，<br/>继续使用存在极大的安全隐患，请使用当代主流的浏览器进行访问。</span><br/>`+
+        `<a target="_blank" rel="noopener" href="https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/"><strong>了解详情 ></strong></a>`+
+    '</div>');
+</script>
+
+
+<noscript>
+	<style>
+		html{
+			overflow-x: hidden !important;
+			overflow-y: hidden !important;
+		}
+		.kill-noscript{
+			text-align:center;
+			height: 100%;
+			margin-top: 15%;
+			margin-bottom: 5500%;
+		}
+    .kill-t{
+      font-size: 2rem;
+    }
+    .kill-c{
+      font-size: 1.2rem;
+    }
+		#l_header,#l_body{
+			display: none;
+		}
+	</style>
+    <div class="kill-noscript">
+        <span class="kill-t"><b>抱歉，您的浏览器无法访问本站</b></span><br/>
+        <span class="kill-c">本页面需要浏览器支持（启用）JavaScript</span><br/>
+        <a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=启用JavaScript"><strong>了解详情 ></strong></a>
+    </div>
+</noscript>
+
+
+  <script>
+  /************这个文件存放不需要重载的全局变量和全局函数*********/
+  window.volantis = {}; // volantis 全局变量
+  volantis.debug = "env"; // 调试模式
+  volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
+
+  volantis.GLOBAL_CONFIG ={
+    debug: "env",
+    cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
+    default: {"avatar":"https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/favicon.png","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
+    lastupdate: new Date(1755072275307),
+    sidebar: {
+      for_page: ["blogger","category","tagcloud","donate"],
+      for_post: ["toc"],
+      webinfo: {
+        lastupd: {
+          enable: true,
+          friendlyShow: true
+        },
+        runtime: {
+          data: "2019/10/01",
+          unit: "天"
+        }
+      }
+    },
+    plugins: {
+      message: {"enable":true,"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/css/iziToast.min.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/js/iziToast.min.js","icon":{"default":"fa-solid fa-info-circle light-blue","quection":"fa-solid fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fa-solid fa-play","pause":"fa-solid fa-pause"},"rightmenu":{"enable":true,"notice":true}},
+      fancybox: {"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.umd.js"},
+      
+      
+      
+    }
+  }
+
+  /******************** volantis.EventListener ********************************/
+  // 事件监听器 see: /source/js/app.js
+  volantis.EventListener = {}
+  // 这里存放pjax切换页面时将被移除的事件监听器
+  volantis.EventListener.list = []
+  //构造方法
+  function volantisEventListener(type, f, ele) {
+    this.type = type
+    this.f = f
+    this.ele = ele
+  }
+  // 移除事件监听器
+  volantis.EventListener.remove = () => {
+    volantis.EventListener.list.forEach(function (i) {
+      i.ele.removeEventListener(i.type, i.f, false)
+    })
+    volantis.EventListener.list = []
+  }
+  /******************** volantis.dom.$ ********************************/
+  // 注：这里没有选择器，也没有forEach一次只处理一个dom，这里重新封装主题常用的dom方法，返回的是dom对象，对象包含了以下方法，同时保留dom的原生API
+  function volantisDom(ele) {
+    if (!ele) ele = document.createElement("div")
+    this.ele = ele;
+    // ==============================================================
+    this.ele.find = (c) => {
+      let q = this.ele.querySelector(c)
+      if (q)
+        return new volantisDom(q)
+    }
+    // ==============================================================
+    this.ele.hasClass = (c) => {
+      return this.ele.className.match(new RegExp('(\\s|^)' + c + '(\\s|$)'));
+    }
+    this.ele.addClass = (c) => {
+      this.ele.classList.add(c);
+      return this.ele
+    }
+    this.ele.removeClass = (c) => {
+      this.ele.classList.remove(c);
+      return this.ele
+    }
+    this.ele.toggleClass = (c) => {
+      if (this.ele.hasClass(c)) {
+        this.ele.removeClass(c)
+      } else {
+        this.ele.addClass(c)
+      }
+      return this.ele
+    }
+    // ==============================================================
+    // 参数 r 为 true 表示pjax切换页面时事件监听器将被移除，false不移除
+    this.ele.on = (c, f, r = 1) => {
+      this.ele.addEventListener(c, f, false)
+      if (r) {
+        volantis.EventListener.list.push(new volantisEventListener(c, f, this.ele))
+      }
+      return this.ele
+    }
+    this.ele.click = (f, r) => {
+      this.ele.on("click", f, r)
+      return this.ele
+    }
+    this.ele.scroll = (f, r) => {
+      this.ele.on("scroll", f, r)
+      return this.ele
+    }
+    // ==============================================================
+    this.ele.html = (c) => {
+      // if(c=== undefined){
+      //   return this.ele.innerHTML
+      // }else{
+      this.ele.innerHTML = c
+      return this.ele
+      // }
+    }
+    // ==============================================================
+    this.ele.hide = (c) => {
+      this.ele.style.display = "none"
+      return this.ele
+    }
+    this.ele.show = (c) => {
+      this.ele.style.display = "block"
+      return this.ele
+    }
+    // ==============================================================
+    return this.ele
+  }
+  volantis.dom.$ = (ele) => {
+    return !!ele ? new volantisDom(ele) : null;
+  }
+  /******************** RunItem ********************************/
+  function RunItem() {
+    this.list = []; // 存放回调函数
+    this.start = () => {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].run();
+      }
+    };
+    this.push = (fn, name, setRequestAnimationFrame = true) => {
+      let myfn = fn
+      if (setRequestAnimationFrame) {
+        myfn = ()=>{
+          volantis.requestAnimationFrame(fn)
+        }
+      }
+      var f = new Item(myfn, name);
+      this.list.push(f);
+    };
+    this.remove = (name) =>{
+      for (let index = 0; index < this.list.length; index++) {
+        const e = this.list[index];
+        if (e.name == name) {
+          this.list.splice(index,1);
+        }
+      }
+    }
+    // 构造一个可以run的对象
+    function Item(fn, name) {
+      // 函数名称
+      this.name = name || fn.name;
+      // run方法
+      this.run = () => {
+        try {
+          fn()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+  }
+  /******************** Pjax ********************************/
+  // /layout/_plugins/pjax/index.ejs
+  // volantis.pjax.send(callBack[,"callBackName"]) 传入pjax:send回调函数
+  // volantis.pjax.push(callBack[,"callBackName"]) 传入pjax:complete回调函数
+  // volantis.pjax.error(callBack[,"callBackName"]) 传入pjax:error回调函数
+  volantis.pjax = {};
+  volantis.pjax.method = {
+    complete: new RunItem(),
+    error: new RunItem(),
+    send: new RunItem(),
+  };
+  volantis.pjax = Object.assign(volantis.pjax, {
+    push: volantis.pjax.method.complete.push,
+    error: volantis.pjax.method.error.push,
+    send: volantis.pjax.method.send.push,
+  });
+  /******************** RightMenu ********************************/
+  // volantis.rightmenu.handle(callBack[,"callBackName"]) 外部菜单项控制
+  // 可在 volantis.mouseEvent 处获取右键事件
+  volantis.rightmenu = {};
+  volantis.rightmenu.method = {
+    handle: new RunItem(),
+  }
+  volantis.rightmenu = Object.assign(volantis.rightmenu, {
+    handle: volantis.rightmenu.method.handle.push,
+  });
+  /********************  Dark Mode  ********************************/
+  // /layout/_partial/scripts/darkmode.ejs
+  // volantis.dark.mode 当前模式 dark or light
+  // volantis.dark.toggle() 暗黑模式触发器
+  // volantis.dark.push(callBack[,"callBackName"]) 传入触发器回调函数
+  volantis.dark = {};
+  volantis.dark.method = {
+    toggle: new RunItem(),
+  };
+  volantis.dark = Object.assign(volantis.dark, {
+    push: volantis.dark.method.toggle.push,
+  });
+  /********************  Message  ********************************/
+  // VolantisApp.message
+  /********************  isMobile  ********************************/
+  // /source/js/app.js
+  // volantis.isMobile
+  // volantis.isMobileOld
+  /********************脚本动态加载函数********************************/
+  // volantis.js(src, cb)  cb 可以传入onload回调函数 或者 JSON对象 例如: volantis.js("src", ()=>{}) 或 volantis.js("src", {defer:true,onload:()=>{}})
+  // volantis.css(src)
+
+  // 返回Promise对象，如下方法同步加载资源，这利于处理文件资源之间的依赖关系，例如：APlayer 需要在 MetingJS 之前加载
+  // (async () => {
+  //     await volantis.js("...theme.plugins.aplayer.js.aplayer...")
+  //     await volantis.js("...theme.plugins.aplayer.js.meting...")
+  // })();
+
+  // 已经加入了setTimeout
+  volantis.js = (src, cb) => {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var HEAD = document.getElementsByTagName("head")[0] || document.documentElement;
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        if (cb) {
+          if (JSON.stringify(cb)) {
+            for (let p in cb) {
+              if (p == "onload") {
+                script[p] = () => {
+                  cb[p]()
+                  resolve()
+                }
+              } else {
+                script[p] = cb[p]
+                script.onload = resolve
+              }
+            }
+          } else {
+            script.onload = () => {
+              cb()
+              resolve()
+            };
+          }
+        } else {
+          script.onload = resolve
+        }
+        script.setAttribute("src", src);
+        HEAD.appendChild(script);
+      });
+    });
+  }
+  volantis.css = (src) => {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = src;
+        link.onload = resolve;
+        document.getElementsByTagName("head")[0].appendChild(link);
+      });
+    });
+  }
+  /********************按需加载的插件********************************/
+  // volantis.import.jQuery().then(()=>{})
+  volantis.import = {
+    jQuery: () => {
+      if (typeof jQuery == "undefined") {
+        return volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/jquery/dist/jquery.min.js")
+      } else {
+        return new Promise(resolve => {
+          resolve()
+        });
+      }
+    }
+  }
+  /********************** requestAnimationFrame ********************************/
+  // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+  // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
+  volantis.requestAnimationFrame = (fn)=>{
+    if (!window.requestAnimationFrame) {
+      window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+    }
+    window.requestAnimationFrame(fn)
+  }
+  /************************ layoutHelper *****************************************/
+  volantis.layoutHelper = (helper, html, opt)=>{
+    opt = Object.assign({clean:false, pjax:true}, opt)
+    function myhelper(helper, html, clean) {
+      volantis.tempDiv = document.createElement("div");
+      volantis.tempDiv.innerHTML = html;
+      let layoutHelper = document.querySelector("#layoutHelper-"+helper)
+      if (layoutHelper) {
+        if (clean) {
+          layoutHelper.innerHTML = ""
+        }
+        layoutHelper.append(volantis.tempDiv);
+      }
+    }
+    myhelper(helper, html, opt.clean)
+    if (opt.pjax) {
+      volantis.pjax.push(()=>{
+        myhelper(helper, html, opt.clean)
+      },"layoutHelper-"+helper)
+    }
+  }
+  /****************************** 滚动事件处理 ****************************************/
+  volantis.scroll = {
+    engine: new RunItem(),
+    unengine: new RunItem(),
+  };
+  volantis.scroll = Object.assign(volantis.scroll, {
+    push: volantis.scroll.engine.push,
+  });
+  // 滚动条距离顶部的距离
+  volantis.scroll.getScrollTop = () =>{
+    let scrollPos;
+    if (window.pageYOffset) {
+      scrollPos = window.pageYOffset;
+    } else if (document.compatMode && document.compatMode != 'BackCompat') {
+      scrollPos = document.documentElement.scrollTop;
+    } else if (document.body) {
+      scrollPos = document.body.scrollTop;
+    }
+    return scrollPos;
+  }
+  // 使用 requestAnimationFrame 处理滚动事件
+  // `volantis.scroll.del` 中存储了一个数值, 该数值检测一定时间间隔内滚动条滚动的位移, 数值的检测频率是浏览器的刷新频率. 数值为正数时, 表示向下滚动. 数值为负数时, 表示向上滚动.
+  volantis.scroll.handleScrollEvents = () => {
+    volantis.scroll.lastScrollTop = volantis.scroll.getScrollTop()
+    function loop() {
+      const scrollTop = volantis.scroll.getScrollTop();
+      if (volantis.scroll.lastScrollTop !== scrollTop) {
+        volantis.scroll.del = scrollTop - volantis.scroll.lastScrollTop;
+        volantis.scroll.lastScrollTop = scrollTop;
+        // if (volantis.scroll.del > 0) {
+        //   console.log("向下滚动");
+        // } else {
+        //   console.log("向上滚动");
+        // }
+        // 注销过期的unengine未滚动事件
+        volantis.scroll.unengine.list=[]
+        volantis.scroll.engine.start();
+      }else{
+        volantis.scroll.unengine.start();
+      }
+      volantis.requestAnimationFrame(loop)
+    }
+    volantis.requestAnimationFrame(loop)
+  }
+  volantis.scroll.handleScrollEvents()
+  volantis.scroll.ele = null;
+  // 触发页面滚动至目标元素位置
+  volantis.scroll.to = (ele, option = {}) => {
+    if (!ele) return;
+    volantis.scroll.ele = ele;
+    // 默认配置
+    opt = {
+      top: ele.getBoundingClientRect().top + document.documentElement.scrollTop,
+      behavior: "smooth"
+    }
+    // 定义配置
+    if ("top" in option) {
+      opt.top = option.top
+    }
+    if ("behavior" in option) {
+      opt.behavior = option.behavior
+    }
+    if ("addTop" in option) {
+      opt.top += option.addTop
+    }
+    if (!("observerDic" in option)) {
+      option.observerDic = 100
+    }
+    // 滚动
+    window.scrollTo(opt);
+    // 监视器
+    // 监视并矫正元素滚动到指定位置
+    // 用于处理 lazyload 引起的 cls 导致的定位失败问题
+    // option.observer = false
+    if (option.observer) {
+      setTimeout(() => {
+        if (volantis.scroll.ele != ele) {
+          return
+        }
+        volantis.scroll.unengine.push(() => {
+          let me = ele.getBoundingClientRect().top
+          if(!(me >= -option.observerDic && me <= option.observerDic)){
+            volantis.scroll.to(ele, option)
+          }
+          volantis.scroll.unengine.remove("unengineObserver")
+        },"unengineObserver")
+      },1000)
+    }
+  }
+  /********************** Content Visibility ********************************/
+  // 见 source/css/first.styl 如果遇到任何问题 删除 .post-story 即可
+  // 一个元素被声明 content-visibility 属性后 如果元素不在 viewport 中 浏览器不会计算其后代元素样式和属性 从而节省 Style & Layout 耗时
+  // content-visibility 的副作用: 锚点失效 等等(实验初期 暂不明确), 使用此方法清除样式
+  volantis.cleanContentVisibility = ()=>{
+    if (document.querySelector(".post-story")) {
+      console.log("cleanContentVisibility");
+      document.querySelectorAll(".post-story").forEach(e=>{
+        e.classList.remove("post-story")
+      })
+    }
+  }
+  /******************************************************************************/
+  /******************************************************************************/
+  /******************************************************************************/
+  //图像加载出错时的处理
+  function errorImgAvatar(img) {
+    img.src = "https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/favicon.png";
+    img.onerror = null;
+  }
+  function errorImgCover(img) {
+    img.src = "https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg";
+    img.onerror = null;
+  }
+  /******************************************************************************/
+</script>
+
+  <!-- import head_end begin -->
+  <!-- import head_end end -->
+  <!-- Custom Files headEnd begin-->
+  
+  <!-- Custom Files headEnd end-->
+  <!-- front-matter head_end begin -->
+  <!-- front-matter head_end end -->
+</head>
+
+  <!-- 点击出桃心特效 -->
+  <script src="https://gcore.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/clicklove.js"></script>
+
+
+
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <!-- import body_begin begin-->
+    <!-- import body_begin end-->
+    <!-- Custom Files bodyBegin begin-->
+    
+    <!-- Custom Files bodyBegin end-->
+    <!-- front-matter body_begin begin -->
+    <!-- front-matter body_begin end -->
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
+  <div class='container'>
+  <div id='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a id="s-comment" class="fa-solid fa-comments fa-fw" target="_self"  href="/" onclick="return false;" title="comment"></a></li>
+        
+          <li><a id="s-toc" class="s-toc fa-solid fa-list fa-fw" target="_self"  href="/" onclick="return false;" title="toc"></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+            🐰兔子窝🥕
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                target="_blank" rel="noopener" href="https://github.com/Gryffinbit" title="github"
+                  
+                  
+                  
+                    active-action="action-https:githubcomGryffinbit"
+                  >
+                  <i class='fab fa-github fa-fw'></i>github
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/categories/" title="categories"
+                  
+                  
+                  
+                    active-action="action-categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>categories
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/tags/" title="tags"
+                  
+                  
+                  
+                    active-action="action-tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>tags
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/archives/" title="archives"
+                  
+                  
+                  
+                    active-action="action-archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>archives
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/friends/" title="alt er love"
+                  
+                  
+                  
+                    active-action="action-friends"
+                  >
+                  <i class='fas fa-users fa-fw'></i>alt er love
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/artitalk/" title="thoughts"
+                  
+                  
+                  
+                    active-action="action-artitalk"
+                  >
+                  <i class='fas fa-heart fa-fw'></i>thoughts
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                target="_blank" rel="noopener" href="https://gryffinbitworkspace.notion.site/2024-public-160eb1c098b3808c8ebeca180a1c1707" title="soul"
+                  
+                  
+                  
+                    active-action="action-https:gryffinbitworkspacenotionsite2024-public-160eb1c098b3808c8ebeca180a1c1707"
+                  >
+                  <i class='fas fa-book fa-fw'></i>soul
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+      
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fa-solid fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+      
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fa-solid fa-search fa-fw" target="_self" href="/" onclick="return false;" title="search"></a></li>
+				
+				<li>
+          <a class="s-menu fa-solid fa-bars fa-fw" target="_self" href="/" onclick="return false;" title="menu"></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                target="_blank" rel="noopener" href="https://github.com/Gryffinbit" title="github"
+                  
+                  
+                  
+                    active-action="action-https:githubcomGryffinbit"
+                  >
+                  <i class='fab fa-github fa-fw'></i>github
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/categories/" title="categories"
+                  
+                  
+                  
+                    active-action="action-categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>categories
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/tags/" title="tags"
+                  
+                  
+                  
+                    active-action="action-tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>tags
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/archives/" title="archives"
+                  
+                  
+                  
+                    active-action="action-archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>archives
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/friends/" title="alt er love"
+                  
+                  
+                  
+                    active-action="action-friends"
+                  >
+                  <i class='fas fa-users fa-fw'></i>alt er love
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/artitalk/" title="thoughts"
+                  
+                  
+                  
+                    active-action="action-artitalk"
+                  >
+                  <i class='fas fa-heart fa-fw'></i>thoughts
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                target="_blank" rel="noopener" href="https://gryffinbitworkspace.notion.site/2024-public-160eb1c098b3808c8ebeca180a1c1707" title="soul"
+                  
+                  
+                  
+                    active-action="action-https:gryffinbitworkspacenotionsite2024-public-160eb1c098b3808c8ebeca180a1c1707"
+                  >
+                  <i class='fas fa-book fa-fw'></i>soul
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+
+      <!-- Custom Files header begin -->
+      
+      <!-- Custom Files header end -->
+		</div>
+	</div>
+  </div>
+</header>
+
+    <div id="l_body">
+      <div id="l_cover">
+  
+    
+      <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
+      <div id="none" class='cover-wrapper post dock' style="display: none;">
+        
+  <div id="parallax-window"></div>
+
+<div class='cover-body'>
+  <div class='top'>
+    
+    
+      <p class="title">欢迎来到Gryffinbit的思维殿堂</p>
+    
+    
+      <p class="subtitle">Stay Hungry. Stay Foolish.</p>
+    
+  </div>
+  <div class='bottom'>
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a target="_blank" rel="noopener" href="https://github.com/Gryffinbit"
+              
+              
+              active-action="action-https:githubcomGryffinbit">
+              <i class='fab fa-github fa-fw'></i><p>github</p>
+            </a>
+          
+            <a href="/categories/"
+              
+              
+              active-action="action-categories">
+              <i class='fas fa-folder-open fa-fw'></i><p>categories</p>
+            </a>
+          
+            <a href="/tags/"
+              
+              
+              active-action="action-tags">
+              <i class='fas fa-tags fa-fw'></i><p>tags</p>
+            </a>
+          
+            <a href="/archives/"
+              
+              
+              active-action="action-archives">
+              <i class='fas fa-archive fa-fw'></i><p>archives</p>
+            </a>
+          
+            <a href="/friends/"
+              
+              
+              active-action="action-friends">
+              <i class='fas fa-users fa-fw'></i><p>alt_er_love</p>
+            </a>
+          
+            <a href="/artitalk/"
+              
+              
+              active-action="action-artitalk">
+              <i class='fas fa-heart fa-fw'></i><p>thoughts</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://gryffinbitworkspace.notion.site/2024-public-160eb1c098b3808c8ebeca180a1c1707"
+              
+              
+              active-action="action-https:gryffinbitworkspacenotionsite2024-public-160eb1c098b3808c8ebeca180a1c1707">
+              <i class='fas fa-book fa-fw'></i><p>soul</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+      </div>
+    
+  
+</div>
+
+
+
+<!-- 首页打字机特效 -->
+<script src="https://unpkg.com/typed.js@2.0.11"></script>
+<script>
+  var typed = new Typed(".title", {
+      strings: ['欢迎来到Gryffinbit的思维殿堂'],
+      startDelay: 0,//开始的延迟
+      typeSpeed: 100,//打字速度
+      loop: false,//是否循环
+      showCursor: true,//显示游标
+      shuffle: false//是否随机
+  });
+</script>
+<!-- 当前遇到的问题是改成var typed = new Typed(".subtitle", {
+  strings: ['Stay Hungry. Stay Foolish.'], 是可以正常运行的，但是改成title就不可以。 对应的文件是/root/Blog/node_modules/hexo-theme-volantis/layout/_partial/_cover/focus.ejs -->
+      <div id="safearea">
+        <div class="body-wrapper">
+          
+<div id="l_main" class=''>
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="https://gryffinbit.top/2021/01/21/操作系统期末考点/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Gryffinbit的思维殿堂">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Gryffinbit的思维殿堂">
+    <meta itemprop="description" content="一个网络安全网站">
+  </span>
+  
+
+
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title" itemprop="name headline">
+        操作系统期末考点
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/favicon.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/favicon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">Gryffinbit</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/">期末考试</a><span class="sep"></span><a class="category-link" href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/" itemprop="url"><span itemprop="name">期末考试</span></a>
+      </span>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url"><span itemprop="name">操作系统</span></a>
+      </span>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2021-01-21T23:10:00+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年1月21日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="busuanzi_value_page_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+      
+      <span>次浏览</span>
+    </p>
+  </a>
+</div>
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h2 id="考卷"><a href="#考卷" class="headerlink" title="考卷"></a>考卷</h2><h3 id="选择题"><a href="#选择题" class="headerlink" title="选择题"></a>选择题</h3><ol>
+<li><p>某计算机系统中有8台打印机，由K个进程竞争使用，每个进程最多需要3台打印机，该系统发生死锁的K的最小值是_____C_________ 。</p>
+<p>A. 2  B. 3 C.4 D.5</p>
+</li>
+<li><p>操作系统采用缓冲技术，能够减少对CPU的_____A______次数，从而提高资源的利用率。</p>
+<p>A.中断              B.访问</p>
+<p>C.控制              D.依赖</p>
+</li>
+<li><p>索引式（随机）文件组织的一个主要优点是_____B_________。</p>
+<p>A.不需要链接指针            B.能实现物理块的动态分配</p>
+<p>C. 回收实现比较简单       D.用户存取方便</p>
+</li>
+</ol>
+<h3 id="填空题"><a href="#填空题" class="headerlink" title="填空题"></a>填空题</h3><p>1.文件的物理结构有，顺序结构、 链接结构、和索引结构。</p>
+<p>2.磁盘高速缓冲是在内存中为磁盘快设置的一个缓冲区，其主要目的是提高磁盘的I&#x2F;O速度。</p>
+<p>3.位示图是利用二进制的一位来表示文件存储空间中的一个块的使用情况。</p>
+<p>4.SPOOLing技术的中文译名为外部设备联机并行操作，它是关于慢速字符设备如何与计算机主机交换信息的一种技术，通常叫作假脱机技术。</p>
+<h3 id="编写程序（PV源语）三选一"><a href="#编写程序（PV源语）三选一" class="headerlink" title="编写程序（PV源语）三选一"></a>编写程序（PV源语）三选一</h3><hr>
+<ul>
+<li><p><strong>有三个进程 PA、PB和PC协作解决文件打印问题。PA将文件记录从磁盘读入内存的缓冲区1，每执行一次读一个记录；PB 将缓冲区1的内容复制到缓冲区2中，每执行一次复制一个记录；PC将缓冲区2的内容打印出来，每执行一次打印一个记录。缓冲区的大小与记录大小一样。请用信号量来保证文件的正确打印。</strong></p>
+<p>分析：本题又是生产者-消费者问题的一个变形，对缓冲区1来说，PA是生产者，PB是消费者;对缓冲区2来说，PB是生产者，PC是消费者。<br>需要说明的有两点：<br>①缓冲区1和缓冲区2都只能存放一个记录，故无须设置in、out 指针，原来生产者一消费者问题中的mutex信号量也因此可以省去；<br>②PB进程既是消费者，又是生产者。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//该文件打印过程的同步算法可描述为：</span></span><br><span class="line">semaphore  empty1=<span class="number">1</span>, full=<span class="number">0</span>, empty2=<span class="number">1</span>, full2=<span class="number">0</span>;</span><br><span class="line"><span class="built_in">PA</span>()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">		从磁盘读一个记录;</span><br><span class="line">		<span class="built_in">wait</span>(empty1);</span><br><span class="line">		将记录存放到缓冲区<span class="number">1</span>中;</span><br><span class="line">		<span class="built_in">signal</span>(full);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">PB</span>()&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="built_in">wait</span>(full);</span><br><span class="line">		从缓冲区<span class="number">1</span>中取出一个记录;</span><br><span class="line">		<span class="built_in">signal</span>(empty1);</span><br><span class="line">		<span class="built_in">wait</span>(empty2);</span><br><span class="line">		将记录复制到缓冲区<span class="number">2</span>中;</span><br><span class="line">		<span class="built_in">signal</span>(full2);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">PC</span>()&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="built_in">wait</span>(full2);</span><br><span class="line">		从缓冲区<span class="number">2</span>中取出一个记录;</span><br><span class="line">		<span class="built_in">signal</span>(empty2);</span><br><span class="line">		将取出的记录打印出来;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">main</span>()&#123;</span><br><span class="line">	<span class="function">cobegin <span class="title">PA</span><span class="params">()</span></span>; <span class="built_in">PB</span>(); <span class="built_in">PC</span>(); coend</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<ul>
+<li><p><strong>请用信号量解决以下的“过独木桥”问题：同一方向的行人可连续过桥，当某一方向有人过桥时，另一方向的行人必须等待;当某一方向无人过桥时，另一方向的行人可以过桥。</strong></p>
+<p>分析：独木桥问题是读者一写者问题的一个变形， 同一个方向的行人可以同时过桥，这相当于读者可以同时读。因此，可将两个方向的行人看做是两类不同的读者，同类读者(行人)可以同时读(过桥)，但不同类读者(行人)之间必须互斥地读(过桥)。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//可为独木桥问题定义如下的变量：</span></span><br><span class="line"><span class="type">int</span> count A =<span class="number">0</span>, count B = <span class="number">0</span>; <span class="comment">//count A, count B 分别表示A、B两个方向过桥的行人数量</span></span><br><span class="line">semaphore bridge = <span class="number">1</span>; <span class="comment">//用来实现不同方向行人对桥的互斥共享</span></span><br><span class="line">semaphore mutex A = mutex B = <span class="number">1</span>; <span class="comment">//分别用来实现对 count A、count B的互斥共享</span></span><br><span class="line"><span class="comment">//A方向的所有行人对应相同的算法，他们的动作的算法可描述为：</span></span><br><span class="line"><span class="built_in">PA</span>()&#123;</span><br><span class="line">	<span class="built_in">wait</span>(mutex A);</span><br><span class="line">		<span class="keyword">if</span>(count A == <span class="number">0</span>) <span class="built_in">wait</span>(bridge);</span><br><span class="line">		count A++;</span><br><span class="line">	<span class="built_in">signal</span>(mutex A);</span><br><span class="line">	过桥;</span><br><span class="line">	<span class="built_in">wait</span>(mutex A);</span><br><span class="line">		count A--;</span><br><span class="line">		<span class="keyword">if</span>(count A == <span class="number">0</span>)<span class="built_in">signal</span>(bridge);</span><br><span class="line">	<span class="built_in">signal</span>(mutex A);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>请给出一个写者优先的 “读者—写者”问题的算法描述。</strong></p>
+<p>分析:与读者优先不同的方案有三种。<br>第一种是读者和写者的地位是完全平等的，即无论是读者还是写者，都按他们到达的时间先后决定优先次序。<br>第二种方案中，写者的优先权得到了提高，先于写者到达的读者比写者优先，但当一个写进程声明要进行写操作时，其后续读者必须等写操作完成之后，才能进行读；而且，如果在写完成之前，又有新的写者到达，那新的写者的优先权将高于已在等待的读者。<br>第三种方案写者的优先权更高，某个写者到达时，即使他是目前唯一的写者，那些先于他到达但还没来得及读的读者都将等待他完成写操作。</p>
+<p>答:为了使写者优先，可在原来的读优先算法基础上增加一个初值为1的信号量S，使得当至少有一个写者准备访问共享对象时，它可使后续的读者进程等待写完成；初值为0的整型变量writecount，用来对写者进行计数；初值为1的互斥信号量wmutex，用来实现多个写者对writecount的互斥访问。读者动作的算法描述如下:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第二种方案</span></span><br><span class="line"><span class="built_in">reader</span>()&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="built_in">wait</span>(S);</span><br><span class="line">		<span class="built_in">wait</span>(rmutex); <span class="comment">//rmutex 用来实现对readcount的互斥访问</span></span><br><span class="line">			<span class="keyword">if</span>(readcount == <span class="number">0</span>) <span class="built_in">wait</span>(mutex); <span class="comment">//mutex用来实现对读写对象互斥访问</span></span><br><span class="line">				readcount++;</span><br><span class="line">			<span class="built_in">signal</span>(rmutex);</span><br><span class="line">			<span class="built_in">signal</span>(S);</span><br><span class="line">			perform read operation;</span><br><span class="line">			<span class="built_in">wait</span>(rmutex);</span><br><span class="line">				readcount--;</span><br><span class="line">				<span class="keyword">if</span>(readcount == <span class="number">0</span>) <span class="built_in">signal</span>(mutex);</span><br><span class="line">			<span class="built_in">signal</span>(rmutex);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//写者动作的算法描述如下：</span></span><br><span class="line"><span class="built_in">writer</span>()&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="built_in">wait</span>(wmutex); <span class="comment">//wmutex用来实现对writecount的互斥访问</span></span><br><span class="line">			<span class="keyword">if</span>(writecount == <span class="number">0</span>) <span class="built_in">wait</span>(S);</span><br><span class="line">			writecount++;</span><br><span class="line">		<span class="built_in">signal</span>(wmutex);</span><br><span class="line">		<span class="built_in">wait</span>(mutex);</span><br><span class="line">		perform write operation;</span><br><span class="line">		<span class="built_in">signal</span>(mutex);</span><br><span class="line">		<span class="built_in">wait</span>(wmutex);</span><br><span class="line">			writecount--;</span><br><span class="line">			<span class="keyword">if</span>(writecount == <span class="number">0</span>) <span class="built_in">signal</span>(S);</span><br><span class="line">		<span class="built_in">signal</span>(wmutex);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="clock算法"><a href="#clock算法" class="headerlink" title="clock算法"></a>clock算法</h3><p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-1.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-1.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-2.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-2.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-3.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-3.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-4.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-4.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<h3 id="简答题"><a href="#简答题" class="headerlink" title="简答题"></a>简答题</h3><p><strong>什么是进程?由几部分组成?与程序的区别是什么?</strong></p>
+<p>定义：</p>
+<p>进程是可并发执行的程序在一个数据集合上的运行过程，是系统进行资源分配和调度的一个独立单位。</p>
+<p>组成部分：</p>
+<p>进程由程序、数据和进程控制块三部分组成: .</p>
+<ol>
+<li>程序段：程序段是进程中能被进程调度程序调度到CPU上执行的程序代码段，它能实现相应的特定功能。</li>
+<li>数据段：一个进程的数据段，可以是进程对应的程序加工处理的原始数据，也可以是程序执行时产生的中间或最终结果数据。</li>
+<li>进程控制块PCB组成：每一个进程均有一个进程控制块PCB。用户进程被创建时，系统为它申请和构造一个相应的PCB。</li>
+</ol>
+<p>进程和程序的区别：</p>
+<ol>
+<li>程序是静态概念，而进程是动态概念</li>
+<li>程序是永久的，而进程是暂时的</li>
+<li>进程之间能并发地活动</li>
+<li>进程是竞争计算机系统有限资源的基本单位</li>
+<li>程序和进程无一一对应关系</li>
+</ol>
+<p><strong>何谓死锁?产生死锁的原因和必要条件是什么?</strong></p>
+<p>死锁的定义：</p>
+<p>死锁是指多个进程在运行过程中因争夺资源而造成的一种僵局，当进程处于这种僵持状态时，若无外力作用，它们都将无法再向前推进。</p>
+<p>产生死锁的原因：</p>
+<p>产生死锁的原因可归结为竞争资源引起进程死锁和进程推进顺序不当引起死锁两个方面。</p>
+<p>产生死锁的必要条件：</p>
+<ol>
+<li>互斥条件</li>
+<li>请求和保持条件</li>
+<li>不剥夺条件</li>
+<li>环路等待条件</li>
+</ol>
+<p><strong>分页和分段存储管理有何区别?</strong></p>
+<ol>
+<li><p>页是信息的物理单位，分页是为实现离散分配方式，以消减内存的外零头，提高内存利用率。或者说，分页仅仅是由于系统管理的需要而不是用户的需要。</p>
+<p>段则是信息的逻辑单位，它含有一组意义相对完整的信息，分段的目的是为了能更好地满足用户的需要。</p>
+</li>
+<li><p>页的大小固定且由系统决定，由系统把逻辑地址划分为页号和页内地址两部分，是机械硬件实现的，因而在系统中只能有一种大小的的页面；</p>
+<p>而段的长度却不固定，决定于用户所编写的程序，通常由编译程序对源程序进行编译时，根据信息的性质来划分。</p>
+</li>
+<li><p>分页的作业地址空间是一维的，即单一的线性地址空间，程序员只需利用一个记忆符，即可表示一个地址。</p>
+<p>分段的作业地址空间则是二维的，程序员在标识一个地址时，既需给出段名，又需给出段内地址。</p>
+</li>
+</ol>
+<p><strong>为什么要引入动态重定位?如何实现?</strong></p>
+<p>原因：</p>
+<p>在连续分配方式中，必须把一个系统或用户程序装入一连续的内存空间。如果在系统中只有若干个小的分区，即使它们容量的总和大于要装入的程序，但由于这些分区不相邻接，也无法把该程序装入内存。若想把程序装入，可采用的一种方法是：将内存中的所有作业进行移动，使它们全都相邻接，这样，即可把原来分散的多个小分区拼接成一个大分区，这时就可把作业装入该区。这种通过移动内存中作业的位置，以把原来多个分散的小分区拼：接成一个大分区的方法，称为“拼接”或“紧凑”。由于经过紧凑后的某些用户程序在内存中的位置发生了变化，此时若不对程序和数据的地址加以修改(变换)，则程序必将无法执行。为此，在每次“紧凑”后，都必须对移动了的程序或数据进行重定位。</p>
+<p>实现：</p>
+<p>在动态运行时装入的方式中，作业装入内存后的所有地址都仍然是相对地址，将相对地址转换为物理地址的工作，被推迟到程序指令要真正执行时进行。为使地址的转换不会影响到指令的执行速度，必须有硬件地址变换机构的支持，即须在系统中增设一个重定位寄存器，用它来存放程序(数据)在内存中的起始地址。程序在执行时，真正访问的内存地址是相对地址与重定位寄存器中的地址相加而形成的。当系统对内存进行了“紧凑”而使若干程序从内存的某处移至另一处时,不需对程序做任何修改，只要用该程序在内存的新起始地址去置换原来的起始地址即可。</p>
+<p><strong>在请求分页系统中，产生“抖动”的原因是什么?</strong></p>
+<p>发生“抖动”的根本原因是，同时在系统中运行的进程太多，由此分配给每一个进程的物理块太少，不能满足进程正常运行的基本要求，致使每个进程在运行时，频繁地出现缺页，必须请求系统将所缺之页调入内存。这会使得在系统中排队等待页面调进&#x2F;调出的进程数目增加。显然，对磁盘的有效访问时间也随之急剧增加，造成每个进程的大部分时间都用于页面的换进，换出，而几乎不能再去做任何有效的工作，从而导致发生处理机的利用率急剧下降并趋于0的情况。我们称此时的进程是处于“抖动”状态。</p>
+<p><strong>何谓DMA方式? DMA控制器可采用哪几种方式与CPU分时使用内存?</strong></p>
+<p>直接内存访问(DMA)方式是一种完全由硬件执行I&#x2F;O交换的工作方式。DMA 控制器从CPU完全接管对总线的控制。数据交换不经过CPU,而直接在内存和I&#x2F;O设备之间进行。</p>
+<p>DMA控制器采用以下三种方式：</p>
+<ol>
+<li>停止CPU访问内存</li>
+</ol>
+<p>当外设要求传送一批数据时，由DMA控制器发一个信号给CPU。 DMA控制器获得总线控制权后，开始进行数据传送。一批数据传送完毕后，DMA控制器通知CPU可以使用内存，并把总线控制权交还给CPU。</p>
+<ol start="2">
+<li>周期挪用</li>
+</ol>
+<p>当I&#x2F;O设备没有DMA请求时，CPU按程序要求访问内存: 一旦I&#x2F;O设备有DMA请求，则I&#x2F;O设备挪用一个或几个周期。</p>
+<ol start="3">
+<li>DMA与CPU交替访内</li>
+</ol>
+<p>一个 CPU周期可分为2个周期，一个专供DMA控制器访内，另一个专供CPU访内。不需要总线使用权的申请、建立和归还过程。</p>
+<h3 id="银行家算法"><a href="#银行家算法" class="headerlink" title="银行家算法"></a>银行家算法</h3><p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-5.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-5.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-6.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-6.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-7.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-7.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<h3 id="段页式存储管理系统的地址转换过程"><a href="#段页式存储管理系统的地址转换过程" class="headerlink" title="段页式存储管理系统的地址转换过程"></a>段页式存储管理系统的地址转换过程</h3><p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-8.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-8.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-9.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-9.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<h3 id="作业调度算法"><a href="#作业调度算法" class="headerlink" title="作业调度算法"></a>作业调度算法</h3><p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-19.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-19.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-29.jpg" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-29.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-30.jpg" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-30.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-31.jpg" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-31.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-32.jpg" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-32.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-33.jpg" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-33.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-10.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-10.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-11.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-11.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-12.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-12.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-13.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-13.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-14.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-14.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-15.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-15.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-16.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-16.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-17.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-17.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-18.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-18.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<h3 id="磁盘调度算法"><a href="#磁盘调度算法" class="headerlink" title="磁盘调度算法"></a>磁盘调度算法</h3><p><strong>SSTF最短寻找时间优先</strong></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-20.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-20.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>SCAN电梯算法</strong></p>
+<p>移动到最外侧之后，再向内移动。</p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-21.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-21.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>C-SCAN循环扫描算法</strong></p>
+<p>只处理某一单独方向上的请求，返回时直接到始端，不处理任何请求</p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-22.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%B7%E5%AD%90-22.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<h2 id="题型"><a href="#题型" class="headerlink" title="题型"></a>题型</h2><p>选择 10分  每题一分</p>
+<p>填空 10分  每题一分</p>
+<p>编写程序    10分</p>
+<p>clock 算法  10分</p>
+<p>4个简答题：  重定位、虚拟存储、DMA、软中断、段页式存储概念    20分</p>
+<p>PPT中的计算题：磁盘调度算法、预防死锁、思索的判断条件（计算题二选一）    10分</p>
+<p>页面调度，物理地址和逻辑地址的换算     10分</p>
+<p>多通道调度画图    10分</p>
+<h2 id="章节知识点"><a href="#章节知识点" class="headerlink" title="章节知识点"></a>章节知识点</h2><h3 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h3><p><strong>进程管理</strong></p>
+<p>复习PPT上的笔记</p>
+<p><strong>什么是进程？什么是线程？进程和线程的区别？</strong></p>
+<ul>
+<li>进程 &#x3D; 程序段 + 相关的数据段 + PCB</li>
+</ul>
+<p>PCB：描述进程的基本情况和活动过程，进而控制和管理进程</p>
+<ul>
+<li><p>线程 &#x3D; 线程控制表 + 存储上下文的用户栈 + 核心栈</p>
+<p>线程是在进程内用于调度和占有处理机的基本单位。</p>
+</li>
+<li><p>区别：</p>
+<ol>
+<li><p>进程是资源管理的基本单位，拥有自己的地址空间和各种资源。</p>
+<p>线程是处理机调度的基本单位，只和其他线程一起共享进程资源，自己没有任何资源。</p>
+<p>进程有自己的资源，进程无</p>
+</li>
+<li><p>进程切换处理机和调度的时候，涉及资源转移，现场保护等，导致处理机切换时间长，资源利用率降低</p>
+<p>线程切换时，不发生资源变化，特别是地址空间的变化，所以切换时间短，处理机效率较高</p>
+<p>进程切换时涉及资源转移，保护现场，利用率低。线程不涉及，处理机利用率高</p>
+</li>
+<li><p>多线程可以减少用户等待时间，提高系统响应速度。</p>
+</li>
+<li><p>线程和进程一样，有自己的状态，相应的同步机制。</p>
+<p>但线程没有单独的数据和程序空间，所以不能像进程那样把数据交换到外存，从而没有挂起状态</p>
+<p>线程没有挂起状态</p>
+</li>
+<li><p>进程的调度、同步等控制大多由操作系统内核完成。</p>
+<p>线程既可以操作系统内核，也可以用户控制。</p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h3><p><strong>处理机调度</strong></p>
+<p>看PPT笔记</p>
+<p><strong>例题：</strong></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-1.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-1.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-2.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-2.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-3.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-3.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<h3 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h3><p><strong>什么是虚拟存储器？特点？</strong></p>
+<ul>
+<li>由进程中的目标代码、数据等的虚拟地址组成的虚拟空间称为虚拟存储器。</li>
+<li>虚拟存储器不考虑物理存储器的大小和信息存放的实际位置，只规定每个进程中相互关联的信息的相对位置。</li>
+<li>虚拟存储器的容量由计算机的<strong>地址结构和寻址方式</strong>来确定。</li>
+<li>虚拟存储需要有相应的地址转换机构，把指令的虚拟地址转换为实际物理地址</li>
+</ul>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-4.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-4.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>能否把虚拟空间无限扩大？</strong></p>
+<p>不能，虚拟存储器的容量由计算机的<strong>地址结构和寻址方式</strong>来确定。地址总线的量是有限的，寻址不到，不能超界。</p>
+<p><strong>实现地址重定位的方法？</strong></p>
+<p>静态地址重定位：</p>
+<ul>
+<li>在虚拟空间程序执行之前由装配程序完成地址映射工作。</li>
+<li>不需要硬件支持</li>
+<li>进行地址变换无法实现虚拟存储器</li>
+<li>必须占用连续的内存空间</li>
+<li>难以做到程序和数据的共享</li>
+</ul>
+<p>动态地址重定位：</p>
+<ul>
+<li>在程序执行过程中，在CPU访问内存之前由硬件地址变换机构将要访问的程序或数据地址转换成内存地址。</li>
+<li>可以对内存进行非连续分配</li>
+<li>动态重定位提供了实现虚拟存储器的基础</li>
+<li>有利于程序段的共享</li>
+</ul>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-5.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-5.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>动态分区式管理的常用内存分配算法有哪几种？优缺点？</strong></p>
+<p>动态分区式管理的常用内存分配算法有FF（最先适应法）first fit、BF（最佳适应法）best fit、WF（最坏适应法）worst fit</p>
+<ul>
+<li>从搜索速度上：FF最好，BF和WF都要求把空闲区按大小进行排队。</li>
+<li>从回收过程上：FF最好，因为BF、WF都必须重新调整空闲区的位置。</li>
+<li>BF找到的空闲区是最好的，但是会造成内存碎片较多，影响内存利用率。WF碎片最少，但是对内存请求较多的进程可能分配失败。</li>
+<li>BF是先找最小的空闲区进行分配。</li>
+<li>WF是先找最大的空闲区进行分配。</li>
+</ul>
+<p><strong>什么是覆盖？什么是交换？覆盖和交换的区别是什么？</strong></p>
+<p>覆盖：</p>
+<ul>
+<li>将程序划分为若干个功能上相对独立的程序段</li>
+<li>按照程序的逻辑结构让那些不会同时执行的程序段共享同一块内存区的内存扩充技术。</li>
+</ul>
+<p>交换：</p>
+<ul>
+<li>先将内存某部分的程序或数据写入外存交换区</li>
+<li>再从外存交换区中调入指定的程序或数据到内存中来，并让其执行的一种内存扩充技术。</li>
+</ul>
+<p>区别：</p>
+<p>​		交换：</p>
+<p>​				不要求给出程序段之间的覆盖结构</p>
+<p>​				主要在进程或作业之间进行</p>
+<p>​		覆盖：</p>
+<p>​				主要在同一个作业或同一个进程内进行</p>
+<p>​				只能对那些与覆盖程序段无关的程序段进行覆盖</p>
+<p><strong>什么是页式管理？静态页式管理可以实现虚存吗？</strong></p>
+<ul>
+<li>页式管理就是把各进程的<strong>虚拟空间</strong>划分为<strong>若干长度相等的页面</strong>，把<strong>指令</strong>按页面大小划分后<strong>存放在内存中执行</strong>，或者只在内存中存放那些经常被执行或将被执行的页面。不经常被执行的放在外存，<strong>按一定规则调入</strong>的一种内存管理方式。</li>
+<li>静态页面不能，因为它要求进程或作业在执行前全部装入内存，作业或进程大小仍受内存可用页面数的限制。</li>
+</ul>
+<p>能有效提高内存利用率</p>
+<p><strong>什么是请求页式管理？</strong></p>
+<p>一种动态页式内存管理，进程或作业开始执行前，不把程序段一次性全部装入，只装入反复执行的部分。其他部分在执行过程中动态装入。当需要指令，但又不在内存中时会发生缺页中断，系统再将外存中相应的页面调入内存。</p>
+<p><strong>请求页式管理中有哪几种常用的页面置换算法？优缺点？</strong></p>
+<p>10分大题，不考概念，考大题，但是还是要懂原理</p>
+<ol>
+<li>随机淘汰算法：随机的选择某个用户页面并将其换出。</li>
+<li>轮转法RR：循环换出内存可用区里一个可以被换出去的页。无论它是刚被换进还是已经换进很长时间。</li>
+<li>先进先出FIFO：淘汰在内存中驻留时间最长的一页</li>
+<li>最近最久未使用页面置换算法LRU：淘汰离当前最近时间内，最久没使用过的页面</li>
+<li>理想型淘汰OPT：淘汰在访问串中将来再也不出现或是在离当前最远的位置上出现的页面。</li>
+</ol>
+<p><strong>什么是段式管理？与页式管理区别？</strong></p>
+<p>段式：</p>
+<p>将程序按照内容或过程关系分成段，以段为单位分配内存，然后地址映射机构把段式虚拟地址转换为实际的物理地址。也是常用的驻留内存，不常用的放在外存。</p>
+<p>更好的满足用户多方面需求</p>
+<p>区别：</p>
+<ul>
+<li><p>页式管理是按照线性空间顺序排列的</p>
+<p>段式是按照内容或过程的函数关系分成段，是一个二维的</p>
+</li>
+<li><p>段式有内外存统一管理的虚存实现，但是每次交换的是一段有意义的信息。</p>
+<p>页式交换固定大小的页，会需要多次缺页中断。</p>
+</li>
+<li><p>段式管理，段长需要动态增长</p>
+</li>
+<li><p>段式管理便于有完整逻辑功能的信息段共享</p>
+</li>
+<li><p>段式管理便于进行动态链接，页式管理进行动态链接很复杂</p>
+</li>
+</ul>
+<p><strong>段式管理可以实现虚存吗？</strong></p>
+<p>可以。以段为单位分配内存，通过地址映射机构把段式虚拟地址转换为实际物理地址</p>
+<p><strong>什么是段页式存储？</strong></p>
+<p>结合页式管理和段式管理即具有分段系统便于实现，分段可共享、易于保护、可动态链接等优点。又有分页，解决内存的外部碎片问题</p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-6.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-6.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>需要了解一下</strong></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-7.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-7.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>段式管理有利于动态增长、共享、内存保护。页式管理解决内存外部碎片问题，提高内存利用率。 </p>
+<p>段页式访问时间长，执行效率低。</p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-8.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-8.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-9.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-9.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>因为在段式的基础上分页，只是为了克服碎片问题，并没有改变段内地址的结构。</p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-10.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-10.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>存取指令时，需要对内存进行三次以上的访问：1.从段表中取出对应的页表地址 2.访问页表得到数据或指令的物理地址 3. 访问物理单元。    降低CPU执行指令的速度</p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-11.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-11.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<h3 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h3><p><strong>什么是软中断（概念题，解释题5分）？</strong></p>
+<ul>
+<li>软中断是对硬件的一种模拟</li>
+<li>发送软中断就是向接收进程的一个相应项发送一个特殊信号</li>
+<li>接收到信号后，按照事先规定的区执行一个软中断处理程序</li>
+<li>收到信号后不立即启动，要等到接收进程执行时才能生效</li>
+<li>可以向自己发软中断信号</li>
+</ul>
+<h3 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h3><p><strong>简述虚拟地址到物理内存地址的转换过程(必考，有个计算题)</strong></p>
+<ol>
+<li>每个进程对应一个页目录，当操作系统开始执行某一进程时，系统会设置当前进程所对应的页目录</li>
+<li>一个进程可有多个页表，通过页目录索引，内存管理器可定位相应的虚拟地址所对应的页表</li>
+<li>通过页表和页表索引，内存管理器可定位虚拟地址对应的物理页框号</li>
+<li>定位物理页框号后，通过字节索引，可判断虚拟地址对应的物理地址</li>
+</ol>
+<p>页表的作用：通过页表查到虚拟地址的页表入口，再通过该入口查到该地址对应的物理地址</p>
+<h3 id="第八章"><a href="#第八章" class="headerlink" title="第八章"></a>第八章</h3><p><strong>磁盘调度算法</strong></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-12.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-12.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-13.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-13.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>先来先服务（FCFS）</strong></p>
+<p>根据请求的先后进行调度</p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-14.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-14.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>最短寻找时间优先（SSTF）</strong></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-15.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-15.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>scan（电梯算法）</strong></p>
+<p>移动到最外侧之后，再向内移动。</p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-16.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-16.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>Look算法</strong></p>
+<p>在SCAN的基础上。如果在磁盘移动方向上，没有其他请求，就立即改变磁头方向</p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-17.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-17.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>循环扫描算法（C-SCAN）</strong></p>
+<p>只处理某一单独方向上的请求，返回时直接到始端，不处理任何请求</p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-18.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-18.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>C-Look算法</strong></p>
+<p>在C-SCAN基础上。如果在磁盘移动方向上，没有其他请求，就立即改变磁头方向</p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-19.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-19.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-20.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-20.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>文件的物理结构有哪几种？为什么串联不适于随机存取（重要）</strong></p>
+<ul>
+<li>连续文件、串联文件、索引文件</li>
+<li>串联：非连续的物理块存放信息，没有顺序关系。搜索时只能按队列中的串联指针顺序搜索。不适用于随机存取。</li>
+</ul>
+<p><strong>什么是文件目录？文件目录包含哪些信息？</strong></p>
+<ul>
+<li>文件目录定义 &#x3D; 文件名 + 对该文件实施控制管理的说明信息</li>
+<li>文件目录内容 &#x3D; 文件名 + 文件内部标识 + 文件信息在存储设备上第一个物理块的地址信息 + 文件逻辑结构、物理结构、存取控制和管理等</li>
+</ul>
+<p><strong>二级目录和多级目录的好处？</strong></p>
+<ul>
+<li>可以减少文件命名冲突</li>
+<li>提高搜索速度</li>
+</ul>
+<p>符号文件目录表和基本文件目录表是实现文件共享的方法，不是二级目录</p>
+<h3 id="第九章"><a href="#第九章" class="headerlink" title="第九章"></a>第九章</h3><p><strong>DMA</strong></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-21.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-21.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>数据传送控制方式有哪几种？</strong></p>
+<ul>
+<li>有程序直接控制法、中断控制法、DMA、通道方式</li>
+</ul>
+<ol>
+<li><p>程序直接控制：用户直接控制内存或CPU和外部设备的数据传输。</p>
+<p>优点：控制简单，不需要太多硬件支持</p>
+<p>缺点：只能串行工作，无法发现错误</p>
+</li>
+<li><p>中断I&#x2F;O控制：向CPU发送中断的方式控制传送。</p>
+<p>优点：提高CPU利用率，支持并行</p>
+<p>缺点：数据缓冲寄存器较小，中断次数较多，占用CPU大量时间。外部设备多时，造成CPU中断丢失。设备快，出现数据丢失。</p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-22.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-22.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+</li>
+<li><p>DMA：在外部设备和内存之间开辟直接的数据交换通路进行数据传送。</p>
+<p>优点：除了开始和结束是需要CPU处理，其他时候不需要CPU的频繁干涉</p>
+<p>缺点：设备多时，多个DMA同时使用会引起内存地址的冲突</p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-23.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-23.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-24.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-24.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-25.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-25.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+</li>
+<li><p>通道方式： 使用通道来控制内存或CPU和外部设备的数据传送。通道是一个独立于CPU的机构，有自己的通道指令。启动和结束时需要CPU。</p>
+<p>优点：减轻CPU负担，增加并行工作成都</p>
+<p>缺点：增加额外硬件，造价高</p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-26.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-26.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+</li>
+</ol>
+<p><strong>什么是陷阱？什么是软中断？简述中断、陷阱、软中断之间的异同？</strong></p>
+<p>陷阱：处理机和内存内部产生的中断，包括程序运算引起的各自错误。例如：存取访问控制错误、用户状态切换错误等</p>
+<p>中断：在计算机执行的过程中，出现的急需处理的事件，致使CPU暂时中断正在执行的程序，转去处理，处理结束后再继续被打断的进程。</p>
+<p>软中断：通信进程之间用来模拟硬中断的一种信号通信方式</p>
+<p><strong>什么是缓冲？</strong></p>
+<p>缓冲是使用专用硬件缓冲器，或在内存中划出一个区域暂时存放输入输出数据的器件。</p>
+<p>引入缓冲是为了匹配外设和CPU之间的处理速度。减少中断次数和CPU的中断处理时间。解决DMA或通道方式时的数据传输瓶颈问题。</p>
+<h3 id="定义、概念理解"><a href="#定义、概念理解" class="headerlink" title="定义、概念理解"></a>定义、概念理解</h3><p><strong>系统调用</strong>：操作系统提供给编程人员的唯一接口，其指令在核心态下执行。</p>
+<p><strong>进程：一个程序对数据集的执行过程。</strong></p>
+<p>并发： 一组在逻辑上互相独立的程序，在执行过程中，执行时间上互相重叠。</p>
+<p>并行：一组程序按独立的、异常的速度执行</p>
+<p>临界区：不允许多个并发进程交叉执行的一段程序</p>
+<p>死锁：一组并发进程因互相请求对方所拥有的资源，在无外力的条件下无法继续执行的状态。</p>
+<p>虚存：</p>
+<ul>
+<li>一个进程的目标代码与数据的虚拟地址组成的空间</li>
+<li>大小受计算机地址结构限制</li>
+<li>虚存实现的条件：内存中只存经常执行的指令；虚拟地址能由机构转换成物理地址；外存中的数据能被调入内存。</li>
+</ul>
+<p>动态地址重定位：</p>
+<ul>
+<li>设置BR和VR</li>
+<li>将程序段首地址装入BR中</li>
+<li>将所要访问的虚拟地址送VR</li>
+<li>地址变换机构把VR和BR内容相加得实际地址</li>
+</ul>
+<h2 id="教材考点"><a href="#教材考点" class="headerlink" title="教材考点"></a>教材考点</h2><p><strong>11页 图1.2 1.3 1.4 抢占式</strong></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-27.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-27.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>进程的定义和特征（不定项选择）</strong></p>
+<p>进程：进程是进程实体的运行过程，是系统进行资源分配和调度的一个独立单位。</p>
+<p>进程具有以下特征：</p>
+<ol>
+<li>动态性：有一定的生命期</li>
+<li>并发性：多个进程同存于内存中，在一段时间内同时执行。</li>
+<li>独立性：进程是能独立运行、分配资源、接受调度的基本单位</li>
+<li>异步性：可按各自独立的，不可预知的速度向前推进。</li>
+</ol>
+<p><strong>进程的状态</strong></p>
+<p>进程的基本状态：</p>
+<ul>
+<li>就绪状态：已获得除CPU以外的所有必要资源，得倒CPU就可立即执行</li>
+<li>执行状态：已得到CPU，正在执行</li>
+<li>阻塞状态：正在执行的进程，因某种事件而暂时无法继续执行，等相应事件完成后，才能去竞争CPU</li>
+</ul>
+<p>进程的挂起：</p>
+<p>使进程不能继续执行，即使处于就绪状态也不能竞争CPU</p>
+<p>3状态、5状态、7状态。挂起等…基本状态与转换【不考大题 名词解释或者选择题。】</p>
+<p><strong>进程控制块</strong></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-28.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-28.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-29.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-29.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>进程的创建</strong></p>
+<p>![操作系统-30](&#x2F;Users&#x2F;gryffinbit&#x2F;Desktop&#x2F;操作系统考点&#x2F;操作系统考点 7b60f113764c4024a9bf7b9399c686ab&#x2F;操作系统-30.png)</p>
+<p><strong>进程的终止</strong></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-31.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-31.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>进程的阻塞和唤醒</strong></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-32.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-32.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>进程的挂起与激活</strong></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-33.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-33.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>进程同步的基本概念</strong></p>
+<p>两种形式的制约关系</p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-34.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-34.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>临界资源和临界区</p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-35.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-35.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>同步机制应遵循的规则</p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-36.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-36.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>信号量机制（要涉及到大题，写pv源语）</strong></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-37.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-37.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>信号量的应用（选择题）</strong></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-38.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-38.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>生产者-消费者问题</strong></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-39.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-39.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-40.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-40.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-41.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-41.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>哲学家进餐问题</strong></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-42.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-42.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>读写问题</strong></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-43.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-43.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-44.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-44.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-45.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-45.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-46.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-46.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>线程的基本概念（填空选择）</strong></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-47.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-47.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>线程的控制（填空选择）</strong></p>
+<p>![操作系统-48](&#x2F;Users&#x2F;gryffinbit&#x2F;Desktop&#x2F;操作系统考点&#x2F;操作系统考点 7b60f113764c4024a9bf7b9399c686ab&#x2F;操作系统-48.png)</p>
+<p><strong>进程的基本概念</strong></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-49.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-49.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>进程同步的基本概念</strong></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-50.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-50.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>信号量机制及其应用</strong></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-51.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-51.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>线程的基本概念</strong></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-52.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-52.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>比较进程与程序的异同</strong></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-53.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-53.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-65.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-65.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-66.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-66.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>PCB的作用？为什么说PCB是进程存在的唯一标志？</strong></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-54.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-54.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>为什么诸进程对临界资源的访问必须互斥？</strong></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-55.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-55.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>何谓“忙等”？它有什么缺点？</strong></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-56.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-56.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>生产者、消费者问题</strong></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-57.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-57.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>什么是缓冲</strong></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-58.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-58.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-59.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-59.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>pv原语选择之一</strong></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-60.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-60.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-61.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-61.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>独木桥问题 请用信号量解决</strong></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-62.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-62.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-63.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-63.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-64.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-64.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>处理死锁</strong></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-67.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-67.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-68.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-68.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-69.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-69.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-71.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-71.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-72.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-72.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>中断方式I&#x2F;O和DMA区别</strong></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-73.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-73.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<hr>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-74.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-74.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-75.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-75.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-76.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-76.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-77.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-77.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<h2 id="PPT上习题"><a href="#PPT上习题" class="headerlink" title="PPT上习题"></a>PPT上习题</h2><p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-78.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-78.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>若TLB命中，则Page必命中</p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-79.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-79.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-80.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-80.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-81.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-81.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-82.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-82.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-83.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-83.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-84.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-84.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-85.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-85.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+
+  </div>
+  
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
+      
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-11-12T15:00:20+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2024年11月12日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E8%80%83%E7%82%B9/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>考点</p></a></div>
+  <span hidden itemprop="keywords">考点</span>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gryffinbit.top/2021/01/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/&title=操作系统期末考点 - Gryffinbit的思维殿堂&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://gryffinbit.top/2021/01/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/&title=操作系统期末考点 - Gryffinbit的思维殿堂&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://gryffinbit.top/2021/01/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/&title=操作系统期末考点 - Gryffinbit的思维殿堂&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2021/01/28/2021-1-25%E8%B5%9B/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>2021.1.25赛-Ironman</p>
+          <p class='content'>附件链接本次题目原题以及需要的附件：
+https://gryffinbit.lanzous.com/iJtnakypguf
+更多关于此次取证题目的知识点，可以参考
+活取证和死取证
+
+
+
+vola...</p>
+        </a>
+      
+      
+        <a class='next' href='/2021/01/21/%E5%8F%AF%E4%BF%A1%E8%AE%A1%E7%AE%97%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/'>
+          <p class='title'>可信计算期末考点<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>考卷选择题1. 下列哪一个为身份认证密钥的英文简写（B）
+A.EK 	B.AIK 	C.LK 	D.AK
+2.下列哪一个不是静态信任链的运行特点( D )
+A.以CRTM为可信根
+B.平台的一次...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2021/01/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/index.html#comments">
+    </span>
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
+    
+
+    <div id="layoutHelper-comments"></div>
+
+  </article>
+
+
+
+
+
+
+</div>
+<aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
+  
+
+  
+    
+    
+      
+    
+  
+
+
+<div class="widget-sticky pjax">
+
+  
+  
+
+
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%80%83%E5%8D%B7"><span class="toc-text">考卷</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E9%A2%98"><span class="toc-text">选择题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A1%AB%E7%A9%BA%E9%A2%98"><span class="toc-text">填空题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E5%86%99%E7%A8%8B%E5%BA%8F%EF%BC%88PV%E6%BA%90%E8%AF%AD%EF%BC%89%E4%B8%89%E9%80%89%E4%B8%80"><span class="toc-text">编写程序（PV源语）三选一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#clock%E7%AE%97%E6%B3%95"><span class="toc-text">clock算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E7%AD%94%E9%A2%98"><span class="toc-text">简答题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%B6%E8%A1%8C%E5%AE%B6%E7%AE%97%E6%B3%95"><span class="toc-text">银行家算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AE%B5%E9%A1%B5%E5%BC%8F%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2%E8%BF%87%E7%A8%8B"><span class="toc-text">段页式存储管理系统的地址转换过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E4%B8%9A%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="toc-text">作业调度算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="toc-text">磁盘调度算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E5%9E%8B"><span class="toc-text">题型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AB%A0%E8%8A%82%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-text">章节知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0"><span class="toc-text">第三章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0"><span class="toc-text">第四章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0"><span class="toc-text">第五章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0"><span class="toc-text">第六章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E7%AB%A0"><span class="toc-text">第七章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%85%AB%E7%AB%A0"><span class="toc-text">第八章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0"><span class="toc-text">第九章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E3%80%81%E6%A6%82%E5%BF%B5%E7%90%86%E8%A7%A3"><span class="toc-text">定义、概念理解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%99%E6%9D%90%E8%80%83%E7%82%B9"><span class="toc-text">教材考点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PPT%E4%B8%8A%E4%B9%A0%E9%A2%98"><span class="toc-text">PPT上习题</span></a></li></ol>
+    </div>
+  </section>
+
+  
+
+</div>
+
+
+<!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <!-- Custom Files side begin -->
+  
+  <!-- Custom Files side end -->
+</aside>
+
+
+
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+<pjax>
+<script>
+  window.pdata={}
+  pdata.ispage=true;
+  pdata.commentPath="";
+  pdata.commentPlaceholder="";
+  pdata.commentConfig={};
+  //  see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs
+  
+    // header
+    var l_header=document.getElementById("l_header");
+    
+    l_header.classList.add("show");
+    
+    
+      // cover
+      var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
+      var scroll_down=document.getElementById('scroll-down');
+      cover_wrapper.id="none";
+      cover_wrapper.style.display="none";
+      scroll_down.style.display="none";
+    
+  
+</script>
+</pjax>
+        </div>
+        
+  
+  <footer class="footer clearfix"  itemscope itemtype="http://schema.org/WPFooter">
+    <br><br>
+    
+      
+        本站使用
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/#5.8.0" target="_blank" class="codename">Volantis</a>
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="/">Copyright © 2019-2700 ❤️万事皆爱❤️</a></p>
+
+        </div>
+      
+    
+    <!-- Custom Files footer begin-->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1705057106693329"
+     crossorigin="anonymous"></script>
+    
+    <!-- Custom Files footer end-->
+  </footer>
+
+
+        <a id="s-top" class="fa-solid fa-arrow-up fa-fw" href="/" onclick="return false;" title="top"></a>
+      </div>
+    </div>
+    <div>
+      <script>
+  /******************** volantis.dom ********************************/
+  // 页面选择器 将dom对象缓存起来 see: /source/js/app.js etc.
+  volantis.dom.bodyAnchor = volantis.dom.$(document.getElementById("safearea")); // 页面主体
+  volantis.dom.topBtn = volantis.dom.$(document.getElementById('s-top')); // 向上
+  volantis.dom.wrapper = volantis.dom.$(document.getElementById('wrapper')); // 整个导航栏
+  volantis.dom.coverAnchor = volantis.dom.$(document.querySelector('#l_cover .cover-wrapper')); // 1个
+  volantis.dom.switcher = volantis.dom.$(document.querySelector('#l_header .switcher .s-search')); // 搜索按钮   移动端 1个
+  volantis.dom.header = volantis.dom.$(document.getElementById('l_header')); // 移动端导航栏
+  volantis.dom.search = volantis.dom.$(document.querySelector('#l_header .m_search')); // 搜索框 桌面端 移动端 1个
+  volantis.dom.mPhoneList = volantis.dom.$(document.querySelectorAll('#l_header .m-phone .list-v')); //  手机端 子菜单 多个
+</script>
+
+<script>
+  
+  volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fortawesome/fontawesome-free/css/all.min.css");
+  
+  
+  
+</script>
+
+<!-- required -->
+
+
+<!-- internal -->
+
+<script src="/js/app.js"></script>
+
+
+
+
+
+
+<!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+
+
+<script>
+  function loadIssuesJS() {
+    
+      const sites_api = document.getElementById('sites-api');
+      if (sites_api != undefined && typeof SitesJS === 'undefined') {
+        volantis.js("/js/plugins/tags/sites.js")
+      }
+    
+    
+      const friends_api = document.getElementById('friends-api');
+      if (friends_api != undefined && typeof FriendsJS === 'undefined') {
+        volantis.js("/js/plugins/tags/friends.js")
+      }
+    
+    
+      const contributors_api = document.getElementById('contributors-api');
+      if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
+        volantis.js("/js/plugins/tags/contributors.js")
+      }
+    
+  };
+  loadIssuesJS()
+  volantis.pjax.push(()=>{
+    loadIssuesJS();
+  })
+
+</script>
+
+
+
+
+  <script defer src="https://unpkg.com/volantis-static@0.0.1654736714924/libs/vanilla-lazyload/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+
+  
+
+<script>
+  window.FPConfig = {
+	delay: 0,
+	ignoreKeywords: ["#"],
+	maxRPS: 6,
+	hoverDelay: 0
+  };
+</script>
+<script defer src="https://unpkg.com/volantis-static@0.0.1654736714924/libs/flying-pages/flying-pages.min.js"></script>
+
+
+
+
+
+
+
+
+
+      <script>
+  volantis.layoutHelper("comments",`<div id="giscus_container"></div>`)
+
+  volantis.giscus = {};
+
+  function check_giscus() {
+    if (volantis.dark.mode === "dark") {
+      volantis.giscus.Theme = 'dark';
+    } else {
+      volantis.giscus.Theme = 'light';
+    }
+
+    return document.getElementById("giscus_container");
+  }
+
+  function pjax_giscus() {
+    const HEAD = check_giscus();
+    if (!HEAD) return;
+    let cfg = Object.assign({"theme":{"light":"light","dark":"dark"},"repo":"Gryffinbit/blog_comment","repo-id":"R_kgDOMfaOww","category":"Announcements","category-id":"DIC_kwDOMfaOw84ChaAw","mapping":"pathname","reactions-enabled":"1","emit-metadata":"0","lang":"zh-CN"},pdata.commentConfig)
+    const script = document.createElement('script');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    Object.keys(cfg).forEach(k=>{
+      if (k != "theme") {
+        script.setAttribute('data-'+k, cfg[k]);
+      }
+    })
+    script.setAttribute('data-theme', volantis.giscus.Theme);
+    script.setAttribute('crossorigin', "anonymous");
+    HEAD.appendChild(script);
+  }
+
+  function dark_giscus() {
+    const HEAD = check_giscus();
+    if (!HEAD) return;
+
+    const message = {
+      setConfig: {
+        theme: volantis.giscus.Theme
+      }
+    };
+    const giscusIframe = document.querySelector('iframe.giscus-frame');
+    giscusIframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+  }
+  pjax_giscus();
+  volantis.pjax.push(pjax_giscus);
+  volantis.dark.push(dark_giscus);
+</script>
+
+    
+
+
+
+
+  <script defer src="https://gcore.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
+
+
+<!-- optional -->
+
+  <script>
+  const SearchServiceDataPathRoot = ("/" || "/").endsWith("/") ?
+    "/" || "/" :
+    "//" || "/";
+  const SearchServiceDataPath = SearchServiceDataPathRoot + "content.json";
+
+  function loadSearchScript() {
+    // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
+    return volantis.js("/js/search/hexo.js");
+  }
+
+  function loadSearchService() {
+    loadSearchScript();
+    document.querySelectorAll(".input.u-search-input").forEach((e) => {
+      e.removeEventListener("focus", loadSearchService, false);
+    });
+
+    document.querySelectorAll(".u-search-form").forEach((e) => {
+      e.addEventListener("submit", (event) => {
+        event.preventDefault();
+      }, false);
+    });
+  }
+
+  // 打开并搜索 字符串 s
+  function OpenSearch(s) {
+    if (typeof SearchService === 'undefined')
+      loadSearchScript().then(() => {
+        SearchService.setQueryText(s);
+        SearchService.search();
+      });
+    else {
+      SearchService.setQueryText(s);
+      SearchService.search();
+    }
+  }
+
+  // 访问含有 ?s=xxx  的链接时打开搜索 // 与搜索引擎 structured data 相关: /scripts/helpers/structured-data/lib/config.js
+  if (window.location.search && /^\?s=/g.test(window.location.search)) {
+    let queryText = decodeURI(window.location.search)
+      .replace(/\ /g, "-")
+      .replace(/^\?s=/g, "");
+    OpenSearch(queryText);
+  }
+
+  // 搜索输入框获取焦点时加载搜索
+  document.querySelectorAll(".input.u-search-input").forEach((e) => {
+    e.addEventListener("focus", loadSearchService, false);
+  });
+</script>
+
+
+
+
+
+
+
+  <script>
+
+
+
+  function pjax_highlightjs_copyCode(){
+    if (!(document.querySelector(".highlight .code pre") ||
+      document.querySelector(".article pre code"))) {
+      return;
+    }
+    VolantisApp.utilCopyCode(".highlight .code pre, .article pre code")
+  }
+  volantis.requestAnimationFrame(pjax_highlightjs_copyCode)
+  volantis.pjax.push(pjax_highlightjs_copyCode)
+
+</script>
+
+
+
+
+
+
+
+
+
+
+  <script>
+  let imgs = ["https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250813153109263.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250813153126836.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250813153159689.png","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071525544.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071525889.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071524967.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202412051640776.JPG","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202211111636871.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071510106.JPG","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071524050.jpg"];
+  let index = 0;
+  let IntervalParallax = null;
+
+  function parallax(){
+    let ParallaxWindow = document.querySelector("#parallax-window");
+    
+      ParallaxWindow = document.querySelector("html");
+    
+    Parallax.window = ParallaxWindow;
+    Parallax.options.fade = 1500;
+    Parallax.cache = 1;
+    next_parallax();
+    Parallax.init();
+    if (imgs.length>1) {
+      IntervalParallax = setInterval(function () {
+        next_parallax();
+      }, '50000');
+    }
+  }
+
+  function next_parallax() {
+    if (typeof Parallax == "undefined") {
+      return
+    }
+    
+    if (imgs.length>=1) {
+      Parallax.options.src = imgs[index % imgs.length];
+      Parallax.start();
+      index++;
+      if (Parallax.cache) {
+        fetch(imgs[index % imgs.length] +"?t=" + new Date().getTime());
+        if (index == imgs.length) {
+          Parallax.cache = 0;
+        }
+      }
+    }
+  }
+  var runningOnBrowser = typeof window !== "undefined";
+  var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
+  if (!isBot) {
+    volantis.js('/js/plugins/parallax.js').then(()=>{
+      parallax()
+    })
+    volantis.pjax.send(()=>{
+      clearInterval(IntervalParallax)
+    },"clearIntervalParallax");
+    volantis.pjax.push(parallax);
+  }
+</script>
+
+
+
+
+  <script>
+  function load_swiper() {
+    if (!document.querySelectorAll(".swiper-container")[0]) return;
+    volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/swiper/swiper-bundle.min.css");
+    volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/swiper/swiper-bundle.min.js").then(() => {
+      pjax_swiper();
+    });
+  }
+
+  load_swiper();
+
+  function pjax_swiper() {
+    volantis.swiper = new Swiper('.swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      centeredSlides: true,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  }
+
+  volantis.pjax.push(() => {
+    if (!document.querySelectorAll(".swiper-container")[0]) return;
+    if (typeof volantis.swiper === "undefined") {
+      load_swiper();
+    } else {
+      pjax_swiper();
+    }
+  });
+</script>
+
+
+<!-- pjax 标签必须存在于所有页面 否则 pjax error -->
+<pjax>
+
+</pjax>
+
+<script>
+  function listennSidebarTOC() {
+    const navItems = document.querySelectorAll(".toc li");
+    if (!navItems.length) return;
+    let targets = []
+    const sections = [...navItems].map((element) => {
+      const link = element.querySelector(".toc-link");
+      const target = document.getElementById(
+        decodeURI(link.getAttribute("href")).replace("#", "")
+      );
+      targets.push(target)
+      // 解除 a 标签 href 的 锚点定位, a 标签 href 的 锚点定位 会随机启用?? 产生错位???
+      link.setAttribute("onclick","return false;")
+      link.setAttribute("toc-action","toc-"+decodeURI(link.getAttribute("href")).replace("#", ""))
+      link.setAttribute("href","/")
+      // 配置 点击 触发新的锚点定位
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        // 这里的 addTop 是通过错位使得 toc 自动展开.
+        volantis.scroll.to(target,{addTop: 5, observer:true})
+        // Anchor id
+        history.pushState(null, document.title, "#" + target.id);
+      });
+      return target;
+    });
+
+    function activateNavByIndex(target) {
+      if (target.classList.contains("active-current")) return;
+
+      document.querySelectorAll(".toc .active").forEach((element) => {
+        element.classList.remove("active", "active-current");
+      });
+      target.classList.add("active", "active-current");
+      let parent = target.parentNode;
+      while (!parent.matches(".toc")) {
+        if (parent.matches("li")) parent.classList.add("active");
+        parent = parent.parentNode;
+      }
+    }
+
+    // 方案一：
+    volantis.activateNavIndex=0
+    activateNavByIndex(navItems[volantis.activateNavIndex])
+    volantis.scroll.push(()=>{
+      if (targets[0].getBoundingClientRect().top >= 0) {
+        volantis.activateNavIndex = 0
+      }else if (targets[targets.length-1].getBoundingClientRect().top < 0) {
+        volantis.activateNavIndex = targets.length-1
+      } else {
+        for (let index = 0; index < targets.length; index++) {
+          const target0 = targets[index];
+          const target1 = targets[(index+1)%targets.length];
+          if (target0.getBoundingClientRect().top < 0&&target1.getBoundingClientRect().top >= 0) {
+            volantis.activateNavIndex=index
+            break;
+          }
+        }
+      }
+      activateNavByIndex(navItems[volantis.activateNavIndex])
+    })
+
+    // 方案二：
+    // IntersectionObserver 不是完美精确到像素级别 也不是低延时性的
+    // function findIndex(entries) {
+    //   let index = 0;
+    //   let entry = entries[index];
+    //   if (entry.boundingClientRect.top > 0) {
+    //     index = sections.indexOf(entry.target);
+    //     return index === 0 ? 0 : index - 1;
+    //   }
+    //   for (; index < entries.length; index++) {
+    //     if (entries[index].boundingClientRect.top <= 0) {
+    //       entry = entries[index];
+    //     } else {
+    //       return sections.indexOf(entry.target);
+    //     }
+    //   }
+    //   return sections.indexOf(entry.target);
+    // }
+    // function createIntersectionObserver(marginTop) {
+    //   marginTop = Math.floor(marginTop + 10000);
+    //   let intersectionObserver = new IntersectionObserver(
+    //     (entries, observe) => {
+    //       let scrollHeight = document.documentElement.scrollHeight;
+    //       if (scrollHeight > marginTop) {
+    //         observe.disconnect();
+    //         createIntersectionObserver(scrollHeight);
+    //         return;
+    //       }
+    //       let index = findIndex(entries);
+    //       activateNavByIndex(navItems[index]);
+    //     }, {
+    //       rootMargin: marginTop + "px 0px -100% 0px",
+    //       threshold: 0,
+    //     }
+    //   );
+    //   sections.forEach((element) => {
+    //     element && intersectionObserver.observe(element);
+    //   });
+    // }
+    // createIntersectionObserver(document.documentElement.scrollHeight);
+  }
+
+  document.addEventListener("DOMContentLoaded", ()=>{
+    volantis.requestAnimationFrame(listennSidebarTOC)
+  });
+  document.addEventListener("pjax:success", ()=>{
+    volantis.requestAnimationFrame(listennSidebarTOC)
+  });
+</script>
+
+
+
+<script>
+  document.onreadystatechange = function () {
+    if (document.readyState == 'complete') {
+      // 页面加载完毕 样式加载失败，或是当前网速慢，或是开启了省流模式
+      const { saveData, effectiveType } = navigator.connection || navigator.mozConnection || navigator.webkitConnection || {}
+      if (getComputedStyle(document.querySelector("#safearea"), null)["display"] == "none" || saveData || /2g/.test(effectiveType)) {
+        document.querySelectorAll(".reveal").forEach(function (e) {
+          e.style["opacity"] = "1";
+        });
+        document.querySelector("#safearea").style["display"] = "block";
+      }
+    }
+  }
+</script>
+
+
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Gryffinbit的思维殿堂","url":"https://gryffinbit.top/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Gryffinbit","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://gryffinbit.top/","sameAs":["https://github.com/volantis-x"],"description":"一个网络安全网站"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://gryffinbit.top/","name":"Gryffinbit的思维殿堂"}},{"@type":"ListItem","position":2,"item":{"@id":"https://gryffinbit.top/categories/期末考试/","name":"期末考试"}},{"@type":"ListItem","position":2,"item":{"@id":"https://gryffinbit.top/categories/期末考试/操作系统/","name":"操作系统"}},{"@type":"ListItem","position":3,"item":{"@id":"https://gryffinbit.top/2021/01/21/操作系统期末考点/","name":"操作系统期末考点"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Gryffinbit的思维殿堂","url":"https://gryffinbit.top/","keywords":null,"description":"一个网络安全网站","author":{"@type":"Person","name":"Gryffinbit","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://gryffinbit.top/","description":"一个网络安全网站"},"publisher":{"@type":"Organization","name":"Gryffinbit的思维殿堂","url":"https://gryffinbit.top/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://gryffinbit.top?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"操作系统期末考点","description":"一个网络安全网站","inLanguage":["zh-CN","en","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://gryffinbit.top/2021/01/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/"},"author":{"@type":"Person","name":"Gryffinbit","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://gryffinbit.top/"},"publisher":{"@type":"Organization","name":"Gryffinbit的思维殿堂","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://gryffinbit.top/2021/01/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/","wordCount":0,"datePublished":"2021-01-21T15:10:00.000Z","dateModified":"2024-11-12T07:00:20.000Z","articleSection":"期末考试","keywords":"考点","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+
+
+
+      
+        <!--
+  pjax重载区域接口：
+  1.  <pjax></pjax> 标签 pjax 标签必须存在于所有页面 否则 pjax error
+  2.  script[data-pjax]
+  3.  .pjax-reload script
+  4.  .pjax
+-->
+
+
+
+<script src="https://unpkg.com/volantis-static@0.0.1654736714924/libs/pjax/pjax.min.js"></script>
+
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox]):not([onclick="return false;"]):not([onclick="return!1"]):not([target="_blank"]):not([target="view_window"]):not([href$=".xml"])',
+        selectors: [
+          "head title",
+          "head meta[name=keywords]",
+          "head meta[name=description]",
+          
+          "#l_main",
+          "#pjax-header-nav-list",
+          ".pjax",
+          "pjax", // <pjax></pjax> 标签
+          "script[data-pjax], .pjax-reload script" // script标签添加data-pjax 或 script标签外层添加.pjax-reload 的script代码段重载
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000,
+        
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      //window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      // 使用 volantis.pjax.send 方法传入pjax:send回调函数 参见layout/_partial/scripts/global.ejs
+      volantis.pjax.method.send.start();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 使用 volantis.pjax.push 方法传入重载函数 参见layout/_partial/scripts/global.ejs
+      volantis.pjax.method.complete.start();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      if(volantis.debug) {
+        console.error(e);
+        console.log('pjax error: \n' + JSON.stringify(e));
+      }else{
+        // 使用 volantis.pjax.error 方法传入pjax:error回调函数 参见layout/_partial/scripts/global.ejs
+        volantis.pjax.method.error.start();
+        window.location.href = e.triggerElement.href;
+      }
+    });
+</script>
+
+      
+    </div>
+    <!-- import body_end begin-->
+    <!-- import body_end end-->
+    <!-- Custom Files bodyEnd begin-->
+    
+    <!-- Custom Files bodyEnd end-->
+    <!-- front-matter body_end begin -->
+    <!-- front-matter body_end end -->
+
+  </body>
+
+</html>
+

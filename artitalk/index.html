@@ -1,0 +1,3562 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/#5.8.0'>
+  <meta name="generator" content="Hexo 7.3.0">
+  <meta name="Volantis" content="5.8.0">
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+  <link rel="canonical" href="https://gryffinbit.top/artitalk/"/>
+  <!-- 渲染优化 -->
+    <meta http-equiv='x-dns-prefetch-control' content='on' />
+      <link rel='dns-prefetch' href='https://unpkg.com'>
+      <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Content-Security-Policy" content=" default-src 'self' https:; block-all-mixed-content; base-uri 'self' https:; form-action 'self' https:; worker-src 'self' https:; connect-src 'self' https: *; img-src 'self' data: https: *; media-src 'self' https: *; font-src 'self' data: https: *; frame-src 'self' https: *; manifest-src 'self' https: *; child-src https:; script-src 'self' https: 'unsafe-inline' *; style-src 'self' https: 'unsafe-inline' *; ">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <!-- import head_begin begin -->
+  <!-- import head_begin end -->
+  <!-- Custom Files headBegin begin-->
+  
+  <!-- Custom Files headBegin end-->
+  <!-- front-matter head_begin begin -->
+  <!-- front-matter head_begin end -->
+    <link rel="shortcut icon" type='image/x-icon' href="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/favicon.png">
+  <link rel="preload" href="/css/style.css" as="style">
+  <link rel="preload" href="https://gcore.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+<link rel="preload" href="https://gcore.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+
+  <!-- feed -->
+  <!-- 页面元数据 -->
+  <title>Artitalk - Gryffinbit的思维殿堂</title>
+  <meta name="keywords" content="null">
+  <meta desc name="description" content="一个网络安全网站 - Gryffinbit - Gryffinbit的思维殿堂">
+  <meta name="description" content=".at_items {     padding: 0;     list-style: none;   }   .at_item {     display: flex;   }   .at_avatar {     border: 1px solid #ddd;     padding: 2px;     float: left;     border-">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Artitalk">
+<meta property="og:url" content="https://gryffinbit.top/artitalk/index.html">
+<meta property="og:site_name" content="Gryffinbit的思维殿堂">
+<meta property="og:description" content=".at_items {     padding: 0;     list-style: none;   }   .at_item {     display: flex;   }   .at_avatar {     border: 1px solid #ddd;     padding: 2px;     float: left;     border-">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:author" content="Gryffinbit">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+  <style>
+    /* 首屏样式 */
+    #safearea {
+  display: none;
+}
+:root {
+  --color-site-body: #f4f4f4;
+  --color-site-bg: #f4f4f4;
+  --color-site-inner: #fff;
+  --color-site-footer: #666;
+  --color-card: #fff;
+  --color-text: #444;
+  --color-block: #f6f6f6;
+  --color-inlinecode: #c74f00;
+  --color-codeblock: #fff7ea;
+  --color-h1: #3a3a3a;
+  --color-h2: #3a3a3a;
+  --color-h3: #333;
+  --color-h4: #444;
+  --color-h5: #555;
+  --color-h6: #666;
+  --color-p: #444;
+  --color-list: #666;
+  --color-list-hl: #30ad91;
+  --color-meta: #888;
+  --color-read-bkg: #e0d8c8;
+  --color-read-post: #f8f1e2;
+  --color-copyright-bkg: #f5f5f5;
+}
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+*::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+*::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: #3dd9b6;
+  cursor: pointer;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #ff5722;
+}
+html {
+  color: var(--color-text);
+  width: 100%;
+  height: 100%;
+  font-family: UbuntuMono, "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  font-size: 16px;
+}
+html >::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+html >::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+html >::-webkit-scrollbar-thumb {
+  background: #54b5a0 linear-gradient(45deg, rgba(255,255,255,0.4) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.4) 75%, transparent 75%, transparent);
+  cursor: pointer;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+html >::-webkit-scrollbar-thumb:hover {
+  background: #54b5a0 linear-gradient(45deg, rgba(255,255,255,0.4) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.4) 75%, transparent 75%, transparent);
+}
+body {
+  background-color: var(--color-site-body);
+  text-rendering: optimizelegibility;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+body.modal-active {
+  overflow: hidden;
+}
+@media screen and (max-width: 680px) {
+  body.modal-active {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+a {
+  color: #2092ec;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+a:hover {
+  color: #ff5722;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+ul,
+ol {
+  padding-left: 0;
+}
+ul li,
+ol li {
+  list-style: none;
+}
+header {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+}
+img {
+  border: 0;
+  background: none;
+  max-width: 100%;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  height: 0;
+  border: 0;
+  border-radius: 1px;
+  -webkit-border-radius: 1px;
+  border-bottom: 1px solid rgba(68,68,68,0.1);
+}
+button,
+input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+button {
+  overflow: visible;
+  text-transform: none;
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+@supports (backdrop-filter: blur(20px)) {
+  .blur {
+    background: rgba(255,255,255,0.9) !important;
+    backdrop-filter: saturate(200%) blur(20px);
+  }
+}
+.shadow {
+  box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+}
+.shadow.floatable {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+.shadow.floatable:hover {
+  box-shadow: 0 2px 4px 0px rgba(0,0,0,0.1), 0 4px 8px 0px rgba(0,0,0,0.1), 0 8px 16px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 2px 4px 0px rgba(0,0,0,0.1), 0 4px 8px 0px rgba(0,0,0,0.1), 0 8px 16px 0px rgba(0,0,0,0.1);
+}
+#l_cover {
+  min-height: 64px;
+}
+.cover-wrapper {
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  height: 100vh;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -khtml-flex-wrap: nowrap;
+  -moz-flex-wrap: nowrap;
+  -o-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  color: var(--color-site-inner);
+  padding: 0 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: -100px;
+}
+.cover-wrapper .cover-body {
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.cover-wrapper#full {
+  height: calc(100vh + 100px);
+  padding-bottom: 100px;
+}
+.cover-wrapper#half {
+  max-height: 640px;
+  min-height: 400px;
+  height: calc(36vh - 64px + 200px);
+}
+.cover-wrapper #scroll-down {
+  width: 100%;
+  height: 64px;
+  position: absolute;
+  bottom: 100px;
+  text-align: center;
+  cursor: pointer;
+}
+.cover-wrapper #scroll-down .scroll-down-effects {
+  color: #fff;
+  font-size: 24px;
+  line-height: 64px;
+  position: absolute;
+  width: 24px;
+  left: calc(50% - 12px);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  animation: scroll-down-effect 1.5s infinite;
+  -webkit-animation: scroll-down-effect 1.5s infinite;
+  -khtml-animation: scroll-down-effect 1.5s infinite;
+  -moz-animation: scroll-down-effect 1.5s infinite;
+  -o-animation: scroll-down-effect 1.5s infinite;
+  -ms-animation: scroll-down-effect 1.5s infinite;
+}
+@-moz-keyframes scroll-down-effect {
+  0% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+  50% {
+    top: -16px;
+    opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -moz-opacity: 0.4;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-webkit-keyframes scroll-down-effect {
+  0% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+  50% {
+    top: -16px;
+    opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -moz-opacity: 0.4;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-o-keyframes scroll-down-effect {
+  0% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+  50% {
+    top: -16px;
+    opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -moz-opacity: 0.4;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@keyframes scroll-down-effect {
+  0% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+  50% {
+    top: -16px;
+    opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -moz-opacity: 0.4;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+.cover-wrapper .cover-body {
+  margin-top: 64px;
+  margin-bottom: 100px;
+}
+.cover-wrapper .cover-body,
+.cover-wrapper .cover-body .top,
+.cover-wrapper .cover-body .bottom {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -khtml-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  -ms-justify-content: center;
+  max-width: 100%;
+}
+.cover-wrapper .cover-body .bottom {
+  margin-top: 32px;
+}
+.cover-wrapper .cover-body .title {
+  font-family: "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Helvetica, monospace;
+  font-size: 3.125rem;
+  line-height: 1.2;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+.cover-wrapper .cover-body .subtitle {
+  font-size: 20px;
+}
+.cover-wrapper .cover-body .logo {
+  max-height: 120px;
+  max-width: calc(100% - 4 * 16px);
+}
+@media screen and (min-height: 1024px) {
+  .cover-wrapper .cover-body .title {
+    font-size: 3rem;
+  }
+  .cover-wrapper .cover-body .subtitle {
+    font-size: 1.05rem;
+  }
+  .cover-wrapper .cover-body .logo {
+    max-height: 150px;
+  }
+}
+.cover-wrapper .cover-body .m_search {
+  position: relative;
+  max-width: calc(100% - 16px);
+  width: 320px;
+  vertical-align: middle;
+}
+.cover-wrapper .cover-body .m_search .form {
+  position: relative;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  width: 100%;
+}
+.cover-wrapper .cover-body .m_search .icon,
+.cover-wrapper .cover-body .m_search .input {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+.cover-wrapper .cover-body .m_search .icon {
+  position: absolute;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  line-height: 2.5rem;
+  width: 32px;
+  top: 0;
+  left: 5px;
+  color: rgba(68,68,68,0.75);
+}
+.cover-wrapper .cover-body .m_search .input {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  height: 2.5rem;
+  width: 100%;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  font-size: 0.875rem;
+  -webkit-appearance: none;
+  padding-left: 36px;
+  border-radius: 1.4rem;
+  -webkit-border-radius: 1.4rem;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+  border: none;
+  color: var(--color-text);
+}
+@media screen and (max-width: 500px) {
+  .cover-wrapper .cover-body .m_search .input {
+    padding-left: 36px;
+  }
+}
+.cover-wrapper .cover-body .m_search .input:hover {
+  background: rgba(255,255,255,0.8);
+}
+.cover-wrapper .cover-body .m_search .input:focus {
+  background: #fff;
+}
+.cover-wrapper .list-h {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -khtml-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  align-items: stretch;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.cover-wrapper .list-h a {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1 0;
+  -ms-flex: 1 0;
+  flex: 1 0;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  font-weight: 600;
+}
+.cover-wrapper .list-h a img {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  margin: 4px;
+  min-width: 40px;
+  max-width: 44px;
+}
+@media screen and (max-width: 768px) {
+  .cover-wrapper .list-h a img {
+    min-width: 36px;
+    max-width: 40px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .cover-wrapper .list-h a img {
+    margin: 2px 4px;
+    min-width: 32px;
+    max-width: 36px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .cover-wrapper .list-h a img {
+    min-width: 28px;
+    max-width: 32px;
+  }
+}
+.cover-wrapper {
+  max-width: 100%;
+}
+.cover-wrapper.search .bottom .menu {
+  margin-top: 16px;
+}
+.cover-wrapper.search .bottom .menu .list-h a {
+  white-space: nowrap;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  align-items: baseline;
+  padding: 2px;
+  margin: 4px;
+  color: var(--color-site-inner);
+  opacity: 0.75;
+  -webkit-opacity: 0.75;
+  -moz-opacity: 0.75;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  border-bottom: 2px solid transparent;
+}
+.cover-wrapper.search .bottom .menu .list-h a i {
+  margin-right: 4px;
+}
+.cover-wrapper.search .bottom .menu .list-h a p {
+  font-size: 0.9375rem;
+}
+.cover-wrapper.search .bottom .menu .list-h a:hover,
+.cover-wrapper.search .bottom .menu .list-h a.active,
+.cover-wrapper.search .bottom .menu .list-h a:active {
+  opacity: 1;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  border-bottom: 2px solid var(--color-site-inner);
+}
+.cover-wrapper.dock .menu,
+.cover-wrapper.featured .menu,
+.cover-wrapper.focus .menu {
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+}
+.cover-wrapper.dock .menu .list-h a,
+.cover-wrapper.featured .menu .list-h a,
+.cover-wrapper.focus .menu .list-h a {
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  line-height: 24px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-bottom: none;
+  text-align: center;
+  align-content: flex-end;
+  color: rgba(68,68,68,0.7);
+  font-size: 1.5rem;
+}
+@media screen and (max-width: 500px) {
+  .cover-wrapper.dock .menu .list-h a,
+  .cover-wrapper.featured .menu .list-h a,
+  .cover-wrapper.focus .menu .list-h a {
+    padding: 12px 8px;
+  }
+}
+.cover-wrapper.dock .menu .list-h a i,
+.cover-wrapper.featured .menu .list-h a i,
+.cover-wrapper.focus .menu .list-h a i {
+  margin: 8px;
+}
+.cover-wrapper.dock .menu .list-h a p,
+.cover-wrapper.featured .menu .list-h a p,
+.cover-wrapper.focus .menu .list-h a p {
+  font-size: 0.875rem;
+}
+.cover-wrapper.dock .menu .list-h a.active,
+.cover-wrapper.featured .menu .list-h a.active,
+.cover-wrapper.focus .menu .list-h a.active {
+  background: var(--color-card);
+  backdrop-filter: none;
+}
+.cover-wrapper.dock .menu .list-h a.active i,
+.cover-wrapper.featured .menu .list-h a.active i,
+.cover-wrapper.focus .menu .list-h a.active i,
+.cover-wrapper.dock .menu .list-h a.active i+p,
+.cover-wrapper.featured .menu .list-h a.active i+p,
+.cover-wrapper.focus .menu .list-h a.active i+p {
+  color: #3dd9b6;
+}
+.cover-wrapper.dock .menu .list-h a.active img+p,
+.cover-wrapper.featured .menu .list-h a.active img+p,
+.cover-wrapper.focus .menu .list-h a.active img+p {
+  color: var(--color-text);
+}
+.cover-wrapper.dock .menu .list-h a:hover,
+.cover-wrapper.featured .menu .list-h a:hover,
+.cover-wrapper.focus .menu .list-h a:hover {
+  background: var(--color-card);
+}
+.cover-wrapper.dock .top {
+  margin-bottom: 48px;
+}
+.cover-wrapper.dock .menu {
+  background: rgba(255,255,255,0.5);
+  position: absolute;
+  bottom: 0;
+  max-width: 100%;
+}
+.cover-wrapper.dock .menu .list-h {
+  flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -khtml-flex-wrap: nowrap;
+  -moz-flex-wrap: nowrap;
+  -o-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  margin: 4px;
+}
+.cover-wrapper.dock .menu .list-h a+a {
+  margin-left: 4px;
+}
+@media screen and (max-width: 500px) {
+  .cover-wrapper.dock .menu .list-h {
+    overflow-x: scroll;
+  }
+  .cover-wrapper.dock .menu .list-h::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+  }
+  .cover-wrapper.dock .menu .list-h::-webkit-scrollbar-track-piece {
+    background: transparent;
+  }
+  .cover-wrapper.dock .menu .list-h::-webkit-scrollbar-thumb {
+    background: #3dd9b6;
+    cursor: pointer;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+  }
+  .cover-wrapper.dock .menu .list-h::-webkit-scrollbar-thumb:hover {
+    background: #ff5722;
+  }
+}
+@supports (backdrop-filter: blur(20px)) {
+  .cover-wrapper.dock .menu {
+    background: rgba(255,255,255,0.5);
+    backdrop-filter: saturate(200%) blur(20px);
+  }
+}
+.cover-wrapper #parallax-window {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+.parallax-mirror {
+  animation-delay: 0s;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  animation-name: fadeIn;
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@font-face {
+  font-family: 'UbuntuMono';
+  src: url("https://gcore.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf");
+  font-weight: 'normal';
+  font-style: 'normal';
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Varela Round';
+  src: url("https://gcore.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf");
+  font-weight: 'normal';
+  font-style: 'normal';
+  font-display: swap;
+}
+.l_header {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  width: 100%;
+  height: 64px;
+  background: var(--color-card);
+  box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+}
+.l_header.auto {
+  transition: opacity 0.4s ease;
+  -webkit-transition: opacity 0.4s ease;
+  -khtml-transition: opacity 0.4s ease;
+  -moz-transition: opacity 0.4s ease;
+  -o-transition: opacity 0.4s ease;
+  -ms-transition: opacity 0.4s ease;
+  visibility: hidden;
+}
+.l_header.auto.show {
+  opacity: 1 !important;
+  -webkit-opacity: 1 !important;
+  -moz-opacity: 1 !important;
+  visibility: visible;
+}
+.l_header .container {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.l_header #wrapper {
+  height: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.l_header #wrapper .nav-main,
+.l_header #wrapper .nav-sub {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -khtml-flex-wrap: nowrap;
+  -moz-flex-wrap: nowrap;
+  -o-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -khtml-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -o-justify-content: space-between;
+  -ms-justify-content: space-between;
+  align-items: center;
+}
+.l_header #wrapper .nav-main {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+.l_header #wrapper.sub .nav-main {
+  transform: translateY(-64px);
+  -webkit-transform: translateY(-64px);
+  -khtml-transform: translateY(-64px);
+  -moz-transform: translateY(-64px);
+  -o-transform: translateY(-64px);
+  -ms-transform: translateY(-64px);
+}
+.l_header #wrapper .nav-sub {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  opacity: 0;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  height: 64px;
+  width: calc(100% - 2 * 16px);
+  position: absolute;
+}
+.l_header #wrapper .nav-sub ::-webkit-scrollbar {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+}
+@media screen and (min-width: 2048px) {
+  .l_header #wrapper .nav-sub {
+    max-width: 55vw;
+    margin: auto;
+  }
+}
+.l_header #wrapper.sub .nav-sub {
+  opacity: 1;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+}
+.l_header #wrapper .title {
+  position: relative;
+  color: var(--color-text);
+  padding-left: 24px;
+  max-height: 64px;
+}
+.l_header #wrapper .nav-main .title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+  line-height: 64px;
+  padding: 0 24px;
+  font-size: 1.25rem;
+  font-family: "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Helvetica, monospace;
+}
+.l_header #wrapper .nav-main .title img {
+  height: 64px;
+}
+.l_header .nav-sub {
+  max-width: 1080px;
+  margin: auto;
+}
+.l_header .nav-sub .title {
+  font-weight: bold;
+  font-family: UbuntuMono, "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  line-height: 1.2;
+  max-height: 64px;
+  white-space: normal;
+  flex-shrink: 1;
+}
+.l_header .switcher {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  line-height: 64px;
+  align-items: center;
+}
+.l_header .switcher .s-toc {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .l_header .switcher .s-toc {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: -ms-flexbox /* TWEENER - IE 10 */;
+    display: -webkit-flex /* NEW - Chrome */;
+    display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+    display: flex;
+  }
+}
+.l_header .switcher >li {
+  height: 48px;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  margin: 2px;
+}
+@media screen and (max-width: 500px) {
+  .l_header .switcher >li {
+    margin: 0 1px;
+    height: 48px;
+  }
+}
+.l_header .switcher >li >a {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -khtml-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  -ms-justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0.85em 1.1em;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  border: none;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  color: #3dd9b6;
+}
+.l_header .switcher >li >a:hover {
+  border: none;
+}
+.l_header .switcher >li >a.active,
+.l_header .switcher >li >a:active {
+  border: none;
+  background: var(--color-site-bg);
+}
+@media screen and (max-width: 500px) {
+  .l_header .switcher >li >a {
+    width: 36px;
+    height: 48px;
+  }
+}
+.l_header .nav-sub .switcher {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+}
+.l_header .m_search {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  height: 64px;
+  width: 240px;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+@media screen and (max-width: 1024px) {
+  .l_header .m_search {
+    width: 44px;
+    min-width: 44px;
+  }
+  .l_header .m_search input::placeholder {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+  }
+  .l_header .m_search:hover {
+    width: 240px;
+  }
+  .l_header .m_search:hover input::placeholder {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@media screen and (min-width: 500px) {
+  .l_header .m_search:hover .input {
+    width: 100%;
+  }
+  .l_header .m_search:hover .input::placeholder {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@media screen and (max-width: 500px) {
+  .l_header .m_search {
+    min-width: 0;
+  }
+  .l_header .m_search input::placeholder {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+.l_header .m_search .form {
+  position: relative;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.l_header .m_search .icon {
+  position: absolute;
+  width: 36px;
+  left: 5px;
+  color: var(--color-meta);
+}
+@media screen and (max-width: 500px) {
+  .l_header .m_search .icon {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: none;
+  }
+}
+.l_header .m_search .input {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  line-height: 1.3;
+  width: 100%;
+  color: var(--color-text);
+  background: #fafafa;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding-left: 40px;
+  font-size: 0.875rem;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border: none;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+@media screen and (min-width: 500px) {
+  .l_header .m_search .input:focus {
+    box-shadow: 0 4px 8px 0px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0 4px 8px 0px rgba(0,0,0,0.1);
+  }
+}
+@media screen and (max-width: 500px) {
+  .l_header .m_search .input {
+    background: var(--color-block);
+    padding-left: 8px;
+    border: none;
+  }
+  .l_header .m_search .input:hover,
+  .l_header .m_search .input:focus {
+    border: none;
+  }
+}
+@media (max-width: 500px) {
+  .l_header .m_search {
+    left: 0;
+    width: 0;
+    overflow: hidden;
+    position: absolute;
+    background: #fff;
+    transition: all 0.28s ease;
+    -webkit-transition: all 0.28s ease;
+    -khtml-transition: all 0.28s ease;
+    -moz-transition: all 0.28s ease;
+    -o-transition: all 0.28s ease;
+    -ms-transition: all 0.28s ease;
+  }
+  .l_header .m_search .input {
+    border-radius: 32px;
+    -webkit-border-radius: 32px;
+    margin-left: 16px;
+    padding-left: 16px;
+  }
+  .l_header.z_search-open .m_search {
+    width: 100%;
+  }
+  .l_header.z_search-open .m_search .input {
+    width: calc(100% - 120px);
+  }
+}
+ul.m-pc >li>a {
+  color: inherit;
+  border-bottom: 2px solid transparent;
+}
+ul.m-pc >li>a:active,
+ul.m-pc >li>a.active {
+  border-bottom: 2px solid #3dd9b6;
+}
+ul.m-pc li:hover >ul.list-v,
+ul.list-v li:hover >ul.list-v {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+}
+ul.nav-list-h {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  align-items: stretch;
+}
+ul.nav-list-h>li {
+  position: relative;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -khtml-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  -ms-justify-content: center;
+  height: 100%;
+  line-height: 2.4;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+ul.nav-list-h>li >a {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 600;
+}
+ul.list-v {
+  z-index: 1;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  position: absolute;
+  background: var(--color-card);
+  box-shadow: 0 2px 4px 0px rgba(0,0,0,0.08), 0 4px 8px 0px rgba(0,0,0,0.08), 0 8px 16px 0px rgba(0,0,0,0.08);
+  -webkit-box-shadow: 0 2px 4px 0px rgba(0,0,0,0.08), 0 4px 8px 0px rgba(0,0,0,0.08), 0 8px 16px 0px rgba(0,0,0,0.08);
+  margin-top: -6px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  padding: 8px 0;
+}
+ul.list-v.show {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+}
+ul.list-v hr {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+ul.list-v >li {
+  white-space: nowrap;
+  word-break: keep-all;
+}
+ul.list-v >li.header {
+  font-size: 0.78125rem;
+  font-weight: bold;
+  line-height: 2em;
+  color: var(--color-meta);
+  margin: 8px 16px 4px;
+}
+ul.list-v >li.header i {
+  margin-right: 8px;
+}
+ul.list-v >li ul {
+  margin-left: 0;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  margin-top: -40px;
+}
+ul.list-v .aplayer-container {
+  min-height: 64px;
+  padding: 6px 16px;
+}
+ul.list-v >li>a {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  color: var(--color-list);
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 36px;
+  padding: 0 20px 0 16px;
+  text-overflow: ellipsis;
+  margin: 0 4px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+@media screen and (max-width: 1024px) {
+  ul.list-v >li>a {
+    line-height: 40px;
+  }
+}
+ul.list-v >li>a >i {
+  margin-right: 8px;
+}
+ul.list-v >li>a:active,
+ul.list-v >li>a.active {
+  color: var(--color-list-hl);
+}
+ul.list-v >li>a:hover {
+  color: var(--color-list-hl);
+  background: var(--color-site-bg);
+}
+.l_header .menu >ul>li>a {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  padding: 0 8px;
+}
+.l_header .menu >ul>li>a >i {
+  margin-right: 4px;
+}
+.l_header ul.nav-list-h>li {
+  color: var(--color-list);
+  line-height: 64px;
+}
+.l_header ul.nav-list-h>li >a {
+  max-height: 64px;
+  overflow: hidden;
+  color: inherit;
+}
+.l_header ul.nav-list-h>li >a:active,
+.l_header ul.nav-list-h>li >a.active {
+  color: #3dd9b6;
+}
+.l_header ul.nav-list-h>li:hover>a {
+  color: var(--color-list-hl);
+}
+.l_header ul.nav-list-h>li i.music {
+  animation: rotate-effect 1.5s linear infinite;
+  -webkit-animation: rotate-effect 1.5s linear infinite;
+  -khtml-animation: rotate-effect 1.5s linear infinite;
+  -moz-animation: rotate-effect 1.5s linear infinite;
+  -o-animation: rotate-effect 1.5s linear infinite;
+  -ms-animation: rotate-effect 1.5s linear infinite;
+}
+@-moz-keyframes rotate-effect {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -khtml-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -khtml-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -khtml-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rotate-effect {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -khtml-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -khtml-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -khtml-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+@-o-keyframes rotate-effect {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -khtml-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -khtml-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -khtml-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+@keyframes rotate-effect {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -khtml-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -khtml-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -khtml-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+.menu-phone li ul.list-v {
+  right: calc(100% - 0.5 * 16px);
+}
+.menu-phone li ul.list-v ul {
+  right: calc(100% - 0.5 * 16px);
+}
+#wrapper {
+  max-width: 1080px;
+  margin: auto;
+}
+@media screen and (min-width: 2048px) {
+  #wrapper {
+    max-width: 55vw;
+  }
+}
+#wrapper .menu {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  margin: 0 16px 0 0;
+}
+#wrapper .menu .list-v ul {
+  left: calc(100% - 0.5 * 16px);
+}
+.menu-phone {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  margin-top: 16px;
+  right: 8px;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+.menu-phone ul {
+  right: calc(100% - 0.5 * 16px);
+}
+@media screen and (max-width: 500px) {
+  .menu-phone {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: block;
+  }
+}
+.l_header {
+  max-width: 65vw;
+  left: calc((100% - 65vw) * 0.5);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+@media screen and (max-width: 2048px) {
+  .l_header {
+    max-width: 1112px;
+    left: calc((100% - 1112px) * 0.5);
+  }
+}
+@media screen and (max-width: 1112px) {
+  .l_header {
+    left: 0;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .l_header .container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .l_header #wrapper .nav-main .title {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .l_header #wrapper .nav-sub {
+    width: 100%;
+  }
+  .l_header #wrapper .nav-sub .title {
+    overflow-y: scroll;
+    margin-top: 2px;
+    padding: 8px 16px;
+  }
+  .l_header #wrapper .switcher {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: -ms-flexbox /* TWEENER - IE 10 */;
+    display: -webkit-flex /* NEW - Chrome */;
+    display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+    display: flex;
+    margin-right: 8px;
+  }
+  .l_header .menu {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  .list-v li {
+    max-width: 270px;
+  }
+}
+#u-search {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 60px 20px;
+  z-index: 1001;
+}
+@media screen and (max-width: 680px) {
+  #u-search {
+    padding: 0px;
+  }
+}
+
+  </style>
+  <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
+  
+<script>
+if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
+    document.write(
+	'<style>'+
+		'html{'+
+			'overflow-x: hidden !important;'+
+			'overflow-y: hidden !important;'+
+		'}'+
+		'.kill-ie{'+
+			'text-align:center;'+
+			'height: 100%;'+
+			'margin-top: 15%;'+
+			'margin-bottom: 5500%;'+
+		'}'+
+    '.kill-t{'+
+      'font-size: 2rem;'+
+    '}'+
+    '.kill-c{'+
+      'font-size: 1.2rem;'+
+    '}'+
+		'#l_header,#l_body{'+
+			'display: none;'+
+		'}'+
+	'</style>'+
+    '<div class="kill-ie">'+
+        `<span class="kill-t"><b>抱歉，您的浏览器无法访问本站</b></span><br/>`+
+        `<span class="kill-c">微软已经于2016年终止了对 Internet Explorer (IE) 10 及更早版本的支持，<br/>继续使用存在极大的安全隐患，请使用当代主流的浏览器进行访问。</span><br/>`+
+        `<a target="_blank" rel="noopener" href="https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/"><strong>了解详情 ></strong></a>`+
+    '</div>');
+</script>
+
+
+<noscript>
+	<style>
+		html{
+			overflow-x: hidden !important;
+			overflow-y: hidden !important;
+		}
+		.kill-noscript{
+			text-align:center;
+			height: 100%;
+			margin-top: 15%;
+			margin-bottom: 5500%;
+		}
+    .kill-t{
+      font-size: 2rem;
+    }
+    .kill-c{
+      font-size: 1.2rem;
+    }
+		#l_header,#l_body{
+			display: none;
+		}
+	</style>
+    <div class="kill-noscript">
+        <span class="kill-t"><b>抱歉，您的浏览器无法访问本站</b></span><br/>
+        <span class="kill-c">本页面需要浏览器支持（启用）JavaScript</span><br/>
+        <a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=启用JavaScript"><strong>了解详情 ></strong></a>
+    </div>
+</noscript>
+
+
+  <script>
+  /************这个文件存放不需要重载的全局变量和全局函数*********/
+  window.volantis = {}; // volantis 全局变量
+  volantis.debug = "env"; // 调试模式
+  volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
+
+  volantis.GLOBAL_CONFIG ={
+    debug: "env",
+    cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
+    default: {"avatar":"https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/favicon.png","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
+    lastupdate: new Date(1755072275307),
+    sidebar: {
+      for_page: ["blogger","category","tagcloud","donate"],
+      for_post: ["toc"],
+      webinfo: {
+        lastupd: {
+          enable: true,
+          friendlyShow: true
+        },
+        runtime: {
+          data: "2019/10/01",
+          unit: "天"
+        }
+      }
+    },
+    plugins: {
+      message: {"enable":true,"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/css/iziToast.min.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/js/iziToast.min.js","icon":{"default":"fa-solid fa-info-circle light-blue","quection":"fa-solid fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fa-solid fa-play","pause":"fa-solid fa-pause"},"rightmenu":{"enable":true,"notice":true}},
+      fancybox: {"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.umd.js"},
+      
+      
+      
+    }
+  }
+
+  /******************** volantis.EventListener ********************************/
+  // 事件监听器 see: /source/js/app.js
+  volantis.EventListener = {}
+  // 这里存放pjax切换页面时将被移除的事件监听器
+  volantis.EventListener.list = []
+  //构造方法
+  function volantisEventListener(type, f, ele) {
+    this.type = type
+    this.f = f
+    this.ele = ele
+  }
+  // 移除事件监听器
+  volantis.EventListener.remove = () => {
+    volantis.EventListener.list.forEach(function (i) {
+      i.ele.removeEventListener(i.type, i.f, false)
+    })
+    volantis.EventListener.list = []
+  }
+  /******************** volantis.dom.$ ********************************/
+  // 注：这里没有选择器，也没有forEach一次只处理一个dom，这里重新封装主题常用的dom方法，返回的是dom对象，对象包含了以下方法，同时保留dom的原生API
+  function volantisDom(ele) {
+    if (!ele) ele = document.createElement("div")
+    this.ele = ele;
+    // ==============================================================
+    this.ele.find = (c) => {
+      let q = this.ele.querySelector(c)
+      if (q)
+        return new volantisDom(q)
+    }
+    // ==============================================================
+    this.ele.hasClass = (c) => {
+      return this.ele.className.match(new RegExp('(\\s|^)' + c + '(\\s|$)'));
+    }
+    this.ele.addClass = (c) => {
+      this.ele.classList.add(c);
+      return this.ele
+    }
+    this.ele.removeClass = (c) => {
+      this.ele.classList.remove(c);
+      return this.ele
+    }
+    this.ele.toggleClass = (c) => {
+      if (this.ele.hasClass(c)) {
+        this.ele.removeClass(c)
+      } else {
+        this.ele.addClass(c)
+      }
+      return this.ele
+    }
+    // ==============================================================
+    // 参数 r 为 true 表示pjax切换页面时事件监听器将被移除，false不移除
+    this.ele.on = (c, f, r = 1) => {
+      this.ele.addEventListener(c, f, false)
+      if (r) {
+        volantis.EventListener.list.push(new volantisEventListener(c, f, this.ele))
+      }
+      return this.ele
+    }
+    this.ele.click = (f, r) => {
+      this.ele.on("click", f, r)
+      return this.ele
+    }
+    this.ele.scroll = (f, r) => {
+      this.ele.on("scroll", f, r)
+      return this.ele
+    }
+    // ==============================================================
+    this.ele.html = (c) => {
+      // if(c=== undefined){
+      //   return this.ele.innerHTML
+      // }else{
+      this.ele.innerHTML = c
+      return this.ele
+      // }
+    }
+    // ==============================================================
+    this.ele.hide = (c) => {
+      this.ele.style.display = "none"
+      return this.ele
+    }
+    this.ele.show = (c) => {
+      this.ele.style.display = "block"
+      return this.ele
+    }
+    // ==============================================================
+    return this.ele
+  }
+  volantis.dom.$ = (ele) => {
+    return !!ele ? new volantisDom(ele) : null;
+  }
+  /******************** RunItem ********************************/
+  function RunItem() {
+    this.list = []; // 存放回调函数
+    this.start = () => {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].run();
+      }
+    };
+    this.push = (fn, name, setRequestAnimationFrame = true) => {
+      let myfn = fn
+      if (setRequestAnimationFrame) {
+        myfn = ()=>{
+          volantis.requestAnimationFrame(fn)
+        }
+      }
+      var f = new Item(myfn, name);
+      this.list.push(f);
+    };
+    this.remove = (name) =>{
+      for (let index = 0; index < this.list.length; index++) {
+        const e = this.list[index];
+        if (e.name == name) {
+          this.list.splice(index,1);
+        }
+      }
+    }
+    // 构造一个可以run的对象
+    function Item(fn, name) {
+      // 函数名称
+      this.name = name || fn.name;
+      // run方法
+      this.run = () => {
+        try {
+          fn()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+  }
+  /******************** Pjax ********************************/
+  // /layout/_plugins/pjax/index.ejs
+  // volantis.pjax.send(callBack[,"callBackName"]) 传入pjax:send回调函数
+  // volantis.pjax.push(callBack[,"callBackName"]) 传入pjax:complete回调函数
+  // volantis.pjax.error(callBack[,"callBackName"]) 传入pjax:error回调函数
+  volantis.pjax = {};
+  volantis.pjax.method = {
+    complete: new RunItem(),
+    error: new RunItem(),
+    send: new RunItem(),
+  };
+  volantis.pjax = Object.assign(volantis.pjax, {
+    push: volantis.pjax.method.complete.push,
+    error: volantis.pjax.method.error.push,
+    send: volantis.pjax.method.send.push,
+  });
+  /******************** RightMenu ********************************/
+  // volantis.rightmenu.handle(callBack[,"callBackName"]) 外部菜单项控制
+  // 可在 volantis.mouseEvent 处获取右键事件
+  volantis.rightmenu = {};
+  volantis.rightmenu.method = {
+    handle: new RunItem(),
+  }
+  volantis.rightmenu = Object.assign(volantis.rightmenu, {
+    handle: volantis.rightmenu.method.handle.push,
+  });
+  /********************  Dark Mode  ********************************/
+  // /layout/_partial/scripts/darkmode.ejs
+  // volantis.dark.mode 当前模式 dark or light
+  // volantis.dark.toggle() 暗黑模式触发器
+  // volantis.dark.push(callBack[,"callBackName"]) 传入触发器回调函数
+  volantis.dark = {};
+  volantis.dark.method = {
+    toggle: new RunItem(),
+  };
+  volantis.dark = Object.assign(volantis.dark, {
+    push: volantis.dark.method.toggle.push,
+  });
+  /********************  Message  ********************************/
+  // VolantisApp.message
+  /********************  isMobile  ********************************/
+  // /source/js/app.js
+  // volantis.isMobile
+  // volantis.isMobileOld
+  /********************脚本动态加载函数********************************/
+  // volantis.js(src, cb)  cb 可以传入onload回调函数 或者 JSON对象 例如: volantis.js("src", ()=>{}) 或 volantis.js("src", {defer:true,onload:()=>{}})
+  // volantis.css(src)
+
+  // 返回Promise对象，如下方法同步加载资源，这利于处理文件资源之间的依赖关系，例如：APlayer 需要在 MetingJS 之前加载
+  // (async () => {
+  //     await volantis.js("...theme.plugins.aplayer.js.aplayer...")
+  //     await volantis.js("...theme.plugins.aplayer.js.meting...")
+  // })();
+
+  // 已经加入了setTimeout
+  volantis.js = (src, cb) => {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var HEAD = document.getElementsByTagName("head")[0] || document.documentElement;
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        if (cb) {
+          if (JSON.stringify(cb)) {
+            for (let p in cb) {
+              if (p == "onload") {
+                script[p] = () => {
+                  cb[p]()
+                  resolve()
+                }
+              } else {
+                script[p] = cb[p]
+                script.onload = resolve
+              }
+            }
+          } else {
+            script.onload = () => {
+              cb()
+              resolve()
+            };
+          }
+        } else {
+          script.onload = resolve
+        }
+        script.setAttribute("src", src);
+        HEAD.appendChild(script);
+      });
+    });
+  }
+  volantis.css = (src) => {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = src;
+        link.onload = resolve;
+        document.getElementsByTagName("head")[0].appendChild(link);
+      });
+    });
+  }
+  /********************按需加载的插件********************************/
+  // volantis.import.jQuery().then(()=>{})
+  volantis.import = {
+    jQuery: () => {
+      if (typeof jQuery == "undefined") {
+        return volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/jquery/dist/jquery.min.js")
+      } else {
+        return new Promise(resolve => {
+          resolve()
+        });
+      }
+    }
+  }
+  /********************** requestAnimationFrame ********************************/
+  // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+  // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
+  volantis.requestAnimationFrame = (fn)=>{
+    if (!window.requestAnimationFrame) {
+      window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+    }
+    window.requestAnimationFrame(fn)
+  }
+  /************************ layoutHelper *****************************************/
+  volantis.layoutHelper = (helper, html, opt)=>{
+    opt = Object.assign({clean:false, pjax:true}, opt)
+    function myhelper(helper, html, clean) {
+      volantis.tempDiv = document.createElement("div");
+      volantis.tempDiv.innerHTML = html;
+      let layoutHelper = document.querySelector("#layoutHelper-"+helper)
+      if (layoutHelper) {
+        if (clean) {
+          layoutHelper.innerHTML = ""
+        }
+        layoutHelper.append(volantis.tempDiv);
+      }
+    }
+    myhelper(helper, html, opt.clean)
+    if (opt.pjax) {
+      volantis.pjax.push(()=>{
+        myhelper(helper, html, opt.clean)
+      },"layoutHelper-"+helper)
+    }
+  }
+  /****************************** 滚动事件处理 ****************************************/
+  volantis.scroll = {
+    engine: new RunItem(),
+    unengine: new RunItem(),
+  };
+  volantis.scroll = Object.assign(volantis.scroll, {
+    push: volantis.scroll.engine.push,
+  });
+  // 滚动条距离顶部的距离
+  volantis.scroll.getScrollTop = () =>{
+    let scrollPos;
+    if (window.pageYOffset) {
+      scrollPos = window.pageYOffset;
+    } else if (document.compatMode && document.compatMode != 'BackCompat') {
+      scrollPos = document.documentElement.scrollTop;
+    } else if (document.body) {
+      scrollPos = document.body.scrollTop;
+    }
+    return scrollPos;
+  }
+  // 使用 requestAnimationFrame 处理滚动事件
+  // `volantis.scroll.del` 中存储了一个数值, 该数值检测一定时间间隔内滚动条滚动的位移, 数值的检测频率是浏览器的刷新频率. 数值为正数时, 表示向下滚动. 数值为负数时, 表示向上滚动.
+  volantis.scroll.handleScrollEvents = () => {
+    volantis.scroll.lastScrollTop = volantis.scroll.getScrollTop()
+    function loop() {
+      const scrollTop = volantis.scroll.getScrollTop();
+      if (volantis.scroll.lastScrollTop !== scrollTop) {
+        volantis.scroll.del = scrollTop - volantis.scroll.lastScrollTop;
+        volantis.scroll.lastScrollTop = scrollTop;
+        // if (volantis.scroll.del > 0) {
+        //   console.log("向下滚动");
+        // } else {
+        //   console.log("向上滚动");
+        // }
+        // 注销过期的unengine未滚动事件
+        volantis.scroll.unengine.list=[]
+        volantis.scroll.engine.start();
+      }else{
+        volantis.scroll.unengine.start();
+      }
+      volantis.requestAnimationFrame(loop)
+    }
+    volantis.requestAnimationFrame(loop)
+  }
+  volantis.scroll.handleScrollEvents()
+  volantis.scroll.ele = null;
+  // 触发页面滚动至目标元素位置
+  volantis.scroll.to = (ele, option = {}) => {
+    if (!ele) return;
+    volantis.scroll.ele = ele;
+    // 默认配置
+    opt = {
+      top: ele.getBoundingClientRect().top + document.documentElement.scrollTop,
+      behavior: "smooth"
+    }
+    // 定义配置
+    if ("top" in option) {
+      opt.top = option.top
+    }
+    if ("behavior" in option) {
+      opt.behavior = option.behavior
+    }
+    if ("addTop" in option) {
+      opt.top += option.addTop
+    }
+    if (!("observerDic" in option)) {
+      option.observerDic = 100
+    }
+    // 滚动
+    window.scrollTo(opt);
+    // 监视器
+    // 监视并矫正元素滚动到指定位置
+    // 用于处理 lazyload 引起的 cls 导致的定位失败问题
+    // option.observer = false
+    if (option.observer) {
+      setTimeout(() => {
+        if (volantis.scroll.ele != ele) {
+          return
+        }
+        volantis.scroll.unengine.push(() => {
+          let me = ele.getBoundingClientRect().top
+          if(!(me >= -option.observerDic && me <= option.observerDic)){
+            volantis.scroll.to(ele, option)
+          }
+          volantis.scroll.unengine.remove("unengineObserver")
+        },"unengineObserver")
+      },1000)
+    }
+  }
+  /********************** Content Visibility ********************************/
+  // 见 source/css/first.styl 如果遇到任何问题 删除 .post-story 即可
+  // 一个元素被声明 content-visibility 属性后 如果元素不在 viewport 中 浏览器不会计算其后代元素样式和属性 从而节省 Style & Layout 耗时
+  // content-visibility 的副作用: 锚点失效 等等(实验初期 暂不明确), 使用此方法清除样式
+  volantis.cleanContentVisibility = ()=>{
+    if (document.querySelector(".post-story")) {
+      console.log("cleanContentVisibility");
+      document.querySelectorAll(".post-story").forEach(e=>{
+        e.classList.remove("post-story")
+      })
+    }
+  }
+  /******************************************************************************/
+  /******************************************************************************/
+  /******************************************************************************/
+  //图像加载出错时的处理
+  function errorImgAvatar(img) {
+    img.src = "https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/favicon.png";
+    img.onerror = null;
+  }
+  function errorImgCover(img) {
+    img.src = "https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg";
+    img.onerror = null;
+  }
+  /******************************************************************************/
+</script>
+
+  <!-- import head_end begin -->
+  <!-- import head_end end -->
+  <!-- Custom Files headEnd begin-->
+  
+  <!-- Custom Files headEnd end-->
+  <!-- front-matter head_end begin -->
+  <!-- front-matter head_end end -->
+</head>
+
+  <!-- 点击出桃心特效 -->
+  <script src="https://gcore.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/clicklove.js"></script>
+
+
+
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <!-- import body_begin begin-->
+    <!-- import body_begin end-->
+    <!-- Custom Files bodyBegin begin-->
+    
+    <!-- Custom Files bodyBegin end-->
+    <!-- front-matter body_begin begin -->
+    <!-- front-matter body_begin end -->
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
+  <div class='container'>
+  <div id='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a id="s-comment" class="fa-solid fa-comments fa-fw" target="_self"  href="/" onclick="return false;" title="comment"></a></li>
+        
+          <li><a id="s-toc" class="s-toc fa-solid fa-list fa-fw" target="_self"  href="/" onclick="return false;" title="toc"></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+            🐰兔子窝🥕
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                target="_blank" rel="noopener" href="https://github.com/Gryffinbit" title="github"
+                  
+                  
+                  
+                    active-action="action-https:githubcomGryffinbit"
+                  >
+                  <i class='fab fa-github fa-fw'></i>github
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/categories/" title="categories"
+                  
+                  
+                  
+                    active-action="action-categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>categories
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/tags/" title="tags"
+                  
+                  
+                  
+                    active-action="action-tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>tags
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/archives/" title="archives"
+                  
+                  
+                  
+                    active-action="action-archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>archives
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/friends/" title="alt er love"
+                  
+                  
+                  
+                    active-action="action-friends"
+                  >
+                  <i class='fas fa-users fa-fw'></i>alt er love
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/artitalk/" title="thoughts"
+                  
+                  
+                  
+                    active-action="action-artitalk"
+                  >
+                  <i class='fas fa-heart fa-fw'></i>thoughts
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                target="_blank" rel="noopener" href="https://gryffinbitworkspace.notion.site/2024-public-160eb1c098b3808c8ebeca180a1c1707" title="soul"
+                  
+                  
+                  
+                    active-action="action-https:gryffinbitworkspacenotionsite2024-public-160eb1c098b3808c8ebeca180a1c1707"
+                  >
+                  <i class='fas fa-book fa-fw'></i>soul
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+      
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fa-solid fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+      
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fa-solid fa-search fa-fw" target="_self" href="/" onclick="return false;" title="search"></a></li>
+				
+				<li>
+          <a class="s-menu fa-solid fa-bars fa-fw" target="_self" href="/" onclick="return false;" title="menu"></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                target="_blank" rel="noopener" href="https://github.com/Gryffinbit" title="github"
+                  
+                  
+                  
+                    active-action="action-https:githubcomGryffinbit"
+                  >
+                  <i class='fab fa-github fa-fw'></i>github
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/categories/" title="categories"
+                  
+                  
+                  
+                    active-action="action-categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>categories
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/tags/" title="tags"
+                  
+                  
+                  
+                    active-action="action-tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>tags
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/archives/" title="archives"
+                  
+                  
+                  
+                    active-action="action-archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>archives
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/friends/" title="alt er love"
+                  
+                  
+                  
+                    active-action="action-friends"
+                  >
+                  <i class='fas fa-users fa-fw'></i>alt er love
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/artitalk/" title="thoughts"
+                  
+                  
+                  
+                    active-action="action-artitalk"
+                  >
+                  <i class='fas fa-heart fa-fw'></i>thoughts
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                target="_blank" rel="noopener" href="https://gryffinbitworkspace.notion.site/2024-public-160eb1c098b3808c8ebeca180a1c1707" title="soul"
+                  
+                  
+                  
+                    active-action="action-https:gryffinbitworkspacenotionsite2024-public-160eb1c098b3808c8ebeca180a1c1707"
+                  >
+                  <i class='fas fa-book fa-fw'></i>soul
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+
+      <!-- Custom Files header begin -->
+      
+      <!-- Custom Files header end -->
+		</div>
+	</div>
+  </div>
+</header>
+
+    <div id="l_body">
+      <div id="l_cover">
+  
+    
+      <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
+      <div id="none" class='cover-wrapper  dock' style="display: none;">
+        
+  <div id="parallax-window"></div>
+
+<div class='cover-body'>
+  <div class='top'>
+    
+    
+      <p class="title">欢迎来到Gryffinbit的思维殿堂</p>
+    
+    
+      <p class="subtitle">Stay Hungry. Stay Foolish.</p>
+    
+  </div>
+  <div class='bottom'>
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a target="_blank" rel="noopener" href="https://github.com/Gryffinbit"
+              
+              
+              active-action="action-https:githubcomGryffinbit">
+              <i class='fab fa-github fa-fw'></i><p>github</p>
+            </a>
+          
+            <a href="/categories/"
+              
+              
+              active-action="action-categories">
+              <i class='fas fa-folder-open fa-fw'></i><p>categories</p>
+            </a>
+          
+            <a href="/tags/"
+              
+              
+              active-action="action-tags">
+              <i class='fas fa-tags fa-fw'></i><p>tags</p>
+            </a>
+          
+            <a href="/archives/"
+              
+              
+              active-action="action-archives">
+              <i class='fas fa-archive fa-fw'></i><p>archives</p>
+            </a>
+          
+            <a href="/friends/"
+              
+              
+              active-action="action-friends">
+              <i class='fas fa-users fa-fw'></i><p>alt_er_love</p>
+            </a>
+          
+            <a href="/artitalk/"
+              
+              
+              active-action="action-artitalk">
+              <i class='fas fa-heart fa-fw'></i><p>thoughts</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://gryffinbitworkspace.notion.site/2024-public-160eb1c098b3808c8ebeca180a1c1707"
+              
+              
+              active-action="action-https:gryffinbitworkspacenotionsite2024-public-160eb1c098b3808c8ebeca180a1c1707">
+              <i class='fas fa-book fa-fw'></i><p>soul</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+      </div>
+    
+  
+</div>
+
+
+
+<!-- 首页打字机特效 -->
+<script src="https://unpkg.com/typed.js@2.0.11"></script>
+<script>
+  var typed = new Typed(".title", {
+      strings: ['欢迎来到Gryffinbit的思维殿堂'],
+      startDelay: 0,//开始的延迟
+      typeSpeed: 100,//打字速度
+      loop: false,//是否循环
+      showCursor: true,//显示游标
+      shuffle: false//是否随机
+  });
+</script>
+<!-- 当前遇到的问题是改成var typed = new Typed(".subtitle", {
+  strings: ['Stay Hungry. Stay Foolish.'], 是可以正常运行的，但是改成title就不可以。 对应的文件是/root/Blog/node_modules/hexo-theme-volantis/layout/_partial/_cover/focus.ejs -->
+      <div id="safearea">
+        <div class="body-wrapper">
+          
+<div id="l_main" class=''>
+    <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-" id="" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="undefined">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Gryffinbit的思维殿堂">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Gryffinbit的思维殿堂">
+    <meta itemprop="description" content="一个网络安全网站">
+  </span>
+  
+
+
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title" itemprop="name headline">
+        Artitalk
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/favicon.png" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/favicon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">Gryffinbit</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2025-08-13T16:04:35+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2025年8月13日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    
+
+
+<style>
+  .at_items {
+    padding: 0;
+    list-style: none;
+  }
+  .at_item {
+    display: flex;
+  }
+  .at_avatar {
+    border: 1px solid #ddd;
+    padding: 2px;
+    float: left;
+    border-radius: 64px;
+    transition: all 1s;
+    width: 48px;
+    height: 48px;
+  }
+  .at_content_container {
+    margin: 0 0 20px 20px;
+    position: relative;
+    padding: 10px;
+    border-radius: 5px;
+    background: var(--at-color, #9bcd9b);
+  }
+  .at_content_container::before {
+    content: '';
+    position: absolute;
+    top: 20px; /* 将箭头位置垂直居中 */
+    left: -10px; /* 设置箭头的左侧位置 */
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid var(--at-color, #9bcd9b); /* 设置箭头的样式和颜色 */
+    transform: translateY(-50%); /* 将箭头位置垂直居中 */
+  }
+  .at_item:nth-child(odd) .at_content_container {
+    --at-color: #ff9e77;
+  }
+  .at_content {
+    white-space: pre-wrap;
+  }
+  .at_time {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  .at_more {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0 10px;
+  }
+  .at_more_btn {
+    opacity: 0.8;
+    width: auto;
+    min-width: 80px;
+    height: 36px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    line-height: 20px;
+    font-weight: 600;
+    font-size: 12px;
+    border-radius: 12px;
+    background-color: #f4645f;
+  }
+  .at_more_btn[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    cursor: no-drop;
+  }
+  .at_loading {
+    animation: at_loading 0.8s linear infinite;
+  }
+  .at_more_loading {
+    display: none;
+    height: inherit;
+  }
+  @keyframes at_loading {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+
+<div id="at_main">
+  <ul class="at_items">
+    
+    <li class="at_item">
+      <img class="at_avatar" alt="avatar" />
+      <div class="at_content_container">
+        <div class="at_content">人的情绪是用来影响他人的，而不是左右自己的。公开的言论是用来维护立场和利益的，不是表达自己思想和认知的。</div>
+        <div class="at_time">2025/02/27 16:47:24</div>
+      </div>
+    </li>
+    
+    <li class="at_item">
+      <img class="at_avatar" alt="avatar" />
+      <div class="at_content_container">
+        <div class="at_content">绝不肯善罢甘休，我命由我不由天，神灭我，杀神；天灭我，逆天！也许中道崩殂或葬身火海；但不会中途放弃，郁屈而终，这是生命的耻辱。
+</div>
+        <div class="at_time">2025/02/20 11:05:18</div>
+      </div>
+    </li>
+    
+    <li class="at_item">
+      <img class="at_avatar" alt="avatar" />
+      <div class="at_content_container">
+        <div class="at_content">我喜欢的是一个正常人灵魂里躲着的神经病，是一个智者脑子中存在的白痴，是一朵玫瑰脚下的泥土，是月亮上的斑驳和桂树，是撕裂自己却忍不住热爱生活，是被我看见那部分的天真。
+反差的迷人之处在于：放荡者求饶，圣洁者迷乱。掠夺者温柔，忠心者背叛。懦弱者暴起，强悍者落难。
+</div>
+        <div class="at_time">2025/02/20 11:05:18</div>
+      </div>
+    </li>
+    
+    <li class="at_item">
+      <img class="at_avatar" alt="avatar" />
+      <div class="at_content_container">
+        <div class="at_content">写在25岁生日:
+🎂 这一年有很多顿悟，就是到了某些时刻，以前积累的东西，无论是心态、经验，还是挫折，忽然开花结果了。我得到了很多外界的认可，让我忽然看明白自己，也开始认可自己。以前觉得自己得到一些美好的事物都是侥幸，现在终于明白，哦，原来我配得上呀。而且原来不是只有做“对的事情”才值得被爱和认可啊。
+
+【关于成长】
+我喜欢成长。成长给我带来个人意志的力量感，让我对自己的人生有着绝对掌控。
+虽然独立也意味着对未知风险全权负责的压力。但我发现我和身边最好的朋友们，都有一个共性，就是总能很快的接受不好的事实，然后向前看，寻找新的出路。我们不执着于已经失去的，只看眼前和未来能获取到的。有什么大不了的，总有新的活法，总能找到新的乐趣。
+
+【思辨精神】
+我慢慢发现，世界并不是绝对黑白分明的，很多事情都是一体两面的。
+在这个信息爆炸且观点偏执的时代，要保持独立的思辨能力和对信息求证的严谨。因为主流信息背后不一定是在揭露真相更可能是在掩盖本质。要跳出事物的局限，去看全貌，看本质。
+
+【钱和理想，just do it】
+钱，能让人独立，让人有安全感，能让人自由。理想主义者总会面临现实和经济上面的问题，我也会陷入那种焦虑的怪圈，就是自己想做的事情是不是有意义的，是不是能赚钱的。
+我有目标，也为此制定了周密的计划，这样的计划的确需要很多钱来支撑。可是当自己真正拥有了这样的资本之后，反而比起空想时期更畏手畏脚。我开始担心如果做了我想做的事情，没有任何结果呢？如果我到时候浪费了时间、浪费了金钱，最后什么都不剩，30多岁的年纪，又回到了起跑线重新开始呢？然后我开始害怕，开始质疑自己的决定。
+但，在24岁的最后一天，有一个人告诉我：做和做好是两个步骤。有时你只需要先开始做。至于更多的，以后的你会替你做出更好的选择。
+我想要自由，我期待未来，我想要穿越群山，俯瞰大地。那些抽象的、未来的铸就了我的灵魂。别忘了，钱只是自由的资本，而不是目标。
+
+【权力斗争】
+觉醒是漫长的过程，革命也是漫长的过程。 可贺的是，我在更多的人身上看见了“反抗”、看见了“觉醒”，是一件好事。
+有很多女人，她们不被要求读很多书，不被要求独立。因为社会对她们的需求不是要她们做自己，而是要求她们好好的“服侍别人”，成为谁的附属。 不给她们机会丰富自己的知识和精神世界。这种剥夺，就是很残酷、很不公的。就像是一场战争，从一开始就抢走了一个人的武器。
+所以我在思考到底什么是女权。我不喜欢把人分为男女。我觉得人生而平等，性别不会成为任何阻碍，也没想过刻意的去维权去发声。但后来渐渐明白了：想要平等、想要推翻不公，这是一场革命。革命是要叫喊的，是要反抗、要去争取的。从根本上来讲，它无关性别，而是弱势群体向强势群体的对抗，以追求平等。
+
+【英雄主义】
+在悲观的世界里，找到一条自己的出路
+赤子之心是一个很好的词，用中二和热血去形容一个成年人，就像是无论年龄增长多大，少年也从未放弃那道光。我一直迫切的想要成长为一个强大有能力的人，有多余的爱和精力去给别人。去帮助那些被家庭和社会抛弃的人。我们是幸存者，保护弱者，肩负起社会责任，是我们每个人的义务。
+
+没人可以规定你是谁，你该以什么样的刻板印象示人。我们不过是被规训成了社会和别人所期待的样子。别怕，去成为不被定义的风吧。
+我们洒脱，我们勇敢，我们随心而动，我们总在路上，继续走下去吧。
+
+写在25岁生日，并祝25岁的自己生日快乐。
+</div>
+        <div class="at_time">2025/02/17 17:02:57</div>
+      </div>
+    </li>
+    
+    <li class="at_item">
+      <img class="at_avatar" alt="avatar" />
+      <div class="at_content_container">
+        <div class="at_content">他不是死于狱中，而是死于背叛。</div>
+        <div class="at_time">2024/08/07 10:20:05</div>
+      </div>
+    </li>
+    
+  </ul>
+  <div class="at_more">
+    <button class="at_more_btn">加载更多</button>
+    <svg class="at_more_loading at_loading" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" fill="none" stroke="currentColor" stroke-width="8" r="40" stroke-linecap="round" stroke-dasharray="128 120"></circle>
+    </svg>
+  </div>
+</div>
+
+<script>
+  const pageSize = 5
+  const artitalk = [{"content":"且视他人之疑目如盏盏鬼火，大胆地去走你的夜路。","timestamp":1722997205058},{"content":"Never grown up, but never stop growing.","timestamp":1722997205059},{"content":"写在24岁生日：\n🚩 今年我很好的完成了去年制定给自己的人生计划，但这一年好辛苦啊…\n\n23岁成长到24岁，这一年的主题是：看清世界残酷的真相后探寻灵魂的安放处和人生的方向。\n\n23岁，我慢慢的意识到世界真实的面目。是浪漫主义慢慢被现实打的狗血淋头，有很多愤世嫉俗，也有很多消极悲观。对人生会有很多迷茫不解，接受现实的过程也充满了艰辛。最终找到的突破口是自诩为：“活在现实的理想主义者。”\n24 岁以前，我以为人生中一切事情都会有一个“标答”，每一个疑惑也都应该有解决方案。我认为自己能解决并掌控一切事情。而现在我开始渐渐明白，原来我们都不是无所不能的神，原来世界上有很多事情，明白了却无法解决，我感到有些迷茫和无力。当思考和成长的格局变得宏观的时候，自己反而就变得非常渺小。\n\n今年的自己是矛盾的，并且可能将来的较长一段时间里都会保持这样的一种煎熬：肉体困于牢笼，思想飞出天际。我想自由应该是一种精神。它无关财富，无关年龄，无关地域的限制。但它无法脱离现实，在实现自由以前，总要先饱受禁锢的折磨。于是我理解了加缪的那句：“我的灵魂与我之间的距离如此遥远，而我的存在却如此真实”。\n\n今年遇到的一个社会现象是，劣币驱逐良币。这一直让我很困惑该如何突破这样的困境。在经济不好的形势下，这一现象变得更加明显，市场、社会、人都很浮躁。挣快钱、浮于表面、虚假、不择手段变成了一种很好的生存方式。我又该如何去做到保持好的竞争能力的同时，不与劣币同流合污，站着把钱赚了。\n\n初尝了人生，很难，很辛苦，甚至想摆烂。可人一旦沉醉于自身的软弱，就会一味地软弱下去。会在众目睽睽中倒下，倒在街头，倒在比地面更低的地方。我或许会消极、会脆弱，但我不会服输，不会软弱，会一直战斗下去。\n\n23岁，高喊理想主义至死不渝。24 岁，直面人生，进一步去践行罗曼罗兰的英雄主义。\n\n写在24 岁生日，并祝24岁的自己生日快乐。\n","timestamp":1722997205058},{"content":"恶人作恶后，人生依然顺遂如意。\n而被害的人，只能在破碎的生活里彷徨。\n无罪的人不断自责，有罪的人心安理得。\n","timestamp":1722997205058},{"content":"亲爱的雷斯垂德，我认为，当法律无法给受害者带来正义时，私人报复从这一刻开始就是正当甚至高尚的。","timestamp":1722997205058},{"content":"最近突然醒悟了一件事情，不可能有人来到这个世界上读十几年书，上十几年班，就是为了还那三十几年的房贷，所以当我们把那些负担放下时，你会发现生活其实很简单。原来看一天手机也没关系、睡到大中午也没关系、懒惰不想上班也没关系、不对讨厌的人笑也没关系、躺平也没关系。生命完完全全是属于自己的。\n可当你把有车有房当做理所当然去追求，便是自我奴役。所以现在，虽然我的生命在时间历程中逐渐消失，却从未有像现在般充满力量。\n我的一生按照自己喜欢的方式来过，这就够了。\n","timestamp":1722997205059},{"content":"我今天有一些感悟。我觉得现在是一个觉醒的年代，人们更知道自己想要什么，更敢去追求自己向往的东西。这次的思考是从婚姻的角度。以往的婚姻，爱情的成分是不够多的，我觉得更多的是为了追求性生活和繁衍。但随着现代，人们对性的认知更开放，使得婚前性行为成为很平常的事情，不再有更多的人、仅仅是为了性资源而去选择婚姻。另一个方面就是避孕和性教育也更普及了，使得性行为不再那么容易导致生命的孕育，于是成婚的家庭责任方面也就减轻了不少。最后就是男女都开始有好的学历，好的工作。女性不会再把“嫁的好”作为一生最重要的事情。所以现在的婚姻，大多数人想明白了，会觉得自己不需要，于是晚婚晚育甚至不婚不育。而这象征的正是思想的觉醒。走到婚姻的层面，会有更多的“主观意愿”在里面、会有更多精神上的契合。换句话说、就是走向婚姻，是真的向往婚姻。明白了自己想要的是什么。\n另外、离婚率高，也不一定是坏事。离婚率高甚至可以代表以后的幸福率高。我们爸妈那一辈、很多人走到现在的岁数，或者是30.40岁爱情就不在了、却还要被迫绑定在一个屋檐下，真的是彼此的折磨。而离婚率高了起来、也证明了觉醒、摆脱当前烂糟生活的勇气。\n\n觉醒是漫长的过程。革命也是漫长的过程。可贺的是，我在更多的人身上、看见了“反抗”、看见了“觉醒”。是一件好事。\n其实很多事情、看起来跟女权没关系。但是仔细想想。这个社会就是由人组成的。而人是分为了男和女。所以很多社会事件、很多政治事件、最终都可能导向了女权。导向了女人争取自己的权益。\n有的时候我其实也不喜欢把人分为男女。我觉得人生而平等、性别不会成为任何阻碍和不同的。也不喜欢很大声的去为自己，为女性而发声去维权。但后来渐渐明白了、想要平等、想要推翻不公，这是一场革命。革命是要叫嚷的，是要争取的。它会显得“不那么优雅”。革命都是被压迫阶级的人的叫喊和反抗。而这个社会，女人已经被压迫了太久。从社会层面上来看、她们是被“困了很久”的底层。最后我就明白了、它无关性别，从根本上来讲，就是弱势群体向强势群体的对抗，以追求平等。\n有很多人，因为是女生，她们不被要求读很多书，不被要求有太高的能力、只要求相夫教子。做一个好妈妈好妻子。不要求她们做自己，只要求她们好好的“服侍别人”，成为谁的附属。不要求，也不给她们机会丰富自己的知识和更高层面的精神世界。这种剥夺，就是很残酷很不公的。就像是一场战争，从一开始就抢走了一个人的武器。因为知识和眼界、是革命最好的武器。如果被剥夺了精神和灵魂。是很难独立，很难有这种觉醒意识到。\n所以我一直觉得、没有思想，是最可怕的。\n\n我作为女生，我很多时候活的兢兢战战的。我害怕成为那种“金丝雀”、那种“被养着的女人”。我害怕我因为性别被歧视，被有偏见。我必须在各个方面都更厉害。我太害怕成为那样的人。以至于有时候我会太要强，对别人太有敌意。还有很难大大方方的去依赖男人，总要以身作则的和“那类女人”划清界限。因为我永远也不想成为那样的女人。我永远也不想认为我的性别是别人眼中“更弱的一方”。我永远也不想为我的性别抹黑。 我是女生，我一直不觉得有什么是男生做的了而女生就做不好的。我一直都在用自己的行为和做法去证明这一点。女生，一点也不会在任何方面，比任何人差。而这正是很多人遇到的“自我歧视”。\n","timestamp":1722997205058},{"content":"人最大的善良，其实是在自己的权力范围内不去为难别人","timestamp":1722997205057},{"content":"你我渺若夜空繁星，只望见眼前，自然只与繁星争辉。可看看无尽苍穹，便知道自身微小，改变这天地如蚍蜉撼树。先知自己小，然后才有雄心，要与日月同光，我不亮，天下暗。","timestamp":1722997205059},{"content":"写在23岁生日：\n\n今年的成长主题是三个：“接受自己”、“成家立业”、“性别平等”\n\n“接受自己”\n我渐渐能接受自己只是一个平凡又普通的人，我能接受一些我不能改变的事情以及怨恨。我开始意识到了阶级固化的真正存在，我一边羡慕着更高的“别处的生活”，一边庆幸着自己已有的生活。我明白自己只是浩瀚星河里的一颗不起眼的小星星，却在努力发着光。我在接受自己的同时不卑不亢，在自己能力范围内做到最好。\n我有很多缺点，也有很多比我更好的人，我不再追逐，不再苛责，我开始接受并欣赏自己、爱着自己。\n一些感悟：“成为游戏规则的制定者，才能摆脱压迫，获得自由。”\n最近很喜欢的话：“在黑暗中看见光明，于光明中窥见黑暗。”\n\n“成家立业”\n今年我开始步入职场，其实比我想的好多了，职场氛围舒服，我做着我喜欢的工作，拿着不错的工资。最重要的是：我独立了，不论是经济、还是精神。\n经济独立之后，思想可以更独立，我可以拒绝我不喜欢的一切。以前想要拥有一切，现在却觉得放弃什么都不过分。没有人，没有人可以让我不舒服，让我不舒服的人和事，我都有能力离开。这样的能力，能够让我发自心底，纯粹的去选择我爱的任何人和事。\n这个独立的过程里，权哥是一个重要的角色，他给了我极大的勇气和信心，让我能够大胆的制定计划并让计划落实。他给了我满足感和安全感，让我更明确自己的目标和方向，并勇往直前。\n稳定的感情成为了我最坚实的后盾。所以，这一年，我忽然理解了先成家后立业的含义。\n“前途比爱情重要，但爱情比前途难得”。而权哥就是那个站在我们彼此前途里，爱我的那个人。\n\n“性别平等”\n唐山打人事件给我留下了很深的印象，关于性别，我也从此有了更深刻的思考。我希望女性的安全可以得到保障，我希望女性和男性同样能够拥有夜晚出行的自由。国家在呼吁三胎政策，但我希望职场不会歧视需要休产假的妈妈、需要育儿的妈妈、离婚后重入职场的妻子。我希望每一个女性都能自由的追逐自己想要的生活，为自己而活，而不是成为谁的妻子，谁的母亲。\n但与此同时，我希望追求的性别平等，不要成为性别对立。\n被骂做蝈蝻的男人，可能是为你主动拿水果的同事，可能是无微不至照顾你的男友。被殴打、被玷污的女人，可能正是你的兄弟姐妹甚至是你如若珍宝的爱人。不要事不关己高高挂起，那些网络上的模糊的人，其实正是你身边具象的人。\n政策的不公，社会的不公，网络的言论，这些带来了太多的性别对立。\n我希望每一个为自己权利争取的人都能够深刻的认识这个现象，理性且换位思考的发表自己的言论。或许革命都意味着牺牲，但我不希望屠龙者终成恶龙。\n\n这一年有很多的不满，但我们是95后00后的时代新青年，承接了老旧的世纪，开启了崭新的纪元。我希望我们能洗清上个世纪的腐朽。带来，我们这个世纪特有的批判精神，勇敢和爱与包容。\n最后对自己的小提醒：“不要焦虑，脚踏实地完成制定的计划。”\n\n写在23岁生日，并祝23岁的自己生日快乐，钱兔无量！\n","timestamp":1722997205060},{"content":"写在22岁生日：\n21岁之前，我的人生主基调在于自身人格的完善。21岁之后，我开始关注人与人之间的交往。开始渐渐懂得互帮互助的力量。渐渐学会从团队出发的心态，共同处理问题。我学会了包容别人的缺点，接纳自己的脆弱。我懂得了求助和示弱，这反而令我更勇敢更坚强。\n\n“海纳百川，有容乃大。”、“君子和而不同”\n人和人之间的相处，是深刻复杂之道，我还需要慢慢探索，但我认为真诚一定是亘古不变的真理。除此之外，对不了解的事情，我要学会保持谦逊或沉默。我太浮躁，不懂得沉静下来稳重的思考。我太自大，不懂得倾听、欣赏和接受不同的想法。我还太年轻，过于轻狂和自负。我冲动、情绪化、太理想化。这些性格瑕疵都需要我正视。\n  \n“万物生长，各自高贵”\n这一年，好累。但很幸运有权哥一直在我身边支持我，陪伴我。\n大环境下一直被教育人生是场赛跑。可起跑线不同，又没有终点的赛跑，怎样才算赢，意义又何在呢？我很喜欢张宇说的：“上进心是遇见困难的时候才看的出来的。”可当我为了取得某个成就而废寝忘食最后导致身体不适；当我因为压力大，对家人朋友恋人发脾气的时候，我就明白了，这不是上进心，这叫不快乐。我也明白了这不是将来我想要过的生活，我需要改变。\n未来有很多种可能，人是可以站的很高的。我足够勇敢，我要按照自己期望的未来去拼搏，可能会一路荆棘，但我不怕。\n\n写在22岁生日，并祝22岁的自己生日快乐。\n","timestamp":1722997205060},{"content":"写在21岁生日：\n疫情之下的2020，更懂得了珍惜、包容和体谅。这一年上半年是灰色的，下半年是彩色的。\n\n今年成长的一个主题：人不是孤岛，需要扶持，需要联结。\n从前心里上总独立一人，近几年来开始让别人走进心里。多接触性格好，人品佳，正能量的人，真的很重要。很多成长来源于朋友给予我的支持，还有和志同道合的人一起奋斗。有几个无条件相信我，宠溺我的朋友，真的非常重要。他们能支撑我走很远的路。\n\n20岁的总结，是涅槃：糖衣下面包裹的通常不是童话而是谎言。唯有直面现实，不再自欺欺人才能真的以坚强勇敢的方式成熟起来。我曾把别人、把自己无望的幻想当作救赎。对不起，我不应该把别人作为我问题的答案。 I'm sorry. For tying to make you the answer.\n\n21岁的展望：我希望自己在看清现实和人性后也能依然相信美好的存在。即使失望消极过后，永远要拥有站起来的力量。以变化和成长，灵活的顺应时代发展，但有一些灵魂里的纯粹和美好，是最珍贵不可抛的。用灵魂里的韧性来积极应对事世变化和个人变化。\n新的一岁，更多的专注、自律，成为更好的自己，更有底气的争取我想要的一切。脚踏实地，认真学习，向目标进发。\n\n未来还是会有些迷茫，却也不再莽撞焦虑的跌跌撞撞向它奔去。脚步慢了，心态平和了，人也更温柔了。看看镜子里的自己，多了几分坚毅。走进21岁的我，回望过去，哇，我已经走了这么远的一段路了啊。\n\n写在21岁生日，并祝21岁的自己生日快乐。\n","timestamp":1722997205060},{"content":"写在二十岁生日：\n十九岁，在美好、迷茫、遗憾甚至悲伤等诸多情绪中完成了转换：更全面、清楚的认识自己，相比过去更成熟、坚定。这一岁也许不是很完美的一岁，留下很多的不甘心。但是我永远不能预测未发生的事来提前准备。所以这一年点点滴滴我不后悔，它们赋予我更多的意义，完善我的人格以更好的面对未来。\n\n二十岁，是全新的阶段，挥别孩子气的自己，开启崭新的进阶之路。\n在为人处事上，我希望自己辩证的看待问题，灵活的处理事情，并且保持初心不变；\n在待人接物上，我希望我能杜绝情绪化，三思而后行，担负责任；\n在与亲近的人相处上，要更温柔体贴，设身处地的理解别人，锋芒对外温柔对内，并且用心的爱这世间万物；\n在个人修养上，坚持阅读，采纳意见，不固执己见。\n\n最后对于自己想做的事，我希望我能不设限，不消极，放手一搏。即使面前困难重重，也要相信世界上没有不可能，只有是否愿意为此付出。敢于抗争，不妥协，不用认命和无奈来结束任何一件事情，其实人是可以站的很高的。\n\n一直相信美好的存在，想守住一个善良勇敢又纯洁的灵魂。执着于人和事的纯粹，这些是我一直在坚持的事。二十岁，这些坚守的信念也要继续延续下去，永远保持一颗赤子之心。\n\n最后用三年前的生日贺词来结尾：不忘初心，方得始终。未来可期，前途无量。\n\n写在二十岁生日，并祝二十岁的自己生日快乐。\n\nPS：一直坚持在南京大屠杀这天过生日，是想以微薄之力传达出一种态度：无论战争或是和平年代，敌人一直存在。敌方或许能在我民族相对弱势时实施暴行。但中国魂永垂不朽，我们永远不会倒下。\n","timestamp":1722997205060},{"content":"写在十九岁生日：\n19岁了，成年一年了，这一年自己成长了不少，也经历了很多事情，让我逐渐成为一个人格完整、独立、成熟的人，开始有些成年人应有的样子了吧。这一年最大的感觉是，内心充满阳光。即使人生经验不足，让我对未来有些迷茫，但我身边总有前辈为我指点迷津，使我信心满满，踌躇满志。\n\n其次是后知后觉的一个感谢，对父母，对长辈，对老师，对朋友。是这一年，我猛然发现自己多么幸福，遇见那么多好的人，对我真心相待，拥有你们我三生有幸。\n也感谢曾经伤害过我的人，但凡杀不死我的，都会让我越发强大。\n\n第三，是对自己说的：“成年一年了，一年前对自己许下的承诺我做到了”。感谢自己依旧善良，依旧对世界充满美好向往。\n\n第四，需要提醒自己的几点：\n1.先做人后做事最后做学问，做一个三观正有思想的好青年比什么都重要。\n2.有理想，但要脚踏实地。梦想不是空想，成功没有捷径。\n3.要有棱角，但是不能伤人伤己，想出最妥当的方案，不能任性，意气用事。\n4.自尊，自爱，自信，做到不以物喜，不以己悲。努力做到沉着冷静，不卑不亢。有一个独立自信的人格。\n\n最后三句话送给19岁的自己：\n“不忘初心方得始终”\n“自爱，沉稳，而后爱人”\n“君子和而不同”\n\n写在十九岁生日，并祝十九岁的自己生日快乐。\n","timestamp":1722997205060},{"content":"写在十八岁生日：\n你已经是一个成年人了，要独立，要坚强，还要善良。\n以后很多事情都要独自面对，例如误解，例如不公。能被了解是一种幸运，如果不能，也要学会一笑而过。人们常会拿自己恶意的眼光去中伤你，但你知道自己究竟怎样。面对质疑，你要保持淡然，要相信自己。这条路终究是要自己走的，要做自己最坚强的后盾。\n另外，即使成年了，也还是要有一颗炽热的心。即便以后路途艰难，即便要独自面对世界可能会有的恶意。还是要温暖啊，还是要善良啊。\n好好生活，努力拼搏，即使遇到悲伤挫折也不要沮丧，这世界总有不期而遇的温暖和生生不息的希望。温柔以待这个世界，这个世界也会温柔待你~\n写在十八岁生日，并祝十八岁的自己生日快乐。\n","timestamp":1722997205060}]
+  const at_more = document.querySelector('.at_more')
+
+  at_more.style.display = artitalk.length ? '' : 'none'
+
+  const avatar = document.querySelectorAll('.at_avatar')
+  avatar.forEach((el)=>{
+    el.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ0MCIgaGVpZ2h0PSIxNDQwIiB2aWV3Qm94PSIwIDAgMTA4MCAxMDgwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIGZpbGw9IiMwMjAyMDIiPjxwYXRoIGQ9Ik02NDguNDQgMjUxLjE5YzUuNzgtMy4yMiA1LjE1IDMuNjYgMi43NiA3LjA1LTMuOTUgNi4zNSA2LjUxIDkuMjUgNS40IDE1Ljc1IDIuMTkgOS42OS0xMS4xMyAxNy44OC00LjU2IDI3LjA3IDQuMzUgNS43NyA0LjE3IDEzLjY4Ljk4IDE5Ljk1LTkuMjQgMTkuODgtMTUuMzYgNDEuMTItMjUuMzcgNjAuNjYtMy4wMyA3LjY0LTEwLjIxIDIwLjQ2LjMgMjUuMyA2LjEgMy4zMS42OCAxMy43Ny01LjY3IDExLjA4LTkuNjItMS45My0xNC45Mi0xMS44Ni0xMy43NC0yMS4xNS0zMy40IDc3LjUzLTY0LjU5IDE1Ni4wNC05OC4xMSAyMzMuNS03Ljk2IDYuOS0xNy4xMiAxNS44Ni0yNi45NCAxOC41MS0xLjQ3LTEyLjk0LTYuNDYtMjkuMyAxLjQ4LTQxLjk1IDQ3LjEtMTExLjYgOTIuOTgtMjIzLjc1IDE0MS4wOC0zMzQuOTMgMy42NS0xMi4xNSAxOS41Ni05IDIyLjM5LTIwLjg0ek04MjEuNCA0OTQuMzVjMy40OC0xLjM5IDkuNjggMS41OCA2LjY4IDUuNzEtNS4yMyA0LjA2LTE2LjQ4LTMuOTUtMTguNDcgNS41NS00LjQ5IDE4LjY3LTEwLjIgMzcuMzItMTIuNTQgNTYuMzQgNS4yNC0uNzMgOC45My03LjEzIDEzLjQtNy40Mi0yLjA3IDUuNzItMTYuMzUgMTguMS0yMS4xNyA5LjA5IDEuOS0xNi45NCA3LjI1LTMzLjQ0IDExLjMtNTAgMi40MS05LjggMTAuNDYtMTguMjYgMjAuOC0xOS4yN3pNODQ3LjM5IDQ5NC4zNmMzLjMzLS45MSA3Ljk1IDEuMyA2LjYyIDUuMzItNS4wOSA0LjcxLTE0LjQ5LTMuMTEtMTguMDkgNC4yNy0zLjY0IDkuMjMtNSAxOS4yMy02Ljk5IDI4LjkxIDUuNjQtNSAxNS4xNy0xNC41NCAyMi4yOC02Ljk3IDQuMjkgMTIuMTMtMTEuMjggMTguNDQtMjEuMDMgMTguMjQgMTQuNDQgNi45OCAxNCAyNS42OCAyNC42NyAzNS45NSAzLjYzIDMuNzIgMTQuMjMgMy42NCAxMS43NS0zLjYxLTEuNzctNS40NSA2Ljg0LTUuODMgNi4zOC0uNDEtMS4wMyAxMC41My0xNS4zNiAxMS41LTIyLjQ3IDYuNDctMTIuNzItOS4yMy0xMi45Ny0yNy4yOC0yMy43My0zOC4wMy01LjAzIDQuNjYtLjA2IDI0Ljk2LTEyLjg0IDIxLjQyIDMuNDQtMTcuMzYgOC4wNi0zNC41MiAxMi4yNC01MS43MyAyLjI2LTEwLjE2IDEwLjc2LTE4LjU1IDIxLjIxLTE5LjgzbS03Ljk4IDMzLjkxYy00LjkgMy4yLTEyLjIgNi45NS0xMi4zMiAxMy40OSA2LjYzLjEyIDE2LjUyLS44NiAxOC4xNS04Ljc0IDEuMTktMy42NS0yLjUxLTYuNzMtNS44My00Ljc1ek03MDYuNTEgNTAxLjQzYzYuMTctMS45NCA2LjU0IDguMDcgMS4wNyA5LjA2LTUuNzggMS40NS02LjA5LTcuOTQtMS4wNy05LjA2eiIvPjxwYXRoIGQ9Ik02MDkuNTggNTAzLjUyYy40LS4xIDEuMjEtLjMxIDEuNjEtLjQxLTMuMjggMTkuNTktNS4xNiAzOS4zOC03LjczIDU5LjA2IDEuNTcgMy43MyAxMC40NS0uNjIgMTAuNzEgMy45MS02LjYgMS41Ni0xMy41NC0uNjktMjAuMjktLjE0IDEuMi02LjAxIDMuMjItMTEuODkgMy42OC0xOC4wNC02LjA0LS4zNC0xMi4yMi0uNjktMTguMi4zNS05Ljc0IDEwLjM4LTE3LjM3IDMyLjM4LTM0LjkyIDI4LjMzLTUuNTctOS40OSA5Ljk4LTIuNjUgMTMuNTYtNy42OSAxNy43Ni0xOC4wOCAyOC41Ny00MS42MSA0NC45Ny02MC44NS04LjI0IDEuNDMtMjAuNjguMTktMjMuNzYgMTAuMTUuMzEgMy43NSAyLjg3IDExLjU0LTMuODkgOS42My0zLjg2LTYuMzYuMy0xNC44MSA2LjMzLTE4LjE5IDguNTEtNC45OSAxOC44Mi0zLjE3IDI3LjkzLTYuMTFtLTguMDEgMTIuMTNjLTcuMjEgOC44Mi0xMy4zOCAxOC40OS0xOS4zOSAyOC4xNSA1LjE0LjAzIDEwLjMuMjUgMTUuNDItLjIyIDEuNDYtOC44IDMuOTgtMjEuMzYgMy45Ny0yNy45M3pNNjc0LjM2IDUxMi40OGMyLjA1IDMuNDMtNy41NyAxNi45IDMuNjYgMTMuODIgOS44Mi45Ny0yLjI2IDUuNjYtNi43OSAzLjg0LTMuMjMgOS4yMy01Ljc0IDE4Ljk1LTcuMTYgMjguNjMgNS43IDUuODMgMTIuODUtOS4wMSAxNi45OS0zLjgtNi42OCA0LjktMTQuNDggMTMuODctMjMuMjkgMTEuMzgtNC4yMi0xMS43NCA0LjUzLTI0LjEyIDUuMjYtMzYuMTYtMi43Mi0uNzctOC41OSAxLjYtNy40My0zLjA2LTE2LjA2IDMuNS0yMS40NSAyMC42NS0yMy41NCAzNC45LjExIDQuODktNC42NyA0LjI5LTguMjEgMy45IDIuMTEtMTIuNDMgNy0yNC4zNiA4LjE0LTM2Ljk4LTQuNTItLjEyLTYuODEgNy4zOS0xMSA1LjAyIDQuODktNS40NCAxMS40NC0xMC44OSAxOS4xLTExIC4yMyAzLjgzLS44OCA3LjU1LTEuMjYgMTEuMzMgNS43Ny00LjQxIDkuMjUtMTQuMzIgMTcuNzUtMTMuMzMuNzcgNCAzLjY5IDcuMDkgNy44OSA0LjcgMS4xNS01Ljk4IDIuNDktMTIuNzYgOS44OS0xMy4xOXpNNzMwLjQzIDUxMy4zM2M1LjQ1LTIuMTguNDQgNi40NC40MyA5LjQ2LTMuNzMgNy43NCAxMS42My0uOCA5LjA5IDcuMDItMTYuNDctNC4xNC0xMy40OCAxNy4wMS0xNy40MiAyNy40NyAyLjYxIDkuMzggMTMuNDctNy42NiAxNi42MS0yLjI4LTYuNDIgNS4zNC0xMy44MSAxMi43LTIyLjc1IDExLjkyLTQuNjEtMTEuODkgMy43OS0yNC43IDUuMjUtMzYuODMtNC4yNiAxLjQ3LTEyLjA0LTIuMjYtNC41MS0zLjcgOS45IDIuMjkgNC4yMi0xMi43NSAxMy4zLTEzLjA2ek03NzkuNzIgNTIyLjY5Yy42MS0uMTkgMS44My0uNTYgMi40NC0uNzQtMi41IDEyLjc3LTguNDEgMjUuMTctOC40IDM4LjI4IDIuOTggMS42MSA3LjM3LTUuMTYgMTAuNTktNC41NS0xLjU2IDguNTMtMjUuNSAxOC41OS0xNy42OSAyLjA3LTMuNzMgMi41Ni0xNy41MiAxNi42Ni0yMi40OCA0Ljg2LTMuMzMtMjAuMjUgMTUuMTMtNDAuMzMgMzUuNTQtMzkuOTJtLTE2LjMyIDcuNzVjLTguOSA0LjI0LTEyIDE1LjQtMTIuMzggMjQuNTItLjU0IDQuMTMgNC4xMSA3LjEgNy41NyA0LjczIDEwLjgyLTUuNTQgMTEuMDEtMTkuMjkgMTQuMTMtMjkuNTctMy4wOS0uMzgtNi4zMS0uNTgtOS4zMi4zMnpNNjk5LjQgNTIzLjM2YzIuMjEtLjkgNi42Mi0uNzIgNS43OSAyLjctMS44NSAxMS44Ni03Ljk4IDIyLjkzLTguMjEgMzUuMDcgNC4zLjk4IDguNjctOC41NiAxMC44NC00LjEtNC40MiA0LjY1LTExLjMgMTIuMzQtMTcuOTYgOS4xNi0yLjQ0LTEyLjYxIDUuNTktMjQuODEgNy4xOC0zNy4yOC00LjM0LS43Ny04LjQ1IDguNTEtMTEuMDIgNC4xMiAzLjI3LTQuNDggOC4xNC03Ljg5IDEzLjM4LTkuNjd6Ii8+PC9nPjxnIGZpbGw9IiMwYzliYzEiPjxwYXRoIGQ9Ik00ODkuODEgMjY0Ljk0YzMwLjk4LTMuNDIgNjMuMDYtMi45MiA5My4yNCA1Ljg3IDQuMyAxLjE5IDIuNCA2LjQxLjkxIDkuMTgtNC42NCA4LjgtNy43NCAxOC40NS0xMy4xOSAyNi43OC04MC4wMS0yMS44NS0xNzIuNDUgMTUuMjMtMjEyLjUyIDg4LjYtMi40OCA0LjQxLTQuMTUgOS4zMy03LjQyIDEzLjI1LTExLjk1LTMuNDEtMjMuNDEtOC45OS0zMy4zMS0xNi41MyAzMC4yMy02OC40OSA5OC41OS0xMTYuOSAxNzIuMjktMTI3LjE1ek02NTUuNTUgMzU0LjUxYzMuNjctMTIuMTUgMTAuMDYtMjQuMjkgMTYuNTEtMzUuNDkgMjkuNDEgMjIuMTMgNDkuMzEgNTYuNjkgNjMgODkuNTMgNjMuOTUtMjAuMzIgMTM5LjUyIDEwLjI3IDE3MC4xMyA3MC4yNSAzNC44NiA2Mi40IDExLjY4IDE0OC43OS01MC4xIDE4NC43Ni0xMi41LTkuMjMtMjcuNzgtMTMuMTctNDEuMzUtMjAuNDMgNDEuMTEtMTYuMDUgNzMuMjUtNTcuNzkgNjguOTgtMTAzLjExLjkxLTY4LjE1LTc4LjUxLTExOC41Ni0xNDAuNjEtOTIuOTktMTAuNjYgMy4wNC0yMC4zNyA4LjYtMzAuODUgMTEuOTMtOS44Ni0zOC40Ny0yNi43My03Ni41NC01NS43MS0xMDQuNDV6TTQ4Mi4xOSA0MDMuMTZjNS43MS0xMi43NyAyNC4xMi0yMi4yOCAzNi40NS0xMi43NiA4LjI3IDYuMzIgOS4zNSAxOC4yNiA0Ljg1IDI3LjE2LTguOTYgMjAuNTItMTYuMjIgNDEuNzgtMjUuNDggNjIuMTUtMTEuNDktOS40NC0yNi41Ni0xMi41Ny0zOC44OC0yMC41MiA3LjEtMTguODkgMTUuMzQtMzcuMzcgMjMuMDYtNTYuMDN6Ii8+PC9nPjxnIGZpbGw9IiMxODYxODIiPjxwYXRoIGQ9Ik0zMDYuNiA0MjIuNTRjMi4zOS0xMC41NyA2Ljk0LTIwLjQzIDEwLjkyLTMwLjQ1IDkuOSA3LjU0IDIxLjM2IDEzLjEyIDMzLjMxIDE2LjUzLTguODkgMTguOTQtMTMuOTEgMzkuNDEtMTYuMTcgNjAuMTItMTguMDItMy4xNS0zNi4zNC00LjkyLTU0LjY2LTUuMS01MC4wOC0uMDktOTYuMTMgNDUuNjctOTIuMzMgOTYuMzYtMy40NSA1OC4wMyA2MC44NyAxMDguNjkgMTE2LjE4IDg5Ljc4IDE5LjUtNDYuOSAzNi42Ni05NS4xMSA1Ny40My0xNDEuNTUgOS43OC0xOC42MSA0MS43NS02LjEyIDM1LjMzIDE0LjUtMTkuODkgNTEuMDMtMzguODcgMTAyLjQzLTU5Ljg4IDE1My4wNS0xLjExIDIuOTQtMi42NSA2LjExLTYuMDEgNi45LTIyLjQ5IDguMS00Ny4wOCAxMC42OS03MC43MSA3LjA1LTUxLjQ0LTcuNzgtOTYuMTMtNDguNzYtMTA3LjAxLTk5LjgyLTcuNTctMjguOTQtMy45Mi02MC40MyA4LjU4LTg3LjQzIDIyLjU1LTUwLjM3IDc5LjU0LTgyLjg4IDEzNC4zOS03NS4wOCA0LjI5Ljc5IDEwLjIzLjg4IDEwLjYzLTQuODZ6TTQ1OS4xMyA0NTkuMTljMTIuMzIgNy45NSAyNy4zOSAxMS4wOCAzOC44OCAyMC41Mi0yMy41MiA1OC4zOS00OS4yNSAxMTYuMzUtNzAuOTUgMTc1LjIyIDEwNy44NiAyLjQ3IDIxNS45Ny45NCAzMjMuOTUgMS4zOSAyMS42My4wNiA0Mi44NC00LjkzIDYyLjczLTEzLjE5IDEzLjU3IDcuMjYgMjguODUgMTEuMiA0MS4zNSAyMC40My0zMC41MyAxOS4yLTY1Ljg1IDMwLjM3LTEwMi4wOSAyOS43OS0xMzAuMjMtLjE3LTI2MC40Ni4yNi0zOTAuNjkuMzggMzIuNTctNzguMDEgNjQuNi0xNTYuMzUgOTYuODItMjM0LjU0eiIvPjwvZz48L3N2Zz4='
+  })
+
+  
+
+  let endLi = document.querySelectorAll('.at_item')
+  endLi = endLi[endLi.length-1]
+
+  const at_more_btn = document.querySelector('.at_more_btn')
+  const at_more_btn_text = at_more_btn.textContent
+  const at_more_loading = document.querySelector('.at_more_loading').cloneNode(true)
+  at_more_loading.style.display = 'unset'
+
+  at_more_btn.addEventListener('click', function(){
+    at_more_btn.setAttribute('disabled','')
+    at_more_btn.innerHTML = at_more_loading.outerHTML
+    setTimeout(() => {
+      for (const item of artitalk.splice(0,pageSize)) {
+        const nLi = endLi.cloneNode(true)
+        nLi.querySelector('.at_content').innerHTML= item.content
+        const date = new Date(item.timestamp)
+        nLi.querySelector('.at_time').innerHTML= date.toLocaleString()
+        endLi.parentElement.appendChild(nLi)
+        endLi = nLi
+      }
+      at_more_btn.innerHTML = at_more_btn_text
+      at_more_btn.removeAttribute('disabled')
+      at_more.style.display = artitalk.length ? '' : 'none'
+    }, 500);
+  })
+</script>
+
+  </div>
+  
+  
+  
+  
+
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/artitalk/index.html#comments">
+    </span>
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
+    
+
+    <div id="layoutHelper-comments"></div>
+
+  </article>
+
+
+
+
+
+
+</div>
+<div class="l_side">
+    <section class="widget blogger shadow desktop mobile">
+        <div class="content" style="height: 200px;">
+            <h4 class="widget_-title" style="text-align: left; margin-top: 10px;margin-left: 5px;">权哥❤️兔子</h4>
+                <div class="textwidget_ custom-html-widget_">
+                    <div id="lovexhj" style="width: 100%; height: 100px; text-align: center; font-size: 1rem;">
+                        <div id="lovexhjImage" style="width: 220px; margin: 0 auto;">
+                            <!-- 左边的头像 -->
+                            <img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071125855.jpg" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071125855.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="love" style="width: 75px; border-radius: 0%; display: initial;">
+                            <!-- https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071126548.jpg -->
+                            <!-- 中间的图片 -->
+                            <img alt="love" style="width: 35px; border-radius: 50%;display: initial;" data-src="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/202210201312738.gif" class="lazyload" data-srcset="https://gryffinbit-1304014832.cos.ap-chengdu.myqcloud.com/202210201312738.gif" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="lazyloaded lazyload" src="https://blog.nutssss.cn/wp-content/uploads/2020/02/1582858549-lovexhjlogo.gif">
+                            <!-- 右边的头像 -->
+                            <img src="https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071126750.jpg" class="lazyload" data-srcset="https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071126750.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="love" style="width: 75px; border-radius: 0%; display: initial;">
+                        </div>
+                        <p style="font-size: 0.8rem;text-align: center;">我们相恋了</p>
+                        <p id="lovexhjSitetime" style="font-size: 0.8rem;text-align: center;"></p>
+                    </div>
+                </div>           
+            </div>
+    </section>
+</div>
+<script language="javascript">
+    function lovexhjSitetime() {
+        window.setTimeout("lovexhjSitetime()", 1000);
+        var seconds = 1000
+        var minutes = seconds * 60
+        var hours = minutes * 60
+        var days = hours * 24
+        var years = days * 365
+        var today = new Date()
+        var todayYear = today.getFullYear()
+        var todayMonth = today.getMonth() + 1
+        var todayDate = today.getDate()
+        var todayHour = today.getHours()
+        var todayMinute = today.getMinutes()
+        var todaySecond = today.getSeconds()
+        // 时间设置
+        var t1 = Date.UTC(2020, 11, 08, 0, 0, 0)
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond)
+        var diff = t2 - t1
+        var diffYears = Math.floor(diff / years)
+        var diffDays = Math.floor((diff / days) - diffYears * 365)
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours)
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes)
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+            diffMinutes * minutes) / seconds)
+        document.getElementById("lovexhjSitetime").innerHTML = diffYears + "年" + diffDays + "天" +
+            diffHours + "小时" + diffMinutes + "分钟" + diffSeconds + "秒啦"
+    }
+    lovexhjSitetime()
+</script>   
+
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+<pjax>
+<script>
+  window.pdata={}
+  pdata.ispage=false;
+  pdata.commentPath="";
+  pdata.commentPlaceholder="";
+  pdata.commentConfig={};
+  //  see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs
+  
+    // header
+    var l_header=document.getElementById("l_header");
+    
+    l_header.classList.add("show");
+    
+    
+      // cover
+      var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
+      var scroll_down=document.getElementById('scroll-down');
+      cover_wrapper.id="none";
+      cover_wrapper.style.display="none";
+      scroll_down.style.display="none";
+    
+  
+</script>
+</pjax>
+        </div>
+        
+  
+  <footer class="footer clearfix"  itemscope itemtype="http://schema.org/WPFooter">
+    <br><br>
+    
+      
+        本站使用
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/#5.8.0" target="_blank" class="codename">Volantis</a>
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="/">Copyright © 2019-2700 ❤️万事皆爱❤️</a></p>
+
+        </div>
+      
+    
+    <!-- Custom Files footer begin-->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1705057106693329"
+     crossorigin="anonymous"></script>
+    
+    <!-- Custom Files footer end-->
+  </footer>
+
+
+        <a id="s-top" class="fa-solid fa-arrow-up fa-fw" href="/" onclick="return false;" title="top"></a>
+      </div>
+    </div>
+    <div>
+      <script>
+  /******************** volantis.dom ********************************/
+  // 页面选择器 将dom对象缓存起来 see: /source/js/app.js etc.
+  volantis.dom.bodyAnchor = volantis.dom.$(document.getElementById("safearea")); // 页面主体
+  volantis.dom.topBtn = volantis.dom.$(document.getElementById('s-top')); // 向上
+  volantis.dom.wrapper = volantis.dom.$(document.getElementById('wrapper')); // 整个导航栏
+  volantis.dom.coverAnchor = volantis.dom.$(document.querySelector('#l_cover .cover-wrapper')); // 1个
+  volantis.dom.switcher = volantis.dom.$(document.querySelector('#l_header .switcher .s-search')); // 搜索按钮   移动端 1个
+  volantis.dom.header = volantis.dom.$(document.getElementById('l_header')); // 移动端导航栏
+  volantis.dom.search = volantis.dom.$(document.querySelector('#l_header .m_search')); // 搜索框 桌面端 移动端 1个
+  volantis.dom.mPhoneList = volantis.dom.$(document.querySelectorAll('#l_header .m-phone .list-v')); //  手机端 子菜单 多个
+</script>
+
+<script>
+  
+  volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fortawesome/fontawesome-free/css/all.min.css");
+  
+  
+  
+</script>
+
+<!-- required -->
+
+
+<!-- internal -->
+
+<script src="/js/app.js"></script>
+
+
+
+
+
+
+<!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+
+
+<script>
+  function loadIssuesJS() {
+    
+      const sites_api = document.getElementById('sites-api');
+      if (sites_api != undefined && typeof SitesJS === 'undefined') {
+        volantis.js("/js/plugins/tags/sites.js")
+      }
+    
+    
+      const friends_api = document.getElementById('friends-api');
+      if (friends_api != undefined && typeof FriendsJS === 'undefined') {
+        volantis.js("/js/plugins/tags/friends.js")
+      }
+    
+    
+      const contributors_api = document.getElementById('contributors-api');
+      if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
+        volantis.js("/js/plugins/tags/contributors.js")
+      }
+    
+  };
+  loadIssuesJS()
+  volantis.pjax.push(()=>{
+    loadIssuesJS();
+  })
+
+</script>
+
+
+
+
+  <script defer src="https://unpkg.com/volantis-static@0.0.1654736714924/libs/vanilla-lazyload/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+
+  
+
+<script>
+  window.FPConfig = {
+	delay: 0,
+	ignoreKeywords: ["#"],
+	maxRPS: 6,
+	hoverDelay: 0
+  };
+</script>
+<script defer src="https://unpkg.com/volantis-static@0.0.1654736714924/libs/flying-pages/flying-pages.min.js"></script>
+
+
+
+
+
+
+
+
+
+      <script>
+  volantis.layoutHelper("comments",`<div id="giscus_container"></div>`)
+
+  volantis.giscus = {};
+
+  function check_giscus() {
+    if (volantis.dark.mode === "dark") {
+      volantis.giscus.Theme = 'dark';
+    } else {
+      volantis.giscus.Theme = 'light';
+    }
+
+    return document.getElementById("giscus_container");
+  }
+
+  function pjax_giscus() {
+    const HEAD = check_giscus();
+    if (!HEAD) return;
+    let cfg = Object.assign({"theme":{"light":"light","dark":"dark"},"repo":"Gryffinbit/blog_comment","repo-id":"R_kgDOMfaOww","category":"Announcements","category-id":"DIC_kwDOMfaOw84ChaAw","mapping":"pathname","reactions-enabled":"1","emit-metadata":"0","lang":"zh-CN"},pdata.commentConfig)
+    const script = document.createElement('script');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    Object.keys(cfg).forEach(k=>{
+      if (k != "theme") {
+        script.setAttribute('data-'+k, cfg[k]);
+      }
+    })
+    script.setAttribute('data-theme', volantis.giscus.Theme);
+    script.setAttribute('crossorigin', "anonymous");
+    HEAD.appendChild(script);
+  }
+
+  function dark_giscus() {
+    const HEAD = check_giscus();
+    if (!HEAD) return;
+
+    const message = {
+      setConfig: {
+        theme: volantis.giscus.Theme
+      }
+    };
+    const giscusIframe = document.querySelector('iframe.giscus-frame');
+    giscusIframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+  }
+  pjax_giscus();
+  volantis.pjax.push(pjax_giscus);
+  volantis.dark.push(dark_giscus);
+</script>
+
+    
+
+
+
+
+  <script defer src="https://gcore.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
+
+
+<!-- optional -->
+
+  <script>
+  const SearchServiceDataPathRoot = ("/" || "/").endsWith("/") ?
+    "/" || "/" :
+    "//" || "/";
+  const SearchServiceDataPath = SearchServiceDataPathRoot + "content.json";
+
+  function loadSearchScript() {
+    // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
+    return volantis.js("/js/search/hexo.js");
+  }
+
+  function loadSearchService() {
+    loadSearchScript();
+    document.querySelectorAll(".input.u-search-input").forEach((e) => {
+      e.removeEventListener("focus", loadSearchService, false);
+    });
+
+    document.querySelectorAll(".u-search-form").forEach((e) => {
+      e.addEventListener("submit", (event) => {
+        event.preventDefault();
+      }, false);
+    });
+  }
+
+  // 打开并搜索 字符串 s
+  function OpenSearch(s) {
+    if (typeof SearchService === 'undefined')
+      loadSearchScript().then(() => {
+        SearchService.setQueryText(s);
+        SearchService.search();
+      });
+    else {
+      SearchService.setQueryText(s);
+      SearchService.search();
+    }
+  }
+
+  // 访问含有 ?s=xxx  的链接时打开搜索 // 与搜索引擎 structured data 相关: /scripts/helpers/structured-data/lib/config.js
+  if (window.location.search && /^\?s=/g.test(window.location.search)) {
+    let queryText = decodeURI(window.location.search)
+      .replace(/\ /g, "-")
+      .replace(/^\?s=/g, "");
+    OpenSearch(queryText);
+  }
+
+  // 搜索输入框获取焦点时加载搜索
+  document.querySelectorAll(".input.u-search-input").forEach((e) => {
+    e.addEventListener("focus", loadSearchService, false);
+  });
+</script>
+
+
+
+
+
+
+
+  <script>
+
+
+
+  function pjax_highlightjs_copyCode(){
+    if (!(document.querySelector(".highlight .code pre") ||
+      document.querySelector(".article pre code"))) {
+      return;
+    }
+    VolantisApp.utilCopyCode(".highlight .code pre, .article pre code")
+  }
+  volantis.requestAnimationFrame(pjax_highlightjs_copyCode)
+  volantis.pjax.push(pjax_highlightjs_copyCode)
+
+</script>
+
+
+
+
+
+
+
+
+
+
+  <script>
+  let imgs = ["https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250813153109263.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250813153126836.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250813153159689.png","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071525544.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071525889.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071524967.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202412051640776.JPG","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202211111636871.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071510106.JPG","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071524050.jpg"];
+  let index = 0;
+  let IntervalParallax = null;
+
+  function parallax(){
+    let ParallaxWindow = document.querySelector("#parallax-window");
+    
+      ParallaxWindow = document.querySelector("html");
+    
+    Parallax.window = ParallaxWindow;
+    Parallax.options.fade = 1500;
+    Parallax.cache = 1;
+    next_parallax();
+    Parallax.init();
+    if (imgs.length>1) {
+      IntervalParallax = setInterval(function () {
+        next_parallax();
+      }, '50000');
+    }
+  }
+
+  function next_parallax() {
+    if (typeof Parallax == "undefined") {
+      return
+    }
+    
+    if (imgs.length>=1) {
+      Parallax.options.src = imgs[index % imgs.length];
+      Parallax.start();
+      index++;
+      if (Parallax.cache) {
+        fetch(imgs[index % imgs.length] +"?t=" + new Date().getTime());
+        if (index == imgs.length) {
+          Parallax.cache = 0;
+        }
+      }
+    }
+  }
+  var runningOnBrowser = typeof window !== "undefined";
+  var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
+  if (!isBot) {
+    volantis.js('/js/plugins/parallax.js').then(()=>{
+      parallax()
+    })
+    volantis.pjax.send(()=>{
+      clearInterval(IntervalParallax)
+    },"clearIntervalParallax");
+    volantis.pjax.push(parallax);
+  }
+</script>
+
+
+
+
+  <script>
+  function load_swiper() {
+    if (!document.querySelectorAll(".swiper-container")[0]) return;
+    volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/swiper/swiper-bundle.min.css");
+    volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/swiper/swiper-bundle.min.js").then(() => {
+      pjax_swiper();
+    });
+  }
+
+  load_swiper();
+
+  function pjax_swiper() {
+    volantis.swiper = new Swiper('.swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      centeredSlides: true,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  }
+
+  volantis.pjax.push(() => {
+    if (!document.querySelectorAll(".swiper-container")[0]) return;
+    if (typeof volantis.swiper === "undefined") {
+      load_swiper();
+    } else {
+      pjax_swiper();
+    }
+  });
+</script>
+
+
+<!-- pjax 标签必须存在于所有页面 否则 pjax error -->
+<pjax>
+
+</pjax>
+
+<script>
+  function listennSidebarTOC() {
+    const navItems = document.querySelectorAll(".toc li");
+    if (!navItems.length) return;
+    let targets = []
+    const sections = [...navItems].map((element) => {
+      const link = element.querySelector(".toc-link");
+      const target = document.getElementById(
+        decodeURI(link.getAttribute("href")).replace("#", "")
+      );
+      targets.push(target)
+      // 解除 a 标签 href 的 锚点定位, a 标签 href 的 锚点定位 会随机启用?? 产生错位???
+      link.setAttribute("onclick","return false;")
+      link.setAttribute("toc-action","toc-"+decodeURI(link.getAttribute("href")).replace("#", ""))
+      link.setAttribute("href","/")
+      // 配置 点击 触发新的锚点定位
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        // 这里的 addTop 是通过错位使得 toc 自动展开.
+        volantis.scroll.to(target,{addTop: 5, observer:true})
+        // Anchor id
+        history.pushState(null, document.title, "#" + target.id);
+      });
+      return target;
+    });
+
+    function activateNavByIndex(target) {
+      if (target.classList.contains("active-current")) return;
+
+      document.querySelectorAll(".toc .active").forEach((element) => {
+        element.classList.remove("active", "active-current");
+      });
+      target.classList.add("active", "active-current");
+      let parent = target.parentNode;
+      while (!parent.matches(".toc")) {
+        if (parent.matches("li")) parent.classList.add("active");
+        parent = parent.parentNode;
+      }
+    }
+
+    // 方案一：
+    volantis.activateNavIndex=0
+    activateNavByIndex(navItems[volantis.activateNavIndex])
+    volantis.scroll.push(()=>{
+      if (targets[0].getBoundingClientRect().top >= 0) {
+        volantis.activateNavIndex = 0
+      }else if (targets[targets.length-1].getBoundingClientRect().top < 0) {
+        volantis.activateNavIndex = targets.length-1
+      } else {
+        for (let index = 0; index < targets.length; index++) {
+          const target0 = targets[index];
+          const target1 = targets[(index+1)%targets.length];
+          if (target0.getBoundingClientRect().top < 0&&target1.getBoundingClientRect().top >= 0) {
+            volantis.activateNavIndex=index
+            break;
+          }
+        }
+      }
+      activateNavByIndex(navItems[volantis.activateNavIndex])
+    })
+
+    // 方案二：
+    // IntersectionObserver 不是完美精确到像素级别 也不是低延时性的
+    // function findIndex(entries) {
+    //   let index = 0;
+    //   let entry = entries[index];
+    //   if (entry.boundingClientRect.top > 0) {
+    //     index = sections.indexOf(entry.target);
+    //     return index === 0 ? 0 : index - 1;
+    //   }
+    //   for (; index < entries.length; index++) {
+    //     if (entries[index].boundingClientRect.top <= 0) {
+    //       entry = entries[index];
+    //     } else {
+    //       return sections.indexOf(entry.target);
+    //     }
+    //   }
+    //   return sections.indexOf(entry.target);
+    // }
+    // function createIntersectionObserver(marginTop) {
+    //   marginTop = Math.floor(marginTop + 10000);
+    //   let intersectionObserver = new IntersectionObserver(
+    //     (entries, observe) => {
+    //       let scrollHeight = document.documentElement.scrollHeight;
+    //       if (scrollHeight > marginTop) {
+    //         observe.disconnect();
+    //         createIntersectionObserver(scrollHeight);
+    //         return;
+    //       }
+    //       let index = findIndex(entries);
+    //       activateNavByIndex(navItems[index]);
+    //     }, {
+    //       rootMargin: marginTop + "px 0px -100% 0px",
+    //       threshold: 0,
+    //     }
+    //   );
+    //   sections.forEach((element) => {
+    //     element && intersectionObserver.observe(element);
+    //   });
+    // }
+    // createIntersectionObserver(document.documentElement.scrollHeight);
+  }
+
+  document.addEventListener("DOMContentLoaded", ()=>{
+    volantis.requestAnimationFrame(listennSidebarTOC)
+  });
+  document.addEventListener("pjax:success", ()=>{
+    volantis.requestAnimationFrame(listennSidebarTOC)
+  });
+</script>
+
+
+
+<script>
+  document.onreadystatechange = function () {
+    if (document.readyState == 'complete') {
+      // 页面加载完毕 样式加载失败，或是当前网速慢，或是开启了省流模式
+      const { saveData, effectiveType } = navigator.connection || navigator.mozConnection || navigator.webkitConnection || {}
+      if (getComputedStyle(document.querySelector("#safearea"), null)["display"] == "none" || saveData || /2g/.test(effectiveType)) {
+        document.querySelectorAll(".reveal").forEach(function (e) {
+          e.style["opacity"] = "1";
+        });
+        document.querySelector("#safearea").style["display"] = "block";
+      }
+    }
+  }
+</script>
+
+
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Gryffinbit的思维殿堂","url":"https://gryffinbit.top/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Gryffinbit","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://gryffinbit.top/","sameAs":["https://github.com/volantis-x"],"description":"一个网络安全网站"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://gryffinbit.top/","name":"Gryffinbit的思维殿堂"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Gryffinbit的思维殿堂","url":"https://gryffinbit.top/","keywords":null,"description":"一个网络安全网站","author":{"@type":"Person","name":"Gryffinbit","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://gryffinbit.top/","description":"一个网络安全网站"},"publisher":{"@type":"Organization","name":"Gryffinbit的思维殿堂","url":"https://gryffinbit.top/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://gryffinbit.top?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Artitalk","description":"一个网络安全网站","inLanguage":["zh-CN","en","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"Gryffinbit","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://gryffinbit.top/"},"publisher":{"@type":"Organization","name":"Gryffinbit的思维殿堂","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+
+
+
+      
+        <!--
+  pjax重载区域接口：
+  1.  <pjax></pjax> 标签 pjax 标签必须存在于所有页面 否则 pjax error
+  2.  script[data-pjax]
+  3.  .pjax-reload script
+  4.  .pjax
+-->
+
+
+
+<script src="https://unpkg.com/volantis-static@0.0.1654736714924/libs/pjax/pjax.min.js"></script>
+
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox]):not([onclick="return false;"]):not([onclick="return!1"]):not([target="_blank"]):not([target="view_window"]):not([href$=".xml"])',
+        selectors: [
+          "head title",
+          "head meta[name=keywords]",
+          "head meta[name=description]",
+          
+          "#l_main",
+          "#pjax-header-nav-list",
+          ".pjax",
+          "pjax", // <pjax></pjax> 标签
+          "script[data-pjax], .pjax-reload script" // script标签添加data-pjax 或 script标签外层添加.pjax-reload 的script代码段重载
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000,
+        
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      //window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      // 使用 volantis.pjax.send 方法传入pjax:send回调函数 参见layout/_partial/scripts/global.ejs
+      volantis.pjax.method.send.start();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 使用 volantis.pjax.push 方法传入重载函数 参见layout/_partial/scripts/global.ejs
+      volantis.pjax.method.complete.start();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      if(volantis.debug) {
+        console.error(e);
+        console.log('pjax error: \n' + JSON.stringify(e));
+      }else{
+        // 使用 volantis.pjax.error 方法传入pjax:error回调函数 参见layout/_partial/scripts/global.ejs
+        volantis.pjax.method.error.start();
+        window.location.href = e.triggerElement.href;
+      }
+    });
+</script>
+
+      
+    </div>
+    <!-- import body_end begin-->
+    <!-- import body_end end-->
+    <!-- Custom Files bodyEnd begin-->
+    
+    <!-- Custom Files bodyEnd end-->
+    <!-- front-matter body_end begin -->
+    <!-- front-matter body_end end -->
+
+  </body>
+
+</html>
+
