@@ -1711,7 +1711,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/favicon.png","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1757316313374),
+    lastupdate: new Date(1757316388981),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2557,6 +2557,79 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://gryffinbit.top/2022/07/15/wireshark网络分析的艺术笔记【工作中的Wireshark】/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Gryffinbit的思维殿堂">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Gryffinbit的思维殿堂">
+    <meta itemprop="description" content="一个网络安全网站">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/07/15/wireshark%E7%BD%91%E7%BB%9C%E5%88%86%E6%9E%90%E7%9A%84%E8%89%BA%E6%9C%AF%E7%AC%94%E8%AE%B0%E3%80%90%E5%B7%A5%E4%BD%9C%E4%B8%AD%E7%9A%84Wireshark%E3%80%91/"  itemprop="url">
+        wireshark网络分析的艺术笔记【工作中的Wireshark】
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        wireshark抓取包，理想和现实理想中的TCP传输：客户端每传两个数据包，服务器就立即Ack一下表示已经收到。
+
+然而这只是从数据接收方的角度所看到的。但实际上网络存在延迟，ack包到达客户端时会之后，可能会存在客户端发完6号包才收到ACK3。
+所以抓包时可以尽量两边同时抓包，对照着看。
+
+计算“在途字节数”
+在途字节数：网络承载量，可以用已经发送出去，但尚未被确认的字节数来表示。在途字...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-07-15T23:37:18+08:00">2022-07-15</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/Web%E5%AE%89%E5%85%A8/">Web安全</a><span class="sep"></span><a class="category-link" href="/categories/Web%E5%AE%89%E5%85%A8/%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/">流量分析</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/Web%E5%AE%89%E5%85%A8/" itemprop="url"><span itemprop="name">Web安全</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/Web%E5%AE%89%E5%85%A8/%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" itemprop="url"><span itemprop="name">流量分析</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/07/15/wireshark%E7%BD%91%E7%BB%9C%E5%88%86%E6%9E%90%E7%9A%84%E8%89%BA%E6%9C%AF%E7%AC%94%E8%AE%B0%E3%80%90%E5%B7%A5%E4%BD%9C%E4%B8%AD%E7%9A%84Wireshark%E3%80%91/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="https://gryffinbit.top/2022/07/14/iptables介绍/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Gryffinbit的思维殿堂">
@@ -3192,73 +3265,6 @@ snort有三种工作模式：嗅探器模式、数据包记录器模式、 网�
       
         <div>
           <a class='readmore' href='/2022/04/13/pyQt%E5%BC%80%E5%8F%91%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E5%9D%91-macOS-M1/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://gryffinbit.top/2022/04/01/miniforge创建虚拟环境/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Gryffinbit的思维殿堂">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Gryffinbit的思维殿堂">
-    <meta itemprop="description" content="一个网络安全网站">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/01/miniforge%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/"  itemprop="url">
-        miniforge创建虚拟环境
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        前言由于目前Anaconda没有支持arm架构的版本，在M1芯片Mac上安装的Anaconda是非常不稳定的，而且仅支持最高3.8版本的Python。而官网原生支持运行在arm架构上的Python版本为3.9.1，所以综合来讲我们只能寻找一种替代方案，那就是miniforge。
-安装miniforge
-下载
-
-在GitHub项目里，找到release的安装脚本，选择macOS-arm64.s...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-01T02:56:29+08:00">2022-04-01</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%88%9B%E6%84%8F%E5%BC%80%E5%8F%91/">创意开发</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%88%9B%E6%84%8F%E5%BC%80%E5%8F%91/" itemprop="url"><span itemprop="name">创意开发</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/01/miniforge%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -4046,7 +4052,7 @@ snort有三种工作模式：嗅探器模式、数据包记录器模式、 网�
 
 
   <script>
-  let imgs = ["https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071524050.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071525544.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202211111636871.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071524967.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250813153159689.png","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071525889.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250813153126836.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071510106.JPG","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202412051640776.JPG","https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250813153109263.jpg"];
+  let imgs = ["https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250813153109263.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071524967.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250813153126836.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202412051640776.JPG","https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250813153159689.png","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202211111636871.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071525889.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071510106.JPG","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071524050.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071525544.jpg"];
   let index = 0;
   let IntervalParallax = null;
 
