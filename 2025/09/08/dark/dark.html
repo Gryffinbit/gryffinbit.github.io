@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>《Dark》人物关系图</title>
+  <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: Arial, "Microsoft YaHei", sans-serif;
+      margin: 0;
+      padding: 10px;
+      background-color: #1a1a1a;
+      color: #e6e6e6;
+      overflow: hidden;
+      height: 100vh;
+    }
+    
+    .container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    
+    header {
+      padding: 10px 0;
+      margin-bottom: 10px;
+      text-align: center;
+      border-bottom: 1px solid #333;
+    }
+    
+    h2 {
+      font-size: 24px;
+      color: #e6e6e6;
+      margin-bottom: 5px;
+    }
+    
+    .instructions {
+      padding: 8px;
+      background-color: #2a2a2a;
+      border-radius: 5px;
+      font-size: 14px;
+      border-left: 3px solid #3498db;
+      margin-bottom: 10px;
+    }
+    
+    #mynetwork {
+      flex: 1;
+      width: 100%;
+      border: 1px solid #444;
+      border-radius: 5px;
+      background-color: #2c2c2c;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      min-height: 0; /* 重要：允许flex收缩 */
+    }
+    
+    /* 模态框样式 */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.85);
+    }
+    
+    .modal-content {
+      position: relative;
+      background-color: #2c2c2c;
+      margin: 5% auto;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+      width: 85%;
+      max-width: 700px;
+      animation: modalopen 0.3s;
+      color: #e6e6e6;
+    }
+    
+    @keyframes modalopen {
+      from {opacity: 0; transform: translateY(-40px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    
+    .close {
+      color: #aaa;
+      position: absolute;
+      right: 20px;
+      top: 15px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 10;
+    }
+    
+    .close:hover {
+      color: #fff;
+    }
+    
+    .character-details {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .character-info {
+      margin-bottom: 15px;
+    }
+    
+    .character-name {
+      font-size: 22px;
+      color: #f0f0f0;
+      margin-bottom: 5px;
+    }
+    
+    .character-name-en {
+      font-size: 16px;
+      color: #aaa;
+      margin-bottom: 15px;
+      font-style: italic;
+    }
+    
+    .character-description {
+      font-size: 15px;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+    
+    /* 图片轮播样式 */
+    .carousel {
+      position: relative;
+      width: 100%;
+      margin-top: 15px;
+    }
+    
+    .carousel-inner {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 5px;
+    }
+    
+    .carousel-item {
+      display: none;
+      text-align: center;
+    }
+    
+    .carousel-item.active {
+      display: block;
+    }
+    
+    .carousel-item img {
+      max-width: 100%;
+      max-height: 300px;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    .carousel-control {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 5;
+    }
+    
+    .carousel-control.prev {
+      left: 10px;
+    }
+    
+    .carousel-control.next {
+      right: 10px;
+    }
+    
+    .carousel-control:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+    
+    .carousel-indicators {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    
+    .carousel-indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #555;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+    
+    .carousel-indicator.active {
+      background-color: #3498db;
+    }
+    
+    /* 响应式设计 */
+    @media (min-width: 768px) {
+      .character-details {
+        flex-direction: row;
+      }
+      
+      .character-info {
+        flex: 1;
+        padding-right: 20px;
+        margin-bottom: 0;
+      }
+      
+      .carousel {
+        flex: 1;
+        margin-top: 0;
+      }
+    }
+    
+    @media (max-height: 700px) {
+      .modal-content {
+        margin: 2% auto;
+        padding: 15px;
+      }
+      
+      .carousel-item img {
+        max-height: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h2>《Dark》主要人物家族关系图</h2>
+      <div class="instructions">
+        <p>提示：所有节点都可以拖动，但亚当和诺亚可以自由移动，其他节点会保持层次布局。<br>点击人物名称可以查看详细信息。</p>
+      </div>
+    </header>
+    <div id="mynetwork"></div>
+  </div>
+
+  <!-- 人物详情模态框 -->
+  <div id="characterModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script>
+    // 人物详情数据
+    var characterData = {
+      1: {
+        name: "埃贡·蒂徳曼",
+        nameEn: "Egon Tiedemann",
+        description: "警长，逮捕了穿越过去的乌利希，认为是他杀了很多小孩。跟青年乌利希对着干，因为那个时候青年乌利希崇拜撒旦。",
+        images: [
+          "https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250906210847993.png",
+          "https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250906215907168.png"
+        ]
+      },
+      2: {
+        name: "多丽丝·蒂德曼",
+        nameEn: "Doris Tiedemann",
+        description: "女同, 艾格尼丝·尼尔森的情人",
+        images: [
+          "https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250907004307055.png",
+          "https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250907004435073.png"
+        ]
+      },
+      3: {
+        name: "克劳迪娅·蒂徳曼",
+        nameEn: "Claudia Tiedemann",
+        description: "时间旅人，异瞳，一蓝一黄。核电站女厂长。小的时候跟黑格尔一起玩，然后黑格尔把她的狗放进了山洞。",
+        images: [
+          "https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250906220258186.png",
+          "https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250906220322457.png",
+          "https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250906220343786.png"
+        ]
+      },
+      4: {
+        name: "雷吉娜·蒂徳曼",
+        nameEn: "Regina Tiedemann",
+        description: "克劳迪娅的女儿，她开了一个酒店，因为温登小镇有人失踪之后还不上钱，酒店开不下去了，后来得了乳腺癌。也是卡特琳娜·尼尔森在她小的时候，把她绑到树林里去了。",
+        images: [
+          "https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250906220136335.png",
+          "https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250906220236396.png"
+        ]
+      },
+      5: {
+        name: "亚历山大·蒂徳曼",
+        nameEn: "Aleksander Tiedemann",
+        description: "身分不明有很多ID，是突然出现在小镇的神秘人，后来接管了核电站",
+        images: [
+          "https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250906215919249.png",
+          "https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250906215933110.png"
+        ]
+      },
+      6: {
+        name: "黑格尔·多普勒",
+        nameEn: "Helge Doppler",
+        description: "核电看门人，乌利希认为是他杀了那些小孩。黑格尔中年是核电厂的看门人，警长问过他，为什么不走森林小道。他老年的时候在精神病养老院。",
+        images: [
+          "https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250906220448705.png",
+          "https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250906220506696.png",
+          "https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250906220515136.png"
+        ]
+      },
+      7: {
+        name: "彼得·多普勒",
+        nameEn: "Peter Doppler",
+        description: "女警长的丈夫，男同，偷偷男同并且去小车里面和那个你认为是女的的那个男的瑟瑟。",
+        images: [
+          "https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250906220608708.png"
+        ]
+      },
+      8: {
+        name: "夏洛特·多普勒",
+        nameEn: "Charlotte Doppler",
+        description: "女警长，捡起来死去的小鸟，她的公公是黑格尔。她的身世还没揭晓，但是她并不知道她真实的父母是谁（可能是诺亚）",
+        images: [
+          "https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250906220635713.png",
+          "https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250906220703250.png"
+        ]
+      },
+      9: {
+        name: "伊丽莎白",
+        nameEn: "Elisabeth Doppler",
+        description: "聋哑人，未来战争时期首领、她小的时候失踪过，带着小狐狸帽子",
+        images: [
+          "https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250906220716683.png",
+          "https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250906220740260.png"
+        ]
+      },
+      10: {
+        name: "乌利希·尼尔森",
+        nameEn: "Ulrich Nielsen",
+        description: "警察",
+        images: [
+          "https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250906221003832.png",
+          "https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250906221015437.png"
+        ]
+      },
+      11: {
+        name: "卡特琳娜·尼尔森",
+        nameEn: "Katharina Nielsen",
+        description: "曾绑架雷吉娜，校园霸凌",
+        images: [
+          "https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250906220859536.png",
+          "https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250906220909165.png"
+        ]
+      },
+      12: {
+        name: "米凯尔·尼尔森",
+        nameEn: "Mikkel Nielsen",
+        description: "约纳斯的父亲，后来自杀了",
+        images: [
+          "https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250906220925918.png"
+        ]
+      },
+      13: {
+        name: "玛莎·尼尔森",
+        nameEn: "Martha Nielsen",
+        description: "约纳斯爱慕对象，但论辈分其实是他的姑姑",
+        images: [
+          "https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250906221029024.png"
+        ]
+      },
+      14: {
+        name: "艾格尼丝·尼尔森",
+        nameEn: "Agnes Nielsen",
+        description: "诺亚的姐姐、女同，是乌利希的祖母。是老警长（埃贡蒂徳曼）妻子的情人",
+        images: [
+          "https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250906220822546.png"
+        ]
+      },
+      15: {
+        name: "约纳斯·卡恩瓦尔德",
+        nameEn: "Jonas Kahnwald",
+        description: "男主",
+        images: [
+          "https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250906221054633.png",
+          "https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250906221103871.png"
+        ]
+      },
+      16: {
+        name: "汉娜",
+        nameEn: "Hannah",
+        description: "曾与乌利希出轨",
+        images: [
+          "https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250906221117160.png",
+          "https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250906221124564.png"
+        ]
+      },
+      17: {
+        name: "亚当",
+        nameEn: "Adam",
+        description: "幕后boss",
+        images: [
+          "https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250906210545195.png"
+        ]
+      },
+      18: {
+        name: "诺亚",
+        nameEn: "Noah",
+        description: "时间旅人, 坏势力，有一个小屋用来杀小孩测时光机器",
+        images: [
+          "https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250906210759695.png"
+        ]
+      }
+    };
+
+    var nodes = new vis.DataSet([
+      // Tiedemann 家族
+      { id: 1, label: "埃贡·蒂徳曼", group: "Tiedemann", font: { size: 18 } },
+      { id: 2, label: "多丽丝·蒂德曼", group: "Tiedemann", font: { size: 18 } },
+      { id: 3, label: "克劳迪娅·蒂徳曼", group: "Tiedemann", font: { size: 18 } },
+      { id: 4, label: "雷吉娜·蒂徳曼", group: "Tiedemann", font: { size: 18 } },
+      { id: 5, label: "亚历山大·蒂徳曼", group: "Tiedemann", font: { size: 18 } },
+      { id: 100, label: "", hidden: true },
+
+      // Doppler 家族
+      { id: 6, label: "黑格尔·多普勒", group: "Doppler", font: { size: 18 } },
+      { id: 7, label: "彼得·多普勒", group: "Doppler", font: { size: 18 } },
+      { id: 8, label: "夏洛特·多普勒", group: "Doppler", font: { size: 18 } },
+      { id: 9, label: "伊丽莎白", group: "Doppler", font: { size: 18 } },
+
+      // Nielsen 家族
+      { id: 10, label: "乌利希·尼尔森", group: "Nielsen", font: { size: 18 } },
+      { id: 11, label: "卡特琳娜·尼尔森", group: "Nielsen", font: { size: 18 } },
+      { id: 12, label: "米凯尔·尼尔森", group: "Nielsen", font: { size: 18 } },
+      { id: 13, label: "玛莎·尼尔森", group: "Nielsen", font: { size: 18 } },
+      { id: 14, label: "艾格尼丝·尼尔森", group: "Nielsen", font: { size: 18 } },
+      { id: 18, label: "诺亚", group: "Nielsen", physics: true, fixed: false, font: { size: 20 } }, // 可以自由移动
+      { id: 101, label: "", hidden: true },
+
+      // Kahnwald 家族
+      { id: 15, label: "约纳斯·卡恩瓦尔德", group: "Kahnwald", font: { size: 18 } },
+      { id: 16, label: "汉娜", group: "Kahnwald", font: { size: 18 } },
+
+      // 独立人物
+      { id: 17, label: "亚当", group: "Other", physics: true, fixed: false, font: { size: 20 } } // 可以自由移动
+    ]);
+
+    var edges = new vis.DataSet([
+      // Tiedemann
+      { from: 1, to: 3 }, { from: 2, to: 3 },
+      { from: 3, to: 4 }, { from: 3, to: 100 },
+      { from: 100, to: 4 }, { from: 100, to: 5 },
+
+      // Doppler
+      { from: 6, to: 7 },
+      { from: 7, to: 9 }, { from: 8, to: 9 },
+
+      // Nielsen
+      { from: 10, to: 12 }, { from: 11, to: 12 },
+      { from: 10, to: 13 }, { from: 11, to: 13 },
+      { from: 14, to: 101 }, { from: 18, to: 101 },
+      { from: 101, to: 14 }, { from: 101, to: 18 },
+      { from: 14, to: 10 },
+
+      // Kahnwald
+      { from: 12, to: 15 }, { from: 16, to: 15 }
+    ]);
+
+    var container = document.getElementById("mynetwork");
+    var data = { nodes: nodes, edges: edges };
+    var options = {
+      layout: {
+        improvedLayout: true,
+        hierarchical: {
+          enabled: true,
+          direction: "UD",
+          sortMethod: "directed",
+          levelSeparation: 120,
+          nodeSpacing: 150
+        }
+      },
+      nodes: {
+        shape: "box",
+        margin: 12,
+        widthConstraint: { maximum: 160 },
+        fixed: {
+          x: false,
+          y: false
+        },
+        font: {
+          size: 18, // 默认节点字体大小
+          face: "Microsoft YaHei",
+          color: "#e6e6e6"
+        }
+      },
+      edges: {
+        arrows: { to: { enabled: false } },
+        smooth: true,
+        font: {
+          size: 14,
+          strokeWidth: 0
+        },
+        width: 2,
+        color: {
+          color: "#aaaaaa",
+          highlight: "#3498db"
+        }
+      },
+      groups: {
+        Tiedemann: { color: { background: "#2c5aa0", border: "#1a3c6e", highlight: { background: "#3a6ac0", border: "#2a5aae" } } },
+        Doppler:   { color: { background: "#2c8c54", border: "#1a6a34", highlight: { background: "#3cac74", border: "#2a8a54" } } },
+        Nielsen:   { color: { background: "#b88c2c", border: "#966a1a", highlight: { background: "#d8ac4c", border: "#b68a2a" } } },
+        Kahnwald:  { color: { background: "#a82c2c", border: "#861a1a", highlight: { background: "#c84c4c", border: "#a62a2a" } } },
+        Other:     { color: { background: "#6c2c9c", border: "#4a1a7a", highlight: { background: "#8c4cbc", border: "#6a2a9a" } } }
+      },
+      physics: {
+        enabled: true,
+        stabilization: {
+          enabled: true,
+          iterations: 1000
+        },
+        hierarchicalRepulsion: {
+          avoidOverlap: 1,
+          nodeDistance: 150
+        }
+      },
+      interaction: {
+        dragNodes: true,
+        dragView: true,
+        zoomView: true,
+        tooltipDelay: 200
+      }
+    };
+    
+    var network = new vis.Network(container, data, options);
+    
+    // 在布局稳定后，禁用物理效果，但保持亚当和诺亚可拖动
+    network.on("stabilizationIterationsDone", function() {
+      // 设置所有节点为固定，除了亚当和诺亚
+      nodes.forEach(function(node) {
+        if (node.id !== 17 && node.id !== 18) {
+          nodes.update({id: node.id, fixed: true});
+        }
+      });
+      
+      // 禁用物理效果，但允许手动拖动
+      options.physics.enabled = false;
+      network.setOptions(options);
+    });
+    
+    // 添加点击节点事件
+    network.on("click", function(params) {
+      if (params.nodes.length > 0) {
+        var nodeId = params.nodes[0];
+        showCharacterDetails(nodeId);
+      }
+    });
+    
+    // 获取模态框元素
+    var modal = document.getElementById("characterModal");
+    var modalContent = document.getElementById("modalContent");
+    var closeBtn = document.getElementsByClassName("close")[0];
+    
+    // 关闭模态框
+    closeBtn.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+    // 点击模态框外部关闭
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    
+    // 显示人物详情函数
+    function showCharacterDetails(nodeId) {
+      var character = characterData[nodeId];
+      
+      if (!character) {
+        modalContent.innerHTML = "<p>暂无该人物的详细信息</p>";
+        modal.style.display = "block";
+        return;
+      }
+      
+      var html = '<div class="character-details">';
+      html += '<div class="character-info">';
+      html += '<h2 class="character-name">' + character.name + '</h2>';
+      html += '<h3 class="character-name-en">' + character.nameEn + '</h3>';
+      html += '<p class="character-description">' + character.description + '</p>';
+      html += '</div>';
+      
+      // 添加图片轮播
+      if (character.images && character.images.length > 0) {
+        html += '<div class="carousel">';
+        html += '<div class="carousel-inner">';
+        
+        for (var i = 0; i < character.images.length; i++) {
+          var activeClass = i === 0 ? 'active' : '';
+          html += '<div class="carousel-item ' + activeClass + '" data-index="' + i + '">';
+          html += '<img src="' + character.images[i] + '" alt="' + character.name + '">';
+          html += '</div>';
+        }
+        
+        if (character.images.length > 1) {
+          html += '<button class="carousel-control prev">&lt;</button>';
+          html += '<button class="carousel-control next">&gt;</button>';
+        }
+        
+        html += '</div>';
+        
+        // 添加指示器
+        if (character.images.length > 1) {
+          html += '<div class="carousel-indicators">';
+          for (var j = 0; j < character.images.length; j++) {
+            var activeIndicator = j === 0 ? 'active' : '';
+            html += '<div class="carousel-indicator ' + activeIndicator + '" data-index="' + j + '"></div>';
+          }
+          html += '</div>';
+        }
+        
+        html += '</div>';
+      }
+      
+      html += '</div>';
+      
+      modalContent.innerHTML = html;
+      modal.style.display = "block";
+      
+      // 初始化轮播功能
+      if (character.images && character.images.length > 1) {
+        initCarousel();
+      }
+    }
+    
+    // 初始化轮播功能
+    function initCarousel() {
+      var currentIndex = 0;
+      var items = document.querySelectorAll('.carousel-item');
+      var indicators = document.querySelectorAll('.carousel-indicator');
+      var prevBtn = document.querySelector('.carousel-control.prev');
+      var nextBtn = document.querySelector('.carousel-control.next');
+      
+      function showSlide(index) {
+        // 隐藏所有幻灯片
+        items.forEach(function(item) {
+          item.classList.remove('active');
+        });
+        
+        // 显示当前幻灯片
+        items[index].classList.add('active');
+        
+        // 更新指示器
+        indicators.forEach(function(indicator) {
+          indicator.classList.remove('active');
+        });
+        indicators[index].classList.add('active');
+        
+        currentIndex = index;
+      }
+      
+      // 上一张按钮事件
+      if (prevBtn) {
+        prevBtn.onclick = function() {
+          var newIndex = (currentIndex - 1 + items.length) % items.length;
+          showSlide(newIndex);
+        };
+      }
+      
+      // 下一张按钮事件
+      if (nextBtn) {
+        nextBtn.onclick = function() {
+          var newIndex = (currentIndex + 1) % items.length;
+          showSlide(newIndex);
+        };
+      }
+      
+      // 指示器点击事件
+      indicators.forEach(function(indicator) {
+        indicator.onclick = function() {
+          var index = parseInt(this.getAttribute('data-index'));
+          showSlide(index);
+        };
+      });
+    }
+  </script>
+</body>
+</html>
