@@ -1711,7 +1711,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/favicon.png","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1757316900064),
+    lastupdate: new Date(1762136514917),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2574,6 +2574,74 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://gryffinbit.top/2025/10/19/写exp时遇到的问题/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Gryffinbit的思维殿堂">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Gryffinbit的思维殿堂">
+    <meta itemprop="description" content="一个网络安全网站">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2025/10/19/%E5%86%99exp%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"  itemprop="url">
+        写exp时遇到的问题（普遍版）
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        命令不回显的时候，用写文件的方式软连接的方式某位置无法写文件，通过创建软连接，把文件创建映射到web可访问的路径下
+对文件后缀限制某路径下对文件有后缀的限制，就可以在其他路径下创建被禁止的后缀文件，再软连接映射到要写入的路径
+引号被过滤今天命令执行，想要上传马，遇到了引号被过滤掉的问题。最终找到了三种方式来解决。
+
+用echo -e 对它16进制编码 
+1echo -e &quot;\x22...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2025-10-19T19:06:37+08:00">2025-10-19</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E5%86%99-exp-%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">写 exp 遇到的问题</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E5%86%99-exp-%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" itemprop="url"><span itemprop="name">写 exp 遇到的问题</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2025/10/19/%E5%86%99exp%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="https://gryffinbit.top/2023/12/05/木马、反弹shell-合集/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Gryffinbit的思维殿堂">
@@ -2693,75 +2761,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <div>
           <a class='readmore' href='/2023/10/20/%E5%86%99PHP%E7%AB%99%E7%9A%84exp%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://gryffinbit.top/2023/10/20/写exp时遇到的问题/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Gryffinbit的思维殿堂">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Gryffinbit的思维殿堂">
-    <meta itemprop="description" content="一个网络安全网站">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/10/20/%E5%86%99exp%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"  itemprop="url">
-        写exp时遇到的问题（普遍版）
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        引号被过滤今天命令执行，想要上传马，遇到了引号被过滤掉的问题。最终找到了三种方式来解决。
-
-用echo -e 对它16进制编码 
-1echo -e &quot;\x22hello\x22&quot; &gt;&gt; a.asp
-
-因为它本身的asp里面有引号，我通过它仅有的命令head和cut，把它摘到了我的上传文件中 
-1head -n 1 home.asp | cut -c 23 &g...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-10-20T03:06:37+08:00">2023-10-20</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%86%99-exp-%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">写 exp 遇到的问题</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%86%99-exp-%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" itemprop="url"><span itemprop="name">写 exp 遇到的问题</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/10/20/%E5%86%99exp%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3659,7 +3658,7 @@ java对url编码有两种方式，一个是encodeURI，一个是enc...
 
 
   <script>
-  let imgs = ["https://blog-1310394682.cos.ap-beijing.myqcloud.com/202211111636871.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250813153159689.png","https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250813153109263.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250813153126836.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071524050.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202412051640776.JPG","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071525889.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071524967.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071510106.JPG","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071525544.jpg"];
+  let imgs = ["https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250813153109263.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250813153126836.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071524967.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071525889.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071510106.JPG","https://blog-1310394682.cos.ap-beijing.myqcloud.com/20250813153159689.png","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071525544.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202412051640776.JPG","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202408071524050.jpg","https://blog-1310394682.cos.ap-beijing.myqcloud.com/202211111636871.jpg"];
   let index = 0;
   let IntervalParallax = null;
 
