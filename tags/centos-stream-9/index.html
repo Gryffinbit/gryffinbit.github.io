@@ -1711,7 +1711,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://blog-1310394682.cos.ap-beijing.myqcloud.com/Blog/favicon.png","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1762138708743),
+    lastupdate: new Date(1762138884930),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2276,23 +2276,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
           
           
-            
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                target="_blank" rel="noopener" href="https://gryffinbitworkspace.notion.site/2024-public-160eb1c098b3808c8ebeca180a1c1707" title="soul"
-                  
-                  
-                  
-                    active-action="action-https:gryffinbitworkspacenotionsite2024-public-160eb1c098b3808c8ebeca180a1c1707"
-                  >
-                  <i class='fas fa-book fa-fw'></i>soul
-                </a>
-                
-              </li>
-            
-          
-          
 				</ul>
 			</div>
       
@@ -2408,23 +2391,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                     active-action="action-artitalk"
                   >
                   <i class='fas fa-heart fa-fw'></i>thoughts
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                target="_blank" rel="noopener" href="https://gryffinbitworkspace.notion.site/2024-public-160eb1c098b3808c8ebeca180a1c1707" title="soul"
-                  
-                  
-                  
-                    active-action="action-https:gryffinbitworkspacenotionsite2024-public-160eb1c098b3808c8ebeca180a1c1707"
-                  >
-                  <i class='fas fa-book fa-fw'></i>soul
                 </a>
                 
               </li>
@@ -3549,6 +3515,8 @@ snort官方文档里面给出的版本，才更新到centos8，snort...
   function parallax(){
     let ParallaxWindow = document.querySelector("#parallax-window");
     
+      ParallaxWindow = document.querySelector("html");
+    
     Parallax.window = ParallaxWindow;
     Parallax.options.fade = 1500;
     Parallax.cache = 1;
@@ -3565,10 +3533,6 @@ snort官方文档里面给出的版本，才更新到centos8，snort...
     if (typeof Parallax == "undefined") {
       return
     }
-    
-      if (!document.querySelector("#full")&&!document.querySelector("#half")) {
-        return
-      }
     
     if (imgs.length>=1) {
       Parallax.options.src = imgs[index % imgs.length];
